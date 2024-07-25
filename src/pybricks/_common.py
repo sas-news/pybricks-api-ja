@@ -50,18 +50,15 @@ class System:
         """
         set_stop_button(button)
 
-        Sets the button or button combination that stops a running script.
+        実行中のスクリプトを停止するボタンを設定します。
 
-        Normally, the center button is used to stop a running script. You can
-        change or disable this behavior in order to use the button for other
-        purposes.
+        通常、中央のボタンは実行中のスクリプトを停止するために使用されます。 
+        この仕様を変更または無効にして、ボタンを他の目的に使用することができます。
 
         Arguments:
-            button (Button): A button such
-                as :attr:`Button.CENTER <pybricks.parameters.Button.CENTER>`,
-                or a tuple of multiple buttons. Choose ``None`` to disable the
-                stop button altogether. If you do, you can still turn the hub
-                off by holding the center button for three seconds.
+            button (Button): :attr:`Button.CENTER <pybricks.parameters.Button.CENTER>`などのボタン、またはボタンのタプルを指定します。
+            ``None``を選択すると、ボタンを無効にします。
+            無効にした場合は中央のボタンを3秒間長押しして、Hubの電源をオフにしてプログラムを停止することができます。
         """
 
     def shutdown(self) -> None:
@@ -685,49 +682,44 @@ class ColorLight:
     def on(self, color: Color) -> None:
         """on(color)
 
-        Turns on the light at the specified color.
+        指定した色でライトを点灯します。
 
         Arguments:
-            color (Color): Color of the light.
+            color (Color): ライトの色
         """
 
     def off(self) -> None:
         """off()
 
-        Turns off the light."""
+        ライトを消します。
+        """
 
     def blink(self, color: Color, durations: Collection[Number]) -> None:
         """blink(color, durations)
 
-        Blinks the light at a given color by turning it on and off for given
-        durations.
+        ライトを一定時間、指定した色で点滅させます。
 
-        The light keeps blinking indefinitely while the rest of your
-        program keeps running.
+        ライトはプログラム実行中、バックグラウンドでずっと点滅し続けます。
 
-        This method provides a simple way to make basic but useful patterns.
-        For more generic and multi-color patterns, use ``animate()``
-        instead.
+        このメソッドでは、簡単で便利な点滅パターンを作成できます。
+        より複雑なパターンを作成するには、代わりに ``animate()`` を使用してください。
 
         Arguments:
-            color (Color): Color of the light.
-            durations (list): Sequence of time values of the
-                form ``[on_1, off_1, on_2, off_2, ...]``.
+            color (Color): ライトの色
+            durations (list): ``[on_1, off_1, on_2, off_2, ...]``といった形式で時間値を指定します。
         """
 
     def animate(self, colors: Collection[Color], interval: Number) -> None:
         """animate(colors, interval)
 
-        Animates the light with a sequence of colors, shown one by
-        one for the given interval.
+        指定された間隔で1つずつ表示される色のシーケンスでライトをアニメーション化します。
 
-        The animation runs in the background while the rest of your program
-        keeps running. When the animation completes, it repeats.
+        アニメーションはバックグラウンドで実行されます。 
+        アニメーションが完了すると最初に戻り、繰り返されます。
 
         Arguments:
-            colors (list): Sequence of :class:`Color <.parameters.Color>`
-                values.
-            interval (Number, ms): Time between color updates.
+            colors (list): :class:`Color <.parameters.Color>`のシーケンス
+            interval (Number, ms): 色の更新間隔
         """
 
 
@@ -809,95 +801,89 @@ class LightMatrix:
     def orientation(self, up: Side) -> None:
         """orientation(up)
 
-        Sets the orientation of the light matrix display.
+        ライトマトリクスの表示を回転させます。
 
-        Only new displayed images and pixels are affected. The existing display
-        contents remain unchanged.
+        実行後、新たに表示されるピクセルだけが影響を受けます。
+        既存の表示内容は変化しません。
 
         Arguments:
-            top (Side): Which side of the light matrix display is "up" in your
-                design. Choose ``Side.TOP``, ``Side.LEFT``, ``Side.RIGHT``,
-                or ``Side.BOTTOM``.
+            top (Side): ライトマトリクスのどの面を「上」にするか。
+            ``Side.TOP``、``Side.LEFT``、``Side.RIGHT``、``Side.BOTTOM``から選びます。
         """
 
     def icon(self, icon: Matrix) -> None:
         """icon(icon)
 
-        Displays an icon, represented by a matrix of :ref:`brightness`
-        values.
+        :ref:`brightness`の輝度でアイコンを表示します。
 
         Arguments:
-            icon (Matrix): Matrix of intensities (:ref:`brightness`). A 2D
-                list is also accepted.
+            icon (Matrix): 強度のマトリクス（:ref:`brightness`）。2Dリストも受け付けます。
         """
 
     def animate(self, matrices: Collection[Matrix], interval: Number) -> None:
         """animate(matrices, interval)
 
-        Displays an animation made using a list of images.
+        画像のリストを使って作られたアニメーションを表示します。
 
-        Each image has the same format as above. Each image is
-        shown for the given interval. The animation repeats
-        forever while the rest of your program keeps running.
+        各画像は上記と同じフォーマットである。
+        それぞれの画像は与えられた間隔だけ表示される。
+        このアニメーションは、あなたのプログラムの残りの部分が動き続けている間、永遠に繰り返される。
 
         Arguments:
-            matrices (iter): Sequence of
-                :class:`Matrix <pybricks.tools.Matrix>` of intensities.
-            interval (Number, ms): Time to display each image in the list.
+            matrices (iter): :class:`Matrix <pybricks.tools.Matrix>`のシーケンス。
+            interval (Number, ms): リスト内の各画像を表示する時間。
         """
 
     def pixel(self, row: Number, column: Number, brightness: Number = 100) -> None:
         """pixel(row, column, brightness=100)
 
-        Turns on one pixel at the specified brightness.
+        指定された明るさで1つのピクセルをオンにします。
 
         Arguments:
-            row (Number): Vertical grid index, starting at 0 from the top.
-            column (Number): Horizontal grid index, starting at 0 from the left.
-            brightness (Number :ref:`brightness`): Brightness of the pixel.
+            row (Number): 垂直方向の座標。上から0で始まります。
+            column (Number): 水平方向の座標。左から0で始まります。
+            brightness (Number :ref:`brightness`): ピクセルの明るさ。
         """
 
     def off(self) -> None:
         """off()
 
-        Turns off all the pixels."""
+        すべてのピクセルをオフにします。"""
 
     def number(self, number: Number) -> None:
         """number(number)
 
-        Displays a number in the range -99 to 99.
+        -99から99の範囲の数字を表示する。
 
-        A minus sign (``-``) is shown as a faint dot
-        in the center of the display. Numbers greater than 99 are
-        shown as ``>``. Numbers less than -99 are shown as ``<``.
+        マイナス記号（``-``）はディスプレイの中央に点で表示されます。
+        99以上の数字は``>``、99未満の数字は``<```で表示されます。
 
         Arguments:
-            number (int): The number to be displayed.
+            number (int): 表示する数字。
         """
 
     def char(self, char: str) -> None:
         """char(char)
 
-        Displays a character or symbol on the light grid. This may
-        be any letter (``a``--``z``), capital letter (``A``--``Z``) or one of
-        the following symbols: ``!"#$%&'()*+,-./:;<=>?@[\\]^_`{|}``.
+        ライトマトリクスに文字または記号を表示します。
+        任意の文字（``a``から``z``、``A``から``Z``）または以下の記号を表示できます。
+
+        ``!"#$%&'()*+,-./:;<=>?@[\\]^_`{|}``
 
         Arguments:
-            character (str): The character or symbol to be displayed.
+            character (str): 表示する文字または記号。
         """
 
     def text(self, text: str, on: Number = 500, off: Number = 50) -> None:
         """text(text, on=500, off=50)
 
-        Displays a text string, one character at a time, with a pause
-        between each character. After the last character is shown, all lights
-        turn off.
+        テキストを1文字ずつ表示します。 
+        最後の文字が表示された後にすべてのライトが消灯します。
 
         Arguments:
-            text (str): The text to be displayed.
-            on (Number, ms): For how long a character is shown.
-            off (Number, ms): For how long the display is off between
-                characters.
+            text (str): 表示するテキスト。
+            on (Number, ms): 1文字が表示される時間。
+            off (Number, ms): 文字と文字の間の表示が消えている時間。
         """
 
 
@@ -909,10 +895,10 @@ class Keypad:
     def pressed(self) -> Set[Button]:
         """pressed() -> Set[Button]
 
-        Checks which buttons are currently pressed.
+        現在どのボタンが押されているか取得する。
 
         Returns:
-            Set of pressed buttons.
+            押されたボタンのセット。
         """
 
 
@@ -991,25 +977,22 @@ class SimpleAccelerometer:
     def up(self) -> Side:
         """up() -> Side
 
-        Checks which side of the hub currently faces upward.
+        Hubのどの面が上を向いているかを取得します。
 
         Returns:
-            ``Side.TOP``, ``Side.BOTTOM``, ``Side.LEFT``, ``Side.RIGHT``,
-            ``Side.FRONT`` or ``Side.BACK``.
+            ``Side.TOP``、``Side.BOTTOM``、``Side.LEFT``、``Side.RIGHT``、
+            ``Side.FRONT``、``Side.BACK``のいずれか。
         """
 
     def tilt(self) -> Tuple[int, int]:
         """tilt() -> Tuple[int, int]
 
-        Gets the pitch and roll angles. This is relative to the
-        :ref:`user-specified neutral orientation <robotframe>`.
+        ピッチ角とロール角を取得する。 これは、:ref:`ユーザーが指定した方向 <robotframe>`からの相対値です。
 
-        The order of rotation is pitch-then-roll. This is equivalent to a
-        positive rotation along the robot y-axis and then a positive rotation
-        along the x-axis.
+        回転の順序は、ピッチ-ターン-ロールです。これはロボットのY軸に沿って正回転し、次にX軸に沿って正回転することに相当します。
 
         Returns:
-            Tuple of pitch and roll angles in degrees.
+            ピッチ角とロール角を度単位で表したタプル。
         """
 
 
@@ -1028,15 +1011,13 @@ class Accelerometer(SimpleAccelerometer):
         acceleration() -> vector: mm/s²
 
 
-        Gets the acceleration of the device along a given axis in the
-        :ref:`robot reference frame <robotframe>`.
+        :ref:`ロボットフレーム <robotframe>`における、指定された軸に沿ったデバイスの加速度を取得します。
 
         Arguments:
-            axis (Axis): Axis along which the acceleration should be
-                         measured.
+            axis (Axis): 加速度を測定する軸。
+
         Returns:
-            Acceleration along the specified axis. If you specify no axis,
-            this returns a vector of accelerations along all axes.
+            指定された軸に沿った加速度。 軸を指定しない場合は、すべての軸に沿った加速度のベクトルを返す。
         """
 
 
@@ -1044,25 +1025,22 @@ class IMU(Accelerometer):
     def ready(self) -> bool:
         """ready() -> bool
 
-        Checks if the device is calibrated and ready for use.
+        IMUが使用可能かどうかを確認します。
 
-        This becomes ``True`` when the robot has been sitting stationary for a
-        few seconds, which allows the device to re-calibrate. It is ``False``
-        if the hub has just been started, or if it hasn't had a chance to
-        calibrate for more than 10 minutes.
+        これは、ロボットが数秒間静止しているときに``True``になり、デバイスを再較正することができます。
+        ハブが起動したばかりであったり、10分以上較正の機会がなかったりすると```False```になります。
 
         Returns:
-            ``True`` if it is ready for use, ``False`` if not.
+            使用可能であれば``True``、そうでなければ``False``。
         """
 
     def stationary(self) -> bool:
         """stationary() -> bool
 
-        Checks if the device is currently stationary (not moving).
+        現在のハブが静止しているかどうかを確認します。
 
         Returns:
-            ``True`` if stationary for at least a second, ``False`` if it is
-            moving.
+            少なくとも1秒間静止していれば``True``、動いていれば``False``。
         """
 
     @overload
@@ -1080,61 +1058,46 @@ class IMU(Accelerometer):
         settings(angular_velocity_threshold, acceleration_threshold)
         settings() -> Tuple[float, float]
 
-        Configures the IMU settings. If no arguments are given,
-        this returns the current values.
+        IMUの設定を行います。 引数が与えられていない場合は、現在の値を返します。
 
-        The ``angular_velocity_threshold`` and ``acceleration_threshold``
-        define when the hub is considered stationary. If all
-        measurements stay below these thresholds for one second, the IMU
-        will recalibrate itself.
+        角速度しきい値（``angular_velocity_threshold``）と加速度しきい値（``acceleration_threshold``）は、
+        Hubが静止しているとみなされるタイミングを定義します。 
+        すべての測定値がこれらのしきい値を1秒間下回った場合、IMUは再キャリブレーションを行います。
 
-        In a noisy room with high ambient vibrations (such as a
-        competition hall), it is recommended to increase the thresholds
-        slightly to give your robot the chance to calibrate.
-        To verify that your settings are working as expected, test that
-        the ``stationary()`` method gives ``False`` if your robot is moving,
-        and ``True`` if it is sitting still for at least a second.
+        周囲の振動が大きい騒がしい部屋（競技会場など）では、ロボットにキャリブレーションの機会を与えるため、
+        しきい値を少し大きくすることをお勧めします。設定が期待通りに機能していることを確認するには、``stationary()``メソッドが、
+        ロボットが動いている場合は``False``を、少なくとも1秒間静止している場合は``True``を返すことをテストしてください。
 
         Arguments:
-            angular_velocity_threshold (Number, deg/s): The threshold for
-                angular velocity. The default value is 1.5 deg/s.
-            acceleration_threshold (Number, mm/s²): The threshold for angular
-                velocity. The default value is 250 mm/s².
+            angular_velocity_threshold (Number, deg/s): 角速度のしきい値。 デフォルト値は1.5deg/s。
+            acceleration_threshold (Number, mm/s²): 角速度のしきい値。 デフォルト値は250 mm/s²。
         """
 
     def heading(self) -> float:
         """heading() -> float: deg
 
-        Gets the heading angle of your robot. A positive value means a
-        clockwise turn.
+        ロボットの水平面での角度(方位角)を取得します。 正の値は時計回りを意味します。
 
-        The heading is 0 when your program starts. The value continues to grow
-        even as the robot turns more than 180 degrees. It does not wrap around
-        to -180 like it does in some apps.
+        プログラム開始時の値は0です。この値はロボットが180度以上回転しても増え続けます。-180度まで折り返すことはありません。
 
 
-        .. note:: *For now, this method only keeps track of the heading while
-                  the robot is on a flat surface.*
-
-                  This means that the value is
-                  no longer correct if you lift it from the table. To solve
-                  this, you can call ``reset_heading`` to reset the heading to
-                  a known value *after* you put it back down. For example, you
-                  could align your robot with the side of the competition table
-                  and reset the heading 90 degrees as the new starting point.
+        .. note:: このメソッドはロボットが平らな場所にいる間だけ記録しています。
+                  つまり、ロボットをテーブルから持ち上げると、角度は正しくなくなってしまいます。
+                  この問題を解決するには、``reset_heading``を呼び出すことで、ロボットを置いた後に既知の値にリセットすることができます。
+                  例えば、ロボットを競技テーブルの側面に合わせ、新しい出発点としてリセットすることができます。
 
         Returns:
-            Heading angle relative to starting orientation.
+            開始方位に対するロボットの方位角。
 
         """
 
     def reset_heading(self, angle: Number) -> None:
         """reset_heading(angle)
 
-        Resets the accumulated heading angle of the robot.
+        ロボットの方位角をリセットします。
 
         Arguments:
-            angle (Number, deg): Value to which the heading should be reset.
+            angle (Number, deg): リセットする値。
         """
 
     @overload
@@ -1148,50 +1111,43 @@ class IMU(Accelerometer):
         angular_velocity(axis) -> float: deg/s
         angular_velocity() -> vector: deg/s
 
-        Gets the angular velocity of the device along a given axis in
-        the :ref:`robot reference frame <robotframe>`.
+        :ref:`ロボットフレーム <robotframe>`における、指定された軸に沿ったデバイスの角速度を取得します。
 
         Arguments:
-            axis (Axis): Axis along which the angular velocity should be
-                         measured.
+            axis (Axis): 角速度を測定する軸。
         Returns:
-            Angular velocity along the specified axis. If you specify no axis,
-            this returns a vector of accelerations along all axes.
+            指定された軸に沿った角速度。 軸を指定しない場合は、すべての軸に沿った加速度のベクトルを返す。
         """
 
     def rotation(self, axis: Axis) -> float:
         """
         rotation(axis) -> float: deg
 
-        Gets the rotation of the device along a given axis in
-        the :ref:`robot reference frame <robotframe>`.
+        :ref:`ロボットフレーム <robotframe>`における、指定された軸に沿ったデバイスの回転を取得します。
 
-        This value is useful if your robot *only* rotates along the requested
-        axis. For general three-dimensional motion, use the
-        ``orientation()`` method instead.
+        この値は、ロボットが要求された軸に沿ってのみ回転する場合に便利です。
+        一般的な3次元モーションの場合は、代わりに``orientation()``メソッドを使用します。
 
-        The value starts counting from ``0`` when you initialize this class.
+        このクラスが初期化されると、値は``0``からカウントを開始します。
 
         Arguments:
-            axis (Axis): Axis along which the rotation should be measured.
+            axis (Axis): 回転を測定する軸。
         Returns:
-            The rotation angle.
+            回転した角度。
         """
 
     def orientation(self) -> Matrix:
         """
         orientation() -> Matrix
 
-        Gets the three-dimensional orientation of the robot in
-        the :ref:`robot reference frame <robotframe>`.
+        :ref:`ロボットフレーム <robotframe>`における、ロボットの3次元姿勢を取得する。
 
-        It returns a rotation matrix whose columns represent the ``X``, ``Y``,
-        and ``Z`` axis of the robot.
+        ロボットの``X``軸、``Y``軸、``Z``軸を表す回転行列を返します。
 
-        .. note:: This method is not yet implemented.
+        .. note:: この方法はまだ実装されていません。
 
         Returns:
-            The rotation matrix.
+            ロボットの3次元姿勢を表す回転行列。
         """
 
 

@@ -217,26 +217,23 @@ class PrimeHub:
     ):
         """PrimeHub(top_side=Axis.Z, front_side=Axis.X, broadcast_channel=0, observe_channels=[])
 
-        Initializes the hub. Optionally, specify how the hub is
-        :ref:`placed in your design <robotframe>` by saying in which
-        direction the top side (with the buttons) and front side (with the USB
-        port) are pointing.
+        Hubの初期化を行います。
+        任意でハブの上面（ボタンがある方）と前面（USBポートがある方）の向きを指定し、
+        :ref:`ハブをデザインにどのように配置するか <robotframe>`を指定することができます。
 
         Arguments:
-            top_side (Axis): The axis that passes through the *top side* of
-                the hub.
-            front_side (Axis): The axis that passes through the *front side* of
-                the hub.
+            top_side (Axis): Hubの上面を通る軸。
+            front_side (Axis): Hubの前面を通る軸。
             broadcast_channel:
-                A value from 0 to 255 indicating which channel ``hub.ble.broadcast()``
-                will use. Default is channel 0.
+                ``hub.ble.broadcast()``が使用するチャンネルを
+                0から255までの値で指定する。 デフォルトはチャンネル0。
             observe_channels:
-                A list of channels to listen to when ``hub.ble.observe()`` is
-                called. Listening to more channels requires more memory.
-                Default is an empty list (no channels).
+                ``hub.ble.observe()``が呼ばれたときにリッスンするチャンネルのリスト。 
+                より多くのチャンネルをリッスンするには、より多くのメモリを必要とします。 
+                デフォルトは空のリスト（チャンネルなし）。
 
         .. versionchanged:: 3.3
-            Added *broadcast_channel* and *observe_channels* arguments.
+            *broadcast_channel* と *observe_channels* 引数を追加されました。
         """
 
 

@@ -1,36 +1,36 @@
-Pybricks Documentation
+Pybricks ドキュメント
 ==================================================================
 
-`Pybricks <https://pybricks.com/>`_ is Python coding for smart LEGO® hubs.
-Run MicroPython scripts
-directly on the hub, and get full control of your motors and sensors.
+`Pybricks <https://pybricks.com/>`_ は、LEGO® Hub用のPython実行環境です。
+MicroPythonを実行するHubに接続し、モーターとセンサーを制御します。
 
-Pybricks runs on LEGO® BOOST, City, Technic, MINDSTORMS®, and SPIKE®. You
-can code using Windows, Mac, Linux, Chromebook, and Android.
+Pybricksは、LEGO® BOOST、City、Technic、MINDSTORMS®、SPIKE®上で実行できます。
+ブラウザがあればどこでもコーディングできます。
 
-Click on any device below to see its documentation. Use the menu on the left
-to find documentation for additional modules. You may need to click the ☰ icon
-above to reveal this menu.
+このドキュメントではSPIKE Primeに限定して日本語化しています。
+
+以下のデバイスをクリックすると、そのドキュメントに移動します。
+左側のメニューで、Pybricksのモジュールや関数を探すこともできます。
+☰をクリックして、メニューを開く必要がある場合があります。
 
 .. only:: main
 
-   .. note:: You are viewing the stand-alone version of the documentation. To
-             learn more about Pybricks and to start coding, visit
-             the `Pybricks website`_
+   .. note:: ここはPybricksのコーディングに関するドキュメントです。
+             Pybricksについて詳しく学ぶなら `PybricksのWebサイト`_ を参照してください。 
 
-   .. note:: Are you using LEGO MINDSTORMS EV3? Check out the
-            `EV3 documentation`_ instead.
+   .. note:: LEGO MINDSTORMS EV3を使っているな場合は、
+             `EV3 documentation`_ を参照してください。
 
 .. _EV3 documentation: https://pybricks.com/ev3-micropython/
-.. _Pybricks website: https://pybricks.com/
+.. _PybricksのWebサイト: https://pybricks.com/
 
-.. rubric:: Programmable hubs
+.. rubric:: Hub一覧
 
 .. figure:: ../main/cad/output/hub-all.png
    :width: 100 %
    :target: hubs/index.html
 
-.. rubric:: Powered Up motors and sensors
+.. rubric:: モーターとセンサー
 
 .. figure:: ../main/cad/output/pupdevice-all.png
    :width: 100 %
@@ -39,10 +39,6 @@ above to reveal this menu.
 .. figure:: ../main/cad/output/pupdevice-motors.png
    :width: 100 %
    :target: pupdevices/motor.html
-
-.. figure:: ../main/cad/output/pupdevice-dcmotors.png
-   :width: 70 %
-   :target: pupdevices/dcmotor.html
 
 .. toctree::
     :maxdepth: 1
