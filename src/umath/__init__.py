@@ -8,351 +8,351 @@
 
 
 """
-Math functions.
+数学関数。
 """
 
 e = 2.718282
-"""The mathematical constant e."""
+"""数学定数 e。"""
 
 
 pi = 3.141593
-"""The mathematical constant π."""
+"""数学定数 π。"""
 
 
 def sin(x: float) -> float:
     """sin(x) -> float
 
-    Gets the sine of an angle.
+    角度の正弦を取得します。
 
     Arguments:
-        x (float): Angle in radians.
+        x (float): ラジアン単位の角度。
 
     Returns:
-        Sine of ``x``.
+        ``x`` の正弦。
     """
 
 
 def asin(x: float) -> float:
     """asin(x) -> float
 
-    Applies the inverse sine operation.
+    逆正弦演算を適用します。
 
     Arguments:
-        x (float): Opposite / hypotenuse.
+        x (float): 対辺 / 斜辺。
 
     Returns:
-        Arcsine of ``x``, in radians.
+        ``x`` の逆正弦（ラジアン単位）。
     """
 
 
 def cos(x: float) -> float:
     """cos(x) -> float
 
-    Gets the cosine of an angle.
+    角度の余弦を取得します。
 
     Arguments:
-        x (float): Angle in radians.
+        x (float): ラジアン単位の角度。
 
     Returns:
-        Cosine of ``x``.
+        ``x`` の余弦。
     """
 
 
 def acos(x: float) -> float:
     """acos(x) -> float
 
-    Applies the inverse cosine operation.
+    逆余弦演算を適用します。
 
     Arguments:
-        x (float): Adjacent / hypotenuse.
+        x (float): 隣辺 / 斜辺。
 
     Returns:
-        Arccosine of ``x``, in radians.
+        ``x`` の逆余弦（ラジアン単位）。
     """
 
 
 def tan(x: float) -> float:
     """tan(x) -> float
 
-    Gets the tangent of an angle.
+    角度の正接を取得します。
 
     Arguments:
-        x (float): Angle in radians.
+        x (float): ラジアン単位の角度。
 
     Returns:
-        Tangent of ``x``.
+        ``x`` の正接。
     """
 
 
 def atan(x: float) -> float:
     """atan(x) -> float
 
-    Applies the inverse tangent operation.
+    逆正接演算を適用します。
 
     Arguments:
-        x (float): Opposite / adjacent.
+        x (float): 対辺 / 隣辺。
 
     Returns:
-        Arctangent of ``x``, in radians.
+        ``x`` の逆正接（ラジアン単位）。
     """
 
 
 def atan2(b: float, a: float) -> float:
     """atan2(b, a) -> float
 
-    Applies the inverse tangent operation on ``b / a``, and accounts for
-    the signs of ``b`` and ``a`` to produce the expected angle.
+    ``b / a`` に対して逆正接演算を適用し、``b`` と ``a`` の符号を考慮して
+    期待される角度を生成します。
 
     Arguments:
-        b (float): Opposite side of the triangle.
-        a (float): Adjacent side of the triangle.
+        b (float): 三角形の対辺。
+        a (float): 三角形の隣辺。
 
     Returns:
-        Arctangent of ``b / a``, in radians.
+        ``b / a`` の逆正接（ラジアン単位）。
     """
 
 
 def degrees(x: float) -> float:
     """degrees(x) -> float
 
-    Converts an angle from radians to degrees.
+    角度をラジアンから度に変換します。
 
     Arguments:
-        x (float): Angle in radians.
+        x (float): ラジアン単位の角度。
 
     Returns:
-        Angle in degrees.
+        度単位の角度。
     """
 
 
 def radians(x: float) -> float:
     """radians(x) -> float
 
-    Converts an angle from degrees to radians.
+    角度を度からラジアンに変換します。
 
     Arguments:
-        x (float): Angle in degrees.
+        x (float): 度単位の角度。
 
     Returns:
-        Angle in radians.
+        ラジアン単位の角度。
     """
 
 
 def pow(x: float, y: float) -> float:
     """pow(x, y) -> float
 
-    Gets ``x`` raised to the power of ``y``.
+    ``x`` の ``y`` 乗を取得します。
 
     Arguments:
-        x (float): The base number.
-        y (float): The exponent.
+        x (float): 底。
+        y (float): 指数。
 
     Returns:
-        ``x`` raised to the power of ``y``.
+        ``x`` の ``y`` 乗。
     """
 
 
 def exp(x: float) -> float:
     """exp(x) -> float
 
-    Gets :attr:`e` raised to the power of ``x``.
+    :attr:`e` の ``x`` 乗を取得します。
 
     Arguments:
-        x (float): The exponent.
+        x (float): 指数。
 
     Returns:
-        :attr:`e` raised to the power of ``x``.
+        :attr:`e` の ``x`` 乗。
     """
 
 
 def log(x: float) -> float:
     """log(x) -> float
 
-    Gets the natural logarithm.
+    自然対数を取得します。
 
     Arguments:
-        x (float): The value.
+        x (float): 値。
 
     Returns:
-        The natural logarithm of ``x``.
+        ``x`` の自然対数。
     """
 
 
 def sqrt(x: float) -> float:
     """sqrt(x) -> float
 
-    Gets the square root.
+    平方根を取得します。
 
     Arguments:
-        x (float): The value ``x``.
+        x (float): 値 ``x``。
 
     Returns:
-        The square root of ``x``.
+        ``x`` の平方根。
     """
 
 
 def ceil(x: float) -> int:
     """ceil(x) -> int
 
-    Rounds up.
+    切り上げます。
 
     Arguments:
-        x (float): The value to be rounded.
+        x (float): 丸める対象の値。
 
     Returns:
-        Value rounded towards positive infinity.
+        正の無限大方向に丸めた値。
     """
 
 
 def floor(x: float) -> int:
     """floor(x) -> int
 
-    Rounds down.
+    切り捨てます。
 
     Arguments:
-        x (float): The value to be rounded.
+        x (float): 丸める対象の値。
 
     Returns:
-        Value rounded towards negative infinity.
+        負の無限大方向に丸めた値。
     """
 
 
 def trunc(x: float) -> int:
     """trunc(x) -> int
 
-    Truncates decimals to get the integer part of a value.
+    小数を切り捨てて値の整数部分を取得します。
 
-    This is the same as rounding towards ``0``.
+    これは ``0`` 方向への丸めと同じです。
 
     Arguments:
-        x (float): The value to be truncated.
+        x (float): 切り捨てる対象の値。
 
     Returns:
-        Integer part of the value.
+        値の整数部分。
     """
 
 
 def fmod(x: float, y: float) -> float:
     """fmod(x, y) -> float
 
-    Gets the remainder of ``x / y``.
+    ``x / y`` の剰余を取得します。
 
-    Not to be confused with :func:`modf`.
+    :func:`modf` と混同しないでください。
 
     Arguments:
-        x (float): The numerator.
-        y (float): The denominator.
+        x (float): 分子。
+        y (float): 分母。
 
     Returns:
-        Remainder after division
+        除算後の剰余。
     """
 
 
 def fabs(x: float) -> float:
     """fabs(x) -> float
 
-    Gets the absolute value.
+    絶対値を取得します。
 
     Arguments:
-        x (float): The value.
+        x (float): 値。
 
     Returns:
-        Absolute value of ``x``.
+        ``x`` の絶対値。
     """
 
 
 def modf(x: float) -> tuple[float, float]:
     """modf(x) -> tuple[float, float]
 
-    Gets the fractional and integral parts of ``x``, both with the same sign
-    as ``x``.
+    ``x`` の小数部分と整数部分を取得します。いずれも ``x`` と同じ符号
+    になります。
 
-    Not to be confused with :func:`fmod`.
+    :func:`fmod` と混同しないでください。
 
     Arguments:
-        x (float): The value to be decomposed.
+        x (float): 分解する値。
 
     Returns:
-        Tuple of fractional and integral parts.
+        小数部分と整数部分のタプル。
     """
 
 
 def frexp(x: float) -> tuple[float, int]:
     """frexp(x) -> tuple[float, float]
 
-    Decomposes a value ``x`` into a
-    tuple ``(m, p)``, such that ``x == m * (2 ** p)``.
+    値 ``x`` を ``x == m * (2 ** p)`` となるようなタプル ``(m, p)``
+    に分解します。
 
     Arguments:
-        x (float): The value to be decomposed.
+        x (float): 分解する値。
 
     Returns:
-        Tuple of ``m`` and ``p``.
+        ``m`` と ``p`` のタプル。
     """
 
 
 def ldexp(m: float, p: int) -> float:
     """ldexp(m, p) -> float
 
-    Computes ``m * (2 ** p)``.
+    ``m * (2 ** p)`` を計算します。
 
     Arguments:
-        m (float): The value.
-        p (float): The exponent.
+        m (float): 値。
+        p (float): 指数。
 
     Returns:
-        Result of ``m * (2 ** p)``.
+        ``m * (2 ** p)`` の結果。
     """
 
 
 def copysign(x: float, y: float) -> float:
     """copysign(x, y) -> float
 
-    Gets ``x`` with the sign of ``y``.
+    ``y`` の符号を持つ ``x`` を取得します。
 
     Arguments:
-        x (float): Determines the magnitude of the return value.
-        y (float): Determines the sign of the return value.
+        x (float): 戻り値の大きさを決定します。
+        y (float): 戻り値の符号を決定します。
 
     Returns:
-        ``x`` with the sign of ``y``.
+        ``y`` の符号を持つ ``x``。
     """
 
 
 def isfinite(x: float) -> bool:
     """isfinite(x) -> bool
 
-    Checks if a value is finite.
+    値が有限かどうかを確認します。
 
     Arguments:
-        x (float): The value to be checked.
+        x (float): 確認する値。
 
     Returns:
-        ``True`` if ``x`` is finite, else ``False``.
+        ``x`` が有限なら ``True``、そうでなければ ``False``。
     """
 
 
 def isinfinite(x: float) -> bool:
     """isinfinite(x) -> bool
 
-    Checks if a value is infinite.
+    値が無限かどうかを確認します。
 
     Arguments:
-        x (float): The value to be checked.
+        x (float): 確認する値。
 
     Returns:
-        ``True`` if ``x`` is infinite, else ``False``.
+        ``x`` が無限なら ``True``、そうでなければ ``False``。
     """
 
 
 def isnan(x: float) -> bool:
     """isnan(x) -> bool
 
-    Checks if a value is not-a-number.
+    値が非数かどうかを確認します。
 
     Arguments:
-        x (float): The value to be checked.
+        x (float): 確認する値。
 
     Returns:
-        ``True`` if ``x`` is not-a-number, else ``False``.
+        ``x`` が非数なら ``True``、そうでなければ ``False``。
     """

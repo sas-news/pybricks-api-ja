@@ -6,7 +6,7 @@
 # Copyright (c) 2014-2021, Damien P. George, Paul Sokolovsky, and contributors
 
 """
-This module provides functions to efficiently wait for events on multiple streams.
+このモジュールは、複数のストリームでイベントを効率的に待機する関数を提供します。
 """
 
 from __future__ import annotations
@@ -18,24 +18,24 @@ if TYPE_CHECKING:
 
 POLLIN: int
 """
-Data is available for reading.
+読み取り可能なデータがあります。
 """
 
 POLLOUT: int
 """
-More data can be written.
+さらにデータを書き込むことができます。
 """
 
 POLLERR: int
 """
-Error condition happened on the associated stream. Should be handled explicitly
-or else further invocations of :meth:`poll` may return right away.
+関連するストリームでエラー状態が発生しました。明示的に処理する必要があります。
+そうしないと、それ以降の :meth:`poll` の呼び出しがすぐに返る場合があります。
 """
 
 POLLHUP: int
 """
-Hang up happened on the associated stream. Should be handled explicitly
-or else further invocations of :meth:`poll` may return right away.
+関連するストリームでハングアップが発生しました。明示的に処理する必要があります。
+そうしないと、それ以降の :meth:`poll` の呼び出しがすぐに返る場合があります。
 """
 
 
@@ -44,42 +44,42 @@ class Poll:
         """
         register(object, eventmask=POLLOUT | POLLOUT)
 
-        Register a stream object for polling. The stream object will now be
-        monitored for events. If an event happens, it becomes part of the
-        return value of :meth:`poll`.
+        ポーリング対象のストリームオブジェクトを登録します。ストリーム
+        オブジェクトはイベントが監視されるようになります。イベントが発生
+        すると、それが :meth:`poll` の戻り値の一部になります。
 
-        If this method is called again for the same stream object, the object
-        will not be registered again, but the ``eventmask`` flags will be
-        updated, as if calling :meth:`modify()`.
+        同じストリームオブジェクトに対してこのメソッドが再度呼び出された
+        場合、オブジェクトは再登録されませんが、``eventmask`` フラグは
+        :meth:`modify()` を呼び出したかのように更新されます。
 
         Arguments:
-            object (FileIO): Stream to be registered for polling.
-            eventmask (int): Which events to use. Should be ``POLLIN``,
-                ``POLLOUT``, or their logical disjunction: ``POLLIN | POLLOUT``.
+            object (FileIO): ポーリングに登録するストリーム。
+            eventmask (int): 使用するイベント。 ``POLLIN``、``POLLOUT``、
+                またはそれらの論理和 ``POLLIN | POLLOUT`` を指定します。
         """
 
     def unregister(self, object: IO) -> None:
         """
         unregister(poll)
 
-        Unregister an object from polling.
+        オブジェクトをポーリングから登録解除します。
 
         Arguments:
-            object (FileIO): Stream to be unregistered from polling.
+            object (FileIO): ポーリングから登録解除するストリーム。
         """
 
     def modify(self, obj: IO, eventmask: int) -> None:
         """
         modify(object, eventmask)
 
-        Modifies the event mask for the stream object.
+        ストリームオブジェクトのイベントマスクを変更します。
 
         Arguments:
-            object (FileIO): Stream to be registered for polling.
-            eventmask (int): Which events to use.
+            object (FileIO): ポーリングに登録するストリーム。
+            eventmask (int): 使用するイベント。
 
         Raises:
-            ``OSError``: If the object is not registered. The error is ``ENOENT``.
+            ``OSError``: オブジェクトが登録されていない場合。エラーは ``ENOENT`` です。
         """
 
     @overload
@@ -92,19 +92,20 @@ class Poll:
         """
         poll(timeout=-1) -> list[tuple[FileIO, int]]
 
-        Wait until at least one of the registered objects has a new event or
-        exceptional condition ready to be handled.
+        登録されたオブジェクトの少なくとも1つが、処理可能な新しいイベント
+        または例外状態になるまで待機します。
 
         Arguments:
-            timeout (int): Timeout in milliseconds. Choose ``0`` to return
-                immediately or choose ``-1`` to wait indefinitely.
+            timeout (int): タイムアウト（ミリ秒）。 ``0`` を選択するとすぐに
+                返り、``-1`` を選択すると無制限に待機します。
 
         Returns:
-            A list of tuples. There is one (``object``, ``eventmask``, ...)
-            tuple for each object with an event, or no tuples if there are no
-            events to be handled. The ``eventmask`` value
-            is a combination of poll flags to indicate what happened. This may
-            include ``POLLERR`` and ``POLLHUP`` even if they were not registered.
+            タプルのリスト。イベントのあるオブジェクトごとに1つの
+            (``object``, ``eventmask``, ...) タプルがあり、処理すべき
+            イベントがない場合はタプルはありません。 ``eventmask`` の値は、
+            何が起こったかを示すポーリングフラグの組み合わせです。これには
+            登録されていなくても ``POLLERR`` と ``POLLHUP`` が含まれる
+            場合があります。
         """
 
     @overload
@@ -120,32 +121,34 @@ class Poll:
         """
         ipoll(timeout=-1, flags=1) -> Iterator[tuple[FileIO, int]]
 
-        First, just like :meth:`poll`, wait until at least one of the registered
-        objects has a new event or exceptional condition ready to be handled.
+        まず、:meth:`poll` と同様に、登録されたオブジェクトの少なくとも
+        1つが、処理可能な新しいイベントまたは例外状態になるまで待機します。
 
-        But instead of a list, this method returns an iterator for improved
-        efficiency. The iterator yields one (``object``, ``eventmask``, ...)
-        tuple at a time, and overwrites it when yielding the next value. If you
-        need the values later, make sure to copy them explicitly.
+        ただし、リストの代わりに、このメソッドは効率向上のために
+        イテレーターを返します。イテレーターは一度に1つの
+        (``object``, ``eventmask``, ...) タプルを生成し、次の値を生成する
+        ときにそれを上書きします。後で値が必要な場合は、明示的にコピー
+        してください。
 
         Arguments:
-            timeout (int): Timeout in milliseconds. Choose ``0`` to return
-                immediately or choose ``-1`` to wait indefinitely.
-            flags (int): If set to ``1``, one-shot behavior for events is
-                employed. This means that streams for which events happened
-                will have their event masks automatically reset using
-                ``poll.modify(obj, 0)``. This way, new events for such a stream
-                won't be processed until a new mask is set with :meth:`modify`,
-                which is useful for asynchronous I/O schedulers.
+            timeout (int): タイムアウト（ミリ秒）。 ``0`` を選択するとすぐに
+                返り、``-1`` を選択すると無制限に待機します。
+            flags (int): ``1`` に設定すると、イベントにワンショット動作が
+                適用されます。これは、イベントが発生したストリームの
+                イベントマスクが ``poll.modify(obj, 0)`` を使用して自動的に
+                リセットされることを意味します。このように、:meth:`modify`
+                で新しいマスクが設定されるまで、そのようなストリームの
+                新しいイベントは処理されません。これは非同期 I/O
+                スケジューラーに役立ちます。
         """
 
 
 def poll() -> Poll:
     """
-    Creates an instance of the :class:`Poll` class.
+    :class:`Poll` クラスのインスタンスを作成します。
 
     Returns:
-        The :class:`Poll` instance.
+        :class:`Poll` のインスタンス。
     """
 
 

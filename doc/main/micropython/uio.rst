@@ -1,6 +1,6 @@
 .. pybricks-requirements:: stm32-extra
 
-:mod:`uio` -- Input/output streams
+:mod:`uio` -- 入出力ストリーム
 ==================================
 
 .. automodule:: uio
