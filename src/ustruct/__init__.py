@@ -6,20 +6,19 @@
 # Copyright (c) 2014-2021, Damien P. George, Paul Sokolovsky, and contributors
 
 """
-This module provides functions to convert between Python values and C-like
-data structs.
+Pythonの値とC言語風のデータ構造体を相互に変換する関数を提供します。
 """
 
 
 def calcsize(format: str) -> int:
     """
-    Gets the data size corresponding to a format string
+    フォーマット文字列に対応するデータサイズを取得します。
 
     Arguments:
-        format (str): Data format string.
+        format (str): データフォーマット文字列。
 
     Returns:
-        The number of bytes needed to represent this format.
+        このフォーマットを表現するのに必要なバイト数。
     """
 
 
@@ -27,13 +26,13 @@ def pack(format: str, *values) -> bytes:
     """
     pack(format, value1, value2, ...)
 
-    Packs the values using the given format.
+    指定したフォーマットで値をパックします。
 
     Arguments:
-        format (str): Data format string.
+        format (str): データフォーマット文字列。
 
     Returns:
-        The data encoded as bytes.
+        バイト列にエンコードされたデータ。
     """
 
 
@@ -41,13 +40,13 @@ def pack_into(format: str, buffer: bytearray, offset: int, *values) -> bytes:
     """
     pack_into(format, buffer, offset, value1, value2, ...)
 
-    Encode the values using the given format and write them to a given buffer.
+    指定したフォーマットで値をエンコードし、指定したバッファに書き込みます。
 
     Arguments:
-        format (str): Data format string.
-        buffer (bytearray): Buffer to store the encoded data.
-        offset (int): Offset from the start of the buffer. Use a negative value
-            to count from the end of the buffer.
+        format (str): データフォーマット文字列。
+        buffer (bytearray): エンコードしたデータの格納先バッファ。
+        offset (int): バッファ先頭からのオフセット。負の値を指定すると
+            バッファ末尾から数えます。
     """
 
 
@@ -55,14 +54,14 @@ def unpack(format: str, data: bytes | bytearray) -> tuple:
     """
     unpack(format, data) -> tuple
 
-    Decodes the binary data using the given format.
+    指定したフォーマットでバイナリデータをデコードします。
 
     Arguments:
-        format (str): Data format string.
-        data (bytes or bytearray): Data to unpack.
+        format (str): データフォーマット文字列。
+        data (bytes or bytearray): アンパックするデータ。
 
     Returns:
-        The decoded data as a tuple of values.
+        値のタプルとしてデコードされたデータ。
     """
 
 
@@ -70,14 +69,14 @@ def unpack_from(format: str, data: bytes | bytearray, offset: int) -> tuple:
     """
     unpack_from(format, data, offset) -> tuple
 
-    Decodes binary data from a buffer using the given format.
+    指定したフォーマットでバッファ内のバイナリデータをデコードします。
 
     Arguments:
-        format (str): Data format string.
-        data (bytes or bytearray): Data buffer to unpack.
-        offset (int): Offset from the start of the data. Use a negative value
-            to count from the end of the data.
+        format (str): データフォーマット文字列。
+        data (bytes or bytearray): アンパックするデータバッファ。
+        offset (int): データ先頭からのオフセット。負の値を指定すると
+            データ末尾から数えます。
 
     Returns:
-        The decoded data as a tuple of values.
+        値のタプルとしてデコードされたデータ。
     """

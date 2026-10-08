@@ -6,7 +6,7 @@
 # Copyright (c) 2014-2021, Damien P. George, Paul Sokolovsky, and contributors
 
 """
-Convert between Python objects and the JSON data format.
+PythonオブジェクトとJSONデータ形式を相互に変換します。
 """
 
 from typing import IO, Any
@@ -16,13 +16,13 @@ def dump(object: Any, stream: IO, separators: tuple[str, str] = (", ", ": ")):
     """
     dump(object, stream, separators=(", ", ": "))
 
-    Serializes an object to a JSON string and write it to a stream.
+    オブジェクトをJSON文字列にシリアライズし、ストリームに書き込みます。
 
     Arguments:
-        obj: Object to serialize.
-        stream: Stream to write the output to.
-        separators (tuple): An ``(item_separator, key_separator)`` tuple to
-            specify how elements should be separated.
+        obj: シリアライズするオブジェクト。
+        stream: 出力を書き込むストリーム。
+        separators (tuple): 要素の区切り方を指定する
+            ``(item_separator, key_separator)`` タプル。
     """
 
 
@@ -30,15 +30,15 @@ def dumps(object: Any, separators: tuple[str, str] = (", ", ": ")) -> str:
     """
     dumps(object, separators=(", ", ": "))
 
-    Serializes an object to JSON and return it as a string
+    オブジェクトをJSONにシリアライズし、文字列として返します。
 
     Arguments:
-        obj: Object to serialize.
-        separators (tuple): An ``(item_separator, key_separator)`` tuple to
-            specify how elements should be separated.
+        obj: シリアライズするオブジェクト。
+        separators (tuple): 要素の区切り方を指定する
+            ``(item_separator, key_separator)`` タプル。
 
     Return:
-        The JSON string.
+        JSON文字列。
     """
 
 
@@ -46,17 +46,17 @@ def load(stream: IO) -> Any:
     """
     load(stream)
 
-    Parses the stream to interpret and deserialize the JSON data to a
-    MicroPython object.
+    ストリームを解析し、JSONデータをMicroPythonオブジェクトに
+    デシリアライズ（復元）します。
 
-    Parsing continues until end-of-file is encountered. A ``ValueError`` is
-    raised if the data in stream is not correctly formed.
+    ファイル末尾に達するまで解析が続きます。ストリーム内のデータが
+    正しく構成されていない場合は ``ValueError`` が発生します。
 
     Arguments:
-        stream: Stream from which to read the JSON string.
+        stream: JSON文字列の読み込み元ストリーム。
 
     Returns:
-        The deserialized MicroPython object.
+        デシリアライズされたMicroPythonオブジェクト。
     """
 
 
@@ -64,14 +64,14 @@ def loads(string) -> Any:
     """
     loads(string)
 
-    Parses the string to interpret and deserialize the JSON data to a
-    MicroPython object.
+    文字列を解析し、JSONデータをMicroPythonオブジェクトに
+    デシリアライズ（復元）します。
 
-    A ``ValueError`` is raised if the string is not correctly formed.
+    文字列が正しく構成されていない場合は ``ValueError`` が発生します。
 
     Arguments:
-        string (str): JSON string to decode.
+        string (str): デコードするJSON文字列。
 
     Returns:
-        The deserialized MicroPython object.
+        デシリアライズされたMicroPythonオブジェクト。
     """

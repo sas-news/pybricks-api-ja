@@ -1,11 +1,11 @@
-:mod:`uerrno <uerrno>` -- Error codes
+:mod:`uerrno <uerrno>` -- エラーコード
 ============================================================
 
 .. module:: uerrno
 
-The ``errno`` attribute of an :ref:`OSError <OSError>` indicates why this
-exception was raised. This attribute has one of the following values.
-See also :ref:`this example <device_detection>`.
+:ref:`OSError <OSError>` の ``errno`` 属性は、この例外が発生した理由を
+示します。この属性は以下のいずれかの値をとります。
+:ref:`こちらの例 <device_detection>` も参照してください。
 
 .. autodata:: uerrno.EAGAIN
 
