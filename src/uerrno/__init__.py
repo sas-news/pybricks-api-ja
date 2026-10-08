@@ -6,52 +6,52 @@
 # Copyright (c) 2014-2021, Damien P. George, Paul Sokolovsky, and contributors
 
 """
-This module provides access to symbolic error codes for `OSError` exception.
+`OSError` 例外のシンボリックなエラーコードへのアクセスを提供します。
 """
 
 EAGAIN: int
 """
-The operation is not complete and should be tried again soon.
+操作が完了していないため、まもなく再試行する必要があります。
 """
 
 EBUSY: int
 """
-The device or resource is busy and cannot be used right now.
+デバイスまたはリソースがビジー状態のため、現在使用できません。
 """
 
 ECANCELED: int
 """
-The operation was canceled.
+操作がキャンセルされました。
 """
 
 EINVAL: int
 """
-An invalid argument was given. Usually ``ValueError`` is used instead.
+無効な引数が指定されました。通常は代わりに ``ValueError`` が使用されます。
 """
 
 EIO: int
 """
-An unspecified error occurred.
+不明なエラーが発生しました。
 """
 
 ENODEV: int
 """
-Device was not found. For example, a sensor or motor is not plugged in the correct port.
+デバイスが見つかりません。たとえば、センサーやモーターが正しいポートに接続されていない場合です。
 """
 
 EOPNOTSUPP: int
 """
-The operation is not supported on this hub or on the connected device.
+このハブまたは接続されたデバイスでは、この操作はサポートされていません。
 """
 
 EPERM: int
 """
-The operation cannot be performed in the current state.
+現在の状態ではこの操作を実行できません。
 """
 
 ETIMEDOUT: int
 """
-The operation timed out.
+操作がタイムアウトしました。
 """
 
 # TODO: ev3dev has additional constants
@@ -59,5 +59,5 @@ The operation timed out.
 
 errorcode: dict[int, str]
 """
-Dictionary that maps numeric error codes to strings with symbolic error code.
+数値のエラーコードをシンボリックなエラーコードの文字列に対応付ける辞書。
 """

@@ -1,7 +1,7 @@
 .. pybricks-requirements:: stm32-extra
 
-:mod:`micropython` -- MicroPython internals
-===========================================
+:mod:`micropython` -- MicroPythonの内部機能
+============================================================
 
 .. automodule:: micropython
     :no-members:
@@ -23,31 +23,31 @@
 .. autofunction:: micropython.stack_use
 
 
-Examples
+使用例
 ---------------------
 
-Using constants for efficiency
+効率化のための定数の使用
 ******************************
 
 .. literalinclude::
     ../../../examples/micropython/const.py
 
-Checking free RAM
+空きRAMの確認
 ******************************
 
 .. literalinclude::
     ../../../examples/micropython/memuse.py
 
-This prints information in the format shown below. In this example for the
-SPIKE Prime Hub, there are 257696 bytes (251 KB) worth of memory remaining for
-the variables in your code. ::
+これにより、以下に示す形式で情報が出力されます。このSPIKE Primeハブの例では、
+コード内の変数が使用できるメモリとして257696バイト（251 KB）が
+残っています。 ::
 
     stack: 372 out of 40184
     GC: total: 258048, used: 352, free: 257696
     No. of 1-blocks: 4, 2-blocks: 2, max blk sz: 8, max free sz: 16103
 
 
-Getting more memory statistics
+さらに詳しいメモリ統計の取得
 ******************************
 
 .. literalinclude::
