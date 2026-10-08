@@ -1,11 +1,11 @@
 .. pybricks-requirements:: pybricks-iodevices
 
-Generic UART Device
+汎用UARTデバイス
 ^^^^^^^^^^^^^^^^^^^
 
-Powered Up and EV3 support connecting generic UART devices to the hub. The pinout
-is shown below. Note the orientation of the connector. For EV3, the internal
-wire colors match those on the diagram below.
+Powered UpとEV3は、汎用UARTデバイスのハブへの接続をサポートしています。
+ピン配置を以下に示します。コネクターの向きに注意してください。EV3では、
+内部のワイヤーの色は下の図と一致しています。
 
 .. image:: pinout_numbered.jpg
    :width: 50 %
@@ -13,39 +13,39 @@ wire colors match those on the diagram below.
 .. list-table::
    :header-rows: 1
 
-   * - Pin
+   * - ピン
      - Powered Up (UART)
-     - EV3 (UART sensor)
-     - EV3 (I2C sensor)
-   * - 1 (white)
-     - Motor Terminal 1
-     - Optional battery power
-     - Optional battery power
-   * - 2 (black)
-     - Motor Terminal 2
-     - N/A
-     - N/A
-   * - 3 (red)
-     - Ground
-     - Ground
-     - Ground
-   * - 4 (green)
+     - EV3（UARTセンサー）
+     - EV3（I2Cセンサー）
+   * - 1（白）
+     - モーター端子1
+     - オプションのバッテリー電源
+     - オプションのバッテリー電源
+   * - 2（黒）
+     - モーター端子2
+     - なし
+     - なし
+   * - 3（赤）
+     - グランド
+     - グランド
+     - グランド
+   * - 4（緑）
      - VCC (3.3 V)
      - VCC (5 V)
      - VCC (5 V)
-   * - 5 (yellow)
-     - Hub TX (Sensor RX) (3.3 V)
-     - Hub TX (Sensor RX) (3.3 V)
-     - SCL (master) (3.3 V)
-   * - 6 (blue)
-     - Hub RX (Sensor TX) (3.3 V)
-     - Hub RX (Sensor TX) (3.3 V)
-     - SDA (master) (3.3 V)
+   * - 5（黄）
+     - ハブ TX（センサー RX）（3.3 V）
+     - ハブ TX（センサー RX）（3.3 V）
+     - SCL（マスター）（3.3 V）
+   * - 6（青）
+     - ハブ RX（センサー TX）（3.3 V）
+     - ハブ RX（センサー TX）（3.3 V）
+     - SDA（マスター）（3.3 V）
 
 
 .. autoclass:: pybricks.iodevices.UARTDevice
 
-**Example: Read and write to a UART device**
+**例: UARTデバイスへの読み取りと書き込み**
 
 .. literalinclude::
    ../../../examples/ev3/uart_basics/main.py
