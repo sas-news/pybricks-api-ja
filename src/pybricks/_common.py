@@ -1157,7 +1157,7 @@ class IMU:
                 x、y、z回転のスケール調整。リセット後の値は
                 (360, 360, 360) deg/sです。正しい値は
                 `hub.imu.rotation(Axis.X, calibrated=False)` を使い、
-                各各軸について繰り返すことで得られます。
+                各軸について繰り返すことで得られます。
             acceleration_correction (tuple, mm/s²): 製造差異を考慮する
                 ためのx、y、zの両方向における重力の大きさのスケール調整。
                 リセット後の値は
