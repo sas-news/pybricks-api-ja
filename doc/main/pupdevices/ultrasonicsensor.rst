@@ -17,10 +17,10 @@ Ultrasonic Sensor
 
     .. automethod:: pybricks.pupdevices.UltrasonicSensor.presence
 
-    .. rubric:: Built-in lights
+    .. rubric:: 内蔵ライト
 
-    This sensor has 4 built-in lights. You can adjust the brightness of each
-    light.
+    このセンサーには4つの内蔵ライトがあります。それぞれのライトの輝度を
+    調整できます。
 
     .. blockimg:: pybricks_blockLightOn_ultrasonicsensor_on
 
@@ -32,16 +32,16 @@ Ultrasonic Sensor
 
     .. automethod:: pybricks.pupdevices::UltrasonicSensor.lights.off
 
-Examples
+使用例
 -------------------
 
-Measuring distance and switching on the lights
+距離を測定してライトを点灯する
 **********************************************
 
 .. literalinclude::
     ../../../examples/pup/sensor_ultrasonic/basics.py
 
-Gradually change the brightness of the lights
+ライトの輝度を徐々に変化させる
 **********************************************
 
 .. literalinclude::

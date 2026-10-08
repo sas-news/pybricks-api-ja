@@ -1,6 +1,6 @@
 .. pybricks-requirements:: pupdevices
 
-Motors without rotation sensors
+回転センサーなしモーター
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. _fig_pupdcmotors:
@@ -10,8 +10,8 @@ Motors without rotation sensors
    :alt: pupmotors
    :align: center
 
-   Powered Up motors without rotation sensors. The arrows indicate the default
-   positive direction.
+   回転センサーなしの Powered Up モーター。矢印はデフォルトの
+   正方向を示しています。
 
 .. blockimg:: pybricks_variables_set_dc_motor
 
@@ -32,28 +32,28 @@ Motors without rotation sensors
 
     .. automethod:: pybricks.pupdevices.DCMotor.settings
 
-Examples
+使用例
 -------------------
 
-Making a train drive forever
+電車を走らせ続ける
 ************************************
 
 .. literalinclude::
     ../../../examples/pup/motor_dc/motor_dc_battery_box.py
 
-Making the motor move back and forth
+モーターを往復させる
 ************************************
 
 .. literalinclude::
     ../../../examples/pup/motor_dc/motor_dc_init_basic.py
 
-Changing the positive direction
+正方向を変更する
 *******************************
 
 .. literalinclude::
     ../../../examples/pup/motor_dc/motor_dc_init_direction.py
 
-Starting and stopping
+起動と停止
 *********************
 
 .. literalinclude::

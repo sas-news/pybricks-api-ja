@@ -19,16 +19,16 @@ Light
 
     .. automethod:: pybricks.pupdevices.Light.off
 
-Examples
+使用例
 -------------------
 
-Making the light blink
+ライトを点滅させる
 **********************
 
 .. literalinclude::
     ../../../examples/pup/light/basics.py
 
-Gradually change the brightness
+輝度を徐々に変化させる
 *******************************
 
 .. literalinclude::

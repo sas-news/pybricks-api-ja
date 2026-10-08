@@ -27,16 +27,16 @@ Force Sensor
 
     .. automethod:: pybricks.pupdevices.ForceSensor.touched
 
-Examples
+使用例
 -------------------
 
-Measuring force and movement
+力と動きを測定する
 ****************************
 
 .. literalinclude::
     ../../../examples/pup/sensor_force/basics.py
 
-Measuring peak force
+ピークの力を測定する
 ********************
 
 .. literalinclude::
