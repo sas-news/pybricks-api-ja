@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Powered Upデバイス &mdash; pybricks v4.1.0b2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d8a2add5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/requirements.css?v=e2406e8f" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme_overrides.css?v=8b8d8269" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blocks.css?v=ee57a122" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blockimg.css?v=bf50a58c" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7dc5ce0d"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/requirements.js?v=6c6f6a43"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="汎用UARTデバイス" href="uartdevice.html" />
+    <link rel="prev" title="EV3 UARTデバイス" href="lumpdevice.html" />
+    <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pybricks
+              <img src="../_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pybricks modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../hubs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pupdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#id1">ワイヤレスデバイス</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#lego">LEGOプロトコルデバイス</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="lwp3device.html">LEGO Wireless Protocol v3デバイス</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lumpdevice.html">EV3 UARTデバイス</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Powered Upデバイス</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.iodevices.PUPDevice"><code class="docutils literal notranslate"><span class="pre">PUPDevice</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">例</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id2">汎用プロトコル</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – 汎用ツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robotics.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクスとドライブベース</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージの送受信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signaltypes.html">信号と単位</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MicroPython modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/builtins.html">組み込みクラスと関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/exceptions.html">例外とエラー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/micropython.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">micropython</span></code> – MicroPythonの内部機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uerrno.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uerrno</span></code> – エラーコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uio.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uio</span></code> – 入出力ストリーム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/ujson.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ujson</span></code> – JSONのエンコードとデコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/umath.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">umath</span></code> – 数学関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/urandom.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">urandom</span></code> – 擬似乱数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uselect.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uselect</span></code> – イベントの待機</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/ustruct.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ustruct</span></code> – バイナリデータのパックとアンパック</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/usys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usys</span></code> – システム固有の関数</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pybricks</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a></li>
+      <li class="breadcrumb-item active">Powered Upデバイス</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="toggle-header docutils container">
+</div>
+<div class="toggle-content docutils container">
+
+        <div class="wy-table-responsive">
+            <table class="docutils align-default requirements-table">
+                <tbody>
+                    <tr>
+                        
+        <th background="../_images/compat_movehub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_cityhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_technichub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_primehub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_inventorhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_essentialhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_ev3brick.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+<section id="powered-up">
+<h1>Powered Upデバイス<a class="headerlink" href="#powered-up" title="Link to this heading"></a></h1>
+<figure class="align-default">
+<img alt="../_images/iodevice-pupdevice.png" src="../_images/iodevice-pupdevice.png" style="width: 60%;" />
+</figure>
+<dl class="py class">
+<dt class="sig sig-object py" id="pybricks.iodevices.PUPDevice">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">PUPDevice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.PUPDevice" title="Link to this definition"></a></dt>
+<dd><p>Powered Upモーターまたはセンサー。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>port</strong> (<a class="reference internal" href="../parameters/port.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – デバイスが接続されているポート。</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.iodevices.PUPDevice.info">
+<span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.dict" title="ubuiltins.dict"><span class="pre">dict</span></a></span></span><a class="headerlink" href="#pybricks.iodevices.PUPDevice.info" title="Link to this definition"></a></dt>
+<dd><p>デバイスに関する情報を取得します。</p>
+<p>DCモーターやライトなどのパッシブデバイスの場合は、 <code class="docutils literal notranslate"><span class="pre">id</span></code> キーのみを
+持つ辞書を返します。</p>
+<p>UARTデバイスの場合は、 <code class="docutils literal notranslate"><span class="pre">id</span></code> キーと <code class="docutils literal notranslate"><span class="pre">modes</span></code> キーを持つ辞書を
+返します。 <code class="docutils literal notranslate"><span class="pre">modes</span></code> の値はモードごとに1つのタプルを持つタプルの
+タプルで、それぞれにモード名、値の個数、データ型が含まれます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>デバイス情報を格納した辞書。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.iodevices.PUPDevice.read">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.tuple" title="ubuiltins.tuple"><span class="pre">tuple</span></a></span></span><a class="headerlink" href="#pybricks.iodevices.PUPDevice.read" title="Link to this definition"></a></dt>
+<dd><p>指定したモードから値を読み取ります。</p>
+<p>パッシブタッチセンサーの場合は、 <code class="docutils literal notranslate"><span class="pre">mode</span></code> 引数に関わらず、センサーが
+押されているかどうかを示す単一の真偽値を返します。</p>
+<p>DCモーターやライトなど、読み取りをサポートしない他のパッシブ
+デバイスではエラーが発生します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mode</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – デバイスのモード。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>デバイスから読み取った値。</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – 読み取りをサポートしないパッシブデバイス
+    （DCモーターやライトなど）の場合。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.iodevices.PUPDevice.write">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.PUPDevice.write" title="Link to this definition"></a></dt>
+<dd><p>デバイスに値を書き込みます。一部のUARTデバイスとモードのみが
+これをサポートします。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mode</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – デバイスのモード。</p></li>
+<li><p><strong>data</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.tuple" title="ubuiltins.tuple"><em>tuple</em></a>) – 書き込む値。値の個数と型は、指定したモードで
+デバイスが期待するものと一致しなければなりません。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – 書き込みをサポートしないパッシブデバイスの場合。</p></li>
+<li><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.ValueError" title="ubuiltins.ValueError"><strong>ValueError</strong></a> – モードが無効、モードが書き込み不可、値の個数が
+    一致しない、または値がデータ型の範囲外の場合。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.iodevices.PUPDevice.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.PUPDevice.reset" title="Link to this definition"></a></dt>
+<dd><p>UARTデバイスをリセットします。その後、デバイスは自動的に同期し、
+数秒後に使用可能になります。この種のセンサーが接続時に行う処理を
+強制的に再実行させたい場合に便利です。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – リセットをサポートしないパッシブデバイスの場合。</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<section id="id1">
+<h2>例<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<section id="id2">
+<h3>デバイスの検出<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.iodevices</span><span class="w"> </span><span class="kn">import</span> <span class="n">PUPDevice</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Port</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">uerrno</span><span class="w"> </span><span class="kn">import</span> <span class="n">ENODEV</span>
+
+<span class="c1"># Dictionary of device identifiers along with their name.</span>
+<span class="n">device_names</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># pybricks.pupdevices.DCMotor</span>
+    <span class="mi">1</span><span class="p">:</span> <span class="s2">"Wedo 2.0 Medium Motor"</span><span class="p">,</span>
+    <span class="mi">2</span><span class="p">:</span> <span class="s2">"Powered Up Train Motor"</span><span class="p">,</span>
+    <span class="c1"># pybricks.pupdevices.Light</span>
+    <span class="mi">8</span><span class="p">:</span> <span class="s2">"Powered Up Light"</span><span class="p">,</span>
+    <span class="c1"># pybricks.pupdevices.Motor</span>
+    <span class="mi">38</span><span class="p">:</span> <span class="s2">"BOOST Interactive Motor"</span><span class="p">,</span>
+    <span class="mi">46</span><span class="p">:</span> <span class="s2">"Technic Large Motor"</span><span class="p">,</span>
+    <span class="mi">47</span><span class="p">:</span> <span class="s2">"Technic Extra Large Motor"</span><span class="p">,</span>
+    <span class="mi">48</span><span class="p">:</span> <span class="s2">"SPIKE Medium Angular Motor"</span><span class="p">,</span>
+    <span class="mi">49</span><span class="p">:</span> <span class="s2">"SPIKE Large Angular Motor"</span><span class="p">,</span>
+    <span class="mi">65</span><span class="p">:</span> <span class="s2">"SPIKE Small Angular Motor"</span><span class="p">,</span>
+    <span class="mi">75</span><span class="p">:</span> <span class="s2">"Technic Medium Angular Motor"</span><span class="p">,</span>
+    <span class="mi">76</span><span class="p">:</span> <span class="s2">"Technic Large Angular Motor"</span><span class="p">,</span>
+    <span class="c1"># pybricks.pupdevices.TiltSensor</span>
+    <span class="mi">34</span><span class="p">:</span> <span class="s2">"Wedo 2.0 Tilt Sensor"</span><span class="p">,</span>
+    <span class="c1"># pybricks.pupdevices.InfraredSensor</span>
+    <span class="mi">35</span><span class="p">:</span> <span class="s2">"Wedo 2.0 Infrared Motion Sensor"</span><span class="p">,</span>
+    <span class="c1"># pybricks.pupdevices.ColorDistanceSensor</span>
+    <span class="mi">37</span><span class="p">:</span> <span class="s2">"BOOST Color Distance Sensor"</span><span class="p">,</span>
+    <span class="c1"># pybricks.pupdevices.ColorSensor</span>
+    <span class="mi">61</span><span class="p">:</span> <span class="s2">"SPIKE Color Sensor"</span><span class="p">,</span>
+    <span class="c1"># pybricks.pupdevices.UltrasonicSensor</span>
+    <span class="mi">62</span><span class="p">:</span> <span class="s2">"SPIKE Ultrasonic Sensor"</span><span class="p">,</span>
+    <span class="c1"># pybricks.pupdevices.ForceSensor</span>
+    <span class="mi">63</span><span class="p">:</span> <span class="s2">"SPIKE Force Sensor"</span><span class="p">,</span>
+    <span class="c1"># pybricks.pupdevices.ColorLightMatrix</span>
+    <span class="mi">64</span><span class="p">:</span> <span class="s2">"SPIKE 3x3 Color Light Matrix"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># Make a list of known ports.</span>
+<span class="n">ports</span> <span class="o">=</span> <span class="p">[</span><span class="n">Port</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">Port</span><span class="o">.</span><span class="n">B</span><span class="p">]</span>
+
+<span class="c1"># On hubs that support it, add more ports.</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">ports</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">C</span><span class="p">)</span>
+    <span class="n">ports</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">D</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="c1"># On hubs that support it, add more ports.</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">ports</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">E</span><span class="p">)</span>
+    <span class="n">ports</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">F</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="c1"># Go through all available ports.</span>
+<span class="k">for</span> <span class="n">port</span> <span class="ow">in</span> <span class="n">ports</span><span class="p">:</span>
+    <span class="c1"># Try to get the device, if it is attached.</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="n">PUPDevice</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">ex</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">ENODEV</span><span class="p">:</span>
+            <span class="c1"># No device found on this port.</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="s2">": ---"</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span>
+
+    <span class="c1"># Get the device id</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">info</span><span class="p">()[</span><span class="s2">"id"</span><span class="p">]</span>
+
+    <span class="c1"># Look up the name.</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="s2">":"</span><span class="p">,</span> <span class="n">device_names</span><span class="p">[</span><span class="nb">id</span><span class="p">])</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="s2">":"</span><span class="p">,</span> <span class="s2">"Unknown device with ID"</span><span class="p">,</span> <span class="nb">id</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2026 The Pybricks Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

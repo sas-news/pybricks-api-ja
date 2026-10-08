@@ -1,0 +1,688 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EV3 Brick &mdash; pybricks v4.1.0b2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d8a2add5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/requirements.css?v=e2406e8f" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme_overrides.css?v=8b8d8269" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blocks.css?v=ee57a122" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blockimg.css?v=bf50a58c" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7dc5ce0d"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/requirements.js?v=6c6f6a43"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pupdevices – モーター、センサー、ライト" href="../pupdevices/index.html" />
+    <link rel="prev" title="Essential Hub" href="essentialhub.html" />
+    <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pybricks
+              <img src="../_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pybricks modules</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="movehub.html">Move Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cityhub.html">City Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="technichub.html">Technic Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="primehub.html">Prime Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="essentialhub.html">Essential Hub</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">EV3 Brick</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pybricks.hubs.EV3Brick"><code class="docutils literal notranslate"><span class="pre">EV3Brick</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.buttons.pressed"><code class="docutils literal notranslate"><span class="pre">EV3Brick.buttons.pressed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.light.on"><code class="docutils literal notranslate"><span class="pre">EV3Brick.light.on()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.light.off"><code class="docutils literal notranslate"><span class="pre">EV3Brick.light.off()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.light.blink"><code class="docutils literal notranslate"><span class="pre">EV3Brick.light.blink()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.light.animate"><code class="docutils literal notranslate"><span class="pre">EV3Brick.light.animate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.speaker.volume"><code class="docutils literal notranslate"><span class="pre">EV3Brick.speaker.volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.speaker.beep"><code class="docutils literal notranslate"><span class="pre">EV3Brick.speaker.beep()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.speaker.play_notes"><code class="docutils literal notranslate"><span class="pre">EV3Brick.speaker.play_notes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.screen.clear"><code class="docutils literal notranslate"><span class="pre">EV3Brick.screen.clear()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.screen.load_image"><code class="docutils literal notranslate"><span class="pre">EV3Brick.screen.load_image()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.screen.draw_pixel"><code class="docutils literal notranslate"><span class="pre">EV3Brick.screen.draw_pixel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.screen.draw_line"><code class="docutils literal notranslate"><span class="pre">EV3Brick.screen.draw_line()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.screen.draw_box"><code class="docutils literal notranslate"><span class="pre">EV3Brick.screen.draw_box()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.screen.draw_circle"><code class="docutils literal notranslate"><span class="pre">EV3Brick.screen.draw_circle()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.screen.width"><code class="docutils literal notranslate"><span class="pre">EV3Brick.screen.width</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.screen.height"><code class="docutils literal notranslate"><span class="pre">EV3Brick.screen.height</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.battery.voltage"><code class="docutils literal notranslate"><span class="pre">EV3Brick.battery.voltage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.battery.current"><code class="docutils literal notranslate"><span class="pre">EV3Brick.battery.current()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.system.info"><code class="docutils literal notranslate"><span class="pre">EV3Brick.system.info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.system.set_stop_button"><code class="docutils literal notranslate"><span class="pre">EV3Brick.system.set_stop_button()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.system.storage"><code class="docutils literal notranslate"><span class="pre">EV3Brick.system.storage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.system.reset_storage"><code class="docutils literal notranslate"><span class="pre">EV3Brick.system.reset_storage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.EV3Brick.system.shutdown"><code class="docutils literal notranslate"><span class="pre">EV3Brick.system.shutdown()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#status-light-examples">Status light examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#turn-the-light-on-and-change-the-color">Turn the light on and change the color</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#screen-examples">Screen examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#drawing-shapes-on-the-screen">Drawing shapes on the screen</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pupdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iodevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – 汎用ツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robotics.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクスとドライブベース</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージの送受信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signaltypes.html">信号と単位</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MicroPython modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/builtins.html">組み込みクラスと関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/exceptions.html">例外とエラー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/micropython.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">micropython</span></code> – MicroPythonの内部機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uerrno.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uerrno</span></code> – エラーコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uio.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uio</span></code> – 入出力ストリーム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/ujson.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ujson</span></code> – JSONのエンコードとデコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/umath.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">umath</span></code> – 数学関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/urandom.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">urandom</span></code> – 擬似乱数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uselect.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uselect</span></code> – イベントの待機</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/ustruct.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ustruct</span></code> – バイナリデータのパックとアンパック</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/usys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usys</span></code> – システム固有の関数</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pybricks</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a></li>
+      <li class="breadcrumb-item active">EV3 Brick</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ev3-brick">
+<h1>EV3 Brick<a class="headerlink" href="#ev3-brick" title="Link to this heading"></a></h1>
+<figure class="align-default">
+<img alt="../_images/ev3device-ev3.png" src="../_images/ev3device-ev3.png" style="width: 50%;" />
+</figure>
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 107.4953 52" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="107.4953" height="52" style="background-color: transparent"><g transform="translate(1, 5)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#3971bf" fill="#4c97ff" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  l 0,-4  10,0  0,4  10,0  0,-4  10,0  0,4  h 62.4953 a 4 4 0 0,1 4,4  v 6  V 38  V 40  V 40 a 4 4 0 0,1 -4,4  h -62.4953  l 0,-4  -10,0  0,4  -10,0  0,-4  -10,0  0,4  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(8,6.5)"><image height="30px" width="28.8px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8Zz4KPHJlY3QgeD0iNC41MzM5IiB5PSI2LjQwMzEiIHdpZHRoPSIxNS4yODQiIGhlaWdodD0iMTguNTIzIiByeD0iLjQwMTIiIHJ5PSIuMjgzNzMiIGZpbGw9IiM5ZTllOWUiIHN0cm9rZT0iIzFiMjkzMyIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgc3Ryb2tlLXdpZHRoPSIuMTY3Ii8+CjxwYXRoIGQ9Im0zLjk4ODkgMy42MTFjLTAuMjIxODYgMC0wLjQwMDk4IDAuMTc5MTEtMC40MDA5OCAwLjQwMDk3djE2LjEzNWMwIDAuMjIxODYgMC4xNzkxMiAwLjQwMDk3IDAuNDAwOTggMC40MDA5N2gwLjUwMTczdjAuNjcyMzljMCAwLjIyMTg2IDAuMTc3MDYgMC40MDA5NyAwLjM5ODkyIDAuNDAwOTdoMTQuNTczYzAuMjIxODYgMCAwLjM5ODkxLTAuMTc5MTEgMC4zOTg5MS0wLjQwMDk3di0wLjY3MjM5aDAuNTAzOGMwLjIyMTg2IDAgMC4zOTg5MS0wLjE3OTExIDAuMzk4OTEtMC40MDA5N3YtMTYuMTM1YzAtMC4yMjE4Ni0wLjE3NzA1LTAuNDAwOTctMC4zOTg5MS0wLjQwMDk3eiIgZmlsbD0iI2Y0ZjRmNCIgc3Ryb2tlPSIjMWIyOTMzIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2Utd2lkdGg9Ii4xNjciLz4KPHJlY3QgeD0iNC41NDc3IiB5PSIuMDg3OTEyIiB3aWR0aD0iMTUuMjU3IiBoZWlnaHQ9IjExLjAzOSIgcng9Ii40MDA0NyIgcnk9Ii40MDA0NiIgZmlsbD0iIzllOWU5ZSIgc3Ryb2tlPSIjMWIyOTMzIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2Utd2lkdGg9Ii4xNjciLz4KPHJlY3QgeD0iNi41ODAyIiB5PSIxLjczNzIiIHdpZHRoPSIxMS4xOTEiIGhlaWdodD0iNy41ODI5IiByeD0iLjQwMDQ3IiByeT0iLjQwMDQ2IiBmaWxsPSIjZTJmMWUxIiBzdHJva2U9IiMxYjI5MzMiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIHN0cm9rZS13aWR0aD0iLjE2NyIvPgo8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLjA1MjggMCAwIDEuMDUyOCAyODIuMjMgMTAzLjk2KSI+CjxwYXRoIGQ9Im0tMjYwLjM4LTk0Ljg1N3YyLjAxOTFsMC4xMjYyMyAwLjEyNjNoMi4wNzc1bDAuMDc1NC0wLjA3NTM1di0wLjM2MDQybC0wLjA4NDQtMC4wODQ0MmgtMS41NDU4bC0wLjA0NjgtMC4wNDY4MnYtMC4yNzUwOGwwLjAzODMtMC4wMzgyNWgxLjU1MjZsMC4wODYyLTAuMDg2MDd2LTAuMzQ3NDRsLTAuMDc1LTAuMDc0OTRoLTEuNTU0NWwtMC4wNTQ4LTAuMDU0ODF2LTAuMjYwMWwwLjA1MDMtMC4wNTAyN2gxLjU1OTJsMC4wNzgyLTAuMDc4MTl2LTAuMzU4MzRsLTAuMDg5Mi0wLjA4OTJoLTIuMDU4NHoiLz4KPHBhdGggZD0ibS0yNTcuODctOTQuODM0IDEuMDE4OCAyLjEyMTFoMC42NjE0MmwxLjAxNzYtMi4xMTc4LTAuMDkzNS0wLjE2MjAxaC0wLjQ3ODcxbC0wLjEwMzEgMC4xMDMwOS0wLjU5NzAxIDEuMjk1aC0wLjE0NzU1bC0wLjYwMTA0LTEuMzAxLTAuMDk2Ny0wLjA5NjgxaC0wLjQ4MDE1eiIvPgo8cGF0aCBkPSJtLTI1NC45Mi05NC45MTJ2MC41NzIyN2wwLjA4MTIgMC4wODExOGgwLjQxOTk5bDAuMDgwNy0wLjA4MDYydi0wLjA3NzYybDAuMDQ3Ny0wLjA0NzY1aDEuMDA1NGwwLjA0OTUgMC4wNDk1OHYwLjI2NzY4bC0wLjA0MyAwLjA0MjkxaC0wLjYyMzYxbC0wLjA5MTMgMC4wOTExN3YwLjMzNzQxbDAuMDc5NyAwLjA3OTU1aDAuNjI2MzJsMC4wNTA1IDAuMDUwNTR2MC4yNjI3NmwtMC4wNDc5IDAuMDQ3OTNoLTEuMDA2NmwtMC4wNDY2LTAuMDQ2NjV2LTAuMDgzMTRsLTAuMDc0LTAuMDczOTVoLTAuNDIzMDhsLTAuMDgyOSAwLjA4Mjg2djAuNTY2NTdsMC4wODIzIDAuMDgyMmgyLjA2MmwwLjEzODc2LTAuMTM4ODJ2LTIuMDAzM2wtMC4xNDM2NS0wLjE0MzU3aC0yLjA1M3oiLz4KPC9nPgo8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLjA1MjggMCAwIDEuMDUyOCAyODIuNTUgMTAzLjk2KSIgc3Ryb2tlPSIjMDBiYzQyIiBzdHJva2Utd2lkdGg9Ii4yIj4KPHBhdGggZD0ibS0yNTkuMTctODUuNDM2IDAuNTc1NzYgMC41NzU3NXYxLjA1MDFoMC41MjU4MnYtMS4wMjVoMi41MzF2MS4wNzYyczAuNTMxMDUgMC4wMTM1IDAuNTMxMDUtMC4wMTcwNnYtMS4wNzQxbDAuNTgxMi0wLjU4MTItMS40ODE0LTEuNDgxNGgtMS43OTgyeiIgZmlsbD0iI2EwYTBhMCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJtLTI2MC40Ny04NC41MjhjLTAuNTIwMjYgMC0wLjkzODg5IDAuNDE4OTktMC45Mzg4OSAwLjkzOTI0IDAgMC41MjAyNiAwLjQxODYzIDAuOTM5MjQgMC45Mzg4OSAwLjkzOTI0IDAuMDI2OCAwIDAuMDUzMy0wLjAwMTggMC4wNzk0LTAuMDAzNiA4ZS0zIDAuMDAxOCAwLjAxNjEgMC4wMDM2IDAuMDI0NyAwLjAwMzZoMS4zMzg0YzAuMDU0MSAwIDAuMDk3Ny0wLjA0MzYyIDAuMDk3Ny0wLjA5Nzcxdi0xLjY4MzFjMC0wLjA1NDExLTAuMDQzNi0wLjA5NzcyLTAuMDk3Ny0wLjA5NzcyaC0xLjMzODRjLTllLTMgMC0wLjAxNjggMC4wMDE4LTAuMDI0NyAwLjAwMzYtMC4wMjYyLTAuMDAxOC0wLjA1MjctMC4wMDM2LTAuMDc5NC0wLjAwMzZ6IiBmaWxsPSIjYTBhMGEwIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0ibS0yNTMuMTYtODQuNTI4YzAuNTIwMjUgMCAwLjkzODg5IDAuNDE4OTkgMC45Mzg4OSAwLjkzOTI0IDAgMC41MjAyNi0wLjQxODY0IDAuOTM5MjQtMC45Mzg4OSAwLjkzOTI0LTAuMDI2NyAwLTAuMDUzMy0wLjAwMTgtMC4wNzk0LTAuMDAzNi04ZS0zIDAuMDAxOC0wLjAxNjEgMC4wMDM2LTAuMDI0NyAwLjAwMzZoLTEuMzM4M2MtMC4wNTQxIDAtMC4wOTc3LTAuMDQzNjItMC4wOTc3LTAuMDk3NzF2LTEuNjgzMWMwLTAuMDU0MTEgMC4wNDM2LTAuMDk3NzIgMC4wOTc3LTAuMDk3NzJoMS4zMzgzYzllLTMgMCAwLjAxNjggMC4wMDE4IDAuMDI0NyAwLjAwMzYgMC4wMjYyLTAuMDAxOCAwLjA1MjctMC4wMDM2IDAuMDc5NC0wLjAwMzZ6IiBmaWxsPSIjYTBhMGEwIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHJlY3QgeD0iLTI1Ny43MiIgeT0iLTg0LjUxMiIgd2lkdGg9IjEuODUxIiBoZWlnaHQ9IjEuODUxIiByeD0iLjA5NzY3NyIgcnk9Ii4wOTc2NzciIGZpbGw9IiMzYTNhM2EiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJtLTI1OS4xNy04MS43OCAwLjU3NTc2LTAuNTc1NzZ2LTEuMDUwMWgwLjUyNTgydjEuMDI1aDIuNTMxdi0xLjA3NjJzMC41MzEwNS0wLjAxMzUgMC41MzEwNSAwLjAxNzA2djEuMDc0MWwwLjU4MTIgMC41ODEyLTEuNDgxNCAxLjQ4MTRoLTEuNzk4MnoiIGZpbGw9IiNhMGEwYTAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9nPgo8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLjA1MjggMCAwIDEuMDUyOCAyODIuNDMgMTAzLjk2KSI+CjxnIGZpbGw9IiNmZmYiPgo8cGF0aCBkPSJtLTI2My4yNS03Ny4xNjV2MC45ODU2MWwwLjA2MTcgMC4wNjE2NWgxLjAxNDFsMC4wMzY4LTAuMDM2Nzh2LTAuMTc1OTRsLTAuMDQxMi0wLjA0MTJoLTAuNzU0NTZsLTAuMDIyOC0wLjAyMjg1di0wLjEzNDI4bDAuMDE4Ny0wLjAxODY3aDAuNzU3ODZsMC4wNDItMC4wNDIwMnYtMC4xNjk2bC0wLjAzNjYtMC4wMzY1OGgtMC43NTg4MmwtMC4wMjY3LTAuMDI2NzV2LTAuMTI2OTZsMC4wMjQ1LTAuMDI0NTRoMC43NjExbDAuMDM4Mi0wLjAzODE4di0wLjE3NDkzbC0wLjA0MzUtMC4wNDM1NGgtMS4wMDQ4eiIvPgo8cGF0aCBkPSJtLTI2Mi4wMy03Ny4xNTQgMC40OTczNCAxLjAzNTRoMC4zMjI4OGwwLjQ5NjczLTEuMDMzOC0wLjA0NTctMC4wNzkwOGgtMC4yMzM2OWwtMC4wNTAzIDAuMDUwMzItMC4yOTE0NCAwLjYzMjE3aC0wLjA3MjFsLTAuMjkzNDItMC42MzUwOC0wLjA0NzMtMC4wNDcyNmgtMC4yMzQzN3oiLz4KPHBhdGggZD0ibS0yNjAuNTktNzcuMTkydjAuMjc5MzVsMC4wMzk2IDAuMDM5NjNoMC4yMDUwMmwwLjAzOTQtMC4wMzkzNXYtMC4wMzc4OWwwLjAyMzMtMC4wMjMyN2gwLjQ5MDhsMC4wMjQyIDAuMDI0MnYwLjEzMDY3bC0wLjAyMSAwLjAyMDk1aC0wLjMwNDQybC0wLjA0NDUgMC4wNDQ1djAuMTY0NzFsMC4wMzg4IDAuMDM4ODRoMC4zMDU3NGwwLjAyNDcgMC4wMjQ2N3YwLjEyODI2bC0wLjAyMzQgMC4wMjMzOWgtMC40OTEzOWwtMC4wMjI4LTAuMDIyNzd2LTAuMDQwNThsLTAuMDM2MS0wLjAzNjFoLTAuMjA2NTNsLTAuMDQwNCAwLjA0MDQ0djAuMjc2NTdsMC4wNDAyIDAuMDQwMTNoMS4wMDY2bDAuMDY3OC0wLjA2Nzc2di0wLjk3Nzg5bC0wLjA3MDEtMC4wNzAwOGgtMS4wMDIyeiIvPgo8L2c+CjxyZWN0IHg9Ii0yNTEuODYiIHk9Ii03Ny41MzciIHdpZHRoPSIxLjcyOTQiIGhlaWdodD0iMS43MTkiIGZpbGw9IiNiNDAwMDAiIHN0b3AtY29sb3I9IiMwMDAwMDAiLz4KPHBhdGggZD0ibS0yNjIuOC04OC4xMWMtNWUtMyAwLTAuMDEgNS41MWUtNCAtMC4wMTUgNy4zOGUtNGgtMC4zNDY0OXYxLjM1MDljMCAwLjIwMDk2IDAuMTYxMzMgMC4zNjI2IDAuMzYxNTIgMC4zNjI2aDIuMzE1MmwwLjg0MTE2LTAuODQxMTd2LTAuODcyMzFoLTEuOTM0N2MtNWUtMyAtMS44N2UtNCAtMC4wMS03LjM4ZS00IC0wLjAxNDctNy4zOGUtNHoiIGZpbGw9IiNhMGEwYTAiIHN0b3AtY29sb3I9IiMwMDAwMDAiLz4KPC9nPgo8L2c+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(44.8,6.5)"><image height="30px" width="2px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0wLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g class="blocklyEditableText" transform="translate(54.8,7.4)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="42.6953" class="blocklyFieldRect" stroke="#3971bf" style="display: block; fill: rgb(65, 128, 217);"/><text class="blocklyText" dominant-baseline="central" style="fill: rgb(255, 255, 255);" x="8" y="14.6">ev3</text></g></g></g></svg></div><dl class="py class">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">EV3Brick</span></span><a class="headerlink" href="#pybricks.hubs.EV3Brick" title="Link to this definition"></a></dt>
+<dd><p>LEGO® MINDSTORMS® EV3ブリック。</p>
+<p class="rubric">Using the buttons</p>
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 327.875 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="327.875" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 20,0  h 285.875 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -285.875 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(56, 4)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 38.6953 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -38.6953 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">ev3</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(34.6953,3)"/></g></g><g transform="translate(134.6953, 4)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 60.0234 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -60.0234 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">center</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(56.0234,3)"/></g></g><g transform="translate(12,7)"><image height="25px" width="25px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8cmVjdCB4PSIxIiB5PSIyMC43NjkiIHdpZHRoPSIyMyIgaGVpZ2h0PSI0LjIzMDYiIHJ4PSIuMDE2NTY2IiByeT0iLjAxMTAxNiIgZmlsbD0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjI1LjU0NiIvPgo8cmVjdCB4PSI0LjczMDEiIHk9IjE3IiB3aWR0aD0iMTUuNTQiIGhlaWdodD0iNS44NzYzIiByeD0iLjAxMTE5MiIgcnk9Ii4wMTUzMDEiIGZpbGw9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyNC43NDciLz4KPGcgdHJhbnNmb3JtPSJtYXRyaXgoMS4yNTE3IDAgMCAxLjI1MTcgLTMuMDIyNCAtLjY4NTAyKSIgZmlsbD0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KPHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDExLjUzMiA2LjI1MzgpIiBkPSJtMTMuOTE5IDYuNjMzaC03LjUzNzRsMy43Njg3LTYuNTI3NnoiIHN0cm9rZS13aWR0aD0iMjciLz4KPHJlY3QgdHJhbnNmb3JtPSJyb3RhdGUoOTApIiB4PSIuNzc0MzciIHk9Ii0xMy45MTIiIHdpZHRoPSI4LjIxNCIgaGVpZ2h0PSIxLjk5NDgiIHJ4PSIuMDA1OTE2MSIgcnk9Ii4wMDUxOTQyIiBzdHJva2Utd2lkdGg9IjEwLjQ4MyIvPgo8L2c+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(45,4.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(234.71875,11)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">is pressed</text></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.buttons.pressed">
+<span class="sig-prename descclassname"><span class="pre">buttons.</span></span><span class="sig-name descname"><span class="pre">pressed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.set" title="ubuiltins.set"><span class="pre">set</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../parameters/button.html#pybricks.parameters.Button" title="pybricks.parameters.Button"><span class="pre">Button</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pybricks.hubs.EV3Brick.buttons.pressed" title="Link to this definition"></a></dt>
+<dd><p>現在どのボタンが押されているか取得します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>押されたボタンのセット。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Using the brick status light</p>
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352.5729 52" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="352.5729" height="52" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#3971bf" fill="#4c97ff" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  c 1.6667,0  2.5,0.75  3.3333,1.5  l 3.3333,3  c 0.8333,0.75  1.6667,1.5  3.3333,1.5  h 10  c 1.6667,0  2.5,-0.75  3.3333,-1.5  l 3.3333,-3  c 0.8333,-0.75  1.6667,-1.5  3.3333,-1.5  h 307.5729 a 4 4 0 0,1 4,4  v 6  V 38  V 40  V 40 a 4 4 0 0,1 -4,4  h -307.5729  c -1.6667,0  -2.5,0.75  -3.3333,1.5  l -3.3333,3  c -0.8333,0.75  -1.6667,1.5  -3.3333,1.5  h -10  c -1.6667,0  -2.5,-0.75  -3.3333,-1.5  l -3.3333,-3  c -0.8333,-0.75  -1.6667,-1.5  -3.3333,-1.5  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(239.0078, 6)" style="display: block;"><path class="blocklyPath" stroke="#3971bf" fill="#4180d9" d=" m 16,0  h 71.5651 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -71.5651 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,5.3333)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="21.3333" width="26.6667" class="blocklyFieldRect" style="fill-opacity: 1; fill: rgb(255, 0, 0); stroke: rgb(69, 133, 161);"/></g><g class="blocklyEditableText" transform="translate(46.6667,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">red</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(32.8984,3)"/></g></g><g transform="translate(55, 6)" style="display: block;"><path class="blocklyPath" stroke="#3971bf" fill="#4180d9" d=" m 16,0  h 38.6953 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -38.6953 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">ev3</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(34.6953,3)"/></g></g><g transform="translate(8,6.5)"><image height="30px" width="28px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzLCA1KSI+CiAgICA8Zz4KPGNpcmNsZSBjeD0iMTcuNSIgY3k9IjE3LjUiIHI9IjcuNSIgZmlsbD0iIzFmZjUwMCIgc3R5bGU9Ii13ZWJraXQtZm9udC1zbW9vdGhpbmc6YW50aWFsaWFzZWQiLz4KPGNpcmNsZSBjeD0iNy41IiBjeT0iMTcuNSIgcj0iNy41IiBmaWxsPSIjZjUyOTAwIiBzdHlsZT0iLXdlYmtpdC1mb250LXNtb290aGluZzphbnRpYWxpYXNlZCIvPgo8Y2lyY2xlIGN4PSIxMi41IiBjeT0iNy41IiByPSI3LjUiIGZpbGw9IiMwMDUwZjUiIHN0eWxlPSItd2Via2l0LWZvbnQtc21vb3RoaW5nOmFudGlhbGlhc2VkIi8+CjwvZz4KICA8L2c+Cjwvc3ZnPg=="/></g><g transform="translate(44,6.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(133.6953,13)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">light</text></g><g class="blocklyEditableText" transform="translate(175.4609,7.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="55.5469" class="blocklyFieldRect blocklyDropdownRect" stroke="#3971bf" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">on</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(35.5469,8.6)"/></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.light.on">
+<span class="sig-prename descclassname"><span class="pre">light.</span></span><span class="sig-name descname"><span class="pre">on</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.EV3Brick.light.on" title="Link to this definition"></a></dt>
+<dd><p>指定した色でライトを点灯します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>color</strong> (<a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – ライトの色</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 241.8906 52" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="241.8906" height="52" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#3971bf" fill="#4c97ff" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  c 1.6667,0  2.5,0.75  3.3333,1.5  l 3.3333,3  c 0.8333,0.75  1.6667,1.5  3.3333,1.5  h 10  c 1.6667,0  2.5,-0.75  3.3333,-1.5  l 3.3333,-3  c 0.8333,-0.75  1.6667,-1.5  3.3333,-1.5  h 196.8906 a 4 4 0 0,1 4,4  v 6  V 38  V 40  V 40 a 4 4 0 0,1 -4,4  h -196.8906  c -1.6667,0  -2.5,0.75  -3.3333,1.5  l -3.3333,3  c -0.8333,0.75  -1.6667,1.5  -3.3333,1.5  h -10  c -1.6667,0  -2.5,-0.75  -3.3333,-1.5  l -3.3333,-3  c -0.8333,-0.75  -1.6667,-1.5  -3.3333,-1.5  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(55, 6)" style="display: block;"><path class="blocklyPath" stroke="#3971bf" fill="#4180d9" d=" m 16,0  h 38.6953 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -38.6953 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">ev3</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(34.6953,3)"/></g></g><g transform="translate(8,6.5)"><image height="30px" width="28px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzLCA1KSI+CiAgICA8Zz4KPGNpcmNsZSBjeD0iMTcuNSIgY3k9IjE3LjUiIHI9IjcuNSIgZmlsbD0iIzFmZjUwMCIgc3R5bGU9Ii13ZWJraXQtZm9udC1zbW9vdGhpbmc6YW50aWFsaWFzZWQiLz4KPGNpcmNsZSBjeD0iNy41IiBjeT0iMTcuNSIgcj0iNy41IiBmaWxsPSIjZjUyOTAwIiBzdHlsZT0iLXdlYmtpdC1mb250LXNtb290aGluZzphbnRpYWxpYXNlZCIvPgo8Y2lyY2xlIGN4PSIxMi41IiBjeT0iNy41IiByPSI3LjUiIGZpbGw9IiMwMDUwZjUiIHN0eWxlPSItd2Via2l0LWZvbnQtc21vb3RoaW5nOmFudGlhbGlhc2VkIi8+CjwvZz4KICA8L2c+Cjwvc3ZnPg=="/></g><g transform="translate(44,6.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(133.6953,13)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">light</text></g><g class="blocklyEditableText" transform="translate(175.4609,7.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="56.4297" class="blocklyFieldRect blocklyDropdownRect" stroke="#3971bf" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">off</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(36.4297,8.6)"/></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.light.off">
+<span class="sig-prename descclassname"><span class="pre">light.</span></span><span class="sig-name descname"><span class="pre">off</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.EV3Brick.light.off" title="Link to this definition"></a></dt>
+<dd><p>ライトを消します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.light.blink">
+<span class="sig-prename descclassname"><span class="pre">light.</span></span><span class="sig-name descname"><span class="pre">blink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">durations</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.EV3Brick.light.blink" title="Link to this definition"></a></dt>
+<dd><p>ライトを一定時間、指定した色で点滅させます。</p>
+<p>ライトはプログラム実行中、バックグラウンドでずっと点滅し続けます。</p>
+<p>このメソッドでは、簡単で便利な点滅パターンを作成できます。
+より複雑なパターンを作成するには、代わりに <code class="docutils literal notranslate"><span class="pre">animate()</span></code> を使用してください。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>color</strong> (<a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – ライトの色</p></li>
+<li><p><strong>durations</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.list" title="ubuiltins.list"><em>list</em></a>) – <code class="docutils literal notranslate"><span class="pre">[on_1,</span> <span class="pre">off_1,</span> <span class="pre">on_2,</span> <span class="pre">off_2,</span> <span class="pre">...]</span></code> といった形式で時間値を指定します。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.light.animate">
+<span class="sig-prename descclassname"><span class="pre">light.</span></span><span class="sig-name descname"><span class="pre">animate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.EV3Brick.light.animate" title="Link to this definition"></a></dt>
+<dd><p>指定された間隔で1つずつ表示される色のシーケンスでライトをアニメーション化します。</p>
+<p>アニメーションはバックグラウンドで実行されます。
+アニメーションが完了すると最初に戻り、繰り返されます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>colors</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.list" title="ubuiltins.list"><em>list</em></a>) – <a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a> のシーケンス</p></li>
+<li><p><strong>interval</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>ms</em>) – 色の更新間隔</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Using the speaker</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.speaker.volume">
+<span class="sig-prename descclassname"><span class="pre">speaker.</span></span><span class="sig-name descname"><span class="pre">volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">volume</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.EV3Brick.speaker.volume" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">speaker.</span></span><span class="sig-name descname"><span class="pre">volume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">%</span></span></span></dt>
+<dd><p>スピーカーの音量を取得または設定します。</p>
+<p>音量を指定しない場合、このメソッドは現在の音量を返します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>volume</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>%</em>) – 0から100の範囲のスピーカーの音量。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 437.1094 57.2" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="437.1094" height="57.2" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#3971bf" fill="#4c97ff" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  c 1.6667,0  2.5,0.75  3.3333,1.5  l 3.3333,3  c 0.8333,0.75  1.6667,1.5  3.3333,1.5  h 10  c 1.6667,0  2.5,-0.75  3.3333,-1.5  l 3.3333,-3  c 0.8333,-0.75  1.6667,-1.5  3.3333,-1.5  h 392.1094 a 4 4 0 0,1 4,4  v 6  V 43.2  V 45.2  V 45.2 a 4 4 0 0,1 -4,4  h -392.1094  c -1.6667,0  -2.5,0.75  -3.3333,1.5  l -3.3333,3  c -0.8333,0.75  -1.6667,1.5  -3.3333,1.5  h -10  c -1.6667,0  -2.5,-0.75  -3.3333,-1.5  l -3.3333,-3  c -0.8333,-0.75  -1.6667,-1.5  -3.3333,-1.5  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(55, 8.6)" style="display: block;"><path class="blocklyPath" stroke="#3971bf" fill="#4180d9" d=" m 16,0  h 38.6953 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -38.6953 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">ev3</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(34.6953,3)"/></g></g><g transform="translate(197.7109, 6)" style="display: block;"><path class="blocklyPath" stroke="#3971bf" fill="#4180d9" d=" m 18.6,0  h 57.05 a 18.6 18.6 0 0,1 18.6,18.6  v 0 a 18.6 18.6 0 0,1 -18.6,18.6  V 37.2  h -57.05 a 18.6 18.6 0 0,1 -18.6,-18.6  v 0 a 18.6 18.6 0 0,1 18.6,-18.6 z&#10;"/><g class="blocklyEditableText" transform="translate(12,4)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="42.6953" class="blocklyFieldRect" stroke="#3971bf" style="display: block;"/><text class="blocklyText" dominant-baseline="central" x="8" y="14.6">500</text></g><g transform="translate(62.6953,9.6)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">Hz</text></g></g><g transform="translate(329.2891, 6)" style="display: block;"><path class="blocklyPath" stroke="#3971bf" fill="#4180d9" d=" m 18.6,0  h 60.6203 a 18.6 18.6 0 0,1 18.6,18.6  v 0 a 18.6 18.6 0 0,1 -18.6,18.6  V 37.2  h -60.6203 a 18.6 18.6 0 0,1 -18.6,-18.6  v 0 a 18.6 18.6 0 0,1 18.6,-18.6 z&#10;"/><g class="blocklyEditableText" transform="translate(12,4)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="42.6953" class="blocklyFieldRect" stroke="#3971bf" style="display: block;"/><text class="blocklyText" dominant-baseline="central" x="8" y="14.6">100</text></g><g transform="translate(62.6953,9.6)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">ms</text></g></g><g transform="translate(8,9.1)"><image height="30px" width="28px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzLCA1KSI+CiAgICA8Y2lyY2xlIGN4PSI0Ljg3NTEiIGN5PSIyMC40NjUiIHI9IjQuMTYyNiIgZmlsbD0iI2ZmZiIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iMTcuOTI0IiBjeT0iMTguMDM5IiByPSI0LjE2MjYiIGZpbGw9IiNmZmYiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC40OTkxKSI+CjxyZWN0IHRyYW5zZm9ybT0ibWF0cml4KC45NzQxOCAtLjIyNTc3IDAgMSAwIDApIiB4PSI2LjcxNjYiIHk9IjUuMjg3NiIgd2lkdGg9IjE1LjQ0MyIgaGVpZ2h0PSI1Ljg3OTkiIGZpbGw9IiNmZmYiIHN0b3AtY29sb3I9IiMwMDAwMDAiLz4KPHBhdGggZD0ibTcuNTQzMiA1LjAxNjV2MTUuODM0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPgo8cGF0aCBkPSJtMjAuNTg3IDIuMDMyOXYxNi4yNjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+CjwvZz4KICA8L2c+Cjwvc3ZnPg=="/></g><g transform="translate(44,9.1)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(133.6953,15.6)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">beep at</text></g><g transform="translate(299.9609,15.6)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">for</text></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.speaker.beep">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">speaker.</span></span><span class="sig-name descname"><span class="pre">beep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.EV3Brick.speaker.beep" title="Link to this definition"></a></dt>
+<dd><p>ビープ音/トーンを再生します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frequency</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>Hz</em>) – 64から24000 Hzの範囲のビープ音の周波数。</p></li>
+<li><p><strong>duration</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>ms</em>) – ビープ音の長さ。長さが0未満の場合、このメソッドは
+直ちに戻り、その周波数の再生が無期限に続きます。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.speaker.play_notes">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">speaker.</span></span><span class="sig-name descname"><span class="pre">play_notes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tempo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">120</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.EV3Brick.speaker.play_notes" title="Link to this definition"></a></dt>
+<dd><p>一連の音符を再生します。例：
+<code class="docutils literal notranslate"><span class="pre">[&quot;C4/4&quot;,</span> <span class="pre">&quot;C4/4&quot;,</span> <span class="pre">&quot;G4/4&quot;,</span> <span class="pre">&quot;G4/4&quot;]</span></code> 。</p>
+<p>各音符は次の形式の文字列です。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>最初の文字は音名で、 <code class="docutils literal notranslate"><span class="pre">A</span></code> から <code class="docutils literal notranslate"><span class="pre">G</span></code> 、または休符を表す
+<code class="docutils literal notranslate"><span class="pre">R</span></code> です。</p></li>
+<li><p>音名にはシャープの <code class="docutils literal notranslate"><span class="pre">#</span></code> やフラットの <code class="docutils literal notranslate"><span class="pre">b</span></code> の臨時記号を
+含めることもできます。<code class="docutils literal notranslate"><span class="pre">B#</span></code> / <code class="docutils literal notranslate"><span class="pre">Cb</span></code> と <code class="docutils literal notranslate"><span class="pre">E#</span></code> / <code class="docutils literal notranslate"><span class="pre">Fb</span></code>
+は使用できません。</p></li>
+<li><p>音名の後には <code class="docutils literal notranslate"><span class="pre">2</span></code> から <code class="docutils literal notranslate"><span class="pre">8</span></code> のオクターブ番号が続きます。
+たとえば <code class="docutils literal notranslate"><span class="pre">C4</span></code> は中央のCです。オクターブは音Cで次の番号に
+変わります。たとえば <code class="docutils literal notranslate"><span class="pre">B3</span></code> は中央のC（ <code class="docutils literal notranslate"><span class="pre">C4</span></code> ）のすぐ
+下の音です。</p></li>
+<li><p>オクターブの後には <code class="docutils literal notranslate"><span class="pre">/</span></code> と音符の長さを示す数字が続きます。
+たとえば <code class="docutils literal notranslate"><span class="pre">/4</span></code> は4分音符、 <code class="docutils literal notranslate"><span class="pre">/8</span></code> は8分音符、という具合です。</p></li>
+<li><p>オプションで <code class="docutils literal notranslate"><span class="pre">.</span></code> を続けて付点音符にできます。付点音符は
+点のない音符の1.5倍の長さです。</p></li>
+<li><p>オプションで音符の末尾に <code class="docutils literal notranslate"><span class="pre">_</span></code> を付けると、タイまたは
+スラーになります。これにより、この音符と次の音符の間に
+休止が入らなくなります。</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>notes</strong> (<em>iter</em>) – 再生する音符のシーケンス。</p></li>
+<li><p><strong>tempo</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 1分あたりの拍数。4分音符が1拍です。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Using the screen</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.screen.clear">
+<span class="sig-prename descclassname"><span class="pre">screen.</span></span><span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.EV3Brick.screen.clear" title="Link to this definition"></a></dt>
+<dd><p>the screen をクリアします。the screen のすべてのピクセルが
+<a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color.WHITE" title="pybricks.parameters.Color.WHITE"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Color.WHITE</span></code></a> に
+設定されます。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">screen.</span></span><span class="sig-name descname"><span class="pre">draw_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Color.BLACK</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>the screen にテキストを描画します。</p>
+<p><a class="reference internal" href="../parameters/image.html#pybricks.parameters.Image.set_font" title="pybricks.parameters.Image.set_font"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_font()</span></code></a> で直近に設定されたフォントが使用されます。
+フォントがまだ設定されていない場合は
+<a class="reference internal" href="../parameters/font.html#pybricks.parameters.Font.DEFAULT" title="pybricks.parameters.Font.DEFAULT"><code class="xref py py-data docutils literal notranslate"><span class="pre">Font.DEFAULT</span></code></a> が
+使用されます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – テキストの左端が開始されるx軸の値。</p></li>
+<li><p><strong>y</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – テキストの上端が開始されるy軸の値。</p></li>
+<li><p><strong>text</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.str" title="ubuiltins.str"><em>str</em></a>) – 描画するテキスト。</p></li>
+<li><p><strong>text_color</strong> (<a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – テキストの描画に使用する色。</p></li>
+<li><p><strong>background_color</strong> (<a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – テキストの背後の矩形を塗りつぶす色。透明な背景にする場合は
+<code class="docutils literal notranslate"><span class="pre">None</span></code> 。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">screen.</span></span><span class="sig-name descname"><span class="pre">print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'\n'</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>the screen に1行のテキストを出力します。</p>
+<p>このメソッドは組み込みの <code class="docutils literal notranslate"><span class="pre">print()</span></code> 関数と同様に動作しますが、
+代わりに the screen に書き込みます。</p>
+<p><a class="reference internal" href="../parameters/image.html#pybricks.parameters.Image.set_font" title="pybricks.parameters.Image.set_font"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_font()</span></code></a> でフォントを設定できます。フォントが設定
+されていない場合は
+<a class="reference internal" href="../parameters/font.html#pybricks.parameters.Font.DEFAULT" title="pybricks.parameters.Font.DEFAULT"><code class="xref py py-data docutils literal notranslate"><span class="pre">Font.DEFAULT</span></code></a> が
+使用されます。テキストは常に白背景の黒文字で出力されます。</p>
+<p>組み込みの <code class="docutils literal notranslate"><span class="pre">print()</span></code> とは異なり、テキストが the screen に
+収まらないほど長くても折り返されません。単に切り捨てられます。
+ただし、テキストが the screen の下端を超える場合は、画像全体が
+上にスクロールされ、 the screen の下部の新しい空白領域に
+テキストが出力されます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>Any</em>) – 出力する0個以上のオブジェクト。</p></li>
+<li><p><strong>sep</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.str" title="ubuiltins.str"><em>str</em></a>) – 出力される各オブジェクトの間に挟まれる区切り文字。</p></li>
+<li><p><strong>end</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.str" title="ubuiltins.str"><em>str</em></a>) – 最後のオブジェクトの後に出力される行末文字。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">screen.</span></span><span class="sig-name descname"><span class="pre">set_font</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">font</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>the screen への描画に使用するフォントを設定します。</p>
+<p>このフォントは <a class="reference internal" href="../parameters/image.html#pybricks.parameters.Image.draw_text" title="pybricks.parameters.Image.draw_text"><code class="xref py py-meth docutils literal notranslate"><span class="pre">draw_text()</span></code></a> と <a class="reference internal" href="../parameters/image.html#pybricks.parameters.Image.print" title="pybricks.parameters.Image.print"><code class="xref py py-meth docutils literal notranslate"><span class="pre">print()</span></code></a> の両方で
+使用されます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>font</strong> (<a class="reference internal" href="../parameters/font.html#pybricks.parameters.Font" title="pybricks.parameters.Font"><em>Font</em></a>) – 使用するフォント。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.screen.load_image">
+<span class="sig-prename descclassname"><span class="pre">screen.</span></span><span class="sig-name descname"><span class="pre">load_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.EV3Brick.screen.load_image" title="Link to this definition"></a></dt>
+<dd><p>この画像をクリアしてから、 <code class="docutils literal notranslate"><span class="pre">source</span></code> 画像を the screen の
+中央に描画します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>source</strong> (<a class="reference internal" href="../parameters/image.html#pybricks.parameters.Image" title="pybricks.parameters.Image"><em>Image</em></a>) – ソースの <a class="reference internal" href="../parameters/image.html#pybricks.parameters.Image" title="pybricks.parameters.Image"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a>。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">screen.</span></span><span class="sig-name descname"><span class="pre">draw_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transparent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">source</span></code> 画像を the screen に描画します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 画像の左端が開始されるx軸の値。</p></li>
+<li><p><strong>y</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 画像の上端が開始されるy軸の値。</p></li>
+<li><p><strong>source</strong> (<a class="reference internal" href="../parameters/image.html#pybricks.parameters.Image" title="pybricks.parameters.Image"><em>Image</em></a>) – ソースの <a class="reference internal" href="../parameters/image.html#pybricks.parameters.Image" title="pybricks.parameters.Image"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a>。</p></li>
+<li><p><strong>transparent</strong> (<a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – <code class="docutils literal notranslate"><span class="pre">image</span></code> 内で透明として扱う色。透明にしない場合は
+<code class="docutils literal notranslate"><span class="pre">None</span></code> 。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.screen.draw_pixel">
+<span class="sig-prename descclassname"><span class="pre">screen.</span></span><span class="sig-name descname"><span class="pre">draw_pixel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Color.BLACK</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.EV3Brick.screen.draw_pixel" title="Link to this definition"></a></dt>
+<dd><p>the screen に1ピクセルを描画します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – ピクセルのx座標。</p></li>
+<li><p><strong>y</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – ピクセルのy座標。</p></li>
+<li><p><strong>color</strong> (<a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – ピクセルの色。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.screen.draw_line">
+<span class="sig-prename descclassname"><span class="pre">screen.</span></span><span class="sig-name descname"><span class="pre">draw_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Color.BLACK</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.EV3Brick.screen.draw_line" title="Link to this definition"></a></dt>
+<dd><p>the screen に直線を描画します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x1</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 直線の始点のx座標。</p></li>
+<li><p><strong>y1</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 直線の始点のy座標。</p></li>
+<li><p><strong>x2</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 直線の終点のx座標。</p></li>
+<li><p><strong>y2</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 直線の終点のy座標。</p></li>
+<li><p><strong>width</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 直線の幅（ピクセル）。</p></li>
+<li><p><strong>color</strong> (<a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – 直線の色。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.screen.draw_box">
+<span class="sig-prename descclassname"><span class="pre">screen.</span></span><span class="sig-name descname"><span class="pre">draw_box</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Color.BLACK</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.EV3Brick.screen.draw_box" title="Link to this definition"></a></dt>
+<dd><p>the screen に矩形を描画します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x1</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 矩形の左辺のx座標。</p></li>
+<li><p><strong>y1</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 矩形の上辺のy座標。</p></li>
+<li><p><strong>x2</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 矩形の右辺のx座標。</p></li>
+<li><p><strong>y2</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 矩形の下辺のy座標。</p></li>
+<li><p><strong>r</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 矩形の角の半径。</p></li>
+<li><p><strong>fill</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><em>bool</em></a>) – <code class="docutils literal notranslate"><span class="pre">True</span></code> の場合、矩形が <code class="docutils literal notranslate"><span class="pre">color</span></code> で塗りつぶされます。
+それ以外の場合は矩形の輪郭のみが描画されます。</p></li>
+<li><p><strong>color</strong> (<a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – 矩形の色。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.screen.draw_circle">
+<span class="sig-prename descclassname"><span class="pre">screen.</span></span><span class="sig-name descname"><span class="pre">draw_circle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Color.BLACK</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.EV3Brick.screen.draw_circle" title="Link to this definition"></a></dt>
+<dd><p>the screen に円を描画します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 円の中心のx座標。</p></li>
+<li><p><strong>y</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 円の中心のy座標。</p></li>
+<li><p><strong>r</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 円の半径。</p></li>
+<li><p><strong>fill</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><em>bool</em></a>) – <code class="docutils literal notranslate"><span class="pre">True</span></code> の場合、円が <code class="docutils literal notranslate"><span class="pre">color</span></code> で塗りつぶされます。
+それ以外の場合は円周のみが描画されます。</p></li>
+<li><p><strong>color</strong> (<a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – 円の色。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.screen.width">
+<span class="sig-prename descclassname"><span class="pre">screen.</span></span><span class="sig-name descname"><span class="pre">width</span></span><span class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">178</span></span><a class="headerlink" href="#pybricks.hubs.EV3Brick.screen.width" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.screen.height">
+<span class="sig-prename descclassname"><span class="pre">screen.</span></span><span class="sig-name descname"><span class="pre">height</span></span><span class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">128</span></span><a class="headerlink" href="#pybricks.hubs.EV3Brick.screen.height" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Using the battery</p>
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 302.0625 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="302.0625" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 20,0  h 260.0625 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -260.0625 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(56, 4)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 38.6953 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -38.6953 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">ev3</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(34.6953,3)"/></g></g><g transform="translate(12,7)"><image height="25px" width="25px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8ZyBmaWxsPSIjZmZmIiBzdHJva2Utd2lkdGg9IjAiPgo8cmVjdCB4PSI3LjcyNjUiIHk9IjIuMDkyNWUtNyIgd2lkdGg9IjkuNTQ3IiBoZWlnaHQ9IjMuOTM2OCIgcng9Ii43NTg0MSIgcnk9Ii43MjU0MyIvPgo8cGF0aCBkPSJtNS4xMDYzIDMuMDIyMmMtMC4zMzYxMy0xZS03IC0wLjYwNjI1IDAuMzEwMTctMC42MDYyNSAwLjY5NTMxdjIwLjU4N2MwIDAuMzg1MTQgMC4yNzAxMiAwLjY5NTMxIDAuNjA2MjUgMC42OTUzMWgxNC43ODdjMC4zMzYxMyAwIDAuNjA2MjUtMC4zMTAxNyAwLjYwNjI1LTAuNjk1MzF2LTIwLjU4N2MwLTAuMzg1MTQtMC4yNzAxMi0wLjY5NTMxLTAuNjA2MjUtMC42OTUzMXptMC45NDIxOSAyLjE4MTZoMTIuOTAzdjUuMzYxM2gtMTIuOTAzeiIvPgo8L2c+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(45,4.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(134.6953,11)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">battery</text></g><g class="blocklyEditableText" transform="translate(196.0469,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="92.0156" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">voltage</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(72.0156,8.6)"/></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.battery.voltage">
+<span class="sig-prename descclassname"><span class="pre">battery.</span></span><span class="sig-name descname"><span class="pre">voltage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">mV</span></span></span><a class="headerlink" href="#pybricks.hubs.EV3Brick.battery.voltage" title="Link to this definition"></a></dt>
+<dd><p>バッテリーの電圧を取得します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>バッテリーの電圧。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 301.1719 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="301.1719" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 20,0  h 259.1719 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -259.1719 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(56, 4)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 38.6953 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -38.6953 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">ev3</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(34.6953,3)"/></g></g><g transform="translate(12,7)"><image height="25px" width="25px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8ZyBmaWxsPSIjZmZmIiBzdHJva2Utd2lkdGg9IjAiPgo8cmVjdCB4PSI3LjcyNjUiIHk9IjIuMDkyNWUtNyIgd2lkdGg9IjkuNTQ3IiBoZWlnaHQ9IjMuOTM2OCIgcng9Ii43NTg0MSIgcnk9Ii43MjU0MyIvPgo8cGF0aCBkPSJtNS4xMDYzIDMuMDIyMmMtMC4zMzYxMy0xZS03IC0wLjYwNjI1IDAuMzEwMTctMC42MDYyNSAwLjY5NTMxdjIwLjU4N2MwIDAuMzg1MTQgMC4yNzAxMiAwLjY5NTMxIDAuNjA2MjUgMC42OTUzMWgxNC43ODdjMC4zMzYxMyAwIDAuNjA2MjUtMC4zMTAxNyAwLjYwNjI1LTAuNjk1MzF2LTIwLjU4N2MwLTAuMzg1MTQtMC4yNzAxMi0wLjY5NTMxLTAuNjA2MjUtMC42OTUzMXptMC45NDIxOSAyLjE4MTZoMTIuOTAzdjUuMzYxM2gtMTIuOTAzeiIvPgo8L2c+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(45,4.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(134.6953,11)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">battery</text></g><g class="blocklyEditableText" transform="translate(196.0469,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="91.125" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">current</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(71.125,8.6)"/></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.battery.current">
+<span class="sig-prename descclassname"><span class="pre">battery.</span></span><span class="sig-name descname"><span class="pre">current</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">mA</span></span></span><a class="headerlink" href="#pybricks.hubs.EV3Brick.battery.current" title="Link to this definition"></a></dt>
+<dd><p>バッテリーから供給される電流を取得します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>バッテリーの電流。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">System control</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.system.info">
+<span class="sig-prename descclassname"><span class="pre">system.</span></span><span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.dict" title="ubuiltins.dict"><span class="pre">dict</span></a></span></span><a class="headerlink" href="#pybricks.hubs.EV3Brick.system.info" title="Link to this definition"></a></dt>
+<dd><p>ハブに関する情報を、以下のキーを持つ辞書として取得します。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;name&quot;</span></code>: ハブ名。Bluetooth経由で接続するときに表示される
+名前です。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;reset_reason&quot;</span></code>: ハブが（再）起動した理由。ハブが前回正常に
+電源オフされていた場合は <code class="docutils literal notranslate"><span class="pre">0</span></code> です。ファームウェア更新後など、
+ハブが自動的に再起動した場合は <code class="docutils literal notranslate"><span class="pre">1</span></code> です。ハブが前回
+ウォッチドッグタイムアウトによってクラッシュした場合は <code class="docutils literal notranslate"><span class="pre">2</span></code> で、
+これはファームウェアの問題を示します。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;host_connected_ble&quot;</span></code>: ハブがBluetooth経由でコンピューター、
+タブレット、スマートフォンのいずれかに接続されている場合は
+<code class="docutils literal notranslate"><span class="pre">True</span></code> 、それ以外は <code class="docutils literal notranslate"><span class="pre">False</span></code> 。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;host_connected_usb&quot;</span></code>: ハブがUSB経由でコンピューターに接続され、
+アプリでアクティブになっている場合は <code class="docutils literal notranslate"><span class="pre">True</span></code> 。
+それ以外は <code class="docutils literal notranslate"><span class="pre">False</span></code> 。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;program_start_type&quot;</span></code>: ハブの電源投入時にプログラムが自動的に
+開始された場合は <code class="docutils literal notranslate"><span class="pre">1</span></code> 。ハブのボタンでプログラムが開始された
+場合は <code class="docutils literal notranslate"><span class="pre">2</span></code> 。接続したコンピューターからプログラムが開始された
+場合は <code class="docutils literal notranslate"><span class="pre">3</span></code> 。</p></li>
+<li><p><cite>“program_id”</cite>: 現在実行中のプログラムの（スロット）番号。</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>システム情報を含む辞書。</p>
+</dd>
+</dl>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.6: </span>名前とリセット理由は、以前は個別のメソッドとして利用できました。
+現在は <code class="docutils literal notranslate"><span class="pre">info</span></code> 辞書に含まれています。これらのメソッドは
+後方互換性のために引き続き利用できます。</p>
+</div>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 349.4766 52" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="349.4766" height="52" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#74567a" fill="#9a72a2" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  c 1.6667,0  2.5,0.75  3.3333,1.5  l 3.3333,3  c 0.8333,0.75  1.6667,1.5  3.3333,1.5  h 10  c 1.6667,0  2.5,-0.75  3.3333,-1.5  l 3.3333,-3  c 0.8333,-0.75  1.6667,-1.5  3.3333,-1.5  h 304.4766 a 4 4 0 0,1 4,4  v 6  V 38  V 40  V 40 a 4 4 0 0,1 -4,4  h -304.4766  c -1.6667,0  -2.5,0.75  -3.3333,1.5  l -3.3333,3  c -0.8333,0.75  -1.6667,1.5  -3.3333,1.5  h -10  c -1.6667,0  -2.5,-0.75  -3.3333,-1.5  l -3.3333,-3  c -0.8333,-0.75  -1.6667,-1.5  -3.3333,-1.5  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(55, 6)" style="display: block;"><path class="blocklyPath" stroke="#74567a" fill="#83618a" d=" m 16,0  h 38.6953 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -38.6953 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">ev3</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(34.6953,3)"/></g></g><g transform="translate(247.4531, 6)" style="display: block;"><path class="blocklyPath" stroke="#74567a" fill="#83618a" d=" m 16,0  h 60.0234 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -60.0234 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">center</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(56.0234,3)"/></g></g><g transform="translate(8,6.5)"><image height="30px" width="28px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzLCA1KSI+CiAgICA8cGF0aCB0cmFuc2Zvcm09InJvdGF0ZSgtNDUpIiBkPSJtNy4yMDkyIDE2LjgzNGE5IDkgMCAwIDEtNC4xOTMzIDEwLjEyNCA5IDkgMCAwIDEtMTAuODY0LTEuNDMwMyA5IDkgMCAwIDEtMS40MzAzLTEwLjg2NCA5IDkgMCAwIDEgMTAuMTI0LTQuMTkzMyIgZmlsbD0ibm9uZSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMi41Ii8+CjxwYXRoIGQ9Im0xMi45MSAxLjQ2ODF2MTAuOTYyIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8L2c+Cjwvc3ZnPg=="/></g><g transform="translate(44,6.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(133.6953,13)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">stop button is</text></g></g></g></svg></div><div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 319.6719 52" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="319.6719" height="52" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#74567a" fill="#9a72a2" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  c 1.6667,0  2.5,0.75  3.3333,1.5  l 3.3333,3  c 0.8333,0.75  1.6667,1.5  3.3333,1.5  h 10  c 1.6667,0  2.5,-0.75  3.3333,-1.5  l 3.3333,-3  c 0.8333,-0.75  1.6667,-1.5  3.3333,-1.5  h 274.6719 a 4 4 0 0,1 4,4  v 6  V 42  V 40 a 4 4 0 0,1 -4,4  h -274.6719  c -1.6667,0  -2.5,0.75  -3.3333,1.5  l -3.3333,3  c -0.8333,0.75  -1.6667,1.5  -3.3333,1.5  h -10  c -1.6667,0  -2.5,-0.75  -3.3333,-1.5  l -3.3333,-3  c -0.8333,-0.75  -1.6667,-1.5  -3.3333,-1.5  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(55, 6)" style="display: block;"><path class="blocklyPath" stroke="#74567a" fill="#83618a" d=" m 16,0  h 38.6953 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -38.6953 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">ev3</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(34.6953,3)"/></g></g><g transform="translate(247.4531, 2)" class="blocklyDraggable" style="display: block;"><path class="blocklyPath" stroke="#197959" fill="#21a176" d=" m 20,0  h 22.21875 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -22.21875 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(12,11)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">none</text></g></g><g transform="translate(8,6.5)"><image height="30px" width="28px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzLCA1KSI+CiAgICA8cGF0aCB0cmFuc2Zvcm09InJvdGF0ZSgtNDUpIiBkPSJtNy4yMDkyIDE2LjgzNGE5IDkgMCAwIDEtNC4xOTMzIDEwLjEyNCA5IDkgMCAwIDEtMTAuODY0LTEuNDMwMyA5IDkgMCAwIDEtMS40MzAzLTEwLjg2NCA5IDkgMCAwIDEgMTAuMTI0LTQuMTkzMyIgZmlsbD0ibm9uZSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMi41Ii8+CjxwYXRoIGQ9Im0xMi45MSAxLjQ2ODF2MTAuOTYyIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8L2c+Cjwvc3ZnPg=="/></g><g transform="translate(44,6.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(133.6953,13)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">stop button is</text></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.system.set_stop_button">
+<span class="sig-prename descclassname"><span class="pre">system.</span></span><span class="sig-name descname"><span class="pre">set_stop_button</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">button</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.EV3Brick.system.set_stop_button" title="Link to this definition"></a></dt>
+<dd><p>実行中のスクリプトを停止するボタンを設定します。</p>
+<p>通常、中央のボタンは実行中のスクリプトを停止するために使用されます。
+この仕様を変更または無効にして、ボタンを他の目的に使用することができます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>button</strong> (<a class="reference internal" href="../parameters/button.html#pybricks.parameters.Button" title="pybricks.parameters.Button"><em>Button</em></a>) – <a class="reference internal" href="../parameters/button.html#pybricks.parameters.Button.CENTER" title="pybricks.parameters.Button.CENTER"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Button.CENTER</span></code></a> などのボタン、またはボタンのタプルを指定します。
+<code class="docutils literal notranslate"><span class="pre">None</span></code> を選択すると、ボタンを無効にします。
+無効にした場合は中央のボタンを3秒間長押しして、Hubの電源をオフにしてプログラムを停止することができます。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.system.storage">
+<span class="sig-prename descclassname"><span class="pre">system.</span></span><span class="sig-name descname"><span class="pre">storage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.EV3Brick.system.storage" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">system.</span></span><span class="sig-name descname"><span class="pre">storage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.bytes" title="ubuiltins.bytes"><span class="pre">bytes</span></a></span></span></dt>
+<dd><p>永続ストレージに対してバイナリデータの読み書きを行います。</p>
+<p>次回プログラムを実行したときにも使えるデータを保存できます。</p>
+<p>ハブを正常にオフにすると、データはフラッシュメモリに保存されます。
+ハブが <em>動作している間に</em> バッテリーを取り外した場合は保存されません。</p>
+<p>一度保存されたデータは、バッテリーを取り外した後でも利用できます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>offset</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – ユーザーストレージメモリの先頭からのオフセット（バイト単位）。</p></li>
+<li><p><strong>read</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 読み取るバイト数。書き込む場合はこの引数を省略します。</p></li>
+<li><p><strong>write</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bytes" title="ubuiltins.bytes"><em>bytes</em></a>) – 書き込むバイト列。読み取る場合はこの引数を省略します。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>読み取りの場合は読み取ったバイト列、それ以外の場合は <code class="docutils literal notranslate"><span class="pre">None</span></code> 。</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.ValueError" title="ubuiltins.ValueError"><strong>ValueError</strong></a> – 許可された範囲外のデータを読み書きしようとした場合。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.system.reset_storage">
+<span class="sig-prename descclassname"><span class="pre">system.</span></span><span class="sig-name descname"><span class="pre">reset_storage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.EV3Brick.system.reset_storage" title="Link to this definition"></a></dt>
+<dd><p>すべてのユーザー設定をデフォルト値にリセットし、ユーザーのプログラムを消去します。</p>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 223.6797 46" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="223.6797" height="46" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#74567a" fill="#9a72a2" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  c 1.6667,0  2.5,0.75  3.3333,1.5  l 3.3333,3  c 0.8333,0.75  1.6667,1.5  3.3333,1.5  h 10  c 1.6667,0  2.5,-0.75  3.3333,-1.5  l 3.3333,-3  c 0.8333,-0.75  1.6667,-1.5  3.3333,-1.5  h 178.6797 a 4 4 0 0,1 4,4  v 6  V 38  V 40  V 40 a 4 4 0 0,1 -4,4  h -213.6797 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(55, 6)" style="display: block;"><path class="blocklyPath" stroke="#74567a" fill="#83618a" d=" m 16,0  h 38.6953 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -38.6953 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">ev3</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(34.6953,3)"/></g></g><g transform="translate(8,6.5)"><image height="30px" width="28px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzLCA1KSI+CiAgICA8cGF0aCB0cmFuc2Zvcm09InJvdGF0ZSgtNDUpIiBkPSJtNy4yMDkyIDE2LjgzNGE5IDkgMCAwIDEtNC4xOTMzIDEwLjEyNCA5IDkgMCAwIDEtMTAuODY0LTEuNDMwMyA5IDkgMCAwIDEtMS40MzAzLTEwLjg2NCA5IDkgMCAwIDEgMTAuMTI0LTQuMTkzMyIgZmlsbD0ibm9uZSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMi41Ii8+CjxwYXRoIGQ9Im0xMi45MSAxLjQ2ODF2MTAuOTYyIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8L2c+Cjwvc3ZnPg=="/></g><g transform="translate(44,6.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(133.6953,13)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">shut down</text></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.EV3Brick.system.shutdown">
+<span class="sig-prename descclassname"><span class="pre">system.</span></span><span class="sig-name descname"><span class="pre">shutdown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.EV3Brick.system.shutdown" title="Link to this definition"></a></dt>
+<dd><p>プログラムを停止し、ハブをシャットダウンします。</p>
+</dd></dl>
+
+</dd></dl>
+
+<section id="status-light-examples">
+<h2>Status light examples<a class="headerlink" href="#status-light-examples" title="Link to this heading"></a></h2>
+<section id="turn-the-light-on-and-change-the-color">
+<h3>Turn the light on and change the color<a class="headerlink" href="#turn-the-light-on-and-change-the-color" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">EV3Brick</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Color</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the EV3</span>
+<span class="n">ev3</span> <span class="o">=</span> <span class="n">EV3Brick</span><span class="p">()</span>
+
+<span class="c1"># Turn on a red light</span>
+<span class="n">ev3</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="p">)</span>
+
+<span class="c1"># Wait</span>
+<span class="n">wait</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># Turn the light off</span>
+<span class="n">ev3</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="screen-examples">
+<h2>Screen examples<a class="headerlink" href="#screen-examples" title="Link to this heading"></a></h2>
+<section id="drawing-shapes-on-the-screen">
+<h3>Drawing shapes on the screen<a class="headerlink" href="#drawing-shapes-on-the-screen" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">EV3Brick</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the EV3</span>
+<span class="n">ev3</span> <span class="o">=</span> <span class="n">EV3Brick</span><span class="p">()</span>
+
+
+<span class="c1"># Draw a rectangle</span>
+<span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">draw_box</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+
+<span class="c1"># Draw a solid rectangle</span>
+<span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">draw_box</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Draw a rectangle with rounded corners</span>
+<span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">draw_box</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Draw a circle</span>
+<span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">draw_circle</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="c1"># Draw a triangle using lines</span>
+<span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">55</span>
+<span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">95</span>
+<span class="n">x3</span><span class="p">,</span> <span class="n">y3</span> <span class="o">=</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">95</span>
+<span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">draw_line</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+<span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">draw_line</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">y3</span><span class="p">)</span>
+<span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">draw_line</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+
+<span class="c1"># Wait some time to look at the shapes</span>
+<span class="n">wait</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2026 The Pybricks Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

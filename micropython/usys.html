@@ -1,0 +1,269 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>usys – システム固有の関数 &mdash; pybricks v4.1.0b2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d8a2add5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/requirements.css?v=e2406e8f" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme_overrides.css?v=8b8d8269" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blocks.css?v=ee57a122" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blockimg.css?v=bf50a58c" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7dc5ce0d"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/requirements.js?v=6c6f6a43"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="ustruct – バイナリデータのパックとアンパック" href="ustruct.html" />
+    <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pybricks
+              <img src="../_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pybricks modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hubs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pupdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iodevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – 汎用ツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robotics.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクスとドライブベース</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージの送受信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signaltypes.html">信号と単位</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MicroPython modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="builtins.html">組み込みクラスと関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">例外とエラー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="micropython.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">micropython</span></code> – MicroPythonの内部機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uerrno.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uerrno</span></code> – エラーコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uio.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uio</span></code> – 入出力ストリーム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ujson.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ujson</span></code> – JSONのエンコードとデコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="umath.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">umath</span></code> – 数学関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="urandom.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">urandom</span></code> – 擬似乱数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uselect.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uselect</span></code> – イベントの待機</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ustruct.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ustruct</span></code> – バイナリデータのパックとアンパック</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usys</span></code> – システム固有の関数</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#usys.stdin"><code class="docutils literal notranslate"><span class="pre">stdin</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usys.stdout"><code class="docutils literal notranslate"><span class="pre">stdout</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usys.stderr"><code class="docutils literal notranslate"><span class="pre">stderr</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usys.implementation"><code class="docutils literal notranslate"><span class="pre">implementation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usys.version"><code class="docutils literal notranslate"><span class="pre">version</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usys.version_info"><code class="docutils literal notranslate"><span class="pre">version_info</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">使用例</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">バージョン情報の表示</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">標準入出力</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pybricks</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usys</span></code> – システム固有の関数</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="toggle-header docutils container">
+</div>
+<div class="toggle-content docutils container">
+
+        <div class="wy-table-responsive">
+            <table class="docutils align-default requirements-table">
+                <tbody>
+                    <tr>
+                        
+        <th background="../_images/compat_movehub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_cityhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_technichub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_primehub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_inventorhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_essentialhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_ev3brick.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+<section id="usys">
+<h1><a class="reference internal" href="#module-usys" title="usys"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usys</span></code></a> – システム固有の関数<a class="headerlink" href="#usys" title="Link to this heading"></a></h1>
+<p>このMicroPythonモジュールは、Pythonの <a class="reference external" href="https://docs.python.org/3.5/library/sys.html">sys module</a> のサブセットです。</p>
+<p class="rubric">入出力ストリーム</p>
+<dl class="py data" id="module-usys">
+<dt class="sig sig-object py" id="usys.stdin">
+<span class="sig-name descname"><span class="pre">stdin</span></span><a class="headerlink" href="#usys.stdin" title="Link to this definition"></a></dt>
+<dd><p>接続されたターミナルがあれば、そこからの入力を受け取る
+ストリームオブジェクト（<a class="reference internal" href="uio.html#uio.FileIO" title="uio.FileIO"><code class="xref py py-class docutils literal notranslate"><span class="pre">uio.FileIO</span></code></a>）です。</p>
+<p><code class="docutils literal notranslate"><span class="pre">stdin</span></code> 経由でバイナリデータを渡すときに <code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code> を
+無効化する <a class="reference internal" href="micropython.html#micropython.kbd_intr" title="micropython.kbd_intr"><code class="xref py py-func docutils literal notranslate"><span class="pre">kbd_intr</span></code></a> も参照してください。</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="usys.stdout">
+<span class="sig-name descname"><span class="pre">stdout</span></span><a class="headerlink" href="#usys.stdout" title="Link to this definition"></a></dt>
+<dd><p>接続されたターミナルがあれば、そこへ出力を送る
+ストリームオブジェクト（<a class="reference internal" href="uio.html#uio.FileIO" title="uio.FileIO"><code class="xref py py-class docutils literal notranslate"><span class="pre">uio.FileIO</span></code></a>）です。</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="usys.stderr">
+<span class="sig-name descname"><span class="pre">stderr</span></span><a class="headerlink" href="#usys.stderr" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#usys.stdout" title="usys.stdout"><code class="xref py py-data docutils literal notranslate"><span class="pre">stdout</span></code></a> のエイリアス。</p>
+</dd></dl>
+
+<p class="rubric">バージョン情報</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="usys.implementation">
+<span class="sig-name descname"><span class="pre">implementation</span></span><a class="headerlink" href="#usys.implementation" title="Link to this definition"></a></dt>
+<dd><p>MicroPythonのバージョンタプル。フォーマットと例は下記を参照してください。</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="usys.version">
+<span class="sig-name descname"><span class="pre">version</span></span><a class="headerlink" href="#usys.version" title="Link to this definition"></a></dt>
+<dd><p>Python互換バージョン、Pybricksバージョン、ビルド日時。
+フォーマットと例は下記を参照してください。</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="usys.version_info">
+<span class="sig-name descname"><span class="pre">version_info</span></span><a class="headerlink" href="#usys.version_info" title="Link to this definition"></a></dt>
+<dd><p>Python互換バージョン。フォーマットと例は下記を参照してください。</p>
+</dd></dl>
+
+<section id="id1">
+<h2>使用例<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<section id="id2">
+<h3>バージョン情報の表示<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks</span><span class="w"> </span><span class="kn">import</span> <span class="n">version</span>
+
+<span class="c1"># ('essentialhub', '3.2.0b5', 'v3.2.0b5 on 2022-11-11')</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">version</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">usys</span>
+
+<span class="c1"># ('micropython', (1, 19, 1), 'SPIKE Essential Hub with STM32F413RG', 6)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">usys</span><span class="o">.</span><span class="n">implementation</span><span class="p">)</span>
+
+<span class="c1"># '3.4.0; Pybricks MicroPython v3.2.0b5 on 2022-11-11'</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">usys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+
+<span class="c1"># (3, 4, 0)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">usys</span><span class="o">.</span><span class="n">version_info</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>標準入出力<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">stdin</span></code> ストリームは、Pybricks Codeの入出力ウィンドウ経由で入力を
+キャプチャするために使用できます。その仕組みについては、
+<a class="reference external" href="https://pybricks.com/projects/tutorials/wireless/hub-to-device/pc-keyboard/">キーボード入力</a> プロジェクトを参照してください。
+このアプローチは、あらゆる <a class="reference external" href="https://pybricks.com/projects/tutorials/wireless/hub-to-device/">他のデバイス</a> との
+データ交換にも拡張できます。</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2026 The Pybricks Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,635 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>umath – 数学関数 &mdash; pybricks v4.1.0b2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d8a2add5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/requirements.css?v=e2406e8f" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme_overrides.css?v=8b8d8269" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blocks.css?v=ee57a122" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blockimg.css?v=bf50a58c" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7dc5ce0d"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/requirements.js?v=6c6f6a43"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="urandom – 擬似乱数" href="urandom.html" />
+    <link rel="prev" title="ujson – JSONのエンコードとデコード" href="ujson.html" />
+    <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pybricks
+              <img src="../_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pybricks modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hubs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pupdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iodevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – 汎用ツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robotics.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクスとドライブベース</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージの送受信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signaltypes.html">信号と単位</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MicroPython modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="builtins.html">組み込みクラスと関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">例外とエラー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="micropython.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">micropython</span></code> – MicroPythonの内部機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uerrno.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uerrno</span></code> – エラーコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uio.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uio</span></code> – 入出力ストリーム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ujson.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ujson</span></code> – JSONのエンコードとデコード</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">umath</span></code> – 数学関数</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">丸めと符号</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#umath.ceil"><code class="docutils literal notranslate"><span class="pre">ceil()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.floor"><code class="docutils literal notranslate"><span class="pre">floor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.trunc"><code class="docutils literal notranslate"><span class="pre">trunc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.fmod"><code class="docutils literal notranslate"><span class="pre">fmod()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.fabs"><code class="docutils literal notranslate"><span class="pre">fabs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.copysign"><code class="docutils literal notranslate"><span class="pre">copysign()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">べき乗と対数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#umath.e"><code class="docutils literal notranslate"><span class="pre">e</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.exp"><code class="docutils literal notranslate"><span class="pre">exp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.pow"><code class="docutils literal notranslate"><span class="pre">pow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.log"><code class="docutils literal notranslate"><span class="pre">log()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.sqrt"><code class="docutils literal notranslate"><span class="pre">sqrt()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">三角関数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#umath.pi"><code class="docutils literal notranslate"><span class="pre">pi</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.degrees"><code class="docutils literal notranslate"><span class="pre">degrees()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.radians"><code class="docutils literal notranslate"><span class="pre">radians()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.sin"><code class="docutils literal notranslate"><span class="pre">sin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.asin"><code class="docutils literal notranslate"><span class="pre">asin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.cos"><code class="docutils literal notranslate"><span class="pre">cos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.acos"><code class="docutils literal notranslate"><span class="pre">acos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.tan"><code class="docutils literal notranslate"><span class="pre">tan()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.atan"><code class="docutils literal notranslate"><span class="pre">atan()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.atan2"><code class="docutils literal notranslate"><span class="pre">atan2()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">その他の数学関数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#umath.isfinite"><code class="docutils literal notranslate"><span class="pre">isfinite()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.isinfinite"><code class="docutils literal notranslate"><span class="pre">isinfinite()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.isnan"><code class="docutils literal notranslate"><span class="pre">isnan()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.modf"><code class="docutils literal notranslate"><span class="pre">modf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.frexp"><code class="docutils literal notranslate"><span class="pre">frexp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umath.ldexp"><code class="docutils literal notranslate"><span class="pre">ldexp()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="urandom.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">urandom</span></code> – 擬似乱数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uselect.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uselect</span></code> – イベントの待機</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ustruct.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ustruct</span></code> – バイナリデータのパックとアンパック</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usys</span></code> – システム固有の関数</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pybricks</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">umath</span></code> – 数学関数</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="toggle-header docutils container">
+</div>
+<div class="toggle-content docutils container">
+
+        <div class="wy-table-responsive">
+            <table class="docutils align-default requirements-table">
+                <tbody>
+                    <tr>
+                        
+        <th background="../_images/compat_movehub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_cityhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_technichub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_primehub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_inventorhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_essentialhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_ev3brick.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+<section id="module-umath">
+<span id="umath"></span><h1><a class="reference internal" href="#module-umath" title="umath"><code class="xref py py-mod docutils literal notranslate"><span class="pre">umath</span></code></a> – 数学関数<a class="headerlink" href="#module-umath" title="Link to this heading"></a></h1>
+<p>このMicroPythonモジュールは、Pythonの <a class="reference external" href="https://docs.python.org/3.5/library/math.html#module-math">math module</a> に似ています。</p>
+<p>何もインポートせずに使用できる <a class="reference internal" href="builtins.html#builtinmath"><span class="std std-ref">built-in math functions</span></a>
+も参照してください。</p>
+<section id="id1">
+<h2>丸めと符号<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128.6875 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="128.6875" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#439043" fill="#59c059" d=" m 20,0  h 86.6875 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -86.6875 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(82.6875, 4)" style="display: block;"><path class="blocklyPath" stroke="#439043" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#439043" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">0</text></g></g><g class="blocklyEditableText" transform="translate(12,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="62.6875" class="blocklyFieldRect blocklyDropdownRect" stroke="#439043" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">ceil</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(42.6875,8.6)"/></g></g></g></svg></div><dl class="py function">
+<dt class="sig sig-object py" id="umath.ceil">
+<span class="sig-name descname"><span class="pre">ceil</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a></span></span><a class="headerlink" href="#umath.ceil" title="Link to this definition"></a></dt>
+<dd><p>切り上げます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 丸める対象の値。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>正の無限大方向に丸めた値。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137.5469 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="137.5469" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#439043" fill="#59c059" d=" m 20,0  h 95.5469 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -95.5469 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(91.5469, 4)" style="display: block;"><path class="blocklyPath" stroke="#439043" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#439043" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">0</text></g></g><g class="blocklyEditableText" transform="translate(12,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="71.5469" class="blocklyFieldRect blocklyDropdownRect" stroke="#439043" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">floor</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(51.5469,8.6)"/></g></g></g></svg></div><dl class="py function">
+<dt class="sig sig-object py" id="umath.floor">
+<span class="sig-name descname"><span class="pre">floor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a></span></span><a class="headerlink" href="#umath.floor" title="Link to this definition"></a></dt>
+<dd><p>切り捨てます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 丸める対象の値。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>負の無限大方向に丸めた値。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="umath.trunc">
+<span class="sig-name descname"><span class="pre">trunc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a></span></span><a class="headerlink" href="#umath.trunc" title="Link to this definition"></a></dt>
+<dd><p>小数を切り捨てて値の整数部分を取得します。</p>
+<p>これは <code class="docutils literal notranslate"><span class="pre">0</span></code> 方向への丸めと同じです。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 切り捨てる対象の値。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>値の整数部分。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="umath.fmod">
+<span class="sig-name descname"><span class="pre">fmod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a></span></span><a class="headerlink" href="#umath.fmod" title="Link to this definition"></a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">/</span> <span class="pre">y</span></code> の剰余を取得します。</p>
+<p><a class="reference internal" href="#umath.modf" title="umath.modf"><code class="xref py py-func docutils literal notranslate"><span class="pre">modf()</span></code></a> と混同しないでください。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 分子。</p></li>
+<li><p><strong>y</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 分母。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>除算後の剰余。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="umath.fabs">
+<span class="sig-name descname"><span class="pre">fabs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a></span></span><a class="headerlink" href="#umath.fabs" title="Link to this definition"></a></dt>
+<dd><p>絶対値を取得します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 値。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">x</span></code> の絶対値。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="umath.copysign">
+<span class="sig-name descname"><span class="pre">copysign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a></span></span><a class="headerlink" href="#umath.copysign" title="Link to this definition"></a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">y</span></code> の符号を持つ <code class="docutils literal notranslate"><span class="pre">x</span></code> を取得します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 戻り値の大きさを決定します。</p></li>
+<li><p><strong>y</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 戻り値の符号を決定します。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">y</span></code> の符号を持つ <code class="docutils literal notranslate"><span class="pre">x</span></code>。</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id2">
+<h2>べき乗と対数<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="umath.e">
+<span class="sig-name descname"><span class="pre">e</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2.718282</span></span><a class="headerlink" href="#umath.e" title="Link to this definition"></a></dt>
+<dd><p>数学定数 e。</p>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120.2422 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="120.2422" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#439043" fill="#59c059" d=" m 20,0  h 78.2422 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -78.2422 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(74.2422, 4)" style="display: block;"><path class="blocklyPath" stroke="#439043" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#439043" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">0</text></g></g><g class="blocklyEditableText" transform="translate(12,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="54.2422" class="blocklyFieldRect blocklyDropdownRect" stroke="#439043" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">e^</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(34.2422,8.6)"/></g></g></g></svg></div><dl class="py function">
+<dt class="sig sig-object py" id="umath.exp">
+<span class="sig-name descname"><span class="pre">exp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a></span></span><a class="headerlink" href="#umath.exp" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#umath.e" title="umath.e"><code class="xref py py-attr docutils literal notranslate"><span class="pre">e</span></code></a> の <code class="docutils literal notranslate"><span class="pre">x</span></code> 乗を取得します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 指数。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#umath.e" title="umath.e"><code class="xref py py-attr docutils literal notranslate"><span class="pre">e</span></code></a> の <code class="docutils literal notranslate"><span class="pre">x</span></code> 乗。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 151.34375 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="151.34375" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#439043" fill="#59c059" d=" m 20,0  h 109.34375 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -109.34375 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(4, 4)" style="display: block;"><path class="blocklyPath" stroke="#439043" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#439043" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">1</text></g></g><g transform="translate(105.34375, 4)" style="display: block;"><path class="blocklyPath" stroke="#439043" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#439043" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">1</text></g></g><g class="blocklyEditableText" transform="translate(52,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="45.34375" class="blocklyFieldRect blocklyDropdownRect" stroke="#439043" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">^</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(25.34375,8.6)"/></g></g></g></svg></div><div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129.1406 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="129.1406" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#439043" fill="#59c059" d=" m 20,0  h 87.1406 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -87.1406 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(83.1406, 4)" style="display: block;"><path class="blocklyPath" stroke="#439043" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#439043" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">0</text></g></g><g class="blocklyEditableText" transform="translate(12,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="63.1406" class="blocklyFieldRect blocklyDropdownRect" stroke="#439043" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">10^</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(43.1406,8.6)"/></g></g></g></svg></div><dl class="py function">
+<dt class="sig sig-object py" id="umath.pow">
+<span class="sig-name descname"><span class="pre">pow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a></span></span><a class="headerlink" href="#umath.pow" title="Link to this definition"></a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">x</span></code> の <code class="docutils literal notranslate"><span class="pre">y</span></code> 乗を取得します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 底。</p></li>
+<li><p><strong>y</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 指数。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">x</span></code> の <code class="docutils literal notranslate"><span class="pre">y</span></code> 乗。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 116.21875 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="116.21875" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#439043" fill="#59c059" d=" m 20,0  h 74.21875 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -74.21875 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(70.21875, 4)" style="display: block;"><path class="blocklyPath" stroke="#439043" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#439043" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">0</text></g></g><g class="blocklyEditableText" transform="translate(12,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="50.21875" class="blocklyFieldRect blocklyDropdownRect" stroke="#439043" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">ln</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(30.21875,8.6)"/></g></g></g></svg></div><div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 143.7891 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="143.7891" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#439043" fill="#59c059" d=" m 20,0  h 101.7891 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -101.7891 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(97.7891, 4)" style="display: block;"><path class="blocklyPath" stroke="#439043" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#439043" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">0</text></g></g><g class="blocklyEditableText" transform="translate(12,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="77.7891" class="blocklyFieldRect blocklyDropdownRect" stroke="#439043" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">log10</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(57.7891,8.6)"/></g></g></g></svg></div><dl class="py function">
+<dt class="sig sig-object py" id="umath.log">
+<span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a></span></span><a class="headerlink" href="#umath.log" title="Link to this definition"></a></dt>
+<dd><p>自然対数を取得します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 値。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">x</span></code> の自然対数。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110.78125 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="110.78125" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#439043" fill="#59c059" d=" m 20,0  h 68.78125 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -68.78125 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(64.78125, 4)" style="display: block;"><path class="blocklyPath" stroke="#439043" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#439043" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">0</text></g></g><g class="blocklyEditableText" transform="translate(12,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="44.78125" class="blocklyFieldRect blocklyDropdownRect" stroke="#439043" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">√</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(24.78125,8.6)"/></g></g></g></svg></div><dl class="py function">
+<dt class="sig sig-object py" id="umath.sqrt">
+<span class="sig-name descname"><span class="pre">sqrt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a></span></span><a class="headerlink" href="#umath.sqrt" title="Link to this definition"></a></dt>
+<dd><p>平方根を取得します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 値 <code class="docutils literal notranslate"><span class="pre">x</span></code>。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">x</span></code> の平方根。</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id3">
+<h2>三角関数<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="umath.pi">
+<span class="sig-name descname"><span class="pre">pi</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3.141593</span></span><a class="headerlink" href="#umath.pi" title="Link to this definition"></a></dt>
+<dd><p>数学定数 π。</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="umath.degrees">
+<span class="sig-name descname"><span class="pre">degrees</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a></span></span><a class="headerlink" href="#umath.degrees" title="Link to this definition"></a></dt>
+<dd><p>角度をラジアンから度に変換します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – ラジアン単位の角度。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>度単位の角度。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="umath.radians">
+<span class="sig-name descname"><span class="pre">radians</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a></span></span><a class="headerlink" href="#umath.radians" title="Link to this definition"></a></dt>
+<dd><p>角度を度からラジアンに変換します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 度単位の角度。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>ラジアン単位の角度。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125.1172 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="125.1172" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#439043" fill="#59c059" d=" m 20,0  h 83.1172 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -83.1172 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(79.1172, 4)" style="display: block;"><path class="blocklyPath" stroke="#439043" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#439043" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">0</text></g></g><g class="blocklyEditableText" transform="translate(12,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="59.1172" class="blocklyFieldRect blocklyDropdownRect" stroke="#439043" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">sin</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(39.1172,8.6)"/></g></g></g></svg></div><dl class="py function">
+<dt class="sig sig-object py" id="umath.sin">
+<span class="sig-name descname"><span class="pre">sin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a></span></span><a class="headerlink" href="#umath.sin" title="Link to this definition"></a></dt>
+<dd><p>角度の正弦を取得します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – ラジアン単位の角度。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">x</span></code> の正弦。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 134.0156 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="134.0156" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#439043" fill="#59c059" d=" m 20,0  h 92.0156 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -92.0156 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(88.0156, 4)" style="display: block;"><path class="blocklyPath" stroke="#439043" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#439043" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">0</text></g></g><g class="blocklyEditableText" transform="translate(12,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="68.0156" class="blocklyFieldRect blocklyDropdownRect" stroke="#439043" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">asin</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(48.0156,8.6)"/></g></g></g></svg></div><dl class="py function">
+<dt class="sig sig-object py" id="umath.asin">
+<span class="sig-name descname"><span class="pre">asin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a></span></span><a class="headerlink" href="#umath.asin" title="Link to this definition"></a></dt>
+<dd><p>逆正弦演算を適用します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 対辺 / 斜辺。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">x</span></code> の逆正弦（ラジアン単位）。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129.5703 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="129.5703" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#439043" fill="#59c059" d=" m 20,0  h 87.5703 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -87.5703 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(83.5703, 4)" style="display: block;"><path class="blocklyPath" stroke="#439043" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#439043" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">0</text></g></g><g class="blocklyEditableText" transform="translate(12,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="63.5703" class="blocklyFieldRect blocklyDropdownRect" stroke="#439043" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">cos</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(43.5703,8.6)"/></g></g></g></svg></div><dl class="py function">
+<dt class="sig sig-object py" id="umath.cos">
+<span class="sig-name descname"><span class="pre">cos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a></span></span><a class="headerlink" href="#umath.cos" title="Link to this definition"></a></dt>
+<dd><p>角度の余弦を取得します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – ラジアン単位の角度。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">x</span></code> の余弦。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138.46875 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="138.46875" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#439043" fill="#59c059" d=" m 20,0  h 96.46875 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -96.46875 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(92.46875, 4)" style="display: block;"><path class="blocklyPath" stroke="#439043" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#439043" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">0</text></g></g><g class="blocklyEditableText" transform="translate(12,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="72.46875" class="blocklyFieldRect blocklyDropdownRect" stroke="#439043" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">acos</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(52.46875,8.6)"/></g></g></g></svg></div><dl class="py function">
+<dt class="sig sig-object py" id="umath.acos">
+<span class="sig-name descname"><span class="pre">acos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a></span></span><a class="headerlink" href="#umath.acos" title="Link to this definition"></a></dt>
+<dd><p>逆余弦演算を適用します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 隣辺 / 斜辺。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">x</span></code> の逆余弦（ラジアン単位）。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="126" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#439043" fill="#59c059" d=" m 20,0  h 84 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -84 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(80, 4)" style="display: block;"><path class="blocklyPath" stroke="#439043" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#439043" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">0</text></g></g><g class="blocklyEditableText" transform="translate(12,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="60" class="blocklyFieldRect blocklyDropdownRect" stroke="#439043" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">tan</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(40,8.6)"/></g></g></g></svg></div><dl class="py function">
+<dt class="sig sig-object py" id="umath.tan">
+<span class="sig-name descname"><span class="pre">tan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a></span></span><a class="headerlink" href="#umath.tan" title="Link to this definition"></a></dt>
+<dd><p>角度の正接を取得します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – ラジアン単位の角度。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">x</span></code> の正接。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 134.8984 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="134.8984" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#439043" fill="#59c059" d=" m 20,0  h 92.8984 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -92.8984 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(88.8984, 4)" style="display: block;"><path class="blocklyPath" stroke="#439043" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#439043" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">0</text></g></g><g class="blocklyEditableText" transform="translate(12,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="68.8984" class="blocklyFieldRect blocklyDropdownRect" stroke="#439043" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">atan</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(48.8984,8.6)"/></g></g></g></svg></div><dl class="py function">
+<dt class="sig sig-object py" id="umath.atan">
+<span class="sig-name descname"><span class="pre">atan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a></span></span><a class="headerlink" href="#umath.atan" title="Link to this definition"></a></dt>
+<dd><p>逆正接演算を適用します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 対辺 / 隣辺。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">x</span></code> の逆正接（ラジアン単位）。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 191.7969 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="191.7969" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#439043" fill="#59c059" d=" m 20,0  h 149.7969 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -149.7969 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(145.7969, 4)" style="display: block;"><path class="blocklyPath" stroke="#439043" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#439043" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">0</text></g></g><g transform="translate(97.7969, 4)" style="display: block;"><path class="blocklyPath" stroke="#439043" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#439043" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">0</text></g></g><g class="blocklyEditableText" transform="translate(12,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="77.7969" class="blocklyFieldRect blocklyDropdownRect" stroke="#439043" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">atan2</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(57.7969,8.6)"/></g></g></g></svg></div><dl class="py function">
+<dt class="sig sig-object py" id="umath.atan2">
+<span class="sig-name descname"><span class="pre">atan2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a></span></span><a class="headerlink" href="#umath.atan2" title="Link to this definition"></a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">/</span> <span class="pre">a</span></code> に対して逆正接演算を適用し、<code class="docutils literal notranslate"><span class="pre">b</span></code> と <code class="docutils literal notranslate"><span class="pre">a</span></code> の符号を考慮して
+期待される角度を生成します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>b</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 三角形の対辺。</p></li>
+<li><p><strong>a</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 三角形の隣辺。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">/</span> <span class="pre">a</span></code> の逆正接（ラジアン単位）。</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id4">
+<h2>その他の数学関数<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="umath.isfinite">
+<span class="sig-name descname"><span class="pre">isfinite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.bool" title="ubuiltins.bool"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#umath.isfinite" title="Link to this definition"></a></dt>
+<dd><p>値が有限かどうかを確認します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 確認する値。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">x</span></code> が有限なら <code class="docutils literal notranslate"><span class="pre">True</span></code>、そうでなければ <code class="docutils literal notranslate"><span class="pre">False</span></code>。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="umath.isinfinite">
+<span class="sig-name descname"><span class="pre">isinfinite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.bool" title="ubuiltins.bool"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#umath.isinfinite" title="Link to this definition"></a></dt>
+<dd><p>値が無限かどうかを確認します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 確認する値。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">x</span></code> が無限なら <code class="docutils literal notranslate"><span class="pre">True</span></code>、そうでなければ <code class="docutils literal notranslate"><span class="pre">False</span></code>。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="umath.isnan">
+<span class="sig-name descname"><span class="pre">isnan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.bool" title="ubuiltins.bool"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#umath.isnan" title="Link to this definition"></a></dt>
+<dd><p>値が非数かどうかを確認します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 確認する値。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">x</span></code> が非数なら <code class="docutils literal notranslate"><span class="pre">True</span></code>、そうでなければ <code class="docutils literal notranslate"><span class="pre">False</span></code>。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="umath.modf">
+<span class="sig-name descname"><span class="pre">modf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.tuple" title="ubuiltins.tuple"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#umath.modf" title="Link to this definition"></a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">x</span></code> の小数部分と整数部分を取得します。いずれも <code class="docutils literal notranslate"><span class="pre">x</span></code> と同じ符号
+になります。</p>
+<p><a class="reference internal" href="#umath.fmod" title="umath.fmod"><code class="xref py py-func docutils literal notranslate"><span class="pre">fmod()</span></code></a> と混同しないでください。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 分解する値。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>小数部分と整数部分のタプル。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="umath.frexp">
+<span class="sig-name descname"><span class="pre">frexp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.tuple" title="ubuiltins.tuple"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#umath.frexp" title="Link to this definition"></a></dt>
+<dd><p>値 <code class="docutils literal notranslate"><span class="pre">x</span></code> を <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">m</span> <span class="pre">*</span> <span class="pre">(2</span> <span class="pre">**</span> <span class="pre">p)</span></code> となるようなタプル <code class="docutils literal notranslate"><span class="pre">(m,</span> <span class="pre">p)</span></code>
+に分解します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 分解する値。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">m</span></code> と <code class="docutils literal notranslate"><span class="pre">p</span></code> のタプル。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="umath.ldexp">
+<span class="sig-name descname"><span class="pre">ldexp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a></span></span><a class="headerlink" href="#umath.ldexp" title="Link to this definition"></a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">*</span> <span class="pre">(2</span> <span class="pre">**</span> <span class="pre">p)</span></code> を計算します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>m</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 値。</p></li>
+<li><p><strong>p</strong> (<a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a>) – 指数。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">*</span> <span class="pre">(2</span> <span class="pre">**</span> <span class="pre">p)</span></code> の結果。</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2026 The Pybricks Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

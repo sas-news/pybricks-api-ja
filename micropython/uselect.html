@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>uselect – イベントの待機 &mdash; pybricks v4.1.0b2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d8a2add5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/requirements.css?v=e2406e8f" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme_overrides.css?v=8b8d8269" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blocks.css?v=ee57a122" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blockimg.css?v=bf50a58c" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7dc5ce0d"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/requirements.js?v=6c6f6a43"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ustruct – バイナリデータのパックとアンパック" href="ustruct.html" />
+    <link rel="prev" title="urandom – 擬似乱数" href="urandom.html" />
+    <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pybricks
+              <img src="../_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pybricks modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hubs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pupdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iodevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – 汎用ツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robotics.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクスとドライブベース</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージの送受信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signaltypes.html">信号と単位</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MicroPython modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="builtins.html">組み込みクラスと関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">例外とエラー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="micropython.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">micropython</span></code> – MicroPythonの内部機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uerrno.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uerrno</span></code> – エラーコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uio.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uio</span></code> – 入出力ストリーム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ujson.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ujson</span></code> – JSONのエンコードとデコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="umath.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">umath</span></code> – 数学関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="urandom.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">urandom</span></code> – 擬似乱数</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uselect</span></code> – イベントの待機</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#uselect.poll"><code class="docutils literal notranslate"><span class="pre">poll()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uselect.Poll"><code class="docutils literal notranslate"><span class="pre">Poll</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#uselect.Poll.register"><code class="docutils literal notranslate"><span class="pre">Poll.register()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uselect.Poll.unregister"><code class="docutils literal notranslate"><span class="pre">Poll.unregister()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uselect.Poll.modify"><code class="docutils literal notranslate"><span class="pre">Poll.modify()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uselect.Poll.poll"><code class="docutils literal notranslate"><span class="pre">Poll.poll()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uselect.Poll.ipoll"><code class="docutils literal notranslate"><span class="pre">Poll.ipoll()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#uselect.POLLIN"><code class="docutils literal notranslate"><span class="pre">POLLIN</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uselect.POLLOUT"><code class="docutils literal notranslate"><span class="pre">POLLOUT</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uselect.POLLERR"><code class="docutils literal notranslate"><span class="pre">POLLERR</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uselect.POLLHUP"><code class="docutils literal notranslate"><span class="pre">POLLHUP</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">使用例</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ustruct.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ustruct</span></code> – バイナリデータのパックとアンパック</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usys</span></code> – システム固有の関数</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pybricks</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uselect</span></code> – イベントの待機</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="toggle-header docutils container">
+</div>
+<div class="toggle-content docutils container">
+
+        <div class="wy-table-responsive">
+            <table class="docutils align-default requirements-table">
+                <tbody>
+                    <tr>
+                        
+        <th background="../_images/compat_movehub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_cityhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_technichub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_primehub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_inventorhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_essentialhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_ev3brick.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+<section id="module-uselect">
+<span id="uselect"></span><h1><a class="reference internal" href="#module-uselect" title="uselect"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uselect</span></code></a> – イベントの待機<a class="headerlink" href="#module-uselect" title="Link to this heading"></a></h1>
+<p>このモジュールは、複数のストリームでイベントを効率的に待機する関数を提供します。</p>
+<p class="rubric">Pollインスタンスとクラス</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="uselect.poll">
+<span class="sig-name descname"><span class="pre">poll</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#uselect.Poll" title="uselect.Poll"><span class="pre">Poll</span></a></span></span><a class="headerlink" href="#uselect.poll" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="#uselect.Poll" title="uselect.Poll"><code class="xref py py-class docutils literal notranslate"><span class="pre">Poll</span></code></a> クラスのインスタンスを作成します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#uselect.Poll" title="uselect.Poll"><code class="xref py py-class docutils literal notranslate"><span class="pre">Poll</span></code></a> のインスタンス。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="uselect.Poll">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Poll</span></span><a class="headerlink" href="#uselect.Poll" title="Link to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="uselect.Poll.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eventmask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">POLLOUT</span> <span class="pre">|</span> <span class="pre">POLLOUT</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uselect.Poll.register" title="Link to this definition"></a></dt>
+<dd><p>ポーリング対象のストリームオブジェクトを登録します。ストリーム
+オブジェクトはイベントが監視されるようになります。イベントが発生
+すると、それが <a class="reference internal" href="#uselect.poll" title="uselect.poll"><code class="xref py py-meth docutils literal notranslate"><span class="pre">poll()</span></code></a> の戻り値の一部になります。</p>
+<p>同じストリームオブジェクトに対してこのメソッドが再度呼び出された
+場合、オブジェクトは再登録されませんが、<code class="docutils literal notranslate"><span class="pre">eventmask</span></code> フラグは
+<a class="reference internal" href="#uselect.Poll.modify" title="uselect.Poll.modify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">modify()</span></code></a> を呼び出したかのように更新されます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>object</strong> (<a class="reference internal" href="uio.html#uio.FileIO" title="uio.FileIO"><em>FileIO</em></a>) – ポーリングに登録するストリーム。</p></li>
+<li><p><strong>eventmask</strong> (<a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 使用するイベント。 <code class="docutils literal notranslate"><span class="pre">POLLIN</span></code>、<code class="docutils literal notranslate"><span class="pre">POLLOUT</span></code>、
+またはそれらの論理和 <code class="docutils literal notranslate"><span class="pre">POLLIN</span> <span class="pre">|</span> <span class="pre">POLLOUT</span></code> を指定します。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uselect.Poll.unregister">
+<span class="sig-name descname"><span class="pre">unregister</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">poll</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uselect.Poll.unregister" title="Link to this definition"></a></dt>
+<dd><p>オブジェクトをポーリングから登録解除します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>object</strong> (<a class="reference internal" href="uio.html#uio.FileIO" title="uio.FileIO"><em>FileIO</em></a>) – ポーリングから登録解除するストリーム。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uselect.Poll.modify">
+<span class="sig-name descname"><span class="pre">modify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eventmask</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uselect.Poll.modify" title="Link to this definition"></a></dt>
+<dd><p>ストリームオブジェクトのイベントマスクを変更します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>object</strong> (<a class="reference internal" href="uio.html#uio.FileIO" title="uio.FileIO"><em>FileIO</em></a>) – ポーリングに登録するストリーム。</p></li>
+<li><p><strong>eventmask</strong> (<a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 使用するイベント。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – オブジェクトが登録されていない場合。エラーは <code class="docutils literal notranslate"><span class="pre">ENOENT</span></code> です。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uselect.Poll.poll">
+<span class="sig-name descname"><span class="pre">poll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.list" title="ubuiltins.list"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="builtins.html#ubuiltins.tuple" title="ubuiltins.tuple"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="uio.html#uio.FileIO" title="uio.FileIO"><span class="pre">FileIO</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#uselect.Poll.poll" title="Link to this definition"></a></dt>
+<dd><p>登録されたオブジェクトの少なくとも1つが、処理可能な新しいイベント
+または例外状態になるまで待機します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>timeout</strong> (<a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – タイムアウト（ミリ秒）。 <code class="docutils literal notranslate"><span class="pre">0</span></code> を選択するとすぐに
+返り、<code class="docutils literal notranslate"><span class="pre">-1</span></code> を選択すると無制限に待機します。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>タプルのリスト。イベントのあるオブジェクトごとに1つの
+(<code class="docutils literal notranslate"><span class="pre">object</span></code>, <code class="docutils literal notranslate"><span class="pre">eventmask</span></code>, …) タプルがあり、処理すべき
+イベントがない場合はタプルはありません。 <code class="docutils literal notranslate"><span class="pre">eventmask</span></code> の値は、
+何が起こったかを示すポーリングフラグの組み合わせです。これには
+登録されていなくても <code class="docutils literal notranslate"><span class="pre">POLLERR</span></code> と <code class="docutils literal notranslate"><span class="pre">POLLHUP</span></code> が含まれる
+場合があります。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uselect.Poll.ipoll">
+<span class="sig-name descname"><span class="pre">ipoll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="builtins.html#ubuiltins.tuple" title="ubuiltins.tuple"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="uio.html#uio.FileIO" title="uio.FileIO"><span class="pre">FileIO</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#uselect.Poll.ipoll" title="Link to this definition"></a></dt>
+<dd><p>まず、<a class="reference internal" href="#uselect.poll" title="uselect.poll"><code class="xref py py-meth docutils literal notranslate"><span class="pre">poll()</span></code></a> と同様に、登録されたオブジェクトの少なくとも
+1つが、処理可能な新しいイベントまたは例外状態になるまで待機します。</p>
+<p>ただし、リストの代わりに、このメソッドは効率向上のために
+イテレーターを返します。イテレーターは一度に1つの
+(<code class="docutils literal notranslate"><span class="pre">object</span></code>, <code class="docutils literal notranslate"><span class="pre">eventmask</span></code>, …) タプルを生成し、次の値を生成する
+ときにそれを上書きします。後で値が必要な場合は、明示的にコピー
+してください。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>timeout</strong> (<a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – タイムアウト（ミリ秒）。 <code class="docutils literal notranslate"><span class="pre">0</span></code> を選択するとすぐに
+返り、<code class="docutils literal notranslate"><span class="pre">-1</span></code> を選択すると無制限に待機します。</p></li>
+<li><p><strong>flags</strong> (<a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – <code class="docutils literal notranslate"><span class="pre">1</span></code> に設定すると、イベントにワンショット動作が
+適用されます。これは、イベントが発生したストリームの
+イベントマスクが <code class="docutils literal notranslate"><span class="pre">poll.modify(obj,</span> <span class="pre">0)</span></code> を使用して自動的に
+リセットされることを意味します。このように、<a class="reference internal" href="#uselect.Poll.modify" title="uselect.Poll.modify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">modify()</span></code></a>
+で新しいマスクが設定されるまで、そのようなストリームの
+新しいイベントは処理されません。これは非同期 I/O
+スケジューラーに役立ちます。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<p class="rubric">イベントマスクフラグ</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="uselect.POLLIN">
+<span class="sig-name descname"><span class="pre">POLLIN</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a></span><a class="headerlink" href="#uselect.POLLIN" title="Link to this definition"></a></dt>
+<dd><p>読み取り可能なデータがあります。</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="uselect.POLLOUT">
+<span class="sig-name descname"><span class="pre">POLLOUT</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a></span><a class="headerlink" href="#uselect.POLLOUT" title="Link to this definition"></a></dt>
+<dd><p>さらにデータを書き込むことができます。</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="uselect.POLLERR">
+<span class="sig-name descname"><span class="pre">POLLERR</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a></span><a class="headerlink" href="#uselect.POLLERR" title="Link to this definition"></a></dt>
+<dd><p>関連するストリームでエラー状態が発生しました。明示的に処理する必要があります。
+そうしないと、それ以降の <a class="reference internal" href="#uselect.poll" title="uselect.poll"><code class="xref py py-meth docutils literal notranslate"><span class="pre">poll()</span></code></a> の呼び出しがすぐに返る場合があります。</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="uselect.POLLHUP">
+<span class="sig-name descname"><span class="pre">POLLHUP</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a></span><a class="headerlink" href="#uselect.POLLHUP" title="Link to this definition"></a></dt>
+<dd><p>関連するストリームでハングアップが発生しました。明示的に処理する必要があります。
+そうしないと、それ以降の <a class="reference internal" href="#uselect.poll" title="uselect.poll"><code class="xref py py-meth docutils literal notranslate"><span class="pre">poll()</span></code></a> の呼び出しがすぐに返る場合があります。</p>
+</dd></dl>
+
+<section id="id1">
+<h2>使用例<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>このモジュールを使用したデモについては、<a class="reference external" href="https://pybricks.com/projects/tutorials/wireless/hub-to-device/pc-keyboard/">projects website</a> を参照してください。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2026 The Pybricks Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

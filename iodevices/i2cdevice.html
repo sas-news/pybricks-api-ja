@@ -1,0 +1,318 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>汎用I2Cデバイス &mdash; pybricks v4.1.0b2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d8a2add5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/requirements.css?v=e2406e8f" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme_overrides.css?v=8b8d8269" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blocks.css?v=ee57a122" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blockimg.css?v=bf50a58c" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7dc5ce0d"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/requirements.js?v=6c6f6a43"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="アナログセンサー" href="analogsensor.html" />
+    <link rel="prev" title="汎用UARTデバイス" href="uartdevice.html" />
+    <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pybricks
+              <img src="../_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pybricks modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../hubs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pupdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#id1">ワイヤレスデバイス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#lego">LEGOプロトコルデバイス</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#id2">汎用プロトコル</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="uartdevice.html">汎用UARTデバイス</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">汎用I2Cデバイス</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.iodevices.I2CDevice"><code class="docutils literal notranslate"><span class="pre">I2CDevice</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#i2caddress">I2Cアドレス</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">高度なI2Cコマンド</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="analogsensor.html">アナログセンサー</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcmotor.html">DCモーター</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – 汎用ツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robotics.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクスとドライブベース</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージの送受信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signaltypes.html">信号と単位</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MicroPython modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/builtins.html">組み込みクラスと関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/exceptions.html">例外とエラー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/micropython.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">micropython</span></code> – MicroPythonの内部機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uerrno.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uerrno</span></code> – エラーコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uio.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uio</span></code> – 入出力ストリーム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/ujson.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ujson</span></code> – JSONのエンコードとデコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/umath.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">umath</span></code> – 数学関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/urandom.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">urandom</span></code> – 擬似乱数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uselect.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uselect</span></code> – イベントの待機</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/ustruct.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ustruct</span></code> – バイナリデータのパックとアンパック</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/usys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usys</span></code> – システム固有の関数</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pybricks</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a></li>
+      <li class="breadcrumb-item active">汎用I2Cデバイス</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="i2c">
+<h1>汎用I2Cデバイス<a class="headerlink" href="#i2c" title="Link to this heading"></a></h1>
+<p>EV3とNXTは、汎用I2Cデバイスのハブへの接続をサポートしています。
+<a class="reference internal" href="uartdevice.html"><span class="doc">こちらのピン配置</span></a> を参照してください。</p>
+<figure class="align-default">
+<img alt="../_images/iodevice-rj12cyan.png" src="../_images/iodevice-rj12cyan.png" style="width: 25%;" />
+</figure>
+<dl class="py class">
+<dt class="sig sig-object py" id="pybricks.iodevices.I2CDevice">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">I2CDevice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">power_pin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nxt_quirk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.I2CDevice" title="Link to this definition"></a></dt>
+<dd><p>汎用またはカスタムのI2Cデバイス。</p>
+<p>注意: <code class="docutils literal notranslate"><span class="pre">power_pin</span></code> オプションは自己責任で使用してください。不用意に
+ピンへ電源を供給すると、ハブやデバイスを損傷する可能性があります。
+このオプションを使用する場合、リスクを理解したかどうかの確認が
+求められます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>port</strong> (<a class="reference internal" href="../parameters/port.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – デバイスが接続されているポート。</p></li>
+<li><p><strong>address</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – クライアントデバイスのI2Cアドレス。
+<a class="reference internal" href="#i2caddress"><span class="std std-ref">I2Cアドレス</span></a> を参照してください。</p></li>
+<li><p><strong>custom</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><em>bool</em></a>) – カスタムのI2Cデバイスを使用している場合は
+<code class="docutils literal notranslate"><span class="pre">True</span></code> に設定します。</p></li>
+<li><p><strong>power_pin</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – デバイスの電源要件。ピンに電源を供給しない場合は
+<code class="docutils literal notranslate"><span class="pre">0</span></code> （デフォルト）を使用します。NXTとEV3では、 <code class="docutils literal notranslate"><span class="pre">1</span></code> を
+使用してバッテリー電源をピン1に供給します。他のピンは
+サポートされていません。</p></li>
+<li><p><strong>nxt_quirk</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><em>bool</em></a>) – 確実に通信するために低速の互換タイミングを
+必要とする古いNXT I2Cセンサー（旧型のNXT超音波センサーなど）
+には <code class="docutils literal notranslate"><span class="pre">True</span></code> に設定します。</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.iodevices.I2CDevice.read">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.bytes" title="ubuiltins.bytes"><span class="pre">bytes</span></a></span></span><a class="headerlink" href="#pybricks.iodevices.I2CDevice.read" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">callable</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span></dt>
+<dd><p>指定したレジスタからバイトを読み取ります。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>reg</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 読み取りを開始するレジスタ: 0–255または
+0x00–0xFF。 <code class="docutils literal notranslate"><span class="pre">None</span></code> を使用すると、先にレジスタアドレスを
+書き込まずに読み取ります。</p></li>
+<li><p><strong>length</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 読み取るバイト数。</p></li>
+<li><p><strong>map</strong> (<em>callable</em>) – 返されたバイトを変換するオプションの
+呼び出し可能オブジェクト。指定された場合、バイトを引数として
+呼び出され、その戻り値が代わりに返されます。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>デバイスから返されたバイト。呼び出し可能オブジェクトが指定された
+場合は <code class="docutils literal notranslate"><span class="pre">map</span></code> の戻り値。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.iodevices.I2CDevice.write">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.I2CDevice.write" title="Link to this definition"></a></dt>
+<dd><p>バイトを書き込みます。オプションで指定したレジスタから書き込みを
+開始できます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>reg</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 書き込みを開始するレジスタ: 0–255または
+0x00–0xFF。 <code class="docutils literal notranslate"><span class="pre">None</span></code> を使用すると、レジスタプレフィックス
+なしで書き込みます。</p></li>
+<li><p><strong>data</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bytes" title="ubuiltins.bytes"><em>bytes</em></a>) – 書き込むバイト。 <code class="docutils literal notranslate"><span class="pre">None</span></code> を使用すると、レジスタの
+後に何も書き込みません。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.ValueError" title="ubuiltins.ValueError"><strong>ValueError</strong></a> – <code class="docutils literal notranslate"><span class="pre">reg</span></code> が指定されていて <code class="docutils literal notranslate"><span class="pre">data</span></code> が32バイトを超える
+    場合。より多くのデータを書き込むには、 <code class="docutils literal notranslate"><span class="pre">reg</span></code> 引数を省略し、
+    <code class="docutils literal notranslate"><span class="pre">data</span></code> の最初のバイトとしてレジスタを含めてください。</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<p><strong>例: I2Cデバイスへの読み取りと書き込み</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">EV3Brick</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.iodevices</span><span class="w"> </span><span class="kn">import</span> <span class="n">I2CDevice</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Port</span>
+
+<span class="c1"># Initialize the EV3</span>
+<span class="n">ev3</span> <span class="o">=</span> <span class="n">EV3Brick</span><span class="p">()</span>
+
+<span class="c1"># Initialize I2C Sensor</span>
+<span class="n">device</span> <span class="o">=</span> <span class="n">I2CDevice</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">S2</span><span class="p">,</span> <span class="mh">0xD2</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Read one byte from the device.</span>
+<span class="c1"># For this device, we can read the Who Am I</span>
+<span class="c1"># register (0x0F) for the expected value: 211.</span>
+<span class="k">if</span> <span class="mi">211</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">device</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mh">0x0F</span><span class="p">):</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Unexpected I2C device ID"</span><span class="p">)</span>
+
+<span class="c1"># To write data, create a bytes object of one</span>
+<span class="c1"># or more bytes. For example:</span>
+<span class="c1"># data = bytes((1, 2, 3))</span>
+
+<span class="c1"># Write one byte (value 0x08) to register 0x22</span>
+<span class="n">device</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mh">0x22</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">((</span><span class="mh">0x08</span><span class="p">,)))</span>
+</pre></div>
+</div>
+<section id="i2caddress">
+<span id="id1"></span><h2>I2Cアドレス<a class="headerlink" href="#i2caddress" title="Link to this heading"></a></h2>
+<p>I2Cアドレスは7ビットの値です。ただし、LEGO互換センサーを製造する
+ほとんどのベンダーは、ドキュメントで8ビットのアドレスを提供しています。
+これらのアドレスを使用するには、1ビットシフトする必要があります。
+たとえば、記載されているアドレスが <code class="docutils literal notranslate"><span class="pre">0xD2</span></code> の場合は、
+<code class="docutils literal notranslate"><span class="pre">address</span> <span class="pre">=</span> <span class="pre">0xD2</span> <span class="pre">&gt;&gt;</span> <span class="pre">1</span></code> とできます。</p>
+</section>
+<section id="id2">
+<h2>高度なI2Cコマンド<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>一部の基本的なI2Cデバイスは、レジスタ引数やデータを必要としません。
+以下の例に示すように、この動作を実現できます。</p>
+<p><strong>例: 高度なI2C読み取りと書き込みのテクニック</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">EV3Brick</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.iodevices</span><span class="w"> </span><span class="kn">import</span> <span class="n">I2CDevice</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Port</span>
+
+<span class="c1"># Initialize the EV3</span>
+<span class="n">ev3</span> <span class="o">=</span> <span class="n">EV3Brick</span><span class="p">()</span>
+
+<span class="c1"># Initialize I2C Sensor</span>
+<span class="n">device</span> <span class="o">=</span> <span class="n">I2CDevice</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">S2</span><span class="p">,</span> <span class="mh">0xD2</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Recommended for reading</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">reg</span><span class="o">=</span><span class="mh">0x0F</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Read 1 byte from no particular register:</span>
+<span class="n">device</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">reg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Read 0 bytes from no particular register:</span>
+<span class="n">device</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">reg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># I2C write operations consist of a register byte followed</span>
+<span class="c1"># by a series of data bytes. Depending on your device, you</span>
+<span class="c1"># can choose to skip the register or data as follows:</span>
+
+<span class="c1"># Recommended for writing:</span>
+<span class="n">device</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">reg</span><span class="o">=</span><span class="mh">0x22</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="sa">b</span><span class="s2">"</span><span class="se">\x08</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Write 1 byte to no particular register:</span>
+<span class="n">device</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">reg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="sa">b</span><span class="s2">"</span><span class="se">\x08</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Write 0 bytes to a particular register:</span>
+<span class="n">device</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">reg</span><span class="o">=</span><span class="mh">0x08</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="c1"># Write 0 bytes to no particular register:</span>
+<span class="n">device</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">reg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>追加の技術リソース</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">I2CDevice</span></code> クラスのメソッドは、Linux SMBusドライバーの関数を
+呼び出します。内部でどのコマンドが呼び出されているかを確認するには、
+<a class="reference external" href="https://github.com/pybricks/pybricks-micropython">Pybricks source code</a> をチェックしてください。
+MicroPythonを使用せずにI2Cを使用する詳細については、 <a class="reference external" href="http://docs.ev3dev.org/projects/lego-linux-drivers/en/ev3dev-stretch/i2c.html">ev3dev I2C</a> の
+ページを参照してください。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2026 The Pybricks Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,572 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color Sensor &mdash; pybricks v4.1.0b2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d8a2add5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/requirements.css?v=e2406e8f" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme_overrides.css?v=8b8d8269" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blocks.css?v=ee57a122" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blockimg.css?v=bf50a58c" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7dc5ce0d"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/requirements.js?v=6c6f6a43"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Ultrasonic Sensor" href="ultrasonicsensor.html" />
+    <link rel="prev" title="Power Functions" href="pfmotor.html" />
+    <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pybricks
+              <img src="../_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pybricks modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../hubs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dcmotor.html">回転センサーなしモーター</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motor.html">回転センサー付きモーター</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiltsensor.html">Tilt Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="infraredsensor.html">Infrared Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="colordistancesensor.html">Color and Distance Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pfmotor.html">Power Functions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Color Sensor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pybricks.pupdevices.ColorSensor"><code class="docutils literal notranslate"><span class="pre">ColorSensor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.pupdevices.ColorSensor.color"><code class="docutils literal notranslate"><span class="pre">ColorSensor.color()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.pupdevices.ColorSensor.reflection"><code class="docutils literal notranslate"><span class="pre">ColorSensor.reflection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.pupdevices.ColorSensor.ambient"><code class="docutils literal notranslate"><span class="pre">ColorSensor.ambient()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.pupdevices.ColorSensor.hsv"><code class="docutils literal notranslate"><span class="pre">ColorSensor.hsv()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.pupdevices.ColorSensor.detectable_colors"><code class="docutils literal notranslate"><span class="pre">ColorSensor.detectable_colors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.pupdevices.ColorSensor.lights.on"><code class="docutils literal notranslate"><span class="pre">ColorSensor.lights.on()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.pupdevices.ColorSensor.lights.off"><code class="docutils literal notranslate"><span class="pre">ColorSensor.lights.off()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">使用例</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">色と反射を測定する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">色を待つ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">反射光での色相・彩度・明度を読み取る</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">検出する色を変更する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">環境光での色相・彩度・明度・色を読み取る</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">内蔵ライトを点滅させる</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">プログラム終了時にライトをオフにする</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ultrasonicsensor.html">Ultrasonic Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forcesensor.html">Force Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="colorlightmatrix.html">Color Light Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="light.html">Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote.html">Remote Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="technicmovehub.html">Technic Move Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mariohub.html">Mario Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="duplotrain.html">Duplo Train</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iodevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – 汎用ツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robotics.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクスとドライブベース</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージの送受信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signaltypes.html">信号と単位</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MicroPython modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/builtins.html">組み込みクラスと関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/exceptions.html">例外とエラー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/micropython.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">micropython</span></code> – MicroPythonの内部機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uerrno.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uerrno</span></code> – エラーコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uio.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uio</span></code> – 入出力ストリーム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/ujson.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ujson</span></code> – JSONのエンコードとデコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/umath.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">umath</span></code> – 数学関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/urandom.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">urandom</span></code> – 擬似乱数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uselect.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uselect</span></code> – イベントの待機</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/ustruct.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ustruct</span></code> – バイナリデータのパックとアンパック</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/usys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usys</span></code> – システム固有の関数</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pybricks</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a></li>
+      <li class="breadcrumb-item active">Color Sensor</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="toggle-header docutils container">
+</div>
+<div class="toggle-content docutils container">
+
+        <div class="wy-table-responsive">
+            <table class="docutils align-default requirements-table">
+                <tbody>
+                    <tr>
+                        
+        <th background="../_images/compat_movehub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_cityhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_technichub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_primehub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_inventorhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_essentialhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_ev3brick.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+<section id="color-sensor">
+<h1>Color Sensor<a class="headerlink" href="#color-sensor" title="Link to this heading"></a></h1>
+<figure class="align-default">
+<img alt="../_images/sensor_color_lights.png" src="../_images/sensor_color_lights.png" style="width: 70%;" />
+</figure>
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 287.9328 52" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="287.9328" height="52" style="background-color: transparent"><g transform="translate(1, 5)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  l 0,-4  10,0  0,4  10,0  0,-4  10,0  0,4  h 242.9328 a 4 4 0 0,1 4,4  v 6  V 38  V 40  V 40 a 4 4 0 0,1 -4,4  h -242.9328  l 0,-4  -10,0  0,4  -10,0  0,-4  -10,0  0,4  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(202.3781, 6)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 23.5547 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -23.5547 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">A</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(19.5547,3)"/></g></g><g transform="translate(8,6.5)"><image height="30px" width="28.8px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8cmVjdCB4PSIuMDgzNjE2IiB5PSIuMDgzNjE2IiB3aWR0aD0iMjQuODMzIiBoZWlnaHQ9IjI0LjgzMyIgcng9Ii43MjgzOSIgcnk9Ii43NDMyNiIgZmlsbD0iI2Y0ZjRmNCIgc3Ryb2tlPSIjMWIyOTMzIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2Utd2lkdGg9Ii4xNjcyMyIvPgo8cmVjdCB4PSI0LjM5MzgiIHk9IjQuMTIyMSIgd2lkdGg9IjE2LjIxMiIgaGVpZ2h0PSIxNi43NTYiIHJ4PSIzLjgxODciIHJ5PSIzLjg5NjYiIGZpbGw9IiMxYjJhMzQiLz4KPGVsbGlwc2UgY3g9IjEyLjUiIGN5PSIxMi41IiByeD0iNi4yNjMzIiByeT0iNi4zOTEyIiBmaWxsPSIjZTllOWU5Ii8+CjxlbGxpcHNlIGN4PSIxMi41IiBjeT0iMTIuNSIgcng9Ii4wNDM5NTciIHJ5PSIuMDQ0ODU0IiBmaWxsPSIjMWIyYTM0Ii8+CjxwYXRoIGQ9Im0xMi40OTkgMTIuNDkzIDUuNDI3OSAzLjE5NzciIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFiMmEzNCIgc3Ryb2tlLXdpZHRoPSIuMjUwODUiLz4KPHBhdGggZD0ibTEyLjQ5OSAxMi40OTMtNS40Mjc5IDMuMTk3NyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWIyYTM0IiBzdHJva2Utd2lkdGg9Ii4yNTA4NSIvPgo8cGF0aCBkPSJtMTIuNDk5IDEyLjQ5M3YtNi4zOTU1IiBmaWxsPSJub25lIiBzdHJva2U9IiMxYjJhMzQiIHN0cm9rZS13aWR0aD0iLjI1MDg1Ii8+CjxlbGxpcHNlIGN4PSIxMi41IiBjeT0iMTIuNSIgcng9IjQuNDkxMyIgcnk9IjQuNTgzIiBmaWxsPSIjMWIyYTM0Ii8+CjxlbGxpcHNlIGN4PSIxMi41IiBjeT0iMTIuNSIgcng9IjMuMzEwNiIgcnk9IjMuMzc4MSIgZmlsbD0iI2U5ZTllOSIvPgogIDwvZz4KPC9zdmc+"/></g><g transform="translate(44.8,6.5)"><image height="30px" width="2px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0wLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g class="blocklyEditableText" transform="translate(54.8,7.4)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="112.03125" class="blocklyFieldRect" stroke="#4585a1" style="display: block; fill: rgb(78, 150, 182);"/><text class="blocklyText" dominant-baseline="central" style="fill: rgb(255, 255, 255);" x="8" y="14.6">color sensor</text></g><g transform="translate(174.83125,13)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">on</text></g><g transform="translate(265.9328,6.5)"><image height="30px" width="12px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMiAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8cGF0aCBkPSJtMi40NzM4IDUuNzk2OCA3LjUwOTYgOS40MDI3LTcuNTA5NiA5LjQwMjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjQiLz4KICA8L2c+Cjwvc3ZnPg==" style="cursor: pointer;"/></g></g></g></svg></div><div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1169.3156 52" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="1169.3156" height="52" style="background-color: transparent"><g transform="translate(1, 5)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  l 0,-4  10,0  0,4  10,0  0,-4  10,0  0,4  h 1124.3156 a 4 4 0 0,1 4,4  v 6  V 38  V 40  V 40 a 4 4 0 0,1 -4,4  h -1124.3156  l 0,-4  -10,0  0,4  -10,0  0,-4  -10,0  0,4  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(202.3781, 6)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 23.5547 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -23.5547 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">A</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(19.5547,3)"/></g></g><g transform="translate(377.9406, 6)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 71.5651 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -71.5651 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,5.3333)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="21.3333" width="26.6667" class="blocklyFieldRect" style="fill-opacity: 1; fill: rgb(255, 0, 0); stroke: rgb(69, 133, 161);"/></g><g class="blocklyEditableText" transform="translate(46.6667,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">red</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(32.8984,3)"/></g></g><g transform="translate(489.5057, 6)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 95.5729 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -95.5729 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,5.3333)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="21.3333" width="26.6667" class="blocklyFieldRect" style="fill-opacity: 1; fill: rgb(255, 255, 0); stroke: rgb(69, 133, 161);"/></g><g class="blocklyEditableText" transform="translate(46.6667,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">yellow</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(56.90625,3)"/></g></g><g transform="translate(625.0786, 6)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 90.237 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -90.237 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,5.3333)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="21.3333" width="26.6667" class="blocklyFieldRect" style="fill-opacity: 1; fill: rgb(0, 255, 0); stroke: rgb(69, 133, 161);"/></g><g class="blocklyEditableText" transform="translate(46.6667,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">green</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(51.5703,3)"/></g></g><g transform="translate(755.3156, 6)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 79.5573 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -79.5573 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,5.3333)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="21.3333" width="26.6667" class="blocklyFieldRect" style="fill-opacity: 1; fill: rgb(0, 0, 255); stroke: rgb(69, 133, 161);"/></g><g class="blocklyEditableText" transform="translate(46.6667,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">blue</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(40.8906,3)"/></g></g><g transform="translate(874.8729, 6)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 87.5573 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -87.5573 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,5.3333)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="21.3333" width="26.6667" class="blocklyFieldRect" style="fill-opacity: 1; fill: rgb(255, 255, 255); stroke: rgb(69, 133, 161);"/></g><g class="blocklyEditableText" transform="translate(46.6667,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">white</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(48.8906,3)"/></g></g><g transform="translate(1002.4302, 6)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 84.8854 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -84.8854 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,5.3333)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="21.3333" width="26.6667" class="blocklyFieldRect" style="fill-opacity: 1; fill: rgb(0, 0, 0); stroke: rgb(69, 133, 161);"/></g><g class="blocklyEditableText" transform="translate(46.6667,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">none</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(46.21875,3)"/></g></g><g transform="translate(8,6.5)"><image height="30px" width="28.8px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8cmVjdCB4PSIuMDgzNjE2IiB5PSIuMDgzNjE2IiB3aWR0aD0iMjQuODMzIiBoZWlnaHQ9IjI0LjgzMyIgcng9Ii43MjgzOSIgcnk9Ii43NDMyNiIgZmlsbD0iI2Y0ZjRmNCIgc3Ryb2tlPSIjMWIyOTMzIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2Utd2lkdGg9Ii4xNjcyMyIvPgo8cmVjdCB4PSI0LjM5MzgiIHk9IjQuMTIyMSIgd2lkdGg9IjE2LjIxMiIgaGVpZ2h0PSIxNi43NTYiIHJ4PSIzLjgxODciIHJ5PSIzLjg5NjYiIGZpbGw9IiMxYjJhMzQiLz4KPGVsbGlwc2UgY3g9IjEyLjUiIGN5PSIxMi41IiByeD0iNi4yNjMzIiByeT0iNi4zOTEyIiBmaWxsPSIjZTllOWU5Ii8+CjxlbGxpcHNlIGN4PSIxMi41IiBjeT0iMTIuNSIgcng9Ii4wNDM5NTciIHJ5PSIuMDQ0ODU0IiBmaWxsPSIjMWIyYTM0Ii8+CjxwYXRoIGQ9Im0xMi40OTkgMTIuNDkzIDUuNDI3OSAzLjE5NzciIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFiMmEzNCIgc3Ryb2tlLXdpZHRoPSIuMjUwODUiLz4KPHBhdGggZD0ibTEyLjQ5OSAxMi40OTMtNS40Mjc5IDMuMTk3NyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWIyYTM0IiBzdHJva2Utd2lkdGg9Ii4yNTA4NSIvPgo8cGF0aCBkPSJtMTIuNDk5IDEyLjQ5M3YtNi4zOTU1IiBmaWxsPSJub25lIiBzdHJva2U9IiMxYjJhMzQiIHN0cm9rZS13aWR0aD0iLjI1MDg1Ii8+CjxlbGxpcHNlIGN4PSIxMi41IiBjeT0iMTIuNSIgcng9IjQuNDkxMyIgcnk9IjQuNTgzIiBmaWxsPSIjMWIyYTM0Ii8+CjxlbGxpcHNlIGN4PSIxMi41IiBjeT0iMTIuNSIgcng9IjMuMzEwNiIgcnk9IjMuMzc4MSIgZmlsbD0iI2U5ZTllOSIvPgogIDwvZz4KPC9zdmc+"/></g><g transform="translate(44.8,6.5)"><image height="30px" width="2px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0wLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g class="blocklyEditableText" transform="translate(54.8,7.4)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="112.03125" class="blocklyFieldRect" stroke="#4585a1" style="display: block; fill: rgb(78, 150, 182);"/><text class="blocklyText" dominant-baseline="central" style="fill: rgb(255, 255, 255);" x="8" y="14.6">color sensor</text></g><g transform="translate(174.83125,13)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">on</text></g><g transform="translate(265.9328,13)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">to match only</text></g><g transform="translate(1127.3156,6.5)"><image height="30px" width="12px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMiAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8cGF0aCBkPSJtOS41MDk1IDUuNzk2OC03LjUwOTYgOS40MDI3IDcuNTA5NiA5LjQwMjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjQiLz4KICA8L2c+Cjwvc3ZnPg==" style="cursor: pointer;"/></g><g transform="translate(1147.3156,6.5)"><image height="30px" width="12px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMiAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8cGF0aCBkPSJtMi40NzM4IDUuNzk2OCA3LjUwOTYgOS40MDI3LTcuNTA5NiA5LjQwMjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjQiLz4KICA8L2c+Cjwvc3ZnPg==" style="cursor: pointer;"/></g></g></g></svg></div><dl class="py class">
+<dt class="sig sig-object py" id="pybricks.pupdevices.ColorSensor">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ColorSensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.pupdevices.ColorSensor" title="Link to this definition"></a></dt>
+<dd><p>LEGO® SPIKE カラーセンサー。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>port</strong> (<a class="reference internal" href="../parameters/port.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – センサーを接続するポート。</p>
+</dd>
+</dl>
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 293.1484 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="293.1484" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 20,0  h 251.1484 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -251.1484 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(56, 4)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 108.03125 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -108.03125 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">color sensor</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(104.03125,3)"/></g></g><g transform="translate(12,7)"><image height="25px" width="25px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8Zz4KPGNpcmNsZSBjeD0iMTcuNSIgY3k9IjE3LjUiIHI9IjcuNSIgZmlsbD0iIzFmZjUwMCIgc3R5bGU9Ii13ZWJraXQtZm9udC1zbW9vdGhpbmc6YW50aWFsaWFzZWQiLz4KPGNpcmNsZSBjeD0iNy41IiBjeT0iMTcuNSIgcj0iNy41IiBmaWxsPSIjZjUyOTAwIiBzdHlsZT0iLXdlYmtpdC1mb250LXNtb290aGluZzphbnRpYWxpYXNlZCIvPgo8Y2lyY2xlIGN4PSIxMi41IiBjeT0iNy41IiByPSI3LjUiIGZpbGw9IiMwMDUwZjUiIHN0eWxlPSItd2Via2l0LWZvbnQtc21vb3RoaW5nOmFudGlhbGlhc2VkIi8+CjwvZz4KICA8L2c+Cjwvc3ZnPg=="/></g><g transform="translate(45,4.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g class="blocklyEditableText" transform="translate(204.03125,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="75.1172" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">color</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(55.1172,8.6)"/></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.pupdevices.ColorSensor.color">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">surface</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><span class="pre">Color</span></a></span></span><a class="headerlink" href="#pybricks.pupdevices.ColorSensor.color" title="Link to this definition"></a></dt>
+<dd><p>表面または外部光源の色をスキャンします。</p>
+<p>検出する色は <code class="docutils literal notranslate"><span class="pre">detectable_colors()</span></code> メソッドで選択します。
+デフォルトでは <code class="docutils literal notranslate"><span class="pre">Color.RED</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Color.YELLOW</span></code> 、
+<code class="docutils literal notranslate"><span class="pre">Color.GREEN</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Color.BLUE</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Color.WHITE</span></code> 、
+<code class="docutils literal notranslate"><span class="pre">Color.NONE</span></code> を検出します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>surface</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><em>bool</em></a>) – <code class="docutils literal notranslate"><span class="pre">true</span></code> を選択すると、物体や表面の色を
+スキャンします。<code class="docutils literal notranslate"><span class="pre">false</span></code> を選択すると、画面やその他の
+外部光源の色をスキャンします。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>検出された色。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 322.9375 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="322.9375" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 20,0  h 280.9375 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -280.9375 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(56, 4)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 108.03125 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -108.03125 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">color sensor</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(104.03125,3)"/></g></g><g transform="translate(12,7)"><image height="25px" width="25px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iLjk4NTcyIiB4Mj0iNS44OTAyIiB5MT0iMy4zMDczIiB5Mj0iMy4zMDczIiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDMuNzc5NSAwIDAgLjkwNzA5IDAgMTkpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiNmZmYiIG9mZnNldD0iMCIvPgo8c3RvcCBzdG9wLWNvbG9yPSIjZmZmIiBzdG9wLW9wYWNpdHk9IjAiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Im0zLjg1NjQgOC44Nzk1IDYuNTAzMyA3LjYzMzYgOC4zMzk1LTEwLjE2OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIvPgo8ZyB0cmFuc2Zvcm09Im1hdHJpeCgtLjI0Mjk3IDEuMjMyIC0xLjIzMiAtLjI0Mjk3IDMyLjI1NyAtOC4zMzAyKSIgc3Ryb2tlLXdpZHRoPSIuODU3OTEiPgo8cGF0aCB0cmFuc2Zvcm09InJvdGF0ZSgxODAgMTEuNTMyIDYuMjUzOCkiIGQ9Im0xMy45MTkgNi42MzNoLTcuNTM3NGwzLjc2ODctNi41Mjc2eiIgZmlsbD0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjIzLjE2NCIvPgo8L2c+CjxyZWN0IHk9IjE5IiB3aWR0aD0iMjUiIGhlaWdodD0iNiIvPgo8cmVjdCB5PSIxOSIgd2lkdGg9IjI1IiBoZWlnaHQ9IjYiIGZpbGw9InVybCgjYSkiLz4KICA8L2c+Cjwvc3ZnPg=="/></g><g transform="translate(45,4.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(204.03125,11)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">reflected light</text></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.pupdevices.ColorSensor.reflection">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">reflection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">%</span></span></span><a class="headerlink" href="#pybricks.pupdevices.ColorSensor.reflection" title="Link to this definition"></a></dt>
+<dd><p>表面がセンサーの発する光をどれだけ反射するかを測定します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>測定された反射率。0%（反射なし）から100%（高反射）の範囲。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 317.5859 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="317.5859" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 20,0  h 275.5859 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -275.5859 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(56, 4)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 108.03125 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -108.03125 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">color sensor</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(104.03125,3)"/></g></g><g transform="translate(12,7)"><image height="25px" width="25px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8cGF0aCBkPSJtMTEuODg0IDIzLjY3NC01LjAxMjEtNy40MDMyIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjY0NjQiLz4KPHBhdGggZD0ibTEzLjAxNCAwYTEzLjAxNCAxMy4wMTQgMCAwIDEtMTMuMDE0IDEzLjAxNHYtMTMuMDE0eiIgZmlsbD0iI2ZmZiIvPgo8cGF0aCBkPSJtMjMuMzEzIDEyLjE1Mi01LjAxMjEtNy40MDMyIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjY0NjQiLz4KPHBhdGggZD0ibTE3LjU5OSAxNy45MTMtNS4wMTIxLTcuNDAzMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMS42NDY0Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(45,4.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(204.03125,11)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">ambient light</text></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.pupdevices.ColorSensor.ambient">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ambient</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">%</span></span></span><a class="headerlink" href="#pybricks.pupdevices.ColorSensor.ambient" title="Link to this definition"></a></dt>
+<dd><p>環境光の強度を測定します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>0%（暗い）から100%（明るい）の範囲の環境光強度。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">高度な色検出</p>
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 281.6016 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="281.6016" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 20,0  h 239.6016 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -239.6016 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(56, 4)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 108.03125 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -108.03125 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">color sensor</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(104.03125,3)"/></g></g><g transform="translate(12,7)"><image height="25px" width="25px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8Zz4KPGNpcmNsZSBjeD0iMTcuNSIgY3k9IjE3LjUiIHI9IjcuNSIgZmlsbD0iIzFmZjUwMCIgc3R5bGU9Ii13ZWJraXQtZm9udC1zbW9vdGhpbmc6YW50aWFsaWFzZWQiLz4KPGNpcmNsZSBjeD0iNy41IiBjeT0iMTcuNSIgcj0iNy41IiBmaWxsPSIjZjUyOTAwIiBzdHlsZT0iLXdlYmtpdC1mb250LXNtb290aGluZzphbnRpYWxpYXNlZCIvPgo8Y2lyY2xlIGN4PSIxMi41IiBjeT0iNy41IiByPSI3LjUiIGZpbGw9IiMwMDUwZjUiIHN0eWxlPSItd2Via2l0LWZvbnQtc21vb3RoaW5nOmFudGlhbGlhc2VkIi8+CjwvZz4KICA8L2c+Cjwvc3ZnPg=="/></g><g transform="translate(45,4.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g class="blocklyEditableText" transform="translate(204.03125,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="63.5703" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">hsv</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(43.5703,8.6)"/></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.pupdevices.ColorSensor.hsv">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">hsv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">surface</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><span class="pre">Color</span></a></span></span><a class="headerlink" href="#pybricks.pupdevices.ColorSensor.hsv" title="Link to this definition"></a></dt>
+<dd><p>表面または外部光源の色をスキャンします。</p>
+<p>このメソッドは <code class="docutils literal notranslate"><span class="pre">color()</span></code> に似ていますが、最も近い検出可能な色に
+丸めるのではなく、色相、彩度、輝度の全範囲の値を返します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>surface</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><em>bool</em></a>) – <code class="docutils literal notranslate"><span class="pre">true</span></code> を選択すると、物体や表面の色を
+スキャンします。<code class="docutils literal notranslate"><span class="pre">false</span></code> を選択すると、画面やその他の
+外部光源の色をスキャンします。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>測定された色。色は色相（0–359）、彩度（0–100）、
+輝度（0–100）で表されます。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.pupdevices.ColorSensor.detectable_colors">
+<span class="sig-name descname"><span class="pre">detectable_colors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colors</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.pupdevices.ColorSensor.detectable_colors" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">detectable_colors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Collection</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><span class="pre">Color</span></a><span class="p"><span class="pre">]</span></span></span></span></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">color()</span></code> メソッドが検出する色を設定します。</p>
+<p>アプリケーションで検出したい色だけを指定してください。これにより、
+フルカラー測定値は最も近い指定色に丸められ、他の色は無視されます。
+これにより信頼性が向上します。</p>
+<p>引数を指定しない場合は、現在選択されている色が返されます。</p>
+<p>ブロックでコーディングする場合は、センサーセットアップブロックで
+設定します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>colors</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.list" title="ubuiltins.list"><em>list</em></a><em> or </em><a class="reference internal" href="../micropython/builtins.html#ubuiltins.tuple" title="ubuiltins.tuple"><em>tuple</em></a>) – 検出したい色である
+<a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a> オブジェクトのリスト。
+<code class="docutils literal notranslate"><span class="pre">Color.MAGENTA</span></code> のような標準色を選ぶことも、
+<code class="docutils literal notranslate"><span class="pre">Color(h=348,</span> <span class="pre">s=96,</span> <span class="pre">v=40)</span></code> のような独自の色を指定して
+さらに良い結果を得ることもできます。独自の色は
+<code class="docutils literal notranslate"><span class="pre">hsv()</span></code> メソッドで測定します。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">内蔵ライト</p>
+<p>このセンサーには3つの内蔵ライトがあります。それぞれのライトの輝度を
+調整できます。センサーで測定を行うと、測定に必要に応じてライトが
+自動的にオン・オフされます。</p>
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 407.2656 57.2" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="407.2656" height="57.2" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#3971bf" fill="#4c97ff" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  c 1.6667,0  2.5,0.75  3.3333,1.5  l 3.3333,3  c 0.8333,0.75  1.6667,1.5  3.3333,1.5  h 10  c 1.6667,0  2.5,-0.75  3.3333,-1.5  l 3.3333,-3  c 0.8333,-0.75  1.6667,-1.5  3.3333,-1.5  h 362.2656 a 4 4 0 0,1 4,4  v 6  V 43.2  V 45.2  V 45.2 a 4 4 0 0,1 -4,4  h -362.2656  c -1.6667,0  -2.5,0.75  -3.3333,1.5  l -3.3333,3  c -0.8333,0.75  -1.6667,1.5  -3.3333,1.5  h -10  c -1.6667,0  -2.5,-0.75  -3.3333,-1.5  l -3.3333,-3  c -0.8333,-0.75  -1.6667,-1.5  -3.3333,-1.5  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(308.34375, 6)" style="display: block;"><path class="blocklyPath" stroke="#3971bf" fill="#4180d9" d=" m 18.6,0  h 51.7219 a 18.6 18.6 0 0,1 18.6,18.6  v 0 a 18.6 18.6 0 0,1 -18.6,18.6  V 37.2  h -51.7219 a 18.6 18.6 0 0,1 -18.6,-18.6  v 0 a 18.6 18.6 0 0,1 18.6,-18.6 z&#10;"/><g class="blocklyEditableText" transform="translate(12,4)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="42.6953" class="blocklyFieldRect" stroke="#3971bf" style="display: block;"/><text class="blocklyText" dominant-baseline="central" x="8" y="14.6">100</text></g><g transform="translate(62.6953,9.6)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">%</text></g></g><g transform="translate(55, 8.6)" style="display: block;"><path class="blocklyPath" stroke="#3971bf" fill="#4180d9" d=" m 16,0  h 108.03125 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -108.03125 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">color sensor</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(104.03125,3)"/></g></g><g transform="translate(8,9.1)"><image height="30px" width="28px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzLCA1KSI+CiAgICA8ZGVmcz4KPHJhZGlhbEdyYWRpZW50IGlkPSJiIiBjeD0iLTE3LjYzOCIgY3k9Ii0xNC45ODYiIHI9IjE1LjY4NiIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgxLjA0NzUgMCAwIDEuMzA2NCAzMC45NzcgMzIuMDc3KSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjZmZmIiBvZmZzZXQ9IjAiLz4KPHN0b3Agc3RvcC1jb2xvcj0iI2ZmZiIgc3RvcC1vcGFjaXR5PSIwIiBvZmZzZXQ9IjEiLz4KPC9yYWRpYWxHcmFkaWVudD4KPHJhZGlhbEdyYWRpZW50IGlkPSJhIiBjeD0iMTIuNzE0IiBjeT0iMTIuMzYzIiByPSI4LjY1NyIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgyLjAxODcgMCAwIDIuNTk5NiAtMTMuMTY2IC0xOS42MzkpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiNmZmYiIG9mZnNldD0iMCIvPgo8c3RvcCBzdG9wLWNvbG9yPSIjZmZmIiBzdG9wLW9wYWNpdHk9IjAiIG9mZnNldD0iMSIvPgo8L3JhZGlhbEdyYWRpZW50Pgo8L2RlZnM+CjxlbGxpcHNlIGN4PSIxMi41IiBjeT0iMTIuNSIgcng9IjcuNSIgcnk9IjcuNSIgZmlsbD0idXJsKCNhKSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjUiLz4KPGVsbGlwc2UgY3g9Ii0xNy43MyIgY3k9Ii00OC4xMiIgcng9Ii4xNTQ0MSIgcnk9Ii4zMDg4MyIgZmlsbD0ibm9uZSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9Ii4zNzgiLz4KPGNpcmNsZSBjeD0iMTIuNSIgY3k9IjEyLjUiIHI9IjEwIiBmaWxsPSJub25lIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdHJva2U9InVybCgjYikiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(44,9.1)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(203.03125,15.6)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">light</text></g><g class="blocklyEditableText" transform="translate(244.7969,10)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="55.5469" class="blocklyFieldRect blocklyDropdownRect" stroke="#3971bf" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">on</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(35.5469,8.6)"/></g></g></g></svg></div><div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 598.3906 52" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="598.3906" height="52" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#3971bf" fill="#4c97ff" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  c 1.6667,0  2.5,0.75  3.3333,1.5  l 3.3333,3  c 0.8333,0.75  1.6667,1.5  3.3333,1.5  h 10  c 1.6667,0  2.5,-0.75  3.3333,-1.5  l 3.3333,-3  c 0.8333,-0.75  1.6667,-1.5  3.3333,-1.5  h 553.3906 a 4 4 0 0,1 4,4  v 6  V 42  V 40 a 4 4 0 0,1 -4,4  h -553.3906  c -1.6667,0  -2.5,0.75  -3.3333,1.5  l -3.3333,3  c -0.8333,0.75  -1.6667,1.5  -3.3333,1.5  h -10  c -1.6667,0  -2.5,-0.75  -3.3333,-1.5  l -3.3333,-3  c -0.8333,-0.75  -1.6667,-1.5  -3.3333,-1.5  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(55, 6)" style="display: block;"><path class="blocklyPath" stroke="#3971bf" fill="#4180d9" d=" m 16,0  h 108.03125 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -108.03125 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">color sensor</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(104.03125,3)"/></g></g><g transform="translate(308.34375, 2)" style="display: block;" class="blocklyDraggable"><path class="blocklyPath" stroke="#009973" fill="#00cc99" d=" m 20,0  h 240.0469 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -240.0469 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(79.5547, 4)" style="display: block;"><path class="blocklyPath" stroke="#009973" fill="#fff" d=" m 16,0  h 18.6953 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -18.6953 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="26.6953" class="blocklyFieldRect" stroke="#009973" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">100</text></g></g><g transform="translate(138.25, 4)" style="display: block;"><path class="blocklyPath" stroke="#009973" fill="#fff" d=" m 16,0  h 9.7969 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -9.7969 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="17.7969" class="blocklyFieldRect" stroke="#009973" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">50</text></g></g><g transform="translate(188.0469, 4)" style="display: block;"><path class="blocklyPath" stroke="#009973" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#009973" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">0</text></g></g><g transform="translate(12,11)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">list with</text></g><g transform="translate(236.0469,4.5)"><image height="30px" width="12px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMiAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8cGF0aCBkPSJtOS41MDk1IDUuNzk2OC03LjUwOTYgOS40MDI3IDcuNTA5NiA5LjQwMjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjQiLz4KICA8L2c+Cjwvc3ZnPg==" style="cursor: pointer;"/></g><g transform="translate(256.0469,4.5)"><image height="30px" width="12px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMiAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8cGF0aCBkPSJtMi40NzM4IDUuNzk2OCA3LjUwOTYgOS40MDI3LTcuNTA5NiA5LjQwMjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjQiLz4KICA8L2c+Cjwvc3ZnPg==" style="cursor: pointer;"/></g></g><g transform="translate(8,6.5)"><image height="30px" width="28px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzLCA1KSI+CiAgICA8ZGVmcz4KPHJhZGlhbEdyYWRpZW50IGlkPSJiIiBjeD0iLTE3LjYzOCIgY3k9Ii0xNC45ODYiIHI9IjE1LjY4NiIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgxLjA0NzUgMCAwIDEuMzA2NCAzMC45NzcgMzIuMDc3KSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjZmZmIiBvZmZzZXQ9IjAiLz4KPHN0b3Agc3RvcC1jb2xvcj0iI2ZmZiIgc3RvcC1vcGFjaXR5PSIwIiBvZmZzZXQ9IjEiLz4KPC9yYWRpYWxHcmFkaWVudD4KPHJhZGlhbEdyYWRpZW50IGlkPSJhIiBjeD0iMTIuNzE0IiBjeT0iMTIuMzYzIiByPSI4LjY1NyIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgyLjAxODcgMCAwIDIuNTk5NiAtMTMuMTY2IC0xOS42MzkpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiNmZmYiIG9mZnNldD0iMCIvPgo8c3RvcCBzdG9wLWNvbG9yPSIjZmZmIiBzdG9wLW9wYWNpdHk9IjAiIG9mZnNldD0iMSIvPgo8L3JhZGlhbEdyYWRpZW50Pgo8L2RlZnM+CjxlbGxpcHNlIGN4PSIxMi41IiBjeT0iMTIuNSIgcng9IjcuNSIgcnk9IjcuNSIgZmlsbD0idXJsKCNhKSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjUiLz4KPGVsbGlwc2UgY3g9Ii0xNy43MyIgY3k9Ii00OC4xMiIgcng9Ii4xNTQ0MSIgcnk9Ii4zMDg4MyIgZmlsbD0ibm9uZSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9Ii4zNzgiLz4KPGNpcmNsZSBjeD0iMTIuNSIgY3k9IjEyLjUiIHI9IjEwIiBmaWxsPSJub25lIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdHJva2U9InVybCgjYikiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(44,6.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(203.03125,13)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">light</text></g><g class="blocklyEditableText" transform="translate(244.7969,7.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="55.5469" class="blocklyFieldRect blocklyDropdownRect" stroke="#3971bf" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">on</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(35.5469,8.6)"/></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.pupdevices.ColorSensor.lights.on">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lights.</span></span><span class="sig-name descname"><span class="pre">on</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">brightness</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.pupdevices.ColorSensor.lights.on" title="Link to this definition"></a></dt>
+<dd><p>指定した輝度でライトを点灯します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>brightness</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em> or </em><a class="reference internal" href="../micropython/builtins.html#ubuiltins.tuple" title="ubuiltins.tuple"><em>tuple</em></a><em>, </em><em>%</em>) – 単一の値ですべてのライトの輝度を同時に設定します。
+3つの値のタプルで各ライトの輝度を個別に設定します。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.2266 52" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="311.2266" height="52" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#3971bf" fill="#4c97ff" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  c 1.6667,0  2.5,0.75  3.3333,1.5  l 3.3333,3  c 0.8333,0.75  1.6667,1.5  3.3333,1.5  h 10  c 1.6667,0  2.5,-0.75  3.3333,-1.5  l 3.3333,-3  c 0.8333,-0.75  1.6667,-1.5  3.3333,-1.5  h 266.2266 a 4 4 0 0,1 4,4  v 6  V 38  V 40  V 40 a 4 4 0 0,1 -4,4  h -266.2266  c -1.6667,0  -2.5,0.75  -3.3333,1.5  l -3.3333,3  c -0.8333,0.75  -1.6667,1.5  -3.3333,1.5  h -10  c -1.6667,0  -2.5,-0.75  -3.3333,-1.5  l -3.3333,-3  c -0.8333,-0.75  -1.6667,-1.5  -3.3333,-1.5  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(55, 6)" style="display: block;"><path class="blocklyPath" stroke="#3971bf" fill="#4180d9" d=" m 16,0  h 108.03125 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -108.03125 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">color sensor</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(104.03125,3)"/></g></g><g transform="translate(8,6.5)"><image height="30px" width="28px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzLCA1KSI+CiAgICA8ZGVmcz4KPHJhZGlhbEdyYWRpZW50IGlkPSJiIiBjeD0iLTE3LjYzOCIgY3k9Ii0xNC45ODYiIHI9IjE1LjY4NiIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgxLjA0NzUgMCAwIDEuMzA2NCAzMC45NzcgMzIuMDc3KSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjZmZmIiBvZmZzZXQ9IjAiLz4KPHN0b3Agc3RvcC1jb2xvcj0iI2ZmZiIgc3RvcC1vcGFjaXR5PSIwIiBvZmZzZXQ9IjEiLz4KPC9yYWRpYWxHcmFkaWVudD4KPHJhZGlhbEdyYWRpZW50IGlkPSJhIiBjeD0iMTIuNzE0IiBjeT0iMTIuMzYzIiByPSI4LjY1NyIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgyLjAxODcgMCAwIDIuNTk5NiAtMTMuMTY2IC0xOS42MzkpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiNmZmYiIG9mZnNldD0iMCIvPgo8c3RvcCBzdG9wLWNvbG9yPSIjZmZmIiBzdG9wLW9wYWNpdHk9IjAiIG9mZnNldD0iMSIvPgo8L3JhZGlhbEdyYWRpZW50Pgo8L2RlZnM+CjxlbGxpcHNlIGN4PSIxMi41IiBjeT0iMTIuNSIgcng9IjcuNSIgcnk9IjcuNSIgZmlsbD0idXJsKCNhKSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjUiLz4KPGVsbGlwc2UgY3g9Ii0xNy43MyIgY3k9Ii00OC4xMiIgcng9Ii4xNTQ0MSIgcnk9Ii4zMDg4MyIgZmlsbD0ibm9uZSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9Ii4zNzgiLz4KPGNpcmNsZSBjeD0iMTIuNSIgY3k9IjEyLjUiIHI9IjEwIiBmaWxsPSJub25lIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdHJva2U9InVybCgjYikiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(44,6.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(203.03125,13)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">light</text></g><g class="blocklyEditableText" transform="translate(244.7969,7.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="56.4297" class="blocklyFieldRect blocklyDropdownRect" stroke="#3971bf" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">off</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(36.4297,8.6)"/></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.pupdevices.ColorSensor.lights.off">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lights.</span></span><span class="sig-name descname"><span class="pre">off</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.pupdevices.ColorSensor.lights.off" title="Link to this definition"></a></dt>
+<dd><p>すべてのライトを消します。</p>
+</dd></dl>
+
+</dd></dl>
+
+<section id="id1">
+<h2>使用例<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<section id="id2">
+<h3>色と反射を測定する<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Port</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.pupdevices</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColorSensor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the sensor.</span>
+<span class="n">sensor</span> <span class="o">=</span> <span class="n">ColorSensor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Read the color and reflection</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">color</span><span class="p">()</span>
+    <span class="n">reflection</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">reflection</span><span class="p">()</span>
+
+    <span class="c1"># Print the measured color and reflection.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">reflection</span><span class="p">)</span>
+
+    <span class="c1"># Move the sensor around and see how</span>
+    <span class="c1"># well you can detect colors.</span>
+
+    <span class="c1"># Wait so we can read the value.</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>色を待つ<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Color</span><span class="p">,</span> <span class="n">Port</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.pupdevices</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColorSensor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the sensor.</span>
+<span class="n">sensor</span> <span class="o">=</span> <span class="n">ColorSensor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
+
+
+<span class="c1"># This is a function that waits for a desired color.</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">wait_for_color</span><span class="p">(</span><span class="n">desired_color</span><span class="p">):</span>
+    <span class="c1"># While the color is not the desired color, we keep waiting.</span>
+    <span class="k">while</span> <span class="n">sensor</span><span class="o">.</span><span class="n">color</span><span class="p">()</span> <span class="o">!=</span> <span class="n">desired_color</span><span class="p">:</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+
+<span class="c1"># Now we use the function we just created above.</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Here you can make your train/vehicle go forward.</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Waiting for red ..."</span><span class="p">)</span>
+    <span class="n">wait_for_color</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="p">)</span>
+
+    <span class="c1"># Here you can make your train/vehicle go backward.</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Waiting for blue ..."</span><span class="p">)</span>
+    <span class="n">wait_for_color</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">BLUE</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>反射光での色相・彩度・明度を読み取る<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Port</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.pupdevices</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColorSensor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the sensor.</span>
+<span class="n">sensor</span> <span class="o">=</span> <span class="n">ColorSensor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># The standard color() method always "rounds" the</span>
+    <span class="c1"># measurement to the nearest "whole" color.</span>
+    <span class="c1"># That's useful for most applications.</span>
+
+    <span class="c1"># But you can get the original hue, saturation,</span>
+    <span class="c1"># and value without "rounding", as follows:</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">hsv</span><span class="p">()</span>
+
+    <span class="c1"># Print the results.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+
+    <span class="c1"># Wait so we can read the value.</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3>検出する色を変更する<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p>デフォルトでは、センサーは赤・黄・緑・青・白・無色を検出するように
+設定されており、多くの用途に適しています。</p>
+<p>アプリケーションでより良い結果を得るには、検出したい色を事前に測定し、
+センサーにその色だけを探させることができます。色は必ず、実際に使うときと
+「同じ距離・同じ光の条件」で測定してください。そうすれば、通常は
+検出しにくい色でも非常に正確な結果が得られます。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Color</span><span class="p">,</span> <span class="n">Port</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.pupdevices</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColorSensor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the sensor.</span>
+<span class="n">sensor</span> <span class="o">=</span> <span class="n">ColorSensor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
+
+<span class="c1"># First, decide which objects you want to detect, and measure their HSV values.</span>
+<span class="c1"># You can do that with the hsv() method as shown in the previous example.</span>
+<span class="c1">#</span>
+<span class="c1"># Use your measurements to override the default colors, or add new colors:</span>
+<span class="n">Color</span><span class="o">.</span><span class="n">GREEN</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="mi">132</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">94</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="mi">26</span><span class="p">)</span>
+<span class="n">Color</span><span class="o">.</span><span class="n">MAGENTA</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="mi">348</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">96</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">Color</span><span class="o">.</span><span class="n">BROWN</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">78</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">Color</span><span class="o">.</span><span class="n">RED</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="mi">359</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">97</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="mi">39</span><span class="p">)</span>
+
+<span class="c1"># Put your colors in a list or tuple.</span>
+<span class="n">my_colors</span> <span class="o">=</span> <span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">GREEN</span><span class="p">,</span> <span class="n">Color</span><span class="o">.</span><span class="n">MAGENTA</span><span class="p">,</span> <span class="n">Color</span><span class="o">.</span><span class="n">BROWN</span><span class="p">,</span> <span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="p">,</span> <span class="n">Color</span><span class="o">.</span><span class="n">NONE</span><span class="p">)</span>
+
+<span class="c1"># Save your colors.</span>
+<span class="n">sensor</span><span class="o">.</span><span class="n">detectable_colors</span><span class="p">(</span><span class="n">my_colors</span><span class="p">)</span>
+
+<span class="c1"># color() works as usual, but now it returns one of your specified colors.</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">color</span><span class="p">()</span>
+
+    <span class="c1"># Print the color.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+
+    <span class="c1"># Check which one it is.</span>
+    <span class="k">if</span> <span class="n">color</span> <span class="o">==</span> <span class="n">Color</span><span class="o">.</span><span class="n">MAGENTA</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"It works!"</span><span class="p">)</span>
+
+    <span class="c1"># Wait so we can read it.</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h3>環境光での色相・彩度・明度・色を読み取る<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Port</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.pupdevices</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColorSensor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the sensor.</span>
+<span class="n">sensor</span> <span class="o">=</span> <span class="n">ColorSensor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
+
+<span class="c1"># Repeat forever.</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Get the ambient color values. Instead of scanning the color of a surface,</span>
+    <span class="c1"># this lets you scan the color of light sources like lamps or screens.</span>
+    <span class="n">hsv</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">hsv</span><span class="p">(</span><span class="n">surface</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">surface</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># Get the ambient light intensity.</span>
+    <span class="n">ambient</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">ambient</span><span class="p">()</span>
+
+    <span class="c1"># Print the measurements.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">hsv</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">ambient</span><span class="p">)</span>
+
+    <span class="c1"># Point the sensor at a computer screen or colored light. Watch the color.</span>
+    <span class="c1"># Also, cover the sensor with your hands and watch the ambient value.</span>
+
+    <span class="c1"># Wait so we can read the printed line</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h3>内蔵ライトを点滅させる<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Port</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.pupdevices</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColorSensor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the sensor.</span>
+<span class="n">sensor</span> <span class="o">=</span> <span class="n">ColorSensor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
+
+<span class="c1"># Repeat forever.</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Turn on one light at a time, at half the brightness.</span>
+    <span class="c1"># Do this for all 3 lights and repeat that 5 times.</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">sensor</span><span class="o">.</span><span class="n">lights</span><span class="o">.</span><span class="n">on</span><span class="p">([</span><span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+        <span class="n">sensor</span><span class="o">.</span><span class="n">lights</span><span class="o">.</span><span class="n">on</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+        <span class="n">sensor</span><span class="o">.</span><span class="n">lights</span><span class="o">.</span><span class="n">on</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+    <span class="c1"># Turn all lights on at maximum brightness.</span>
+    <span class="n">sensor</span><span class="o">.</span><span class="n">lights</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+
+    <span class="c1"># Turn all lights off.</span>
+    <span class="n">sensor</span><span class="o">.</span><span class="n">lights</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h3>プログラム終了時にライトをオフにする<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Port</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.pupdevices</span><span class="w"> </span><span class="kn">import</span> <span class="n">ColorSensor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the sensor.</span>
+<span class="n">sensor</span> <span class="o">=</span> <span class="n">ColorSensor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># Run the main code.</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">sensor</span><span class="o">.</span><span class="n">color</span><span class="p">())</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+
+
+<span class="c1"># Wrap the main code in try/finally so that the cleanup code always runs</span>
+<span class="c1"># when the program ends, even if an exception was raised.</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="c1"># The cleanup code goes here.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Cleaning up."</span><span class="p">)</span>
+    <span class="n">sensor</span><span class="o">.</span><span class="n">lights</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2026 The Pybricks Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,422 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>例外とエラー &mdash; pybricks v4.1.0b2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d8a2add5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/requirements.css?v=e2406e8f" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme_overrides.css?v=8b8d8269" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blocks.css?v=ee57a122" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blockimg.css?v=bf50a58c" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7dc5ce0d"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/requirements.js?v=6c6f6a43"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="micropython – MicroPythonの内部機能" href="micropython.html" />
+    <link rel="prev" title="組み込みクラスと関数" href="builtins.html" />
+    <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pybricks
+              <img src="../_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pybricks modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hubs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pupdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iodevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – 汎用ツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robotics.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクスとドライブベース</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージの送受信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signaltypes.html">信号と単位</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MicroPython modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="builtins.html">組み込みクラスと関数</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">例外とエラー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.ArithmeticError"><code class="docutils literal notranslate"><span class="pre">ArithmeticError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.AssertionError"><code class="docutils literal notranslate"><span class="pre">AssertionError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.AttributeError"><code class="docutils literal notranslate"><span class="pre">AttributeError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.BaseException"><code class="docutils literal notranslate"><span class="pre">BaseException</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.EOFError"><code class="docutils literal notranslate"><span class="pre">EOFError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.Exception"><code class="docutils literal notranslate"><span class="pre">Exception</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.GeneratorExit"><code class="docutils literal notranslate"><span class="pre">GeneratorExit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.ImportError"><code class="docutils literal notranslate"><span class="pre">ImportError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.IndentationError"><code class="docutils literal notranslate"><span class="pre">IndentationError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.IndexError"><code class="docutils literal notranslate"><span class="pre">IndexError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.KeyboardInterrupt"><code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.KeyError"><code class="docutils literal notranslate"><span class="pre">KeyError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.LookupError"><code class="docutils literal notranslate"><span class="pre">LookupError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.MemoryError"><code class="docutils literal notranslate"><span class="pre">MemoryError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.NameError"><code class="docutils literal notranslate"><span class="pre">NameError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.NotImplementedError"><code class="docutils literal notranslate"><span class="pre">NotImplementedError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.OSError"><code class="docutils literal notranslate"><span class="pre">OSError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ubuiltins.OSError.errno"><code class="docutils literal notranslate"><span class="pre">OSError.errno</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.OverflowError"><code class="docutils literal notranslate"><span class="pre">OverflowError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.RuntimeError"><code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.StopIteration"><code class="docutils literal notranslate"><span class="pre">StopIteration</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.SyntaxError"><code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.SystemExit"><code class="docutils literal notranslate"><span class="pre">SystemExit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.TypeError"><code class="docutils literal notranslate"><span class="pre">TypeError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.ValueError"><code class="docutils literal notranslate"><span class="pre">ValueError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuiltins.ZeroDivisionError"><code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">使用例</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#repl">REPLターミナルでのデバッグ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">停止ボタンを押したときにコードを実行する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#device-detection"><code class="docutils literal notranslate"><span class="pre">OSError</span></code> を使ったデバイスの検出</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="micropython.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">micropython</span></code> – MicroPythonの内部機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uerrno.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uerrno</span></code> – エラーコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uio.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uio</span></code> – 入出力ストリーム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ujson.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ujson</span></code> – JSONのエンコードとデコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="umath.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">umath</span></code> – 数学関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="urandom.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">urandom</span></code> – 擬似乱数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uselect.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uselect</span></code> – イベントの待機</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ustruct.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ustruct</span></code> – バイナリデータのパックとアンパック</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usys</span></code> – システム固有の関数</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pybricks</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">例外とエラー</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>例外とエラー<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<p>このセクションでは、利用可能なすべての例外をアルファベット順に列挙します。</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.ArithmeticError">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ArithmeticError</span></span><a class="headerlink" href="#ubuiltins.ArithmeticError" title="Link to this definition"></a></dt>
+<dd><p>さまざまな算術エラーに対して送出される組み込み例外の基底クラス。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.AssertionError">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">AssertionError</span></span><a class="headerlink" href="#ubuiltins.AssertionError" title="Link to this definition"></a></dt>
+<dd><p>assert文が失敗したときに送出されます。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.AttributeError">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">AttributeError</span></span><a class="headerlink" href="#ubuiltins.AttributeError" title="Link to this definition"></a></dt>
+<dd><p>属性の参照または代入が失敗したときに送出されます。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.BaseException">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">BaseException</span></span><a class="headerlink" href="#ubuiltins.BaseException" title="Link to this definition"></a></dt>
+<dd><p>すべての組み込み例外の基底クラス。</p>
+<p>ユーザー定義クラスから直接継承することは意図されていません
+（その場合は <a class="reference internal" href="#ubuiltins.Exception" title="ubuiltins.Exception"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a> を使用してください）。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.EOFError">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">EOFError</span></span><a class="headerlink" href="#ubuiltins.EOFError" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="builtins.html#ubuiltins.input" title="ubuiltins.input"><code class="xref py py-meth docutils literal notranslate"><span class="pre">input()</span></code></a> 関数がデータを読み取る前にファイル終端（EOF）に
+達したときに送出されます。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.Exception">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Exception</span></span><a class="headerlink" href="#ubuiltins.Exception" title="Link to this definition"></a></dt>
+<dd><p>すべての組み込み例外はこのクラスから派生しています。</p>
+<p>すべてのユーザー定義例外もこのクラスから派生させる必要があります。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.GeneratorExit">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">GeneratorExit</span></span><a class="headerlink" href="#ubuiltins.GeneratorExit" title="Link to this definition"></a></dt>
+<dd><p>ジェネレーターまたはコルーチンが閉じられたときに送出されます。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.ImportError">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ImportError</span></span><a class="headerlink" href="#ubuiltins.ImportError" title="Link to this definition"></a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">import</span></code> 文がモジュールを読み込めなかったときに送出されます。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.IndentationError">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">IndentationError</span></span><a class="headerlink" href="#ubuiltins.IndentationError" title="Link to this definition"></a></dt>
+<dd><p>不正なインデントに関連する構文エラーの基底クラス。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.IndexError">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">IndexError</span></span><a class="headerlink" href="#ubuiltins.IndexError" title="Link to this definition"></a></dt>
+<dd><p>シーケンスの添字が範囲外のときに送出されます。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.KeyboardInterrupt">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">KeyboardInterrupt</span></span><a class="headerlink" href="#ubuiltins.KeyboardInterrupt" title="Link to this definition"></a></dt>
+<dd><p>ユーザーが割り込みキー（通常は <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">C</kbd> ）を押したときに
+送出されます。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.KeyError">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">KeyError</span></span><a class="headerlink" href="#ubuiltins.KeyError" title="Link to this definition"></a></dt>
+<dd><p>マッピング（辞書）のキーが既存のキーの中に見つからないときに送出されます。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.LookupError">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">LookupError</span></span><a class="headerlink" href="#ubuiltins.LookupError" title="Link to this definition"></a></dt>
+<dd><p>マッピングまたはシーケンスで使用するキーまたはインデックスが
+無効な場合に送出される例外の基底クラス。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.MemoryError">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">MemoryError</span></span><a class="headerlink" href="#ubuiltins.MemoryError" title="Link to this definition"></a></dt>
+<dd><p>操作がメモリ不足になったときに送出されます。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.NameError">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">NameError</span></span><a class="headerlink" href="#ubuiltins.NameError" title="Link to this definition"></a></dt>
+<dd><p>ローカル名またはグローバル名が見つからないときに送出されます。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.NotImplementedError">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">NotImplementedError</span></span><a class="headerlink" href="#ubuiltins.NotImplementedError" title="Link to this definition"></a></dt>
+<dd><p>ユーザー定義の基底クラスでは、派生クラスにメソッドのオーバーライドを
+要求する抽象メソッド、または実際の実装がまだ追加される必要があることを
+示す開発中のクラスで、この例外を送出する必要があります。</p>
+</dd></dl>
+
+<dl class="py class" id="oserror">
+<dt class="sig sig-object py" id="ubuiltins.OSError">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">OSError</span></span><a class="headerlink" href="#ubuiltins.OSError" title="Link to this definition"></a></dt>
+<dd><p>この例外は、ハブ上で動作するオペレーティングシステムである
+ファームウェアによって送出されます。
+<a class="reference internal" href="#device-detection"><span class="std std-ref">例</span></a> として、ポートAにモーターが
+接続されていないときに <code class="docutils literal notranslate"><span class="pre">Motor(Port.A)</span></code> を呼び出すと
+<code class="docutils literal notranslate"><span class="pre">OSError</span></code> が送出されます。</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ubuiltins.OSError.errno">
+<span class="sig-name descname"><span class="pre">errno</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a></span><a class="headerlink" href="#ubuiltins.OSError.errno" title="Link to this definition"></a></dt>
+<dd><p>発生した <code class="docutils literal notranslate"><span class="pre">OSError</span></code> の種類を指定します。種類は <a class="reference internal" href="uerrno.html#module-uerrno" title="uerrno"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uerrno</span></code></a>
+モジュールに列挙されています。</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.OverflowError">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">OverflowError</span></span><a class="headerlink" href="#ubuiltins.OverflowError" title="Link to this definition"></a></dt>
+<dd><p>算術演算の結果が表現できないほど大きいときに送出されます。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.RuntimeError">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">RuntimeError</span></span><a class="headerlink" href="#ubuiltins.RuntimeError" title="Link to this definition"></a></dt>
+<dd><p>他のどのカテゴリーにも当てはまらないエラーが検出されたときに送出されます。</p>
+<p>関連する値は、何が具体的に問題だったかを示す文字列です。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.StopIteration">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">StopIteration</span></span><a class="headerlink" href="#ubuiltins.StopIteration" title="Link to this definition"></a></dt>
+<dd><p>組み込み関数 <a class="reference internal" href="builtins.html#ubuiltins.next" title="ubuiltins.next"><code class="xref py py-meth docutils literal notranslate"><span class="pre">next()</span></code></a> とイテレーターの <code class="docutils literal notranslate"><span class="pre">__next__()</span></code> メソッドが、
+イテレーターがこれ以上要素を生成しないことを示すために送出されます。</p>
+<p>ジェネレーター関数は、これを直接送出する代わりにreturnすべきです。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.SyntaxError">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">SyntaxError</span></span><a class="headerlink" href="#ubuiltins.SyntaxError" title="Link to this definition"></a></dt>
+<dd><p>パーサーが構文エラーに遭遇したときに送出されます。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.SystemExit">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">SystemExit</span></span><a class="headerlink" href="#ubuiltins.SystemExit" title="Link to this definition"></a></dt>
+<dd><p>ハブまたはPybricks Codeアプリの停止ボタンを押したときに送出されます。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.TypeError">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">TypeError</span></span><a class="headerlink" href="#ubuiltins.TypeError" title="Link to this definition"></a></dt>
+<dd><p>操作または関数が不適切な型のオブジェクトに適用されたときに送出されます。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.ValueError">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ValueError</span></span><a class="headerlink" href="#ubuiltins.ValueError" title="Link to this definition"></a></dt>
+<dd><p>操作または関数が、正しい型だが不適切な値の引数を受け取ったときに
+送出されます。これは、 <a class="reference internal" href="#ubuiltins.IndexError" title="ubuiltins.IndexError"><code class="xref py py-class docutils literal notranslate"><span class="pre">IndexError</span></code></a> のようなより正確な例外で
+状況が説明できない場合に使用されます。</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ubuiltins.ZeroDivisionError">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ZeroDivisionError</span></span><a class="headerlink" href="#ubuiltins.ZeroDivisionError" title="Link to this definition"></a></dt>
+<dd><p>除算または剰余演算の第2引数が0のときに送出されます。</p>
+</dd></dl>
+
+<section id="id2">
+<h2>使用例<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<section id="repl">
+<h3>REPLターミナルでのデバッグ<a class="headerlink" href="#repl" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Port</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.pupdevices</span><span class="w"> </span><span class="kn">import</span> <span class="n">Motor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the motor.</span>
+<span class="n">test_motor</span> <span class="o">=</span> <span class="n">Motor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
+
+<span class="c1"># Start moving at 500 deg/s.</span>
+<span class="n">test_motor</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+
+<span class="c1"># If you click on the terminal window and press CTRL+C,</span>
+<span class="c1"># you can continue debugging in this terminal.</span>
+<span class="n">wait</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span>
+
+<span class="c1"># You can also do this to exit the script and enter the</span>
+<span class="c1"># terminal. Variables in the global scope are still available.</span>
+<span class="k">raise</span> <span class="ne">KeyboardInterrupt</span>
+
+<span class="c1"># For example, you can copy the following line to the terminal</span>
+<span class="c1"># to get the angle, because test_motor is still available.</span>
+<span class="n">test_motor</span><span class="o">.</span><span class="n">angle</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>停止ボタンを押したときにコードを実行する<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Started!"</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Run your script here as you normally would. In this</span>
+    <span class="c1"># example we just wait forever and do nothing.</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="k">except</span> <span class="ne">SystemExit</span><span class="p">:</span>
+    <span class="c1"># This code will run when you press the stop button.</span>
+    <span class="c1"># This can be useful to "clean up", such as to move</span>
+    <span class="c1"># the motors back to their starting positions.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"You pressed the stop button!"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="device-detection">
+<span id="id4"></span><h3><code class="docutils literal notranslate"><span class="pre">OSError</span></code> を使ったデバイスの検出<a class="headerlink" href="#device-detection" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Port</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.pupdevices</span><span class="w"> </span><span class="kn">import</span> <span class="n">Motor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">uerrno</span><span class="w"> </span><span class="kn">import</span> <span class="n">ENODEV</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Try to initialize a motor.</span>
+    <span class="n">my_motor</span> <span class="o">=</span> <span class="n">Motor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
+
+    <span class="c1"># If all goes well, you'll see this message.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Detected a motor."</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+    <span class="c1"># If an OSError was raised, we can check what</span>
+    <span class="c1"># kind of error this was, like ENODEV.</span>
+    <span class="k">if</span> <span class="n">ex</span><span class="o">.</span><span class="n">errno</span> <span class="o">==</span> <span class="n">ENODEV</span><span class="p">:</span>
+        <span class="c1"># ENODEV is short for "Error, no device."</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"There is no motor this port."</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Another error occurred."</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2026 The Pybricks Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

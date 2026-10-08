@@ -1,0 +1,1461 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prime Hub &mdash; pybricks v4.1.0b2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d8a2add5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/requirements.css?v=e2406e8f" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme_overrides.css?v=8b8d8269" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blocks.css?v=ee57a122" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blockimg.css?v=bf50a58c" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7dc5ce0d"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/requirements.js?v=6c6f6a43"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Essential Hub" href="essentialhub.html" />
+    <link rel="prev" title="Technic Hub" href="technichub.html" />
+    <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pybricks
+              <img src="../_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pybricks modules</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="movehub.html">Move Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cityhub.html">City Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="technichub.html">Technic Hub</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Prime Hub</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pybricks.hubs.PrimeHub"><code class="docutils literal notranslate"><span class="pre">PrimeHub</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.light.on"><code class="docutils literal notranslate"><span class="pre">PrimeHub.light.on()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.light.off"><code class="docutils literal notranslate"><span class="pre">PrimeHub.light.off()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.light.blink"><code class="docutils literal notranslate"><span class="pre">PrimeHub.light.blink()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.light.animate"><code class="docutils literal notranslate"><span class="pre">PrimeHub.light.animate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.display.orientation"><code class="docutils literal notranslate"><span class="pre">PrimeHub.display.orientation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.display.off"><code class="docutils literal notranslate"><span class="pre">PrimeHub.display.off()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.display.pixel"><code class="docutils literal notranslate"><span class="pre">PrimeHub.display.pixel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.display.icon"><code class="docutils literal notranslate"><span class="pre">PrimeHub.display.icon()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.display.animate"><code class="docutils literal notranslate"><span class="pre">PrimeHub.display.animate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.display.number"><code class="docutils literal notranslate"><span class="pre">PrimeHub.display.number()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.display.char"><code class="docutils literal notranslate"><span class="pre">PrimeHub.display.char()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.display.text"><code class="docutils literal notranslate"><span class="pre">PrimeHub.display.text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.buttons.pressed"><code class="docutils literal notranslate"><span class="pre">PrimeHub.buttons.pressed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.system.set_stop_button"><code class="docutils literal notranslate"><span class="pre">PrimeHub.system.set_stop_button()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.imu.ready"><code class="docutils literal notranslate"><span class="pre">PrimeHub.imu.ready()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.imu.stationary"><code class="docutils literal notranslate"><span class="pre">PrimeHub.imu.stationary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.imu.up"><code class="docutils literal notranslate"><span class="pre">PrimeHub.imu.up()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.imu.tilt"><code class="docutils literal notranslate"><span class="pre">PrimeHub.imu.tilt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.imu.acceleration"><code class="docutils literal notranslate"><span class="pre">PrimeHub.imu.acceleration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.imu.angular_velocity"><code class="docutils literal notranslate"><span class="pre">PrimeHub.imu.angular_velocity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.imu.heading"><code class="docutils literal notranslate"><span class="pre">PrimeHub.imu.heading()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.imu.reset_heading"><code class="docutils literal notranslate"><span class="pre">PrimeHub.imu.reset_heading()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.imu.rotation"><code class="docutils literal notranslate"><span class="pre">PrimeHub.imu.rotation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.imu.orientation"><code class="docutils literal notranslate"><span class="pre">PrimeHub.imu.orientation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.imu.settings"><code class="docutils literal notranslate"><span class="pre">PrimeHub.imu.settings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.speaker.volume"><code class="docutils literal notranslate"><span class="pre">PrimeHub.speaker.volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.speaker.beep"><code class="docutils literal notranslate"><span class="pre">PrimeHub.speaker.beep()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.speaker.play_notes"><code class="docutils literal notranslate"><span class="pre">PrimeHub.speaker.play_notes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.battery.voltage"><code class="docutils literal notranslate"><span class="pre">PrimeHub.battery.voltage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.battery.current"><code class="docutils literal notranslate"><span class="pre">PrimeHub.battery.current()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.charger.connected"><code class="docutils literal notranslate"><span class="pre">PrimeHub.charger.connected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.charger.current"><code class="docutils literal notranslate"><span class="pre">PrimeHub.charger.current()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.charger.status"><code class="docutils literal notranslate"><span class="pre">PrimeHub.charger.status()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.system.info"><code class="docutils literal notranslate"><span class="pre">PrimeHub.system.info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.system.storage"><code class="docutils literal notranslate"><span class="pre">PrimeHub.system.storage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.system.reset_storage"><code class="docutils literal notranslate"><span class="pre">PrimeHub.system.reset_storage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.PrimeHub.system.shutdown"><code class="docutils literal notranslate"><span class="pre">PrimeHub.system.shutdown()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">ステータスライトの例</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">ライトのオンとオフ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">輝度の変更とカスタムカラーの使用</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">ライトを点滅させる</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">ライトアニメーションの作成</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">マトリクス表示の例</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">画像を表示する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">数字を表示する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">テキストを表示する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">個々のピクセルを表示する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">表示の向きを変える</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#make-icons">自分で画像を作る</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">アイコンを組み合わせて表情を作る</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">アニメーションを表示する</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">ボタンの例</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id16">ボタン押下を検出する</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#imu">IMUの例</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id17">どちらが上かを確かめる</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18">傾きの値を読み取る</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id19">カスタムのハブの向きを使う</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">加速度と角速度のベクトルを読み取る</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id21">1軸の加速度と角速度を読み取る</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id22">システムの例</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id23">停止ボタンの組み合わせを変える</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id24">ハブの電源を切る</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="essentialhub.html">Essential Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ev3brick.html">EV3 Brick</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pupdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iodevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – 汎用ツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robotics.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクスとドライブベース</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージの送受信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signaltypes.html">信号と単位</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MicroPython modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/builtins.html">組み込みクラスと関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/exceptions.html">例外とエラー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/micropython.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">micropython</span></code> – MicroPythonの内部機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uerrno.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uerrno</span></code> – エラーコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uio.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uio</span></code> – 入出力ストリーム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/ujson.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ujson</span></code> – JSONのエンコードとデコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/umath.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">umath</span></code> – 数学関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/urandom.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">urandom</span></code> – 擬似乱数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uselect.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uselect</span></code> – イベントの待機</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/ustruct.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ustruct</span></code> – バイナリデータのパックとアンパック</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/usys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usys</span></code> – システム固有の関数</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pybricks</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a></li>
+      <li class="breadcrumb-item active">Prime Hub</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="toggle-header docutils container">
+</div>
+<div class="toggle-content docutils container">
+
+        <div class="wy-table-responsive">
+            <table class="docutils align-default requirements-table">
+                <tbody>
+                    <tr>
+                        
+        <th background="../_images/compat_movehub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_cityhub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_technichub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_primehub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_inventorhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_essentialhub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_ev3brick.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+<section id="prime-hub">
+<h1>Prime Hub<a class="headerlink" href="#prime-hub" title="Link to this heading"></a></h1>
+<figure class="align-default">
+<img alt="../_images/hub-spike-inventor.png" src="../_images/hub-spike-inventor.png" style="width: 80%;" />
+</figure>
+<dl class="py class">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">PrimeHub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">top_side</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Axis.Z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">front_side</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Axis.X</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub" title="Link to this definition"></a></dt>
+<dd><p>LEGO® SPIKE Primeハブ。</p>
+<p>Hubの初期化を行います。
+任意でハブの上面（ボタンがある方）と前面（USBポートがある方）の向きを指定し、
+<a class="reference internal" href="../signaltypes.html#robotframe"><span class="std std-ref">ハブをデザインにどのように配置するか</span></a> を指定することができます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>top_side</strong> (<a class="reference internal" href="../parameters/axis.html#pybricks.parameters.Axis" title="pybricks.parameters.Axis"><em>Axis</em></a>) – Hubの上面を通る軸。</p></li>
+<li><p><strong>front_side</strong> (<a class="reference internal" href="../parameters/axis.html#pybricks.parameters.Axis" title="pybricks.parameters.Axis"><em>Axis</em></a>) – Hubの前面を通る軸。</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">中央のライト</p>
+<figure class="align-default">
+<img alt="../_images/primehub_light.png" src="../_images/primehub_light.png" style="width: 22em;" />
+</figure>
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.light.on">
+<span class="sig-prename descclassname"><span class="pre">light.</span></span><span class="sig-name descname"><span class="pre">on</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub.light.on" title="Link to this definition"></a></dt>
+<dd><p>指定した色でライトを点灯します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>color</strong> (<a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – ライトの色</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 292.53125 52" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="292.53125" height="52" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#3971bf" fill="#4c97ff" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  c 1.6667,0  2.5,0.75  3.3333,1.5  l 3.3333,3  c 0.8333,0.75  1.6667,1.5  3.3333,1.5  h 10  c 1.6667,0  2.5,-0.75  3.3333,-1.5  l 3.3333,-3  c 0.8333,-0.75  1.6667,-1.5  3.3333,-1.5  h 247.53125 a 4 4 0 0,1 4,4  v 6  V 38  V 40  V 40 a 4 4 0 0,1 -4,4  h -247.53125  c -1.6667,0  -2.5,0.75  -3.3333,1.5  l -3.3333,3  c -0.8333,0.75  -1.6667,1.5  -3.3333,1.5  h -10  c -1.6667,0  -2.5,-0.75  -3.3333,-1.5  l -3.3333,-3  c -0.8333,-0.75  -1.6667,-1.5  -3.3333,-1.5  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(55, 6)" style="display: block;"><path class="blocklyPath" stroke="#3971bf" fill="#4180d9" d=" m 16,0  h 89.3359 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -89.3359 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">prime hub</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(85.3359,3)"/></g></g><g transform="translate(8,6.5)"><image height="30px" width="28px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzLCA1KSI+CiAgICA8Zz4KPGNpcmNsZSBjeD0iMTcuNSIgY3k9IjE3LjUiIHI9IjcuNSIgZmlsbD0iIzFmZjUwMCIgc3R5bGU9Ii13ZWJraXQtZm9udC1zbW9vdGhpbmc6YW50aWFsaWFzZWQiLz4KPGNpcmNsZSBjeD0iNy41IiBjeT0iMTcuNSIgcj0iNy41IiBmaWxsPSIjZjUyOTAwIiBzdHlsZT0iLXdlYmtpdC1mb250LXNtb290aGluZzphbnRpYWxpYXNlZCIvPgo8Y2lyY2xlIGN4PSIxMi41IiBjeT0iNy41IiByPSI3LjUiIGZpbGw9IiMwMDUwZjUiIHN0eWxlPSItd2Via2l0LWZvbnQtc21vb3RoaW5nOmFudGlhbGlhc2VkIi8+CjwvZz4KICA8L2c+Cjwvc3ZnPg=="/></g><g transform="translate(44,6.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(184.3359,13)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">light</text></g><g class="blocklyEditableText" transform="translate(226.1016,7.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="56.4297" class="blocklyFieldRect blocklyDropdownRect" stroke="#3971bf" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">off</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(36.4297,8.6)"/></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.light.off">
+<span class="sig-prename descclassname"><span class="pre">light.</span></span><span class="sig-name descname"><span class="pre">off</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub.light.off" title="Link to this definition"></a></dt>
+<dd><p>ライトを消します。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.light.blink">
+<span class="sig-prename descclassname"><span class="pre">light.</span></span><span class="sig-name descname"><span class="pre">blink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">durations</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub.light.blink" title="Link to this definition"></a></dt>
+<dd><p>ライトを一定時間、指定した色で点滅させます。</p>
+<p>ライトはプログラム実行中、バックグラウンドでずっと点滅し続けます。</p>
+<p>このメソッドでは、簡単で便利な点滅パターンを作成できます。
+より複雑なパターンを作成するには、代わりに <code class="docutils literal notranslate"><span class="pre">animate()</span></code> を使用してください。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>color</strong> (<a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – ライトの色</p></li>
+<li><p><strong>durations</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.list" title="ubuiltins.list"><em>list</em></a>) – <code class="docutils literal notranslate"><span class="pre">[on_1,</span> <span class="pre">off_1,</span> <span class="pre">on_2,</span> <span class="pre">off_2,</span> <span class="pre">...]</span></code> といった形式で時間値を指定します。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.light.animate">
+<span class="sig-prename descclassname"><span class="pre">light.</span></span><span class="sig-name descname"><span class="pre">animate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub.light.animate" title="Link to this definition"></a></dt>
+<dd><p>指定された間隔で1つずつ表示される色のシーケンスでライトをアニメーション化します。</p>
+<p>アニメーションはバックグラウンドで実行されます。
+アニメーションが完了すると最初に戻り、繰り返されます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>colors</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.list" title="ubuiltins.list"><em>list</em></a>) – <a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a> のシーケンス</p></li>
+<li><p><strong>interval</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>ms</em>) – 色の更新間隔</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">ライトマトリクス</p>
+<figure class="align-default">
+<img alt="../_images/primehub_display.png" src="../_images/primehub_display.png" style="width: 22em;" />
+</figure>
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.display.orientation">
+<span class="sig-prename descclassname"><span class="pre">display.</span></span><span class="sig-name descname"><span class="pre">orientation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">up</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub.display.orientation" title="Link to this definition"></a></dt>
+<dd><p>ライトマトリクスの表示を回転させます。</p>
+<p>実行後、新たに表示されるピクセルだけが影響を受けます。
+既存の表示内容は変化しません。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>up</strong> (<a class="reference internal" href="../parameters/side.html#pybricks.parameters.Side" title="pybricks.parameters.Side"><em>Side</em></a>) – デザインにおいてライトマトリクスディスプレイの
+どの面が「上」になるかを指定します。<code class="docutils literal notranslate"><span class="pre">Side.TOP</span></code> 、
+<code class="docutils literal notranslate"><span class="pre">Side.LEFT</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Side.RIGHT</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Side.BOTTOM</span></code> の
+いずれかを選択します。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.display.off">
+<span class="sig-prename descclassname"><span class="pre">display.</span></span><span class="sig-name descname"><span class="pre">off</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub.display.off" title="Link to this definition"></a></dt>
+<dd><p>すべてのピクセルをオフにします。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.display.pixel">
+<span class="sig-prename descclassname"><span class="pre">display.</span></span><span class="sig-name descname"><span class="pre">pixel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">brightness</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub.display.pixel" title="Link to this definition"></a></dt>
+<dd><p>指定された明るさで1つのピクセルをオンにします。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a>) – 垂直方向の座標。上から0で始まります。</p></li>
+<li><p><strong>column</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a>) – 水平方向の座標。左から0で始まります。</p></li>
+<li><p><strong>brightness</strong> (Number <a class="reference internal" href="../signaltypes.html#brightness"><span class="std std-ref">輝度: %</span></a>) – ピクセルの明るさ。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.display.icon">
+<span class="sig-prename descclassname"><span class="pre">display.</span></span><span class="sig-name descname"><span class="pre">icon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">icon</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub.display.icon" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="../signaltypes.html#brightness"><span class="std std-ref">輝度: %</span></a> の輝度でアイコンを表示します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>icon</strong> (<a class="reference internal" href="../tools/index.html#pybricks.tools.Matrix" title="pybricks.tools.Matrix"><em>Matrix</em></a>) – 強度のマトリクス（<a class="reference internal" href="../signaltypes.html#brightness"><span class="std std-ref">輝度: %</span></a>）。2Dリストも受け付けます。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.display.animate">
+<span class="sig-prename descclassname"><span class="pre">display.</span></span><span class="sig-name descname"><span class="pre">animate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub.display.animate" title="Link to this definition"></a></dt>
+<dd><p>画像のリストを使って作られたアニメーションを表示します。</p>
+<p>各画像は上記と同じフォーマットです。
+それぞれの画像は与えられた間隔だけ表示されます。
+このアニメーションは、プログラムの残りの部分が動き続けている間、永遠に繰り返されます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>matrices</strong> (<em>iter</em>) – <a class="reference internal" href="../tools/index.html#pybricks.tools.Matrix" title="pybricks.tools.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> のシーケンス。</p></li>
+<li><p><strong>interval</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>ms</em>) – リスト内の各画像を表示する時間。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.display.number">
+<span class="sig-prename descclassname"><span class="pre">display.</span></span><span class="sig-name descname"><span class="pre">number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub.display.number" title="Link to this definition"></a></dt>
+<dd><p>-99から99の範囲の数字を表示します。</p>
+<p>マイナス記号（<code class="docutils literal notranslate"><span class="pre">-</span></code>）はディスプレイの中央に点で表示されます。
+99以上の数字は <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 、99未満の数字は <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> で表示されます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>number</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 表示する数字。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.display.char">
+<span class="sig-prename descclassname"><span class="pre">display.</span></span><span class="sig-name descname"><span class="pre">char</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">char</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub.display.char" title="Link to this definition"></a></dt>
+<dd><p>ライトマトリクスに文字または記号を表示します。
+任意の文字（<code class="docutils literal notranslate"><span class="pre">a</span></code> から <code class="docutils literal notranslate"><span class="pre">z</span></code>、<code class="docutils literal notranslate"><span class="pre">A</span></code> から <code class="docutils literal notranslate"><span class="pre">Z</span></code>）または以下の記号を表示できます。</p>
+<p><code class="docutils literal notranslate"><span class="pre">!&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?&#64;[\]^_`{|}</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>char</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.str" title="ubuiltins.str"><em>str</em></a>) – 表示する文字または記号。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.display.text">
+<span class="sig-prename descclassname"><span class="pre">display.</span></span><span class="sig-name descname"><span class="pre">text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">off</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub.display.text" title="Link to this definition"></a></dt>
+<dd><p>テキストを1文字ずつ表示します。
+最後の文字が表示された後にすべてのライトが消灯します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.str" title="ubuiltins.str"><em>str</em></a>) – 表示するテキスト。</p></li>
+<li><p><strong>on</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>ms</em>) – 1文字が表示される時間。</p></li>
+<li><p><strong>off</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>ms</em>) – 文字と文字の間の表示が消えている時間。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">ボタン</p>
+<figure class="align-default">
+<img alt="../_images/primehub_buttons.png" src="../_images/primehub_buttons.png" style="width: 22em;" />
+</figure>
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.buttons.pressed">
+<span class="sig-prename descclassname"><span class="pre">buttons.</span></span><span class="sig-name descname"><span class="pre">pressed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.set" title="ubuiltins.set"><span class="pre">set</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../parameters/button.html#pybricks.parameters.Button" title="pybricks.parameters.Button"><span class="pre">Button</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pybricks.hubs.PrimeHub.buttons.pressed" title="Link to this definition"></a></dt>
+<dd><p>現在どのボタンが押されているか取得します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>押されたボタンのセット。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.system.set_stop_button">
+<span class="sig-prename descclassname"><span class="pre">system.</span></span><span class="sig-name descname"><span class="pre">set_stop_button</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">button</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub.system.set_stop_button" title="Link to this definition"></a></dt>
+<dd><p>実行中のスクリプトを停止するボタンを設定します。</p>
+<p>通常、中央のボタンは実行中のスクリプトを停止するために使用されます。
+この仕様を変更または無効にして、ボタンを他の目的に使用することができます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>button</strong> (<a class="reference internal" href="../parameters/button.html#pybricks.parameters.Button" title="pybricks.parameters.Button"><em>Button</em></a>) – <a class="reference internal" href="../parameters/button.html#pybricks.parameters.Button.CENTER" title="pybricks.parameters.Button.CENTER"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Button.CENTER</span></code></a> などのボタン、またはボタンのタプルを指定します。
+<code class="docutils literal notranslate"><span class="pre">None</span></code> を選択すると、ボタンを無効にします。
+無効にした場合は中央のボタンを3秒間長押しして、Hubの電源をオフにしてプログラムを停止することができます。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">IMU</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.6: </span>以下のメソッドは、デフォルトでキャリブレーション済みのデータを
+返すようになりました。使用するメソッドに応じて、加速度センサーと
+ジャイロスコープのデータが、あなたのキャリブレーション値と
+組み合わされます。以前の生データを取得するには、該当する場所で
+<code class="docutils literal notranslate"><span class="pre">calibrated=False</span></code> を使用します。</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.imu.ready">
+<span class="sig-prename descclassname"><span class="pre">imu.</span></span><span class="sig-name descname"><span class="pre">ready</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#pybricks.hubs.PrimeHub.imu.ready" title="Link to this definition"></a></dt>
+<dd><p>IMUが使用可能かどうかを確認します。</p>
+<p>これは、ロボットが数秒間静止しているときに <code class="docutils literal notranslate"><span class="pre">True</span></code> になり、デバイスを再較正することができます。
+ハブが起動したばかりであったり、10分以上較正の機会がなかったりすると <code class="docutils literal notranslate"><span class="pre">False</span></code> になります。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>使用可能であれば <code class="docutils literal notranslate"><span class="pre">True</span></code>、そうでなければ <code class="docutils literal notranslate"><span class="pre">False</span></code>。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.imu.stationary">
+<span class="sig-prename descclassname"><span class="pre">imu.</span></span><span class="sig-name descname"><span class="pre">stationary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#pybricks.hubs.PrimeHub.imu.stationary" title="Link to this definition"></a></dt>
+<dd><p>現在のハブが静止しているかどうかを確認します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>少なくとも1秒間静止していれば <code class="docutils literal notranslate"><span class="pre">True</span></code>、動いていれば <code class="docutils literal notranslate"><span class="pre">False</span></code>。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.imu.up">
+<span class="sig-prename descclassname"><span class="pre">imu.</span></span><span class="sig-name descname"><span class="pre">up</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calibrated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../parameters/side.html#pybricks.parameters.Side" title="pybricks.parameters.Side"><span class="pre">Side</span></a></span></span><a class="headerlink" href="#pybricks.hubs.PrimeHub.imu.up" title="Link to this definition"></a></dt>
+<dd><p>現在ハブのどの面が上を向いているかを確認します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>calibrated</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><em>bool</em></a>) – <code class="docutils literal notranslate"><span class="pre">True</span></code> を選択すると、キャリブレーション済みの
+ジャイロスコープと加速度計のデータを使って上方向を判定します。
+<code class="docutils literal notranslate"><span class="pre">False</span></code> を選択すると、生の加速度値を使用します。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">Side.TOP</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Side.BOTTOM</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Side.LEFT</span></code> 、
+<code class="docutils literal notranslate"><span class="pre">Side.RIGHT</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Side.FRONT</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Side.BACK</span></code> のいずれか。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305.5547 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="305.5547" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 20,0  h 263.5547 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -263.5547 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(56, 4)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 89.3359 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -89.3359 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">prime hub</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(85.3359,3)"/></g></g><g transform="translate(12,7)"><image height="25px" width="25px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCguODIxMDUgLjU3MDg1IC41NzA4NSAtLjgyMTA1IC02LjA2NDIgNy4yNjYyKSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KPHBhdGggdHJhbnNmb3JtPSJtYXRyaXgoMS4yNTE3IDAgMCAxLjI1MTcgLTMuNzkwNCAtLjczMzA1KSIgZD0ibTEzLjkxOSA2LjYzM2gtNy41Mzc0bDMuNzY4Ny02LjUyNzZ6IiBmaWxsPSIjZmZmIiBzdHJva2Utd2lkdGg9IjI3Ii8+CjxwYXRoIHRyYW5zZm9ybT0icm90YXRlKC02MCkiIGQ9Im0tNS4wNDg0IDIyLjQyN2E4LjE3MjggOC4xNzI4IDAgMCAxIDIuOTkxNS0xMS4xNjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KPHBhdGggdHJhbnNmb3JtPSJtYXRyaXgoMCAxLjI1MTcgLTEuMjUxNyAwIDI1LjU0NiAyLjg2OCkiIGQ9Im0xMy45MTkgNi42MzNoLTcuNTM3NGwzLjc2ODctNi41Mjc2eiIgZmlsbD0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyNyIvPgo8L2c+CjxyZWN0IHRyYW5zZm9ybT0icm90YXRlKC05LjM3MDQpIiB4PSItMS40OTIiIHk9IjE1Ljg3MSIgd2lkdGg9IjIyLjI1MSIgaGVpZ2h0PSI4Ljg5NDIiIHJ4PSIxLjk2OTUiIHJ5PSIxLjk2OTUiIGZpbGw9IiNmZmYiLz4KICA8L2c+Cjwvc3ZnPg=="/></g><g transform="translate(45,4.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(185.3359,11)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">get</text></g><g class="blocklyEditableText" transform="translate(217.3359,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="74.21875" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">pitch</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(54.21875,8.6)"/></g></g></g></svg></div><div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 292.2266 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="292.2266" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 20,0  h 250.2266 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -250.2266 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(56, 4)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 89.3359 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -89.3359 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">prime hub</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(85.3359,3)"/></g></g><g transform="translate(12,7)"><image height="25px" width="25px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCguODIxMDUgLjU3MDg1IC41NzA4NSAtLjgyMTA1IC02LjA2NDIgNy4yNjYyKSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KPHBhdGggdHJhbnNmb3JtPSJtYXRyaXgoMS4yNTE3IDAgMCAxLjI1MTcgLTMuNzkwNCAtLjczMzA1KSIgZD0ibTEzLjkxOSA2LjYzM2gtNy41Mzc0bDMuNzY4Ny02LjUyNzZ6IiBmaWxsPSIjZmZmIiBzdHJva2Utd2lkdGg9IjI3Ii8+CjxwYXRoIHRyYW5zZm9ybT0icm90YXRlKC02MCkiIGQ9Im0tNS4wNDg0IDIyLjQyN2E4LjE3MjggOC4xNzI4IDAgMCAxIDIuOTkxNS0xMS4xNjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KPHBhdGggdHJhbnNmb3JtPSJtYXRyaXgoMCAxLjI1MTcgLTEuMjUxNyAwIDI1LjU0NiAyLjg2OCkiIGQ9Im0xMy45MTkgNi42MzNoLTcuNTM3NGwzLjc2ODctNi41Mjc2eiIgZmlsbD0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyNyIvPgo8L2c+CjxyZWN0IHRyYW5zZm9ybT0icm90YXRlKC05LjM3MDQpIiB4PSItMS40OTIiIHk9IjE1Ljg3MSIgd2lkdGg9IjIyLjI1MSIgaGVpZ2h0PSI4Ljg5NDIiIHJ4PSIxLjk2OTUiIHJ5PSIxLjk2OTUiIGZpbGw9IiNmZmYiLz4KICA8L2c+Cjwvc3ZnPg=="/></g><g transform="translate(45,4.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(185.3359,11)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">get</text></g><g class="blocklyEditableText" transform="translate(217.3359,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="60.8906" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">roll</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(40.8906,8.6)"/></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.imu.tilt">
+<span class="sig-prename descclassname"><span class="pre">imu.</span></span><span class="sig-name descname"><span class="pre">tilt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calibrated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.tuple" title="ubuiltins.tuple"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pybricks.hubs.PrimeHub.imu.tilt" title="Link to this definition"></a></dt>
+<dd><p>ピッチ角とロール角を取得します。これは
+<a class="reference internal" href="../signaltypes.html#robotframe"><span class="std std-ref">ユーザーが指定した方向</span></a> からの相対値です。</p>
+<p>回転の順序は、ピッチ-ターン-ロールです。これはロボットのY軸に
+沿って正回転し、次にX軸に沿って正回転することに相当します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>calibrated</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><em>bool</em></a>) – <code class="docutils literal notranslate"><span class="pre">True</span></code> を選択すると、キャリブレーション済みの
+ジャイロスコープと加速度計のデータを使って傾きを判定します。
+<code class="docutils literal notranslate"><span class="pre">False</span></code> を選択すると、生の加速度値を使用します。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>ピッチ角とロール角を度単位で表したタプル。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.imu.acceleration">
+<span class="sig-prename descclassname"><span class="pre">imu.</span></span><span class="sig-name descname"><span class="pre">acceleration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calibrated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float:</span> <span class="pre">mm/s²</span></span></span><a class="headerlink" href="#pybricks.hubs.PrimeHub.imu.acceleration" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">imu.</span></span><span class="sig-name descname"><span class="pre">acceleration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calibrated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">vector:</span> <span class="pre">mm/s²</span></span></span></dt>
+<dd><p><a class="reference internal" href="../signaltypes.html#robotframe"><span class="std std-ref">ロボットフレーム</span></a> における、指定された軸に沿ったデバイスの加速度を取得します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>axis</strong> (<a class="reference internal" href="../parameters/axis.html#pybricks.parameters.Axis" title="pybricks.parameters.Axis"><em>Axis</em></a>) – 加速度を測定する軸。<code class="docutils literal notranslate"><span class="pre">None</span></code> の場合はすべての軸に
+沿ったベクトルを返します。</p></li>
+<li><p><strong>calibrated</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><em>bool</em></a>) – <code class="docutils literal notranslate"><span class="pre">True</span></code> を選択すると、キャリブレーション済みの
+加速度値を使用します。<code class="docutils literal notranslate"><span class="pre">False</span></code> を選択すると、生の加速度値を
+使用します。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>指定された軸に沿った加速度。軸を指定しない場合は、すべての軸に沿った加速度のベクトルを返します。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.imu.angular_velocity">
+<span class="sig-prename descclassname"><span class="pre">imu.</span></span><span class="sig-name descname"><span class="pre">angular_velocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calibrated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float:</span> <span class="pre">deg/s</span></span></span><a class="headerlink" href="#pybricks.hubs.PrimeHub.imu.angular_velocity" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">imu.</span></span><span class="sig-name descname"><span class="pre">angular_velocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calibrated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">vector:</span> <span class="pre">deg/s</span></span></span></dt>
+<dd><p><a class="reference internal" href="../signaltypes.html#robotframe"><span class="std std-ref">ロボットフレーム</span></a> における、指定された軸に沿ったデバイスの角速度を取得します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>axis</strong> (<a class="reference internal" href="../parameters/axis.html#pybricks.parameters.Axis" title="pybricks.parameters.Axis"><em>Axis</em></a>) – 角速度を測定する軸。<code class="docutils literal notranslate"><span class="pre">None</span></code> の場合はすべての軸に
+沿ったベクトルを返します。</p></li>
+<li><p><strong>calibrated</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><em>bool</em></a>) – <code class="docutils literal notranslate"><span class="pre">True</span></code> を選択すると、推定されたバイアスと
+設定されたジャイロスコープのスケールを補正します。
+<code class="docutils literal notranslate"><span class="pre">False</span></code> を選択すると、生の角速度値を取得します。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>指定された軸に沿った角速度。軸を指定しない場合は、すべての軸に沿った角速度のベクトルを返します。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.imu.heading">
+<span class="sig-prename descclassname"><span class="pre">imu.</span></span><span class="sig-name descname"><span class="pre">heading</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float:</span> <span class="pre">deg</span></span></span><a class="headerlink" href="#pybricks.hubs.PrimeHub.imu.heading" title="Link to this definition"></a></dt>
+<dd><p>ロボットの水平面での角度(方位角)を取得します。 正の値は時計回りを意味します。</p>
+<p>プログラム開始時の値は0です。この値はロボットが180度以上回転しても増え続けます。-180度まで折り返すことはありません。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>開始方位に対するロボットの方位角。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.imu.reset_heading">
+<span class="sig-prename descclassname"><span class="pre">imu.</span></span><span class="sig-name descname"><span class="pre">reset_heading</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub.imu.reset_heading" title="Link to this definition"></a></dt>
+<dd><p>ロボットの方位角をリセットします。</p>
+<p>ドライブベースがジャイロを使って走行または位置保持を行っている間は、
+このメソッドを呼び出せません。
+代わりに <a class="reference internal" href="../robotics.html#pybricks.robotics.DriveBase.reset" title="pybricks.robotics.DriveBase.reset"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DriveBase.reset()</span></code></a>
+を使用してください。これはロボットを停止させてから、新しい方位角を
+設定します。</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.6: </span>走行中の角度リセットは許可されていません。先に停止してください。</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>angle</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>deg</em>) – 方位角をリセットする値。</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – 現在ジャイロを使用しているドライブベースがある場合。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.imu.rotation">
+<span class="sig-prename descclassname"><span class="pre">imu.</span></span><span class="sig-name descname"><span class="pre">rotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calibrated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float:</span> <span class="pre">deg</span></span></span><a class="headerlink" href="#pybricks.hubs.PrimeHub.imu.rotation" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="../signaltypes.html#robotframe"><span class="std std-ref">ロボットフレーム</span></a> における、指定された軸に沿ったデバイスの回転を取得します。</p>
+<p>この値は、ロボットが要求された軸に沿ってのみ回転する場合に便利です。
+一般的な3次元モーションの場合は、代わりに <code class="docutils literal notranslate"><span class="pre">orientation()</span></code> メソッドを使用します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>axis</strong> (<a class="reference internal" href="../parameters/axis.html#pybricks.parameters.Axis" title="pybricks.parameters.Axis"><em>Axis</em></a>) – 回転を測定する軸。</p></li>
+<li><p><strong>calibrated</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><em>bool</em></a>) – <code class="docutils literal notranslate"><span class="pre">True</span></code> を選択すると、設定された
+ジャイロスコープのスケールを補正します。<code class="docutils literal notranslate"><span class="pre">False</span></code> を
+選択すると、スケールされていない値を取得します。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>回転した角度。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.imu.orientation">
+<span class="sig-prename descclassname"><span class="pre">imu.</span></span><span class="sig-name descname"><span class="pre">orientation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../tools/index.html#pybricks.tools.Matrix" title="pybricks.tools.Matrix"><span class="pre">Matrix</span></a></span></span><a class="headerlink" href="#pybricks.hubs.PrimeHub.imu.orientation" title="Link to this definition"></a></dt>
+<dd><p><a class="reference internal" href="../signaltypes.html#robotframe"><span class="std std-ref">ロボットフレーム</span></a> における、ロボットの3次元姿勢を取得する。</p>
+<p>ロボットの <code class="docutils literal notranslate"><span class="pre">X</span></code> 軸、<code class="docutils literal notranslate"><span class="pre">Y</span></code> 軸、<code class="docutils literal notranslate"><span class="pre">Z</span></code> 軸を表す回転行列を返します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>3x3の回転行列。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 544.34375 57.2" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="544.34375" height="57.2" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  c 1.6667,0  2.5,0.75  3.3333,1.5  l 3.3333,3  c 0.8333,0.75  1.6667,1.5  3.3333,1.5  h 10  c 1.6667,0  2.5,-0.75  3.3333,-1.5  l 3.3333,-3  c 0.8333,-0.75  1.6667,-1.5  3.3333,-1.5  h 499.34375 a 4 4 0 0,1 4,4  v 6  V 43.2  V 45.2  V 45.2 a 4 4 0 0,1 -4,4  h -499.34375  c -1.6667,0  -2.5,0.75  -3.3333,1.5  l -3.3333,3  c -0.8333,0.75  -1.6667,1.5  -3.3333,1.5  h -10  c -1.6667,0  -2.5,-0.75  -3.3333,-1.5  l -3.3333,-3  c -0.8333,-0.75  -1.6667,-1.5  -3.3333,-1.5  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(453.25, 6)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 18.6,0  h 43.89375 a 18.6 18.6 0 0,1 18.6,18.6  v 0 a 18.6 18.6 0 0,1 -18.6,18.6  V 37.2  h -43.89375 a 18.6 18.6 0 0,1 -18.6,-18.6  v 0 a 18.6 18.6 0 0,1 18.6,-18.6 z&#10;"/><g class="blocklyEditableText" transform="translate(12,4)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="42.6953" class="blocklyFieldRect" stroke="#4585a1" style="display: block;"/><text class="blocklyText" dominant-baseline="central" x="8" y="14.6">360</text></g><g transform="translate(62.6953,9.6)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">°</text></g></g><g transform="translate(55, 8.6)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 89.3359 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -89.3359 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">prime hub</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(85.3359,3)"/></g></g><g transform="translate(8,9.1)"><image height="30px" width="28px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzLCA1KSI+CiAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCguMjY1NjQgMS41MjUxIC0xLjUyNTEgLjI2NTY0IDIzLjQ5MSAtMTEuNzQpIiBzdHJva2Utd2lkdGg9Ii42OTU5Ij4KPHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDExLjUzMiA2LjI1MzgpIiBkPSJtMTMuOTE5IDYuNjMzaC03LjUzNzRsMy43Njg3LTYuNTI3NnoiIGZpbGw9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxOC43ODkiLz4KPC9nPgo8cGF0aCBkPSJtMy4xMzg3IDEuMTgwMnYyMS4yNjVsMTkuNDY0LTguNDY1NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuMTUxNiIvPgo8cGF0aCB0cmFuc2Zvcm09InJvdGF0ZSgxMTMuNDQpIiBkPSJtMi42NjQ3LTUuOTM2OWExNC4xNDYgMTQuMTQ2IDAgMCAxIDAuMTIwNDItMTAuNzcyIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8L2c+Cjwvc3ZnPg=="/></g><g transform="translate(44,9.1)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(184.3359,15.6)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">configure</text></g><g class="blocklyEditableText" transform="translate(265.2266,10)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="180.0234" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">heading correction</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(160.0234,8.6)"/></g></g></g></svg></div><div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.0234 57.2" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="595.0234" height="57.2" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  c 1.6667,0  2.5,0.75  3.3333,1.5  l 3.3333,3  c 0.8333,0.75  1.6667,1.5  3.3333,1.5  h 10  c 1.6667,0  2.5,-0.75  3.3333,-1.5  l 3.3333,-3  c 0.8333,-0.75  1.6667,-1.5  3.3333,-1.5  h 550.0234 a 4 4 0 0,1 4,4  v 6  V 43.2  V 45.2  V 45.2 a 4 4 0 0,1 -4,4  h -550.0234  c -1.6667,0  -2.5,0.75  -3.3333,1.5  l -3.3333,3  c -0.8333,0.75  -1.6667,1.5  -3.3333,1.5  h -10  c -1.6667,0  -2.5,-0.75  -3.3333,-1.5  l -3.3333,-3  c -0.8333,-0.75  -1.6667,-1.5  -3.3333,-1.5  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(508.3828, 6)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 18.6,0  h 39.4406 a 18.6 18.6 0 0,1 18.6,18.6  v 0 a 18.6 18.6 0 0,1 -18.6,18.6  V 37.2  h -39.4406 a 18.6 18.6 0 0,1 -18.6,-18.6  v 0 a 18.6 18.6 0 0,1 18.6,-18.6 z&#10;"/><g class="blocklyEditableText" transform="translate(12,4)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="24.8984" class="blocklyFieldRect" stroke="#4585a1" style="display: block;"/><text class="blocklyText" dominant-baseline="central" x="8" y="14.6">2</text></g><g transform="translate(44.8984,9.6)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">°/s</text></g></g><g transform="translate(55, 8.6)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 89.3359 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -89.3359 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">prime hub</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(85.3359,3)"/></g></g><g transform="translate(8,9.1)"><image height="30px" width="28px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzLCA1KSI+CiAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCguMjY1NjQgMS41MjUxIC0xLjUyNTEgLjI2NTY0IDIzLjQ5MSAtMTEuNzQpIiBzdHJva2Utd2lkdGg9Ii42OTU5Ij4KPHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDExLjUzMiA2LjI1MzgpIiBkPSJtMTMuOTE5IDYuNjMzaC03LjUzNzRsMy43Njg3LTYuNTI3NnoiIGZpbGw9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxOC43ODkiLz4KPC9nPgo8cGF0aCBkPSJtMy4xMzg3IDEuMTgwMnYyMS4yNjVsMTkuNDY0LTguNDY1NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuMTUxNiIvPgo8cGF0aCB0cmFuc2Zvcm09InJvdGF0ZSgxMTMuNDQpIiBkPSJtMi42NjQ3LTUuOTM2OWExNC4xNDYgMTQuMTQ2IDAgMCAxIDAuMTIwNDItMTAuNzcyIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8L2c+Cjwvc3ZnPg=="/></g><g transform="translate(44,9.1)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(184.3359,15.6)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">configure</text></g><g class="blocklyEditableText" transform="translate(265.2266,10)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="235.15625" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">angular velocity threshold</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(215.15625,8.6)"/></g></g></g></svg></div><div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620.6641 57.2" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="620.6641" height="57.2" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  c 1.6667,0  2.5,0.75  3.3333,1.5  l 3.3333,3  c 0.8333,0.75  1.6667,1.5  3.3333,1.5  h 10  c 1.6667,0  2.5,-0.75  3.3333,-1.5  l 3.3333,-3  c 0.8333,-0.75  1.6667,-1.5  3.3333,-1.5  h 575.6641 a 4 4 0 0,1 4,4  v 6  V 43.2  V 45.2  V 45.2 a 4 4 0 0,1 -4,4  h -575.6641  c -1.6667,0  -2.5,0.75  -3.3333,1.5  l -3.3333,3  c -0.8333,0.75  -1.6667,1.5  -3.3333,1.5  h -10  c -1.6667,0  -2.5,-0.75  -3.3333,-1.5  l -3.3333,-3  c -0.8333,-0.75  -1.6667,-1.5  -3.3333,-1.5  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(479.9453, 6)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 18.6,0  h 93.51875 a 18.6 18.6 0 0,1 18.6,18.6  v 0 a 18.6 18.6 0 0,1 -18.6,18.6  V 37.2  h -93.51875 a 18.6 18.6 0 0,1 -18.6,-18.6  v 0 a 18.6 18.6 0 0,1 18.6,-18.6 z&#10;"/><g class="blocklyEditableText" transform="translate(12,4)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="51.59375" class="blocklyFieldRect" stroke="#4585a1" style="display: block;"/><text class="blocklyText" dominant-baseline="central" x="8" y="14.6">2500</text></g><g transform="translate(71.59375,9.6)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">mm/s²</text></g></g><g transform="translate(55, 8.6)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 89.3359 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -89.3359 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">prime hub</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(85.3359,3)"/></g></g><g transform="translate(8,9.1)"><image height="30px" width="28px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzLCA1KSI+CiAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCguMjY1NjQgMS41MjUxIC0xLjUyNTEgLjI2NTY0IDIzLjQ5MSAtMTEuNzQpIiBzdHJva2Utd2lkdGg9Ii42OTU5Ij4KPHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDExLjUzMiA2LjI1MzgpIiBkPSJtMTMuOTE5IDYuNjMzaC03LjUzNzRsMy43Njg3LTYuNTI3NnoiIGZpbGw9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxOC43ODkiLz4KPC9nPgo8cGF0aCBkPSJtMy4xMzg3IDEuMTgwMnYyMS4yNjVsMTkuNDY0LTguNDY1NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuMTUxNiIvPgo8cGF0aCB0cmFuc2Zvcm09InJvdGF0ZSgxMTMuNDQpIiBkPSJtMi42NjQ3LTUuOTM2OWExNC4xNDYgMTQuMTQ2IDAgMCAxIDAuMTIwNDItMTAuNzcyIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8L2c+Cjwvc3ZnPg=="/></g><g transform="translate(44,9.1)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(184.3359,15.6)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">configure</text></g><g class="blocklyEditableText" transform="translate(265.2266,10)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="206.71875" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">acceleration threshold</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(186.71875,8.6)"/></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.imu.settings">
+<span class="sig-prename descclassname"><span class="pre">imu.</span></span><span class="sig-name descname"><span class="pre">settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">angular_velocity_threshold</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration_threshold</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heading_correction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angular_velocity_bias</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angular_velocity_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration_correction</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub.imu.settings" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">imu.</span></span><span class="sig-name descname"><span class="pre">settings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.tuple" title="ubuiltins.tuple"><span class="pre">tuple</span></a></span></span></dt>
+<dd><p>IMUの設定を構成します。引数が指定されない場合は、現在の値を
+返します。将来のリリースで設定が追加または変更される可能性が
+あるため、正しい動作を確実にするには各値をキーワード引数で
+指定してください。</p>
+<p>これらのIMU設定はハブに保存されます。再度変更するまで値は
+保持されます。ハブを別のファームウェアバージョンに更新するか、
+<code class="docutils literal notranslate"><span class="pre">hub.system.reset_storage</span></code> メソッドを呼び出すと、値は
+デフォルト値にリセットされます。</p>
+<p><code class="docutils literal notranslate"><span class="pre">angular_velocity_threshold</span></code> と <code class="docutils literal notranslate"><span class="pre">acceleration_threshold</span></code>
+は、ハブが静止しているとみなされる条件を定義します。すべての
+測定値が1秒間これらのしきい値を下回り続けると、IMUは自分自身を
+再キャリブレーションします。周囲の振動が大きい騒がしい場所
+（競技会場など）では、しきい値を少し上げることで、ロボットが
+キャリブレーションする機会を与えられます。設定が期待どおりに
+機能していることを確認するには、ロボットが動いているときに
+<code class="docutils literal notranslate"><span class="pre">stationary()</span></code> メソッドが <code class="docutils literal notranslate"><span class="pre">False</span></code> を返し、静止しているときに
+<code class="docutils literal notranslate"><span class="pre">True</span></code> を返すことをテストしてください。</p>
+<p>ジャイロスコープはハブの回転速度を測定して総角度を推定します。
+製造過程のばらつきにより、各ハブは1回転に対して一貫して異なる値を
+報告します。たとえば、あるハブは <cite>360</cite> 度の回転ごとに常に
+<cite>357</cite> 度を報告するかもしれません。この値は
+<code class="docutils literal notranslate"><span class="pre">hub.imu.rotation(-Axis.Z,</span> <span class="pre">calibrated=False)</span></code> で測定でき、
+<code class="docutils literal notranslate"><span class="pre">heading_correction</span></code> 設定として入力できます。すると、
+<code class="docutils literal notranslate"><span class="pre">hub.imu.heading()</span></code> メソッドはそれ以降その値を考慮し、
+1回転を正しく360度にスケーリングします。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>angular_velocity_threshold</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>deg/s</em>) – これを下回る
+角速度の変動であれば、ハブはキャリブレーションできるほど
+静止しているとみなされるというしきい値。
+リセット後の値は2 deg/sです。</p></li>
+<li><p><strong>acceleration_threshold</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>mm/s²</em>) – これを下回る
+加速度の変動であれば、ハブはキャリブレーションできるほど
+静止しているとみなされるというしきい値。
+リセット後の値は2500 mm/s²です。</p></li>
+<li><p><strong>heading_correction</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>deg</em>) – ロボットが1回転したときに
+報告される度数。リセット後の値は360度です。これは
+<code class="docutils literal notranslate"><span class="pre">angular_velocity_scale</span></code> 設定によるスケーリングに
+加えて適用されます。</p></li>
+<li><p><strong>angular_velocity_bias</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.tuple" title="ubuiltins.tuple"><em>tuple</em></a><em>, </em><em>deg/s</em>) – 起動直後のx、y、z軸に
+沿った角速度測定の初期バイアス。
+リセット後の値は(0, 0, 0) deg/sです。</p></li>
+<li><p><strong>angular_velocity_scale</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.tuple" title="ubuiltins.tuple"><em>tuple</em></a><em>, </em><em>deg</em>) – 製造差異を考慮するための
+x、y、z回転のスケール調整。リセット後の値は
+(360, 360, 360) deg/sです。正しい値は
+<cite>hub.imu.rotation(Axis.X, calibrated=False)</cite> を使い、
+各軸について繰り返すことで得られます。</p></li>
+<li><p><strong>acceleration_correction</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.tuple" title="ubuiltins.tuple"><em>tuple</em></a><em>, </em><em>mm/s²</em>) – 製造差異を考慮する
+ためのx、y、zの両方向における重力の大きさのスケール調整。
+リセット後の値は
+(9806.65, -9806.65, 9806.65, -9806.65, 9806.65, -9806.65) mm/s²です。
+正しい値は
+<cite>hub.imu.acceleration(Axis.X, calibrated=False)</cite> を使い、
+すべての軸の両方向について繰り返すことで得られます。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">スピーカーを使う</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.speaker.volume">
+<span class="sig-prename descclassname"><span class="pre">speaker.</span></span><span class="sig-name descname"><span class="pre">volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">volume</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub.speaker.volume" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">speaker.</span></span><span class="sig-name descname"><span class="pre">volume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">%</span></span></span></dt>
+<dd><p>スピーカーの音量を取得または設定します。</p>
+<p>音量を指定しない場合、このメソッドは現在の音量を返します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>volume</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>%</em>) – 0から100の範囲のスピーカーの音量。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 487.75 57.2" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="487.75" height="57.2" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#3971bf" fill="#4c97ff" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  c 1.6667,0  2.5,0.75  3.3333,1.5  l 3.3333,3  c 0.8333,0.75  1.6667,1.5  3.3333,1.5  h 10  c 1.6667,0  2.5,-0.75  3.3333,-1.5  l 3.3333,-3  c 0.8333,-0.75  1.6667,-1.5  3.3333,-1.5  h 442.75 a 4 4 0 0,1 4,4  v 6  V 43.2  V 45.2  V 45.2 a 4 4 0 0,1 -4,4  h -442.75  c -1.6667,0  -2.5,0.75  -3.3333,1.5  l -3.3333,3  c -0.8333,0.75  -1.6667,1.5  -3.3333,1.5  h -10  c -1.6667,0  -2.5,-0.75  -3.3333,-1.5  l -3.3333,-3  c -0.8333,-0.75  -1.6667,-1.5  -3.3333,-1.5  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(55, 8.6)" style="display: block;"><path class="blocklyPath" stroke="#3971bf" fill="#4180d9" d=" m 16,0  h 89.3359 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -89.3359 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">prime hub</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(85.3359,3)"/></g></g><g transform="translate(248.3516, 6)" style="display: block;"><path class="blocklyPath" stroke="#3971bf" fill="#4180d9" d=" m 18.6,0  h 57.05 a 18.6 18.6 0 0,1 18.6,18.6  v 0 a 18.6 18.6 0 0,1 -18.6,18.6  V 37.2  h -57.05 a 18.6 18.6 0 0,1 -18.6,-18.6  v 0 a 18.6 18.6 0 0,1 18.6,-18.6 z&#10;"/><g class="blocklyEditableText" transform="translate(12,4)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="42.6953" class="blocklyFieldRect" stroke="#3971bf" style="display: block;"/><text class="blocklyText" dominant-baseline="central" x="8" y="14.6">500</text></g><g transform="translate(62.6953,9.6)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">Hz</text></g></g><g transform="translate(379.9297, 6)" style="display: block;"><path class="blocklyPath" stroke="#3971bf" fill="#4180d9" d=" m 18.6,0  h 60.6203 a 18.6 18.6 0 0,1 18.6,18.6  v 0 a 18.6 18.6 0 0,1 -18.6,18.6  V 37.2  h -60.6203 a 18.6 18.6 0 0,1 -18.6,-18.6  v 0 a 18.6 18.6 0 0,1 18.6,-18.6 z&#10;"/><g class="blocklyEditableText" transform="translate(12,4)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="42.6953" class="blocklyFieldRect" stroke="#3971bf" style="display: block;"/><text class="blocklyText" dominant-baseline="central" x="8" y="14.6">100</text></g><g transform="translate(62.6953,9.6)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">ms</text></g></g><g transform="translate(8,9.1)"><image height="30px" width="28px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzLCA1KSI+CiAgICA8Y2lyY2xlIGN4PSI0Ljg3NTEiIGN5PSIyMC40NjUiIHI9IjQuMTYyNiIgZmlsbD0iI2ZmZiIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iMTcuOTI0IiBjeT0iMTguMDM5IiByPSI0LjE2MjYiIGZpbGw9IiNmZmYiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC40OTkxKSI+CjxyZWN0IHRyYW5zZm9ybT0ibWF0cml4KC45NzQxOCAtLjIyNTc3IDAgMSAwIDApIiB4PSI2LjcxNjYiIHk9IjUuMjg3NiIgd2lkdGg9IjE1LjQ0MyIgaGVpZ2h0PSI1Ljg3OTkiIGZpbGw9IiNmZmYiIHN0b3AtY29sb3I9IiMwMDAwMDAiLz4KPHBhdGggZD0ibTcuNTQzMiA1LjAxNjV2MTUuODM0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPgo8cGF0aCBkPSJtMjAuNTg3IDIuMDMyOXYxNi4yNjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+CjwvZz4KICA8L2c+Cjwvc3ZnPg=="/></g><g transform="translate(44,9.1)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(184.3359,15.6)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">beep at</text></g><g transform="translate(350.6016,15.6)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">for</text></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.speaker.beep">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">speaker.</span></span><span class="sig-name descname"><span class="pre">beep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub.speaker.beep" title="Link to this definition"></a></dt>
+<dd><p>ビープ音/トーンを再生します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frequency</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>Hz</em>) – 64から24000 Hzの範囲のビープ音の周波数。</p></li>
+<li><p><strong>duration</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>ms</em>) – ビープ音の長さ。長さが0未満の場合、このメソッドは
+直ちに戻り、その周波数の再生が無期限に続きます。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.speaker.play_notes">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">speaker.</span></span><span class="sig-name descname"><span class="pre">play_notes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tempo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">120</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub.speaker.play_notes" title="Link to this definition"></a></dt>
+<dd><p>一連の音符を再生します。例：
+<code class="docutils literal notranslate"><span class="pre">[&quot;C4/4&quot;,</span> <span class="pre">&quot;C4/4&quot;,</span> <span class="pre">&quot;G4/4&quot;,</span> <span class="pre">&quot;G4/4&quot;]</span></code> 。</p>
+<p>各音符は次の形式の文字列です。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>最初の文字は音名で、 <code class="docutils literal notranslate"><span class="pre">A</span></code> から <code class="docutils literal notranslate"><span class="pre">G</span></code> 、または休符を表す
+<code class="docutils literal notranslate"><span class="pre">R</span></code> です。</p></li>
+<li><p>音名にはシャープの <code class="docutils literal notranslate"><span class="pre">#</span></code> やフラットの <code class="docutils literal notranslate"><span class="pre">b</span></code> の臨時記号を
+含めることもできます。<code class="docutils literal notranslate"><span class="pre">B#</span></code> / <code class="docutils literal notranslate"><span class="pre">Cb</span></code> と <code class="docutils literal notranslate"><span class="pre">E#</span></code> / <code class="docutils literal notranslate"><span class="pre">Fb</span></code>
+は使用できません。</p></li>
+<li><p>音名の後には <code class="docutils literal notranslate"><span class="pre">2</span></code> から <code class="docutils literal notranslate"><span class="pre">8</span></code> のオクターブ番号が続きます。
+たとえば <code class="docutils literal notranslate"><span class="pre">C4</span></code> は中央のCです。オクターブは音Cで次の番号に
+変わります。たとえば <code class="docutils literal notranslate"><span class="pre">B3</span></code> は中央のC（ <code class="docutils literal notranslate"><span class="pre">C4</span></code> ）のすぐ
+下の音です。</p></li>
+<li><p>オクターブの後には <code class="docutils literal notranslate"><span class="pre">/</span></code> と音符の長さを示す数字が続きます。
+たとえば <code class="docutils literal notranslate"><span class="pre">/4</span></code> は4分音符、 <code class="docutils literal notranslate"><span class="pre">/8</span></code> は8分音符、という具合です。</p></li>
+<li><p>オプションで <code class="docutils literal notranslate"><span class="pre">.</span></code> を続けて付点音符にできます。付点音符は
+点のない音符の1.5倍の長さです。</p></li>
+<li><p>オプションで音符の末尾に <code class="docutils literal notranslate"><span class="pre">_</span></code> を付けると、タイまたは
+スラーになります。これにより、この音符と次の音符の間に
+休止が入らなくなります。</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>notes</strong> (<em>iter</em>) – 再生する音符のシーケンス。</p></li>
+<li><p><strong>tempo</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 1分あたりの拍数。4分音符が1拍です。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">バッテリーを使う</p>
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352.7031 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="352.7031" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 20,0  h 310.7031 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -310.7031 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(56, 4)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 89.3359 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -89.3359 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">prime hub</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(85.3359,3)"/></g></g><g transform="translate(12,7)"><image height="25px" width="25px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8ZyBmaWxsPSIjZmZmIiBzdHJva2Utd2lkdGg9IjAiPgo8cmVjdCB4PSI3LjcyNjUiIHk9IjIuMDkyNWUtNyIgd2lkdGg9IjkuNTQ3IiBoZWlnaHQ9IjMuOTM2OCIgcng9Ii43NTg0MSIgcnk9Ii43MjU0MyIvPgo8cGF0aCBkPSJtNS4xMDYzIDMuMDIyMmMtMC4zMzYxMy0xZS03IC0wLjYwNjI1IDAuMzEwMTctMC42MDYyNSAwLjY5NTMxdjIwLjU4N2MwIDAuMzg1MTQgMC4yNzAxMiAwLjY5NTMxIDAuNjA2MjUgMC42OTUzMWgxNC43ODdjMC4zMzYxMyAwIDAuNjA2MjUtMC4zMTAxNyAwLjYwNjI1LTAuNjk1MzF2LTIwLjU4N2MwLTAuMzg1MTQtMC4yNzAxMi0wLjY5NTMxLTAuNjA2MjUtMC42OTUzMXptMC45NDIxOSAyLjE4MTZoMTIuOTAzdjUuMzYxM2gtMTIuOTAzeiIvPgo8L2c+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(45,4.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(185.3359,11)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">battery</text></g><g class="blocklyEditableText" transform="translate(246.6875,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="92.0156" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">voltage</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(72.0156,8.6)"/></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.battery.voltage">
+<span class="sig-prename descclassname"><span class="pre">battery.</span></span><span class="sig-name descname"><span class="pre">voltage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">mV</span></span></span><a class="headerlink" href="#pybricks.hubs.PrimeHub.battery.voltage" title="Link to this definition"></a></dt>
+<dd><p>バッテリーの電圧を取得します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>バッテリーの電圧。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 351.8125 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="351.8125" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 20,0  h 309.8125 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -309.8125 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(56, 4)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 89.3359 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -89.3359 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">prime hub</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(85.3359,3)"/></g></g><g transform="translate(12,7)"><image height="25px" width="25px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8ZyBmaWxsPSIjZmZmIiBzdHJva2Utd2lkdGg9IjAiPgo8cmVjdCB4PSI3LjcyNjUiIHk9IjIuMDkyNWUtNyIgd2lkdGg9IjkuNTQ3IiBoZWlnaHQ9IjMuOTM2OCIgcng9Ii43NTg0MSIgcnk9Ii43MjU0MyIvPgo8cGF0aCBkPSJtNS4xMDYzIDMuMDIyMmMtMC4zMzYxMy0xZS03IC0wLjYwNjI1IDAuMzEwMTctMC42MDYyNSAwLjY5NTMxdjIwLjU4N2MwIDAuMzg1MTQgMC4yNzAxMiAwLjY5NTMxIDAuNjA2MjUgMC42OTUzMWgxNC43ODdjMC4zMzYxMyAwIDAuNjA2MjUtMC4zMTAxNyAwLjYwNjI1LTAuNjk1MzF2LTIwLjU4N2MwLTAuMzg1MTQtMC4yNzAxMi0wLjY5NTMxLTAuNjA2MjUtMC42OTUzMXptMC45NDIxOSAyLjE4MTZoMTIuOTAzdjUuMzYxM2gtMTIuOTAzeiIvPgo8L2c+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(45,4.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(185.3359,11)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">battery</text></g><g class="blocklyEditableText" transform="translate(246.6875,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="91.125" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">current</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(71.125,8.6)"/></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.battery.current">
+<span class="sig-prename descclassname"><span class="pre">battery.</span></span><span class="sig-name descname"><span class="pre">current</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">mA</span></span></span><a class="headerlink" href="#pybricks.hubs.PrimeHub.battery.current" title="Link to this definition"></a></dt>
+<dd><p>バッテリーから供給される電流を取得します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>バッテリーの電流。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">充電器の状態を取得する</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.charger.connected">
+<span class="sig-prename descclassname"><span class="pre">charger.</span></span><span class="sig-name descname"><span class="pre">connected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#pybricks.hubs.PrimeHub.charger.connected" title="Link to this definition"></a></dt>
+<dd><p>充電器がUSB経由で接続されているかどうかを確認します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>充電器が接続されている場合は <code class="docutils literal notranslate"><span class="pre">True</span></code> 、そうでなければ
+<code class="docutils literal notranslate"><span class="pre">False</span></code> 。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.charger.current">
+<span class="sig-prename descclassname"><span class="pre">charger.</span></span><span class="sig-name descname"><span class="pre">current</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">mA</span></span></span><a class="headerlink" href="#pybricks.hubs.PrimeHub.charger.current" title="Link to this definition"></a></dt>
+<dd><p>充電電流を取得します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>充電電流。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.charger.status">
+<span class="sig-prename descclassname"><span class="pre">charger.</span></span><span class="sig-name descname"><span class="pre">status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a></span></span><a class="headerlink" href="#pybricks.hubs.PrimeHub.charger.status" title="Link to this definition"></a></dt>
+<dd><p>バッテリー充電器の状態を取得します。状態は以下のいずれかの値で
+表されます。これはUSBポートのすぐ隣にあるバッテリーライト
+インジケーターに対応しています。</p>
+<blockquote>
+<div><ol class="arabic simple" start="0">
+<li><p>充電していない（ライト消灯）。</p></li>
+<li><p>充電中（ライトは赤）。</p></li>
+<li><p>充電完了（ライトは緑）。</p></li>
+<li><p>充電器に問題がある（ライトは黄）。</p></li>
+</ol>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>状態値。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">システム制御</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.system.info">
+<span class="sig-prename descclassname"><span class="pre">system.</span></span><span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.dict" title="ubuiltins.dict"><span class="pre">dict</span></a></span></span><a class="headerlink" href="#pybricks.hubs.PrimeHub.system.info" title="Link to this definition"></a></dt>
+<dd><p>ハブに関する情報を、以下のキーを持つ辞書として取得します。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;name&quot;</span></code>: ハブ名。Bluetooth経由で接続するときに表示される
+名前です。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;reset_reason&quot;</span></code>: ハブが（再）起動した理由。ハブが前回正常に
+電源オフされていた場合は <code class="docutils literal notranslate"><span class="pre">0</span></code> です。ファームウェア更新後など、
+ハブが自動的に再起動した場合は <code class="docutils literal notranslate"><span class="pre">1</span></code> です。ハブが前回
+ウォッチドッグタイムアウトによってクラッシュした場合は <code class="docutils literal notranslate"><span class="pre">2</span></code> で、
+これはファームウェアの問題を示します。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;host_connected_ble&quot;</span></code>: ハブがBluetooth経由でコンピューター、
+タブレット、スマートフォンのいずれかに接続されている場合は
+<code class="docutils literal notranslate"><span class="pre">True</span></code> 、それ以外は <code class="docutils literal notranslate"><span class="pre">False</span></code> 。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;host_connected_usb&quot;</span></code>: ハブがUSB経由でコンピューターに接続され、
+アプリでアクティブになっている場合は <code class="docutils literal notranslate"><span class="pre">True</span></code> 。
+それ以外は <code class="docutils literal notranslate"><span class="pre">False</span></code> 。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;program_start_type&quot;</span></code>: ハブの電源投入時にプログラムが自動的に
+開始された場合は <code class="docutils literal notranslate"><span class="pre">1</span></code> 。ハブのボタンでプログラムが開始された
+場合は <code class="docutils literal notranslate"><span class="pre">2</span></code> 。接続したコンピューターからプログラムが開始された
+場合は <code class="docutils literal notranslate"><span class="pre">3</span></code> 。</p></li>
+<li><p><cite>“program_id”</cite>: 現在実行中のプログラムの（スロット）番号。</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>システム情報を含む辞書。</p>
+</dd>
+</dl>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.6: </span>名前とリセット理由は、以前は個別のメソッドとして利用できました。
+現在は <code class="docutils literal notranslate"><span class="pre">info</span></code> 辞書に含まれています。これらのメソッドは
+後方互換性のために引き続き利用できます。</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.system.storage">
+<span class="sig-prename descclassname"><span class="pre">system.</span></span><span class="sig-name descname"><span class="pre">storage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub.system.storage" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">system.</span></span><span class="sig-name descname"><span class="pre">storage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.bytes" title="ubuiltins.bytes"><span class="pre">bytes</span></a></span></span></dt>
+<dd><p>永続ストレージに対してバイナリデータの読み書きを行います。</p>
+<p>次回プログラムを実行したときにも使えるデータを保存できます。</p>
+<p>ハブを正常にオフにすると、データはフラッシュメモリに保存されます。
+ハブが <em>動作している間に</em> バッテリーを取り外した場合は保存されません。</p>
+<p>一度保存されたデータは、バッテリーを取り外した後でも利用できます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>offset</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – ユーザーストレージメモリの先頭からのオフセット（バイト単位）。</p></li>
+<li><p><strong>read</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 読み取るバイト数。書き込む場合はこの引数を省略します。</p></li>
+<li><p><strong>write</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bytes" title="ubuiltins.bytes"><em>bytes</em></a>) – 書き込むバイト列。読み取る場合はこの引数を省略します。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>読み取りの場合は読み取ったバイト列、それ以外の場合は <code class="docutils literal notranslate"><span class="pre">None</span></code> 。</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.ValueError" title="ubuiltins.ValueError"><strong>ValueError</strong></a> – 許可された範囲外のデータを読み書きしようとした場合。</p>
+</dd>
+</dl>
+<p>このハブには最大512バイトのデータを保存できます。データは
+Pybricksファームウェアを更新すると消去されます。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.system.reset_storage">
+<span class="sig-prename descclassname"><span class="pre">system.</span></span><span class="sig-name descname"><span class="pre">reset_storage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub.system.reset_storage" title="Link to this definition"></a></dt>
+<dd><p>すべてのユーザー設定をデフォルト値にリセットし、ユーザーのプログラムを消去します。</p>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 274.3203 46" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="274.3203" height="46" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#74567a" fill="#9a72a2" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  c 1.6667,0  2.5,0.75  3.3333,1.5  l 3.3333,3  c 0.8333,0.75  1.6667,1.5  3.3333,1.5  h 10  c 1.6667,0  2.5,-0.75  3.3333,-1.5  l 3.3333,-3  c 0.8333,-0.75  1.6667,-1.5  3.3333,-1.5  h 229.3203 a 4 4 0 0,1 4,4  v 6  V 38  V 40  V 40 a 4 4 0 0,1 -4,4  h -264.3203 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(55, 6)" style="display: block;"><path class="blocklyPath" stroke="#74567a" fill="#83618a" d=" m 16,0  h 89.3359 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -89.3359 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">prime hub</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(85.3359,3)"/></g></g><g transform="translate(8,6.5)"><image height="30px" width="28px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzLCA1KSI+CiAgICA8cGF0aCB0cmFuc2Zvcm09InJvdGF0ZSgtNDUpIiBkPSJtNy4yMDkyIDE2LjgzNGE5IDkgMCAwIDEtNC4xOTMzIDEwLjEyNCA5IDkgMCAwIDEtMTAuODY0LTEuNDMwMyA5IDkgMCAwIDEtMS40MzAzLTEwLjg2NCA5IDkgMCAwIDEgMTAuMTI0LTQuMTkzMyIgZmlsbD0ibm9uZSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMi41Ii8+CjxwYXRoIGQ9Im0xMi45MSAxLjQ2ODF2MTAuOTYyIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8L2c+Cjwvc3ZnPg=="/></g><g transform="translate(44,6.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(184.3359,13)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">shut down</text></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.hubs.PrimeHub.system.shutdown">
+<span class="sig-prename descclassname"><span class="pre">system.</span></span><span class="sig-name descname"><span class="pre">shutdown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.PrimeHub.system.shutdown" title="Link to this definition"></a></dt>
+<dd><p>プログラムを停止し、ハブをシャットダウンします。</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>以下の例では <code class="docutils literal notranslate"><span class="pre">PrimeHub</span></code> クラスを使用しています。両方のハブは
+同一であるため、どちらのハブでも例は問題なく動作します。
+必要に応じて <code class="docutils literal notranslate"><span class="pre">InventorHub</span></code> に変更できます。</p>
+</div>
+<section id="id1">
+<h2>ステータスライトの例<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<section id="id2">
+<h3>ライトのオンとオフ<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrimeHub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Color</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the hub.</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">PrimeHub</span><span class="p">()</span>
+
+<span class="c1"># Turn the light on and off 5 times.</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">hub</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="p">)</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+    <span class="n">hub</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>輝度の変更とカスタムカラーの使用<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrimeHub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Color</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the hub.</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">PrimeHub</span><span class="p">()</span>
+
+<span class="c1"># Show the color at 30% brightness.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">RED</span> <span class="o">*</span> <span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">wait</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+
+<span class="c1"># Use your own custom color.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">Color</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="mi">50</span><span class="p">))</span>
+
+<span class="n">wait</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+
+<span class="c1"># Go through all the colors.</span>
+<span class="k">for</span> <span class="n">hue</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">360</span><span class="p">):</span>
+    <span class="n">hub</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">Color</span><span class="p">(</span><span class="n">hue</span><span class="p">))</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>ライトを点滅させる<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrimeHub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Color</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the hub</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">PrimeHub</span><span class="p">()</span>
+
+<span class="c1"># Keep blinking red on and off.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">blink</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="p">,</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">])</span>
+
+<span class="n">wait</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+
+<span class="c1"># Keep blinking green slowly and then quickly.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">blink</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">GREEN</span><span class="p">,</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">900</span><span class="p">])</span>
+
+<span class="n">wait</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3>ライトアニメーションの作成<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrimeHub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Color</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">umath</span><span class="w"> </span><span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sin</span>
+
+<span class="c1"># Initialize the hub.</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">PrimeHub</span><span class="p">()</span>
+
+<span class="c1"># Make an animation with multiple colors.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">animate</span><span class="p">([</span><span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="p">,</span> <span class="n">Color</span><span class="o">.</span><span class="n">GREEN</span><span class="p">,</span> <span class="n">Color</span><span class="o">.</span><span class="n">NONE</span><span class="p">],</span> <span class="n">interval</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+
+<span class="n">wait</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+
+<span class="c1"># Make the color RED grow faint and bright using a sine pattern.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">animate</span><span class="p">([</span><span class="n">Color</span><span class="o">.</span><span class="n">RED</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">i</span> <span class="o">/</span> <span class="mi">15</span> <span class="o">*</span> <span class="n">pi</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">)],</span> <span class="mi">40</span><span class="p">)</span>
+
+<span class="n">wait</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+
+<span class="c1"># Cycle through a rainbow of colors.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">animate</span><span class="p">([</span><span class="n">Color</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="n">i</span> <span class="o">*</span> <span class="mi">8</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">45</span><span class="p">)],</span> <span class="n">interval</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+
+<span class="n">wait</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id6">
+<h2>マトリクス表示の例<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<section id="id7">
+<h3>画像を表示する<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrimeHub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Icon</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the hub.</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">PrimeHub</span><span class="p">()</span>
+
+<span class="c1"># Display a big arrow pointing up.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">icon</span><span class="p">(</span><span class="n">Icon</span><span class="o">.</span><span class="n">UP</span><span class="p">)</span>
+
+<span class="c1"># Wait so we can see what is displayed.</span>
+<span class="n">wait</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+
+<span class="c1"># Display a heart at half brightness.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">icon</span><span class="p">(</span><span class="n">Icon</span><span class="o">.</span><span class="n">HEART</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Wait so we can see what is displayed.</span>
+<span class="n">wait</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h3>数字を表示する<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrimeHub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the hub.</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">PrimeHub</span><span class="p">()</span>
+
+<span class="c1"># Count from 0 to 99.</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">number</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id9">
+<h3>テキストを表示する<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrimeHub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the hub.</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">PrimeHub</span><span class="p">()</span>
+
+<span class="c1"># Display the letter A for two seconds.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">char</span><span class="p">(</span><span class="s2">"A"</span><span class="p">)</span>
+<span class="n">wait</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+
+<span class="c1"># Display text, one letter at a time.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"Hello, world!"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id10">
+<h3>個々のピクセルを表示する<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrimeHub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the hub.</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">PrimeHub</span><span class="p">()</span>
+
+<span class="c1"># Turn on the pixel at row 1, column 2.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">pixel</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">wait</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+
+<span class="c1"># Turn on the pixel at row 2, column 4, at 50% brightness.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">pixel</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">wait</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+
+<span class="c1"># Turn off the pixel at row 1, column 2.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">pixel</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">wait</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id11">
+<h3>表示の向きを変える<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrimeHub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Side</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the hub.</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">PrimeHub</span><span class="p">()</span>
+
+<span class="c1"># Rotate the display. Now right is up.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">orientation</span><span class="p">(</span><span class="n">up</span><span class="o">=</span><span class="n">Side</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">)</span>
+
+<span class="c1"># Display a number. This will be shown sideways.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">number</span><span class="p">(</span><span class="mi">23</span><span class="p">)</span>
+
+<span class="c1"># Wait so we can see what is displayed.</span>
+<span class="n">wait</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrimeHub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Icon</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the hub.</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">PrimeHub</span><span class="p">()</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Check which side of the hub is up.</span>
+    <span class="n">up_side</span> <span class="o">=</span> <span class="n">hub</span><span class="o">.</span><span class="n">imu</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+
+    <span class="c1"># Use this side to set the display orientation.</span>
+    <span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">orientation</span><span class="p">(</span><span class="n">up_side</span><span class="p">)</span>
+
+    <span class="c1"># Display something, like an arrow.</span>
+    <span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">icon</span><span class="p">(</span><span class="n">Icon</span><span class="o">.</span><span class="n">UP</span><span class="p">)</span>
+
+    <span class="n">wait</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="make-icons">
+<span id="id12"></span><h3>自分で画像を作る<a class="headerlink" href="#make-icons" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrimeHub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">Matrix</span><span class="p">,</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the hub.</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">PrimeHub</span><span class="p">()</span>
+
+<span class="c1"># Make a square that is bright on the outside and faint in the middle.</span>
+<span class="n">SQUARE</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Display the square.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">icon</span><span class="p">(</span><span class="n">SQUARE</span><span class="p">)</span>
+<span class="n">wait</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>
+
+<span class="c1"># Make an image using a Python list comprehension. In this image, the</span>
+<span class="c1"># brightness of each pixel is the sum of the row and column index. So the</span>
+<span class="c1"># light is faint in the top left and bright in the bottom right.</span>
+<span class="n">GRADIENT</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[(</span><span class="n">r</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)])</span> <span class="o">*</span> <span class="mf">12.5</span>
+
+<span class="c1"># Display the generated gradient.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">icon</span><span class="p">(</span><span class="n">GRADIENT</span><span class="p">)</span>
+<span class="n">wait</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id13">
+<h3>アイコンを組み合わせて表情を作る<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrimeHub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Icon</span><span class="p">,</span> <span class="n">Side</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">urandom</span><span class="w"> </span><span class="kn">import</span> <span class="n">randint</span>
+
+<span class="c1"># Initialize the hub.</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">PrimeHub</span><span class="p">()</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">orientation</span><span class="p">(</span><span class="n">up</span><span class="o">=</span><span class="n">Side</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Start with random left brow: up or down.</span>
+    <span class="k">if</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">70</span><span class="p">:</span>
+        <span class="n">brows</span> <span class="o">=</span> <span class="n">Icon</span><span class="o">.</span><span class="n">EYE_LEFT_BROW</span> <span class="o">*</span> <span class="mf">0.5</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">brows</span> <span class="o">=</span> <span class="n">Icon</span><span class="o">.</span><span class="n">EYE_LEFT_BROW_UP</span> <span class="o">*</span> <span class="mf">0.5</span>
+
+    <span class="c1"># Add random right brow: up or down.</span>
+    <span class="k">if</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">70</span><span class="p">:</span>
+        <span class="n">brows</span> <span class="o">+=</span> <span class="n">Icon</span><span class="o">.</span><span class="n">EYE_RIGHT_BROW</span> <span class="o">*</span> <span class="mf">0.5</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">brows</span> <span class="o">+=</span> <span class="n">Icon</span><span class="o">.</span><span class="n">EYE_RIGHT_BROW_UP</span> <span class="o">*</span> <span class="mf">0.5</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="c1"># Display eyes open plus the random brows.</span>
+        <span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">icon</span><span class="p">(</span><span class="n">Icon</span><span class="o">.</span><span class="n">EYE_LEFT</span> <span class="o">+</span> <span class="n">Icon</span><span class="o">.</span><span class="n">EYE_RIGHT</span> <span class="o">+</span> <span class="n">brows</span><span class="p">)</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+
+        <span class="c1"># Display eyes blinked plus the random brows.</span>
+        <span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">icon</span><span class="p">(</span><span class="n">Icon</span><span class="o">.</span><span class="n">EYE_LEFT_BLINK</span> <span class="o">*</span> <span class="mf">0.7</span> <span class="o">+</span> <span class="n">Icon</span><span class="o">.</span><span class="n">EYE_RIGHT_BLINK</span> <span class="o">*</span> <span class="mf">0.7</span> <span class="o">+</span> <span class="n">brows</span><span class="p">)</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id14">
+<h3>アニメーションを表示する<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrimeHub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Icon</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the hub.</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">PrimeHub</span><span class="p">()</span>
+
+<span class="c1"># Turn the hub light off (optional).</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+
+<span class="c1"># Create a list of intensities from 0 to 100 and back.</span>
+<span class="n">brightness</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Create an animation of the heart icon with changing brightness.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">animate</span><span class="p">([</span><span class="n">Icon</span><span class="o">.</span><span class="n">HEART</span> <span class="o">*</span> <span class="n">i</span> <span class="o">/</span> <span class="mi">100</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">brightness</span><span class="p">],</span> <span class="mi">30</span><span class="p">)</span>
+
+<span class="c1"># The animation repeats in the background. Here we just wait.</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id15">
+<h2>ボタンの例<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<section id="id16">
+<h3>ボタン押下を検出する<a class="headerlink" href="#id16" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrimeHub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Button</span><span class="p">,</span> <span class="n">Icon</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the hub.</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">PrimeHub</span><span class="p">()</span>
+
+<span class="c1"># Wait for any button to be pressed, and save the result.</span>
+<span class="n">pressed</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">pressed</span><span class="p">):</span>
+    <span class="n">pressed</span> <span class="o">=</span> <span class="n">hub</span><span class="o">.</span><span class="n">buttons</span><span class="o">.</span><span class="n">pressed</span><span class="p">()</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Display a circle.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">icon</span><span class="p">(</span><span class="n">Icon</span><span class="o">.</span><span class="n">CIRCLE</span><span class="p">)</span>
+
+<span class="c1"># Wait for all buttons to be released.</span>
+<span class="k">while</span> <span class="nb">any</span><span class="p">(</span><span class="n">hub</span><span class="o">.</span><span class="n">buttons</span><span class="o">.</span><span class="n">pressed</span><span class="p">()):</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Display an arrow to indicate which button was pressed.</span>
+<span class="k">if</span> <span class="n">Button</span><span class="o">.</span><span class="n">LEFT</span> <span class="ow">in</span> <span class="n">pressed</span><span class="p">:</span>
+    <span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">icon</span><span class="p">(</span><span class="n">Icon</span><span class="o">.</span><span class="n">ARROW_LEFT_DOWN</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">Button</span><span class="o">.</span><span class="n">RIGHT</span> <span class="ow">in</span> <span class="n">pressed</span><span class="p">:</span>
+    <span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">icon</span><span class="p">(</span><span class="n">Icon</span><span class="o">.</span><span class="n">ARROW_RIGHT_DOWN</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">Button</span><span class="o">.</span><span class="n">BLUETOOTH</span> <span class="ow">in</span> <span class="n">pressed</span><span class="p">:</span>
+    <span class="n">hub</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">icon</span><span class="p">(</span><span class="n">Icon</span><span class="o">.</span><span class="n">ARROW_RIGHT_UP</span><span class="p">)</span>
+
+<span class="n">wait</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="imu">
+<h2>IMUの例<a class="headerlink" href="#imu" title="Link to this heading"></a></h2>
+<section id="id17">
+<h3>どちらが上かを確かめる<a class="headerlink" href="#id17" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrimeHub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Color</span><span class="p">,</span> <span class="n">Side</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the hub.</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">PrimeHub</span><span class="p">()</span>
+
+<span class="c1"># Define colors for each side in a dictionary.</span>
+<span class="n">SIDE_COLORS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">Side</span><span class="o">.</span><span class="n">TOP</span><span class="p">:</span> <span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="p">,</span>
+    <span class="n">Side</span><span class="o">.</span><span class="n">BOTTOM</span><span class="p">:</span> <span class="n">Color</span><span class="o">.</span><span class="n">BLUE</span><span class="p">,</span>
+    <span class="n">Side</span><span class="o">.</span><span class="n">LEFT</span><span class="p">:</span> <span class="n">Color</span><span class="o">.</span><span class="n">GREEN</span><span class="p">,</span>
+    <span class="n">Side</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">:</span> <span class="n">Color</span><span class="o">.</span><span class="n">YELLOW</span><span class="p">,</span>
+    <span class="n">Side</span><span class="o">.</span><span class="n">FRONT</span><span class="p">:</span> <span class="n">Color</span><span class="o">.</span><span class="n">MAGENTA</span><span class="p">,</span>
+    <span class="n">Side</span><span class="o">.</span><span class="n">BACK</span><span class="p">:</span> <span class="n">Color</span><span class="o">.</span><span class="n">BLACK</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># Keep updating the color based on detected up side.</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Check which side of the hub is up.</span>
+    <span class="n">up_side</span> <span class="o">=</span> <span class="n">hub</span><span class="o">.</span><span class="n">imu</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+
+    <span class="c1"># Change the color based on the side.</span>
+    <span class="n">hub</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">SIDE_COLORS</span><span class="p">[</span><span class="n">up_side</span><span class="p">])</span>
+
+    <span class="c1"># Also print the result.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">up_side</span><span class="p">)</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id18">
+<h3>傾きの値を読み取る<a class="headerlink" href="#id18" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrimeHub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the hub.</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">PrimeHub</span><span class="p">()</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Read the tilt values.</span>
+    <span class="n">pitch</span><span class="p">,</span> <span class="n">roll</span> <span class="o">=</span> <span class="n">hub</span><span class="o">.</span><span class="n">imu</span><span class="o">.</span><span class="n">tilt</span><span class="p">()</span>
+
+    <span class="c1"># Print the result.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pitch</span><span class="p">,</span> <span class="n">roll</span><span class="p">)</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id19">
+<h3>カスタムのハブの向きを使う<a class="headerlink" href="#id19" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrimeHub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axis</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the hub. In this case, specify that the hub is mounted with the</span>
+<span class="c1"># top side facing forward and the front side facing to the right.</span>
+<span class="c1"># For example, this is how the hub is mounted in BLAST in the 51515 set.</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">PrimeHub</span><span class="p">(</span><span class="n">top_side</span><span class="o">=</span><span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">front_side</span><span class="o">=-</span><span class="n">Axis</span><span class="o">.</span><span class="n">Y</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Read the tilt values. Now, the values are 0 when BLAST stands upright.</span>
+    <span class="c1"># Leaning forward gives positive pitch. Leaning right gives positive roll.</span>
+    <span class="n">pitch</span><span class="p">,</span> <span class="n">roll</span> <span class="o">=</span> <span class="n">hub</span><span class="o">.</span><span class="n">imu</span><span class="o">.</span><span class="n">tilt</span><span class="p">()</span>
+
+    <span class="c1"># Print the result.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pitch</span><span class="p">,</span> <span class="n">roll</span><span class="p">)</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id20">
+<h3>加速度と角速度のベクトルを読み取る<a class="headerlink" href="#id20" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrimeHub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the hub.</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">PrimeHub</span><span class="p">()</span>
+
+<span class="c1"># Get the acceleration vector in g's.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hub</span><span class="o">.</span><span class="n">imu</span><span class="o">.</span><span class="n">acceleration</span><span class="p">()</span> <span class="o">/</span> <span class="mi">9810</span><span class="p">)</span>
+
+<span class="c1"># Get the angular velocity vector.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hub</span><span class="o">.</span><span class="n">imu</span><span class="o">.</span><span class="n">angular_velocity</span><span class="p">())</span>
+
+<span class="c1"># Wait so we can see what we printed</span>
+<span class="n">wait</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id21">
+<h3>1軸の加速度と角速度を読み取る<a class="headerlink" href="#id21" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrimeHub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axis</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the hub.</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">PrimeHub</span><span class="p">()</span>
+
+<span class="c1"># Get the acceleration or angular_velocity along a single axis.</span>
+<span class="c1"># If you need only one value, this is more memory efficient.</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Read the forward acceleration.</span>
+    <span class="n">forward_acceleration</span> <span class="o">=</span> <span class="n">hub</span><span class="o">.</span><span class="n">imu</span><span class="o">.</span><span class="n">acceleration</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+
+    <span class="c1"># Read the yaw rate.</span>
+    <span class="n">yaw_rate</span> <span class="o">=</span> <span class="n">hub</span><span class="o">.</span><span class="n">imu</span><span class="o">.</span><span class="n">angular_velocity</span><span class="p">(</span><span class="n">Axis</span><span class="o">.</span><span class="n">Z</span><span class="p">)</span>
+
+    <span class="c1"># Print the yaw rate.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">yaw_rate</span><span class="p">)</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id22">
+<h2>システムの例<a class="headerlink" href="#id22" title="Link to this heading"></a></h2>
+<section id="id23">
+<h3>停止ボタンの組み合わせを変える<a class="headerlink" href="#id23" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrimeHub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Button</span>
+
+<span class="c1"># Initialize the hub.</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">PrimeHub</span><span class="p">()</span>
+
+<span class="c1"># Configure the stop button combination. Now, your program stops</span>
+<span class="c1"># if you press the center and Bluetooth buttons simultaneously.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">set_stop_button</span><span class="p">((</span><span class="n">Button</span><span class="o">.</span><span class="n">CENTER</span><span class="p">,</span> <span class="n">Button</span><span class="o">.</span><span class="n">BLUETOOTH</span><span class="p">))</span>
+
+<span class="c1"># Now we can use the center button as a normal button.</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Play a sound if the center button is pressed.</span>
+    <span class="k">if</span> <span class="n">Button</span><span class="o">.</span><span class="n">CENTER</span> <span class="ow">in</span> <span class="n">hub</span><span class="o">.</span><span class="n">buttons</span><span class="o">.</span><span class="n">pressed</span><span class="p">():</span>
+        <span class="n">hub</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">beep</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="id24">
+<h3>ハブの電源を切る<a class="headerlink" href="#id24" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrimeHub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the hub.</span>
+<span class="n">hub</span> <span class="o">=</span> <span class="n">PrimeHub</span><span class="p">()</span>
+
+<span class="c1"># Say goodbye and give some time to send it.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Goodbye!"</span><span class="p">)</span>
+<span class="n">wait</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Shut the hub down.</span>
+<span class="n">hub</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2026 The Pybricks Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

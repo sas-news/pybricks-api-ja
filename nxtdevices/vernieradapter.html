@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vernier Adapter &mdash; pybricks v4.1.0b2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d8a2add5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/requirements.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme_overrides.css?v=8b8d8269" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blocks.css?v=ee57a122" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blockimg.css?v=bf50a58c" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7dc5ce0d"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/requirements.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="iodevices – Custom devices" href="../iodevices/index.html" />
+    <link rel="prev" title="NXT Energy Meter" href="energymeter.html" />
+    <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pybricks
+              <img src="../_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pybricks modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../hubs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pupdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – Motors, sensors, lights</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="motor.html">Motors with rotation sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="touchsensor.html">NXT Touch Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lightsensor.html">NXT Light Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="colorsensor.html">NXT Color Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ultrasonicsensor.html">NXT Ultrasonic Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soundsensor.html">NXT Sound Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="temperaturesensor.html">NXT Temperature Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="energymeter.html">NXT Energy Meter</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Vernier Adapter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pybricks.nxtdevices.VernierAdapter"><code class="docutils literal notranslate"><span class="pre">VernierAdapter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.nxtdevices.VernierAdapter.voltage"><code class="docutils literal notranslate"><span class="pre">VernierAdapter.voltage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.nxtdevices.VernierAdapter.conversion"><code class="docutils literal notranslate"><span class="pre">VernierAdapter.conversion()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.nxtdevices.VernierAdapter.value"><code class="docutils literal notranslate"><span class="pre">VernierAdapter.value()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#using-the-surface-temperature-sensor">Using the Surface Temperature Sensor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../iodevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – Custom devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – Parameters and constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – General purpose tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robotics.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">robotics</span></code> – Robotics and drive bases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">messaging</span></code> – Send and receive messages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signaltypes.html">Signals and Units</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MicroPython modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/builtins.html">Built-in classes and functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/exceptions.html">Exceptions and errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/micropython.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">micropython</span></code> – MicroPython internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uerrno.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uerrno</span></code> – Error codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uio.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uio</span></code> – Input/output streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/ujson.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ujson</span></code> – JSON encoding and decoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/umath.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">umath</span></code> – Math functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/urandom.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">urandom</span></code> – Pseudo-random numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uselect.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uselect</span></code> – Wait for events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/ustruct.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ustruct</span></code> – Pack and unpack binary data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/usys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usys</span></code> – System specific functions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pybricks</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+      <li class="breadcrumb-item active">Vernier Adapter</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="toggle-header docutils container">
+</div>
+<div class="toggle-content docutils container">
+
+        <div class="wy-table-responsive">
+            <table class="docutils align-default requirements-table">
+                <tbody>
+                    <tr>
+                        
+        <th background="../_images/compat_movehub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_cityhub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_technichub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_primehub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_inventorhub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_essentialhub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_ev3brick.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+<section id="vernier-adapter">
+<h1>Vernier Adapter<a class="headerlink" href="#vernier-adapter" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pybricks.nxtdevices.VernierAdapter">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">VernierAdapter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conversion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.nxtdevices.VernierAdapter" title="Link to this definition"></a></dt>
+<dd><p>LEGO® MINDSTORMS® Education NXT/EV3 Adapter for Vernier Sensors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>port</strong> (<a class="reference internal" href="../parameters/port.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – Port to which the sensor is connected.</p></li>
+<li><p><strong>conversion</strong> (<em>callable</em>) – Function of the format <a class="reference internal" href="#pybricks.nxtdevices.VernierAdapter.conversion" title="pybricks.nxtdevices.VernierAdapter.conversion"><code class="xref py py-meth docutils literal notranslate"><span class="pre">conversion()</span></code></a>.
+This function is used to convert the raw analog voltage to the
+sensor-specific output value. Each Vernier Sensor has its
+own conversion function. The example given below demonstrates
+the conversion for the Surface Temperature Sensor.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.nxtdevices.VernierAdapter.voltage">
+<span class="sig-name descname"><span class="pre">voltage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">mV</span></span></span><a class="headerlink" href="#pybricks.nxtdevices.VernierAdapter.voltage" title="Link to this definition"></a></dt>
+<dd><p>Measures the raw analog sensor voltage.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Analog voltage.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.nxtdevices.VernierAdapter.conversion">
+<span class="sig-name descname"><span class="pre">conversion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">voltage</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a></span></span><a class="headerlink" href="#pybricks.nxtdevices.VernierAdapter.conversion" title="Link to this definition"></a></dt>
+<dd><p>Converts the raw voltage (mV) to a sensor value.</p>
+<p>If you did not provide a <a class="reference internal" href="#pybricks.nxtdevices.VernierAdapter.conversion" title="pybricks.nxtdevices.VernierAdapter.conversion"><code class="xref py py-meth docutils literal notranslate"><span class="pre">conversion()</span></code></a> function earlier, no
+conversion will be applied.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>voltage</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>mV</em>) – Analog sensor voltage</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Converted sensor value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.nxtdevices.VernierAdapter.value">
+<span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a></span></span><a class="headerlink" href="#pybricks.nxtdevices.VernierAdapter.value" title="Link to this definition"></a></dt>
+<dd><p>Measures the sensor <a class="reference internal" href="#pybricks.nxtdevices.VernierAdapter.voltage" title="pybricks.nxtdevices.VernierAdapter.voltage"><code class="xref py py-meth docutils literal notranslate"><span class="pre">voltage()</span></code></a> and then
+applies your <a class="reference internal" href="#pybricks.nxtdevices.VernierAdapter.conversion" title="pybricks.nxtdevices.VernierAdapter.conversion"><code class="xref py py-meth docutils literal notranslate"><span class="pre">conversion()</span></code></a> to give you the sensor value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Converted sensor value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h2>
+<section id="using-the-surface-temperature-sensor">
+<h3>Using the Surface Temperature Sensor<a class="headerlink" href="#using-the-surface-temperature-sensor" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">log</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.nxtdevices</span><span class="w"> </span><span class="kn">import</span> <span class="n">VernierAdapter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Port</span>
+
+
+<span class="c1"># Conversion formula for Surface Temperature Sensor</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">convert_raw_to_temperature</span><span class="p">(</span><span class="n">voltage</span><span class="p">):</span>
+
+    <span class="c1"># Convert the raw voltage to the NTC resistance</span>
+    <span class="c1"># according to the Vernier Adapter EV3 block.</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">voltage</span> <span class="o">/</span> <span class="mi">5000</span> <span class="o">*</span> <span class="mi">4096</span>
+    <span class="n">ntc</span> <span class="o">=</span> <span class="mi">15000</span> <span class="o">*</span> <span class="p">(</span><span class="n">counts</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4130</span> <span class="o">-</span> <span class="n">counts</span><span class="p">)</span>
+
+    <span class="c1"># Handle log(0) safely: make sure that ntc value is positive.</span>
+    <span class="k">if</span> <span class="n">ntc</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ntc</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="c1"># Apply Steinhart-Hart equation as given in the sensor documentation.</span>
+    <span class="n">K0</span> <span class="o">=</span> <span class="mf">1.02119e-3</span>
+    <span class="n">K1</span> <span class="o">=</span> <span class="mf">2.22468e-4</span>
+    <span class="n">K2</span> <span class="o">=</span> <span class="mf">1.33342e-7</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">K0</span> <span class="o">+</span> <span class="n">K1</span> <span class="o">*</span> <span class="n">log</span><span class="p">(</span><span class="n">ntc</span><span class="p">)</span> <span class="o">+</span> <span class="n">K2</span> <span class="o">*</span> <span class="n">log</span><span class="p">(</span><span class="n">ntc</span><span class="p">)</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>
+
+
+<span class="c1"># Initialize the adapter on port 1</span>
+<span class="n">thermometer</span> <span class="o">=</span> <span class="n">VernierAdapter</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">S1</span><span class="p">,</span> <span class="n">convert_raw_to_temperature</span><span class="p">)</span>
+
+<span class="c1"># Get the measured value and print it</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">thermometer</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2026 The Pybricks Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,711 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>messaging – メッセージの送受信 &mdash; pybricks v4.1.0b2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d8a2add5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/requirements.css?v=e2406e8f" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme_overrides.css?v=8b8d8269" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blocks.css?v=ee57a122" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blockimg.css?v=bf50a58c" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7dc5ce0d"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/requirements.js?v=6c6f6a43"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="信号と単位" href="../signaltypes.html" />
+    <link rel="prev" title="robotics – ロボティクスとドライブベース" href="../robotics.html" />
+    <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pybricks
+              <img src="../_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pybricks modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../hubs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pupdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iodevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – 汎用ツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robotics.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクスとドライブベース</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージの送受信</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pybricks.messaging.BLERadio"><code class="docutils literal notranslate"><span class="pre">BLERadio</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pybricks.messaging.BLERadio.broadcast"><code class="docutils literal notranslate"><span class="pre">BLERadio.broadcast()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pybricks.messaging.BLERadio.observe"><code class="docutils literal notranslate"><span class="pre">BLERadio.observe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pybricks.messaging.BLERadio.signal_strength"><code class="docutils literal notranslate"><span class="pre">BLERadio.signal_strength()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pybricks.messaging.BLERadio.version"><code class="docutils literal notranslate"><span class="pre">BLERadio.version()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#pybricks.messaging.AppData"><code class="docutils literal notranslate"><span class="pre">AppData</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pybricks.messaging.AppData.get_bytes"><code class="docutils literal notranslate"><span class="pre">AppData.get_bytes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pybricks.messaging.AppData.write_bytes"><code class="docutils literal notranslate"><span class="pre">AppData.write_bytes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pybricks.messaging.AppData.configure"><code class="docutils literal notranslate"><span class="pre">AppData.configure()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pybricks.messaging.AppData.close"><code class="docutils literal notranslate"><span class="pre">AppData.close()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#bleradio">BLERadio の使用例</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hub">他のHubへデータをブロードキャストする</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">他のHubからデータを観測する</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ev3-brick">EV3 Brick間のメッセージング</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pybricks.messaging.HubNetwork"><code class="docutils literal notranslate"><span class="pre">HubNetwork</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.messaging.HubNetwork.address"><code class="docutils literal notranslate"><span class="pre">HubNetwork.address()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.messaging.HubNetwork.connect"><code class="docutils literal notranslate"><span class="pre">HubNetwork.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.messaging.HubNetwork.is_connected"><code class="docutils literal notranslate"><span class="pre">HubNetwork.is_connected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.messaging.HubNetwork.send"><code class="docutils literal notranslate"><span class="pre">HubNetwork.send()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.messaging.HubNetwork.inbox"><code class="docutils literal notranslate"><span class="pre">HubNetwork.inbox()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../signaltypes.html">信号と単位</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MicroPython modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/builtins.html">組み込みクラスと関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/exceptions.html">例外とエラー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/micropython.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">micropython</span></code> – MicroPythonの内部機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uerrno.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uerrno</span></code> – エラーコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uio.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uio</span></code> – 入出力ストリーム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/ujson.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ujson</span></code> – JSONのエンコードとデコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/umath.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">umath</span></code> – 数学関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/urandom.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">urandom</span></code> – 擬似乱数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uselect.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uselect</span></code> – イベントの待機</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/ustruct.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ustruct</span></code> – バイナリデータのパックとアンパック</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/usys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usys</span></code> – システム固有の関数</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pybricks</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージの送受信</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-pybricks.messaging">
+<span id="messaging"></span><h1><a class="reference internal" href="#module-pybricks.messaging" title="pybricks.messaging"><code class="xref py py-mod docutils literal notranslate"><span class="pre">messaging</span></code></a> – メッセージの送受信<a class="headerlink" href="#module-pybricks.messaging" title="Link to this heading"></a></h1>
+<p>他のデバイスとメッセージを送受信するためのクラス。</p>
+<div class="toggle-header docutils container">
+</div>
+<div class="toggle-content docutils container">
+
+        <div class="wy-table-responsive">
+            <table class="docutils align-default requirements-table">
+                <tbody>
+                    <tr>
+                        
+        <th background="../_images/compat_movehub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_cityhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_technichub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_primehub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_inventorhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_essentialhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_ev3brick.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 509.3625 52" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="509.3625" height="52" style="background-color: transparent"><g transform="translate(1, 5)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  l 0,-4  10,0  0,4  10,0  0,-4  10,0  0,4  h 464.3625 a 4 4 0 0,1 4,4  v 6  V 38  V 40  V 40 a 4 4 0 0,1 -4,4  h -464.3625  l 0,-4  -10,0  0,4  -10,0  0,-4  -10,0  0,4  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(8,6.5)"><image height="30px" width="28.8px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8cGF0aCBkPSJtMSAxNy43NyAxMC44ODUtMTAuODg1LTUuNTgxOS01LjU4MTl2MjIuMzkzbDUuNjc0NC01LjY3NDQtMTAuODU1LTEwLjg1NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIvPgo8cGF0aCBkPSJtMjAuMjEzIDMuNWExMi43MjggMTIuNzI4IDAgMCAxIDMuNzI3OSA5IDEyLjcyOCAxMi43MjggMCAwIDEtMy43Mjc5IDkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjIiLz4KPHBhdGggZD0ibTE3LjA1OSA3LjQwNzVhNy4yMDE4IDcuMjAxOCAwIDAgMSAyLjEwOTMgNS4wOTI0IDcuMjAxOCA3LjIwMTggMCAwIDEtMi4xMDkzIDUuMDkyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwvZz4KPC9zdmc+"/></g><g transform="translate(44.8,6.5)"><image height="30px" width="2px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0wLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g class="blocklyEditableText" transform="translate(54.8,7.4)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="55.1172" class="blocklyFieldRect" stroke="#4585a1" style="display: block; fill: rgb(78, 150, 182);"/><text class="blocklyText" dominant-baseline="central" style="fill: rgb(255, 255, 255);" x="8" y="14.6">radio</text></g><g transform="translate(117.9172,13)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">broadcast channel</text></g><g class="blocklyEditableText" transform="translate(267.2922,7.4)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="24.8984" class="blocklyFieldRect" stroke="#4585a1" style="display: block;"/><text class="blocklyText" dominant-baseline="central" x="8" y="14.6">0</text></g><g transform="translate(300.1906,13)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">observe channel</text></g><g class="blocklyEditableText" transform="translate(434.4641,7.4)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="24.8984" class="blocklyFieldRect" stroke="#4585a1" style="display: block;"/><text class="blocklyText" dominant-baseline="central" x="8" y="14.6">1</text></g><g transform="translate(467.3625,6.5)"><image height="30px" width="12px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMiAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8cGF0aCBkPSJtOS41MDk1IDUuNzk2OC03LjUwOTYgOS40MDI3IDcuNTA5NiA5LjQwMjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjQiLz4KICA8L2c+Cjwvc3ZnPg==" style="cursor: pointer;"/></g><g transform="translate(487.3625,6.5)"><image height="30px" width="12px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMiAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8cGF0aCBkPSJtMi40NzM4IDUuNzk2OCA3LjUwOTYgOS40MDI3LTcuNTA5NiA5LjQwMjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjQiLz4KICA8L2c+Cjwvc3ZnPg==" style="cursor: pointer;"/></g></g></g></svg></div><dl class="py class">
+<dt class="sig sig-object py" id="pybricks.messaging.BLERadio">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">BLERadio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">broadcast_channel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observe_channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.BLERadio" title="Link to this definition"></a></dt>
+<dd><p>Bluetooth Low Energyを使用して、接続せずにメッセージを送受信します。</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.0: </span>以前は各Hubクラスの一部として提供されていました。</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>broadcast_channel</strong> – データのブロードキャストに使用するチャンネル番号（0～255）。
+ブロードキャストを使用しない場合は <code class="docutils literal notranslate"><span class="pre">None</span></code> を選択します。</p></li>
+<li><p><strong>observe_channels</strong> – <code class="docutils literal notranslate"><span class="pre">hub.ble.observe()</span></code> が呼び出されたときにリッスンする
+チャンネルのリスト。リッスンするチャンネルが多いほど、より
+多くのメモリが必要です。デフォルトは空のリスト（チャンネル
+なし）です。</p></li>
+</ul>
+</dd>
+</dl>
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 508.1406 52" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="508.1406" height="52" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#3971bf" fill="#4c97ff" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  c 1.6667,0  2.5,0.75  3.3333,1.5  l 3.3333,3  c 0.8333,0.75  1.6667,1.5  3.3333,1.5  h 10  c 1.6667,0  2.5,-0.75  3.3333,-1.5  l 3.3333,-3  c 0.8333,-0.75  1.6667,-1.5  3.3333,-1.5  h 463.1406 a 4 4 0 0,1 4,4  v 6  V 42  V 40 a 4 4 0 0,1 -4,4  h -463.1406  c -1.6667,0  -2.5,0.75  -3.3333,1.5  l -3.3333,3  c -0.8333,0.75  -1.6667,1.5  -3.3333,1.5  h -10  c -1.6667,0  -2.5,-0.75  -3.3333,-1.5  l -3.3333,-3  c -0.8333,-0.75  -1.6667,-1.5  -3.3333,-1.5  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(55, 6)" style="display: block;"><path class="blocklyPath" stroke="#3971bf" fill="#4180d9" d=" m 16,0  h 51.1172 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -51.1172 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">radio</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(47.1172,3)"/></g></g><g transform="translate(230.5859, 2)" class="blocklyDraggable" style="display: block;"><path class="blocklyPath" stroke="#009973" fill="#00cc99" d=" m 20,0  h 227.5547 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -227.5547 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(79.5547, 4)" style="display: block;"><path class="blocklyPath" stroke="#009973" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#009973" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">0</text></g></g><g transform="translate(127.5547, 4)" style="display: block;"><path class="blocklyPath" stroke="#009973" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#009973" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">0</text></g></g><g transform="translate(175.5547, 4)" style="display: block;"><path class="blocklyPath" stroke="#009973" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#009973" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">0</text></g></g><g transform="translate(12,11)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">list with</text></g><g transform="translate(223.5547,4.5)"><image height="30px" width="12px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMiAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8cGF0aCBkPSJtOS41MDk1IDUuNzk2OC03LjUwOTYgOS40MDI3IDcuNTA5NiA5LjQwMjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjQiLz4KICA8L2c+Cjwvc3ZnPg==" style="cursor: pointer;"/></g><g transform="translate(243.5547,4.5)"><image height="30px" width="12px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMiAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8cGF0aCBkPSJtMi40NzM4IDUuNzk2OCA3LjUwOTYgOS40MDI3LTcuNTA5NiA5LjQwMjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjQiLz4KICA8L2c+Cjwvc3ZnPg==" style="cursor: pointer;"/></g></g><g transform="translate(8,6.5)"><image height="30px" width="28px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyOCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzLCA1KSI+CiAgICA8cGF0aCBkPSJtMSAxNy43NyAxMC44ODUtMTAuODg1LTUuNTgxOS01LjU4MTl2MjIuMzkzbDUuNjc0NC01LjY3NDQtMTAuODU1LTEwLjg1NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIvPgo8cGF0aCBkPSJtMjAuMjEzIDMuNWExMi43MjggMTIuNzI4IDAgMCAxIDMuNzI3OSA5IDEyLjcyOCAxMi43MjggMCAwIDEtMy43Mjc5IDkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjIiLz4KPHBhdGggZD0ibTE3LjA1OSA3LjQwNzVhNy4yMDE4IDcuMjAxOCAwIDAgMSAyLjEwOTMgNS4wOTI0IDcuMjAxOCA3LjIwMTggMCAwIDEtMi4xMDkzIDUuMDkyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwvZz4KPC9zdmc+"/></g><g transform="translate(44,6.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(146.1172,13)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">broadcast</text></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.messaging.BLERadio.broadcast">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">broadcast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.BLERadio.broadcast" title="Link to this definition"></a></dt>
+<dd><p>事前に選択した <code class="docutils literal notranslate"><span class="pre">broadcast_channel</span></code> で、指定したデータの
+ブロードキャストを開始します。</p>
+<p>データの型は <code class="docutils literal notranslate"><span class="pre">int</span></code>、<code class="docutils literal notranslate"><span class="pre">float</span></code>、<code class="docutils literal notranslate"><span class="pre">str</span></code>、<code class="docutils literal notranslate"><span class="pre">bytes</span></code>、<code class="docutils literal notranslate"><span class="pre">True</span></code>、
+<code class="docutils literal notranslate"><span class="pre">False</span></code> のいずれかです。また、これらの値のリストやタプルも指定
+できます。</p>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code> を指定するとブロードキャストを停止します。ブロードキャスト
+機能が不要な場合、特に同時に観測を行う場合は、パフォーマンスの向上に
+役立ちます。</p>
+<p>データの合計サイズはかなり制限されています（26バイト）。<code class="docutils literal notranslate"><span class="pre">True</span></code> と
+<code class="docutils literal notranslate"><span class="pre">False</span></code> はそれぞれ1バイト、<code class="docutils literal notranslate"><span class="pre">float</span></code> は5バイトを使用します。
+<code class="docutils literal notranslate"><span class="pre">int</span></code> は数値の大きさに応じて2～5バイトを使用します。<code class="docutils literal notranslate"><span class="pre">str</span></code> と
+<code class="docutils literal notranslate"><span class="pre">bytes</span></code> はオブジェクトのバイト数に1バイトを加えたサイズを使用
+します。</p>
+<p>マルチタスク時は、一度に1つのタスクのみがブロードキャストできます。
+複数のタスク（またはブロックスタック）から情報をブロードキャスト
+するには、1つ以上の変数が変化したときに新しい値をブロードキャスト
+する専用の別タスクを使用するとよいでしょう。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – ブロードキャストする値。</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.RuntimeError" title="ubuiltins.RuntimeError"><strong>RuntimeError</strong></a> – <code class="docutils literal notranslate"><span class="pre">broadcast_channel</span></code> が設定されていない場合。</p></li>
+<li><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.ValueError" title="ubuiltins.ValueError"><strong>ValueError</strong></a> – エンコードされたデータが26バイトを超える場合。</p></li>
+<li><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.TypeError" title="ubuiltins.TypeError"><strong>TypeError</strong></a> – <code class="docutils literal notranslate"><span class="pre">data</span></code> に <code class="docutils literal notranslate"><span class="pre">bool</span></code>、<code class="docutils literal notranslate"><span class="pre">int</span></code>、<code class="docutils literal notranslate"><span class="pre">float</span></code>、<code class="docutils literal notranslate"><span class="pre">str</span></code>、
+    <code class="docutils literal notranslate"><span class="pre">bytes</span></code> 以外の値が含まれている場合。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 275.3828 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="275.3828" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 20,0  h 233.3828 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -233.3828 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(56, 4)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 51.1172 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -51.1172 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">radio</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(47.1172,3)"/></g></g><g transform="translate(12,7)"><image height="25px" width="25px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8cGF0aCBkPSJtMSAxNy43NyAxMC44ODUtMTAuODg1LTUuNTgxOS01LjU4MTl2MjIuMzkzbDUuNjc0NC01LjY3NDQtMTAuODU1LTEwLjg1NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIvPgo8cGF0aCBkPSJtMjAuMjEzIDMuNWExMi43MjggMTIuNzI4IDAgMCAxIDMuNzI3OSA5IDEyLjcyOCAxMi43MjggMCAwIDEtMy43Mjc5IDkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjIiLz4KPHBhdGggZD0ibTE3LjA1OSA3LjQwNzVhNy4yMDE4IDcuMjAxOCAwIDAgMSAyLjEwOTMgNS4wOTI0IDcuMjAxOCA3LjIwMTggMCAwIDEtMi4xMDkzIDUuMDkyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwvZz4KPC9zdmc+"/></g><g transform="translate(45,4.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(147.1172,11)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">observe</text></g><g class="blocklyEditableText" transform="translate(216.4844,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="44.8984" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">0</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(24.8984,8.6)"/></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.messaging.BLERadio.observe">
+<span class="sig-name descname"><span class="pre">observe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><span class="pre">bool</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="../micropython/builtins.html#ubuiltins.float" title="ubuiltins.float"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="../micropython/builtins.html#ubuiltins.str" title="ubuiltins.str"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="../micropython/builtins.html#ubuiltins.bytes" title="ubuiltins.bytes"><span class="pre">bytes</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="../micropython/builtins.html#ubuiltins.tuple" title="ubuiltins.tuple"><span class="pre">tuple</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#pybricks.messaging.BLERadio.observe" title="Link to this definition"></a></dt>
+<dd><p>指定したチャンネルで最後に観測されたデータを取得します。</p>
+<p>Hubがコンピューターや他のデバイスに同時に接続されていない場合、
+データの受信がより確実になります。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>channel</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 観測するチャンネル。このオブジェクトの作成時に
+<code class="docutils literal notranslate"><span class="pre">observe_channels</span></code> で指定したチャンネルの1つである必要が
+あります。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>送信時と同じ形式で受信したデータ。直近1秒以内にデータを受信
+していない場合は <code class="docutils literal notranslate"><span class="pre">None</span></code>。</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.ValueError" title="ubuiltins.ValueError"><strong>ValueError</strong></a> – <code class="docutils literal notranslate"><span class="pre">channel</span></code> が <code class="docutils literal notranslate"><span class="pre">observe_channels</span></code> に含まれていない
+    場合。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.messaging.BLERadio.signal_strength">
+<span class="sig-name descname"><span class="pre">signal_strength</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">dBm</span></span></span><a class="headerlink" href="#pybricks.messaging.BLERadio.signal_strength" title="Link to this definition"></a></dt>
+<dd><p>指定したチャンネルの平均信号強度をdBm単位で取得します。</p>
+<p>これはブロードキャストしているデバイスの近さを示します。近くの
+デバイスの信号強度は約-40 dBm、遠くのデバイスは約-70 dBmになります。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>channel</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – チャンネル番号。このオブジェクトの作成時に
+<code class="docutils literal notranslate"><span class="pre">observe_channels</span></code> で指定したチャンネルの1つである必要が
+あります。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>信号強度。直近1秒以内にデータを受信していない場合は <code class="docutils literal notranslate"><span class="pre">-128</span></code>。</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.ValueError" title="ubuiltins.ValueError"><strong>ValueError</strong></a> – <code class="docutils literal notranslate"><span class="pre">channel</span></code> が <code class="docutils literal notranslate"><span class="pre">observe_channels</span></code> に含まれていない
+    場合。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.messaging.BLERadio.version">
+<span class="sig-name descname"><span class="pre">version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.str" title="ubuiltins.str"><span class="pre">str</span></a></span></span><a class="headerlink" href="#pybricks.messaging.BLERadio.version" title="Link to this definition"></a></dt>
+<dd><p>Bluetoothチップのファームウェアバージョンを取得します。</p>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 376.8807 52" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="376.8807" height="52" style="background-color: transparent"><g transform="translate(1, 5)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  l 0,-4  10,0  0,4  10,0  0,-4  10,0  0,4  h 331.8807 a 4 4 0 0,1 4,4  v 6  V 38  V 40  V 40 a 4 4 0 0,1 -4,4  h -331.8807  l 0,-4  -10,0  0,4  -10,0  0,-4  -10,0  0,4  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(263.3156, 6)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 71.5651 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -71.5651 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,5.3333)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="21.3333" width="26.6667" class="blocklyFieldRect" style="fill-opacity: 1; fill: rgb(255, 0, 0); stroke: rgb(69, 133, 161);"/></g><g class="blocklyEditableText" transform="translate(46.6667,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">red</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(32.8984,3)"/></g></g><g transform="translate(8,6.5)"><image height="30px" width="28.8px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8cmVjdCB4PSI0LjUiIHk9IjEuNSIgd2lkdGg9IjE2IiBoZWlnaHQ9IjIyIiByeD0iNC4wODU5IiByeT0iNC4wODU5IiBmaWxsPSJub25lIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIzIi8+CjxwYXRoIGQ9Im04LjgyNjIgNS43NTg5aDcuMzQ3NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSIxMi41IiBjeT0iMTcuNDY0IiByPSIyIiBmaWxsPSIjZmZmIiBzdG9wLWNvbG9yPSIjMDAwMDAwIi8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(44.8,6.5)"><image height="30px" width="2px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0wLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g class="blocklyEditableText" transform="translate(54.8,7.4)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="59.5781" class="blocklyFieldRect" stroke="#4585a1" style="display: block; fill: rgb(78, 150, 182);"/><text class="blocklyText" dominant-baseline="central" style="fill: rgb(255, 255, 255);" x="8" y="14.6">smart</text></g><g class="blocklyEditableText" transform="translate(122.3781,7.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="132.9375" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">color tracker</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(112.9375,8.6)"/></g></g></g></svg></div><div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 493.7844 57.2" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="493.7844" height="57.2" style="background-color: transparent"><g transform="translate(1, 5)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  l 0,-4  10,0  0,4  10,0  0,-4  10,0  0,4  h 448.7844 a 4 4 0 0,1 4,4  v 6  V 43.2  V 45.2  V 45.2 a 4 4 0 0,1 -4,4  h -448.7844  l 0,-4  -10,0  0,4  -10,0  0,-4  -10,0  0,4  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(322.8703, 6)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 18.6,0  h 123.7141 a 18.6 18.6 0 0,1 18.6,18.6  v 0 a 18.6 18.6 0 0,1 -18.6,18.6  V 37.2  h -123.7141 a 18.6 18.6 0 0,1 -18.6,-18.6  v 0 a 18.6 18.6 0 0,1 18.6,-18.6 z&#10;"/><g transform="translate(12,12.1)"><image height="12px" width="12px" alt="“" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAn0lEQVQI1z3OMa5BURSF4f/cQhAKjUQhuQmFNwGJEUi0RKN5rU7FHKhpjEH3TEMtkdBSCY1EIv8r7nFX9e29V7EBAOvu7RPjwmWGH/VuF8CyN9/OAdvqIXYLvtRaNjx9mMTDyo+NjAN1HNcl9ZQ5oQMM3dgDUqDo1l8DzvwmtZN7mnD+PkmLa+4mhrxVA9fRowBWmVBhFy5gYEjKMfz9AylsaRRgGzvZAAAAAElFTkSuQmCC"/></g><g class="blocklyEditableText" transform="translate(32,4)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="96.9141" class="blocklyFieldRect" stroke="#4585a1" style="display: block;"/><text class="blocklyText" dominant-baseline="central" x="8" y="14.6">0zj3KVdmj</text></g><g transform="translate(136.9141,12.1)"><image height="12px" width="12px" alt="”" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAqUlEQVQI1z3KvUpCcRiA8ef9E4JNHhI0aFEacm1o0BsI0Slx8wa8gLauoDnoBhq7DcfWhggONDmJJgqCPA7neJ7p934EOOKOnM8Q7PDElo/4x4lFb2DmuUjcUzS3URnGib9qaPNbuXvBO3sGPHJDRG6fGVdMSeWDP2q99FQdFrz26Gu5Tq7dFMzUvbXy8KXeAj57cOklgA+u1B5AoslLtGIHQMaCVnwDnADZIFIrXsoXrgAAAABJRU5ErkJggg=="/></g></g><g transform="translate(8,9.1)"><image height="30px" width="28.8px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8cmVjdCB4PSI0LjUiIHk9IjEuNSIgd2lkdGg9IjE2IiBoZWlnaHQ9IjIyIiByeD0iNC4wODU5IiByeT0iNC4wODU5IiBmaWxsPSJub25lIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIzIi8+CjxwYXRoIGQ9Im04LjgyNjIgNS43NTg5aDcuMzQ3NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSIxMi41IiBjeT0iMTcuNDY0IiByPSIyIiBmaWxsPSIjZmZmIiBzdG9wLWNvbG9yPSIjMDAwMDAwIi8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(44.8,9.1)"><image height="30px" width="2px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0wLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g class="blocklyEditableText" transform="translate(54.8,10)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="59.5781" class="blocklyFieldRect" stroke="#4585a1" style="display: block; fill: rgb(78, 150, 182);"/><text class="blocklyText" dominant-baseline="central" style="fill: rgb(255, 255, 255);" x="8" y="14.6">smart</text></g><g class="blocklyEditableText" transform="translate(122.3781,10)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="137.375" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">classification</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(117.375,8.6)"/></g><g transform="translate(267.7531,15.6)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">model</text></g></g></g></svg></div><div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.3469 52" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="784.3469" height="52" style="background-color: transparent"><g transform="translate(1, 5)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  l 0,-4  10,0  0,4  10,0  0,-4  10,0  0,4  h 739.3469 a 4 4 0 0,1 4,4  v 6  V 38  V 40  V 40 a 4 4 0 0,1 -4,4  h -739.3469  l 0,-4  -10,0  0,4  -10,0  0,-4  -10,0  0,4  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(8,6.5)"><image height="30px" width="28.8px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8cmVjdCB4PSI0LjUiIHk9IjEuNSIgd2lkdGg9IjE2IiBoZWlnaHQ9IjIyIiByeD0iNC4wODU5IiByeT0iNC4wODU5IiBmaWxsPSJub25lIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIzIi8+CjxwYXRoIGQ9Im04LjgyNjIgNS43NTg5aDcuMzQ3NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSIxMi41IiBjeT0iMTcuNDY0IiByPSIyIiBmaWxsPSIjZmZmIiBzdG9wLWNvbG9yPSIjMDAwMDAwIi8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(44.8,6.5)"><image height="30px" width="2px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0wLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g class="blocklyEditableText" transform="translate(54.8,7.4)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="59.5781" class="blocklyFieldRect" stroke="#4585a1" style="display: block; fill: rgb(78, 150, 182);"/><text class="blocklyText" dominant-baseline="central" style="fill: rgb(255, 255, 255);" x="8" y="14.6">smart</text></g><g class="blocklyEditableText" transform="translate(122.3781,7.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="158.6797" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">object detection</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(138.6797,8.6)"/></g><g transform="translate(289.0578,13)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">detect</text></g><g class="blocklyEditableText" transform="translate(344.1828,7.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="89.34375" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">person</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(69.34375,8.6)"/></g><g class="blocklyEditableText" transform="translate(441.5266,7.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="127.5391" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">potted plant</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(107.5391,8.6)"/></g><g class="blocklyEditableText" transform="translate(577.0656,7.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="94.6406" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">nothing</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(74.6406,8.6)"/></g><g class="blocklyEditableText" transform="translate(679.70625,7.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="94.6406" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">nothing</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(74.6406,8.6)"/></g></g></g></svg></div><div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 371.5266 52" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="371.5266" height="52" style="background-color: transparent"><g transform="translate(1, 5)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  l 0,-4  10,0  0,4  10,0  0,-4  10,0  0,4  h 326.5266 a 4 4 0 0,1 4,4  v 6  V 38  V 40  V 40 a 4 4 0 0,1 -4,4  h -326.5266  l 0,-4  -10,0  0,4  -10,0  0,-4  -10,0  0,4  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(8,6.5)"><image height="30px" width="28.8px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8cmVjdCB4PSI0LjUiIHk9IjEuNSIgd2lkdGg9IjE2IiBoZWlnaHQ9IjIyIiByeD0iNC4wODU5IiByeT0iNC4wODU5IiBmaWxsPSJub25lIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIzIi8+CjxwYXRoIGQ9Im04LjgyNjIgNS43NTg5aDcuMzQ3NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSIxMi41IiBjeT0iMTcuNDY0IiByPSIyIiBmaWxsPSIjZmZmIiBzdG9wLWNvbG9yPSIjMDAwMDAwIi8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(44.8,6.5)"><image height="30px" width="2px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0wLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g class="blocklyEditableText" transform="translate(54.8,7.4)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="59.5781" class="blocklyFieldRect" stroke="#4585a1" style="display: block; fill: rgb(78, 150, 182);"/><text class="blocklyText" dominant-baseline="central" style="fill: rgb(255, 255, 255);" x="8" y="14.6">smart</text></g><g class="blocklyEditableText" transform="translate(122.3781,7.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="129.34375" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">line follower</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(109.34375,8.6)"/></g><g class="blocklyEditableText" transform="translate(259.7219,7.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="101.8047" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">dark line</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(81.8047,8.6)"/></g></g></g></svg></div><div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 508.8234 57.2" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="508.8234" height="57.2" style="background-color: transparent"><g transform="translate(1, 5)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 0,0  m 0,4 a 4 4 0 0,1 4,-4  h 5  l 0,-4  10,0  0,4  10,0  0,-4  10,0  0,4  h 463.8234 a 4 4 0 0,1 4,4  v 6  V 43.2  V 45.2  V 45.2 a 4 4 0 0,1 -4,4  h -463.8234  l 0,-4  -10,0  0,4  -10,0  0,-4  -10,0  0,4  h -5 a 4 4 0 0,1 -4,-4 z&#10;"/><g transform="translate(273.9484, 8.6)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#4585a1" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">0</text></g></g><g transform="translate(379.7297, 6)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 18.6,0  h 81.89375 a 18.6 18.6 0 0,1 18.6,18.6  v 0 a 18.6 18.6 0 0,1 -18.6,18.6  V 37.2  h -81.89375 a 18.6 18.6 0 0,1 -18.6,-18.6  v 0 a 18.6 18.6 0 0,1 18.6,-18.6 z&#10;"/><g transform="translate(12,12.1)"><image height="12px" width="12px" alt="“" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAn0lEQVQI1z3OMa5BURSF4f/cQhAKjUQhuQmFNwGJEUi0RKN5rU7FHKhpjEH3TEMtkdBSCY1EIv8r7nFX9e29V7EBAOvu7RPjwmWGH/VuF8CyN9/OAdvqIXYLvtRaNjx9mMTDyo+NjAN1HNcl9ZQ5oQMM3dgDUqDo1l8DzvwmtZN7mnD+PkmLa+4mhrxVA9fRowBWmVBhFy5gYEjKMfz9AylsaRRgGzvZAAAAAElFTkSuQmCC"/></g><g class="blocklyEditableText" transform="translate(32,4)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="55.09375" class="blocklyFieldRect" stroke="#4585a1" style="display: block;"/><text class="blocklyText" dominant-baseline="central" x="8" y="14.6">bbbb</text></g><g transform="translate(95.09375,12.1)"><image height="12px" width="12px" alt="”" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAqUlEQVQI1z3KvUpCcRiA8ef9E4JNHhI0aFEacm1o0BsI0Slx8wa8gLauoDnoBhq7DcfWhggONDmJJgqCPA7neJ7p934EOOKOnM8Q7PDElo/4x4lFb2DmuUjcUzS3URnGib9qaPNbuXvBO3sGPHJDRG6fGVdMSeWDP2q99FQdFrz26Gu5Tq7dFMzUvbXy8KXeAj57cOklgA+u1B5AoslLtGIHQMaCVnwDnADZIFIrXsoXrgAAAABJRU5ErkJggg=="/></g></g><g transform="translate(8,9.1)"><image height="30px" width="28.8px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8cmVjdCB4PSI0LjUiIHk9IjEuNSIgd2lkdGg9IjE2IiBoZWlnaHQ9IjIyIiByeD0iNC4wODU5IiByeT0iNC4wODU5IiBmaWxsPSJub25lIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIzIi8+CjxwYXRoIGQ9Im04LjgyNjIgNS43NTg5aDcuMzQ3NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSIxMi41IiBjeT0iMTcuNDY0IiByPSIyIiBmaWxsPSIjZmZmIiBzdG9wLWNvbG9yPSIjMDAwMDAwIi8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(44.8,9.1)"><image height="30px" width="2px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0wLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g class="blocklyEditableText" transform="translate(54.8,10)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="59.5781" class="blocklyFieldRect" stroke="#4585a1" style="display: block; fill: rgb(78, 150, 182);"/><text class="blocklyText" dominant-baseline="central" style="fill: rgb(255, 255, 255);" x="8" y="14.6">smart</text></g><g class="blocklyEditableText" transform="translate(122.3781,10)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="92.8984" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">custom</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(72.8984,8.6)"/></g><g transform="translate(223.2766,15.6)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">mode</text></g><g transform="translate(321.9484,15.6)"><text class="blocklyText" dominant-baseline="central" x="0" y="9">format</text></g></g></g></svg></div></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pybricks.messaging.AppData">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">AppData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.AppData" title="Link to this definition"></a></dt>
+<dd><p>USBまたはBluetooth経由でPybricks Codeのホストアプリケーションと生データを
+やり取りします。これはビジョンプロセッサーなどのスマートセンサー機能で
+使用されます。</p>
+<p>各プロセッサーは1つのモードを持ち、決まった量のデータを生成します。
+これらは変化するたびに継続的にHubへ送信されます。ユーザーコードは
+ブロックせずにいつでもこれらのバッファ済みの値を読み取れます。すべての
+値は初期状態ではゼロです。</p>
+<p>Hubの観点からは、ホストへの書き戻しはawaitableな操作です。モードや
+モード設定の構成に使用できます。</p>
+<p>同時に存在できるインスタンスは1つだけです。プログラムの初期化中に作成
+する必要があります。その後は、マルチタスク実行中にすべてのメソッドを
+使用できます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>modes</strong> – <code class="docutils literal notranslate"><span class="pre">(mode,</span> <span class="pre">size)</span></code> タプルのリスト。<code class="docutils literal notranslate"><span class="pre">mode</span></code> はモード番号
+（0～255）、<code class="docutils literal notranslate"><span class="pre">size</span></code> はそのモードの受信バッファに割り当てる
+バイト数です。モード番号は一意である必要があります。リストは
+モード番号順に自動的にソートされます。</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.RuntimeError" title="ubuiltins.RuntimeError"><strong>RuntimeError</strong></a> – <code class="docutils literal notranslate"><span class="pre">AppData</span></code> インスタンスがすでに存在する場合。</p></li>
+<li><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.TypeError" title="ubuiltins.TypeError"><strong>TypeError</strong></a> – <code class="docutils literal notranslate"><span class="pre">modes</span></code> がリストでない場合、またはいずれかの要素が
+    モード値0～255の <code class="docutils literal notranslate"><span class="pre">(mode,</span> <span class="pre">size)</span></code> タプルでない場合。</p></li>
+<li><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.ValueError" title="ubuiltins.ValueError"><strong>ValueError</strong></a> – いずれかのモード番号が複数回出現する場合。</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.messaging.AppData.get_bytes">
+<span class="sig-name descname"><span class="pre">get_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.bytes" title="ubuiltins.bytes"><span class="pre">bytes</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a></span></span><a class="headerlink" href="#pybricks.messaging.AppData.get_bytes" title="Link to this definition"></a></dt>
+<dd><p>指定したモードでホストから受信したデータを取得します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mode</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 読み取るモード番号。</p></li>
+<li><p><strong>index</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 指定した場合、モードのバッファ内のこの位置にある
+単一のバイトを整数として返します。それ以外の場合は、モードの
+バッファ全体を <code class="docutils literal notranslate"><span class="pre">bytes</span></code> として返します。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>そのモードで受信したすべてのバイト。<code class="docutils literal notranslate"><span class="pre">index</span></code> を指定した場合は
+整数としての単一のバイト。</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.ValueError" title="ubuiltins.ValueError"><strong>ValueError</strong></a> – <code class="docutils literal notranslate"><span class="pre">mode</span></code> が設定されていない場合、または <code class="docutils literal notranslate"><span class="pre">index</span></code> が
+    範囲外の場合。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="svg-container"><!-- Copyright (c) 2024 The Pybricks Authors. All rights reserved. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 282.4922 42" class="blocklySvg pybricks_renderer-renderer pybricks-zelos-light-theme" width="282.4922" height="42" style="background-color: transparent"><g transform="translate(1, 1)"><g class="blocklyDraggable"><path class="blocklyPath" stroke="#4585a1" fill="#5cb1d6" d=" m 20,0  h 240.4922 a 20 20 0 0,1 20,20  v 0 a 20 20 0 0,1 -20,20  V 40  h -240.4922 a 20 20 0 0,1 -20,-20  v 0 a 20 20 0 0,1 20,-20 z&#10;"/><g transform="translate(236.4922, 4)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#fff" d=" m 16,0  h 8 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -8 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(15.5508,7)" style="cursor: text;"><rect rx="4" ry="4" x="0" y="0" height="18" width="8.8984" class="blocklyFieldRect" stroke="#4585a1" style="display: none;"/><text class="blocklyText" dominant-baseline="central" x="0" y="9">0</text></g></g><g transform="translate(56, 4)" style="display: block;"><path class="blocklyPath" stroke="#4585a1" fill="#4e96b6" d=" m 16,0  h 55.5781 a 16 16 0 0,1 16,16  v 0 a 16 16 0 0,1 -16,16  V 32  h -55.5781 a 16 16 0 0,1 -16,-16  v 0 a 16 16 0 0,1 16,-16 z&#10;"/><g class="blocklyEditableText" transform="translate(12,7)" style="cursor: default;"><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="0" y="9">smart</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(51.5781,3)"/></g></g><g transform="translate(12,7)"><image height="25px" width="25px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNSAyNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+CiAgICA8cmVjdCB4PSI0LjUiIHk9IjEuNSIgd2lkdGg9IjE2IiBoZWlnaHQ9IjIyIiByeD0iNC4wODU5IiByeT0iNC4wODU5IiBmaWxsPSJub25lIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIzIi8+CjxwYXRoIGQ9Im04LjgyNjIgNS43NTg5aDcuMzQ3NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSIxMi41IiBjeT0iMTcuNDY0IiByPSIyIiBmaWxsPSIjZmZmIiBzdG9wLWNvbG9yPSIjMDAwMDAwIi8+CiAgPC9nPgo8L3N2Zz4="/></g><g transform="translate(45,4.5)"><image height="30px" width="3px" alt="" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzIDMwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj4KICAgIDxwYXRoIGQ9Im0yLjUgMC41djI5IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLW9wYWNpdHk9Ii4yNjI1Ii8+CiAgPC9nPgo8L3N2Zz4="/></g><g class="blocklyEditableText" transform="translate(151.5781,5.4)" style="cursor: default;"><rect rx="4" ry="4" x="0" y="0" height="29.2" width="76.9141" class="blocklyFieldRect blocklyDropdownRect" stroke="#4585a1" fill="transparent"/><text class="blocklyText blocklyDropdownText" dominant-baseline="central" text-anchor="start" x="8" y="14.6">value</text><image style="display: none;"/><image height="12px" width="12px" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi43MSIgaGVpZ2h0PSI4Ljc5IiB2aWV3Qm94PSIwIDAgMTIuNzEgOC43OSI+PHRpdGxlPmRyb3Bkb3duLWFycm93PC90aXRsZT48ZyBvcGFjaXR5PSIwLjEiPjxwYXRoIGQ9Ik0xMi43MSwyLjQ0QTIuNDEsMi40MSwwLDAsMSwxMiw0LjE2TDguMDgsOC4wOGEyLjQ1LDIuNDUsMCwwLDEtMy40NSwwTDAuNzIsNC4xNkEyLjQyLDIuNDIsMCwwLDEsMCwyLjQ0LDIuNDgsMi40OCwwLDAsMSwuNzEuNzFDMSwwLjQ3LDEuNDMsMCw2LjM2LDBTMTEuNzUsMC40NiwxMiwuNzFBMi40NCwyLjQ0LDAsMCwxLDEyLjcxLDIuNDRaIiBmaWxsPSIjMjMxZjIwIi8+PC9nPjxwYXRoIGQ9Ik02LjM2LDcuNzlhMS40MywxLjQzLDAsMCwxLTEtLjQyTDEuNDIsMy40NWExLjQ0LDEuNDQsMCwwLDEsMC0yYzAuNTYtLjU2LDkuMzEtMC41Niw5Ljg3LDBhMS40NCwxLjQ0LDAsMCwxLDAsMkw3LjM3LDcuMzdBMS40MywxLjQzLDAsMCwxLDYuMzYsNy43OVoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" transform="translate(56.9141,8.6)"/></g></g></g></svg></div><dl class="py method">
+<dt class="sig sig-object py" id="pybricks.messaging.AppData.write_bytes">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">write_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.AppData.write_bytes" title="Link to this definition"></a></dt>
+<dd><p>ホストアプリケーションに生のバイト列を送信します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bytes" title="ubuiltins.bytes"><em>bytes</em></a>) – 送信するデータ。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.messaging.AppData.configure">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.AppData.configure" title="Link to this definition"></a></dt>
+<dd><p>指定したモードの設定コマンドをホストに送信します。</p>
+<p>これは <a class="reference internal" href="#pybricks.messaging.AppData.write_bytes" title="pybricks.messaging.AppData.write_bytes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">write_bytes()</span></code></a> のラッパーです。モード設定を行うために
+<code class="docutils literal notranslate"><span class="pre">[0x01,</span> <span class="pre">mode,</span> <span class="pre">parameter]</span></code> ヘッダーを先頭に追加します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mode</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 設定するモード番号。</p></li>
+<li><p><strong>parameter</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – モード内のパラメーター識別子。</p></li>
+<li><p><strong>value</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bytes" title="ubuiltins.bytes"><em>bytes</em></a>) – 送信する設定値。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.messaging.AppData.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.AppData.close" title="Link to this definition"></a></dt>
+<dd><p>データコールバックを無効化し、受信バッファを解放します。</p>
+<p>オブジェクトがガベージコレクトされたときにも自動的に呼び出されます。</p>
+</dd></dl>
+
+</dd></dl>
+
+<section id="bleradio">
+<h2>BLERadio の使用例<a class="headerlink" href="#bleradio" title="Link to this heading"></a></h2>
+<section id="hub">
+<h3>他のHubへデータをブロードキャストする<a class="headerlink" href="#hub" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.messaging</span><span class="w"> </span><span class="kn">import</span> <span class="n">BLERadio</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Port</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.pupdevices</span><span class="w"> </span><span class="kn">import</span> <span class="n">Motor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the hub.</span>
+<span class="n">radio</span> <span class="o">=</span> <span class="n">BLERadio</span><span class="p">(</span><span class="n">broadcast_channel</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Initialize the motors.</span>
+<span class="n">left_motor</span> <span class="o">=</span> <span class="n">Motor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
+<span class="n">right_motor</span> <span class="o">=</span> <span class="n">Motor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">B</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Read the motor angles to be sent to the other hub.</span>
+    <span class="n">left_angle</span> <span class="o">=</span> <span class="n">left_motor</span><span class="o">.</span><span class="n">angle</span><span class="p">()</span>
+    <span class="n">right_angle</span> <span class="o">=</span> <span class="n">right_motor</span><span class="o">.</span><span class="n">angle</span><span class="p">()</span>
+
+    <span class="c1"># Set the broadcast data and start broadcasting if not already doing so.</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="n">left_angle</span><span class="p">,</span> <span class="n">right_angle</span><span class="p">)</span>
+    <span class="n">radio</span><span class="o">.</span><span class="n">broadcast</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="c1"># Broadcasts are only sent every 100 milliseconds, so there is no reason</span>
+    <span class="c1"># to call the broadcast() method more often than that.</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3>他のHubからデータを観測する<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.messaging</span><span class="w"> </span><span class="kn">import</span> <span class="n">BLERadio</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Port</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.pupdevices</span><span class="w"> </span><span class="kn">import</span> <span class="n">Motor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+
+<span class="c1"># Initialize the hub.</span>
+<span class="n">radio</span> <span class="o">=</span> <span class="n">BLERadio</span><span class="p">(</span><span class="n">observe_channels</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Initialize the motors.</span>
+<span class="n">left_motor</span> <span class="o">=</span> <span class="n">Motor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
+<span class="n">right_motor</span> <span class="o">=</span> <span class="n">Motor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">B</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Receive broadcast from the other hub.</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">radio</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># Data was received and is less that one second old.</span>
+        <span class="c1"># It contains the same values in the same order</span>
+        <span class="c1"># that were passed to radio.broadcast() on the</span>
+        <span class="c1"># other hub.</span>
+        <span class="n">left_angle</span><span class="p">,</span> <span class="n">right_angle</span> <span class="o">=</span> <span class="n">data</span>
+
+        <span class="c1"># Make the motors on this hub mirror the position of the</span>
+        <span class="c1"># motors on the other hub.</span>
+        <span class="n">left_motor</span><span class="o">.</span><span class="n">track_target</span><span class="p">(</span><span class="n">left_angle</span><span class="p">)</span>
+        <span class="n">right_motor</span><span class="o">.</span><span class="n">track_target</span><span class="p">(</span><span class="n">right_angle</span><span class="p">)</span>
+
+    <span class="c1"># Broadcasts are only sent every 100 milliseconds, so there is</span>
+    <span class="c1"># no reason to call the observe() method more often than that.</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="ev3-brick">
+<h2>EV3 Brick間のメッセージング<a class="headerlink" href="#ev3-brick" title="Link to this heading"></a></h2>
+<div class="toggle-header docutils container">
+</div>
+<div class="toggle-content docutils container">
+
+        <div class="wy-table-responsive">
+            <table class="docutils align-default requirements-table">
+                <tbody>
+                    <tr>
+                        
+        <th background="../_images/compat_movehub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_cityhub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_technichub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_primehub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_inventorhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_essentialhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_ev3brick.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+<dl class="py class">
+<dt class="sig sig-object py" id="pybricks.messaging.HubNetwork">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">HubNetwork</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inbox_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1024</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.HubNetwork" title="Link to this definition"></a></dt>
+<dd><p>Bluetoothを使用して、対応するHub間でメッセージを送受信します。</p>
+<p>ネットワークに参加するすべてのプログラムでこのオブジェクトを作成します。
+そのうち <em>manager</em> と呼ばれる1台のHubが、アドレスで識別される他のHubに
+接続します。例: <a class="reference internal" href="#pybricks.messaging.HubNetwork.connect" title="pybricks.messaging.HubNetwork.connect"><code class="xref py py-meth docutils literal notranslate"><span class="pre">connect('00:16:53:12:34:56')</span></code></a>。
+その後はすべてのHubが対等になり、それぞれが他のどのBrickにもメッセージを
+送信できます。</p>
+<p>各HubのアドレスはEV3の設定メニューで確認できるほか、<a class="reference internal" href="#pybricks.messaging.HubNetwork.address" title="pybricks.messaging.HubNetwork.address"><code class="xref py py-meth docutils literal notranslate"><span class="pre">address()</span></code></a>
+メソッドで表示することもできます。接続はプログラムを再起動しても維持
+されます。</p>
+<p>このプロトコルはメッセージの配信を保証します。ただし、十分な空き容量が
+ある場合にのみプログラムで受信できます。マネージャーはバックグラウンドで
+メッセージの中継を処理しますが、これはマネージャーのプログラムが実行中の
+間のみ機能します。</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.1.</span></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>inbox_size</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 送信元の各Brickについて、メッセージを保存する
+バイト数。</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.RuntimeError" title="ubuiltins.RuntimeError"><strong>RuntimeError</strong></a> – <code class="docutils literal notranslate"><span class="pre">HubNetwork</span></code> オブジェクトがすでに存在する場合、
+    またはマルチタスク開始後に使用された場合。</p></li>
+<li><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – このBrickのBluetoothが動作しない場合。</p></li>
+<li><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.ValueError" title="ubuiltins.ValueError"><strong>ValueError</strong></a> – <code class="docutils literal notranslate"><span class="pre">inbox_size</span></code> が1件のメッセージを保持するには
+    小さすぎる場合。</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.messaging.HubNetwork.address">
+<span class="sig-name descname"><span class="pre">address</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.str" title="ubuiltins.str"><span class="pre">str</span></a></span></span><a class="headerlink" href="#pybricks.messaging.HubNetwork.address" title="Link to this definition"></a></dt>
+<dd><p>このBrickのBluetoothアドレスを取得します。</p>
+<p>これはBrickの画面に表示されるアドレスと同じです。これを表示して、
+他のBrickのプログラムに入力するアドレスを確認できます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>このBrickのアドレス。
+<code class="docutils literal notranslate"><span class="pre">'00:16:53:AB:CD:EF'</span></code> のような形式で、文字は常に大文字です。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.messaging.HubNetwork.connect">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.HubNetwork.connect" title="Link to this definition"></a></dt>
+<dd><p>ネットワークを構築するために、別の1台のHub（EV3 Brick）に接続します。</p>
+<p>ネットワーク内でこの操作を行うのは1台のHubだけです。そのHubは
+マネージャーと呼ばれます。他のHubはまだプログラムを実行していなくても
+構いませんが、プログラムが実行されるまでメッセージは受信されません。</p>
+<p>接続には時間がかかります。Brick1台につき最大で約15秒かかり、一度で
+成功するとは限らないため、あきらめるまでに数回再試行します。このため、
+通常はプログラムの開始時にこの操作を行います。</p>
+<p>すでに接続済みのBrickはすぐに準備できるため、後で再度使用しても安全
+です。これにより、2回目の実行は非常に速く開始できます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>address</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.str" title="ubuiltins.str"><em>str</em></a>) – 接続先のBrickのBluetoothアドレス
+（例: <code class="docutils literal notranslate"><span class="pre">'00:16:53:12:34:56'</span></code>）。最大7台の他のBrickに接続
+できます。</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – Brickに接続できなかった場合。ValueError: <code class="docutils literal notranslate"><span class="pre">address</span></code> が
+    有効なBluetoothアドレスでない場合、またはこのBrick自身の
+    アドレスの場合。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.messaging.HubNetwork.is_connected">
+<span class="sig-name descname"><span class="pre">is_connected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#pybricks.messaging.HubNetwork.is_connected" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">is_connected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><span class="pre">bool</span></a></span></span></dt>
+<dd><p>Brickがネットワークに参加しているかどうかを確認します。</p>
+<p>これは待機する側のBrickで便利です。ネットワークの構築にかかる時間を
+推測する代わりに、マネージャーのBrickが接続してくるまで
+<code class="docutils literal notranslate"><span class="pre">is_connected()</span></code> を確認し続けることができます。</p>
+<p>個々のBrickを確認するための <code class="docutils literal notranslate"><span class="pre">address</span></code> 引数は、マネージャーのBrick
+のみが使用できます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>address</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.str" title="ubuiltins.str"><em>str</em></a>) – 確認するHubのBluetoothアドレス。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Hubがネットワークに参加していれば <code class="docutils literal notranslate"><span class="pre">True</span></code>、そうでなければ
+<code class="docutils literal notranslate"><span class="pre">False</span></code>。アドレスを指定しない場合は、いずれかのHubが接続
+されていれば <code class="docutils literal notranslate"><span class="pre">True</span></code>。</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.ValueError" title="ubuiltins.ValueError"><strong>ValueError</strong></a> – <code class="docutils literal notranslate"><span class="pre">address</span></code> が有効なBluetoothアドレスでない場合。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.messaging.HubNetwork.send">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data)</span> <span class="pre">send(data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.HubNetwork.send" title="Link to this definition"></a></dt>
+<dd><p>ネットワーク上のすべてのHub、または特定の1台のHubにメッセージを
+送信します。</p>
+<p>メッセージは1つのオブジェクト、またはオブジェクトのタプルです。
+オブジェクトの型は <code class="docutils literal notranslate"><span class="pre">int</span></code>、<code class="docutils literal notranslate"><span class="pre">float</span></code>、<code class="docutils literal notranslate"><span class="pre">str</span></code>、<code class="docutils literal notranslate"><span class="pre">bytes</span></code>、
+<code class="docutils literal notranslate"><span class="pre">True</span></code>、<code class="docutils literal notranslate"><span class="pre">False</span></code>、<code class="docutils literal notranslate"><span class="pre">None</span></code> のいずれかです。受信側のBrickは同じ
+オブジェクトを受け取るので、<code class="docutils literal notranslate"><span class="pre">(60,</span> <span class="pre">&quot;left&quot;)</span></code> を送信すると
+<code class="docutils literal notranslate"><span class="pre">(60,</span> <span class="pre">&quot;left&quot;)</span></code> として届きます。</p>
+<p><code class="docutils literal notranslate"><span class="pre">bytes</span></code> のみのメッセージはそのまま送信されます。これは独自の
+メッセージを組み立てる場合に適しています。このようなメッセージは
+255バイトまで格納できます。それ以外のメッセージには、含まれる
+オブジェクトの短い説明も付随するため、格納できるサイズは少し小さく
+なります。<code class="docutils literal notranslate"><span class="pre">True</span></code>、<code class="docutils literal notranslate"><span class="pre">False</span></code>、<code class="docutils literal notranslate"><span class="pre">None</span></code> はそれぞれ2バイト、<code class="docutils literal notranslate"><span class="pre">int</span></code>
+と <code class="docutils literal notranslate"><span class="pre">float</span></code> はそれぞれ5バイト、<code class="docutils literal notranslate"><span class="pre">str</span></code> と <code class="docutils literal notranslate"><span class="pre">bytes</span></code> はオブジェクトの
+バイト数に2～4バイトを加えたサイズを使用します。1つのメッセージには
+最大32個のオブジェクトを格納できます。</p>
+<p>このBrickから別の1台のBrickへのメッセージは、送信した順序で届きます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – 送信するメッセージ。</p></li>
+<li><p><strong>address</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.str" title="ubuiltins.str"><em>str</em></a>) – 送信先のBrickのBluetoothアドレス。
+省略するとネットワーク上の他のすべてのBrickに送信します。
+Brickは自分自身が送信したメッセージを受信しません。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.ValueError" title="ubuiltins.ValueError"><strong>ValueError</strong></a> – <code class="docutils literal notranslate"><span class="pre">address</span></code> が有効なBluetoothアドレスでない場合、
+    またはメッセージが大きすぎて送信できない場合。</p></li>
+<li><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.TypeError" title="ubuiltins.TypeError"><strong>TypeError</strong></a> – メッセージに送信できないオブジェクトが含まれている
+    場合。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.messaging.HubNetwork.inbox">
+<span class="sig-name descname"><span class="pre">inbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">latest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.tuple" title="ubuiltins.tuple"><span class="pre">tuple</span></a></span></span><a class="headerlink" href="#pybricks.messaging.HubNetwork.inbox" title="Link to this definition"></a></dt>
+<dd><p>前回読み取ってから届いたメッセージを取得します。</p>
+<p>このメソッドは待機しません。何も届いていない場合は空の結果を返すため、
+それに対する <code class="docutils literal notranslate"><span class="pre">for</span></code> ループは何も行いません。読み取るとこのBrickの
+メモリからメッセージが削除されるため、各メッセージは一度しか受け取れ
+ません。</p>
+<p>あなたに送信する各Brickには、内部にそれぞれ専用の受信ボックスが
+あります。1台のBrickが受信ボックスに収まりきらない量を送信した場合、
+最も古いメッセージが破棄されます。常時送信しているBrickが他のBrickの
+メッセージを押し出すことはありません。</p>
+<p>プログラムは開始前に送信されたメッセージを受信しません。メッセージは
+どのBrickから送信されたかに関係なく、届いた順に受け取ります。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>latest</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><em>bool</em></a>) – <code class="docutils literal notranslate"><span class="pre">True</span></code> を選択すると、各Brickからの最新の
+メッセージのみを保持し、それより古いメッセージは破棄します。
+センサーの読み取り値のように、Brickが最新の値を送り続け、
+最新のものだけが有用な場合に適しています。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">(address,</span> <span class="pre">data)</span></code> のペアのタプル。<code class="docutils literal notranslate"><span class="pre">address</span></code> はメッセージを
+送信したBrickのBluetoothアドレス、<code class="docutils literal notranslate"><span class="pre">data</span></code> は送信時と同じ形式の
+メッセージです。<code class="docutils literal notranslate"><span class="pre">latest</span></code> を使用した場合、各Brickにつき最大1組
+のペアになります。</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.ValueError" title="ubuiltins.ValueError"><strong>ValueError</strong></a> – メッセージがそれに付随する説明と一致しない場合。
+    これはメッセージが途中で破損したことを意味します。</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2026 The Pybricks Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

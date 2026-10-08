@@ -1,0 +1,402 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>汎用UARTデバイス &mdash; pybricks v4.1.0b2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d8a2add5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/requirements.css?v=e2406e8f" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme_overrides.css?v=8b8d8269" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blocks.css?v=ee57a122" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blockimg.css?v=bf50a58c" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7dc5ce0d"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/requirements.js?v=6c6f6a43"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="汎用I2Cデバイス" href="i2cdevice.html" />
+    <link rel="prev" title="Powered Upデバイス" href="pupdevice.html" />
+    <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pybricks
+              <img src="../_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pybricks modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../hubs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pupdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#id1">ワイヤレスデバイス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#lego">LEGOプロトコルデバイス</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#id2">汎用プロトコル</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">汎用UARTデバイス</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.iodevices.UARTDevice"><code class="docutils literal notranslate"><span class="pre">UARTDevice</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="i2cdevice.html">汎用I2Cデバイス</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analogsensor.html">アナログセンサー</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcmotor.html">DCモーター</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – 汎用ツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robotics.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクスとドライブベース</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージの送受信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signaltypes.html">信号と単位</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MicroPython modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/builtins.html">組み込みクラスと関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/exceptions.html">例外とエラー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/micropython.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">micropython</span></code> – MicroPythonの内部機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uerrno.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uerrno</span></code> – エラーコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uio.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uio</span></code> – 入出力ストリーム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/ujson.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ujson</span></code> – JSONのエンコードとデコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/umath.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">umath</span></code> – 数学関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/urandom.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">urandom</span></code> – 擬似乱数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uselect.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uselect</span></code> – イベントの待機</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/ustruct.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ustruct</span></code> – バイナリデータのパックとアンパック</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/usys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usys</span></code> – システム固有の関数</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pybricks</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a></li>
+      <li class="breadcrumb-item active">汎用UARTデバイス</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="toggle-header docutils container">
+</div>
+<div class="toggle-content docutils container">
+
+        <div class="wy-table-responsive">
+            <table class="docutils align-default requirements-table">
+                <tbody>
+                    <tr>
+                        
+        <th background="../_images/compat_movehub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_cityhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_technichub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_primehub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_inventorhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_essentialhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_ev3brick.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+<section id="uart">
+<h1>汎用UARTデバイス<a class="headerlink" href="#uart" title="Link to this heading"></a></h1>
+<p>Powered UpとEV3は、汎用UARTデバイスのハブへの接続をサポートしています。
+ピン配置を以下に示します。コネクターの向きに注意してください。EV3では、
+内部のワイヤーの色は下の図と一致しています。</p>
+<img alt="../_images/pinout_numbered.jpg" src="../_images/pinout_numbered.jpg" style="width: 50%;" />
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>ピン</p></th>
+<th class="head"><p>Powered Up (UART)</p></th>
+<th class="head"><p>EV3（UARTセンサー）</p></th>
+<th class="head"><p>EV3（I2Cセンサー）</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1（白）</p></td>
+<td><p>モーター端子1</p></td>
+<td><p>オプションのバッテリー電源</p></td>
+<td><p>オプションのバッテリー電源</p></td>
+</tr>
+<tr class="row-odd"><td><p>2（黒）</p></td>
+<td><p>モーター端子2</p></td>
+<td><p>なし</p></td>
+<td><p>なし</p></td>
+</tr>
+<tr class="row-even"><td><p>3（赤）</p></td>
+<td><p>グランド</p></td>
+<td><p>グランド</p></td>
+<td><p>グランド</p></td>
+</tr>
+<tr class="row-odd"><td><p>4（緑）</p></td>
+<td><p>VCC (3.3 V)</p></td>
+<td><p>VCC (5 V)</p></td>
+<td><p>VCC (5 V)</p></td>
+</tr>
+<tr class="row-even"><td><p>5（黄）</p></td>
+<td><p>ハブ TX（センサー RX）（3.3 V）</p></td>
+<td><p>ハブ TX（センサー RX）（3.3 V）</p></td>
+<td><p>SCL（マスター）（3.3 V）</p></td>
+</tr>
+<tr class="row-odd"><td><p>6（青）</p></td>
+<td><p>ハブ RX（センサー TX）（3.3 V）</p></td>
+<td><p>ハブ RX（センサー TX）（3.3 V）</p></td>
+<td><p>SDA（マスター）（3.3 V）</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="pybricks.iodevices.UARTDevice">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">UARTDevice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baudrate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">115200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">power_pin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.UARTDevice" title="Link to this definition"></a></dt>
+<dd><p>汎用UARTデバイス。</p>
+<p>注意: <code class="docutils literal notranslate"><span class="pre">power_pin</span></code> オプションは自己責任で使用してください。不用意に
+ピンへ電源を供給すると、ハブやデバイスを損傷する可能性があります。
+このオプションを使用する場合、リスクを理解したかどうかの確認が
+求められます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>port</strong> (<a class="reference internal" href="../parameters/port.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – デバイスが接続されているポート。Powered UPハブでは
+すべてのポートがサポートされます。EV3ではセンサーポートのみが
+サポートされます。</p></li>
+<li><p><strong>baudrate</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – UARTデバイスのボーレート。</p></li>
+<li><p><strong>timeout</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>ms</em>) – <code class="docutils literal notranslate"><span class="pre">read</span></code> と <code class="docutils literal notranslate"><span class="pre">write</span></code> の実行中に待機する
+時間。 <code class="docutils literal notranslate"><span class="pre">None</span></code> を選択すると、無期限に待機します。</p></li>
+<li><p><strong>power_pin</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – デバイスの電源要件。ピンに電源を供給しない
+場合は <code class="docutils literal notranslate"><span class="pre">0</span></code> （デフォルト）を使用します。Powered UPハブでは、
+ピン1または2にはそれぞれ <code class="docutils literal notranslate"><span class="pre">1</span></code> または <code class="docutils literal notranslate"><span class="pre">2</span></code> を使用します。
+これはモーターへの給電と同等に、バッテリー電源をそのピンに
+供給します。EV3では、 <code class="docutils literal notranslate"><span class="pre">1</span></code> を使用してバッテリー電源をピン1に
+供給しますが、わずかな電流しか利用できません。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.ValueError" title="ubuiltins.ValueError"><strong>ValueError</strong></a> – <code class="docutils literal notranslate"><span class="pre">timeout</span></code> が0または負の場合。</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.iodevices.UARTDevice.read">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.bytes" title="ubuiltins.bytes"><span class="pre">bytes</span></a></span></span><a class="headerlink" href="#pybricks.iodevices.UARTDevice.read" title="Link to this definition"></a></dt>
+<dd><p>バッファから指定したバイト数を読み取ります。</p>
+<p>要求したバイト数が受信されるまで、プログラムは待機します。
+<code class="docutils literal notranslate"><span class="pre">timeout</span></code> より長くかかる場合は、 <code class="docutils literal notranslate"><span class="pre">ETIMEDOUT</span></code> 例外が発生します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>length</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 読み取るバイト数。1以上でなければなりません。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>デバイスから返されたバイト。</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.ValueError" title="ubuiltins.ValueError"><strong>ValueError</strong></a> – <code class="docutils literal notranslate"><span class="pre">length</span></code> が1未満の場合。</p></li>
+<li><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – 読み取りが <code class="docutils literal notranslate"><span class="pre">timeout</span></code> より長くかかる場合。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.iodevices.UARTDevice.read_all">
+<span class="sig-name descname"><span class="pre">read_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.bytes" title="ubuiltins.bytes"><span class="pre">bytes</span></a></span></span><a class="headerlink" href="#pybricks.iodevices.UARTDevice.read_all" title="Link to this definition"></a></dt>
+<dd><p>バッファ内の現在のすべてのバイトを読み取ります。バッファが空の
+場合でも、待機せずに即座に戻ります。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>バッファ内の現在のバイト。読み取るものがない場合は空のバイト列。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.iodevices.UARTDevice.write">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.UARTDevice.write" title="Link to this definition"></a></dt>
+<dd><p>デバイスにバイトを書き込みます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bytes" title="ubuiltins.bytes"><em>bytes</em></a>) – 書き込むバイト。</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.TypeError" title="ubuiltins.TypeError"><strong>TypeError</strong></a> – <code class="docutils literal notranslate"><span class="pre">data</span></code> が <code class="docutils literal notranslate"><span class="pre">bytes</span></code> 、 <code class="docutils literal notranslate"><span class="pre">bytearray</span></code> 、 <code class="docutils literal notranslate"><span class="pre">str</span></code> の
+    いずれでもない場合。</p></li>
+<li><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – 書き込みが <code class="docutils literal notranslate"><span class="pre">timeout</span></code> より長くかかる場合。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.iodevices.UARTDevice.waiting">
+<span class="sig-name descname"><span class="pre">waiting</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a></span></span><a class="headerlink" href="#pybricks.iodevices.UARTDevice.waiting" title="Link to this definition"></a></dt>
+<dd><p>読み取り待ちのバイト数を取得します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>バッファ内のバイト数。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.iodevices.UARTDevice.set_baudrate">
+<span class="sig-name descname"><span class="pre">set_baudrate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baudrate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.UARTDevice.set_baudrate" title="Link to this definition"></a></dt>
+<dd><p>UARTデバイスのボーレートを変更します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>baudrate</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – すべての値がサポートされるとは限りません。</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.ValueError" title="ubuiltins.ValueError"><strong>ValueError</strong></a> – <code class="docutils literal notranslate"><span class="pre">baudrate</span></code> が1未満の場合。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.iodevices.UARTDevice.wait_until">
+<span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">wait_until</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.UARTDevice.wait_until" title="Link to this definition"></a></dt>
+<dd><p>特定のバイトシーケンスが受信されるまで待機します。パターンに
+一致しないバイトは破棄されます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pattern</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bytes" title="ubuiltins.bytes"><em>bytes</em></a>) – 待機するバイトシーケンス。空であっては
+なりません。</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.ValueError" title="ubuiltins.ValueError"><strong>ValueError</strong></a> – <code class="docutils literal notranslate"><span class="pre">pattern</span></code> が空の場合。</p></li>
+<li><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – このメソッドがすでに実行中の場合。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pybricks.iodevices.UARTDevice.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.UARTDevice.clear" title="Link to this definition"></a></dt>
+<dd><p>受信バッファを空にします。</p>
+</dd></dl>
+
+</dd></dl>
+
+<p><strong>例: UARTデバイスへの読み取りと書き込み</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.media.ev3dev</span><span class="w"> </span><span class="kn">import</span> <span class="n">SoundFile</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">EV3Brick</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.iodevices</span><span class="w"> </span><span class="kn">import</span> <span class="n">UARTDevice</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Port</span>
+
+<span class="c1"># Initialize the EV3</span>
+<span class="n">ev3</span> <span class="o">=</span> <span class="n">EV3Brick</span><span class="p">()</span>
+
+<span class="c1"># Initialize sensor port 2 as a uart device</span>
+<span class="n">ser</span> <span class="o">=</span> <span class="n">UARTDevice</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">S2</span><span class="p">,</span> <span class="n">baudrate</span><span class="o">=</span><span class="mi">115200</span><span class="p">)</span>
+
+<span class="c1"># Write some data</span>
+<span class="n">ser</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s2">"</span><span class="se">\r\n</span><span class="s2">Hello, world!</span><span class="se">\r\n</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Play a sound while we wait for some data</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">HELLO</span><span class="p">)</span>
+    <span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">GOOD</span><span class="p">)</span>
+    <span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">MORNING</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Bytes waiting to be read:"</span><span class="p">,</span> <span class="n">ser</span><span class="o">.</span><span class="n">waiting</span><span class="p">())</span>
+
+<span class="c1"># Read all data received while the sound was playing</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">ser</span><span class="o">.</span><span class="n">read_all</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2026 The Pybricks Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

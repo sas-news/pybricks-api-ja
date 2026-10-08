@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>micropython – MicroPythonの内部機能 &mdash; pybricks v4.1.0b2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d8a2add5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/requirements.css?v=e2406e8f" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme_overrides.css?v=8b8d8269" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blocks.css?v=ee57a122" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blockimg.css?v=bf50a58c" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7dc5ce0d"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/requirements.js?v=6c6f6a43"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="uerrno – エラーコード" href="uerrno.html" />
+    <link rel="prev" title="例外とエラー" href="exceptions.html" />
+    <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pybricks
+              <img src="../_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pybricks modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hubs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pupdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iodevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – 汎用ツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robotics.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクスとドライブベース</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージの送受信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signaltypes.html">信号と単位</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MicroPython modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="builtins.html">組み込みクラスと関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">例外とエラー</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">micropython</span></code> – MicroPythonの内部機能</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#micropython.const"><code class="docutils literal notranslate"><span class="pre">const()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#micropython.heap_lock"><code class="docutils literal notranslate"><span class="pre">heap_lock()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#micropython.heap_unlock"><code class="docutils literal notranslate"><span class="pre">heap_unlock()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#micropython.kbd_intr"><code class="docutils literal notranslate"><span class="pre">kbd_intr()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#micropython.mem_info"><code class="docutils literal notranslate"><span class="pre">mem_info()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#micropython.opt_level"><code class="docutils literal notranslate"><span class="pre">opt_level()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#micropython.qstr_info"><code class="docutils literal notranslate"><span class="pre">qstr_info()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#micropython.stack_use"><code class="docutils literal notranslate"><span class="pre">stack_use()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">使用例</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">効率化のための定数の使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ram">空きRAMの確認</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">さらに詳しいメモリ統計の取得</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="uerrno.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uerrno</span></code> – エラーコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uio.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uio</span></code> – 入出力ストリーム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ujson.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ujson</span></code> – JSONのエンコードとデコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="umath.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">umath</span></code> – 数学関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="urandom.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">urandom</span></code> – 擬似乱数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uselect.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uselect</span></code> – イベントの待機</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ustruct.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ustruct</span></code> – バイナリデータのパックとアンパック</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usys</span></code> – システム固有の関数</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pybricks</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">micropython</span></code> – MicroPythonの内部機能</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="toggle-header docutils container">
+</div>
+<div class="toggle-content docutils container">
+
+        <div class="wy-table-responsive">
+            <table class="docutils align-default requirements-table">
+                <tbody>
+                    <tr>
+                        
+        <th background="../_images/compat_movehub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_cityhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_technichub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_primehub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_inventorhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_essentialhub.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+        <th background="../_images/compat_ev3brick.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+<section id="module-micropython">
+<span id="micropython-micropython"></span><h1><a class="reference internal" href="#module-micropython" title="micropython"><code class="xref py py-mod docutils literal notranslate"><span class="pre">micropython</span></code></a> – MicroPythonの内部機能<a class="headerlink" href="#module-micropython" title="Link to this heading"></a></h1>
+<p>MicroPythonの内部機能へのアクセスと制御を行います。</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="micropython.const">
+<span class="sig-name descname"><span class="pre">const</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#micropython.const" title="Link to this definition"></a></dt>
+<dd><p>値を定数として宣言し、コードをより効率的にします。</p>
+<p>メモリ使用量をさらに減らすには、名前の前にアンダースコアを
+付けます（<code class="docutils literal notranslate"><span class="pre">_ORANGES</span></code>）。この定数は同じファイル内でのみ
+使用できます。</p>
+<p>値を別のモジュールからインポートしたい場合は、アンダースコアを
+付けない名前を使います（<code class="docutils literal notranslate"><span class="pre">APPLES</span></code>）。この場合、メモリを
+少し多く使用します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a><em> or </em><a class="reference internal" href="builtins.html#ubuiltins.float" title="ubuiltins.float"><em>float</em></a><em> or </em><a class="reference internal" href="builtins.html#ubuiltins.str" title="ubuiltins.str"><em>str</em></a><em> or </em><a class="reference internal" href="builtins.html#ubuiltins.tuple" title="ubuiltins.tuple"><em>tuple</em></a>) – 定数にするリテラル。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>定数の値。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="micropython.heap_lock">
+<span class="sig-name descname"><span class="pre">heap_lock</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#micropython.heap_lock" title="Link to this definition"></a></dt>
+<dd><p>ヒープをロックします。ロック中はメモリ割り当てができません。
+ヒープの割り当てが試みられると <code class="docutils literal notranslate"><span class="pre">MemoryError</span></code> が発生します。</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="micropython.heap_unlock">
+<span class="sig-name descname"><span class="pre">heap_unlock</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a></span></span><a class="headerlink" href="#micropython.heap_unlock" title="Link to this definition"></a></dt>
+<dd><p>ヒープのロックを解除します。メモリ割り当てが再び許可されます。</p>
+<p><a class="reference internal" href="#micropython.heap_lock" title="micropython.heap_lock"><code class="xref py py-func docutils literal notranslate"><span class="pre">heap_lock()</span></code></a> を複数回呼び出した場合、ヒープを再び使用可能にするには
+<a class="reference internal" href="#micropython.heap_unlock" title="micropython.heap_unlock"><code class="xref py py-func docutils literal notranslate"><span class="pre">heap_unlock()</span></code></a> を同じ回数呼び出す必要があります。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ロック解除後のロック深さ。ロックが解除されると <code class="docutils literal notranslate"><span class="pre">0</span></code> になります。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="micropython.kbd_intr">
+<span class="sig-name descname"><span class="pre">kbd_intr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#micropython.kbd_intr" title="Link to this definition"></a></dt>
+<dd><p>入力ウィンドウで入力したときに <code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code> 例外を
+発生させる文字を設定します。デフォルトでは <code class="docutils literal notranslate"><span class="pre">3</span></code> に設定されており、
+これは <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">C</kbd> を押すことに相当します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>chr</strong> (<a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – <code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code> を発生させる文字。
+この機能を無効にするには <code class="docutils literal notranslate"><span class="pre">-1</span></code> を選択します。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="micropython.mem_info">
+<span class="sig-name descname"><span class="pre">mem_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#micropython.mem_info" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">mem_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>スタックとヒープのメモリ使用量に関する情報を出力します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>verbose</strong> – 任意の値を指定すると、ヒープ全体も出力します。
+どのブロックが使用中で、どれが空きかを示します。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="micropython.opt_level">
+<span class="sig-name descname"><span class="pre">opt_level</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a></span></span><a class="headerlink" href="#micropython.opt_level" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">opt_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dd><p>ハブ上でコンパイルされるコードの最適化レベルを設定します。</p>
+<ol class="arabic simple" start="0">
+<li><p>アサーション文が有効になります。組み込みの <code class="docutils literal notranslate"><span class="pre">__debug__</span></code> 変数は
+<code class="docutils literal notranslate"><span class="pre">True</span></code> になります。スクリプトの行番号が保存されるため、
+例外が発生したときに報告できます。</p></li>
+<li><p>アサーションは無視され、<code class="docutils literal notranslate"><span class="pre">__debug__</span></code> は <code class="docutils literal notranslate"><span class="pre">False</span></code> になります。
+スクリプトの行番号は保存されます。</p></li>
+<li><p>アサーションは無視され、<code class="docutils literal notranslate"><span class="pre">__debug__</span></code> は <code class="docutils literal notranslate"><span class="pre">False</span></code> になります。
+スクリプトの行番号は保存されます。</p></li>
+<li><p>アサーションは無視され、<code class="docutils literal notranslate"><span class="pre">__debug__</span></code> は <code class="docutils literal notranslate"><span class="pre">False</span></code> になります。
+スクリプトの行番号は保存「されません」。</p></li>
+</ol>
+<p>これはREPLで実行するコードにのみ適用されます。通常のスクリプトは
+ハブに送信される前にすでにコンパイルされているためです。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>level</strong> (<a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 設定するレベル。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>引数を指定しない場合、現在の最適化レベルを返します。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="micropython.qstr_info">
+<span class="sig-name descname"><span class="pre">qstr_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#micropython.qstr_info" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">qstr_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>インターンされた文字列の数と、それらが使用するRAMの量を出力します。</p>
+<p>MicroPythonは文字列のインターンによりRAMとROMの両方を節約します。
+これにより、同じ文字列の重複コピーを保持せずに済みます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>verbose</strong> – 任意の値を指定すると、RAMにインターンされたすべての
+文字列の名前も出力します。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="micropython.stack_use">
+<span class="sig-name descname"><span class="pre">stack_use</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a></span></span><a class="headerlink" href="#micropython.stack_use" title="Link to this definition"></a></dt>
+<dd><p>使用中のスタック量を確認します。スクリプト内の異なる地点での
+スタック使用量の差を計算するために使用できます。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>現在使用中のスタック量。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="id1">
+<h2>使用例<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<section id="id2">
+<h3>効率化のための定数の使用<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">micropython</span><span class="w"> </span><span class="kn">import</span> <span class="n">const</span>
+
+<span class="c1"># This value can be used here. Other files can import it too.</span>
+<span class="n">APPLES</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+
+<span class="c1"># These values can only be used within this file.</span>
+<span class="n">_ORANGES</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">_BANANAS</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mi">789</span> <span class="o">+</span> <span class="n">_ORANGES</span><span class="p">)</span>
+
+<span class="c1"># You can read the constants as normal values. The compiler</span>
+<span class="c1"># will just insert the numeric values for you.</span>
+<span class="n">fruit</span> <span class="o">=</span> <span class="n">APPLES</span> <span class="o">+</span> <span class="n">_ORANGES</span> <span class="o">+</span> <span class="n">_BANANAS</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="ram">
+<h3>空きRAMの確認<a class="headerlink" href="#ram" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">micropython</span><span class="w"> </span><span class="kn">import</span> <span class="n">mem_info</span>
+
+<span class="c1"># Print memory usage.</span>
+<span class="n">mem_info</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>これにより、以下に示す形式で情報が出力されます。このSPIKE Primeハブの例では、
+コード内の変数が使用できるメモリとして257696バイト（251 KB）が
+残っています。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stack</span><span class="p">:</span> <span class="mi">372</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">40184</span>
+<span class="n">GC</span><span class="p">:</span> <span class="n">total</span><span class="p">:</span> <span class="mi">258048</span><span class="p">,</span> <span class="n">used</span><span class="p">:</span> <span class="mi">352</span><span class="p">,</span> <span class="n">free</span><span class="p">:</span> <span class="mi">257696</span>
+<span class="n">No</span><span class="o">.</span> <span class="n">of</span> <span class="mi">1</span><span class="o">-</span><span class="n">blocks</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="o">-</span><span class="n">blocks</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nb">max</span> <span class="n">blk</span> <span class="n">sz</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="nb">max</span> <span class="n">free</span> <span class="n">sz</span><span class="p">:</span> <span class="mi">16103</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>さらに詳しいメモリ統計の取得<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">micropython</span><span class="w"> </span><span class="kn">import</span> <span class="n">const</span><span class="p">,</span> <span class="n">mem_info</span><span class="p">,</span> <span class="n">opt_level</span><span class="p">,</span> <span class="n">qstr_info</span><span class="p">,</span> <span class="n">stack_use</span>
+
+<span class="c1"># Get stack at start.</span>
+<span class="n">stack_start</span> <span class="o">=</span> <span class="n">stack_use</span><span class="p">()</span>
+
+<span class="c1"># Print REPL compiler optimization level.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"level"</span><span class="p">,</span> <span class="n">opt_level</span><span class="p">())</span>
+
+<span class="c1"># Print memory usage.</span>
+<span class="n">mem_info</span><span class="p">()</span>
+
+<span class="c1"># Print memory usage and a memory map.</span>
+<span class="n">mem_info</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Print interned string information.</span>
+<span class="n">qstr_info</span><span class="p">()</span>
+
+<span class="c1"># Print interned string information and their names.</span>
+<span class="n">APPLES</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<span class="n">_ORANGES</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mi">456</span><span class="p">)</span>
+<span class="n">qstr_info</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">test_stack</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">stack_use</span><span class="p">()</span>
+
+
+<span class="c1"># Check the stack.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Stack diff: "</span><span class="p">,</span> <span class="n">test_stack</span><span class="p">()</span> <span class="o">-</span> <span class="n">stack_start</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2026 The Pybricks Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

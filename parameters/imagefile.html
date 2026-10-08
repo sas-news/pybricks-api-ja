@@ -1,0 +1,477 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ImageFile &mdash; pybricks v4.1.0b2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d8a2add5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/requirements.css?v=e2406e8f" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme_overrides.css?v=8b8d8269" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blocks.css?v=ee57a122" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/blockimg.css?v=bf50a58c" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7dc5ce0d"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/requirements.js?v=6c6f6a43"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Port" href="port.html" />
+    <link rel="prev" title="Image" href="image.html" />
+    <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            pybricks
+              <img src="../_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pybricks modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../hubs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pupdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iodevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="axis.html">Axis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="color.html">Color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="direction.html">Direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html">Font</a></li>
+<li class="toctree-l2"><a class="reference internal" href="icon.html">Icon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image.html">Image</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ImageFile</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pybricks.parameters.ImageFile"><code class="docutils literal notranslate"><span class="pre">ImageFile</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.ACCEPT"><code class="docutils literal notranslate"><span class="pre">ImageFile.ACCEPT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.BACKWARD"><code class="docutils literal notranslate"><span class="pre">ImageFile.BACKWARD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.DECLINE"><code class="docutils literal notranslate"><span class="pre">ImageFile.DECLINE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.FORWARD"><code class="docutils literal notranslate"><span class="pre">ImageFile.FORWARD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.LEFT"><code class="docutils literal notranslate"><span class="pre">ImageFile.LEFT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.NO_GO"><code class="docutils literal notranslate"><span class="pre">ImageFile.NO_GO</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.QUESTION_MARK"><code class="docutils literal notranslate"><span class="pre">ImageFile.QUESTION_MARK</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.RIGHT"><code class="docutils literal notranslate"><span class="pre">ImageFile.RIGHT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.STOP_1"><code class="docutils literal notranslate"><span class="pre">ImageFile.STOP_1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.STOP_2"><code class="docutils literal notranslate"><span class="pre">ImageFile.STOP_2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.THUMBS_DOWN"><code class="docutils literal notranslate"><span class="pre">ImageFile.THUMBS_DOWN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.THUMBS_UP"><code class="docutils literal notranslate"><span class="pre">ImageFile.THUMBS_UP</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.WARNING"><code class="docutils literal notranslate"><span class="pre">ImageFile.WARNING</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.EV3"><code class="docutils literal notranslate"><span class="pre">ImageFile.EV3</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.EV3_ICON"><code class="docutils literal notranslate"><span class="pre">ImageFile.EV3_ICON</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.TARGET"><code class="docutils literal notranslate"><span class="pre">ImageFile.TARGET</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.ANGRY"><code class="docutils literal notranslate"><span class="pre">ImageFile.ANGRY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.AWAKE"><code class="docutils literal notranslate"><span class="pre">ImageFile.AWAKE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.BOTTOM_LEFT"><code class="docutils literal notranslate"><span class="pre">ImageFile.BOTTOM_LEFT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.BOTTOM_RIGHT"><code class="docutils literal notranslate"><span class="pre">ImageFile.BOTTOM_RIGHT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.CRAZY_1"><code class="docutils literal notranslate"><span class="pre">ImageFile.CRAZY_1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.CRAZY_2"><code class="docutils literal notranslate"><span class="pre">ImageFile.CRAZY_2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.DIZZY"><code class="docutils literal notranslate"><span class="pre">ImageFile.DIZZY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.DOWN"><code class="docutils literal notranslate"><span class="pre">ImageFile.DOWN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.EVIL"><code class="docutils literal notranslate"><span class="pre">ImageFile.EVIL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.KNOCKED_OUT"><code class="docutils literal notranslate"><span class="pre">ImageFile.KNOCKED_OUT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.MIDDLE_LEFT"><code class="docutils literal notranslate"><span class="pre">ImageFile.MIDDLE_LEFT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.MIDDLE_RIGHT"><code class="docutils literal notranslate"><span class="pre">ImageFile.MIDDLE_RIGHT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.NEUTRAL"><code class="docutils literal notranslate"><span class="pre">ImageFile.NEUTRAL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.PINCHED_LEFT"><code class="docutils literal notranslate"><span class="pre">ImageFile.PINCHED_LEFT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.PINCHED_MIDDLE"><code class="docutils literal notranslate"><span class="pre">ImageFile.PINCHED_MIDDLE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.PINCHED_RIGHT"><code class="docutils literal notranslate"><span class="pre">ImageFile.PINCHED_RIGHT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.SLEEPING"><code class="docutils literal notranslate"><span class="pre">ImageFile.SLEEPING</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.TIRED_LEFT"><code class="docutils literal notranslate"><span class="pre">ImageFile.TIRED_LEFT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.TIRED_MIDDLE"><code class="docutils literal notranslate"><span class="pre">ImageFile.TIRED_MIDDLE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.TIRED_RIGHT"><code class="docutils literal notranslate"><span class="pre">ImageFile.TIRED_RIGHT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.UP"><code class="docutils literal notranslate"><span class="pre">ImageFile.UP</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pybricks.parameters.ImageFile.WINKING"><code class="docutils literal notranslate"><span class="pre">ImageFile.WINKING</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="port.html">Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="side.html">Side</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stop.html">Stop</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – 汎用ツール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robotics.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクスとドライブベース</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージの送受信</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signaltypes.html">信号と単位</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MicroPython modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/builtins.html">組み込みクラスと関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/exceptions.html">例外とエラー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/micropython.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">micropython</span></code> – MicroPythonの内部機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uerrno.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uerrno</span></code> – エラーコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uio.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uio</span></code> – 入出力ストリーム</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/ujson.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ujson</span></code> – JSONのエンコードとデコード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/umath.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">umath</span></code> – 数学関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/urandom.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">urandom</span></code> – 擬似乱数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/uselect.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uselect</span></code> – イベントの待機</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/ustruct.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ustruct</span></code> – バイナリデータのパックとアンパック</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../micropython/usys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usys</span></code> – システム固有の関数</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pybricks</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
+      <li class="breadcrumb-item active">ImageFile</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="toggle-header docutils container">
+</div>
+<div class="toggle-content docutils container">
+
+        <div class="wy-table-responsive">
+            <table class="docutils align-default requirements-table">
+                <tbody>
+                    <tr>
+                        
+        <th background="../_images/compat_movehub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_cityhub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_technichub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_primehub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_inventorhub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_essentialhub.png" class="requirements-table-th requirements-table-th">
+        ❌
+        </th>
+        
+        <th background="../_images/compat_ev3brick.png" class="requirements-table-th requirements-table-th">
+        ✅
+        </th>
+        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+<section id="imagefile">
+<h1>ImageFile<a class="headerlink" href="#imagefile" title="Link to this heading"></a></h1>
+<p>注意: すべての画像がファームウェアに含まれているわけではありません。
+これは作業中のものです。</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ImageFile</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile" title="Link to this definition"></a></dt>
+<dd><p class="rubric"><strong>情報</strong></p>
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.ACCEPT">
+<span class="sig-name descname"><span class="pre">ACCEPT</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.ACCEPT" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/accept.png" src="../_images/accept.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.BACKWARD">
+<span class="sig-name descname"><span class="pre">BACKWARD</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.BACKWARD" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/backward.png" src="../_images/backward.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.DECLINE">
+<span class="sig-name descname"><span class="pre">DECLINE</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.DECLINE" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/decline.png" src="../_images/decline.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.FORWARD">
+<span class="sig-name descname"><span class="pre">FORWARD</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.FORWARD" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/forward.png" src="../_images/forward.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.LEFT">
+<span class="sig-name descname"><span class="pre">LEFT</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.LEFT" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/left.png" src="../_images/left.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.NO_GO">
+<span class="sig-name descname"><span class="pre">NO_GO</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.NO_GO" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/no_go.png" src="../_images/no_go.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.QUESTION_MARK">
+<span class="sig-name descname"><span class="pre">QUESTION_MARK</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.QUESTION_MARK" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/question_mark.png" src="../_images/question_mark.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.RIGHT">
+<span class="sig-name descname"><span class="pre">RIGHT</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.RIGHT" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/right.png" src="../_images/right.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.STOP_1">
+<span class="sig-name descname"><span class="pre">STOP_1</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.STOP_1" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/stop_1.png" src="../_images/stop_1.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.STOP_2">
+<span class="sig-name descname"><span class="pre">STOP_2</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.STOP_2" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/stop_2.png" src="../_images/stop_2.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.THUMBS_DOWN">
+<span class="sig-name descname"><span class="pre">THUMBS_DOWN</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.THUMBS_DOWN" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/thumbs_down.png" src="../_images/thumbs_down.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.THUMBS_UP">
+<span class="sig-name descname"><span class="pre">THUMBS_UP</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.THUMBS_UP" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/thumbs_up.png" src="../_images/thumbs_up.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.WARNING">
+<span class="sig-name descname"><span class="pre">WARNING</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.WARNING" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/warning.png" src="../_images/warning.png" style="width: 15%;" />
+</dd></dl>
+
+<p class="rubric"><strong>LEGO</strong></p>
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.EV3">
+<span class="sig-name descname"><span class="pre">EV3</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.EV3" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/ev3.png" src="../_images/ev3.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.EV3_ICON">
+<span class="sig-name descname"><span class="pre">EV3_ICON</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.EV3_ICON" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/ev3_icon.png" src="../_images/ev3_icon.png" style="width: 15%;" />
+</dd></dl>
+
+<p class="rubric"><strong>オブジェクト</strong></p>
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.TARGET">
+<span class="sig-name descname"><span class="pre">TARGET</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.TARGET" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/target.png" src="../_images/target.png" style="width: 15%;" />
+</dd></dl>
+
+<p class="rubric"><strong>目</strong></p>
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.ANGRY">
+<span class="sig-name descname"><span class="pre">ANGRY</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.ANGRY" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/angry.png" src="../_images/angry.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.AWAKE">
+<span class="sig-name descname"><span class="pre">AWAKE</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.AWAKE" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/awake.png" src="../_images/awake.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.BOTTOM_LEFT">
+<span class="sig-name descname"><span class="pre">BOTTOM_LEFT</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.BOTTOM_LEFT" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/bottom_left.png" src="../_images/bottom_left.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.BOTTOM_RIGHT">
+<span class="sig-name descname"><span class="pre">BOTTOM_RIGHT</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.BOTTOM_RIGHT" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/bottom_right.png" src="../_images/bottom_right.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.CRAZY_1">
+<span class="sig-name descname"><span class="pre">CRAZY_1</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.CRAZY_1" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/crazy_1.png" src="../_images/crazy_1.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.CRAZY_2">
+<span class="sig-name descname"><span class="pre">CRAZY_2</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.CRAZY_2" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/crazy_2.png" src="../_images/crazy_2.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.DIZZY">
+<span class="sig-name descname"><span class="pre">DIZZY</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.DIZZY" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/dizzy.png" src="../_images/dizzy.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.DOWN">
+<span class="sig-name descname"><span class="pre">DOWN</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.DOWN" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/down.png" src="../_images/down.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.EVIL">
+<span class="sig-name descname"><span class="pre">EVIL</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.EVIL" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/evil.png" src="../_images/evil.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.KNOCKED_OUT">
+<span class="sig-name descname"><span class="pre">KNOCKED_OUT</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.KNOCKED_OUT" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/knocked_out.png" src="../_images/knocked_out.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.MIDDLE_LEFT">
+<span class="sig-name descname"><span class="pre">MIDDLE_LEFT</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.MIDDLE_LEFT" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/middle_left.png" src="../_images/middle_left.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.MIDDLE_RIGHT">
+<span class="sig-name descname"><span class="pre">MIDDLE_RIGHT</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.MIDDLE_RIGHT" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/middle_right.png" src="../_images/middle_right.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.NEUTRAL">
+<span class="sig-name descname"><span class="pre">NEUTRAL</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.NEUTRAL" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/neutral.png" src="../_images/neutral.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.PINCHED_LEFT">
+<span class="sig-name descname"><span class="pre">PINCHED_LEFT</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.PINCHED_LEFT" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/pinched_left.png" src="../_images/pinched_left.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.PINCHED_MIDDLE">
+<span class="sig-name descname"><span class="pre">PINCHED_MIDDLE</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.PINCHED_MIDDLE" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/pinched_middle.png" src="../_images/pinched_middle.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.PINCHED_RIGHT">
+<span class="sig-name descname"><span class="pre">PINCHED_RIGHT</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.PINCHED_RIGHT" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/pinched_right.png" src="../_images/pinched_right.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.SLEEPING">
+<span class="sig-name descname"><span class="pre">SLEEPING</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.SLEEPING" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/sleeping.png" src="../_images/sleeping.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.TIRED_LEFT">
+<span class="sig-name descname"><span class="pre">TIRED_LEFT</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.TIRED_LEFT" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/tired_left.png" src="../_images/tired_left.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.TIRED_MIDDLE">
+<span class="sig-name descname"><span class="pre">TIRED_MIDDLE</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.TIRED_MIDDLE" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/tired_middle.png" src="../_images/tired_middle.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.TIRED_RIGHT">
+<span class="sig-name descname"><span class="pre">TIRED_RIGHT</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.TIRED_RIGHT" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/tired_right.png" src="../_images/tired_right.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.UP">
+<span class="sig-name descname"><span class="pre">UP</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.UP" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/up.png" src="../_images/up.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pybricks.parameters.ImageFile.WINKING">
+<span class="sig-name descname"><span class="pre">WINKING</span></span><a class="headerlink" href="#pybricks.parameters.ImageFile.WINKING" title="Link to this definition"></a></dt>
+<dd><img alt="../_images/winking.png" src="../_images/winking.png" style="width: 15%;" />
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2026 The Pybricks Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
