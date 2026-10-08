@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2018-2023 The Pybricks Authors
 
-"""Generic input/output devices."""
+"""汎用入出力デバイス。"""
 
 from __future__ import annotations
 
@@ -15,176 +15,170 @@ if TYPE_CHECKING:
 
 
 class PUPDevice:
-    """Powered Up motor or sensor."""
+    """Powered Upモーターまたはセンサー。"""
 
     def __init__(self, port: Port):
         """PUPDevice(port)
 
         Arguments:
-            port (Port): Port to which the device is connected.
+            port (Port): デバイスが接続されているポート。
         """
 
     def info(self) -> dict:
         """info() -> dict
 
-        Gets information about the device.
+        デバイスに関する情報を取得します。
 
-        For passive devices (such as DC motors or lights), returns a
-        dictionary with only the ``id`` key.
+        DCモーターやライトなどのパッシブデバイスの場合は、 ``id`` キーのみを
+        持つ辞書を返します。
 
-        For UART devices, returns a dictionary with an ``id`` key and a
-        ``modes`` key. The ``modes`` value is a tuple of tuples, one per
-        mode, each containing the mode name, number of values, and data
-        type.
+        UARTデバイスの場合は、 ``id`` キーと ``modes`` キーを持つ辞書を
+        返します。 ``modes`` の値はモードごとに1つのタプルを持つタプルの
+        タプルで、それぞれにモード名、値の個数、データ型が含まれます。
 
         Returns:
-            Dictionary with device information.
+            デバイス情報を格納した辞書。
         """
 
     def read(self, mode: int) -> MaybeAwaitableTuple:
         """read(mode) -> tuple
 
-        Reads values from a given mode.
+        指定したモードから値を読み取ります。
 
-        For passive touch sensors, this returns a single boolean value
-        indicating whether the sensor is pressed, regardless of the
-        ``mode`` argument.
+        パッシブタッチセンサーの場合は、 ``mode`` 引数に関わらず、センサーが
+        押されているかどうかを示す単一の真偽値を返します。
 
-        Raises an error for other passive devices such as DC motors and
-        lights, which do not support reading.
+        DCモーターやライトなど、読み取りをサポートしない他のパッシブ
+        デバイスではエラーが発生します。
 
         Arguments:
-            mode (int): Device mode.
+            mode (int): デバイスのモード。
 
         Returns:
-            Values read from the device.
+            デバイスから読み取った値。
 
         Raises:
-            OSError: If the device is a passive device that does not
-                support reading (e.g. a DC motor or light).
+            OSError: 読み取りをサポートしないパッシブデバイス
+                （DCモーターやライトなど）の場合。
         """
 
     def write(self, mode: int, data: tuple) -> MaybeAwaitable:
         """write(mode, data)
 
-        Writes values to the device. Only selected UART devices and modes
-        support this.
+        デバイスに値を書き込みます。一部のUARTデバイスとモードのみが
+        これをサポートします。
 
         Arguments:
-            mode (int): Device mode.
-            data (tuple): Values to be written. The number of values and
-                their types must match what the device expects for the
-                given mode.
+            mode (int): デバイスのモード。
+            data (tuple): 書き込む値。値の個数と型は、指定したモードで
+                デバイスが期待するものと一致しなければなりません。
 
         Raises:
-            OSError: If the device is a passive device that does not
-                support writing.
-            ValueError: If the mode is invalid, the mode is not writable,
-                the number of values does not match, or a value is out of
-                range for its data type.
+            OSError: 書き込みをサポートしないパッシブデバイスの場合。
+            ValueError: モードが無効、モードが書き込み不可、値の個数が
+                一致しない、または値がデータ型の範囲外の場合。
         """
 
     def reset(self) -> None:
         """reset()
 
-        Resets the UART device. After this, it should automatically synchronize
-        and be ready for use after a few seconds. This is useful to forcefully
-        re-trigger what such a sensor does when plugged in.
+        UARTデバイスをリセットします。その後、デバイスは自動的に同期し、
+        数秒後に使用可能になります。この種のセンサーが接続時に行う処理を
+        強制的に再実行させたい場合に便利です。
 
         Raises:
-            OSError: If the device is a passive device that does not
-                support reset.
+            OSError: リセットをサポートしないパッシブデバイスの場合。
         """
 
 
 class LUMPDevice(PUPDevice):
-    """Devices using the LEGO UART Messaging Protocol.
+    """LEGO UART Messaging Protocolを使用するデバイス。
 
-    See the equivalent :class:`PUPDevice() <pybricks.iodevices.PUPDevice>` for
-    a description of available methods.
+    使用可能なメソッドの説明については、同等の
+    :class:`PUPDevice() <pybricks.iodevices.PUPDevice>` を参照してください。
 
-    On EV3, this class provides access to UART devices only. You can use other
-    classes to interact with passive devices.
+    EV3では、このクラスはUARTデバイスへのアクセスのみを提供します。
+    パッシブデバイスを操作するには、他のクラスを使用してください。
     """
 
 
 class DCMotor(_common.DCMotor):
-    """DC Motor for LEGO® MINDSTORMS EV3."""
+    """LEGO® MINDSTORMS EV3用のDCモーター。"""
 
 
 class AnalogSensor:
-    """Generic or custom analog sensor."""
+    """汎用またはカスタムのアナログセンサー。"""
 
     def __init__(self, port: Port, custom: bool = False):
         """AnalogSensor(port, custom=False)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
-            custom (bool): Set to ``True`` if you are using a custom analog
-                sensor.
+            port (Port): センサーが接続されているポート。
+            custom (bool): カスタムのアナログセンサーを使用している場合は
+                ``True`` に設定します。
 
         Raises:
-            OSError: If no standard LEGO analog sensor is
-                detected on the port. Only applies if ``custom=False``.
+            OSError: 標準のLEGOアナログセンサーがポートで検出されなかった
+                場合。 ``custom=False`` の場合にのみ適用されます。
         """
 
     def voltage(self) -> int:
         """voltage() -> int: mV
 
-        Measures analog voltage.
+        アナログ電圧を測定します。
 
         Returns:
-            Analog voltage.
+            アナログ電圧。
         """
 
     def resistance(self) -> int:
         """resistance() -> int: Ω
 
-        Measures resistance.
+        抵抗を測定します。
 
-        This value is only meaningful if the analog device is a passive load
-        such as a resistor or thermistor. It is calculated assuming a 10 kΩ
-        internal pull-up resistor forming a voltage divider.
+        この値は、アナログデバイスが抵抗器やサーミスタなどのパッシブ負荷
+        である場合にのみ意味を持ちます。10 kΩの内部プルアップ抵抗で
+        分圧回路を構成していると仮定して計算されます。
 
-        If the circuit is open (no load connected), the maximum integer value
-        is returned.
+        回路がオープン（負荷が接続されていない）の場合は、整数の最大値が
+        返されます。
 
         Returns:
-            Resistance of the analog device, or the maximum integer value
-            if the circuit is open.
+            アナログデバイスの抵抗値。回路がオープンの場合は整数の最大値。
         """
 
     def active(self) -> None:
         """active()
 
-        Sets sensor to active mode. This sets pin 5 of the sensor
-        port to `high`.
+        センサーをアクティブモードに設定します。これによりセンサーポートの
+        ピン5が `high` になります。
 
-        This is used in some analog
-        sensors to control a switch. For example, if you use the NXT Light
-        Sensor as a custom analog sensor, this method will turn the light on.
-        From then on, ``voltage()`` returns the raw reflected light value.
+        一部のアナログセンサーでは、スイッチの制御に使用されます。
+        たとえば、NXTライトセンサーをカスタムアナログセンサーとして使用する
+        場合、このメソッドはライトを点灯します。それ以降、 ``voltage()`` は
+        反射光の生の値を返します。
         """
 
     def passive(self) -> None:
         """passive()
 
-        Sets sensor to passive mode. This sets pin 5 of the sensor
-        port to `low`.
+        センサーをパッシブモードに設定します。これによりセンサーポートの
+        ピン5が `low` になります。
 
-        This is used in some analog
-        sensors to control a switch. For example, if you use the NXT Light
-        Sensor as a custom analog sensor, this method will turn the light off.
-        From then on, ``voltage()`` returns the raw ambient light value.
+        一部のアナログセンサーでは、スイッチの制御に使用されます。
+        たとえば、NXTライトセンサーをカスタムアナログセンサーとして使用する
+        場合、このメソッドはライトを消灯します。それ以降、 ``voltage()`` は
+        環境光の生の値を返します。
         """
 
 
 class I2CDevice:
-    """Generic or custom I2C device.
+    """汎用またはカスタムのI2Cデバイス。
 
-    Note: Use the ``power_pin`` option at your own risk. Applying power to the
-    pins can damage your hub or device if you are not careful. When you use
-    this option, you will be prompted to confirm that you understand the risks.
+    注意: ``power_pin`` オプションは自己責任で使用してください。不用意に
+    ピンへ電源を供給すると、ハブやデバイスを損傷する可能性があります。
+    このオプションを使用する場合、リスクを理解したかどうかの確認が
+    求められます。
     """
 
     def __init__(
@@ -198,16 +192,18 @@ class I2CDevice:
         """I2CDevice(port, address, custom=False, power_pin=0, nxt_quirk=False)
 
         Arguments:
-            port (Port): Port to which the device is connected.
-            address (int): I2C address of the client device. See
-                :ref:`I2C Addresses <i2caddress>`.
-            custom (bool): Set to ``True`` if you are using a custom I2C device.
-            power_pin (int): Power requirements for the device. Use
-                ``0`` (default) for no power on the pins. On NXT and EV3, use ``1``
-                to apply battery power to pin 1. Other pins are not supported.
-            nxt_quirk (bool): Set to ``True`` for older NXT I2C sensors that
-                need slower compatibility timing to communicate reliably,
-                such as the old NXT Ultrasonic Sensor.
+            port (Port): デバイスが接続されているポート。
+            address (int): クライアントデバイスのI2Cアドレス。
+                :ref:`I2Cアドレス <i2caddress>` を参照してください。
+            custom (bool): カスタムのI2Cデバイスを使用している場合は
+                ``True`` に設定します。
+            power_pin (int): デバイスの電源要件。ピンに電源を供給しない場合は
+                ``0`` （デフォルト）を使用します。NXTとEV3では、 ``1`` を
+                使用してバッテリー電源をピン1に供給します。他のピンは
+                サポートされていません。
+            nxt_quirk (bool): 確実に通信するために低速の互換タイミングを
+                必要とする古いNXT I2Cセンサー（旧型のNXT超音波センサーなど）
+                には ``True`` に設定します。
         """
 
     @overload
@@ -224,20 +220,20 @@ class I2CDevice:
         """read(reg=None, length=1) -> bytes
         read(reg=None, length=1, map=callable) -> Any
 
-        Reads bytes starting at a given register.
+        指定したレジスタからバイトを読み取ります。
 
         Arguments:
-            reg (int): Register at which to begin reading: 0--255 or
-                0x00--0xFF. Use ``None`` to read without writing a register
-                address first.
-            length (int): How many bytes to read.
-            map (callable): Optional callable to convert the returned bytes.
-                If given, it is called with the bytes as its argument and its
-                return value is returned instead.
+            reg (int): 読み取りを開始するレジスタ: 0--255または
+                0x00--0xFF。 ``None`` を使用すると、先にレジスタアドレスを
+                書き込まずに読み取ります。
+            length (int): 読み取るバイト数。
+            map (callable): 返されたバイトを変換するオプションの
+                呼び出し可能オブジェクト。指定された場合、バイトを引数として
+                呼び出され、その戻り値が代わりに返されます。
 
         Returns:
-            Bytes returned from the device, or the return value of ``map``
-            if a callable was provided.
+            デバイスから返されたバイト。呼び出し可能オブジェクトが指定された
+            場合は ``map`` の戻り値。
         """
 
     def write(
@@ -245,27 +241,30 @@ class I2CDevice:
     ) -> MaybeAwaitable:
         """write(reg=None, data=None)
 
-        Writes bytes, optionally starting at a given register.
+        バイトを書き込みます。オプションで指定したレジスタから書き込みを
+        開始できます。
 
         Arguments:
-            reg (int): Register at which to begin writing: 0--255 or
-                0x00--0xFF. Use ``None`` to write without a register prefix.
-            data (bytes): Bytes to be written. Use ``None`` to write nothing
-                after the register.
+            reg (int): 書き込みを開始するレジスタ: 0--255または
+                0x00--0xFF。 ``None`` を使用すると、レジスタプレフィックス
+                なしで書き込みます。
+            data (bytes): 書き込むバイト。 ``None`` を使用すると、レジスタの
+                後に何も書き込みません。
 
         Raises:
-            ValueError: If ``reg`` is given and ``data`` is more than 32 bytes.
-                To write more data, omit the ``reg`` argument and include the
-                register as the first byte of ``data``.
+            ValueError: ``reg`` が指定されていて ``data`` が32バイトを超える
+                場合。より多くのデータを書き込むには、 ``reg`` 引数を省略し、
+                ``data`` の最初のバイトとしてレジスタを含めてください。
         """
 
 
 class UARTDevice:
-    """Generic UART device.
+    """汎用UARTデバイス。
 
-    Note: Use the ``power_pin`` option at your own risk. Applying power to the
-    pins can damage your hub or device if you are not careful. When you use
-    this option, you will be prompted to confirm that you understand the risks.
+    注意: ``power_pin`` オプションは自己責任で使用してください。不用意に
+    ピンへ電源を供給すると、ハブやデバイスを損傷する可能性があります。
+    このオプションを使用する場合、リスクを理解したかどうかの確認が
+    求められます。
     """
 
     def __init__(
@@ -278,113 +277,112 @@ class UARTDevice:
         """UARTDevice(port, baudrate=115200, timeout=None, power_pin=0)
 
         Arguments:
-            port (Port): Port to which the device is connected. On Powered UP
-                hubs, all ports are supported. On EV3, only the sensor ports
-                are supported.
-            baudrate (int): Baudrate of the UART device.
-            timeout (Number, ms): How long to wait during ``read`` and
-                ``write`` before giving up. If you choose ``None``, it will
-                wait forever.
-            power_pin (int): Power requirements for the device. Use ``0``
-                (default) for no power on the pins. On Powered UP hubs, use
-                ``1`` or ``2`` for pin 1 or 2, respectively. This will apply
-                battery power to the pin, equivalent to powering a motor.
-                On EV3, use ``1`` to apply battery power to pin 1, though only
-                minimal current is available.
+            port (Port): デバイスが接続されているポート。Powered UPハブでは
+                すべてのポートがサポートされます。EV3ではセンサーポートのみが
+                サポートされます。
+            baudrate (int): UARTデバイスのボーレート。
+            timeout (Number, ms): ``read`` と ``write`` の実行中に待機する
+                時間。 ``None`` を選択すると、無期限に待機します。
+            power_pin (int): デバイスの電源要件。ピンに電源を供給しない
+                場合は ``0`` （デフォルト）を使用します。Powered UPハブでは、
+                ピン1または2にはそれぞれ ``1`` または ``2`` を使用します。
+                これはモーターへの給電と同等に、バッテリー電源をそのピンに
+                供給します。EV3では、 ``1`` を使用してバッテリー電源をピン1に
+                供給しますが、わずかな電流しか利用できません。
 
         Raises:
-            ValueError: If ``timeout`` is 0 or negative.
+            ValueError: ``timeout`` が0または負の場合。
         """
 
     def read(self, length: int = 1) -> MaybeAwaitableBytes:
         """read(length=1) -> bytes
 
-        Reads a given number of bytes from the buffer.
+        バッファから指定したバイト数を読み取ります。
 
-        Your program will wait until the requested number of bytes are
-        received. If this takes longer than ``timeout``, the ``ETIMEDOUT``
-        exception is raised.
+        要求したバイト数が受信されるまで、プログラムは待機します。
+        ``timeout`` より長くかかる場合は、 ``ETIMEDOUT`` 例外が発生します。
 
         Arguments:
-            length (int): How many bytes to read. Must be at least 1.
+            length (int): 読み取るバイト数。1以上でなければなりません。
 
         Returns:
-            Bytes returned from the device.
+            デバイスから返されたバイト。
 
         Raises:
-            ValueError: If ``length`` is less than 1.
-            OSError: If the read takes longer than ``timeout``.
+            ValueError: ``length`` が1未満の場合。
+            OSError: 読み取りが ``timeout`` より長くかかる場合。
         """
 
     def read_all(self) -> bytes:
         """read_all() -> bytes
 
-        Reads all bytes currently in the buffer. Returns immediately without
-        waiting, even if the buffer is empty.
+        バッファ内の現在のすべてのバイトを読み取ります。バッファが空の
+        場合でも、待機せずに即座に戻ります。
 
         Returns:
-            Bytes currently in the buffer, or an empty bytes object if there
-            is nothing to read.
+            バッファ内の現在のバイト。読み取るものがない場合は空のバイト列。
         """
 
     def write(self, data: bytes) -> MaybeAwaitable:
         """write(data)
 
-        Writes bytes to the device.
+        デバイスにバイトを書き込みます。
 
         Arguments:
-            data (bytes): Bytes to be written.
+            data (bytes): 書き込むバイト。
 
         Raises:
-            TypeError: If ``data`` is not ``bytes``, ``bytearray``, or ``str``.
-            OSError: If the write takes longer than ``timeout``.
+            TypeError: ``data`` が ``bytes`` 、 ``bytearray`` 、 ``str`` の
+                いずれでもない場合。
+            OSError: 書き込みが ``timeout`` より長くかかる場合。
         """
 
     def waiting(self) -> int:
         """waiting() -> int
 
-        Gets how many bytes are still waiting to be read.
+        読み取り待ちのバイト数を取得します。
 
         Returns:
-            Number of bytes in the buffer.
+            バッファ内のバイト数。
         """
 
     def set_baudrate(self, baudrate: int) -> None:
         """set_baudrate(baudrate)
 
-        Changes the baud rate of the UART device.
+        UARTデバイスのボーレートを変更します。
 
         Arguments:
-            baudrate (int): Not all values may be supported.
+            baudrate (int): すべての値がサポートされるとは限りません。
 
         Raises:
-            ValueError: If ``baudrate`` is less than 1.
+            ValueError: ``baudrate`` が1未満の場合。
         """
 
     def wait_until(self, pattern: bytes) -> MaybeAwaitable:
         """wait_until(pattern)
 
-        Waits until a specific byte sequence is received. Bytes that do not
-        match the pattern are discarded.
+        特定のバイトシーケンスが受信されるまで待機します。パターンに
+        一致しないバイトは破棄されます。
 
         Arguments:
-            pattern (bytes): Byte sequence to wait for. Must not be empty.
+            pattern (bytes): 待機するバイトシーケンス。空であっては
+                なりません。
 
         Raises:
-            ValueError: If ``pattern`` is empty.
-            OSError: If this method is already in progress.
+            ValueError: ``pattern`` が空の場合。
+            OSError: このメソッドがすでに実行中の場合。
         """
 
     def clear(self) -> None:
         """clear()
 
-        Empties the receive buffer."""
+        受信バッファを空にします。"""
 
 
 class LWP3Device:
     """
-    Connects to a hub running official LEGO firmware using the
-    `LEGO Wireless Protocol v3`_.
+    `LEGO Wireless Protocol v3`_ を使用して、公式のLEGOファームウェアを
+    実行しているハブに接続します。
 
     .. _`LEGO Wireless Protocol v3`:
         https://lego.github.io/lego-ble-wireless-protocol-docs/
@@ -403,27 +401,26 @@ class LWP3Device:
 
         Arguments:
             hub_kind (int):
-                The `hub type identifier`_ of the hub to connect to.
+                接続するハブの `hub type identifier`_ 。
             name (str):
-                The name of the hub to connect to or ``None`` to connect to any
-                hub.
+                接続するハブの名前。 ``None`` を指定すると、任意のハブに
+                接続します。
             timeout (int):
-                The time, in milliseconds, to wait for a connection before
-                raising an exception.
-            pair (bool): Whether to attempt pairing for a secure connection.
-                This is required for some newer hubs.
-            num_notifications (int): Number of incoming messages from the remote
-                hub to store before discarding older messages.
-            connect (bool): Choose ``False`` to skip connecting.
-                ``connect()`` can be called later to connect.
+                例外が発生するまで接続を待機する時間（ミリ秒）。
+            pair (bool): セキュアな接続のためにペアリングを試みるかどうか。
+                一部の新しいハブでは必須です。
+            num_notifications (int): 古いメッセージを破棄するまでに保持する
+                リモートハブからの受信メッセージ数。
+            connect (bool): 接続をスキップする場合は ``False`` を選択します。
+                ``connect()`` を後で呼び出して接続できます。
 
         .. versionchanged:: 3.6
 
-            Added ``pair`` parameter.
+            ``pair`` パラメータを追加しました。
 
         .. versionchanged:: 3.7
 
-            Added ``num_notifications`` parameter.
+            ``num_notifications`` パラメータを追加しました。
 
         .. _`hub type identifier`:
             https://github.com/pybricks/technical-info/blob/master/assigned-numbers.md#hub-type-ids
@@ -432,11 +429,11 @@ class LWP3Device:
     def connect(self) -> MaybeAwaitable:
         """connect()
 
-        Connects to the device. Only needed if you disconnected or initialized
-        with ``connect=False``.
+        デバイスに接続します。切断した場合、または ``connect=False`` で
+        初期化した場合にのみ必要です。
 
         Raises:
-            OSError: If the connection attempt fails or times out.
+            OSError: 接続の試行が失敗したかタイムアウトした場合。
         """
 
     @overload
@@ -449,63 +446,65 @@ class LWP3Device:
         """name(name)
         name() -> str
 
-        Sets or gets the Bluetooth name of the device.
+        デバイスのBluetooth名を設定または取得します。
 
         Arguments:
-            name (str): New Bluetooth name of the device. If no name is given,
-                this method returns the current name.
+            name (str): デバイスの新しいBluetooth名。名前が指定されない場合、
+                このメソッドは現在の名前を返します。
 
         Raises:
-            OSError: If the device is not connected.
+            OSError: デバイスが接続されていない場合。
         """
 
     def write(self, buf: bytes) -> MaybeAwaitable:
         """write(buf)
 
-        Sends a message to the remote hub.
+        リモートハブにメッセージを送信します。
 
         Arguments:
-            buf (bytes): The raw binary message to send. Maximum 20 bytes.
+            buf (bytes): 送信する生のバイナリメッセージ。最大20バイト。
 
         Raises:
-            ValueError: If the message exceeds 20 bytes.
-            OSError: If the device is not connected or the write fails.
+            ValueError: メッセージが20バイトを超える場合。
+            OSError: デバイスが接続されていない、または書き込みに失敗した
+                場合。
         """
 
     def read(self) -> bytes | None:
         """read() -> bytes | None
 
-        Retrieves the oldest buffered message received from the remote hub.
+        リモートハブから受信した最も古いバッファ内のメッセージを取得します。
 
-        If all buffered messages have already been read, this returns ``None``.
+        バッファ内のすべてのメッセージがすでに読み取られている場合は、
+        ``None`` を返します。
 
         Returns:
-            The oldest raw binary message or ``None`` if there are no more messages.
+            最も古い生のバイナリメッセージ。メッセージがない場合は ``None``。
 
         .. versionchanged:: 3.7
 
-            Now supports reading multiple buffered messages instead of blocking
-            until one new message was received.
+            新しいメッセージが1つ受信されるまでブロックする代わりに、
+            バッファ内の複数のメッセージを読み取れるようになりました。
         """
 
     def disconnect(self) -> MaybeAwaitable:
         """disconnect()
 
-        Disconnects the device.
+        デバイスを切断します。
 
         Raises:
-            OSError: If disconnecting fails.
+            OSError: 切断に失敗した場合。
         """
 
 
 class XboxController:
-    """Use the Microsoft® Xbox® controller as a sensor in your projects to
-    control them remotely.
+    """Microsoft® Xbox®コントローラーをセンサーとして使用し、プロジェクトを
+    リモートで操作します。
 
-    The hub will scan for the controller and connect to it. It will disconnect
-    when the program ends.
+    ハブはコントローラーをスキャンして接続します。プログラムが終了すると
+    切断されます。
 
-    For tips on connectivity and pairing, see :ref:`below <xbox-controller-pairing>`.
+    接続とペアリングに関するヒントについては、 :ref:`以下 <xbox-controller-pairing>` を参照してください。
     """
 
     buttons = _common.Keypad([])
@@ -520,130 +519,132 @@ class XboxController:
         """__init__(joystick_deadzone=10, name=None, timeout=10000, connect=True)
 
         Arguments:
-            joystick_deadzone (Number, %): Joystick deadzone (0 to 100). Values
-                below this threshold in both axes will be reported as 0 to
-                prevent stick drift.
-            name (str): The Bluetooth name of the Xbox controller to connect to,
-                or ``None`` to connect to any available controller.
-            timeout (Number, ms): How long to wait for a connection before
-                giving up. Choose ``None`` to wait indefinitely.
-            connect (bool): Choose ``False`` to skip connecting to the controller.
-                ``connect()`` can be called later to connect.
+            joystick_deadzone (Number, %): ジョイスティックのデッドゾーン
+                （0から100）。両軸でこのしきい値を下回る値は、スティックの
+                ドリフトを防ぐために0として報告されます。
+            name (str): 接続するXboxコントローラーのBluetooth名。
+                ``None`` を指定すると、利用可能な任意のコントローラーに
+                接続します。
+            timeout (Number, ms): 接続をあきらめるまでの待機時間。
+                ``None`` を選択すると、無期限に待機します。
+            connect (bool): コントローラーへの接続をスキップする場合は
+                ``False`` を選択します。 ``connect()`` を後で呼び出して
+                接続できます。
         """
 
     def connect(self) -> MaybeAwaitable:
         """connect()
 
-        Connects to the Xbox controller. Only needed if you disconnected or
-        initialized the controller with ``connect=False``.
+        Xboxコントローラーに接続します。切断した場合、またはコントローラーを
+        ``connect=False`` で初期化した場合にのみ必要です。
         """
 
     def disconnect(self) -> MaybeAwaitable:
         """disconnect()
 
-        Disconnects the Xbox controller.
+        Xboxコントローラーを切断します。
         """
 
     def name(self) -> str:
         """name() -> str
 
-        Gets the Bluetooth name of the connected controller.
+        接続されているコントローラーのBluetooth名を取得します。
 
         Returns:
-            Bluetooth name of the controller.
+            コントローラーのBluetooth名。
 
         Raises:
-            OSError: If the controller is not connected.
+            OSError: コントローラーが接続されていない場合。
         """
 
     def state(self) -> tuple:
         """state() -> tuple
 
-        Gets all raw controller input values as a single tuple. This gives
-        access to values not exposed by the other methods.
+        すべての生のコントローラー入力値を1つのタプルとして取得します。
+        これにより、他のメソッドでは公開されていない値にアクセスできます。
 
-        The joystick axes (x, y, z, rz) are centered at 0. The trigger axes
-        are raw 10-bit values (0-1023).
+        ジョイスティック軸（x、y、z、rz）は0を中心としています。トリガー軸は
+        生の10ビット値（0-1023）です。
 
         Returns:
-            Tuple of ``(x, y, z, rz, left_trigger, right_trigger, dpad,
-            buttons, upload, profile, trigger_switches, paddles)``.
+            ``(x, y, z, rz, left_trigger, right_trigger, dpad,
+            buttons, upload, profile, trigger_switches, paddles)`` のタプル。
 
         Raises:
-            OSError: If the controller is not connected.
+            OSError: コントローラーが接続されていない場合。
         """
 
     def joystick_left(self) -> tuple[int, int]:
         """joystick_left() -> tuple
 
-        Gets the left joystick position as percentages between -100%
-        and 100%. The center position is (0, 0). A square deadzone is applied:
-        if both axes are within the deadzone, both are reported as 0.
+        左ジョイスティックの位置を-100%から100%のパーセント値として
+        取得します。中心位置は(0, 0)です。正方形のデッドゾーンが適用
+        されます: 両軸がデッドゾーン内にある場合、両方とも0として
+        報告されます。
 
         Returns:
-            Tuple of X (horizontal) and Y (vertical) position.
+            X（水平）とY（垂直）の位置のタプル。
 
         Raises:
-            OSError: If the controller is not connected.
+            OSError: コントローラーが接続されていない場合。
         """
 
     def joystick_right(self) -> tuple[int, int]:
         """joystick_right() -> tuple
 
-        Gets the right joystick position as percentages between -100%
-        and 100%. The center position is (0, 0). A square deadzone is applied:
-        if both axes are within the deadzone, both are reported as 0.
+        右ジョイスティックの位置を-100%から100%のパーセント値として
+        取得します。中心位置は(0, 0)です。正方形のデッドゾーンが適用
+        されます: 両軸がデッドゾーン内にある場合、両方とも0として
+        報告されます。
 
         Returns:
-            Tuple of X (horizontal) and Y (vertical) position.
+            X（水平）とY（垂直）の位置のタプル。
 
         Raises:
-            OSError: If the controller is not connected.
+            OSError: コントローラーが接続されていない場合。
         """
 
     def triggers(self) -> tuple[int, int]:
         """triggers() -> tuple
 
-        Gets the left and right trigger positions as percentages between 0%
-        and 100%.
+        左右のトリガー位置を0%から100%のパーセント値として取得します。
 
         Returns:
-            Tuple of left and right trigger positions.
+            左右のトリガー位置のタプル。
 
         Raises:
-            OSError: If the controller is not connected.
+            OSError: コントローラーが接続されていない場合。
         """
 
     def dpad(self) -> int:
         """dpad() -> int
 
-        Gets the direction-pad value. ``1`` is up, ``2`` is up-right, ``3``
-        is right, ``4`` is down-right, ``5`` is down, ``6`` is down-left,
-        ``7`` is left, ``8`` is up-left, and ``0`` is not pressed.
+        方向パッドの値を取得します。 ``1`` は上、 ``2`` は右上、 ``3`` は右、
+        ``4`` は右下、 ``5`` は下、 ``6`` は左下、 ``7`` は左、 ``8`` は左上、
+        ``0`` は押されていないことを示します。
 
-        This is essentially the same as reading the state of the
-        ``Button.UP``, ``Button.RIGHT``, ``Button.DOWN``, and ``Button.LEFT``
-        buttons, but this method conveniently returns a number that indicates
-        a direction.
+        これは ``Button.UP`` 、 ``Button.RIGHT`` 、 ``Button.DOWN`` 、
+        ``Button.LEFT`` ボタンの状態を読み取るのと本質的に同じですが、
+        このメソッドは方向を示す数値を便利に返します。
 
         Returns:
-            Direction-pad position, indicating a direction.
+            方向を示す方向パッドの位置。
 
         Raises:
-            OSError: If the controller is not connected.
+            OSError: コントローラーが接続されていない場合。
         """
 
     def profile(self) -> int:
         """profile() -> int
 
-        Gets the current profile of the controller. Only available on the
-        Xbox Elite Controller Series 2.
+        コントローラーの現在のプロファイルを取得します。
+        Xbox Elite Controller Series 2でのみ利用可能です。
 
         Returns:
-            Profile number.
+            プロファイル番号。
 
         Raises:
-            OSError: If the controller is not connected.
+            OSError: コントローラーが接続されていない場合。
         """
 
     def rumble(
@@ -655,31 +656,31 @@ class XboxController:
     ) -> MaybeAwaitable:
         """rumble(power=100, duration=200, count=1, delay=100)
 
-        Makes the builtin actuators rumble, creating force feedback.
+        内蔵アクチュエーターを振動させ、フォースフィードバックを生成します。
 
-        If you give a single ``power`` value, the left and right main actuators
-        will both rumble with that power while the trigger actuators stay off.
-        For more fine-grained control, set ``power`` as a tuple of four values,
-        which control the left main actuator, right main actuator, left trigger
-        actuator, and the right trigger actuator, respectively. For example,
-        ``power=(0, 0, 100, 0)`` makes the left trigger rumble at full power.
+        単一の ``power`` 値を指定すると、左右のメインアクチュエーターがともに
+        その強さで振動し、トリガーアクチュエーターはオフのままになります。
+        より細かく制御するには、 ``power`` に4つの値のタプルを設定します。
+        それぞれ左メインアクチュエーター、右メインアクチュエーター、左トリガー
+        アクチュエーター、右トリガーアクチュエーターを制御します。たとえば、
+        ``power=(0, 0, 100, 0)`` は左トリガーを最大強度で振動させます。
 
-        The rumble runs in the background while your program continues. To
-        make your program wait, just pause the program for a matching duration.
-        For one rumble, this equals ``duration``. For multiple rumbles, this
-        equals ``count * (duration + delay)``.
+        プログラムが続行する間、振動はバックグラウンドで実行されます。
+        プログラムを待機させるには、対応する時間だけプログラムを一時停止
+        してください。1回の振動の場合、これは ``duration`` に等しくなります。
+        複数回の場合は ``count * (duration + delay)`` に等しくなります。
 
-        This method does nothing if all actuator powers are zero, if
-        ``duration`` is zero, or if ``count`` is less than 1.
+        すべてのアクチュエーターの強さが0の場合、 ``duration`` が0の場合、
+        または ``count`` が1未満の場合、このメソッドは何もしません。
 
         Arguments:
-            power (Number, % or tuple): Rumble power. A single value applies
-                to both main actuators (0-100%). A tuple applies individually
-                to (left handle, right handle, left trigger, right trigger).
-            duration (Number, ms): Duration of each rumble. Capped at 2500 ms.
-            count (int): Number of rumbles (0-100).
-            delay (Number, ms): Delay before each rumble. Only used if
-                ``count > 1``. Capped at 2500 ms.
+            power (Number, % or tuple): 振動の強さ。単一の値は両方のメイン
+                アクチュエーターに適用されます（0-100%）。タプルは（左ハンドル、
+                右ハンドル、左トリガー、右トリガー）に個別に適用されます。
+            duration (Number, ms): 各振動の時間。上限2500 ms。
+            count (int): 振動の回数（0-100）。
+            delay (Number, ms): 各振動の前の遅延。 ``count > 1`` の場合にのみ
+                使用されます。上限2500 ms。
         """
 
 
