@@ -15,5 +15,5 @@ Axis
     .. autoattribute:: pybricks.parameters.Axis.Z
         :annotation: = vector(0, 0, 1)
 
-On Move Hub, doing math with these vectors is not supported. The axes can still
-be used to set up the hub orientation.
+Move Hub では、これらのベクトルを使った演算はサポートされていません。
+それでも、これらの軸はハブの向きを設定するために使用できます。

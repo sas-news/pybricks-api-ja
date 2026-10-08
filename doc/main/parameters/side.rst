@@ -7,8 +7,8 @@ Side
 
 .. class:: Side
 
-    Side of a hub or a sensor. These devices are
-    mostly rectangular boxes with six sides:
+    ハブまたはセンサーの面。これらのデバイスは主に6つの面を持つ
+    直方体です:
 
     .. autoattribute:: pybricks.parameters.Side.TOP
         :annotation:
@@ -29,9 +29,10 @@ Side
         :annotation:
 
 
-    Screens or light matrices have only four sides. For those,
-    ``TOP`` is treated the same as ``FRONT``, and ``BOTTOM`` is treated the
-    same as ``BACK``. The diagrams below define the sides for relevant devices.
+    スクリーンやライトマトリクスには4つの面しかありません。それらでは
+    ``TOP`` は ``FRONT`` と同じように、 ``BOTTOM`` は ``BACK`` と
+    同じように扱われます。以下の図は、関連するデバイスの面を
+    定義しています。
 
     **Prime Hub**
 
@@ -60,7 +61,7 @@ Side
 
     .. versionchanged:: 3.2
 
-        Changed which side is the front.
+        どの面が前面かを変更しました。
 
     **Tilt Sensor**
 

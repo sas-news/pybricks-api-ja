@@ -7,7 +7,7 @@ Direction
 
 .. class:: Direction
 
-    Rotational direction for positive speed or angle values.
+    正の速度または角度の値に対する回転方向。
 
     .. autoattribute:: pybricks.parameters.Direction.CLOCKWISE
         :annotation:
@@ -16,13 +16,13 @@ Direction
         :annotation:
 
     +--------------------------------+-------------------+-----------------+
-    | ``positive_direction =``       | Positive speed:   | Negative speed: |
+    | ``positive_direction =``       | 正の速度:         | 負の速度:       |
     +================================+===================+=================+
-    | ``Direction.CLOCKWISE``        | clockwise         | counterclockwise|
+    | ``Direction.CLOCKWISE``        | 時計回り          | 反時計回り      |
     +--------------------------------+-------------------+-----------------+
-    | ``Direction.COUNTERCLOCKWISE`` | counterclockwise  | clockwise       |
+    | ``Direction.COUNTERCLOCKWISE`` | 反時計回り        | 時計回り        |
     +--------------------------------+-------------------+-----------------+
 
-    In general, clockwise is defined by **looking at the motor shaft, just
-    like looking at a clock**. Some motors have two shafts. If in doubt,
-    refer to the diagram in the ``Motor`` class documentation.
+    一般に、時計回りは **モーターのシャフトを時計を見るのと同じように
+    見たとき** に定義されます。2つのシャフトを持つモーターもあります。
+    迷った場合は、 ``Motor`` クラスのドキュメントの図を参照してください。
