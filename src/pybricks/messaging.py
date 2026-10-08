@@ -2,7 +2,7 @@
 # Copyright (c) 2018-2026 The Pybricks Authors
 
 """
-Classes to send and receive messages from another device.
+他のデバイスとメッセージを送受信するためのクラス。
 """
 
 from __future__ import annotations
@@ -20,11 +20,11 @@ T = TypeVar("T")
 
 class BLERadio:
     """
-    Send and receive messages without a connection using Bluetooth Low Energy.
+    Bluetooth Low Energyを使用して、接続せずにメッセージを送受信します。
 
     .. versionadded:: 4.0
 
-        This used to be part of each hub class.
+        以前は各Hubクラスの一部として提供されていました。
     """
 
     def __init__(
@@ -36,12 +36,13 @@ class BLERadio:
 
         Arguments:
             broadcast_channel:
-                Channel number (0 to 255) used to broadcast data.
-                Choose ``None`` when not using broadcasting.
+                データのブロードキャストに使用するチャンネル番号（0～255）。
+                ブロードキャストを使用しない場合は ``None`` を選択します。
             observe_channels:
-                A list of channels to listen to when ``hub.ble.observe()`` is
-                called. Listening to more channels requires more memory.
-                Default is an empty list (no channels).
+                ``hub.ble.observe()`` が呼び出されたときにリッスンする
+                チャンネルのリスト。リッスンするチャンネルが多いほど、より
+                多くのメモリが必要です。デフォルトは空のリスト（チャンネル
+                なし）です。
         """
 
     @overload
@@ -58,34 +59,36 @@ class BLERadio:
     def broadcast(self, data: object) -> MaybeAwaitable:
         """broadcast(data)
 
-        Starts broadcasting the given data on the previously selected
-        ``broadcast_channel``.
+        事前に選択した ``broadcast_channel`` で、指定したデータの
+        ブロードキャストを開始します。
 
-        Data may be of type ``int``, ``float``, ``str``, ``bytes``,
-        ``True``, or ``False``. It can also be a list or tuple of these.
+        データの型は ``int``、``float``、``str``、``bytes``、``True``、
+        ``False`` のいずれかです。また、これらの値のリストやタプルも指定
+        できます。
 
-        Choose ``None`` to stop broadcasting. This helps improve performance
-        when you don't need the broadcast feature, especially when observing
-        at the same time.
+        ``None`` を指定するとブロードキャストを停止します。ブロードキャスト
+        機能が不要な場合、特に同時に観測を行う場合は、パフォーマンスの向上に
+        役立ちます。
 
-        The total data size is quite limited (26 bytes). ``True`` and
-        ``False`` take 1 byte each. ``float`` takes 5 bytes. ``int`` takes 2 to
-        5 bytes depending on how big the number is. ``str`` and ``bytes`` take
-        the number of bytes in the object plus one extra byte.
+        データの合計サイズはかなり制限されています（26バイト）。``True`` と
+        ``False`` はそれぞれ1バイト、``float`` は5バイトを使用します。
+        ``int`` は数値の大きさに応じて2～5バイトを使用します。``str`` と
+        ``bytes`` はオブジェクトのバイト数に1バイトを加えたサイズを使用
+        します。
 
-        When multitasking, only one task can broadcast at a time. To broadcast
-        information from multiple tasks (or block stacks), you could use a
-        dedicated separate task that broadcast new values when one or more
-        variables change.
+        マルチタスク時は、一度に1つのタスクのみがブロードキャストできます。
+        複数のタスク（またはブロックスタック）から情報をブロードキャスト
+        するには、1つ以上の変数が変化したときに新しい値をブロードキャスト
+        する専用の別タスクを使用するとよいでしょう。
 
         Args:
-            data: The value or values to be broadcast.
+            data: ブロードキャストする値。
 
         Raises:
-            RuntimeError: If no ``broadcast_channel`` was configured.
-            ValueError: If the encoded data exceeds 26 bytes.
-            TypeError: If ``data`` contains a value that is not ``bool``,
-                ``int``, ``float``, ``str``, or ``bytes``.
+            RuntimeError: ``broadcast_channel`` が設定されていない場合。
+            ValueError: エンコードされたデータが26バイトを超える場合。
+            TypeError: ``data`` に ``bool``、``int``、``float``、``str``、
+                ``bytes`` 以外の値が含まれている場合。
         """
 
     def observe(
@@ -101,69 +104,71 @@ class BLERadio:
     ):
         """observe(channel) -> bool | int | float | str | bytes | tuple | None
 
-        Retrieves the last observed data for a given channel.
+        指定したチャンネルで最後に観測されたデータを取得します。
 
-        Receiving data is more reliable when the hub is not connected
-        to a computer or other devices at the same time.
+        Hubがコンピューターや他のデバイスに同時に接続されていない場合、
+        データの受信がより確実になります。
 
         Args:
-            channel (int): The channel to observe. Must be one of the channels
-                given to ``observe_channels`` when creating this object.
+            channel (int): 観測するチャンネル。このオブジェクトの作成時に
+                ``observe_channels`` で指定したチャンネルの1つである必要が
+                あります。
 
         Returns:
-            The received data in the same format as it was sent, or ``None``
-            if no data has been received within the last second.
+            送信時と同じ形式で受信したデータ。直近1秒以内にデータを受信
+            していない場合は ``None``。
 
         Raises:
-            ValueError: If ``channel`` was not in ``observe_channels``.
+            ValueError: ``channel`` が ``observe_channels`` に含まれていない
+                場合。
         """
 
     def signal_strength(self, channel: int) -> int:
         """signal_strength(channel) -> int: dBm
 
-        Gets the average signal strength in dBm for the given channel.
+        指定したチャンネルの平均信号強度をdBm単位で取得します。
 
-        This indicates how near the broadcasting device is. Nearby devices
-        may have a signal strength around -40 dBm, while far away devices
-        might have a signal strength around -70 dBm.
+        これはブロードキャストしているデバイスの近さを示します。近くの
+        デバイスの信号強度は約-40 dBm、遠くのデバイスは約-70 dBmになります。
 
         Args:
-            channel (int): The channel number. Must be one of the channels
-                given to ``observe_channels`` when creating this object.
+            channel (int): チャンネル番号。このオブジェクトの作成時に
+                ``observe_channels`` で指定したチャンネルの1つである必要が
+                あります。
 
         Returns:
-            The signal strength, or ``-128`` if no data has been received
-            within the last second.
+            信号強度。直近1秒以内にデータを受信していない場合は ``-128``。
 
         Raises:
-            ValueError: If ``channel`` was not in ``observe_channels``.
+            ValueError: ``channel`` が ``observe_channels`` に含まれていない
+                場合。
         """
 
     def version(self) -> str:
         """version() -> str
 
-        Gets the firmware version from the Bluetooth chip.
+        Bluetoothチップのファームウェアバージョンを取得します。
         """
 
 
 class HubNetwork:
     """
-    Send and receive messages between supported hubs using Bluetooth.
+    Bluetoothを使用して、対応するHub間でメッセージを送受信します。
 
-    Create this object in every program that takes part in the network. One
-    hub, called the *manager*, then connects to others identified by their
-    address. For example: :meth:`connect('00:16:53:12:34:56') <connect>`.
-    After that, all hubs are equal: each one can send messages to any other
-    brick.
+    ネットワークに参加するすべてのプログラムでこのオブジェクトを作成します。
+    そのうち *manager* と呼ばれる1台のHubが、アドレスで識別される他のHubに
+    接続します。例: :meth:`connect('00:16:53:12:34:56') <connect>`。
+    その後はすべてのHubが対等になり、それぞれが他のどのBrickにもメッセージを
+    送信できます。
 
-    You can find the address of each hub in the EV3 settings menu, or print it
-    with the :meth:`address` method. Connections are preserved when you
-    restart a program.
+    各HubのアドレスはEV3の設定メニューで確認できるほか、:meth:`address`
+    メソッドで表示することもできます。接続はプログラムを再起動しても維持
+    されます。
 
-    The protocol ensures that messages get delivered. But they will only be
-    seen in your program if there is enough room. The manager takes care of
-    relaying messages in the background, which only works while the manager
-    program is still running.
+    このプロトコルはメッセージの配信を保証します。ただし、十分な空き容量が
+    ある場合にのみプログラムで受信できます。マネージャーはバックグラウンドで
+    メッセージの中継を処理しますが、これはマネージャーのプログラムが実行中の
+    間のみ機能します。
 
     .. versionadded:: 4.1
     """
@@ -172,57 +177,56 @@ class HubNetwork:
         """HubNetwork(inbox_size=1024)
 
         Arguments:
-            inbox_size (int): How many bytes of messages to store for each
-                brick that sends them.
+            inbox_size (int): 送信元の各Brickについて、メッセージを保存する
+                バイト数。
 
         Raises:
-            RuntimeError: If a ``HubNetwork`` object already exists, or if
-                this is used after multitasking has started.
-            OSError: If this brick has no working Bluetooth.
-            ValueError: If ``inbox_size`` is too small to hold one message.
+            RuntimeError: ``HubNetwork`` オブジェクトがすでに存在する場合、
+                またはマルチタスク開始後に使用された場合。
+            OSError: このBrickのBluetoothが動作しない場合。
+            ValueError: ``inbox_size`` が1件のメッセージを保持するには
+                小さすぎる場合。
         """
 
     def address(self) -> str:
         """address() -> str
 
-        Gets the Bluetooth address of this brick.
+        このBrickのBluetoothアドレスを取得します。
 
-        This is the same address that is shown on the brick's screen. You can
-        print it to find out which address to type in the programs of the
-        other bricks.
+        これはBrickの画面に表示されるアドレスと同じです。これを表示して、
+        他のBrickのプログラムに入力するアドレスを確認できます。
 
         Returns:
-            The address of this brick, such as ``'00:16:53:AB:CD:EF'``. The
-            letters are always uppercase.
+            このBrickのアドレス。
+            ``'00:16:53:AB:CD:EF'`` のような形式で、文字は常に大文字です。
         """
         return ""
 
     def connect(self, address: str) -> MaybeAwaitable:
         """connect(address)
 
-        Connects to one other hub (EV3 Brick) to set up the network.
+        ネットワークを構築するために、別の1台のHub（EV3 Brick）に接続します。
 
-        Only one hub in the network does this. That hub is called the manager.
-        The other hubs don't have to run a program yet. They just won't
-        receive messages until their programs run.
+        ネットワーク内でこの操作を行うのは1台のHubだけです。そのHubは
+        マネージャーと呼ばれます。他のHubはまだプログラムを実行していなくても
+        構いませんが、プログラムが実行されるまでメッセージは受信されません。
 
-        Connecting is slow. It takes up to about fifteen seconds per brick,
-        and it does not always work on the first try, so it tries again a few
-        times before it gives up. This is why you normally do this at the
-        start of your program.
+        接続には時間がかかります。Brick1台につき最大で約15秒かかり、一度で
+        成功するとは限らないため、あきらめるまでに数回再試行します。このため、
+        通常はプログラムの開始時にこの操作を行います。
 
-        A brick that is already connected is ready right away, so it is safe
-        to use this again later. This makes the second run very quick to start.
+        すでに接続済みのBrickはすぐに準備できるため、後で再度使用しても安全
+        です。これにより、2回目の実行は非常に速く開始できます。
 
         Arguments:
-            address (str): The Bluetooth address of the brick to connect to,
-                such as ``'00:16:53:12:34:56'``. You can connect to up to
-                seven other bricks.
+            address (str): 接続先のBrickのBluetoothアドレス
+                （例: ``'00:16:53:12:34:56'``）。最大7台の他のBrickに接続
+                できます。
 
         Raises:
-            OSError: If the brick could not be reached. ValueError: If
-                ``address`` is not a valid Bluetooth address, or if it is the
-                address of this brick.
+            OSError: Brickに接続できなかった場合。ValueError: ``address`` が
+                有効なBluetoothアドレスでない場合、またはこのBrick自身の
+                アドレスの場合。
         """
 
     def is_connected(self, address: str | None = None) -> bool:
@@ -230,24 +234,25 @@ class HubNetwork:
         is_connected() -> bool
         is_connected(address) -> bool
 
-        Checks whether a brick has joined the network.
+        Brickがネットワークに参加しているかどうかを確認します。
 
-        This is useful on the bricks that wait. They can keep checking
-        ``is_connected()`` until the manager brick has reached them, instead
-        of guessing how long the network takes to set up.
+        これは待機する側のBrickで便利です。ネットワークの構築にかかる時間を
+        推測する代わりに、マネージャーのBrickが接続してくるまで
+        ``is_connected()`` を確認し続けることができます。
 
-        Only the manager brick can use the ``address`` argument to check
-        individual bricks.
+        個々のBrickを確認するための ``address`` 引数は、マネージャーのBrick
+        のみが使用できます。
 
         Arguments:
-            address (str): The Bluetooth address of the hub to check.
+            address (str): 確認するHubのBluetoothアドレス。
 
         Returns:
-            ``True`` if the hub has joined the network, ``False`` if not. If
-            no address is given, it is ``True`` if any hub is connected.
+            Hubがネットワークに参加していれば ``True``、そうでなければ
+            ``False``。アドレスを指定しない場合は、いずれかのHubが接続
+            されていれば ``True``。
 
         Raises:
-            ValueError: If ``address`` is not a valid Bluetooth address.
+            ValueError: ``address`` が有効なBluetoothアドレスでない場合。
         """
         return False
 
@@ -264,34 +269,37 @@ class HubNetwork:
         """
         send(data) send(data, address)
 
-        Sends a message to all hubs on the network, or to one specific hub.
+        ネットワーク上のすべてのHub、または特定の1台のHubにメッセージを
+        送信します。
 
-        A message is one object, or a tuple of objects. An object may be of
-        type ``int``, ``float``, ``str``, ``bytes``, ``True``, ``False``, or
-        ``None``. The brick that receives it gets the same objects back, so
-        sending ``(60, "left")`` arrives as ``(60, "left")``.
+        メッセージは1つのオブジェクト、またはオブジェクトのタプルです。
+        オブジェクトの型は ``int``、``float``、``str``、``bytes``、
+        ``True``、``False``、``None`` のいずれかです。受信側のBrickは同じ
+        オブジェクトを受け取るので、``(60, "left")`` を送信すると
+        ``(60, "left")`` として届きます。
 
-        A message that is only ``bytes`` is sent just as it is, which is what
-        you want if you build your own messages. Such a message can hold 255
-        bytes. Every other message also carries a short description of the
-        objects in it, so a little less fits: ``True``, ``False`` and ``None``
-        take 2 bytes each, ``int`` and ``float`` take 5 bytes each, and
-        ``str`` and ``bytes`` take the number of bytes in them plus 2 to 4.
-        One message holds up to 32 objects.
+        ``bytes`` のみのメッセージはそのまま送信されます。これは独自の
+        メッセージを組み立てる場合に適しています。このようなメッセージは
+        255バイトまで格納できます。それ以外のメッセージには、含まれる
+        オブジェクトの短い説明も付随するため、格納できるサイズは少し小さく
+        なります。``True``、``False``、``None`` はそれぞれ2バイト、``int``
+        と ``float`` はそれぞれ5バイト、``str`` と ``bytes`` はオブジェクトの
+        バイト数に2～4バイトを加えたサイズを使用します。1つのメッセージには
+        最大32個のオブジェクトを格納できます。
 
-        Messages from this brick to one other brick arrive in the order that
-        you sent them.
+        このBrickから別の1台のBrickへのメッセージは、送信した順序で届きます。
 
         Arguments:
-            data: The message to send.
-            address (str): The Bluetooth address of
-                the brick to send to. Leave out to send to every other brick
-                on the network. A brick never receives its own messages.
+            data: 送信するメッセージ。
+            address (str): 送信先のBrickのBluetoothアドレス。
+                省略するとネットワーク上の他のすべてのBrickに送信します。
+                Brickは自分自身が送信したメッセージを受信しません。
 
         Raises:
-            ValueError: If ``address`` is not a valid Bluetooth address, or if
-                the message is too big to send.
-            TypeError: If the message holds an object that cannot be sent.
+            ValueError: ``address`` が有効なBluetoothアドレスでない場合、
+                またはメッセージが大きすぎて送信できない場合。
+            TypeError: メッセージに送信できないオブジェクトが含まれている
+                場合。
         """
 
     def inbox(
@@ -311,36 +319,36 @@ class HubNetwork:
     ]:
         """inbox(latest=False) -> tuple
 
-        Gets the messages that have arrived since you last read them.
+        前回読み取ってから届いたメッセージを取得します。
 
-        This never waits. If nothing has arrived, you get an empty result, so
-        a ``for`` loop over it simply does nothing. Reading removes the messages from this brick's memory, so each message
-        is given to you only once.
+        このメソッドは待機しません。何も届いていない場合は空の結果を返すため、
+        それに対する ``for`` ループは何も行いません。読み取るとこのBrickの
+        メモリからメッセージが削除されるため、各メッセージは一度しか受け取れ
+        ません。
 
-        Every brick that sends to you gets an inbox of its own internally.
-        When one brick sends more than fits in its inbox, its oldest message
-        is dropped. A brick that sends all the time cannot push another
-        brick's messages out.
+        あなたに送信する各Brickには、内部にそれぞれ専用の受信ボックスが
+        あります。1台のBrickが受信ボックスに収まりきらない量を送信した場合、
+        最も古いメッセージが破棄されます。常時送信しているBrickが他のBrickの
+        メッセージを押し出すことはありません。
 
-        A program never receives messages that were sent before it started.
-        Messages are given to you in the order that they arrived, no matter
-        which brick sent them.
+        プログラムは開始前に送信されたメッセージを受信しません。メッセージは
+        どのBrickから送信されたかに関係なく、届いた順に受け取ります。
 
         Arguments:
-            latest (bool): Choose ``True`` to keep only the newest message
-                from each brick and throw the older ones away. This is what
-                you want when a brick keeps sending you its latest value, such
-                as a sensor reading, and only the newest one is of any use.
+            latest (bool): ``True`` を選択すると、各Brickからの最新の
+                メッセージのみを保持し、それより古いメッセージは破棄します。
+                センサーの読み取り値のように、Brickが最新の値を送り続け、
+                最新のものだけが有用な場合に適しています。
 
         Returns:
-            A tuple of ``(address, data)`` pairs, where ``address`` is the
-            Bluetooth address of the brick that sent the message, and ``data``
-            is the message in the same form as it was sent. With ``latest``,
-            there is at most one pair per brick.
+            ``(address, data)`` のペアのタプル。``address`` はメッセージを
+            送信したBrickのBluetoothアドレス、``data`` は送信時と同じ形式の
+            メッセージです。``latest`` を使用した場合、各Brickにつき最大1組
+            のペアになります。
 
         Raises:
-            ValueError: If a message does not match the description it carries
-                with it, which means that it was damaged on the way.
+            ValueError: メッセージがそれに付随する説明と一致しない場合。
+                これはメッセージが途中で破損したことを意味します。
         """
         return ()
 
@@ -366,67 +374,67 @@ class Mailbox(Generic[T]):
     ):
         """Mailbox(name, connection, encode=None, decode=None)
 
-        Object that represents a mailbox containing data.
+        データを保持するメールボックスを表すオブジェクトです。
 
-        You can read data that is delivered by other EV3 bricks, or send data
-        to other bricks that have the same mailbox.
+        他のEV3 Brickから配信されたデータを読み取ったり、同じメールボックスを
+        持つ他のBrickにデータを送信したりできます。
 
-        By default, the mailbox reads and sends only bytes. To send other
-        data, you can provide an ``encode`` function that encodes your Python
-        object into bytes, and a ``decode`` function to convert bytes back to
-        a Python object.
+        デフォルトでは、メールボックスはバイト列のみを読み取り・送信します。
+        他のデータを送信するには、Pythonオブジェクトをバイト列にエンコード
+        する ``encode`` 関数と、バイト列をPythonオブジェクトに戻す ``decode``
+        関数を指定できます。
 
         Arguments:
             name (str):
-                The name of this mailbox.
+                このメールボックスの名前。
             connection:
-                A connection object such as :class:`BluetoothMailboxClient`.
+                :class:`BluetoothMailboxClient` などの接続オブジェクト。
             encode (callable):
-                Function that encodes a Python object to bytes.
+                Pythonオブジェクトをバイト列にエンコードする関数。
             decode (callable):
-                Function that creates a new Python object from bytes.
+                バイト列から新しいPythonオブジェクトを作成する関数。
         """
 
     def read(self) -> T:
         """read()
 
-        Gets the current value of the mailbox.
+        メールボックスの現在の値を取得します。
 
         Returns:
-            The current value or ``None`` if the mailbox is empty.
+            現在の値。メールボックスが空の場合は ``None``。
         """
         return ""
 
     def send(self, value: T, brick: str | None = None) -> None:
         """send(value, brick=None)
 
-        Sends a value to this mailbox on connected devices.
+        接続されたデバイス上のこのメールボックスに値を送信します。
 
         Arguments:
             value:
-                The value that will be delivered to the mailbox.
+                メールボックスに配信される値。
             brick (str):
-                The name or Bluetooth address of the brick or ``None``
-                to broadcast to all connected devices.
+                Brickの名前またはBluetoothアドレス。接続されているすべての
+                デバイスにブロードキャストする場合は ``None``。
 
         Raises:
             OSError:
-                There is a problem with the connection.
+                接続に問題がある場合。
         """
 
     def wait(self) -> None:
         """wait()
 
-        Waits for the mailbox to be updated by a remote device."""
+        リモートデバイスによってメールボックスが更新されるまで待機します。"""
 
     def wait_new(self) -> T:
         """wait_new()
 
-        Waits for a new value to be delivered to the mailbox that is not
-        equal to the current value in the mailbox.
+        メールボックスの現在の値と等しくない新しい値が配信されるまで
+        待機します。
 
         Returns:
-            The new value.
+            新しい値。
         """
         return object()
 
@@ -435,18 +443,18 @@ class LogicMailbox(Mailbox[bool]):
     def __init__(self, name: str, connection: Connection):
         """LogicMailbox(name, connection)
 
-        Object that represents a mailbox containing boolean data.
+        ブール値データを保持するメールボックスを表すオブジェクトです。
 
-        This works just like a regular :class:`Mailbox`, but values
-        must be ``True`` or ``False``.
+        通常の :class:`Mailbox` と同じように動作しますが、値は ``True`` または
+        ``False`` である必要があります。
 
-        This is compatible with the "logic" mailbox type in EV3-G.
+        これはEV3-Gの "logic" メールボックス型と互換性があります。
 
         Arguments:
             name (str):
-                The name of this mailbox.
+                このメールボックスの名前。
             connection:
-                A connection object such as :class:`BluetoothMailboxClient`.
+                :class:`BluetoothMailboxClient` などの接続オブジェクト。
         """
 
 
@@ -454,18 +462,18 @@ class NumericMailbox(Mailbox[float]):
     def __init__(self, name: str, connection: Connection):
         """NumericMailbox(name, connection)
 
-        Object that represents a mailbox containing numeric data.
+        数値データを保持するメールボックスを表すオブジェクトです。
 
-        This works just like a regular :class:`Mailbox`, but values must be a
-        number, such as ``15`` or ``12.345``
+        通常の :class:`Mailbox` と同じように動作しますが、値は ``15`` や
+        ``12.345`` などの数値である必要があります。
 
-        This is compatible with the "numeric" mailbox type in EV3-G.
+        これはEV3-Gの "numeric" メールボックス型と互換性があります。
 
         Arguments:
             name (str):
-                The name of this mailbox.
+                このメールボックスの名前。
             connection:
-                A connection object such as :class:`BluetoothMailboxClient`.
+                :class:`BluetoothMailboxClient` などの接続オブジェクト。
         """
 
 
@@ -473,29 +481,28 @@ class TextMailbox(Mailbox[str]):
     def __init__(self, name: str, connection: Connection):
         """TextMailbox(name, connection)
 
-        Object that represents a mailbox containing text data.
+        テキストデータを保持するメールボックスを表すオブジェクトです。
 
-        This works just like a regular :class:`Mailbox`, but data must be a
-        string, such as ``'hello!'``.
+        通常の :class:`Mailbox` と同じように動作しますが、データは
+        ``'hello!'`` などの文字列である必要があります。
 
-        This is compatible with the "text" mailbox type in EV3-G.
+        これはEV3-Gの "text" メールボックス型と互換性があります。
 
         Arguments:
             name (str):
-                The name of this mailbox.
+                このメールボックスの名前。
             connection:
-                A connection object such as :class:`BluetoothMailboxClient`.
+                :class:`BluetoothMailboxClient` などの接続オブジェクト。
         """
 
 
 class BluetoothMailboxServer:
-    """Object that represents a Bluetooth connection from one or more remote
-    EV3s.
+    """1台以上のリモートEV3からのBluetooth接続を表すオブジェクトです。
 
-    The remote EV3s can either be running MicroPython or the standard EV3
-    firmware.
+    リモートのEV3は、MicroPythonまたは標準のEV3ファームウェアのいずれかを
+    実行できます。
 
-    A "server" waits for a "client" to connect to it.
+    "server" は "client" からの接続を待ちます。
     """
 
     def __enter__(self) -> Self:
@@ -507,31 +514,31 @@ class BluetoothMailboxServer:
     def wait_for_connection(self, count: int = 1) -> None:
         """wait_for_connection(count=1)
 
-        Waits for a :class:`BluetoothMailboxClient` on a remote device to
-        connect.
+        リモートデバイス上の :class:`BluetoothMailboxClient` が接続するのを
+        待ちます。
 
         Arguments:
             count (int):
-                The number of remote connections to wait for.
+                待機するリモート接続の数。
 
         Raises:
             OSError:
-                There was a problem establishing the connection.
+                接続の確立に問題があった場合。
         """
 
     def server_close(self) -> None:
         """server_close()
 
-        Closes all connections."""
+        すべての接続を閉じます。"""
 
 
 class BluetoothMailboxClient:
-    """Object that represents a Bluetooth connection to one or more remote EV3s.
+    """1台以上のリモートEV3へのBluetooth接続を表すオブジェクトです。
 
-    The remote EV3s can either be running MicroPython or the standard EV3
-    firmware.
+    リモートのEV3は、MicroPythonまたは標準のEV3ファームウェアのいずれかを
+    実行できます。
 
-    A "client" initiates a connection to a waiting "server".
+    "client" は待機中の "server" への接続を開始します。
     """
 
     def __enter__(self) -> Self:
@@ -543,41 +550,43 @@ class BluetoothMailboxClient:
     def connect(self, brick: str) -> None:
         """connect(brick)
 
-        Connects to an :class:`BluetoothMailboxServer` on another device.
+        別のデバイス上の :class:`BluetoothMailboxServer` に接続します。
 
-        The remote device must be paired and waiting for a connection. See
-        :meth:`BluetoothMailboxServer.wait_for_connection`.
+        リモートデバイスはペアリング済みで、接続を待機している必要があります。
+        :meth:`BluetoothMailboxServer.wait_for_connection` を参照してください。
 
         Arguments:
             brick (str):
-                The name or Bluetooth address of the remote EV3 to connect to.
+                接続先のリモートEV3の名前またはBluetoothアドレス。
 
         Raises:
             OSError:
-                There was a problem establishing the connection.
+                接続の確立に問題があった場合。
         """
 
     def close(self) -> None:
         """close()
 
-        Closes all connections."""
+        すべての接続を閉じます。"""
 
 
 class AppData:
     """
-    Exchange raw data with the Pybricks Code host application over USB or
-    Bluetooth. This is used by the smart sensor features like the vision
-    processors.
+    USBまたはBluetooth経由でPybricks Codeのホストアプリケーションと生データを
+    やり取りします。これはビジョンプロセッサーなどのスマートセンサー機能で
+    使用されます。
 
-    Each processor has one mode and produces a fixed amount of data. These are
-    continuously sent to the hub as they change. The user code can read these
-    buffered values at any time without blocking. All values are initially zero.
+    各プロセッサーは1つのモードを持ち、決まった量のデータを生成します。
+    これらは変化するたびに継続的にHubへ送信されます。ユーザーコードは
+    ブロックせずにいつでもこれらのバッファ済みの値を読み取れます。すべての
+    値は初期状態ではゼロです。
 
-    From the hub's perspective, writing back to the host is an awaitable operation.
-    Can be used to configure modes and mode settings.
+    Hubの観点からは、ホストへの書き戻しはawaitableな操作です。モードや
+    モード設定の構成に使用できます。
 
-    Only one instance may exist at a time. Must be created during program
-    initialization. After that, all methods may be used while multi-tasking.
+    同時に存在できるインスタンスは1つだけです。プログラムの初期化中に作成
+    する必要があります。その後は、マルチタスク実行中にすべてのメソッドを
+    使用できます。
     """
 
     def __init__(self, modes: list[tuple[int, int]]):
@@ -585,67 +594,67 @@ class AppData:
 
         Arguments:
             modes:
-                A list of ``(mode, size)`` tuples, where ``mode`` is a mode
-                number (0 to 255) and ``size`` is the number of bytes to
-                allocate for that mode's receive buffer. Mode numbers must be
-                unique. The list is sorted by mode number automatically.
+                ``(mode, size)`` タプルのリスト。``mode`` はモード番号
+                （0～255）、``size`` はそのモードの受信バッファに割り当てる
+                バイト数です。モード番号は一意である必要があります。リストは
+                モード番号順に自動的にソートされます。
 
         Raises:
-            RuntimeError: If an ``AppData`` instance already exists.
-            TypeError: If ``modes`` is not a list, or if any element is not a
-                ``(mode, size)`` tuple with a mode value of 0 to 255.
-            ValueError: If any mode number appears more than once.
+            RuntimeError: ``AppData`` インスタンスがすでに存在する場合。
+            TypeError: ``modes`` がリストでない場合、またはいずれかの要素が
+                モード値0～255の ``(mode, size)`` タプルでない場合。
+            ValueError: いずれかのモード番号が複数回出現する場合。
         """
 
     def get_bytes(self, mode: int, index: int | None = None) -> bytes | int:
         """get_bytes(mode, index=None) -> bytes | int
 
-        Gets data received from the host for the given mode.
+        指定したモードでホストから受信したデータを取得します。
 
         Args:
-            mode (int): The mode number to read.
-            index (int): If given, returns the single byte at this position
-                within the mode's buffer as an integer. Otherwise returns
-                the entire mode buffer as ``bytes``.
+            mode (int): 読み取るモード番号。
+            index (int): 指定した場合、モードのバッファ内のこの位置にある
+                単一のバイトを整数として返します。それ以外の場合は、モードの
+                バッファ全体を ``bytes`` として返します。
 
         Returns:
-            All received bytes for the mode, or a single byte as an integer
-            if ``index`` is given.
+            そのモードで受信したすべてのバイト。``index`` を指定した場合は
+            整数としての単一のバイト。
 
         Raises:
-            ValueError: If ``mode`` was not configured, or if ``index`` is
-                out of range.
+            ValueError: ``mode`` が設定されていない場合、または ``index`` が
+                範囲外の場合。
         """
 
     def write_bytes(self, data: bytes) -> MaybeAwaitable:
         """write_bytes(data)
 
-        Sends raw bytes to the host application.
+        ホストアプリケーションに生のバイト列を送信します。
 
         Args:
-            data (bytes): The data to send.
+            data (bytes): 送信するデータ。
         """
 
     def configure(self, mode: int, parameter: int, value: bytes) -> MaybeAwaitable:
         """configure(mode, parameter, value)
 
-        Sends a configuration command to the host for the given mode.
+        指定したモードの設定コマンドをホストに送信します。
 
-        This is a wrapper around :meth:`write_bytes`. It prepends a
-        ``[0x01, mode, parameter]`` header to configure mode settings.
+        これは :meth:`write_bytes` のラッパーです。モード設定を行うために
+        ``[0x01, mode, parameter]`` ヘッダーを先頭に追加します。
 
         Args:
-            mode (int): The mode number to configure.
-            parameter (int): The parameter identifier within the mode.
-            value (bytes): The configuration value to send.
+            mode (int): 設定するモード番号。
+            parameter (int): モード内のパラメーター識別子。
+            value (bytes): 送信する設定値。
         """
 
     def close(self) -> None:
         """close()
 
-        Deactivates the data callback and releases the receive buffer.
+        データコールバックを無効化し、受信バッファを解放します。
 
-        This is also called automatically when the object is garbage collected.
+        オブジェクトがガベージコレクトされたときにも自動的に呼び出されます。
         """
 
 
