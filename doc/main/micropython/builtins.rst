@@ -1,10 +1,9 @@
-Built-in classes and functions
+組み込みクラスと関数
 =====================================================
 
-The classes and functions shown on this page can be used without
-importing anything.
+このページに示すクラスと関数は、何もインポートせずに使用できます。
 
-Input and output
+入出力
 ------------------------
 
 .. pybricks-requirements:: stm32-extra
@@ -19,7 +18,7 @@ Input and output
 
 .. autofunction:: ubuiltins.print
 
-Basic types
+基本型
 ---------------------------
 
 .. pybricks-requirements::
@@ -59,7 +58,7 @@ Basic types
 
 .. autoclass:: ubuiltins.type
 
-Sequences
+シーケンス
 ---------------------------
 
 .. pybricks-requirements:: stm32-extra
@@ -132,7 +131,7 @@ Sequences
 
 .. autoclass:: ubuiltins.tuple
 
-Iterators
+イテレーター
 --------------------------
 
 .. pybricks-requirements::
@@ -179,7 +178,7 @@ Iterators
 
 .. autofunction:: ubuiltins.zip
 
-Conversion functions
+変換関数
 ------------------------
 
 .. pybricks-requirements::
@@ -208,10 +207,10 @@ Conversion functions
 
 .. _builtinmath:
 
-Math functions
+数学関数
 ----------------------
 
-See also :mod:`umath` for floating point math operations.
+浮動小数点演算については :mod:`umath` も参照してください。
 
 .. pybricks-requirements::
 
@@ -249,7 +248,7 @@ See also :mod:`umath` for floating point math operations.
 
 .. autofunction:: ubuiltins.sum
 
-Runtime functions
+実行時関数
 -------------------------
 
 .. pybricks-requirements:: stm32-extra
@@ -281,7 +280,7 @@ Runtime functions
 .. autofunction:: ubuiltins.locals
 
 
-Class functions
+クラス関数
 ------------------------
 
 .. pybricks-requirements::
@@ -317,8 +316,8 @@ Class functions
 .. autofunction:: ubuiltins.super
 
 
-Method decorators
------------------
+メソッドデコレーター
+------------------------
 
 .. pybricks-requirements::
 

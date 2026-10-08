@@ -1,7 +1,7 @@
-Exceptions and errors
+例外とエラー
 =====================================================
 
-This section lists all available exceptions in alphabetical order.
+このセクションでは、利用可能なすべての例外をアルファベット順に列挙します。
 
 .. autoclass:: ubuiltins.ArithmeticError
     :no-members:
@@ -79,16 +79,16 @@ This section lists all available exceptions in alphabetical order.
 .. autoclass:: ubuiltins.ZeroDivisionError
     :no-members:
 
-Examples
+使用例
 ---------------------
 
-Debugging in the REPL terminal
+REPLターミナルでのデバッグ
 *****************************************
 
 .. literalinclude::
     ../../../examples/micropython/keyboard_interrupt.py
 
-Running code when the stop button is pressed
+停止ボタンを押したときにコードを実行する
 ********************************************
 
 .. literalinclude::
@@ -96,7 +96,7 @@ Running code when the stop button is pressed
 
 .. _device_detection:
 
-Detecting devices using ``OSError``
+``OSError`` を使ったデバイスの検出
 *****************************************
 
 .. literalinclude::
