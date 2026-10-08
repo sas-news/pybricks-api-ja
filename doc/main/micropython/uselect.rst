@@ -1,12 +1,12 @@
 .. pybricks-requirements:: stm32-extra
 
-:mod:`uselect` -- Wait for events
+:mod:`uselect` -- イベントの待機
 =================================
 
 .. automodule:: uselect
     :no-members:
 
-    .. rubric:: Poll instance and class
+    .. rubric:: Pollインスタンスとクラス
 
     .. autofunction:: poll
 
@@ -23,7 +23,7 @@
 
         .. automethod:: ipoll
 
-    .. rubric:: Event mask flags
+    .. rubric:: イベントマスクフラグ
 
     .. autodata:: POLLIN
 
@@ -33,9 +33,9 @@
 
     .. autodata:: POLLHUP
 
-Examples
+使用例
 ---------------
 
-See the `projects website`_ for a demo that uses this module.
+このモジュールを使用したデモについては、`projects website`_ を参照してください。
 
 .. _projects website: https://pybricks.com/projects/tutorials/wireless/hub-to-device/pc-keyboard/

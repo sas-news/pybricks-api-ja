@@ -1,16 +1,16 @@
 .. pybricks-requirements:: stm32-extra stm32-float
 
-:mod:`umath <umath>` -- Math functions
+:mod:`umath <umath>` -- 数学関数
 ============================================================
 
 .. module:: umath
 
-This MicroPython module is similar to the `math module`_ in Python.
+このMicroPythonモジュールは、Pythonの `math module`_ に似ています。
 
-See also the :ref:`built-in math functions<builtinmath>` that can be used
-without importing anything.
+何もインポートせずに使用できる :ref:`built-in math functions<builtinmath>`
+も参照してください。
 
-Rounding and sign
+丸めと符号
 -------------------------------------
 
 .. blockimg:: pybricks_blockMathOp_roundup
@@ -29,7 +29,7 @@ Rounding and sign
 
 .. autofunction:: umath.copysign
 
-Powers and logarithms
+べき乗と対数
 -------------------------------
 
 .. autodata:: umath.e
@@ -54,7 +54,7 @@ Powers and logarithms
 
 .. autofunction:: umath.sqrt
 
-Trigonometry
+三角関数
 -------------------------------
 
 .. autodata:: umath.pi
@@ -91,7 +91,7 @@ Trigonometry
 
 .. autofunction:: umath.atan2
 
-Other math functions
+その他の数学関数
 -------------------------------
 
 .. autofunction:: umath.isfinite
