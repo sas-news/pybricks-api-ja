@@ -25,7 +25,7 @@ if TYPE_CHECKING:
 
 
 class DCMotor(_common.DCMotor):
-    """LEGO® Powered Up motor without rotation sensors."""
+    """LEGO® Powered Up 回転センサーなしモーター。"""
 
     # HACK: jedi can't find inherited __init__ so we have to duplicate docs
     def __init__(self, port: Port, positive_direction: Direction = Direction.CLOCKWISE):
@@ -39,7 +39,7 @@ class DCMotor(_common.DCMotor):
 
 
 class Motor(_common.Motor):
-    """LEGO® Powered Up motor with rotation sensors."""
+    """LEGO® Powered Up 回転センサー付きモーター。"""
 
     # HACK: jedi can't find inherited __init__ so we have to duplicate docs
     def __init__(
@@ -99,7 +99,7 @@ class Motor(_common.Motor):
 
 
 class Remote(LWP3Device):
-    """LEGO® Powered Up Bluetooth Remote Control."""
+    """LEGO® Powered Up Bluetoothリモートコントロール。"""
 
     light = _common.ExternalColorLight()
     buttons = _common.Keypad(
@@ -351,7 +351,7 @@ class DuploTrain(LWP3Device):
 
 
 class TiltSensor:
-    """LEGO® Powered Up Tilt Sensor."""
+    """LEGO® Powered Up 傾きセンサー。"""
 
     def __init__(self, port: Port):
         """TiltSensor(port)
@@ -371,7 +371,7 @@ class TiltSensor:
 
 
 class ColorDistanceSensor(_common.CommonColorSensor):
-    """LEGO® Powered Up Color and Distance Sensor."""
+    """LEGO® Powered Up カラー・距離センサー。"""
 
     light = _common.ExternalColorLight()
 
@@ -394,8 +394,8 @@ class ColorDistanceSensor(_common.CommonColorSensor):
 
 
 class PFMotor:
-    """Control Power Functions motors with the infrared functionality of the
-    :class:`ColorDistanceSensor <pybricks.pupdevices.ColorDistanceSensor>`."""
+    """:class:`ColorDistanceSensor <pybricks.pupdevices.ColorDistanceSensor>` の
+    赤外線機能を使ってPower Functionsモーターを制御します。"""
 
     def __init__(
         self,
@@ -448,7 +448,7 @@ class PFMotor:
 
 
 class ColorSensor(_common.AmbientColorSensor):
-    """LEGO® SPIKE Color Sensor."""
+    """LEGO® SPIKE カラーセンサー。"""
 
     lights = _common.LightArray3()
 
@@ -462,7 +462,7 @@ class ColorSensor(_common.AmbientColorSensor):
 
 
 class UltrasonicSensor:
-    """LEGO® SPIKE Color Sensor."""
+    """LEGO® SPIKE 超音波センサー。"""
 
     lights = _common.LightArray4()
 
@@ -496,7 +496,7 @@ class UltrasonicSensor:
 
 
 class ForceSensor:
-    """LEGO® SPIKE Force Sensor."""
+    """LEGO® SPIKE フォースセンサー。"""
 
     def __init__(self, port: Port):
         """ForceSensor(port)
@@ -551,7 +551,7 @@ class ForceSensor:
 
 class ColorLightMatrix:
     """
-    LEGO® SPIKE 3x3 Color Light Matrix.
+    LEGO® SPIKE 3x3カラーライトマトリクス。
     """
 
     def __init__(self, port: Port):
@@ -582,7 +582,7 @@ class ColorLightMatrix:
 
 
 class InfraredSensor:
-    """LEGO® Powered Up Infrared Sensor."""
+    """LEGO® Powered Up 赤外線センサー。"""
 
     def __init__(self, port: Port):
         """InfraredSensor(port)
@@ -620,7 +620,7 @@ class InfraredSensor:
 
 
 class Light:
-    """LEGO® Powered Up Light."""
+    """LEGO® Powered Up ライト。"""
 
     def __init__(self, port: Port):
         """Light(port)
