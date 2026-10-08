@@ -35,11 +35,11 @@ Color and Distance Sensor
 
     .. automethod:: pybricks.pupdevices.ColorDistanceSensor.detectable_colors
 
-    .. rubric:: Built-in light
+    .. rubric:: 内蔵ライト
 
-    This sensor has a built-in light. You can make it red, green, blue, or turn
-    it off. If you use the sensor to measure something afterwards, the light
-    automatically turns back on at the default color for that sensing method.
+    このセンサーには内蔵ライトがあります。赤・緑・青に光らせたり、オフにしたりできます。
+    この後にセンサーで測定を行うと、ライトはその測定方法のデフォルトの色で
+    自動的に点灯し直します。
 
     .. blockimg:: pybricks_blockLightOnColor_colordistancesensor_on
 
@@ -49,45 +49,44 @@ Color and Distance Sensor
 
     .. automethod:: pybricks.pupdevices::ColorDistanceSensor.light.off
 
-Examples
+使用例
 -------------------
 
-Measuring color
+色を測定する
 ***************
 
 .. literalinclude::
     ../../../examples/pup/sensor_color_distance/color_print.py
 
 
-Waiting for a color
+色を待つ
 *******************
 
 .. literalinclude::
     ../../../examples/pup/sensor_color_distance/wait_for_color.py
 
-Measuring distance and blinking the light
+距離を測定してライトを点滅させる
 *****************************************
 
 .. literalinclude::
     ../../../examples/pup/sensor_color_distance/distance_blink.py
 
-Reading hue, saturation, value
+色相・彩度・明度を読み取る
 **********************************
 
 .. literalinclude::
     ../../../examples/pup/sensor_color_distance/hsv.py
 
-Changing the detectable colors
+検出する色を変更する
 ******************************
 
-By default, the sensor is configured to detect red, yellow, green,
-blue, white, or no color, which suits many applications.
+デフォルトでは、センサーは赤・黄・緑・青・白・無色を検出するように
+設定されており、多くの用途に適しています。
 
-For better results in your application, you can measure your desired
-colors in advance, and tell the sensor to look only for those colors.
-Be sure to measure them at the **same distance and light conditions**
-as in your final application. Then you'll get very accurate results
-even for colors that are otherwise hard to detect.
+アプリケーションでより良い結果を得るには、検出したい色を事前に測定し、
+センサーにその色だけを探させることができます。色は必ず、実際に使うときと
+「同じ距離・同じ光の条件」で測定してください。そうすれば、通常は
+検出しにくい色でも非常に正確な結果が得られます。
 
 .. literalinclude::
     ../../../examples/pup/sensor_color_distance/detectable_colors.py

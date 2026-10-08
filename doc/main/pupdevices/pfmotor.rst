@@ -3,20 +3,20 @@
 Power Functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The :class:`ColorDistanceSensor <pybricks.pupdevices.ColorDistanceSensor>` can
-send infrared signals to control Power Functions infrared receivers. You can
-use this technique to control medium, large, extra large, and train
-motors. The infrared range is limited to about 30 cm, depending on the angle
-and ambient conditions.
+:class:`ColorDistanceSensor <pybricks.pupdevices.ColorDistanceSensor>` は
+赤外線信号を送信して、Power Functions の赤外線レシーバーを制御できます。
+この手法を使って、M・L・XL・トレインモーターを制御できます。
+赤外線の到達距離は約30 cmまでに限られており、角度や周囲の環境によって
+変わります。
 
 .. figure:: ../../main/cad/output/pupdevice-pfmotor.png
    :width: 95 %
 
-   Powered Up
+   Powered Up の
    :class:`ColorDistanceSensor <pybricks.pupdevices.ColorDistanceSensor>`
-   (left), Power Functions infrared receiver (middle), and a Power Functions
-   motor (right). Here, the receiver uses channel
-   1 with a motor on the red port.
+   （左）、Power Functions の赤外線レシーバー（中央）、
+   Power Functions モーター（右）。この例では、レシーバーは
+   チャンネル1を使い、赤いポートにモーターを接続しています。
 
 .. blockimg:: pybricks_variables_set_pf_motor
 
@@ -35,16 +35,16 @@ and ambient conditions.
 
     .. automethod:: pybricks.pupdevices.PFMotor.brake
 
-Examples
+使用例
 -------------------
 
-Control a Power Functions motor
-*******************************
+Power Functions モーターを制御する
+**********************************
 
 .. literalinclude::
     ../../../examples/pup/motor_pf/motor_pf_basics.py
 
-Controlling multiple Power Functions motors
+複数の Power Functions モーターを制御する
 *******************************************
 
 .. literalinclude::

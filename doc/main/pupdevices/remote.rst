@@ -31,59 +31,59 @@ Remote Control
 
   .. automethod:: pybricks.pupdevices::Remote.disconnect
 
-Examples
+使用例
 -------------------
 
-Checking which buttons are pressed
+どのボタンが押されているか確認する
 **********************************
 
 .. literalinclude::
     ../../../examples/pup/remote/basics.py
 
-Changing the remote light color
+リモコンのライトの色を変える
 **********************************
 
 .. literalinclude::
     ../../../examples/pup/remote/set_color_basic.py
 
-Changing the light color using the buttons
+ボタンを使ってライトの色を変える
 *******************************************
 
 .. literalinclude::
     ../../../examples/pup/remote/set_color.py
 
 
-Using the timeout setting
+``timeout`` の設定を使う
 **********************************
 
-You can use the ``timeout`` argument to change for how long the hub searches
-for the remote. If you choose ``None``, it will search forever.
+``timeout`` 引数を使うと、ハブがリモコンを検索する時間を変更できます。
+``None`` を選択すると、無制限に検索し続けます。
 
 .. literalinclude::
     ../../../examples/pup/remote/timeout_none.py
 
 
-If the remote was not found within the specified ``timeout``,
-an :ref:`OSError <OSError>` is raised. You can catch this exception to run
-other code if the remote is not available.
+指定した ``timeout`` 内にリモコンが見つからなかった場合は、
+:ref:`OSError <OSError>` が発生します。この例外をキャッチして、
+リモコンが利用できないときに別のコードを実行できます。
 
 
 .. literalinclude::
     ../../../examples/pup/remote/timeout_exception.py
 
-Changing the name of the remote
+リモコンの名前を変更する
 *******************************
 
-You can change the Bluetooth name of the remote. The factory default name is
-``Handset``.
+リモコンのBluetooth名を変更できます。工場出荷時のデフォルト名は
+``Handset`` です。
 
 .. blockimg:: pybricks_variables_set_remote_connect_rename
 
 .. literalinclude::
     ../../../examples/pup/remote/set_name.py
 
-You can specify this name when connecting to the remote.
-This lets you pick the right one if multiple remotes are nearby.
+リモコンに接続するときにこの名前を指定できます。
+複数のリモコンが近くにある場合に、正しいものを選べます。
 
 .. blockimg:: pybricks_variables_set_remote_connect_name
 
