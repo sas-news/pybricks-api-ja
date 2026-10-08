@@ -5,9 +5,12 @@
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Any, Optional, Sequence, Tuple, overload, Coroutine
+from typing import TYPE_CHECKING, Self, overload
 
 if TYPE_CHECKING:
+    from collections.abc import Coroutine, Sequence
+    from typing import Any
+
     from ._common import MaybeAwaitable, MaybeAwaitableTuple
     from .parameters import Number
 
@@ -109,25 +112,25 @@ class Matrix:
 
     def __add__(self, other) -> Matrix: ...
 
-    def __iadd__(self, other) -> Matrix: ...
+    def __iadd__(self, other) -> Self: ...
 
     def __sub__(self, other) -> Matrix: ...
 
-    def __isub__(self, other) -> Matrix: ...
+    def __isub__(self, other) -> Self: ...
 
     def __mul__(self, other) -> Matrix: ...
 
     def __rmul__(self, other) -> Matrix: ...
 
-    def __imul__(self, other) -> Matrix: ...
+    def __imul__(self, other) -> Self: ...
 
     def __truediv__(self, other) -> Matrix: ...
 
-    def __itruediv__(self, other) -> Matrix: ...
+    def __itruediv__(self, other) -> Self: ...
 
     def __floordiv__(self, other) -> Matrix: ...
 
-    def __ifloordiv__(self, other) -> Matrix: ...
+    def __ifloordiv__(self, other) -> Self: ...
 
     def __init__(self, rows: Sequence[Sequence[float]]):
         """Matrix(rows)
@@ -138,12 +141,12 @@ class Matrix:
         """
 
     @property
-    def T(self) -> Matrix:  # noqa: N802
+    def T(self) -> Matrix:
         """Returns a new :class:`.Matrix` that is the transpose of the
         original."""
 
     @property
-    def shape(self) -> Tuple[int, int]:
+    def shape(self) -> tuple[int, int]:
         """Returns a tuple (``m``, ``n``),
         where ``m`` is the number of rows and ``n`` is the number of columns.
         """
@@ -211,7 +214,7 @@ def cross(a: Matrix, b: Matrix) -> Matrix:
     """
 
 
-def read_input_byte(last: bool = False, chr: bool = False) -> Optional[int | str]:
+def read_input_byte(last: bool = False, chr: bool = False) -> int | str | None:
     """
     read_input_byte() -> int | str | None
 
@@ -254,7 +257,7 @@ def hub_menu(*symbols: int | str) -> int | str:
 
 def multitask(*coroutines: Coroutine, race=False) -> MaybeAwaitableTuple:
     """
-    multitask(coroutine1, coroutine2, ...) -> Tuple
+    multitask(coroutine1, coroutine2, ...) -> tuple
 
     Runs multiple coroutines concurrently. This creates a new coroutine that
     can be used like any other, including in another ``multitask`` statement.
@@ -272,7 +275,7 @@ def multitask(*coroutines: Coroutine, race=False) -> MaybeAwaitableTuple:
     """
 
 
-def run_task(coroutine: Coroutine) -> Optional[bool]:
+def run_task(coroutine: Coroutine) -> bool | None:
     """
     run_task(coroutine) -> bool | None
 
@@ -290,8 +293,11 @@ def run_task(coroutine: Coroutine) -> Optional[bool]:
     """
 
 
-# HACK: hide from jedi
+# Hide type-only names from jedi completions in the module namespace.
 if TYPE_CHECKING:
-    del Number
+    del Any
+    del Coroutine
     del MaybeAwaitable
     del MaybeAwaitableTuple
+    del Number
+    del Sequence

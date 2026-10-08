@@ -4,12 +4,12 @@
     * deprecated
 when building documentation with the 'ide' tag.
 """
+
 from docutils import nodes
 from docutils.parsers.rst import Directive
 
 
 class PybricksVersionDirective(Directive):
-
     has_content = True
 
     def run(self):
@@ -19,7 +19,7 @@ class PybricksVersionDirective(Directive):
 
 
 def setup(app):
-    if "ide" in app.tags.tags:
+    if app.tags.has("ide"):
         app.add_directive_to_domain(
             "py", "deprecated", PybricksVersionDirective, override=True
         )

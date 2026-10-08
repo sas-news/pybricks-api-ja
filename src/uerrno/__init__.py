@@ -9,8 +9,6 @@
 This module provides access to symbolic error codes for `OSError` exception.
 """
 
-from typing import Dict
-
 EAGAIN: int
 """
 The operation is not complete and should be tried again soon.
@@ -59,7 +57,7 @@ The operation timed out.
 # TODO: ev3dev has additional constants
 # https://github.com/pybricks/pybricks-micropython/blob/11f19bc9c24fde66aa8ad42233a345e6683f5beb/bricks/ev3dev/mpconfigport.h#L156-L203
 
-errorcode: Dict[int, str]
+errorcode: dict[int, str]
 """
 Dictionary that maps numeric error codes to strings with symbolic error code.
 """

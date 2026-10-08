@@ -1,4 +1,4 @@
-.. pybricks-requirements::
+.. pybricks-requirements:: pupdevices
 
 Remote Control
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -9,10 +9,11 @@ Remote Control
 .. blockimg:: pybricks_variables_set_remote_connect_any
 
 .. blockimg:: pybricks_variables_set_remote_connect_name
-    :stack:
 
 .. autoclass:: pybricks.pupdevices.Remote
   :no-members:
+
+  .. automethod:: pybricks.pupdevices::Remote.connect
 
   .. automethod:: pybricks.pupdevices::Remote.name
 
@@ -20,7 +21,7 @@ Remote Control
 
   .. automethod:: pybricks.pupdevices::Remote.light.on
 
-  .. blockimg:: pybricks_blockLightOnColor_remote_on
+  .. blockimg:: pybricks_blockLightOnColor_remote_off
 
   .. automethod:: pybricks.pupdevices::Remote.light.off
 

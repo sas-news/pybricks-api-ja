@@ -3,15 +3,21 @@
 
 """LEGO® MINDSTORMS® EV3 motors and sensors."""
 
-from typing import Optional, Tuple, List
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
 
 from . import _common
-from .parameters import (
-    Button as _Button,
-    Color as _Color,
-    Direction as _Direction,
-    Port as _Port,
-)
+from .parameters import Direction
+
+if TYPE_CHECKING:
+    from ._common import (
+        MaybeAwaitableBool,
+        MaybeAwaitableInt,
+        MaybeAwaitableSet,
+        MaybeAwaitableTuple,
+    )
+    from .parameters import Button, Port
 
 
 class Motor(_common.Motor):
@@ -21,7 +27,7 @@ class Motor(_common.Motor):
 class TouchSensor:
     """LEGO® MINDSTORMS® EV3 Touch Sensor."""
 
-    def __init__(self, port: _Port):
+    def __init__(self, port: Port):
         """TouchSensor(port)
 
         Arguments:
@@ -39,51 +45,18 @@ class TouchSensor:
         """
 
 
-class ColorSensor:
+class ColorSensor(_common.CommonColorSensor):
     """LEGO® MINDSTORMS® EV3 Color Sensor."""
 
-    def __init__(self, port: _Port):
+    def __init__(self, port: Port):
         """ColorSensor(port)
 
         Arguments:
             port (Port): Port to which the sensor is connected.
         """
 
-    def color(self) -> Optional[_Color]:
-        """color() -> Color
-
-        Measures the color of a surface.
-
-        Returns:
-            ``Color.BLACK``, ``Color.BLUE``, ``Color.GREEN``,
-            ``Color.YELLOW``, ``Color.RED``, ``Color.WHITE``, ``Color.BROWN``,
-            or ``None`` if no color is detected.
-
-        """
-
-    def ambient(self) -> int:
-        """ambient() -> int: %
-
-        Measures the ambient light intensity.
-
-        Returns:
-            Ambient light intensity, ranging from 0% (dark)
-            to 100% (bright).
-        """
-
-    def reflection(self) -> int:
-        """reflection() -> int: %
-
-        Measures the reflection of a surface using a red light.
-
-        Returns:
-            Reflection, ranging from 0% (no reflection) to
-            100% (high reflection).
-
-        """
-
-    def rgb(self) -> Tuple[int, int, int]:
-        """rgb() -> Tuple[int, int, int]
+    def rgb(self) -> MaybeAwaitableTuple[int, int, int]:
+        """rgb() -> tuple[int, int, int]
 
         Measures the reflection of a surface using a red, green, and then a
         blue light.
@@ -97,7 +70,7 @@ class ColorSensor:
 class InfraredSensor:
     """LEGO® MINDSTORMS® EV3 Infrared Sensor and Beacon."""
 
-    def __init__(self, port: _Port):
+    def __init__(self, port: Port):
         """InfraredSensor(port)
 
         Arguments:
@@ -105,7 +78,7 @@ class InfraredSensor:
 
         """
 
-    def distance(self) -> int:
+    def distance(self) -> MaybeAwaitableInt:
         """distance() -> int: %
 
         Measures the relative distance between the sensor and an object using
@@ -117,10 +90,10 @@ class InfraredSensor:
 
         """
 
-    def beacon(self, channel: int) -> Tuple[Optional[int], Optional[int]]:
+    def beacon(self, channel: int) -> MaybeAwaitableTuple[int | None, int | None]:
         """
-        beacon(channel) -> Tuple[int, int]
-        beacon(channel) -> Tuple[None, None]
+        beacon(channel) -> tuple[int, int]
+        beacon(channel) -> tuple[None, None]
 
         Measures the relative distance and angle between the remote and the
         infrared sensor.
@@ -134,8 +107,8 @@ class InfraredSensor:
             a tuple of (``None``, ``None``) if no remote is detected.
         """
 
-    def buttons(self, channel: int) -> List[_Button]:
-        """buttons(channel) -> List[Button]
+    def buttons(self, channel: int) -> MaybeAwaitableSet[Button]:
+        """buttons(channel) -> set[Button]
 
         Checks which buttons on the infrared remote are pressed.
 
@@ -146,12 +119,12 @@ class InfraredSensor:
             channel (int): Channel number of the remote.
 
         Returns:
-            List of pressed buttons on the remote on the selected channel.
+            Set of pressed buttons on the remote on the selected channel.
 
         """
 
-    def keypad(self) -> List[_Button]:
-        """keypad() -> List[Button]
+    def keypad(self) -> MaybeAwaitableSet[Button]:
+        """keypad() -> set[Button]
 
         Checks which buttons on the infrared remote are pressed.
 
@@ -161,14 +134,14 @@ class InfraredSensor:
         This method only works with the remote in channel 1.
 
         Returns:
-            List of pressed buttons.
+            Set of pressed buttons.
         """
 
 
 class GyroSensor:
     """LEGO® MINDSTORMS® EV3 Gyro Sensor."""
 
-    def __init__(self, port: _Port, direction: _Direction = _Direction.CLOCKWISE):
+    def __init__(self, port: Port, direction: Direction = Direction.CLOCKWISE):
         """GyroSensor(port)
 
         Arguments:
@@ -212,7 +185,7 @@ class GyroSensor:
 class UltrasonicSensor:
     """LEGO® MINDSTORMS® EV3 Ultrasonic Sensor."""
 
-    def __init__(self, port: _Port):
+    def __init__(self, port: Port):
         """UltrasonicSensor(port)
 
         Arguments:
@@ -220,7 +193,7 @@ class UltrasonicSensor:
 
         """
 
-    def distance(self, silent: bool = False) -> int:
+    def distance(self, silent: bool = False) -> MaybeAwaitableInt:
         """distance(silent=False) -> int: mm
 
         Measures the distance between the sensor and an object using
@@ -238,7 +211,7 @@ class UltrasonicSensor:
 
         """
 
-    def presence(self) -> bool:
+    def presence(self) -> MaybeAwaitableBool:
         """presence() -> bool
 
         Checks for the presence of other ultrasonic sensors by detecting
@@ -252,3 +225,14 @@ class UltrasonicSensor:
             ``True`` if ultrasonic sounds are detected,
             ``False`` if not.
         """
+
+
+# Hide type-only names from jedi completions in the module namespace.
+if TYPE_CHECKING:
+    del Button
+    del Direction
+    del MaybeAwaitableBool
+    del MaybeAwaitableInt
+    del MaybeAwaitableSet
+    del MaybeAwaitableTuple
+    del Port

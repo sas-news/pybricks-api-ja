@@ -3,14 +3,27 @@
 
 """Use LEGO® MINDSTORMS® NXT motors and sensors with the EV3 brick."""
 
+from __future__ import annotations
 
-from .parameters import Port
+from typing import TYPE_CHECKING
 
+from . import _common
 from ._common import ColorLight, CommonColorSensor
 from .iodevices import AnalogSensor
 
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
-from typing import Callable, Optional, Tuple
+    from ._common import (
+        MaybeAwaitableFloat,
+        MaybeAwaitableInt,
+        MaybeAwaitableTuple,
+    )
+    from .parameters import Color, Port
+
+
+class Motor(_common.Motor):
+    """LEGO® MINDSTORMS® EV3 Motor."""
 
 
 class TouchSensor:
@@ -69,13 +82,62 @@ class ColorSensor(CommonColorSensor):
 
     light = ColorLight()
 
-    def rgb(self) -> Tuple[int, int, int]:
+    def rgb(self) -> tuple[int, int, int]:
         """Measures the reflection of a surface using a red, green, and then a
         blue light.
 
         Returns:
             Tuple of reflections for red, green, and blue light, each
             ranging from 0.0% (no reflection) to 100.0% (high reflection).
+        """
+
+    def color(self) -> Color:
+        """color() -> Color
+
+        Scans the color of a surface.
+
+        You choose which colors are detected using the
+        ``detectable_colors()`` method. By default, it detects
+        ``Color.RED``, ``Color.YELLOW``, ``Color.GREEN``, ``Color.BLUE``,
+        ``Color.WHITE``, or ``Color.NONE``.
+
+        Returns:
+            Detected color.
+        """
+
+    def hsv(self) -> Color:
+        """hsv() -> Color
+
+        Scans the color of a surface.
+
+        This method is similar to ``color()``, but it gives the full range
+        of hue, saturation and brightness values, instead of rounding it to the
+        nearest detectable color.
+
+        Returns:
+            Measured color. The color is described by a hue (0--359), a
+            saturation (0--100), and a brightness value (0--100).
+        """
+
+    def ambient(self) -> int:
+        """ambient() -> int: %
+
+        Measures the ambient light intensity.
+
+        Returns:
+            Ambient light intensity, ranging from 0% (dark)
+            to 100% (bright).
+        """
+
+    def reflection(self) -> int:
+        """reflection() -> int: %
+
+        Measures how much a surface reflects the light emitted by the
+        sensor.
+
+        Returns:
+            Measured reflection, ranging from 0% (no reflection) to
+            100% (high reflection).
         """
 
 
@@ -89,7 +151,7 @@ class UltrasonicSensor:
             port (Port): Port to which the sensor is connected.
         """
 
-    def distance(self) -> int:
+    def distance(self) -> MaybeAwaitableInt:
         """distance() -> int: mm
 
         Measures the distance between the sensor and an object using
@@ -135,7 +197,7 @@ class TemperatureSensor:
             port (Port): Port to which the sensor is connected.
         """
 
-    def temperature(self) -> int:
+    def temperature(self) -> MaybeAwaitableFloat:
         """temperature() -> float: °C
 
         Measures the temperature.
@@ -155,7 +217,7 @@ class EnergyMeter:
             port (Port): Port to which the sensor is connected.
         """
 
-    def storage(self) -> int:
+    def storage(self) -> MaybeAwaitableInt:
         """storage() -> int: J
 
         Gets the total available energy stored in the battery.
@@ -164,8 +226,8 @@ class EnergyMeter:
             Remaining stored energy.
         """
 
-    def input(self) -> Tuple[int, int, int]:
-        """input() -> Tuple[int, int, int]
+    def input(self) -> MaybeAwaitableTuple[int, int, int]:
+        """input() -> tuple[int, int, int]
 
         Measures the electrical signals at the input (bottom) side
         of the energy meter. It measures the voltage applied to it and the
@@ -179,8 +241,8 @@ class EnergyMeter:
             port.
         """
 
-    def output(self) -> Tuple[int, int, int]:
-        """output() -> Tuple[int, int, int]
+    def output(self) -> MaybeAwaitableTuple[int, int, int]:
+        """output() -> tuple[int, int, int]
 
         Measures the electrical signals at the output (top) side
         of the energy meter. It measures the voltage applied to the external
@@ -198,7 +260,7 @@ class EnergyMeter:
 class VernierAdapter(AnalogSensor):
     """LEGO® MINDSTORMS® Education NXT/EV3 Adapter for Vernier Sensors."""
 
-    def __init__(self, port: Port, conversion: Optional[Callable[[int], float]] = None):
+    def __init__(self, port: Port, conversion: Callable[[int], float] | None = None):
         """VernierAdapter(port, conversion=None)
 
         Arguments:
@@ -243,3 +305,16 @@ class VernierAdapter(AnalogSensor):
         Returns:
             Converted sensor value.
         """
+
+
+# Hide type-only names from jedi completions in the module namespace.
+if TYPE_CHECKING:
+    del AnalogSensor
+    del Callable
+    del Color
+    del ColorLight
+    del CommonColorSensor
+    del MaybeAwaitableFloat
+    del MaybeAwaitableInt
+    del MaybeAwaitableTuple
+    del Port

@@ -79,52 +79,38 @@ Sequences
 .. pybricks-requirements::
 
 .. blockimg:: pybricks_blockListCreate_list_empty
-    :stack:
 
 .. blockimg:: pybricks_blockListCreate_list_3
-    :stack:
 
 .. blockimg:: pybricks_blockListUnpack
-    :stack:
 
 .. blockimg:: pybricks_blockListGet_list_get_first
-    :stack:
 
 .. blockimg:: pybricks_blockListGet_list_get_index
-    :stack:
 
 .. blockimg:: pybricks_blockListGet_list_get_last
-    :stack:
 
 .. blockimg:: pybricks_blockListGet_list_get_random
-    :stack:
 
 .. blockimg:: pybricks_blockListSet_list_insert_first
-    :stack:
 
 .. blockimg:: pybricks_blockListSet_list_insert_index
-    :stack:
 
 .. blockimg:: pybricks_blockListSet_list_insert_last
-    :stack:
 
 .. blockimg:: pybricks_blockListSet_list_remove_first
-    :stack:
 
 .. blockimg:: pybricks_blockListSet_list_remove_index
-    :stack:
 
 .. blockimg:: pybricks_blockListSet_list_remove_last
-    :stack:
 
 .. blockimg:: pybricks_blockListSet_list_set_first
-    :stack:
 
 .. blockimg:: pybricks_blockListSet_list_set_index
-    :stack:
 
 .. blockimg:: pybricks_blockListSet_list_set_last
-    :stack:
+
+.. blockimg:: pybricks_blockIsIn
 
 .. autoclass:: ubuiltins.list
 
@@ -174,6 +160,10 @@ Iterators
 .. autofunction:: ubuiltins.next
 
 .. pybricks-requirements::
+
+.. blockimg:: pybricks_blockRange_range
+
+.. blockimg:: pybricks_blockRange_range_opts
 
 .. autoclass:: ubuiltins.range
 
@@ -262,11 +252,11 @@ See also :mod:`umath` for floating point math operations.
 Runtime functions
 -------------------------
 
-.. pybricks-requirements::
+.. pybricks-requirements:: stm32-extra
 
 .. autofunction:: ubuiltins.eval
 
-.. pybricks-requirements::
+.. pybricks-requirements:: stm32-extra
 
 .. autofunction:: ubuiltins.exec
 

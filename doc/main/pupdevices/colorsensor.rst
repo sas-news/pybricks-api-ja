@@ -1,4 +1,4 @@
-.. pybricks-requirements::
+.. pybricks-requirements:: pupdevices
 
 Color Sensor
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -42,7 +42,6 @@ Color Sensor
     .. blockimg:: pybricks_blockLightOn_colorsensor_on
 
     .. blockimg:: pybricks_blockLightOn_colorsensor_on_list
-        :stack:
 
     .. automethod:: pybricks.pupdevices::ColorSensor.lights.on
 

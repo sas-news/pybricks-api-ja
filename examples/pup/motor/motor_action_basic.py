@@ -1,5 +1,5 @@
-from pybricks.pupdevices import Motor
 from pybricks.parameters import Port
+from pybricks.pupdevices import Motor
 from pybricks.tools import wait
 
 # Initialize a motor on port A.
@@ -12,7 +12,7 @@ wait(1500)
 example_motor.stop()
 wait(1500)
 
-# Run at 70% duty cycle ("power") and then stop by coasting.
+# Run at 50% duty cycle ("power") and then stop by coasting.
 print("Demo of dc")
 example_motor.dc(50)
 wait(1500)

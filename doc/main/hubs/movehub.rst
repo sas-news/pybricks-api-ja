@@ -10,8 +10,7 @@ Move Hub
 
 .. blockimg:: pybricks_variables_set_move_hub_option0
 
-.. blockimg:: pybricks_variables_set_move_hub_option4
-    :stack:
+.. blockimg:: pybricks_variables_set_move_hub_option1
 
 .. autoclass:: pybricks.hubs.MoveHub
     :no-members:
@@ -39,7 +38,6 @@ Move Hub
     .. blockimg:: pybricks_blockTilt_MoveHub_imu.tilt.pitch
 
     .. blockimg:: pybricks_blockTilt_MoveHub_imu.tilt.roll
-        :stack:
 
     .. automethod:: pybricks.hubs::MoveHub.imu.tilt
 
@@ -50,20 +48,6 @@ Move Hub
         .. versionchanged:: 3.2
 
             Changed acceleration units from m/s² to mm/s².
-
-    .. rubric:: Using connectionless Bluetooth messaging
-
-    .. blockimg:: pybricks_blockBleBroadcast_PrimeHub
-
-    .. automethod:: pybricks.hubs::PrimeHub.ble.broadcast
-
-    .. blockimg:: pybricks_blockBleObserve_PrimeHub
-
-    .. automethod:: pybricks.hubs::PrimeHub.ble.observe
-
-    .. automethod:: pybricks.hubs::MoveHub.ble.signal_strength
-
-    .. automethod:: pybricks.hubs::MoveHub.ble.version
 
     .. rubric:: Using the battery
 
@@ -77,18 +61,17 @@ Move Hub
 
     .. rubric:: Button and system control
 
-    .. blockimg:: pybricks_blockButtonIsPressed_PrimeHub
+    .. blockimg:: pybricks_blockButtonIsPressed_MoveHub
 
     .. automethod:: pybricks.hubs::MoveHub.buttons.pressed
+
+    .. automethod:: pybricks.hubs::MoveHub.system.info
 
     .. blockimg:: pybricks_blockHubStopButton_MoveHub
 
     .. blockimg:: pybricks_blockHubStopButton_MoveHub_none
-        :stack:
 
     .. automethod:: pybricks.hubs::MoveHub.system.set_stop_button
-
-    .. automethod:: pybricks.hubs::MoveHub.system.name
 
     .. automethod:: pybricks.hubs::MoveHub.system.storage
 
@@ -96,11 +79,11 @@ Move Hub
         when you update the Pybricks firmware or if you restore the original
         firmware.
 
+    .. automethod:: pybricks.hubs::MoveHub.system.reset_storage
+
     .. blockimg:: pybricks_blockHubShutdown_MoveHub
 
     .. automethod:: pybricks.hubs::MoveHub.system.shutdown
-
-    .. automethod:: pybricks.hubs::MoveHub.system.reset_reason
 
 Status light examples
 ---------------------
@@ -131,23 +114,6 @@ Reading acceleration
 
 .. literalinclude::
     ../../../examples/pup/hub_movehub/imu_read_acceleration.py
-
-
-Bluetooth examples
-------------------
-
-Broadcasting data to other hubs
-*******************************
-
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/ble_broadcast_movehub.py
-
-Observing data from other hubs
-******************************
-
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/ble_observe_movehub.py
-
 
 Button and system examples
 ----------------------------------

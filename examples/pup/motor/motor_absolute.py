@@ -1,12 +1,11 @@
-from pybricks.pupdevices import Motor
 from pybricks.parameters import Port
+from pybricks.pupdevices import Motor
 from pybricks.tools import wait
 
 # Initialize a motor on port A.
 example_motor = Motor(Port.A)
 
 while True:
-
     # Get the default angle value.
     angle = example_motor.angle()
 

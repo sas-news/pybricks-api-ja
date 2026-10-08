@@ -15,6 +15,7 @@ PYBRICKS_CODE_PACKAGES = {
     "pybricks",
     "pybricks.hubs",
     "pybricks.iodevices",
+    "pybricks.messaging",
     "pybricks.parameters",
     "pybricks.pupdevices",
     "pybricks.robotics",
@@ -169,8 +170,14 @@ PYBRICKS_BUILTINS_NO_FULLNAME = {"items", "values"}
 
 PYBRICKS_TYPING = {
     "typing.MutableSequence.append",
+    "typing.MutableSequence.clear",
     "typing.MutableSequence.extend",
+    "typing.MutableSequence.reverse",
+    "typing.MutableMapping.clear",
     "typing.MutableMapping.pop",
+    "typing.MutableMapping.popitem",
+    "typing.MutableMapping.setdefault",
+    "typing.MutableMapping.update",
     "typing.Mapping.get",
 }
 
@@ -490,6 +497,7 @@ def initialize():
         "pybricks.ev3dev.speaker",
         "pybricks.hubs",
         "pybricks.iodevices",
+        "pybricks.messaging",
         "pybricks.parameters",
         "pybricks.pupdevices",
         "pybricks.robotics",

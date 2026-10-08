@@ -61,6 +61,7 @@ def test_from_pybricks_import():
     assert [c["insertText"] for c in completions] == [
         "hubs",
         "iodevices",
+        "messaging",
         "parameters",
         "pupdevices",
         "robotics",
@@ -75,6 +76,7 @@ def test_from_pybricks_dot():
     assert [c["insertText"] for c in completions] == [
         "hubs",
         "iodevices",
+        "messaging",
         "parameters",
         "pupdevices",
         "robotics",
@@ -91,6 +93,7 @@ def test_from_pybricks_hubs_import():
         "EV3Brick",
         "InventorHub",
         "MoveHub",
+        "NXTBrick",
         "PrimeHub",
         "TechnicHub",
     ]
@@ -102,7 +105,6 @@ def test_from_pybricks_iodevices_import():
     assert [c["insertText"] for c in completions] == [
         "AnalogSensor",
         "DCMotor",
-        "Ev3devSensor",
         "I2CDevice",
         "LUMPDevice",
         "LWP3Device",
@@ -120,7 +122,10 @@ def test_from_pybricks_parameters_import():
         "Button",
         "Color",
         "Direction",
+        "Font",
         "Icon",
+        "Image",
+        "ImageFile",
         "Port",
         "Side",
         "Stop",
@@ -135,12 +140,15 @@ def test_from_pybricks_pupdevices_import():
         "ColorLightMatrix",
         "ColorSensor",
         "DCMotor",
+        "DuploTrain",
         "ForceSensor",
         "InfraredSensor",
         "Light",
+        "MarioHub",
         "Motor",
         "PFMotor",
         "Remote",
+        "TechnicMoveHub",
         "TiltSensor",
         "UltrasonicSensor",
     ]
@@ -215,10 +223,8 @@ def test_from_ujson_import():
     code = "from ujson import "
     completions: list[CompletionItem] = json.loads(complete(code, 1, len(code) + 1))
     assert [c["insertText"] for c in completions] == [
-        "decode",  # FIXME: Shouldn't be here
         "dump",
         "dumps",
-        "encode",  # FIXME: Shouldn't be here
         "load",
         "loads",
     ]

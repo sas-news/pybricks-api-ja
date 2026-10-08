@@ -22,6 +22,7 @@
 import os
 import re
 import sys
+import tomllib
 
 from docutils import nodes
 from docutils.parsers.rst.directives import flag
@@ -30,7 +31,6 @@ from sphinx.application import Sphinx
 from sphinx.addnodes import pending_xref
 from sphinx.environment import BuildEnvironment
 from sphinx.util.nodes import make_refnode
-import toml
 
 TOP_DIR = os.path.abspath(os.path.join("..", ".."))
 sys.path.insert(0, os.path.join(TOP_DIR, "src"))
@@ -40,7 +40,8 @@ sys.path.append(os.path.abspath("../common/extensions"))
 # this line of code grabbed from docs.readthedocs.org
 ON_RTD = os.environ.get("READTHEDOCS", None) == "True"
 
-_pyproject = toml.load(os.path.join(TOP_DIR, "pyproject.toml"))
+with open(os.path.join(TOP_DIR, "pyproject.toml"), "rb") as _f:
+    _pyproject = tomllib.load(_f)
 
 # -- General configuration ------------------------------------------------
 
@@ -55,11 +56,13 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
     "sphinx.ext.todo",
-    "sphinx.ext.mathjax",
     # Custom Pybricks extensions
+    "awaitable",
     "blockimg",
     "color",
     "classlink",
+    "docstring_signature",
+    "nestedmethod",
     "requirements",
     "requirements-static",
     "versionchanged",
@@ -71,8 +74,7 @@ templates_path = ["../common/_templates"]
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-# source_suffix = ['.rst', '.md']
-source_suffix = ".rst"
+source_suffix = {".rst": "restructuredtext"}
 
 # The master toctree document.
 master_doc = "index"
@@ -134,6 +136,15 @@ nitpick_ignore = [
 # not sure why, but this is needed for typing.IO in uselect
 nitpick_ignore.append(("py:obj", "typing.IO"))
 
+# MaybeAwaitable* stub types have no documented target; the awaitable
+# extension renders them as an "await" prefix instead, but the raw names can
+# still leak into signatures (e.g. overloads), so suppress those warnings.
+# Likewise, collections.abc types have no link target without intersphinx.
+nitpick_ignore_regex = [
+    ("py:class", r"MaybeAwaitable\w*"),
+    ("py:class", r"collections\.abc\.\w+"),
+]
+
 # -- Autodoc options ------------------------------------------------------
 
 autodoc_member_order = "bysource"
@@ -146,46 +157,30 @@ add_module_names = False  # Hide module name
 
 # -- Options for HTML output ----------------------------------------------
 
-import sphinx_rtd_theme
-
+# The theme to use for HTML and HTML Help pages.  Since sphinx-rtd-theme 1.2
+# themes are registered via entry points, so setting html_theme is all that
+# is needed (no extensions entry or html_theme_path).
 html_theme = "sphinx_rtd_theme"
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
-html_context = {
-    "disclaimer": _DISCLAIMER,
-}
-
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-#
-# html_theme = 'alabaster'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#
 html_theme_options = {
-    "style_external_links": True,
-    "logo_only": True,
-    "style_nav_header_background": "#0088ce",  # Pybricks blue
+    # Hide the next/previous buttons at the bottom of each page.
+    "prev_next_buttons_location": None,
+}
+
+html_show_sourcelink = False
+html_copy_source = False
+
+html_context = {
+    "disclaimer": _DISCLAIMER,
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["../common/_static"]
-
-# Custom sidebar templates, must be a dictionary that maps document names
-# to template names.
-#
-# This is required for the alabaster theme
-# refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
-html_sidebars = {
-    "**": [
-        "relations.html",  # needs 'show_related': True theme option to display
-        "searchbox.html",
-    ]
-}
 
 # Don't hyperlink to larger images for scaled images.
 html_scaled_image_link = False
@@ -196,71 +191,14 @@ html_scaled_image_link = False
 htmlhelp_basename = "Pybricksdoc"
 
 
-# -- Options for LaTeX output ---------------------------------------------
-
-latex_elements = {
-    # The paper size ('letterpaper' or 'a4paper').
-    #
-    # 'papersize': 'letterpaper',
-    # The font size ('10pt', '11pt' or '12pt').
-    #
-    # 'pointsize': '10pt',
-    # Additional stuff for the LaTeX preamble.
-    #
-    "preamble": r"""
-    \usepackage{CJKutf8}
-    \makeatletter
-    \fancypagestyle{normal}{
-        \fancyhf{}
-        \fancyfoot[R]{{\py@HeaderFamily\thepage}}
-        \fancyfoot[C]{\raisebox{-7mm}{\tiny %(disclaimer)s}}
-        \fancyhead[L]{{\py@HeaderFamily \@title}}
-        \fancyhead[R]{{\py@HeaderFamily \py@release}}
-        \renewcommand{\headrulewidth}{0.4pt}
-        \renewcommand{\footrulewidth}{0.4pt}
-    }
-    \fancypagestyle{plain}{
-        \fancyhf{}
-        \fancyfoot[R]{{\py@HeaderFamily\thepage}}
-        \fancyfoot[C]{\raisebox{-7mm}{\tiny %(disclaimer)s}}
-        \renewcommand{\headrulewidth}{0.4pt}
-        \renewcommand{\footrulewidth}{0.4pt}
-    }
-    \makeatother
-    """
-    % {
-        "disclaimer": " ".join((_DISCLAIMER, "©", copyright)),
-    },
-    # Latex figure (float) alignment
-    #
-    # 'figure_align': 'htbp',
-    "extraclassoptions": "openany,oneside",
-    "releasename": "Version",
-}
-
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title,
-#  author, documentclass [howto, manual, or own class]).
-latex_documents = [
-    (master_doc, "".join([project, "-v", version, ".tex"]), _TITLE, author, "manual"),
-]
-
 # -- Content control -----------------------------------------------------
 
 
 exclude_patterns = [
-    "ev3devices.rst",
-    "hubs/ev3brick.rst",
-    "iodevices/analogsensor.rst",
-    "iodevices/dcmotor.rst",
-    "iodevices/ev3devsensor.rst",
-    "iodevices/i2cdevice.rst",
-    "iodevices/lumpdevice.rst",
-    "iodevices/uartdevice.rst",
-    "media.rst",
+    "hubs/nxtbrick.rst",
     "messaging.rst",
-    "nxtdevices.rst",
     "tools/datalog.rst",
+    "*.rst.txt",
 ]
 
 
@@ -366,9 +304,35 @@ def on_missing_reference(
             return nodes.Text(f"{ret_type}: {ret_unit}")
 
 
+def on_build_finished(app: Sphinx, exception):
+    if exception or app.builder.name != "html":
+        return
+    import json
+    from sphinx.util.inventory import InventoryFile
+
+    inv_path = os.path.join(app.outdir, "objects.inv")
+    if not os.path.exists(inv_path):
+        return
+
+    with open(inv_path, "rb") as f:
+        inv = InventoryFile.load(f, "", lambda base, uri: base + uri)
+
+    index = {}
+    for type_key, entries in inv.items():
+        if not type_key.startswith("py:"):
+            continue
+        for name, item in entries.items():
+            index[name] = item.uri
+
+    out_path = os.path.join(app.outdir, "namespace_index.json")
+    with open(out_path, "w") as f:
+        json.dump(index, f, indent=2, sort_keys=True)
+
+
 def setup(app: Sphinx):
     app.add_directive("availability", AvailabilityDirective)
     app.connect("missing-reference", on_missing_reference)
+    app.connect("build-finished", on_build_finished)
 
 
 # -- Python domain hacks ---------------------------------------------------
