@@ -1,33 +1,34 @@
-Data logging
+データロギング
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-At the moment, this class is only available on EV3.
+現在のところ、このクラスはEV3でのみ利用できます。
 
 .. autoclass:: pybricks.tools.DataLog
     :no-members:
 
     .. automethod:: pybricks.tools.DataLog.log
 
-    By default, this class creates a ``csv`` file on the EV3 brick with the
-    name ``log`` and the current date and time. For example, if you
-    use this class on 13 February 2020 on 10:07 and 44.431260
-    seconds, the file is called ``log_2020_02_13_10_07_44_431260.csv``.
+    デフォルトでは、このクラスはEV3ブリック上に ``log`` という名前と
+    現在の日時を付けた ``csv`` ファイルを作成します。たとえば、2020年
+    2月13日10時07分44.431260秒にこのクラスを使用すると、ファイル名は
+    ``log_2020_02_13_10_07_44_431260.csv`` になります。
 
-    See `managing files on the EV3`_ to learn how to upload
-    the log file back to your computer.
+    ログファイルをコンピューターにアップロードする方法は、
+    `managing files on the EV3`_ を参照してください。
 
 
-Examples
+例
 -------------------
 
-Logging and visualizing measurements
+計測値の記録と可視化
 ************************************
 
-This example shows how to log the angle of a rotating wheel as time passes.
+この例は、時間の経過に伴う回転ホイールの角度を記録する方法を
+示しています。
 
 .. literalinclude:: ../../../examples/ev3/datalog/main.py
 
-In this example, the generated file has the following contents::
+この例では、生成されるファイルの内容は次のとおりです。
 
     time, angle
     3, 0
@@ -41,34 +42,33 @@ In this example, the generated file has the following contents::
     838, 333
     942, 385
 
-When you upload the file to your computer as shown above, you can open it
-in a spreadsheet editor. You can then generate a graph of the data, as
-shown in :numref:`fig_datalog_graph`.
+上記のようにファイルをコンピューターにアップロードすると、
+スプレッドシートエディターで開くことができます。その後、
+:numref:`fig_datalog_graph` に示すようにデータのグラフを生成できます。
 
-In this example, we see that the motor angle changes slowly at first. Then
-the angle begins to change faster, and the graph becomes a straight line.
-This means that the motor has reached a constant speed. You can verify that
-the angle increases by 500 degrees per second.
+この例では、モーターの角度が最初はゆっくり変化していることがわかります。
+その後、角度の変化が速くなり、グラフは直線になります。これはモーターが
+一定の速度に達したことを意味します。角度が1秒あたり500度ずつ増加して
+いることを確認できます。
 
 .. _fig_datalog_graph:
 
 .. figure:: ../../main/images/datalog_graph.png
     :width: 100 %
 
-    Original file contents (left) and a generated graph (right).
+    元のファイルの内容（左）と生成されたグラフ（右）。
 
 
-Using the optional arguments
+オプション引数を使う
 ****************************
 
-This example shows how to log data beyond just numbers. It also shows how
-you can use the optional arguments of the ``DataLog`` class to choose the
-file name and extension.
+この例は、数値以外のデータを記録する方法を示しています。また、
+``DataLog`` クラスのオプション引数を使ってファイル名や拡張子を選ぶ
+方法も示しています。
 
-In this example, ``timestamp=False``, which means that the date and time
-are not added to the file name. This can be convenient because the file
-name will always be the same. However, this means that the contents of
-``my_file.txt`` will be overwritten every time you run this script.
+この例では ``timestamp=False`` であり、ファイル名に日付と時刻が
+追加されません。ファイル名が常に同じになるため便利ですが、その代わり
+このスクリプトを実行するたびに ``my_file.txt`` の内容が上書きされます。
 
 .. literalinclude:: ../../../examples/ev3/datalog_extra/main.py
 

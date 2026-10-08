@@ -1,5 +1,5 @@
-:mod:`robotics <pybricks.robotics>` -- Robotics and drive bases
-===============================================================
+:mod:`robotics <pybricks.robotics>` -- ロボティクスとドライブベース
+===========================================================================
 
 .. automodule:: pybricks.robotics
     :no-members:
@@ -11,13 +11,13 @@
 .. autoclass:: pybricks.robotics.DriveBase
     :no-members:
 
-    .. rubric:: Driving by a given distance or angle
+    .. rubric:: 指定した距離や角度だけ動かす
 
-    Use the following commands to drive a given distance, or turn by a
-    given angle.
+    以下のコマンドを使用して、指定した距離だけ走行したり、指定した角度
+    だけ旋回したりします。
 
-    This is measured using the internal rotation sensors. Because wheels may
-    slip while moving, the traveled distance and angle are only estimates.
+    これらは内部の回転センサーを使って測定されます。走行中にホイールが
+    滑ることがあるため、走行距離と角度は推定値にすぎません。
 
     .. blockimg:: pybricks_blockDriveBaseMove_drivebase_move_straight
 
@@ -53,13 +53,13 @@
 
     .. automethod:: pybricks.robotics.DriveBase.done
 
-    .. rubric:: Drive forever
+    .. rubric:: 走り続ける
 
-    Use :meth:`.drive` to begin driving at a desired speed and steering.
+    :meth:`.drive` を使用して、目的の速度とステアリングで走行を開始します。
 
-    It keeps going until you use :meth:`.stop` or change course by
-    using :meth:`.drive` again. For example, you can drive until a
-    sensor is triggered and then stop or turn around.
+    :meth:`.stop` を使うか、再度 :meth:`.drive` を使って進路を変えるまで
+    走り続けます。たとえば、センサーが反応するまで走行し、その後
+    停止したり向きを変えたりできます。
 
     .. blockimg:: pybricks_blockDriveBaseStart
 
@@ -77,7 +77,7 @@
 
     .. automethod:: pybricks.robotics.DriveBase.hold
 
-    .. rubric:: Measuring
+    .. rubric:: 計測
 
     .. blockimg:: pybricks_blockDriveBaseMeasure_drivebase_get_distance
 
@@ -95,7 +95,8 @@
 
     .. versionchanged:: 3.6
 
-        Now stops the drive base. You can now use nonzero values.
+        ドライブベースを停止するようになりました。ゼロ以外の値を
+        使用できるようになりました。
 
     .. blockimg:: pybricks_blockDriveBaseResetWithValues
 
@@ -105,85 +106,81 @@
 
     .. pybricks-requirements:: gyro
 
-    .. rubric:: Driving with the gyro
+    .. rubric:: ジャイロでの走行
 
     .. blockimg:: pybricks_blockDriveBaseUseGyro
 
     .. automethod:: pybricks.robotics.DriveBase.use_gyro
 
-    If your hub is not mounted flat in your robot, make sure to specify
-    the ``top_side`` and ``front_side`` parameters when you initialize the
-    :class:`PrimeHub() <pybricks.hubs.PrimeHub>`,
-    :class:`InventorHub() <pybricks.hubs.PrimeHub>`,
-    :class:`EssentialHub() <pybricks.hubs.EssentialHub>`, or
-    :class:`TechnicHub() <pybricks.hubs.TechnicHub>`. This way your robot
-    knows which rotation to measure when turning.
+    ハブがロボットに平らに取り付けられていない場合は、
+    :class:`PrimeHub() <pybricks.hubs.PrimeHub>` 、
+    :class:`InventorHub() <pybricks.hubs.PrimeHub>` 、
+    :class:`EssentialHub() <pybricks.hubs.EssentialHub>` 、または
+    :class:`TechnicHub() <pybricks.hubs.TechnicHub>` を初期化するときに
+    ``top_side`` と ``front_side`` のパラメータを必ず指定してください。
+    これにより、ロボットは旋回時にどの回転を測定すべきかを認識します。
 
-    The gyro in each hub is a bit different, which can cause it to be a few
-    degrees off for big turns, or many small turns in the same
-    direction. For example, you may need to use
-    :meth:`turn(357) <pybricks.robotics.DriveBase.turn>` or
-    :meth:`turn(362) <pybricks.robotics.DriveBase.turn>`
-    on your robot to make a full turn.
+    各ハブのジャイロは少しずつ異なるため、大きな旋回や同じ方向への
+    多数の小さな旋回では、数度ずれることがあります。たとえば、ロボットを
+    1回転させるには :meth:`turn(357) <pybricks.robotics.DriveBase.turn>` や
+    :meth:`turn(362) <pybricks.robotics.DriveBase.turn>` を使う必要が
+    あるかもしれません。
 
-    By default, this class tries to maintain the robot's position after a move
-    completes. This means the wheels will spin if you pick the robot up, in an
-    effort to maintain its heading angle. To avoid this, you can choose
-    ``then=Stop.COAST`` in your last
-    :meth:`straight <pybricks.robotics.DriveBase.straight>`,
-    :meth:`turn <pybricks.robotics.DriveBase.turn>`, or
-    :meth:`arc <pybricks.robotics.DriveBase.arc>` command.
+    デフォルトでは、このクラスは移動の完了後もロボットの位置を維持
+    しようとします。つまり、方位角を維持しようとして、ロボットを
+    持ち上げるとホイールが回転します。これを避けるには、最後の
+    :meth:`straight <pybricks.robotics.DriveBase.straight>` 、
+    :meth:`turn <pybricks.robotics.DriveBase.turn>` 、または
+    :meth:`arc <pybricks.robotics.DriveBase.arc>` コマンドで
+    ``then=Stop.COAST`` を選択します。
 
     .. _measuring:
 
-    .. rubric:: Measuring and validating the robot dimensions
+    .. rubric:: ロボットの寸法の測定と検証
 
-    As a first estimate, you can measure the ``wheel_diameter`` and the
-    ``axle_track`` with a ruler. Because it is hard to see where the wheels
-    effectively touch the ground, you can estimate the ``axle_track`` as
-    the distance between the midpoint of the wheels.
+    最初の推定値として、 ``wheel_diameter`` と ``axle_track`` を定規で
+    測定できます。ホイールが実際に地面に接する場所は分かりにくいため、
+    ``axle_track`` は両ホイールの中点同士の距離として推定できます。
 
-    If you don't have a ruler, you can use a LEGO beam to measure. The
-    center-to-center distance of the holes is 8 mm. For some tyres, the
-    diameter is printed on the side. For example, 62.4 x 20 means that the
-    diameter is 62.4mm and that the width is 20 mm.
+    定規がない場合は、LEGOビームを使って測定できます。穴の中心同士の
+    距離は8 mmです。タイヤによっては、側面に直径が印刷されています。
+    たとえば、62.4 x 20は直径が62.4 mmで幅が20 mmであることを意味します。
 
-    In practice, most wheels compress slightly under the weight of your robot.
-    To verify, make your robot drive 1000 mm using ``my_robot.straight(1000)``
-    and measure how far it really traveled. Compensate as follows:
+    実際には、ほとんどのホイールはロボットの重みでわずかに押しつぶされます。
+    確認するには、 ``my_robot.straight(1000)`` を使ってロボットを
+    1000 mm走行させ、実際にどれだけ進んだかを測定します。
+    次のように補正します。
 
-        - If your robot drives **not far enough**, **decrease** the
-          ``wheel_diameter`` value slightly.
-        - If your robot drives **too far**, **increase** the
-          ``wheel_diameter`` value slightly.
+        - ロボットが **十分に進まない** 場合は、 ``wheel_diameter`` の値を
+          わずかに **小さく** します。
+        - ロボットが **進みすぎる** 場合は、 ``wheel_diameter`` の値を
+          わずかに **大きく** します。
 
-    Motor shafts and axles bend slightly under the load of the
-    robot, causing the ground contact point of the wheels to be closer to the
-    midpoint of your robot. To verify, make your robot turn 360 degrees
-    using ``my_robot.turn(360)`` and check that it is back in the same place:
+    モーターのシャフトとアクスルはロボットの荷重でわずかに曲がり、
+    ホイールの接地点がロボットの中点に近づきます。確認するには、
+    ``my_robot.turn(360)`` を使ってロボットを360度旋回させ、
+    元の場所に戻っているかを確認します。
 
-        - If your robot turns **not far enough**, **increase** the
-          ``axle_track`` value slightly.
-        - If your robot turns **too far**, **decrease** the ``axle_track``
-          value slightly.
+        - ロボットの旋回が **足りない** 場合は、 ``axle_track`` の値を
+          わずかに **大きく** します。
+        - ロボットの旋回が **大きすぎる** 場合は、 ``axle_track`` の値を
+          わずかに **小さく** します。
 
-    When making these adjustments, always adjust the
-    ``wheel_diameter`` first, as done above. Be sure to test both turning
-    and driving straight after you are done.
+    これらの調整を行うときは、上記のように必ず ``wheel_diameter`` から
+    調整してください。完了後は、旋回と直進の両方を必ずテストしてください。
 
-    .. rubric:: Using the DriveBase motors individually
+    .. rubric:: DriveBaseのモーターを個別に使用する
 
-    After creating a :class:`.DriveBase` object, you can still use its two
-    motors individually. If you start one motor, the other motor will
-    automatically stop. Likewise, if a motor is already running and you make
-    the drive base move, the original maneuver is cancelled and the drive base
-    will take over.
+    :class:`.DriveBase` オブジェクトを作成した後でも、その2つのモーターを
+    個別に使用できます。一方のモーターを開始すると、もう一方のモーターは
+    自動的に停止します。同様に、モーターがすでに動作中にドライブベースを
+    動かすと、元の動作はキャンセルされ、ドライブベースが引き継ぎます。
 
-    .. rubric:: Advanced settings
+    .. rubric:: 高度な設定
 
-    The :meth:`.settings` method is used to adjust commonly used settings like
-    the default speed and acceleration for straight maneuvers and turns.
-    Use the following attributes to adjust more advanced control settings.
+    :meth:`.settings` メソッドは、直進動作と旋回のデフォルトの速度や
+    加速度など、よく使われる設定を調整するために使用します。
+    より高度な制御設定を調整するには、以下の属性を使用します。
 
     .. autoattribute:: pybricks.robotics.DriveBase.distance_control
         :annotation:
@@ -193,7 +190,7 @@
 
     .. versionchanged:: 3.2
 
-        The :meth:`done` and :meth:`stalled` methods have been moved.
+        :meth:`done` と :meth:`stalled` の各メソッドは移動しました。
 
 .. pybricks-requirements::
 
@@ -216,28 +213,28 @@
 
     .. automethod:: pybricks.robotics.Car.drive_speed
 
-Examples
+例
 -------------------
 
-Driving straight and turning in place with a drive base
+ドライブベースで直進してその場で旋回する
 ********************************************************
 
-This program shows the basics of driving and turning.
+このプログラムは、走行と旋回の基本を示しています。
 
 .. literalinclude::
     ../../examples/pup/robotics/drivebase_basics.py
 
-Remote controlling a car with front wheel steering
+前輪ステアリングの車をリモートコントロールする
 **************************************************
 
-This program shows how you can drive a car with front wheel steering
-using the :class:`remote control <pybricks.pupdevices.Remote>`.
+このプログラムは、 :class:`リモートコントロール <pybricks.pupdevices.Remote>`
+を使って前輪ステアリングの車を走行させる方法を示しています。
 
-In this program, the ports match those of the `LEGO Technic 42099 Off-Roader
-<https://pybricks.com/projects/sets/technic/42099-off-roader/>`_, but you can
-use any other car with front wheel steering. If your vehicle has only one
-drive motor, you can use a single motor instead of a tuple of the motors used
-below.
+このプログラムでは、ポートは `LEGO Technic 42099 Off-Roader
+<https://pybricks.com/projects/sets/technic/42099-off-roader/>`_ のものに
+一致していますが、前輪ステアリングの他の車でも使用できます。車両に
+駆動モーターが1つしかない場合は、以下で使用しているモーターのタプルの
+代わりに、単一のモーターを使用できます。
 
 .. literalinclude::
     ../../examples/pup/robotics/car_remote.py

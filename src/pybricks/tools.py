@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2018-2023 The Pybricks Authors
 
-"""Common tools for timing, data logging, and linear algebra."""
+"""時間計測、データロギング、線形代数のための共通ツール。"""
 
 from __future__ import annotations
 
@@ -18,52 +18,52 @@ if TYPE_CHECKING:
 def wait(time: Number) -> MaybeAwaitable:
     """wait(time)
 
-    Pauses the user program for a specified amount of time.
+    指定した時間だけユーザープログラムを一時停止します。
 
     Arguments:
-        time (Number, ms): How long to wait.
+        time (Number, ms): 待機する時間。
     """
 
 
 class StopWatch:
-    """A stopwatch to measure time intervals. Similar to the stopwatch
-    feature on your phone."""
+    """時間間隔を測定するストップウォッチです。携帯電話の
+    ストップウォッチ機能に似ています。"""
 
     def __init__(self): ...
 
     def time(self) -> int:
         """time() -> int: ms
 
-        Gets the current time of the stopwatch.
+        ストップウォッチの現在の時間を取得します。
 
         Returns:
-            Elapsed time.
+            経過時間。
         """
 
     def pause(self) -> None:
         """pause()
 
-        Pauses the stopwatch."""
+        ストップウォッチを一時停止します。"""
 
     def resume(self) -> None:
         """resume()
 
-        Resumes the stopwatch."""
+        ストップウォッチを再開します。"""
 
     def reset(self) -> None:
         """reset()
 
-        Resets the stopwatch time to 0.
+        ストップウォッチの時間を0にリセットします。
 
-        The run state is unaffected:
+        実行状態は影響を受けません。
 
-        * If it was paused, it stays paused (but now at 0).
-        * If it was running, it stays running (but starting again from 0).
+        * 一時停止していた場合は、一時停止のままです（ただし0になります）。
+        * 実行中だった場合は、実行中のままです（ただし0から再開します）。
         """
 
 
 class DataLog:
-    """Create a file and log data."""
+    """ファイルを作成してデータを記録します。"""
 
     def __init__(
         self,
@@ -76,39 +76,41 @@ class DataLog:
         """DataLog(*headers, name='log', timestamp=True, extension='csv', append=False)
 
         Arguments:
-            headers (str, str, ...): Column headers. These are the
-                names of the data columns. For example, choose ``'time'`` and
-                ``'angle'``.
-            name (str): Name of the file.
-            timestamp (bool): Choose ``True`` to add the date and time to the
-                file name. This way, your file has a unique name.
-                Choose ``False`` to omit the timestamp.
-            extension (str): File extension.
-            append (bool): Choose ``True`` to reopen an existing data log file
-                and append data to it. Choose ``False`` to clear existing
-                data. If the file does not exist yet, an empty file will be
-                created either way.
+            headers (str, str, ...): 列ヘッダー。これらはデータ列の
+                名前です。たとえば ``'time'`` や ``'angle'`` を
+                選びます。
+            name (str): ファイル名。
+            timestamp (bool): ``True`` を選択すると、ファイル名に日付と
+                時刻が追加されます。これにより、ファイルは一意の名前に
+                なります。 ``False`` を選択すると、タイムスタンプは
+                省略されます。
+            extension (str): ファイル拡張子。
+            append (bool): ``True`` を選択すると、既存のデータログ
+                ファイルを再度開いてデータを追記します。 ``False`` を
+                選択すると、既存のデータが消去されます。ファイルが
+                まだ存在しない場合は、どちらの場合も空のファイルが
+                作成されます。
         """
 
     def log(self, *values: Any) -> None:
         """log(value1, value2, ...)
 
-        Saves one or more values on a new line in the file.
+        1つ以上の値をファイルの新しい行に保存します。
 
         Arguments:
-            values (object, object, ...): One or more objects or values.
+            values (object, object, ...): 1つ以上のオブジェクトまたは値。
         """
 
 
 class Matrix:
-    """Mathematical representation of a matrix. It supports
-    addition (``A + B``), subtraction (``A - B``),
-    and matrix multiplication (``A * B``) for matrices of compatible size.
+    """行列の数学的表現です。互換性のあるサイズの行列に対して
+    加算（ ``A + B`` ）、減算（ ``A - B`` ）、行列乗算（ ``A * B`` ）を
+    サポートします。
 
-    It also supports scalar multiplication (``c * A`` or ``A * c``)
-    and scalar division (``A / c``).
+    スカラー乗算（ ``c * A`` または ``A * c`` ）とスカラー除算
+    （ ``A / c`` ）もサポートします。
 
-    A :class:`.Matrix` object is immutable."""
+    :class:`.Matrix` オブジェクトはイミュータブルです。"""
 
     def __add__(self, other) -> Matrix: ...
 
@@ -136,48 +138,49 @@ class Matrix:
         """Matrix(rows)
 
         Arguments:
-            rows (list): List of rows. Each row is itself a list of numbers.
+            rows (list): 行のリスト。各行はそれ自体が数値のリストです。
 
         """
 
     @property
     def T(self) -> Matrix:
-        """Returns a new :class:`.Matrix` that is the transpose of the
-        original."""
+        """元の行列を転置した新しい :class:`.Matrix` を返します。"""
 
     @property
     def shape(self) -> tuple[int, int]:
-        """Returns a tuple (``m``, ``n``),
-        where ``m`` is the number of rows and ``n`` is the number of columns.
+        """タプル（ ``m`` 、 ``n`` ）を返します。
+        ``m`` は行数、 ``n`` は列数です。
         """
 
 
 @overload
 def vector(x: float, y: float) -> Matrix:
     """
-    Convenience function to create a :class:`.Matrix` with the shape (``2``, ``1``).
+    形状が（ ``2`` 、 ``1`` ）の :class:`.Matrix` を作成する便利な
+    関数です。
 
     Arguments:
-        x (float): x-coordinate of the vector.
-        y (float): y-coordinate of the vector.
+        x (float): ベクトルのx座標。
+        y (float): ベクトルのy座標。
 
     Returns:
-        A matrix with the shape of a column vector.
+        列ベクトルの形状を持つ行列。
     """
 
 
 @overload
 def vector(x: float, y: float, z: float) -> Matrix:
     """
-    Convenience function to create a :class:`.Matrix` with the shape (``3``, ``1``).
+    形状が（ ``3`` 、 ``1`` ）の :class:`.Matrix` を作成する便利な
+    関数です。
 
     Arguments:
-        x (float): x-coordinate of the vector.
-        y (float): y-coordinate of the vector.
-        z (float): z-coordinate of the vector.
+        x (float): ベクトルのx座標。
+        y (float): ベクトルのy座標。
+        z (float): ベクトルのz座標。
 
     Returns:
-        A matrix with the shape of a column vector.
+        列ベクトルの形状を持つ行列。
     """
 
 
@@ -186,16 +189,16 @@ def vector(*args):
     vector(x, y) -> Matrix
     vector(x, y, z) -> Matrix
 
-    Convenience function to create a :class:`.Matrix` with the
-    shape (``2``, ``1``) or (``3``, ``1``).
+    形状が（ ``2`` 、 ``1`` ）または（ ``3`` 、 ``1`` ）の
+    :class:`.Matrix` を作成する便利な関数です。
 
     Arguments:
-        x (float): x-coordinate of the vector.
-        y (float): y-coordinate of the vector.
-        z (float): z-coordinate of the vector (optional).
+        x (float): ベクトルのx座標。
+        y (float): ベクトルのy座標。
+        z (float): ベクトルのz座標（オプション）。
 
     Returns:
-        A matrix with the shape of a column vector.
+        列ベクトルの形状を持つ行列。
     """
 
 
@@ -203,14 +206,14 @@ def cross(a: Matrix, b: Matrix) -> Matrix:
     """
     cross(a, b) -> Matrix
 
-    Gets the cross product ``a`` × ``b`` of two vectors.
+    2つのベクトルの外積 ``a`` × ``b`` を取得します。
 
     Arguments:
-        a (Matrix): A three-dimensional vector.
-        b (Matrix): A three-dimensional vector.
+        a (Matrix): 3次元ベクトル。
+        b (Matrix): 3次元ベクトル。
 
     Returns:
-        The cross product, also a three-dimensional vector.
+        外積。これも3次元ベクトルです。
     """
 
 
@@ -218,19 +221,21 @@ def read_input_byte(last: bool = False, chr: bool = False) -> int | str | None:
     """
     read_input_byte() -> int | str | None
 
-    Reads one byte from standard input without blocking and removes it from the
-    input buffer.
+    ブロッキングせずに標準入力から1バイトを読み取り、入力バッファから
+    削除します。
 
     Arguments:
-        last (bool): Choose ``True`` to read the last (most recent) byte in the buffer and discard the rest.
-                     Choose ``False`` to read only the first (oldest) byte.
-        chr (bool): Choose ``True`` to convert the result to a one-character string.
+        last (bool): ``True`` を選択すると、バッファ内の最後（最新）の
+            バイトを読み取り、残りを破棄します。 ``False`` を選択すると、
+            最初（最古）のバイトのみを読み取ります。
+        chr (bool): ``True`` を選択すると、結果を1文字の文字列に
+            変換します。
 
     Returns:
-        The byte that was read, as a numeric value (``0`` to ``255``) or
-        string (e.g. ``"B"``). Returns ``None`` if no data is available. If
-        ``chr=True``, it also return ``None`` if the byte that was read is not
-        printable as a character.
+        読み取られたバイト。数値（ ``0`` から ``255`` ）または文字列
+        （例： ``"B"`` ）として返されます。データが利用できない場合は
+        ``None`` を返します。 ``chr=True`` の場合、読み取られたバイトが
+        文字として表示できないときも ``None`` を返します。
     """
 
 
@@ -238,20 +243,20 @@ def hub_menu(*symbols: int | str) -> int | str:
     """
     hub_menu(symbol1, symbol2, ...) -> int | str
 
-    Shows a menu on the hub display and waits for the user to select an item
-    using the buttons. Can be used in your own menu-program that lets you
-    choose which of your other programs to run.
+    ハブのディスプレイにメニューを表示し、ユーザーがボタンを使って
+    項目を選択するのを待ちます。他のどのプログラムを実行するかを
+    選べる、独自のメニュープログラムで使用できます。
 
-    Note that this is just a convenience function that combines the display,
-    buttons, and waits to make a simple menu. This means that it can be used
-    anywhere in a program, not just at the start.
+    これは単に、ディスプレイ、ボタン、待機を組み合わせて単純なメニューを
+    作る便利な関数であることに注意してください。つまり、プログラムの
+    先頭だけでなく、プログラム内のどこでも使用できます。
 
     Arguments:
-        symbol1 (int or str): The first symbol to show in the menu.
-        symbol2 (int or str): The second symbol, and so on...
+        symbol1 (int or str): メニューに表示する最初のシンボル。
+        symbol2 (int or str): 2番目のシンボル、以下同様に続きます。
 
     Returns:
-        The selected symbol.
+        選択されたシンボル。
     """
 
 
@@ -259,19 +264,19 @@ def multitask(*coroutines: Coroutine, race=False) -> MaybeAwaitableTuple:
     """
     multitask(coroutine1, coroutine2, ...) -> tuple
 
-    Runs multiple coroutines concurrently. This creates a new coroutine that
-    can be used like any other, including in another ``multitask`` statement.
+    複数のコルーチンを同時に実行します。これは新しいコルーチンを作成し、
+    他の ``multitask`` 文を含む、他のコルーチンと同様に使用できます。
 
     Arguments:
-        coroutines (coroutine, coroutine, ...): One or more coroutines to run
-            in parallel.
-        race (bool): Choose ``False`` to wait for all coroutines to finish.
-            Choose ``True`` to wait for one coroutine to finish and then
-            cancel the others, as if it's a "race".
+        coroutines (coroutine, coroutine, ...): 並列に実行する
+            1つ以上のコルーチン。
+        race (bool): ``False`` を選択すると、すべてのコルーチンの完了を
+            待ちます。 ``True`` を選択すると、1つのコルーチンが完了する
+            のを待ってから他をキャンセルします。まるで「競争」のようです。
 
     Returns:
-        Tuple of the return values of each coroutine. Unfinished coroutines
-        will have ``None`` as their return value.
+        各コルーチンの戻り値のタプル。完了しなかったコルーチンの
+        戻り値は ``None`` になります。
     """
 
 
@@ -279,17 +284,18 @@ def run_task(coroutine: Coroutine) -> bool | None:
     """
     run_task(coroutine) -> bool | None
 
-    Runs a coroutine from start to finish while blocking the rest of the
-    program. This is used primarily to run the main coroutine of a program.
+    プログラムの残りをブロックしながら、コルーチンを最初から最後まで
+    実行します。これは主にプログラムのメインコルーチンを実行するために
+    使用されます。
 
-    Calls to this function are not allowed to be nested.
+    この関数の呼び出しをネストすることはできません。
 
     Arguments:
-        coroutine (coroutine): The main coroutine to run.
+        coroutine (coroutine): 実行するメインコルーチン。
 
     Returns:
-        If no ``coroutine`` is given, this function returns whether the
-        run loop is currently active (``True``) or not (``False``).
+        ``coroutine`` が指定されない場合、この関数は実行ループが
+        現在アクティブかどうか（ ``True`` か ``False`` か）を返します。
     """
 
 
