@@ -3,18 +3,18 @@
 Image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. |this image| replace:: this image
+.. |this image| replace:: この画像
 
 .. autoclass:: pybricks.parameters.Image
     :no-members:
 
     .. automethod:: pybricks.parameters.Image.empty
 
-    .. rubric:: Drawing text
+    .. rubric:: テキストの描画
 
-    There are two ways to draw text on images. :meth:`draw_text` lets text be
-    placed precisely on the image or :meth:`print` can be used to automatically
-    print text on a new line.
+    画像にテキストを描画する方法は2つあります。 :meth:`draw_text` では
+    テキストを画像上に正確に配置でき、 :meth:`print` では新しい行に
+    テキストを自動的に出力できます。
 
     .. automethod:: pybricks.parameters.Image.draw_text
 
@@ -23,18 +23,17 @@ Image
     .. automethod:: pybricks.parameters.Image.set_font
 
 
-    .. rubric:: Drawing images
+    .. rubric:: 画像の描画
 
-    A copy of another image can be drawn on an image. Also consider using
-    sub-images to copy part of an image.
+    別の画像のコピーを画像上に描画できます。また、サブ画像を使って
+    画像の一部をコピーすることも検討してください。
 
     .. automethod:: pybricks.parameters.Image.draw_image
 
 
-    .. rubric:: Drawing shapes
+    .. rubric:: 図形の描画
 
-    These are the methods to draw basic shapes, including points, lines,
-    rectangles and circles.
+    これらは点、直線、矩形、円などの基本的な図形を描画するメソッドです。
 
     .. automethod:: pybricks.parameters.Image.draw_pixel
 
@@ -45,14 +44,14 @@ Image
     .. automethod:: pybricks.parameters.Image.draw_circle
 
 
-    .. rubric:: Image properties
+    .. rubric:: 画像のプロパティ
 
     .. autoattribute:: pybricks.parameters.Image.width
 
     .. autoattribute:: pybricks.parameters.Image.height
 
 
-    .. rubric:: Replacing the entire image
+    .. rubric:: 画像全体の置き換え
 
     .. automethod:: pybricks.parameters.Image.clear
 

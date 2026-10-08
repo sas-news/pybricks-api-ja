@@ -1,7 +1,7 @@
 .. pybricks-requirements:: pybricks-iodevices
 
-Powered Up Device
-^^^^^^^^^^^^^^^^^
+Powered Upデバイス
+^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: ../cad/output/iodevice-pupdevice.png
    :width: 60 %
@@ -17,10 +17,10 @@ Powered Up Device
 
     .. automethod:: pybricks.iodevices.PUPDevice.reset
 
-Examples
+例
 -------------------
 
-Detecting devices
+デバイスの検出
 ******************************
 
 .. literalinclude::

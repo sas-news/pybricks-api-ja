@@ -6,7 +6,7 @@
 # Copyright (c) 2014-2021, Damien P. George, Paul Sokolovsky, and contributors
 
 """
-This module contains ``stream`` objects that behave like files.
+このモジュールには、ファイルのように振る舞う ``stream`` オブジェクトが含まれています。
 """
 
 # TODO: open() is not implemented on Powered Up hubs
@@ -34,21 +34,21 @@ class BytesIO:
         BytesIO(data)
         BytesIO(alloc_size)
 
-        A binary stream using an in-memory bytes buffer.
+        メモリ内バイトバッファを使用するバイナリストリームです。
 
         Arguments:
-            data (bytes or bytearray): Optional bytes-like object
-                that contains initial data.
-            alloc_size (int): Optional number of preallocated bytes. This
-                parameter is unique to MicroPython. It is not recommended to
-                use it in end-user code.
+            data (bytes or bytearray): 初期データを含むオプションの
+                bytes-like オブジェクト。
+            alloc_size (int): 事前に割り当てるバイト数（オプション）。この
+                パラメーターはMicroPython固有です。エンドユーザーコードで
+                使用することは推奨されません。
         """
 
     def getvalue(self) -> bytes:
         """
         getvalue() -> bytes
 
-        Gets the contents of the underlying buffer.
+        基になるバッファの内容を取得します。
         """
 
 
@@ -68,25 +68,25 @@ class StringIO:
         StringIO(string)
         StringIO(alloc_size)
 
-        A stream using an in-memory string buffer.
+        メモリ内文字列バッファを使用するストリームです。
 
         Arguments:
-            string (str): Optional string with initial data.
-            alloc_size (int): Optional number of preallocated bytes. This
-                parameter is unique to MicroPython. It is not recommended to
-                use it in end-user code.
+            string (str): 初期データを持つオプションの文字列。
+            alloc_size (int): 事前に割り当てるバイト数（オプション）。この
+                パラメーターはMicroPython固有です。エンドユーザーコードで
+                使用することは推奨されません。
         """
 
     def getvalue(self) -> str:
         """
         getvalue() -> str
 
-        Gets the contents of the underlying buffer.
+        基になるバッファの内容を取得します。
         """
 
 
 class FileIO:
     """
-    This type represents a file opened in binary mode with ``open(name, 'rb')``.
-    You should not instantiate this class directly.
+    この型は ``open(name, 'rb')`` でバイナリモードで開かれたファイルを表します。
+    このクラスは直接インスタンス化しないでください。
     """

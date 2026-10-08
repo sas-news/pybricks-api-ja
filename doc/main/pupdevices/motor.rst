@@ -1,6 +1,6 @@
 .. pybricks-requirements:: pupdevices
 
-Motors with rotation sensors
+回転センサー付きモーター
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. _fig_pupmotors:
@@ -9,9 +9,9 @@ Motors with rotation sensors
    :width: 100 %
    :alt: pupmotors
 
-   Powered Up motors with rotation sensors. The arrows indicate the default
-   positive direction. See the :mod:`hubs <pybricks.hubs>` module for default
-   directions of built-in motors.
+   回転センサー付きの Powered Up モーター。矢印はデフォルトの
+   正方向を示しています。内蔵モーターのデフォルトの方向は
+   :mod:`hubs <pybricks.hubs>` モジュールを参照してください。
 
 .. blockimg:: pybricks_variables_set_motor
 
@@ -20,102 +20,102 @@ Motors with rotation sensors
 
     .. include:: ../common/motor_members.rst.txt
 
-Initialization examples
+初期化の例
 -----------------------
 
-Making the motor move back and forth
+モーターを往復させる
 *******************************************************
 
 .. literalinclude::
     ../../../examples/pup/motor/motor_init_basic.py
 
-Initializing multiple motors
+複数のモーターを初期化する
 *******************************************************
 
 .. literalinclude::
     ../../../examples/pup/motor/motor_init_multiple.py
 
-Setting the positive direction as counterclockwise
+正方向を反時計回りに設定する
 *******************************************************
 
 .. literalinclude::
     ../../../examples/pup/motor/motor_init_direction.py
 
-Using gears
+ギアを使用する
 *******************************************************
 
 .. literalinclude::
     ../../../examples/pup/motor/motor_init_gears.py
 
-Measurement examples
+測定の例
 -----------------------
 
-Measuring the angle and speed
+角度と速度を測定する
 *******************************************************
 
 .. literalinclude::
     ../../../examples/pup/motor/motor_measure.py
 
-Resetting the measured angle
+測定した角度をリセットする
 *******************************************************
 
 .. literalinclude::
     ../../../examples/pup/motor/motor_reset_angle.py
 
-Getting the absolute angle
+絶対角度を取得する
 *******************************************************
 
 .. literalinclude::
     ../../../examples/pup/motor/motor_absolute.py
 
 
-Movement examples
+動作の例
 -----------------------
 
-Basic usage of all run methods
+すべての ``run`` メソッドの基本的な使い方
 *******************************************************
 
 .. literalinclude::
     ../../../examples/pup/motor/motor_action_basic.py
 
-Stopping ongoing movements in different ways
+進行中の動作をさまざまな方法で停止する
 *******************************************************
 
 .. literalinclude::
     ../../../examples/pup/motor/motor_stop.py
 
-Using the ``then`` argument to change how a run command stops
+``then`` 引数を使って実行コマンドの停止方法を変える
 *************************************************************
 
 .. literalinclude::
     ../../../examples/pup/motor/motor_action_then.py
 
-Stall examples
+ストールの例
 -----------------------
 
-Running a motor until a mechanical endpoint
+機械的な端点までモーターを動かす
 *******************************************************
 
 .. literalinclude::
     ../../../examples/pup/motor/motor_until_stalled.py
 
-Centering a steering mechanism
+ステアリング機構を中央に合わせる
 *******************************************************
 
 .. literalinclude::
     ../../../examples/pup/motor/motor_until_stalled_center.py
 
 
-Parallel movement examples
+並列動作の例
 --------------------------
 
-Using the ``wait`` argument to run motors in parallel
+``wait`` 引数を使ってモーターを並列に動かす
 *********************************************************
 
 .. literalinclude::
     ../../../examples/pup/motor/motor_action_wait.py
 
-Waiting for two parallel actions to complete
+2つの並列動作の完了を待つ
 *******************************************************
 
 .. literalinclude::

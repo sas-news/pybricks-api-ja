@@ -7,49 +7,49 @@ Button
 
 .. class:: Button
 
-    .. rubric:: Remote and hub buttons
+    .. rubric:: リモコンとハブのボタン
 
     .. autoattribute:: pybricks.parameters.Button.LEFT_MINUS
         :annotation:
 
-        Powered Up Remote only.
+        Powered Up Remote のみ。
 
     .. autoattribute:: pybricks.parameters.Button.LEFT_PLUS
         :annotation:
 
-        Powered Up Remote only.
+        Powered Up Remote のみ。
 
     .. autoattribute:: pybricks.parameters.Button.RIGHT_MINUS
         :annotation:
 
-        Powered Up Remote only.
+        Powered Up Remote のみ。
 
     .. autoattribute:: pybricks.parameters.Button.RIGHT_PLUS
         :annotation:
 
-        Powered Up Remote only.
+        Powered Up Remote のみ。
 
     .. autoattribute:: pybricks.parameters.Button.CENTER
         :annotation:
 
-        Powered Up Remote (green button) or hub power button.
+        Powered Up Remote（緑のボタン）またはハブの電源ボタン。
 
     .. autoattribute:: pybricks.parameters.Button.LEFT
         :annotation:
 
-        Powered Up Remote (left red button) and Prime/Inventor Hub (left button).
+        Powered Up Remote（左の赤ボタン）とPrime/Inventor Hub（左のボタン）。
 
     .. autoattribute:: pybricks.parameters.Button.RIGHT
         :annotation:
 
-        Powered Up Remote (right red button) and Prime/Inventor Hub (right button).
+        Powered Up Remote（右の赤ボタン）とPrime/Inventor Hub（右のボタン）。
 
     .. autoattribute:: pybricks.parameters.Button.BLUETOOTH
         :annotation:
 
-        Prime/Inventor Hub button with Bluetooth icon.
+        Bluetooth アイコンの付いた Prime/Inventor Hub のボタン。
 
-    .. rubric:: Xbox controller buttons
+    .. rubric:: Xbox コントローラーのボタン
 
     .. autoattribute:: pybricks.parameters.Button.A
         :annotation:
@@ -66,27 +66,27 @@ Button
     .. autoattribute:: pybricks.parameters.Button.LB
         :annotation:
 
-        The left bumper.
+        左のバンパー。
 
     .. autoattribute:: pybricks.parameters.Button.RB
         :annotation:
 
-        The right bumper.
+        右のバンパー。
 
     .. autoattribute:: pybricks.parameters.Button.LJ
         :annotation:
 
-        Pressing the left joystick.
+        左ジョイスティックの押し込み。
 
     .. autoattribute:: pybricks.parameters.Button.RJ
         :annotation:
 
-        Pressing the right joystick.
+        右ジョイスティックの押し込み。
 
     .. autoattribute:: pybricks.parameters.Button.GUIDE
         :annotation:
 
-        The Xbox button in the center of the controller.
+        コントローラー中央の Xbox ボタン。
 
     .. autoattribute:: pybricks.parameters.Button.MENU
         :annotation:
@@ -94,12 +94,12 @@ Button
     .. autoattribute:: pybricks.parameters.Button.UPLOAD
         :annotation:
 
-        Only available on newer Xbox controllers.
+        新しい Xbox コントローラーでのみ利用可能。
 
     .. autoattribute:: pybricks.parameters.Button.VIEW
         :annotation:
 
-    .. rubric:: Xbox Elite Series 2 controller paddles
+    .. rubric:: Xbox Elite Series 2 コントローラーのパドル
 
     .. autoattribute:: pybricks.parameters.Button.P1
         :annotation:

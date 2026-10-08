@@ -1,6 +1,6 @@
 .. pybricks-requirements:: pybricks-iodevices ev3
 
-EV3 UART Device
+EV3 UARTデバイス
 ^^^^^^^^^^^^^^^^^
 
 .. figure:: ../../main/cad/output/iodevice-rj12green.png

@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2018-2023 The Pybricks Authors
 
-"""Robotics module for the Pybricks API."""
+"""Pybricks APIのロボティクスモジュール。"""
 
 from __future__ import annotations
 
@@ -16,40 +16,39 @@ if TYPE_CHECKING:
 
 
 class DriveBase:
-    """A robotic vehicle with two powered wheels and an optional support
-    wheel or caster.
+    """2つの動力付きホイールと、オプションの補助輪またはキャスターを持つ
+    ロボット車両です。
 
-    By specifying the dimensions of your robot, this class
-    makes it easy to drive a given distance in millimeters or turn by a given
-    number of degrees.
+    ロボットの寸法を指定することで、このクラスはミリメートル単位の
+    指定距離だけ走行したり、指定した角度だけ旋回したりする操作を
+    簡単に行えます。
 
-    **Positive** distances, radii, or drive speeds mean
-    driving **forward**. **Negative** means **backward**.
+    **正** の距離、半径、走行速度は **前進** を意味します。
+    **負** は **後進** を意味します。
 
-    **Positive** angles and turn rates mean turning **right**.
-    **Negative** means **left**. So when viewed from the top,
-    positive means clockwise and negative means counterclockwise.
+    **正** の角度と旋回速度は **右** への旋回を意味します。
+    **負** は **左** を意味します。つまり、上から見たときに
+    正は時計回り、負は反時計回りです。
 
-    See the `measuring`_ section for tips to measure and adjust the diameter
-    and axle track values.
+    直径と軸距の値を測定・調整するコツは、 `measuring`_ セクションを
+    参照してください。
     """
 
     distance_control = _common.Control()
-    """The traveled distance and drive speed are controlled by a PID
-    controller. You can use this attribute to change its settings. See the
-    :meth:`motor control <pybricks.pupdevices.Motor.control.limits>` attribute
-    for an overview of available methods. The ``distance_control`` attribute
-    has the same functionality, but the settings apply to every millimeter
-    driven by the drive base, instead of degrees turned by one motor."""
+    """走行距離と走行速度はPIDコントローラーで制御されます。
+    この属性を使用して設定を変更できます。利用可能なメソッドの概要は
+    :meth:`モーターの制御 <pybricks.pupdevices.Motor.control.limits>` 属性を
+    参照してください。 ``distance_control`` 属性は同じ機能を持ちますが、
+    設定は1つのモーターが回転した度数ではなく、ドライブベースが
+    走行したミリメートルごとに適用されます。"""
 
     heading_control = _common.Control()
-    """The robot turn angle and turn rate are controlled by a PID
-    controller. You can use this attribute to change its settings. See the
-    :meth:`motor control <pybricks.pupdevices.Motor.control.limits>` attribute
-    for an overview of available methods. The ``heading_control`` attribute
-    has the same functionality, but the settings apply to every degree of
-    rotation of the whole drive base (viewed from the top) instead of degrees
-    turned by one motor."""
+    """ロボットの旋回角度と旋回速度はPIDコントローラーで制御されます。
+    この属性を使用して設定を変更できます。利用可能なメソッドの概要は
+    :meth:`モーターの制御 <pybricks.pupdevices.Motor.control.limits>` 属性を
+    参照してください。 ``heading_control`` 属性は同じ機能を持ちますが、
+    設定は1つのモーターが回転した度数ではなく、ドライブベース全体の
+    （上から見た）回転角度ごとに適用されます。"""
 
     def __init__(
         self,
@@ -62,89 +61,90 @@ class DriveBase:
 
         Arguments:
             left_motor (Motor):
-                The motor that drives the left wheel.
+                左のホイールを駆動するモーター。
             right_motor (Motor):
-                The motor that drives the right wheel.
-            wheel_diameter (Number, mm): Diameter of the wheels.
-            axle_track (Number, mm): Distance between the points where
-                both wheels touch the ground.
+                右のホイールを駆動するモーター。
+            wheel_diameter (Number, mm): ホイールの直径。
+            axle_track (Number, mm): 両方のホイールが地面に接する
+                点同士の距離。
         """
 
     def drive(self, speed: Number, turn_rate: Number) -> None:
         """drive(speed, turn_rate)
 
-        Starts driving at the specified speed and turn rate. Both values are
-        measured at the center point between the wheels of the robot.
+        指定した速度と旋回速度で走行を開始します。どちらの値もロボットの
+        ホイール間の中心点で測定されます。
 
         Arguments:
-            speed (Number, mm/s): Speed of the robot.
-            turn_rate (Number, deg/s): Turn rate of the robot.
+            speed (Number, mm/s): ロボットの速度。
+            turn_rate (Number, deg/s): ロボットの旋回速度。
         """
 
     def stop(self) -> None:
         """stop()
 
-        Stops the robot by letting the motors spin freely."""
+        モーターを空転させてロボットを停止します。"""
 
     def brake(self) -> None:
         """brake()
 
-        Stops the robot by passively braking the motors.
+        モーターを受動的にブレーキしてロボットを停止します。
         """
 
     def hold(self) -> None:
         """hold()
 
-        Stops the robot and actively holds it in place.
+        ロボットを停止し、その場にアクティブに保持します。
         """
 
     def distance(self) -> int:
         """distance() -> int: mm
 
-        Gets the estimated driven distance.
+        走行した推定距離を取得します。
 
         Returns:
-            Driven distance since last reset.
+            前回のリセットからの走行距離。
         """
 
     def angle(self) -> float:
         """angle() -> float: deg
 
-        Gets the estimated rotation angle of the drive base.
+        ドライブベースの推定回転角度を取得します。
 
-        When the gyro is used for this drive base, this gives the gyro angle.
-        Otherwise, it gives the estimated angle estimated from the motor
-        displacement.
+        このドライブベースでジャイロが使用されている場合、これはジャイロの
+        角度になります。それ以外の場合は、モーターの変位から推定された
+        角度になります。
 
         Returns:
-            Accumulated angle since last reset.
+            前回のリセットからの累積角度。
         """
 
     def state(self) -> tuple[int, int, int, int]:
         """state() -> tuple[int, int, int, int]
 
-        Gets the state of the robot.
+        ロボットの状態を取得します。
 
-        As with the :meth:`.angle` methods, the reported angle and turn rate
-        are those of the gyro if the gyro is used. Otherwise they are
-        estimated from the motor displacement.
+        :meth:`.angle` メソッドと同様に、ジャイロが使用されている場合、
+        報告される角度と旋回速度はジャイロのものになります。
+        それ以外の場合はモーターの変位から推定されます。
 
         Returns:
-            Tuple of distance, drive speed, angle, and turn rate of the robot.
+            ロボットの距離、走行速度、角度、旋回速度のタプル。
         """
 
     def reset(self, distance: Number = 0, angle: Number = 0) -> None:
         """reset(distance=0, angle=0)
 
-        Resets the estimated driven distance and heading angle.
+        推定走行距離と方位角をリセットします。
 
-        This also calls :meth:`.stop` to stop ongoing movements.
-        If your robot is controlled with :meth:`.use_gyro` set to ``True``,
-        calling this method will `also` set the gyro to the given angle.
+        これは :meth:`.stop` も呼び出して、進行中の動作を停止します。
+        ロボットが :meth:`.use_gyro` を ``True`` に設定して制御されている
+        場合、このメソッドを呼び出すとジャイロ `も` 指定された角度に
+        設定されます。
 
         Arguments:
-            distance (Number, mm): New value of the driven distance.
-            angle (Number, deg): New heading angle of the robot.
+            distance (Number, mm): 走行距離の新しい値。
+            angle (Number, deg): ロボットの新しい方位角。
         """
 
     @overload
@@ -167,33 +167,30 @@ class DriveBase:
         settings() -> tuple[int, int, int, int]
         settings() -> tuple[int, tuple[int, int], int, tuple[int, int]]
 
-        Configures the drive base speed and acceleration.
+        ドライブベースの速度と加速度を設定します。
 
-        If you give no arguments, this returns the current values as a tuple.
+        引数を指定しない場合は、現在の値をタプルとして返します。
 
-        The initial values are automatically configured based on your wheel
-        diameter and axle track. They are selected such that your robot
-        drives at about 40% of its maximum speed.
+        初期値はホイール径と軸距に基づいて自動的に設定されます。
+        ロボットが最大速度の約40%で走行するように選択されています。
 
-        The speed values given here do not apply to the :meth:`.drive` method,
-        since you provide your own speed values as arguments in that method.
+        ここで指定した速度値は :meth:`.drive` メソッドには適用されません。
+        そのメソッドでは独自の速度値を引数として指定するためです。
 
-        Speed and rate values are treated as absolute; negative values are
-        converted to positive automatically.
+        速度とレートの値は絶対値として扱われます。負の値は自動的に
+        正の値に変換されます。
 
         Arguments:
-            straight_speed (Number, mm/s): Straight-line speed of the robot.
+            straight_speed (Number, mm/s): ロボットの直進速度。
             straight_acceleration (Number or tuple[Number, Number], mm/s²):
-                Straight-line acceleration and deceleration of the robot.
-                Provide a single value to use the same acceleration and
-                deceleration. Provide a tuple with two values to set them
-                separately.
-            turn_rate (Number, deg/s): Turn rate of the robot.
+                ロボットの直進時の加速度と減速度。単一の値を指定すると
+                加速度と減速度が同じになります。2つの値のタプルを
+                指定すると個別に設定できます。
+            turn_rate (Number, deg/s): ロボットの旋回速度。
             turn_acceleration (Number or tuple[Number, Number], deg/s²):
-                Angular acceleration and deceleration of the robot.
-                Provide a single value to use the same acceleration and
-                deceleration. Provide a tuple with two values to set them
-                separately.
+                ロボットの角加速度と角減速度。単一の値を指定すると
+                加速度と減速度が同じになります。2つの値のタプルを
+                指定すると個別に設定できます。
         """
 
     def straight(
@@ -201,13 +198,13 @@ class DriveBase:
     ) -> MaybeAwaitable:
         """straight(distance, then=Stop.HOLD, wait=True)
 
-        Drives straight for a given distance and then stops.
+        指定した距離だけ直進してから停止します。
 
         Arguments:
-            distance (Number, mm): Distance to travel
-            then (Stop): What to do after coming to a standstill.
-            wait (bool): Wait for the maneuver to complete before continuing
-                         with the rest of the program.
+            distance (Number, mm): 走行する距離。
+            then (Stop): 静止した後に何をするか。
+            wait (bool): プログラムの残りを続行する前に、動作が完了する
+                         まで待機するかどうか。
         """
 
     def turn(
@@ -219,16 +216,16 @@ class DriveBase:
     ) -> MaybeAwaitable:
         """turn(angle, then=Stop.HOLD, wait=True, absolute=False)
 
-        Turns in place by a given angle and then stops.
+        指定した角度だけその場で旋回してから停止します。
 
         Arguments:
-            angle (Number, deg): Angle of the turn.
-            then (Stop): What to do after coming to a standstill.
-            wait (bool): Wait for the maneuver to complete before continuing
-                         with the rest of the program.
-            absolute (bool): If ``False`` (default), the robot turns _by_ the
-                given angle relative to its current heading. If ``True``,
-                the robot turns to the given absolute heading angle.
+            angle (Number, deg): 旋回する角度。
+            then (Stop): 静止した後に何をするか。
+            wait (bool): プログラムの残りを続行する前に、動作が完了する
+                         まで待機するかどうか。
+            absolute (bool): ``False``（デフォルト）の場合、ロボットは現在
+                の方位からの相対角度 _だけ_ 旋回します。 ``True`` の場合、
+                ロボットは指定された絶対的な方位角まで旋回します。
         """
 
     def arc(
@@ -241,92 +238,97 @@ class DriveBase:
     ) -> MaybeAwaitable:
         """arc(radius, angle=None, distance=None, then=Stop.HOLD, wait=True)
 
-        Drives an arc (a partial circle) with a given radius. You can specify
-        how far to drive using either an angle or a distance.
+        指定した半径で円弧（円の一部）を描いて走行します。角度または
+        距離のどちらかを使って、どれだけ走行するかを指定できます。
 
-        With a positive radius, the robot drives along a circle to its right.
-        With a negative radius, the robot drives along a circle to its left.
+        半径が正の場合、ロボットは右側の円に沿って走行します。
+        半径が負の場合、ロボットは左側の円に沿って走行します。
 
-        You can specify how far to travel along that circle as an angle
-        (degrees) or distance (mm). A positive value means driving forward
-        along the circle. Negative means driving in reverse.
+        その円に沿ってどれだけ進むかを角度（度）または距離（mm）で
+        指定できます。正の値は円に沿った前進を意味します。負の値は
+        後退を意味します。
 
         Arguments:
-            radius (Number, mm): Radius of the circle.
-            angle (Number, deg): Angle to drive along the circle.
-            distance (Number, mm): Distance to drive along the circle,
-                                   measured at the center of the robot.
-            then (Stop): What to do after coming to a standstill.
-            wait (bool): Wait for the maneuver to complete before continuing
-                         with the rest of the program.
+            radius (Number, mm): 円の半径。
+            angle (Number, deg): 円に沿って走行する角度。
+            distance (Number, mm): 円に沿って走行する距離。ロボットの
+                                   中心で測定します。
+            then (Stop): 静止した後に何をするか。
+            wait (bool): プログラムの残りを続行する前に、動作が完了する
+                         まで待機するかどうか。
         Raises:
             ValueError:
-                You must specify ``angle`` or ``distance``, but not both. The
-                radius cannot be zero. Use :meth:`.turn` for in-place turns.
+                ``angle`` または ``distance`` のどちらか一方のみを指定する
+                必要があり、両方は指定できません。半径を0にすることは
+                できません。その場での旋回には :meth:`.turn` を使用して
+                ください。
         """
 
     def done(self) -> bool:
         """done() -> bool
 
-        Checks if an ongoing command or maneuver is done.
+        進行中のコマンドまたは動作が完了したかどうかを確認します。
 
         Returns:
-            ``True`` if the command is done, ``False`` if not.
+            コマンドが完了した場合は ``True`` 、そうでない場合は ``False`` 。
         """
 
     def stalled(self) -> bool:
         """stalled() -> bool
 
-        Checks if the drive base is currently stalled.
+        ドライブベースが現在ストールしているかどうかを確認します。
 
-        It is stalled when it cannot reach the target speed or position, even
-        with the maximum actuation signal.
+        最大の駆動信号を使っても目標速度または目標位置に到達できない
+        場合、ストールしています。
 
         Returns:
-            ``True`` if the drive base is stalled, ``False`` if not.
+            ドライブベースがストールしている場合は ``True`` 、そうでない
+            場合は ``False`` 。
         """
 
     def move_by(self, dx: Number, dy: Number, then: Stop = Stop.HOLD) -> MaybeAwaitable:
         """move_by(dx, dy, then=Stop.HOLD)
 
-        Moves the robot by an amount given as X-and-Y coordinates on the robot
-        drive area. The X-axis is what was forward when the program started.
-        The Y-axis is 90° left of that. You can reset this by resetting the heading.
+        ロボットの走行エリア上のX座標とY座標で指定した量だけロボットを
+        移動します。X軸はプログラム開始時に前だった方向です。Y軸は
+        そこから左に90°の方向です。方位をリセットすることでこれを
+        リセットできます。
 
-        The robot first turns to the required heading and then drives the
-        straight-line distance. Because the heading target is absolute, the
-        result is independent of the robot's current heading.
+        ロボットはまず必要な方位へ旋回し、次に直線距離を走行します。
+        方位の目標は絶対的なので、結果はロボットの現在の方位に依存
+        しません。
 
         Arguments:
-            dx (Number, mm): X-distance on the drive area.
-            dy (Number, mm): Y-distance on the drive area.
-            then (Stop): What to do after coming to a standstill.
+            dx (Number, mm): 走行エリア上のX方向の距離。
+            dy (Number, mm): 走行エリア上のY方向の距離。
+            then (Stop): 静止した後に何をするか。
 
         Raises:
-            ValueError: If one of the distances is more than 30 m.
+            ValueError: いずれかの距離が30 mを超える場合。
         """
 
     def use_gyro(self, use_gyro: bool) -> None:
         """use_gyro(use_gyro)
 
-        Choose ``True`` to use the gyro sensor for turning and driving
-        straight. Choose ``False`` to rely only on the motor's built-in
-        rotation sensors.
+        旋回や直進にジャイロセンサーを使用する場合は ``True`` を選択します。
+        モーター内蔵の回転センサーのみに依存する場合は ``False`` を
+        選択します。
 
-        This method will automatically call :meth:`.stop` to stop ongoing
-        movements.
+        このメソッドは自動的に :meth:`.stop` を呼び出して、進行中の動作を
+        停止します。
 
         Arguments:
-            use_gyro (bool): ``True`` to enable, ``False`` to disable.
+            use_gyro (bool): 有効にする場合は ``True`` 、無効にする場合は
+                ``False`` 。
         """
 
 
 class Car:
-    """A vehicle with one steering motor, and one or more motors for driving.
+    """1つのステアリングモーターと、1つ以上の駆動モーターを持つ車両です。
 
-    When you use this class, the steering motor will automatically find the
-    center position. This also determines which angle corresponds to 100%
-    steering.
+    このクラスを使用すると、ステアリングモーターが自動的に中心位置を
+    見つけます。これにより、どの角度が100%ステアリングに対応するかも
+    決定されます。
     """
 
     def __init__(
@@ -339,54 +341,54 @@ class Car:
 
         Arguments:
             steer_motor (Motor):
-                The motor that steers the front wheels.
-            drive_motors (Motor): The motor that drives the wheels. Use a tuple
-                for multiple motors.
-            torque_limit (Number, %): The maximum torque limit used to find the
-                endpoints for the steering mechanism, as a percentage of the
-                maximum torque of the steering motor.
+                前輪をステアリングするモーター。
+            drive_motors (Motor): ホイールを駆動するモーター。複数の
+                モーターにはタプルを使用します。
+            torque_limit (Number, %): ステアリング機構の端点を見つける
+                ために使用する最大トルク制限。ステアリングモーターの
+                最大トルクに対する割合です。
         """
 
     def steer(self, percentage: Number) -> None:
         """steer(percentage)
 
-        Steers the front wheels by a given amount. For 100% steering, it
-        steers right by the angle that was determined on initialization.
-        For -100% steering, it steers left and 0% means straight.
+        前輪を指定した量だけステアリングします。100%ステアリングの場合、
+        初期化時に決定された角度だけ右へステアリングします。-100%
+        ステアリングの場合は左へ、0%は直進を意味します。
 
         Arguments:
-            steering (Number, %): Amount to steer the front wheels.
+            percentage (Number, %): 前輪をステアリングする量。
         """
 
     def drive_power(self, power: Number) -> None:
         """drive_power(power)
 
-        Drives the car at a given power level. Positive values drive forward,
-        negative values drive backward.
+        指定したパワーレベルで車を走行させます。正の値は前進、負の値は
+        後進します。
 
-        The ``power`` value is used to set the motor voltage as a percentage of
-        the battery voltage. Below 10%, the car will coast the wheels in order
-        to roll out smoothly instead of braking abruptly.
+        ``power`` の値は、バッテリー電圧に対する割合としてモーター電圧を
+        設定するために使用されます。10%未満では、急ブレーキではなく
+        スムーズに転がり続けるよう、車はホイールを空転させます。
 
-        This command is useful for remote control applications where you want
-        instant response to button presses or joystick movements.
+        このコマンドは、ボタン押下やジョイスティック操作に即座に
+        反応させたいリモートコントロール用途に便利です。
 
         Arguments:
-            speed (Number, %): Speed of the car.
+            power (Number, %): 車のパワー。
         """
 
     def drive_speed(self, speed: Number) -> None:
         """drive_speed(speed)
 
-        Drives the car at a given motor speed. Positive values drive forward,
-        negative values drive backward.
+        指定したモーター速度で車を走行させます。正の値は前進、負の値は
+        後進します。
 
-        This command is useful for more precise driving with gentle
-        acceleration and deceleration. This automatically increases the power
-        to maintain speed as you drive across obstacles.
+        このコマンドは、穏やかな加減速によるより精密な走行に便利です。
+        障害物を越えて走行する際に速度を維持するため、自動的に
+        パワーが上がります。
 
         Arguments:
-            speed (Number, deg/s): Angular velocity of the drive motors.
+            speed (Number, deg/s): 駆動モーターの角速度。
         """
 
 

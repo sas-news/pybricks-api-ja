@@ -3,13 +3,14 @@
 ImageFile
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Note: Not all images are included in the firmware yet. This is a work in progress.
+注意: すべての画像がファームウェアに含まれているわけではありません。
+これは作業中のものです。
 
 .. currentmodule:: pybricks.parameters
 
 .. class:: ImageFile
 
-    .. rubric:: **Information**
+    .. rubric:: **情報**
 
     .. data:: ACCEPT
 
@@ -88,14 +89,14 @@ Note: Not all images are included in the firmware yet. This is a work in progres
         .. image:: ../../../media/ev3dev-media/images/mono/lego/ev3_icon.png
             :width: 15 %
 
-    .. rubric:: **Objects**
+    .. rubric:: **オブジェクト**
 
     .. data:: TARGET
 
         .. image:: ../../../media/ev3dev-media/images/mono/objects/target.png
             :width: 15 %
 
-    .. rubric:: **Eyes**
+    .. rubric:: **目**
 
     .. data:: ANGRY
 

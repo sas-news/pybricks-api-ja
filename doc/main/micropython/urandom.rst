@@ -1,12 +1,12 @@
 .. pybricks-requirements:: stm32-extra
 
-:mod:`urandom` -- Pseudo-random numbers
+:mod:`urandom` -- 擬似乱数
 ================================================
 
 .. automodule:: urandom
     :no-members:
 
-    .. rubric:: Basic random numbers
+    .. rubric:: 基本的な乱数
 
     .. blockimg:: pybricks_blockRandInt
 
@@ -14,7 +14,7 @@
 
     .. autofunction:: random
 
-    .. rubric:: Random numbers from a range
+    .. rubric:: 範囲からの乱数
 
     .. autofunction:: getrandbits
 
@@ -22,11 +22,11 @@
 
     .. autofunction:: uniform
 
-    .. rubric:: Random elements from a sequence
+    .. rubric:: シーケンスからのランダムな要素
 
     .. autofunction:: choice
 
-    .. rubric:: Updating the random seed
+    .. rubric:: 乱数シードの更新
 
     .. autofunction:: seed
 

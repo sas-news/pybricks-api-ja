@@ -1,12 +1,12 @@
 .. pybricks-requirements::
 
-:mod:`tools <pybricks.tools>` -- General purpose tools
+:mod:`tools <pybricks.tools>` -- 汎用ツール
 ========================================================
 
 .. automodule:: pybricks.tools
     :no-members:
 
-Timing tools
+時間計測ツール
 ---------------
 
 .. blockimg:: pybricks_blockWaitTime
@@ -36,7 +36,7 @@ Timing tools
 
     .. automethod:: pybricks.tools.StopWatch.reset
 
-Input tools
+入力ツール
 -----------
 
 .. blockimg:: pybricks_blockReadInput_read_input_first_byte
@@ -51,7 +51,7 @@ Input tools
 
 .. versionchanged:: 3.3
 
-    Added ``last`` and ``chr`` options.
+    ``last`` と ``chr`` のオプションが追加されました。
 
 
 .. pybricks-requirements:: light-matrix
@@ -61,12 +61,12 @@ Input tools
 .. literalinclude::
     ../../../examples/pup/tools/hub_menu.py
 
-Linear algebra tools
+線形代数ツール
 --------------------
 
 .. versionchanged:: 3.3
 
-    These tools were previously located in the ``pybricks.geometry`` module.
+    これらのツールは、以前は ``pybricks.geometry`` モジュールにありました。
 
 .. pybricks-requirements:: stm32-float
 
@@ -85,14 +85,14 @@ Linear algebra tools
 
 .. autofunction:: pybricks.tools.cross
 
-Multitasking
+マルチタスク
 --------------------
 
 .. versionadded:: 3.3
 
-Pybricks supports cooperative multitasking using the ``async`` and ``await``
-keywords. This allows operations that normally take some time to complete to
-run in parallel with other operations.
+Pybricksは ``async`` と ``await`` キーワードを使った協調マルチタスクを
+サポートしています。これにより、通常は完了に時間がかかる操作を、
+他の操作と並行して実行できます。
 
 .. blockimg:: pybricks_blockMultiTask
 
@@ -100,9 +100,8 @@ run in parallel with other operations.
 
 .. autofunction:: pybricks.tools.run_task
 
-The following example shows how to use multitasking to make a robot drive
-forward, then turn and move a gripper at the same time, and then drive
-backward.
+以下の例は、マルチタスクを使ってロボットを前進させ、旋回とグリッパーの
+動作を同時に行い、その後後退させる方法を示しています。
 
 .. literalinclude::
     ../../../examples/pup/robotics/drivebase_async.py
@@ -111,10 +110,10 @@ backward.
 
 .. class:: await
 
-Whenever you see a function or method prefixed by ``await``, this means that
-it supports multitasking. When running a coroutine with ``run_task``, all
-methods and functions prefixed by ``await`` will act as coroutines.
+関数やメソッドの前に ``await`` が付いている場合、それはマルチタスクを
+サポートしていることを意味します。 ``run_task`` でコルーチンを実行すると、
+``await`` が付いたすべてのメソッドと関数はコルーチンとして動作します。
 
-If you don't use multitasking, you can ignore the ``await`` keyword and write
-programs as usual. Specifically, when ``run_task`` is not used, functions
-prefixed by ``await`` will act as normal functions.
+マルチタスクを使用しない場合は、 ``await`` キーワードを無視して
+通常どおりプログラムを書けます。具体的には、 ``run_task`` を使用しない場合、
+``await`` が付いた関数は通常の関数として動作します。

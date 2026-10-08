@@ -17,10 +17,10 @@ Tilt Sensor
 
     .. automethod:: tilt
 
-Examples
+使用例
 -------------------
 
-Measuring pitch and roll
+ピッチとロールを測定する
 ************************
 
 .. literalinclude::

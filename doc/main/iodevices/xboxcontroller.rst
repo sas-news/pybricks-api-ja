@@ -1,6 +1,6 @@
 .. pybricks-requirements:: xbox-controller
 
-Xbox Controller
+Xboxコントローラー
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: ../../main/diagrams_source/xboxcontroller.png
@@ -21,17 +21,20 @@ Xbox Controller
 
   .. automethod:: pybricks.iodevices::XboxController.buttons.pressed
 
-    Buttons include:
+    ボタンには以下が含まれます:
 
-      * ``Button.A``, ``Button.B``, ``Button.X``, ``Button.Y``.
-      * ``Button.UP``, ``Button.DOWN``, ``Button.LEFT``, ``Button.RIGHT``
-        (direction pad). At most two of these can be pressed at the same time.
-      * ``Button.LB`` and ``Button.RB`` (bumpers).
-      * ``Button.LJ`` and ``Button.RJ`` (pressing the joysticks).
-      * ``Button.VIEW``, ``Button.MENU``, ``Button.GUIDE`` (the Xbox logo), and ``Button.UPLOAD``.
-      * ``Button.P1``, ``Button.P2``, ``Button.P3``, and ``Button.P4`` (Elite Series 2 only).
-        Pressing the paddles may also be detected as other button presses,
-        depending on the currently active profile.
+      * ``Button.A`` 、 ``Button.B`` 、 ``Button.X`` 、 ``Button.Y`` 。
+      * ``Button.UP`` 、 ``Button.DOWN`` 、 ``Button.LEFT`` 、
+        ``Button.RIGHT`` （方向パッド）。これらは同時に最大2つまで
+        押すことができます。
+      * ``Button.LB`` と ``Button.RB`` （バンパー）。
+      * ``Button.LJ`` と ``Button.RJ`` （ジョイスティックの押し込み）。
+      * ``Button.VIEW`` 、 ``Button.MENU`` 、 ``Button.GUIDE`` （Xboxロゴ）、
+        および ``Button.UPLOAD`` 。
+      * ``Button.P1`` 、 ``Button.P2`` 、 ``Button.P3`` 、 ``Button.P4``
+        （Elite Series 2のみ）。
+        パドルを押した場合、現在アクティブなプロファイルに応じて、
+        他のボタンの押下として検出される場合もあります。
 
   .. blockimg:: pybricks_blockJoystickValue_xbox_lj_x
 
@@ -69,57 +72,55 @@ Xbox Controller
 
 .. _xbox-controller-pairing:
 
-Xbox Controller Pairing Instructions
+Xboxコントローラーのペアリング手順
 ====================================
-The first time you use a controller with a hub, you will need to pair
-them: Turn the controller on and then press and hold the pairing
-button on the back of the controller for a few seconds. When you release
-it, the Xbox button starts flashing more rapidly. Then start your program.
+コントローラーを初めてハブで使用する場合は、ペアリングが必要です:
+コントローラーの電源を入れ、背面のペアリングボタンを数秒間長押しします。
+離すと、Xboxボタンの点滅が速くなります。その後、プログラムを開始します。
 
-When pairing and the connection is succesful, the Xbox button will stop
-flashing and stay on for as long as the program is running.
+ペアリングして接続に成功すると、Xboxボタンは点滅を止め、プログラムが
+実行されている間ずっと点灯したままになります。
 
-Repeat Connections
+再接続
 ------------------
 
-If you keep using the same controller with the same hub, you can simply
-turn the controller on the next time and the hub will connect to it
-automatically when your program with this class runs.
+同じコントローラーを同じハブで使い続ける場合は、次回はコントローラーの
+電源を入れるだけで、このクラスを使用したプログラムの実行時にハブが
+自動的に接続します。
 
-The Xbox controller only accepts this simpler connection with the most
-recently connected device. So if you connect to your Xbox console again, or
-connect to another hub, you will need to pair them again as described
-above.
+Xboxコントローラーは、最後に接続したデバイスとのみこの簡単な接続を
+受け付けます。そのため、Xbox本体に再接続したり、別のハブに接続したり
+した場合は、上記の手順で再度ペアリングする必要があります。
 
-Compatible Controllers
+対応コントローラー
 ----------------------
 
-All Xbox controllers released since 2016 are compatible. This includes the
-controller from the One S (``1708`` from 2016), the Elite Series 2 (``1797``
-from 2019), and the Series X/S (``1914`` from 2020), which is
-the latest model as of this writing.
+2016年以降に発売されたすべてのXboxコントローラーに対応しています。
+これには、One S付属のコントローラー（2016年の ``1708`` ）、
+Elite Series 2（2019年の ``1797`` ）、Series X/S（2020年の ``1914`` 、
+執筆時点での最新モデル）が含まれます。
 
 .. raw:: html
 
-  <p>See also <a href="https://en.wikipedia.org/wiki/Xbox_Wireless_Controller#Summary" target="_blank">
-  this overview</a> of model numbers including pictures of each controller.</p>
+  <p>各コントローラーの写真を含むモデル番号の<a href="https://en.wikipedia.org/wiki/Xbox_Wireless_Controller#Summary" target="_blank">
+  概要</a>も参照してください。</p>
 
-Updating the Xbox Controller
+Xboxコントローラーの更新
 ============================
 
-If you frequently use the Xbox Controller with your console, your controller
-is probably already up to date. If you have not used it for a while or if you
-bought one recently, you may need to update it.
+Xboxコントローラーを本体で頻繁に使用している場合、コントローラーはおそらく
+すでに最新の状態です。しばらく使用していなかった場合や最近購入した場合は、
+更新が必要なことがあります。
 
-To update the controller without a console, you can use the Xbox Accessories
-app on a Windows computer. You can download it from the Microsoft Store.
-Connect the controller via USB to the computer and follow the instructions in
-the app to click on "Update now".
+本体なしでコントローラーを更新するには、Windowsコンピューターで
+Xboxアクセサリーアプリを使用できます。Microsoft Storeからダウンロード
+できます。コントローラーをUSBでコンピューターに接続し、アプリ内の指示に
+従って「今すぐ更新」をクリックします。
 
-Technic Hub Limitations
+Technic Hubの制限
 =======================
 
-Due to limitations of the Technic Hub, the hub will disconnect from the
-computer when searching for the Xbox controller. This means you will not be
-able to see output from the ``print`` command. Also, you'll have to connect to
-the computer again if you want to change your program.
+Technic Hubの制限により、Xboxコントローラーを検索している間、ハブは
+コンピューターから切断されます。つまり、 ``print`` コマンドの出力を
+表示できなくなります。また、プログラムを変更する場合はコンピューターに
+再接続する必要があります。

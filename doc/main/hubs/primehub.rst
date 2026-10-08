@@ -58,10 +58,11 @@ Prime Hub
 
     .. versionchanged:: 3.6
 
-        The methods below now return calibrated data by default. Depending on
-        the method used, this combines data from the accelerometer, gyroscope,
-        with your calibration values. Use ``calibrated=False`` where applicable
-        to get the raw data you got before.
+        以下のメソッドは、デフォルトでキャリブレーション済みのデータを
+        返すようになりました。使用するメソッドに応じて、加速度センサーと
+        ジャイロスコープのデータが、あなたのキャリブレーション値と
+        組み合わされます。以前の生データを取得するには、該当する場所で
+        ``calibrated=False`` を使用します。
 
     .. automethod:: pybricks.hubs::PrimeHub.imu.ready
 
@@ -95,7 +96,7 @@ Prime Hub
 
     .. automethod:: pybricks.hubs::PrimeHub.imu.settings
 
-    .. rubric:: Using the speaker
+    .. rubric:: スピーカーを使う
 
     .. automethod:: pybricks.hubs::PrimeHub.speaker.volume
 
@@ -105,7 +106,7 @@ Prime Hub
 
     .. automethod:: pybricks.hubs::PrimeHub.speaker.play_notes
 
-    .. rubric:: Using the battery
+    .. rubric:: バッテリーを使う
 
     .. blockimg:: pybricks_blockBatteryMeasure_PrimeHub_battery.voltage
 
@@ -115,7 +116,7 @@ Prime Hub
 
     .. automethod:: pybricks.hubs::PrimeHub.battery.current
 
-    .. rubric:: Getting the charger status
+    .. rubric:: 充電器の状態を取得する
 
     .. automethod:: pybricks.hubs::PrimeHub.charger.connected
 
@@ -123,14 +124,14 @@ Prime Hub
 
     .. automethod:: pybricks.hubs::PrimeHub.charger.status
 
-    .. rubric:: System control
+    .. rubric:: システム制御
 
     .. automethod:: pybricks.hubs::PrimeHub.system.info
 
     .. automethod:: pybricks.hubs::PrimeHub.system.storage
 
-        You can store up to 512 bytes of data on this hub. The data is cleared
-        when you update the Pybricks firmware.
+        このハブには最大512バイトのデータを保存できます。データは
+        Pybricksファームウェアを更新すると消去されます。
 
     .. automethod:: pybricks.hubs::PrimeHub.system.reset_storage
 
@@ -140,65 +141,65 @@ Prime Hub
 
 .. note::
 
-        The examples below use the ``PrimeHub`` class. The examples work fine
-        on both hubs because they are the identical. If you prefer, you can
-        change this to ``InventorHub``.
+        以下の例では ``PrimeHub`` クラスを使用しています。両方のハブは
+        同一であるため、どちらのハブでも例は問題なく動作します。
+        必要に応じて ``InventorHub`` に変更できます。
 
-Status light examples
+ステータスライトの例
 ---------------------
 
-Turning the light on and off
+ライトのオンとオフ
 ****************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/light_off_primehub.py
 
-Changing brightness and using custom colors
+輝度の変更とカスタムカラーの使用
 *******************************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/light_hsv_primehub.py
 
-Making the light blink
+ライトを点滅させる
 **********************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/light_blink_primehub.py
 
-Creating light animations
-*************************
+ライトアニメーションの作成
+****************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/light_animate_primehub.py
 
-Matrix display examples
+マトリクス表示の例
 -----------------------
 
-Displaying images
+画像を表示する
 *****************
 
 .. literalinclude::
     ../../../examples/pup/hub_primehub/display_image.py
 
-Displaying numbers
+数字を表示する
 ******************
 
 .. literalinclude::
     ../../../examples/pup/hub_primehub/display_number.py
 
-Displaying text
-***************
+テキストを表示する
+********************
 
 .. literalinclude::
     ../../../examples/pup/hub_primehub/display_text.py
 
-Displaying individual pixels
+個々のピクセルを表示する
 ****************************
 
 .. literalinclude::
     ../../../examples/pup/hub_primehub/display_pixel.py
 
-Changing the display orientation
+表示の向きを変える
 ********************************
 
 .. literalinclude::
@@ -209,77 +210,77 @@ Changing the display orientation
 
 .. _make_icons:
 
-Making your own images
+自分で画像を作る
 **********************
 
 .. literalinclude::
     ../../../examples/pup/hub_primehub/display_matrix.py
 
-Combining icons to make expressions
+アイコンを組み合わせて表情を作る
 ************************************
 
 .. literalinclude::
     ../../../examples/pup/hub_primehub/display_expression.py
 
-Displaying animations
-*********************
+アニメーションを表示する
+************************
 
 .. literalinclude::
     ../../../examples/pup/hub_primehub/display_animate.py
 
-Button examples
+ボタンの例
 ---------------
 
-Detecting button presses
+ボタン押下を検出する
 ************************
 
 .. literalinclude::
     ../../../examples/pup/hub_primehub/button_main.py
 
-IMU examples
+IMUの例
 ---------------
 
-Testing which way is up
+どちらが上かを確かめる
 ********************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/imu_up_primehub.py
 
 
-Reading the tilt value
+傾きの値を読み取る
 ********************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/imu_tilt_primehub.py
 
-Using a custom hub orientation
+カスタムのハブの向きを使う
 **************************************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/imu_tilt_blast_primehub.py
 
-Reading acceleration and angular velocity vectors
+加速度と角速度のベクトルを読み取る
 **************************************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/imu_read_vector_primehub.py
 
-Reading acceleration and angular velocity on one axis
+1軸の加速度と角速度を読み取る
 *****************************************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/imu_read_scalar_primehub.py
 
-System examples
+システムの例
 ----------------------------------
 
-Changing the stop button combination
+停止ボタンの組み合わせを変える
 *****************************************
 
 .. literalinclude::
     ../../../examples/pup/hub_primehub/button_stop.py
 
-Turning the hub off
+ハブの電源を切る
 *****************************************
 
 .. literalinclude::

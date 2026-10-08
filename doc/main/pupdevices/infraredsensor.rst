@@ -21,10 +21,10 @@ Infrared Sensor
 
     .. automethod:: pybricks.pupdevices.InfraredSensor.count
 
-Examples
+使用例
 -------------------
 
-Measuring distance, object count, and reflection
+距離・物体の数・反射を測定する
 ************************************************
 
 .. literalinclude::

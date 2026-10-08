@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2018-2023 The Pybricks Authors
 
-"""LEGO® Programmable Hubs."""
+"""LEGO® プログラムハブ。"""
 
 from __future__ import annotations
 
@@ -14,10 +14,10 @@ from .parameters import Image as _Image
 
 
 class EV3Brick:
-    """LEGO® MINDSTORMS® EV3 Brick."""
+    """LEGO® MINDSTORMS® EV3ブリック。"""
 
-    # These class attributes are here for auto-documentation only.
-    # In reality, they are instance attributes created by __init__.
+    # これらのクラス属性は、自動ドキュメント化のためにここにあります。
+    # 実際には、__init__で作成されるインスタンス属性です。
     buttons = _common.Keypad(
         [
             _Button.LEFT,
@@ -35,10 +35,10 @@ class EV3Brick:
 
 
 class NXTBrick:
-    """LEGO® MINDSTORMS® NXT Brick."""
+    """LEGO® MINDSTORMS® NXTブリック。"""
 
-    # These class attributes are here for auto-documentation only.
-    # In reality, they are instance attributes created by __init__.
+    # これらのクラス属性は、自動ドキュメント化のためにここにあります。
+    # 実際には、__init__で作成されるインスタンス属性です。
     buttons = _common.Keypad(
         [
             _Button.LEFT,
@@ -54,10 +54,10 @@ class NXTBrick:
 
 
 class MoveHub:
-    """LEGO® BOOST Move Hub."""
+    """LEGO® BOOST Moveハブ。"""
 
-    # These class attributes are here for auto-documentation only.
-    # In reality, they are instance attributes created by __init__.
+    # これらのクラス属性は、自動ドキュメント化のためにここにあります。
+    # 実際には、__init__で作成されるインスタンス属性です。
     battery = _common.Battery()
     light = _common.ColorLight()
     imu = _common.SimpleAccelerometer()
@@ -72,18 +72,16 @@ class MoveHub:
         """MoveHub(top_side=Axis.Z, front_side=Axis.X)
 
         Arguments:
-            top_side (Axis): The axis that passes through the *top side* of
-                the hub.
-            front_side (Axis): The axis that passes through the *front side* of
-                the hub.
+            top_side (Axis): ハブの *上面* を通る軸。
+            front_side (Axis): ハブの *前面* を通る軸。
         """
 
 
 class CityHub:
-    """LEGO® City Hub."""
+    """LEGO® Cityハブ。"""
 
-    # These class attributes are here for auto-documentation only.
-    # In reality, they are instance attributes created by __init__.
+    # これらのクラス属性は、自動ドキュメント化のためにここにあります。
+    # 実際には、__init__で作成されるインスタンス属性です。
     battery = _common.Battery()
     light = _common.ColorLight()
     system = _common.System()
@@ -94,10 +92,10 @@ class CityHub:
 
 
 class TechnicHub:
-    """LEGO® Technic Hub."""
+    """LEGO® Technicハブ。"""
 
-    # These class attributes are here for auto-documentation only.
-    # In reality, they are instance attributes created by __init__.
+    # これらのクラス属性は、自動ドキュメント化のためにここにあります。
+    # 実際には、__init__で作成されるインスタンス属性です。
     battery = _common.Battery()
     light = _common.ColorLight()
     imu = _common.IMU()
@@ -111,24 +109,21 @@ class TechnicHub:
     ):
         """TechnicHub(top_side=Axis.Z, front_side=Axis.X)
 
-        Initializes the hub. Optionally, specify how the hub is
-        :ref:`placed in your design <robotframe>` by saying in which
-        direction the top side (with the button) and front side
-        (with the light) are pointing.
+        ハブの初期化を行います。
+        任意でハブの上面（ボタンがある方）と前面（ライトがある方）の向きを指定し、
+        :ref:`ハブをデザインにどのように配置するか <robotframe>` を指定することができます。
 
         Arguments:
-            top_side (Axis): The axis that passes through the *top side* of
-                the hub.
-            front_side (Axis): The axis that passes through the *front side* of
-                the hub.
+            top_side (Axis): ハブの *上面* を通る軸。
+            front_side (Axis): ハブの *前面* を通る軸。
         """
 
 
 class EssentialHub:
-    """LEGO® SPIKE Essential Hub."""
+    """LEGO® SPIKE Essentialハブ。"""
 
-    # These class attributes are here for auto-documentation only.
-    # In reality, they are instance attributes created by __init__.
+    # これらのクラス属性は、自動ドキュメント化のためにここにあります。
+    # 実際には、__init__で作成されるインスタンス属性です。
     battery = _common.Battery()
     buttons = _common.Keypad([_Button.CENTER])
     charger = _common.Charger()
@@ -143,24 +138,21 @@ class EssentialHub:
     ):
         """EssentialHub(top_side=Axis.Z, front_side=Axis.X)
 
-        Initializes the hub. Optionally, specify how the hub is
-        :ref:`placed in your design <robotframe>` by saying in which
-        direction the top side (with the button) and the front side (with the USB
-        port, and I/O ports A and B) are pointing.
+        ハブの初期化を行います。
+        任意でハブの上面（ボタンがある方）と前面（USBポートとI/OポートA・Bがある方）の向きを指定し、
+        :ref:`ハブをデザインにどのように配置するか <robotframe>` を指定することができます。
 
         Arguments:
-            top_side (Axis): The axis that passes through the *top side* of
-                the hub.
-            front_side (Axis): The axis that passes through the *front side* of
-                the hub.
+            top_side (Axis): ハブの *上面* を通る軸。
+            front_side (Axis): ハブの *前面* を通る軸。
         """
 
 
 class PrimeHub:
-    """LEGO® SPIKE Prime Hub."""
+    """LEGO® SPIKE Primeハブ。"""
 
-    # These class attributes are here for auto-documentation only.
-    # In reality, they are instance attributes created by __init__.
+    # これらのクラス属性は、自動ドキュメント化のためにここにあります。
+    # 実際には、__init__で作成されるインスタンス属性です。
     battery = _common.Battery()
     buttons = _common.Keypad(
         [
@@ -195,9 +187,9 @@ class PrimeHub:
 
 
 class InventorHub(PrimeHub):
-    """LEGO® MINDSTORMS Inventor Hub."""
+    """LEGO® MINDSTORMS Inventorハブ。"""
 
 
-# Hide type-only names from jedi completions in the module namespace.
+# 型専用の名前をモジュール名前空間のjedi補完から隠します。
 if TYPE_CHECKING:
     del Axis

@@ -14,9 +14,9 @@
 # Copyright (c) 2001-2021 Python Software Foundation
 
 """
-The following functions and exceptions can be used without importing anything.
+以下の関数と例外は、何もインポートせずに使用できます。
 
-Most functions and classes in this module do not accept keyword arguments.
+このモジュールのほとんどの関数とクラスは、キーワード引数を受け付けません。
 """
 
 import builtins
@@ -57,26 +57,25 @@ _type = type
 def abs(x: Any) -> Any:
     """abs(x) -> Any
 
-    Returns the absolute value of a number.
+    数値の絶対値を返します。
 
-    The argument may be an integer, a
-    floating point number, or any object implementing ``__abs__()``.
-    If the argument is a complex number, its magnitude is returned.
+    引数には整数、浮動小数点数、または ``__abs__()`` を実装する任意の
+    オブジェクトを指定できます。引数が複素数の場合は、その大きさが返されます。
 
     Arguments:
-        x (Any): The value.
+        x (Any): 値。
 
     Returns:
-        Absolute value of ``x``.
+        ``x`` の絶対値。
     """
 
 
 def all(x: Iterable) -> _bool:
     """all(x) -> bool
 
-    Checks if all elements of the iterable are true.
+    イテラブルのすべての要素が真かどうかを確認します。
 
-    Equivalent to::
+    以下と同等です::
 
         def all(x):
             for element in x:
@@ -85,20 +84,20 @@ def all(x: Iterable) -> _bool:
             return True
 
     Arguments:
-        x (Iterable): The iterable to be checked.
+        x (Iterable): 確認するイテラブル。
 
     Returns:
-        ``True`` if the iterable ``x`` is empty or if all elements
-        are true. Otherwise ``False``.
+        イテラブル ``x`` が空の場合、またはすべての要素が真の場合は
+        ``True`` 。それ以外は ``False`` 。
     """
 
 
 def any(x: Iterable) -> _bool:
     """any(x) -> bool
 
-    Checks if at least one elements of the iterable is true.
+    イテラブルの少なくとも1つの要素が真かどうかを確認します。
 
-    Equivalent to::
+    以下と同等です::
 
         def any(x):
             for element in x:
@@ -107,25 +106,25 @@ def any(x: Iterable) -> _bool:
             return False
 
     Arguments:
-        x (Iterable): The iterable to be checked.
+        x (Iterable): 確認するイテラブル。
 
     Returns:
-        ``True`` if at least one element in ``x`` is true. Otherwise ``False``.
+        ``x`` の少なくとも1つの要素が真の場合は ``True`` 。
+        それ以外は ``False`` 。
     """
 
 
 def bin(x: Any) -> _str:
     """bin(x) -> str
 
-    Converts an integer to its binary representation. The result is a
-    string prefixed with ``0b``. The result is a valid Python expression.
-    For example, ``bin(5)`` gives ``"0b101"``.
+    整数を2進数表現に変換します。結果は ``0b`` で始まる文字列で、
+    有効なPython式です。たとえば ``bin(5)`` は ``"0b101"`` になります。
 
     Arguments:
-        x (int): Value to be converted.
+        x (int): 変換する値。
 
     Returns:
-        A string representing the binary form of the input.
+        入力の2進数表現の文字列。
     """
 
 
@@ -141,16 +140,16 @@ class bool:
         bool(\u200b)
         bool(x)
 
-        Creates a boolean value, which is either ``True`` or ``False``.
+        ``True`` または ``False`` のいずれかのブール値を作成します。
 
-        The input value is converted using the standard truth testing
-        procedure. If no input is given, it is assumed to be ``False``.
+        入力値は標準の真偽テスト手順で変換されます。入力が与えられない
+        場合は ``False`` とみなされます。
 
         Arguments:
-            x: Value to be converted.
+            x: 変換する値。
 
         Returns:
-            Result of the truth-test.
+            真偽テストの結果。
         """
 
 
@@ -174,22 +173,22 @@ class bytes:
         bytes(iterable)
         bytes(string, encoding)
 
-        Creates a new ``bytes`` object, which is a sequence of integers
-        in the range 0 ≤ x ≤ 255. This object is *immutable*,
-        which means that you *cannot* change its contents after you create it.
+        0 ≤ x ≤ 255 の範囲の整数のシーケンスである、新しい ``bytes``
+        オブジェクトを作成します。このオブジェクトは *イミュータブル* で、
+        作成後に内容を変更することは *できません* 。
 
-        If no argument is given, this creates an empty ``bytes`` object.
+        引数が与えられない場合は、空の ``bytes`` オブジェクトを作成します。
 
         Arguments:
-            integer (int): If the argument is a single integer, this creates
-              a ``bytes`` object of zeros. The argument specifies how many.
-            iterable (iter): If the argument is a ``bytearray``, ``bytes``
-              object, or some other iterable of integers, this creates a ``bytes``
-              object with the same byte sequence as the argument.
-            string (str): If the argument is a string, this creates a ``bytes``
-              object containing the encoded string.
-            encoding (str): Specifies which encoding to use for the ``string``
-              argument. Only ``"utf-8"``  is supported.
+            integer (int): 引数が単一の整数の場合は、ゼロの ``bytes``
+              オブジェクトを作成します。この引数はゼロの個数を指定します。
+            iterable (iter): 引数が ``bytearray`` 、 ``bytes``
+              オブジェクト、またはその他の整数のイテラブルの場合は、引数と同じ
+              バイトシーケンスを持つ ``bytes`` オブジェクトを作成します。
+            string (str): 引数が文字列の場合は、エンコードされた文字列を含む
+              ``bytes`` オブジェクトを作成します。
+            encoding (str): ``string`` 引数に使用するエンコーディングを
+              指定します。 ``"utf-8"`` のみがサポートされています。
         """
 
 
@@ -210,20 +209,20 @@ class bytearray:
         bytearray(iterable)
         bytearray(string)
 
-        Creates a new ``bytearray`` object, which is a sequence of integers
-        in the range 0 ≤ x ≤ 255. This object is *mutable*, which
-        means that you *can* change its contents after you create it.
+        0 ≤ x ≤ 255 の範囲の整数のシーケンスである、新しい ``bytearray``
+        オブジェクトを作成します。このオブジェクトは *ミュータブル* で、
+        作成後に内容を変更することが *できます* 。
 
-        If no argument is given, this creates an empty ``bytearray`` object.
+        引数が与えられない場合は、空の ``bytearray`` オブジェクトを作成します。
 
         Arguments:
-            integer (int): If the argument is a single integer, this creates
-              a ``bytearray`` object of zeros. The argument specifies how many.
-            iterable (iter): If the argument is a ``bytearray``, ``bytes``
-              object, or some other iterable of integers, this creates
-              a ``bytearray`` object with the same byte sequence as the argument.
-            string (str): If the argument is a string, this creates
-              a ``bytearray`` object containing the encoded string.
+            integer (int): 引数が単一の整数の場合は、ゼロの ``bytearray``
+              オブジェクトを作成します。この引数はゼロの個数を指定します。
+            iterable (iter): 引数が ``bytearray`` 、 ``bytes``
+              オブジェクト、またはその他の整数のイテラブルの場合は、引数と同じ
+              バイトシーケンスを持つ ``bytearray`` オブジェクトを作成します。
+            string (str): 引数が文字列の場合は、エンコードされた文字列を含む
+              ``bytearray`` オブジェクトを作成します。
         """
 
 
@@ -231,34 +230,35 @@ def callable(object: Any) -> _bool:
     """
     callable(object) -> bool
 
-    Checks if an object is callable.
+    オブジェクトが呼び出し可能かどうかを確認します。
 
     Arguments:
-        object: Object to check.
+        object: 確認するオブジェクト。
 
     Returns:
-        ``True`` if the object argument appears callable, ``False`` if not.
+        引数が呼び出し可能とみなされる場合は ``True`` 、そうでない場合は
+        ``False`` 。
     """
 
 
 def chr(x: _int) -> _str:
     """chr(x) -> str
 
-    Returns the string representing a character whose Unicode code is the
-    integer ``x``. This is the inverse of :meth:`ord`. For
-    example, ``chr(97)`` gives ``"a"``.
+    Unicodeコードが整数 ``x`` である文字を表す文字列を返します。
+    これは :meth:`ord` の逆関数です。たとえば ``chr(97)`` は
+    ``"a"`` になります。
 
     Arguments:
-        x (int): Value to be converted (0-255).
+        x (int): 変換する値（0-255）。
 
     Returns:
-        A string with one character, corresponding to the given Unicode value.
+        指定したUnicode値に対応する、1文字の文字列。
     """
 
 
 def classmethod(method: _callable) -> _callable:
     """
-    Transforms a method into a class method.
+    メソッドをクラスメソッドに変換します。
     """
 
 
@@ -286,19 +286,19 @@ class complex:
         complex(string)
         complex(a=0, b=0)
 
-        Creates a complex number from a string or from a pair of numbers.
+        文字列または数値のペアから複素数を作成します。
 
-        If a string is given, it must be of the form ``'1+2j'``.
-        If a pair of numbers is provided, the result is computed
-        as: ``a + b * j``.
+        文字列を指定する場合は ``'1+2j'`` の形式にする必要があります。
+        数値のペアを指定する場合、結果は ``a + b * j``
+        として計算されます。
 
         Arguments:
-            string (str): A string of the form ``'1+2j'`` .
-            a (float or complex): A real-valued or complex number.
-            b (float or complex): A real-valued or complex number.
+            string (str): ``'1+2j'`` の形式の文字列。
+            a (float or complex): 実数または複素数。
+            b (float or complex): 実数または複素数。
 
         Returns:
-            The resulting complex number.
+            結果の複素数。
         """
 
 
@@ -315,12 +315,12 @@ class dict:
         dict(mapping, **kwargs)
         dict(iterable, **kwargs)
 
-        Creates a dictionary object.
+        辞書オブジェクトを作成します。
 
-        See the standard
-        `Python documentation
+        包括的なリファレンスと例については、標準の
+        `Pythonドキュメント
         <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
-        for a comprehensive reference with examples.
+        を参照してください。
         """
 
 
@@ -337,16 +337,17 @@ def dir(*args) -> _list[_str]:
     dir() -> list[str]
     dir(object) -> list[str]
 
-    Gets a list of attributes of an object.
+    オブジェクトの属性のリストを取得します。
 
-    If no object argument is given, this function gets the list of names in the
-    current local scope.
+    object引数が与えられない場合は、現在のローカルスコープ内の名前の
+    リストを取得します。
 
     Arguments:
-        object: Object to check for valid attributes.
+        object: 有効な属性を確認するオブジェクト。
 
     Returns:
-        List of object attributes or list of names in current local scope.
+        オブジェクトの属性のリスト、または現在のローカルスコープ内の
+        名前のリスト。
     """
 
 
@@ -362,19 +363,19 @@ def divmod(a, b):
     """
     divmod(a, b) -> tuple[int, int]
 
-    Gets the quotient and remainder for dividing two integers.
+    2つの整数を除算したときの商と余りを取得します。
 
-    See the standard `Python divmod documentation
-    <https://docs.python.org/3/library/functions.html#divmod>`_ for
-    the expected behavior when ``a`` or ``b`` are floating point numbers
-    instead.
+    ``a`` または ``b`` が浮動小数点数の場合の期待される動作については、
+    標準の `Python divmodドキュメント
+    <https://docs.python.org/3/library/functions.html#divmod>`_
+    を参照してください。
 
     Arguments:
-        a (int): Numerator.
-        b (int): Denominator.
+        a (int): 分子。
+        b (int): 分母。
 
     Returns:
-        A tuple with the quotient ``a // b`` and the remainder ``a % b``.
+        商 ``a // b`` と余り ``a % b`` のタプル。
     """
 
 
@@ -389,9 +390,9 @@ class enumerate:
         """
         enumerate(iterable, start=0)
 
-        Enumerates an existing iterator by adding a numeric index.
+        既存のイテレーターに数値インデックスを付加して列挙します。
 
-        This function is equivalent to::
+        この関数は以下と同等です::
 
             def enumerate(sequence, start=0):
                 n = start
@@ -419,19 +420,19 @@ def eval(*args):
     eval(expression, globals) -> Any
     eval(expression, globals, locals) -> Any
 
-    Evaluates the result of an expression.
+    式の結果を評価します。
 
-    Syntax errors are reported as exceptions.
+    構文エラーは例外として報告されます。
 
     Arguments:
-        expression (str): Expression to evaluate result of.
-        globals (dict): If given, this controls what functions are available
-            for use in the expression. By default the global scope is accessible.
-        locals (dict): If given, this controls what functions are available
-            for use in the expression. Defaults to the same as ``globals``.
+        expression (str): 結果を評価する式。
+        globals (dict): 指定した場合、式内で使用可能な関数を制御します。
+            デフォルトではグローバルスコープにアクセスできます。
+        locals (dict): 指定した場合、式内で使用可能な関数を制御します。
+            デフォルトは ``globals`` と同じです。
 
     Returns:
-        The value obtained by executing the expression.
+        式を実行して得られた値。
     """
 
 
@@ -453,16 +454,16 @@ def exec(*args):
     exec(expression, globals)
     exec(expression, globals, locals)
 
-    Executes MicroPython code.
+    MicroPythonコードを実行します。
 
-    Syntax errors are reported as exceptions.
+    構文エラーは例外として報告されます。
 
     Arguments:
-        expression (str): Code to be executed.
-        globals (dict): If given, this controls what functions are available
-            for use in the expression. By default the global scope is accessible.
-        locals (dict): If given, this controls what functions are available
-            for use in the expression. Defaults to the same as ``globals``.
+        expression (str): 実行するコード。
+        globals (dict): 指定した場合、式内で使用可能な関数を制御します。
+            デフォルトではグローバルスコープにアクセスできます。
+        locals (dict): 指定した場合、式内で使用可能な関数を制御します。
+            デフォルトは ``globals`` と同じです。
     """
 
 
@@ -482,10 +483,10 @@ class float:
     def __init__(self, *args) -> None:
         """float(x=0.0)
 
-        Creates a floating point number from a given object.
+        指定したオブジェクトから浮動小数点数を作成します。
 
         Arguments:
-            x (int or float or str): Number or string to be converted.
+            x (int or float or str): 変換する数値または文字列。
         """
 
 
@@ -502,15 +503,15 @@ def getattr(*args):
     getattr(object, name) -> Any
     getattr(object, name, default) -> Any
 
-    Looks up the attribute called ``name`` in the given ``object``.
+    指定した ``object`` 内の ``name`` という属性を検索します。
 
     Arguments:
-        object: Object in which to look for the attribute.
-        name (str): Name of the attribute.
-        default: Object to return if the attribute is not found.
+        object: 属性を検索するオブジェクト。
+        name (str): 属性の名前。
+        default: 属性が見つからない場合に返すオブジェクト。
 
     Returns:
-        Returns the value of the named attribute.
+        指定した名前の属性の値。
     """
 
 
@@ -518,10 +519,10 @@ def globals() -> builtins.dict[_str, Any]:
     """
     globals() -> dict
 
-    Gets a dictionary representing the current global symbol table.
+    現在のグローバルシンボルテーブルを表す辞書を取得します。
 
     Returns:
-        The dictionary of globals.
+        グローバルの辞書。
     """
 
 
@@ -529,14 +530,15 @@ def hasattr(object: Any, name: _str) -> _bool:
     """
     hasattr(object, name) -> bool
 
-    Checks if an attribute exists on an object.
+    オブジェクトに属性が存在するかどうかを確認します。
 
     Arguments:
-        object: Object in which to look for the attribute.
-        name (str): Name of the attribute.
+        object: 属性を検索するオブジェクト。
+        name (str): 属性の名前。
 
     Returns:
-        ``True`` if an attribute by that name exists, ``False`` if not.
+        その名前の属性が存在する場合は ``True`` 、そうでない場合は
+        ``False`` 。
     """
 
 
@@ -544,13 +546,13 @@ def hash(object: Any) -> _int:
     """
     hash(object) -> int
 
-    Gets the hash value of an object, if the object supports it.
+    オブジェクトがサポートしている場合、そのハッシュ値を取得します。
 
     Arguments:
-        object: Object for which to get a hash value.
+        object: ハッシュ値を取得するオブジェクト。
 
     Returns:
-        The hash value.
+        ハッシュ値。
     """
 
 
@@ -567,28 +569,27 @@ def help(*args) -> None:
     help()
     help(object)
 
-    Get information about an object.
+    オブジェクトに関する情報を取得します。
 
-    If no arguments are given, this function prints instructions to operate the
-    REPL. If the argument is ``"modules"``, it prints the available modules.
+    引数が与えられない場合、この関数はREPLを操作する手順を表示します。
+    引数が ``"modules"`` の場合は、利用可能なモジュールを表示します。
 
     Arguments:
-        object: Object for which to print help information.
+        object: ヘルプ情報を表示するオブジェクト。
     """
 
 
 def hex(x: int) -> _str:
     """hex(x) -> str
 
-    Converts an integer to its hexadecimal representation. The result is a
-    lowercase string prefixed with ``0x``. The result is a valid Python
-    expression. For example, ``hex(25)`` gives ``"0x19"``.
+    整数を16進数表現に変換します。結果は ``0x`` で始まる小文字の文字列で、
+    有効なPython式です。たとえば ``hex(25)`` は ``"0x19"`` になります。
 
     Arguments:
-        x (int): Value to be converted.
+        x (int): 変換する値。
 
     Returns:
-        A string representing the hexadecimal form of the input.
+        入力の16進数表現の文字列。
     """
 
 
@@ -596,14 +597,14 @@ def id(object: Any) -> _int:
     """
     id(object) -> int
 
-    Gets the *identity* of an object. This is an integer which is guaranteed
-    to be unique and constant for this object during its lifetime.
+    オブジェクトの *識別子* を取得します。これは、そのオブジェクトの
+    存続期間中、一意かつ不変であることが保証された整数です。
 
     Arguments:
-        object: Object of which to get the identifier.
+        object: 識別子を取得するオブジェクト。
 
     Returns:
-        The identifier.
+        識別子。
     """
 
 
@@ -619,15 +620,15 @@ def input(*args) -> _str:
     """input() -> str
     input(prompt) -> str
 
-    Gets input from the user in the terminal window. It waits until
-    the user presses :kbd:`Enter`.
+    ターミナルウィンドウでユーザーからの入力を取得します。ユーザーが
+    :kbd:`Enter` を押すまで待機します。
 
     Arguments:
-        prompt (str): If given, this is printed in the terminal window first.
-            This can be used to ask a question so the user knows what to type.
+        prompt (str): 指定した場合、最初にターミナルウィンドウに表示されます。
+            ユーザーに何を入力すべきかを質問するために使用できます。
 
     Returns:
-        Everything the user typed before pressing :kbd:`Enter`.
+        ユーザーが :kbd:`Enter` を押すまでに入力したすべての内容。
     """
 
 
@@ -647,42 +648,42 @@ class int:
     def __init__(self, *args) -> None:
         """int(x=0)
 
-        Creates an integer.
+        整数を作成します。
 
         Arguments:
-            x (int or float or str): Object to be converted.
+            x (int or float or str): 変換するオブジェクト。
         """
 
     def to_bytes(self, length: _int, byteorder: Literal["little", "big"]) -> _bytes:
         """
         to_bytes(length, byteorder) -> bytes
 
-        Get a :class:`bytes` representation of the integer.
+        整数の :class:`bytes` 表現を取得します。
 
         Arguments:
-            length (int): How many bytes to use.
-            byteorder (str): Choose ``"big"`` to put the most significant byte
-                first. Choose ``"little"`` to put the least significant byte
-                first.
+            length (int): 使用するバイト数。
+            byteorder (str): 最上位バイトを先頭にする場合は ``"big"`` を
+                選択します。最下位バイトを先頭にする場合は ``"little"`` を
+                選択します。
 
         Returns:
-            Byte sequence that represents the integer.
+            整数を表すバイトシーケンス。
         """
 
     @_classmethod
     def from_bytes(cls, _bytes: _bytes, byteorder: Literal["little", "big"]) -> _int:
         """from_bytes(bytes, byteorder) -> int
 
-        Convert a byte sequence to the number it represents.
+        バイトシーケンスを、それが表す数値に変換します。
 
         Arguments:
-            bytes (bytes): The bytes to convert.
-            byteorder (str): Choose ``"big"`` if the most significant byte is
-                the first element. Choose ``"little"`` if the least significant
-                byte is the first element.
+            bytes (bytes): 変換するバイト列。
+            byteorder (str): 最上位バイトが先頭の要素である場合は ``"big"``
+                を選択します。最下位バイトが先頭の要素である場合は
+                ``"little"`` を選択します。
 
         Returns:
-            The number represented by the bytes.
+            バイト列が表す数値。
         """
 
 
@@ -690,15 +691,15 @@ def isinstance(object: Any, classinfo: _type | _tuple[_type]) -> _bool:
     """
     isinstance(object, classinfo) -> bool
 
-    Checks if an object is an instance of a certain class.
+    オブジェクトがあるクラスのインスタンスかどうかを確認します。
 
     Arguments:
-        object: Object to check the type of.
-        classinfo (type or tuple): Class information.
+        object: 型を確認するオブジェクト。
+        classinfo (type or tuple): クラス情報。
 
     Returns:
-        ``True`` if the ``object`` argument is an instance of the ``classinfo``
-        argument, or of a subclass thereof.
+        ``object`` 引数が ``classinfo`` 引数のインスタンス、または
+        そのサブクラスのインスタンスである場合は ``True`` 。
     """
 
 
@@ -706,14 +707,14 @@ def issubclass(cls: _type, classinfo: _type | _tuple[_type]) -> _bool:
     """
     issubclass(cls, classinfo) -> bool
 
-    Checks if one class is a subclass of another class.
+    あるクラスが別のクラスのサブクラスかどうかを確認します。
 
     Arguments:
-        cls: Class type.
-        classinfo (type or tuple): Class information.
+        cls: クラス型。
+        classinfo (type or tuple): クラス情報。
 
     Returns:
-        ``True`` if ``cls`` is a subclass of ``classinfo``.
+        ``cls`` が ``classinfo`` のサブクラスである場合は ``True`` 。
     """
 
 
@@ -721,13 +722,13 @@ def iter(object: Iterable | Sequence) -> Iterator:
     """
     iter(object) -> Iterator
 
-    Gets the iterator of the object if available.
+    利用可能な場合は、オブジェクトのイテレーターを取得します。
 
     Arguments:
-        object: Object for which to get the iterator.
+        object: イテレーターを取得するオブジェクト。
 
     Returns:
-        The iterator.
+        イテレーター。
     """
 
 
@@ -735,13 +736,13 @@ def len(s: Sequence) -> _int:
     """
     len(s) -> int
 
-    Gets the length (the number of items) of an object.
+    オブジェクトの長さ（要素数）を取得します。
 
     Arguments:
-        s (Sequence): The sequence of which to get the length.
+        s (Sequence): 長さを取得するシーケンス。
 
     Returns:
-        The length.
+        長さ。
     """
 
 
@@ -757,14 +758,14 @@ class list:
         list(\u200b)
         list(iterable)
 
-        Creates a new list. If no argument is given, this creates an empty
-        ``list`` object.
+        新しいリストを作成します。引数が与えられない場合は、空の
+        ``list`` オブジェクトを作成します。
 
-        A list is *mutable*, which means that you *can* change its contents
-        after you create it.
+        リストは *ミュータブル* であり、作成後に内容を変更することが
+        *できます* 。
 
         Arguments:
-            iterable (iter): Iterable from which to build the list.
+            iterable (iter): リストの構築元となるイテラブル。
         """
 
 
@@ -772,10 +773,10 @@ def locals() -> _dict:
     """
     locals() -> dict
 
-    Gets a dictionary representing the current local symbol table.
+    現在のローカルシンボルテーブルを表す辞書を取得します。
 
     Returns:
-        The dictionary of locals.
+        ローカルの辞書。
     """
 
 
@@ -784,19 +785,19 @@ def map(function: Callable, iterable: Iterable, *args: Any) -> Iterator:
     map(function, iterable) -> Iterator
     map(function, iterable1, iterable2...) -> Iterator
 
-    Creates a new iterator that applies the given function to each item in the
-    given iterable and yields the results.
+    指定したイテラブルの各要素に指定した関数を適用し、その結果を生成する
+    新しいイテレーターを作成します。
 
     Arguments:
-        function (callable): Function that computes a result for one item in the
-            iterable(s). The number of arguments to this function must match
-            the number of iterables given.
-        iterable (iter): One or more source interables from which to draw data.
-            With multiple iterables, the iterator stops when the shortest
-            iterable is exhausted.
+        function (callable): イテラブルの1つの要素に対して結果を計算する
+            関数。この関数への引数の数は、指定したイテラブルの数と一致する
+            必要があります。
+        iterable (iter): データを取り出す1つ以上のソースイテラブル。
+            複数のイテラブルを指定した場合、最も短いイテラブルが尽きると
+            イテレーターは停止します。
 
     Returns:
-        The new, mapped iterator.
+        新しいマップされたイテレーター。
     """
 
 
@@ -813,12 +814,12 @@ def max(*args):
     max(iterable) -> Any
     max(arg1, arg2, ....) -> Any
 
-    Gets the object with largest value.
+    最大値を持つオブジェクトを取得します。
 
-    The argument may be a single iterable, or any number of objects.
+    引数には単一のイテラブルまたは任意の数のオブジェクトを指定できます。
 
     Returns:
-        The object with the largest value.
+        最大値を持つオブジェクト。
     """
 
 
@@ -835,12 +836,12 @@ def min(*args):
     min(iterable) -> Any
     min(arg1, arg2, ....) -> Any
 
-    Gets the object with smallest value.
+    最小値を持つオブジェクトを取得します。
 
-    The argument may be a single iterable, or any number of objects.
+    引数には単一のイテラブルまたは任意の数のオブジェクトを指定できます。
 
     Returns:
-        The object with the smallest value.
+        最小値を持つオブジェクト。
     """
 
 
@@ -848,36 +849,36 @@ def next(iterator: Iterator) -> Any:
     """
     next(iterator) -> Any
 
-    Retrieves the next item from the iterator by calling its ``__next__()`` method.
+    イテレーターの ``__next__()`` メソッドを呼び出して、次の要素を
+    取得します。
 
     Arguments:
-        iterator (iter): Initialized generator object from which to draw the next
-            value.
+        iterator (iter): 次の値を取り出す、初期化されたジェネレーター
+            オブジェクト。
 
     Returns:
-        The next value from the generator.
+        ジェネレーターからの次の値。
     """
 
 
 class object:
     def __init__(self) -> None:
         """
-        Creates a new, featureless object.
+        機能を持たない新しいオブジェクトを作成します。
         """
 
 
 def oct(x: _int) -> _str:
     """oct(x) -> str
 
-    Converts an integer to its octal representation. The result is a
-    string prefixed with ``0o``. The result is a valid Python
-    expression. For example, ``oct(25)`` gives ``"0o31"``.
+    整数を8進数表現に変換します。結果は ``0o`` で始まる文字列で、
+    有効なPython式です。たとえば ``oct(25)`` は ``"0o31"`` になります。
 
     Arguments:
-        x (int): Value to be converted.
+        x (int): 変換する値。
 
     Returns:
-        A string representing the octal form of the input.
+        入力の8進数表現の文字列。
     """
 
 
@@ -887,14 +888,14 @@ def oct(x: _int) -> _str:
 def ord(c: _str) -> _int:
     """ord(c) -> int
 
-    Converts a string consisting of one Unicode character to the
-    corresponding number. This is the inverse of :meth:`chr`.
+    1つのUnicode文字からなる文字列を対応する数値に変換します。
+    これは :meth:`chr` の逆関数です。
 
     Arguments:
-        c (str): Character to be converted.
+        c (str): 変換する文字。
 
     Returns:
-        Number that represents the character (0--255).
+        文字を表す数値（0--255）。
     """
 
 
@@ -902,16 +903,16 @@ def pow(base: _int | _float, exp: _int | _float) -> _int | _float:
     """
     pow(base, exp) -> Number
 
-    Raises the base to the given exponent.
+    底を指定した指数で累乗します。
 
-    This is the same as doing ``base ** exp``.
+    これは ``base ** exp`` を行うのと同じです。
 
     Arguments:
-        base (Number): The base.
-        exp (Number): The exponent.
+        base (Number): 底。
+        exp (Number): 指数。
 
     Returns:
-        The result.
+        結果。
     """
 
 
@@ -928,17 +929,17 @@ def print(
 def print(*args):
     """print(*objects, sep=" ", end="\\n", file=usys.stdin)
 
-    Prints text or other objects in the terminal window.
+    ターミナルウィンドウにテキストまたはその他のオブジェクトを表示します。
 
     Arguments:
-        objects: Zero or more objects to print.
+        objects: 表示する0個以上のオブジェクト。
 
     Keyword Arguments:
-        sep (str): This is printed between objects, if there is more than one.
-        end (str): This is printed after the last object.
-        file (FileIO): By default, the result is printed in the terminal window. This
-              argument lets you print it to a file instead, if files are
-              supported.
+        sep (str): オブジェクトが複数ある場合に、オブジェクトの間に表示されます。
+        end (str): 最後のオブジェクトの後に表示されます。
+        file (FileIO): デフォルトでは、結果はターミナルウィンドウに表示されます。
+              ファイルがサポートされている場合、この引数でファイルに
+              出力することができます。
     """
 
 
@@ -958,27 +959,27 @@ class range:
         range(start, stop)
         range(start, stop, step)
 
-        Creates a generator that yields values from ``start`` up to
-        ``stop``, with increments of ``step``.
+        ``start`` から ``stop`` まで、 ``step`` 刻みの値を生成する
+        ジェネレーターを作成します。
 
         Arguments:
-            start (int): Starting value. Defaults to ``0`` if only one argument is given.
-            stop (int): Endpoint. This value is *not* included.
-            step (int): Increment between values. Defaults to ``1`` if only one
-                or two arguments are given.
+            start (int): 開始値。引数が1つだけの場合はデフォルトで ``0`` 。
+            stop (int): 終端。この値は *含まれません* 。
+            step (int): 値の間の刻み幅。引数が1つまたは2つの場合は
+                デフォルトで ``1`` 。
         """
 
 
 def repr(x: Any) -> _str:
     """repr(object) -> str
 
-    Gets the string that represents an object.
+    オブジェクトを表す文字列を取得します。
 
     Arguments:
-        x (object): Object to be converted.
+        x (object): 変換するオブジェクト。
 
     Returns:
-        String representation implemented by the object's ``__repr__`` method.
+        オブジェクトの ``__repr__`` メソッドで実装された文字列表現。
     """
 
 
@@ -986,14 +987,14 @@ def reversed(seq: Sequence) -> Iterator:
     """
     reversed(seq) -> Iterator
 
-    Gets an iterator that yields the values from the sequence in the reverse, if
-    supported.
+    サポートされている場合、シーケンスの値を逆順に生成するイテレーターを
+    取得します。
 
     Arguments:
-        seq: Sequence from which to draw samples.
+        seq: 値を取り出すシーケンス。
 
     Returns:
-        Iterator that yields values in reverse order, starting with the last value.
+        最後の値から始めて逆順に値を生成するイテレーター。
     """
 
 
@@ -1010,12 +1011,13 @@ def round(*args):
     round(number) -> int
     round(number, ndigits) -> float
 
-    Round a number to a given number of digits after the decimal point.
+    数値を小数点以下の指定した桁数に丸めます。
 
-    If ``ndigits`` is omitted or ``None``, it returns the nearest integer.
+    ``ndigits`` が省略または ``None`` の場合は、最も近い整数を返します。
 
-    Rounding with one or more digits after the decimal point will not always
-    truncate trailing zeros. To print numbers nicely, format strings instead::
+    小数点以下1桁以上で丸めても、末尾のゼロが常に切り捨てられるとは
+    限りません。数値をきれいに表示するには、代わりに文字列を
+    フォーマットしてください::
 
         # print two decimal places
         print('my number: %.2f' % number)
@@ -1023,8 +1025,8 @@ def round(*args):
         print(f'my number: {number:.2f}')
 
     Arguments:
-        number (float): The number to be rounded.
-        ndigits (int): The number of digits remaining after the decimal point.
+        number (float): 丸める数値。
+        ndigits (int): 小数点以下に残す桁数。
     """
 
 
@@ -1040,151 +1042,153 @@ class set:
         set()
         set(iterable)
 
-        Creates a new set.
+        新しいセットを作成します。
 
-        With no arguments, creates a new empty set, otherwise creates a set
-        containing unique items of *iterable*.
+        引数がない場合は新しい空のセットを作成し、それ以外の場合は
+        *iterable* の一意の要素を含むセットを作成します。
 
-        Sets can also be created using a set literal::
+        セットはセットリテラルを使って作成することもできます::
 
             my_set = {1, 2, 3}
 
-        Elements of a set must be hashable. There are only a few types, like
-        :class:`list` that aren't hashable.
+        セットの要素はハッシュ可能でなければなりません。
+        :class:`list` のようないくつかの型はハッシュ可能ではありません。
 
         Args:
-            iterable: An iterable of hashable objects.
+            iterable: ハッシュ可能なオブジェクトのイテラブル。
         """
 
     def copy(self) -> Self:
         """
         copy() -> set
 
-        Returns a shallow copy of the set.
+        セットのシャローコピーを返します。
 
         Returns:
-            A new set.
+            新しいセット。
         """
 
     def difference(self, *others: set) -> Self:
         """
         difference(other1, other2, ...) -> set
 
-        Returns a new set with elements that are not in any of the other sets.
+        他のどのセットにも含まれない要素を持つ新しいセットを返します。
 
-        The difference can also be computed using the ``-`` operator::
+        差分は ``-`` 演算子を使って計算することもできます::
 
             diff = s - other
 
         Args:
-            others: 1 or more other sets.
+            others: 1つ以上の他のセット。
 
         Returns:
-            A new set.
+            新しいセット。
         """
 
     def intersection(self, *others: set) -> Self:
         """
         intersection(other1, other2, ...) -> set
 
-        Returns a new set with elements that are common between this set and
-        all other sets.
+        このセットと他のすべてのセットに共通する要素を持つ新しいセットを
+        返します。
 
-        The intersection can also be computed using the ``&`` operator::
+        積集合は ``&`` 演算子を使って計算することもできます::
 
             intersect = s & other
 
         Args:
-            others: 1 or more other sets.
+            others: 1つ以上の他のセット。
 
         Returns:
-            A new set.
+            新しいセット。
         """
 
     def isdisjoint(self, other: set) -> bool:
         """
         isdisjoint(other) -> bool
 
-        Tests if a set and *other* have no elements in common.
+        このセットと *other* に共通する要素がないかを確認します。
 
         Args:
-            other: Another set.
+            other: 別のセット。
 
         Returns:
-            ``True`` if this set has no elements in common with *other*,
-            otherwise ``False``.
+            このセットが *other* と共通する要素を持たない場合は ``True`` 、
+            それ以外は ``False`` 。
         """
 
     def issubset(self, other: set) -> bool:
         """
         issubset(other) -> bool
 
-        Tests if a set is a subset of *other*.
+        このセットが *other* の部分集合かどうかを確認します。
 
-        The test can also be performed using using the ``<=`` operator::
+        この確認は ``<=`` 演算子を使って行うこともできます::
 
             if s <= other:
                 # s is subset of other
                 ...
 
         Args:
-            other: Another set.
+            other: 別のセット。
 
         Returns:
-            ``True`` if this set is a subset of *other*, otherwise ``False``.
+            このセットが *other* の部分集合である場合は ``True`` 、
+            それ以外は ``False`` 。
         """
 
     def issuperset(self, other: set) -> bool:
         """
         issuperset(other) -> bool
 
-        Tests if a set is a superset of *other*.
+        このセットが *other* の上位集合かどうかを確認します。
 
-        The test can also be performed using using the ``>=`` operator::
+        この確認は ``>=`` 演算子を使って行うこともできます::
 
             if s >= other:
                 # s is superset of other
                 ...
 
         Args:
-            other: Another set.
+            other: 別のセット。
 
         Returns:
-            ``True`` if this set is a superset of *other*, otherwise ``False``.
+            このセットが *other* の上位集合である場合は ``True`` 、
+            それ以外は ``False`` 。
         """
 
     def symmetric_difference(self, other: set) -> Self:
         """
         symmetric_difference(other) -> bool
 
-        Returns a new set with elements in one set or the other but not in both.
+        どちらか一方のセットにのみ含まれる要素を持つ新しいセットを返します。
 
-        The symmetric difference can also be computed using the ``^`` operator::
+        対称差は ``^`` 演算子を使って計算することもできます::
 
             diff = s ^ other
 
         Args:
-            other: Another set.
+            other: 別のセット。
 
         Returns:
-            A new set.
+            新しいセット。
         """
 
     def union(self, *others: set) -> Self:
         """
         union(other1, other2, ...) -> set
 
-        Returns a new set with elements from this set and all other sets.
+        このセットと他のすべてのセットの要素を含む新しいセットを返します。
 
-        The union can also be computed using the ``|`` operator::
+        和集合は ``|`` 演算子を使って計算することもできます::
 
             u = s | other
 
         Args:
-            others: 1 or more other sets.
+            others: 1つ以上の他のセット。
 
         Returns:
-            A new set.
+            新しいセット。
         """
 
     def __contains__(self, item: Hashable) -> bool: ...
@@ -1218,14 +1222,14 @@ def setattr(object: Any, name: _str, value: Any) -> None:
     """
     setattr(object, name, value)
 
-    Assigns a value to an attribute, provided that the object allows it.
+    オブジェクトが許可する場合、属性に値を割り当てます。
 
-    This is the counterpart of :meth:`getattr`.
+    これは :meth:`getattr` に対応するものです。
 
     Arguments:
-        object: Object in which to store the attribute.
-        name (str): Name of the attribute.
-        value: Value to store.
+        object: 属性を保存するオブジェクト。
+        name (str): 属性の名前。
+        value: 保存する値。
     """
 
 
@@ -1243,35 +1247,34 @@ class slice:
         """
         slice(\u200b)
 
-        Creating instances of this class is not supported.
+        このクラスのインスタンスの作成はサポートされていません。
 
-        Use indexing syntax instead. For
-        example: ``a[start:stop:step]`` or ``a[start:stop, i]``.
+        代わりにインデックス構文を使用してください。
+        例： ``a[start:stop:step]`` または ``a[start:stop, i]`` 。
         """
 
 
 def sorted(iterable: Iterable, key=None, reverse=False) -> builtins.list:
     """
-    Sorts objects.
+    オブジェクトをソートします。
 
     Arguments:
-        iterable (iter): Objects to be sorted. This can also be a generator that
-            yield a finite number of objects.
-        key (callable): Function ``def(item) -> int`` that maps an object to a
-            numerical value. This is used to figure out the order of the sorted
-            items.
-        reverse (bool): Whether to sort in reverse, putting the highest value
-            first.
+        iterable (iter): ソートするオブジェクト。有限個のオブジェクトを
+            生成するジェネレーターも指定できます。
+        key (callable): オブジェクトを数値にマッピングする関数
+            ``def(item) -> int`` 。ソートされた要素の順序を決定するために
+            使用されます。
+        reverse (bool): 最大値を先頭にして逆順にソートするかどうか。
 
 
     Returns:
-        A new list with the sorted items.
+        ソートされた要素を持つ新しいリスト。
     """
 
 
 def staticmethod(method: _callable) -> _callable:
     """
-    Transforms a method into a static method.
+    メソッドを静的メソッドに変換します。
     """
 
 
@@ -1290,16 +1293,16 @@ class str:
         str(object)
         str(object, encoding)
 
-        Gets the string representation of an object.
+        オブジェクトの文字列表現を取得します。
 
-        If no argument is given, this creates an empty ``str`` object.
+        引数が与えられない場合は、空の ``str`` オブジェクトを作成します。
 
         Arguments:
-            object: If only this argument is given, this returns the string
-              representation of the object.
-            encoding (str): If the first argument is a ``bytearray`` or ``bytes``
-              object and the encoding argument is ``"utf-8"``, this will decode
-              the byte data to get a string representation.
+            object: この引数のみが与えられた場合、オブジェクトの文字列表現を
+              返します。
+            encoding (str): 最初の引数が ``bytearray`` または ``bytes``
+              オブジェクトで、encoding引数が ``"utf-8"`` の場合、バイトデータを
+              デコードして文字列表現を取得します。
         """
 
 
@@ -1316,14 +1319,14 @@ def sum(*args):
     sum(iterable) -> Number
     sum(iterable, start) -> Number
 
-    Sums the items from the iterable and the start value.
+    イテラブルの要素と ``start`` の値を合計します。
 
     Arguments:
-        iterable (iter): Values to be summed, starting with the first value.
-        start (Number): Value added to the total.
+        iterable (iter): 合計する値。最初の値から始まります。
+        start (Number): 合計に加算される値。
 
     Returns:
-        The total sum.
+        合計。
     """
 
 
@@ -1345,11 +1348,11 @@ def super(*args):
     super(type) -> type
     super(type, object_or_type) -> type
 
-    Gets an object that delegates method calls to a parent, or a sibling class
-    of the given type.
+    指定した型の親クラスまたは兄弟クラスにメソッド呼び出しを委譲する
+    オブジェクトを取得します。
 
     Returns:
-        The matching `super()` object.
+        対応する `super()` オブジェクト。
     """
 
 
@@ -1365,14 +1368,14 @@ class tuple:
         tuple(\u200b)
         tuple(iterable)
 
-        Creates a new tuple. If no argument is given, this creates an empty
-        ``tuple`` object.
+        新しいタプルを作成します。引数が与えられない場合は、空の
+        ``tuple`` オブジェクトを作成します。
 
-        A tuple is *immutable*, which means that you *cannot* change its
-        contents after you create it.
+        タプルは *イミュータブル* であり、作成後に内容を変更することは
+        *できません* 。
 
         Arguments:
-            iterable (iter): Iterable from which to build the tuple.
+            iterable (iter): タプルの構築元となるイテラブル。
         """
 
 
@@ -1380,11 +1383,11 @@ class type:
     def __init__(self, object: Any) -> None:
         """type(object)
 
-        Gets the type of an object. This can be used to check if an object
-        is an instance of a particular class.
+        オブジェクトの型を取得します。これは、オブジェクトが特定のクラスの
+        インスタンスかどうかを確認するために使用できます。
 
         Arguments:
-            object: Object of which to check the type.
+            object: 型を確認するオブジェクト。
         """
 
 
@@ -1392,14 +1395,14 @@ def zip(*iterables: Iterable) -> Iterable[builtins.tuple]:
     """
     zip(iter_a, iter_b, ...) -> Iterable[tuple]
 
-    Returns an iterator of tuples, where the *i*-th tuple contains the *i*-th
-    element from each of the argument sequences or iterables. The iterator
-    stops when the shortest input iterable is exhausted.
+    タプルのイテレーターを返します。 *i* 番目のタプルには、引数の各
+    シーケンスまたはイテラブルの *i* 番目の要素が含まれます。
+    最も短い入力イテラブルが尽きるとイテレーターは停止します。
 
-    With a single iterable argument, it returns an iterator of 1-tuples.
-    With no arguments, it returns an empty iterator.
+    イテラブルを1つだけ指定した場合は、1要素のタプルのイテレーターを返します。
+    引数を指定しない場合は、空のイテレーターを返します。
 
-    This functionality is equivalent to::
+    この機能は以下と同等です::
 
         def zip(*iterables):
             sentinel = object()
@@ -1414,14 +1417,13 @@ def zip(*iterables: Iterable) -> Iterable[builtins.tuple]:
                 yield tuple(result)
 
     Arguments:
-        iter_a (iter): The first iterable. This provides the first value for
-            each of the yielded tuples.
-        iter_b (iter): The second iterable. This provides the second value in
-            each of the yielded tuples. And so on.
+        iter_a (iter): 最初のイテラブル。生成される各タプルの最初の値を
+            提供します。
+        iter_b (iter): 2番目のイテラブル。生成される各タプルの2番目の値を
+            提供します。以下同様です。
 
     Returns:
-        A new iterator that yields tuples containing the values of the
-        individual iterables.
+        個々のイテラブルの値を含むタプルを生成する新しいイテレーター。
     """
 
 
@@ -1430,37 +1432,36 @@ def zip(*iterables: Iterable) -> Iterable[builtins.tuple]:
 
 class BaseException:
     """
-    The base class for all built-in exceptions.
+    すべての組み込み例外の基底クラス。
 
-    It is not meant to be directly inherited by user-defined classes (for that,
-    use :class:`Exception`).
+    ユーザー定義クラスから直接継承することは意図されていません
+    （その場合は :class:`Exception` を使用してください）。
     """
 
     args: builtins.tuple
     """
-    The tuple of arguments given to the exception constructor.
+    例外コンストラクターに渡された引数のタプル。
     """
 
 
 class Exception(BaseException):
     """
-    All built-in exceptions are derived from this class.
+    すべての組み込み例外はこのクラスから派生しています。
 
-    All user-defined exceptions should also be derived from this class.
+    すべてのユーザー定義例外もこのクラスから派生させる必要があります。
     """
 
 
 class ArithmeticError(Exception):
     """
-    The base class for those built-in exceptions that are raised for various
-    arithmetic errors.
+    さまざまな算術エラーに対して送出される組み込み例外の基底クラス。
     """
 
 
 class LookupError(Exception):
     """
-    The base class for the exceptions that are raised when a key or index used
-    on a mapping or sequence is invalid.
+    マッピングまたはシーケンスで使用するキーまたはインデックスが
+    無効な場合に送出される例外の基底クラス。
     """
 
 
@@ -1469,146 +1470,146 @@ class LookupError(Exception):
 
 class AssertionError(Exception):
     """
-    Raised when an assert statement fails.
+    assert文が失敗したときに送出されます。
     """
 
 
 class AttributeError(Exception):
     """
-    Raised when an attribute reference or assignment fails.
+    属性の参照または代入が失敗したときに送出されます。
     """
 
 
 class EOFError(Exception):
     """
-    Raised when the :meth:`input` function hits an end-of-file condition (EOF)
-    without reading any data.
+    :meth:`input` 関数がデータを読み取る前にファイル終端（EOF）に
+    達したときに送出されます。
     """
 
 
 class GeneratorExit(BaseException):
     """
-    Raised when a generator or coroutine is closed.
+    ジェネレーターまたはコルーチンが閉じられたときに送出されます。
     """
 
 
 class ImportError(Exception):
     """
-    Raised when the ``import`` statement is unable to load a module.
+    ``import`` 文がモジュールを読み込めなかったときに送出されます。
     """
 
 
 class IndentationError(SyntaxError):
     """
-    Base class for syntax errors related to incorrect indentation.
+    不正なインデントに関連する構文エラーの基底クラス。
     """
 
 
 class IndexError(LookupError):
     """
-    Raised when a sequence subscript is out of range.
+    シーケンスの添字が範囲外のときに送出されます。
     """
 
 
 class KeyError(LookupError):
     """
-    Raised when a mapping (dictionary) key is not found in the set of existing keys.
+    マッピング（辞書）のキーが既存のキーの中に見つからないときに送出されます。
     """
 
 
 class KeyboardInterrupt(BaseException):
     """
-    Raised when the user hits the interrupt key (normally :kbd:`Ctrl` :kbd:`C`).
+    ユーザーが割り込みキー（通常は :kbd:`Ctrl` :kbd:`C` ）を押したときに
+    送出されます。
     """
 
 
 class MemoryError(Exception):
     """
-    Raised when an operation runs out of memory.
+    操作がメモリ不足になったときに送出されます。
     """
 
 
 class NameError(Exception):
     """
-    Raised when a local or global name is not found.
+    ローカル名またはグローバル名が見つからないときに送出されます。
     """
 
 
 class NotImplementedError(RuntimeError):
     """
-    In user defined base classes, abstract methods should raise this exception
-    when they require derived classes to override the method, or while the
-    class is being developed to indicate that the real implementation still
-    needs to be added.
+    ユーザー定義の基底クラスでは、派生クラスにメソッドのオーバーライドを
+    要求する抽象メソッド、または実際の実装がまだ追加される必要があることを
+    示す開発中のクラスで、この例外を送出する必要があります。
     """
 
 
 class OSError(Exception):
     """
-    This exception is raised by the firmware, which is
-    the Operating System that runs on the hub.
-    For :ref:`example <device_detection>`, it
-    raises an ``OSError`` if you call ``Motor(Port.A)`` when there is no
-    motor on port A.
+    この例外は、ハブ上で動作するオペレーティングシステムである
+    ファームウェアによって送出されます。
+    :ref:`例 <device_detection>` として、ポートAにモーターが
+    接続されていないときに ``Motor(Port.A)`` を呼び出すと
+    ``OSError`` が送出されます。
     """
 
     errno: _int
     """
-    Specifies which kind of ``OSError`` occurred, as listed in the
-    :mod:`uerrno` module.
+    発生した ``OSError`` の種類を指定します。種類は :mod:`uerrno`
+    モジュールに列挙されています。
     """
 
 
 class OverflowError(ArithmeticError):
     """
-    Raised when the result of an arithmetic operation is too large to be represented.
+    算術演算の結果が表現できないほど大きいときに送出されます。
     """
 
 
 class RuntimeError(Exception):
     """
-    Raised when an error is detected that doesn’t fall in any of the other categories.
+    他のどのカテゴリーにも当てはまらないエラーが検出されたときに送出されます。
 
-    The associated value is a string indicating what precisely went wrong.
+    関連する値は、何が具体的に問題だったかを示す文字列です。
     """
 
 
 class StopIteration(Exception):
     """
-    Raised by built-in function :meth:`next` and an iterator’s ``__next__()``
-    method to signal that there are no further items produced by the iterator.
+    組み込み関数 :meth:`next` とイテレーターの ``__next__()`` メソッドが、
+    イテレーターがこれ以上要素を生成しないことを示すために送出されます。
 
-    Generator functions should return instead of raising this directly.
+    ジェネレーター関数は、これを直接送出する代わりにreturnすべきです。
     """
 
 
 class SyntaxError(Exception):
     """
-    Raised when the parser encounters a syntax error.
+    パーサーが構文エラーに遭遇したときに送出されます。
     """
 
 
 class SystemExit(BaseException):
     """
-    Raised when you press the stop button on the hub or in the Pybricks Code app.
+    ハブまたはPybricks Codeアプリの停止ボタンを押したときに送出されます。
     """
 
 
 class TypeError(Exception):
     """
-    Raised when an operation or function is applied to an object of inappropriate type.
+    操作または関数が不適切な型のオブジェクトに適用されたときに送出されます。
     """
 
 
 class ValueError(Exception):
     """
-    Raised when an operation or function receives an argument that has the right
-    type but an inappropriate value. This is used when the situation is
-    not described by a more precise exception such as :class:`IndexError`.
+    操作または関数が、正しい型だが不適切な値の引数を受け取ったときに
+    送出されます。これは、 :class:`IndexError` のようなより正確な例外で
+    状況が説明できない場合に使用されます。
     """
 
 
 class ZeroDivisionError(ArithmeticError):
     """
-    Raised when the second argument of a division or modulo operation is zero.
+    除算または剰余演算の第2引数が0のときに送出されます。
     """

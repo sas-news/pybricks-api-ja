@@ -7,10 +7,10 @@
 # Copyright (c) 2001-2021 Python Software Foundation
 
 """
-This module implements pseudo-random number generators.
+このモジュールは擬似乱数生成器を実装しています。
 
-All functions in this module should be used with positional arguments. Keyword
-arguments are not supported.
+このモジュールのすべての関数は位置引数で使用する必要があります。キーワード
+引数はサポートされていません。
 """
 
 from __future__ import annotations
@@ -25,13 +25,13 @@ def seed(a: int | None = None) -> None:
     """
     seed(value=None)
 
-    Initializes the random number generator.
+    乱数生成器を初期化します。
 
-    This gets called when the module is imported, so normally you do
-    not need to call this.
+    これはモジュールがインポートされるときに呼び出されるため、通常は
+    呼び出す必要はありません。
 
     Arguments:
-        value: Seed value. When using ``None``, the system timer will be used.
+        value: シード値。 ``None`` を使用すると、システムタイマーが使用されます。
     """
 
 
@@ -53,21 +53,21 @@ def randrange(start, stop, step):
     randrange(start, stop) -> int
     randrange(start, stop, step) -> int
 
-    Returns a randomly selected element from ``range(start, stop, step)``.
+    ``range(start, stop, step)`` からランダムに選択された要素を返します。
 
-    For example, ``randrange(1, 7, 2)`` returns random numbers from ``1`` up to
-    (but excluding) ``7``, in increments of ``2``. In other words, it
-    returns ``1``, ``3``, or ``5``.
+    たとえば、``randrange(1, 7, 2)`` は ``1`` から ``7`` まで（``7`` を除く）
+    ``2`` 刻みの乱数を返します。つまり、``1``、``3``、``5`` のいずれかを
+    返します。
 
 
     Arguments:
-        start (int): Lowest value. Defaults to ``0`` if only one argument is given.
-        stop (int): Highest value. This value is *not* included in the range.
-        step (int): Increment between values. Defaults to ``1`` if only one
-            or two arguments are given.
+        start (int): 最小値。引数が1つだけの場合は ``0`` が既定です。
+        stop (int): 最大値。この値は範囲に *含まれません*。
+        step (int): 値と値の間の増分。引数が1つまたは2つだけの場合は ``1``
+            が既定です。
 
     Returns:
-        The random number.
+        乱数。
     """
 
 
@@ -75,14 +75,14 @@ def randint(a: int, b: int) -> int:
     """
     randint(a, b) -> int
 
-    Gets a random integer N satisfying a ≤ N ≤ b.
+    a ≤ N ≤ b を満たすランダムな整数 N を取得します。
 
     Arguments:
-        a (int): Lowest value. This value *is* included in the range.
-        b (int): Highest value. This value *is* included in the range.
+        a (int): 最小値。この値は範囲に *含まれます*。
+        b (int): 最大値。この値は範囲に *含まれます*。
 
     Returns:
-        The random integer.
+        ランダムな整数。
     """
 
 
@@ -90,10 +90,10 @@ def getrandbits(k: int) -> int:
     """
     getrandbits(k) -> int
 
-    Gets a random integer N satisfying 0 ≤ N < ``2**k``.
+    0 ≤ N < ``2**k`` を満たすランダムな整数 N を取得します。
 
     Arguments:
-        k (int): How many bits to use for the result.
+        k (int): 結果に使用するビット数。
     """
 
 
@@ -101,16 +101,16 @@ def choice(seq: Sequence[Any]) -> Any:
     """
     choice(sequence) -> Any
 
-    Gets a random element from a sequence such as a tuple or list.
+    タプルやリストなどのシーケンスからランダムな要素を取得します。
 
     Arguments:
-        sequence: Sequence from which to select a random element.
+        sequence: ランダムな要素を選択するシーケンス。
 
     Returns:
-        The randomly selected element.
+        ランダムに選択された要素。
 
     Raises:
-        ``IndexError``: If the sequence is empty.
+        ``IndexError``: シーケンスが空の場合。
     """
 
 
@@ -118,10 +118,10 @@ def random() -> float:
     """
     random() -> float
 
-    Gets a random value x satisfying 0 ≤ x < 1.
+    0 ≤ x < 1 を満たすランダムな値 x を取得します。
 
     Returns:
-        The random value.
+        ランダムな値。
     """
 
 
@@ -129,14 +129,14 @@ def uniform(a: float, b: float) -> float:
     """
     uniform(a, b) -> float
 
-    Gets a random floating point value x satisfying a ≤ x ≤ b.
+    a ≤ x ≤ b を満たすランダムな浮動小数点値 x を取得します。
 
     Arguments:
-        a (float): Lowest value.
-        b (float): Highest value.
+        a (float): 最小値。
+        b (float): 最大値。
 
     Returns:
-        The random value.
+        ランダムな値。
     """
 
 

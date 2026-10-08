@@ -25,7 +25,7 @@ Color Sensor
 
     .. automethod:: pybricks.pupdevices.ColorSensor.ambient
 
-    .. rubric:: Advanced color sensing
+    .. rubric:: 高度な色検出
 
     .. blockimg:: pybricks_blockColor_ColorSensor_hsv
 
@@ -33,11 +33,11 @@ Color Sensor
 
     .. automethod:: pybricks.pupdevices.ColorSensor.detectable_colors
 
-    .. rubric:: Built-in lights
+    .. rubric:: 内蔵ライト
 
-    This sensor has 3 built-in lights. You can adjust the brightness of each
-    light. If you use the sensor to measure something, the lights will
-    be turned on or off as needed for the measurement.
+    このセンサーには3つの内蔵ライトがあります。それぞれのライトの輝度を
+    調整できます。センサーで測定を行うと、測定に必要に応じてライトが
+    自動的にオン・オフされます。
 
     .. blockimg:: pybricks_blockLightOn_colorsensor_on
 
@@ -50,58 +50,57 @@ Color Sensor
     .. automethod:: pybricks.pupdevices::ColorSensor.lights.off
 
 
-Examples
+使用例
 -------------------
 
-Measuring color and reflection
+色と反射を測定する
 ******************************
 
 .. literalinclude::
     ../../../examples/pup/sensor_color/color_print.py
 
 
-Waiting for a color
+色を待つ
 *******************
 
 .. literalinclude::
     ../../../examples/pup/sensor_color/wait_for_color.py
 
 
-Reading *reflected* hue, saturation, and value
+反射光での色相・彩度・明度を読み取る
 ************************************************
 
 .. literalinclude::
     ../../../examples/pup/sensor_color/hsv.py
 
 
-Changing the detectable colors
+検出する色を変更する
 ******************************
 
-By default, the sensor is configured to detect red, yellow, green,
-blue, white, or no color, which suits many applications.
+デフォルトでは、センサーは赤・黄・緑・青・白・無色を検出するように
+設定されており、多くの用途に適しています。
 
-For better results in your application, you can measure your desired
-colors in advance, and tell the sensor to look only for those colors.
-Be sure to measure them at the **same distance and light conditions**
-as in your final application. Then you'll get very accurate results
-even for colors that are otherwise hard to detect.
+アプリケーションでより良い結果を得るには、検出したい色を事前に測定し、
+センサーにその色だけを探させることができます。色は必ず、実際に使うときと
+「同じ距離・同じ光の条件」で測定してください。そうすれば、通常は
+検出しにくい色でも非常に正確な結果が得られます。
 
 .. literalinclude::
     ../../../examples/pup/sensor_color/detectable_colors.py
 
-Reading *ambient* hue, saturation, value, and color
+環境光での色相・彩度・明度・色を読み取る
 ***************************************************
 
 .. literalinclude::
     ../../../examples/pup/sensor_color/color_ambient.py
 
-Blinking the built-in lights
+内蔵ライトを点滅させる
 ****************************
 
 .. literalinclude::
     ../../../examples/pup/sensor_color/lights_blink.py
 
-Turning off the lights when the program ends
+プログラム終了時にライトをオフにする
 **********************************************
 
 .. literalinclude::

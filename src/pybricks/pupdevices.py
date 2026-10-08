@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2018-2023 The Pybricks Authors
 
-"""LEGO® Powered Up motor, sensors, and lights."""
+"""LEGO® Powered Up のモーター、センサー、ライト。"""
 
 from __future__ import annotations
 
@@ -25,21 +25,21 @@ if TYPE_CHECKING:
 
 
 class DCMotor(_common.DCMotor):
-    """LEGO® Powered Up motor without rotation sensors."""
+    """LEGO® Powered Up 回転センサーなしモーター。"""
 
     # HACK: jedi can't find inherited __init__ so we have to duplicate docs
     def __init__(self, port: Port, positive_direction: Direction = Direction.CLOCKWISE):
         """__init__(port, positive_direction=Direction.CLOCKWISE)
 
         Arguments:
-            port (Port): Port to which the motor is connected.
-            positive_direction (Direction): Which direction the motor should
-                turn when you give a positive duty cycle value.
+            port (Port): モーターを接続するポート。
+            positive_direction (Direction): 正のデューティサイクル値を
+                与えたときにモーターが回転する方向。
         """
 
 
 class Motor(_common.Motor):
-    """LEGO® Powered Up motor with rotation sensors."""
+    """LEGO® Powered Up 回転センサー付きモーター。"""
 
     # HACK: jedi can't find inherited __init__ so we have to duplicate docs
     def __init__(
@@ -53,56 +53,53 @@ class Motor(_common.Motor):
         """__init__(port, positive_direction=Direction.CLOCKWISE, gears=None, reset_angle=True, profile=None)
 
         Arguments:
-            port (Port): Port to which the motor is connected.
-            positive_direction (Direction): Which direction the motor should
-                turn when you give a positive speed value or
-                angle.
+            port (Port): モーターを接続するポート。
+            positive_direction (Direction): 正の速度値や角度を与えたときに
+                モーターが回転する方向。
             gears (list):
-                List of gears linked to the motor. The gear connected
-                to the motor comes first and the gear connected to the output
-                comes last.
+                モーターに連結されたギアのリスト。モーターに接続された
+                ギアが先頭で、出力側に接続されたギアが最後になります。
 
-                For example: ``[12, 36]`` represents a gear train with a
-                12-tooth gear connected to the motor and a 36-tooth gear
-                connected to the output. Use a list of lists for multiple
-                gear trains, such as ``[[12, 36], [20, 16, 40]]``.
+                たとえば ``[12, 36]`` は、モーターに12歯のギア、出力側に
+                36歯のギアが接続されたギア列を表します。複数のギア列には
+                ``[[12, 36], [20, 16, 40]]`` のようなリストのリストを
+                使います。
 
-                When you specify a gear train, all motor commands and settings
-                are automatically adjusted to account for the resulting gear
-                ratio. The motor direction remains unchanged by this.
+                ギア列を指定すると、すべてのモーターコマンドと設定は
+                ギア比を考慮して自動的に調整されます。これによって
+                モーターの回転方向が変わることはありません。
             reset_angle (bool):
-                Choose ``True`` to reset the rotation sensor value to the
-                absolute marker angle (between -180 and 179).
-                Choose ``False`` to keep the
-                current value, so your program knows where it left off last
-                time.
-            profile (Number, deg): Precision profile. This is the approximate
-                position tolerance in degrees that is acceptable in your
-                application. A lower value gives more precise but more erratic
-                movement; a higher value gives less precise but smoother
-                movement. If no value is given, a suitable profile for this
-                motor type will be selected automatically (about 11 degrees).
+                ``True`` を選択すると、回転センサーの値を絶対マーカー角度
+                (-180から179まで) にリセットします。
+                ``False`` を選択すると現在の値を維持するため、前回
+                プログラムが終了した位置から続けられます。
+            profile (Number, deg): 精度プロファイル。アプリケーションで
+                許容できる位置の誤差を度単位で表した概算値です。
+                小さい値ほど正確ですが動きが不安定になり、大きい値ほど
+                精度は下がりますが滑らかな動きになります。値を指定しない
+                場合は、このモータータイプに適したプロファイルが自動的に
+                選択されます (約11度) 。
         """
 
     def reset_angle(self, angle: Number | None = None) -> None:
         """reset_angle(angle=None)
 
-        Sets the accumulated rotation angle of the motor to a desired value.
+        モーターの累積回転角度を任意の値に設定します。
 
-        If this motor is also being used by a drive base, its distance and
-        angle values will also be affected. You might want to
-        use its :meth:`reset <pybricks.robotics.DriveBase.reset>`
-        method instead.
+        このモーターがドライブベースでも使われている場合は、ドライブベースの
+        距離と角度の値にも影響します。代わりに
+        :meth:`reset <pybricks.robotics.DriveBase.reset>`
+        メソッドを使うとよいでしょう。
 
         Arguments:
-            angle (Number, deg): Value to which the angle should be reset.
-                                 Choose ``None`` to reset it to the absolute
-                                 value of the motor.
+            angle (Number, deg): 角度をリセットする値。
+                                 ``None`` を選択すると、モーターの
+                                 絶対値にリセットします。
         """
 
 
 class Remote(LWP3Device):
-    """LEGO® Powered Up Bluetooth Remote Control."""
+    """LEGO® Powered Up Bluetoothリモートコントロール。"""
 
     light = _common.ExternalColorLight()
     buttons = _common.Keypad(
@@ -127,15 +124,15 @@ class Remote(LWP3Device):
         """Remote(name=None, timeout=10000, connect=True)
 
         Arguments:
-            name (str): Bluetooth name of the remote. If no name is given,
-                the hub connects to the first remote that it finds.
-            timeout (Number, ms): How long to search for the remote.
-                Choose ``None`` to wait indefinitely.
-            connect (bool): Choose ``False`` to skip connecting.
-                ``connect()`` can be called later to connect.
+            name (str): リモコンのBluetooth名。名前を指定しない場合、
+                ハブは最初に見つかったリモコンに接続します。
+            timeout (Number, ms): リモコンを検索する時間。
+                ``None`` を選択すると、無制限に待ち続けます。
+            connect (bool): ``False`` を選択すると接続をスキップします。
+                後で ``connect()`` を呼び出して接続できます。
 
         Raises:
-            OSError: If the connection attempt fails or times out.
+            OSError: 接続に失敗したかタイムアウトした場合。
         """
 
 
@@ -354,27 +351,27 @@ class DuploTrain(LWP3Device):
 
 
 class TiltSensor:
-    """LEGO® Powered Up Tilt Sensor."""
+    """LEGO® Powered Up 傾きセンサー。"""
 
     def __init__(self, port: Port):
         """TiltSensor(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
         """
 
     def tilt(self) -> MaybeAwaitableTuple[int, int]:
         """tilt() -> tuple[int, int]: deg
 
-        Measures the tilt relative to the horizontal plane.
+        水平面に対する傾きを測定します。
 
         Returns:
-            Tuple of pitch and roll angles.
+            ピッチ角とロール角のタプル。
         """
 
 
 class ColorDistanceSensor(_common.CommonColorSensor):
-    """LEGO® Powered Up Color and Distance Sensor."""
+    """LEGO® Powered Up カラー・距離センサー。"""
 
     light = _common.ExternalColorLight()
 
@@ -383,23 +380,22 @@ class ColorDistanceSensor(_common.CommonColorSensor):
         """__init__(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
         """
 
     def distance(self) -> MaybeAwaitableInt:
         """distance() -> int: %
 
-        Measures the relative distance between the sensor and an object
-        using infrared light.
+        赤外線を使って、センサーと物体の間の相対的な距離を測定します。
 
         Returns:
-            Distance ranging from 0% (closest) to 100% (farthest).
+            0% (最も近い) から 100% (最も遠い) までの距離。
         """
 
 
 class PFMotor:
-    """Control Power Functions motors with the infrared functionality of the
-    :class:`ColorDistanceSensor <pybricks.pupdevices.ColorDistanceSensor>`."""
+    """:class:`ColorDistanceSensor <pybricks.pupdevices.ColorDistanceSensor>` の
+    赤外線機能を使ってPower Functionsモーターを制御します。"""
 
     def __init__(
         self,
@@ -412,46 +408,47 @@ class PFMotor:
 
         Arguments:
             sensor (ColorDistanceSensor):
-                Sensor object.
+                センサーオブジェクト。
             channel (int):
-                Channel number of the receiver: ``1``, ``2``, ``3``, or ``4``.
+                レシーバーのチャンネル番号: ``1``、``2``、``3``、``4`` のいずれか。
             color (Color):
-                Color marker on the receiver:
-                :class:`Color.BLUE <.parameters.Color>` or
+                レシーバーの色マーカー:
+                :class:`Color.BLUE <.parameters.Color>` または
                 :class:`Color.RED <.parameters.Color>`
-            positive_direction (Direction): Which direction the motor should
-                turn when you give a positive duty cycle value.
+            positive_direction (Direction): 正のデューティサイクル値を
+                与えたときにモーターが回転する方向。
         """
 
     def dc(self, duty: Number) -> MaybeAwaitable:
         """dc(duty)
 
-        Rotates the motor at a given duty cycle (also known as "power").
+        指定したデューティサイクル (「パワー」とも呼ばれます) でモーターを
+        回転させます。
 
         Arguments:
-            duty (Number, %): The duty cycle (-100.0 to 100).
+            duty (Number, %): デューティサイクル (-100.0から100) 。
         """
 
     def stop(self) -> MaybeAwaitable:
         """stop()
 
-        Stops the motor and lets it spin freely.
+        モーターを停止し、自由に回転できるようにします。
 
-        The motor gradually stops due to friction.
+        モーターは摩擦により徐々に停止します。
         """
 
     def brake(self) -> MaybeAwaitable:
         """brake()
 
-        Passively brakes the motor.
+        モーターに受動的なブレーキをかけます。
 
-        The motor stops due to friction, plus the voltage that
-        is generated while the motor is still moving.
+        モーターは摩擦に加え、まだ動いている間に発生する電圧によって
+        停止します。
         """
 
 
 class ColorSensor(_common.AmbientColorSensor):
-    """LEGO® SPIKE Color Sensor."""
+    """LEGO® SPIKE カラーセンサー。"""
 
     lights = _common.LightArray3()
 
@@ -460,12 +457,12 @@ class ColorSensor(_common.AmbientColorSensor):
         """__init__(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
         """
 
 
 class UltrasonicSensor:
-    """LEGO® SPIKE Color Sensor."""
+    """LEGO® SPIKE 超音波センサー。"""
 
     lights = _common.LightArray4()
 
@@ -473,183 +470,179 @@ class UltrasonicSensor:
         """UltrasonicSensor(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
 
         """
 
     def distance(self) -> MaybeAwaitableInt:
         """distance() -> int: mm
 
-        Measures the distance between the sensor and an object using
-        ultrasonic sound waves.
+        超音波を使って、センサーと物体の間の距離を測定します。
 
         Returns:
-            Measured distance. If no valid distance was measured,
-            it returns 2000 mm.
+            測定された距離。有効な距離が測定できなかった場合は
+            2000 mm を返します。
 
         """
 
     def presence(self) -> MaybeAwaitableBool:
         """presence() -> bool
 
-        Checks for the presence of other ultrasonic sensors by detecting
-        ultrasonic sounds.
+        超音波を検出することで、他の超音波センサーの存在を確認します。
 
         Returns:
-            ``True`` if ultrasonic sounds are detected, ``False`` if not.
+            超音波が検出されれば ``True``、されなければ ``False``。
         """
 
 
 class ForceSensor:
-    """LEGO® SPIKE Force Sensor."""
+    """LEGO® SPIKE フォースセンサー。"""
 
     def __init__(self, port: Port):
         """ForceSensor(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
         """
 
     def force(self) -> MaybeAwaitableFloat:
         """force() -> float: N
 
-        Measures the force exerted on the sensor.
+        センサーに加えられた力を測定します。
 
         Returns:
-            Measured force (up to approximately 10.00 N).
+            測定された力 (最大約10.00 N) 。
         """
 
     def distance(self) -> MaybeAwaitableFloat:
         """distance() -> float: mm
 
-        Measures by how much the sensor button has moved.
+        センサーボタンがどれだけ動いたかを測定します。
 
         Returns:
-            Movement up to approximately 8.00 mm.
+            最大約8.00 mmの動き。
         """
 
     def pressed(self, force: Number = 3) -> MaybeAwaitableBool:
         """pressed(force=3) -> bool
 
-        Checks if the sensor button is pressed.
+        センサーボタンが押されているかを確認します。
 
         Arguments:
-            force (Number, N): Minimum force to be considered pressed.
+            force (Number, N): 押されたとみなす最小の力。
 
         Returns:
-            ``True`` if the sensor is pressed, ``False`` if it is not.
+            センサーが押されていれば ``True``、そうでなければ ``False``。
         """
 
     def touched(self) -> MaybeAwaitableBool:
         """touched() -> bool
 
-        Checks if the sensor is touched.
+        センサーが触れられているかを確認します。
 
-        This is similar to :meth:`pressed`, but it detects slight movements of
-        the button even when the measured force is still considered zero.
+        これは :meth:`pressed` に似ていますが、測定された力がまだゼロと
+        みなされる場合でも、ボタンのわずかな動きを検出します。
 
         Returns:
-            ``True`` if the sensor is touched or pressed, ``False``
-            if it is not.
+            センサーが触れられているか押されていれば ``True``、
+            そうでなければ ``False``。
         """
 
 
 class ColorLightMatrix:
     """
-    LEGO® SPIKE 3x3 Color Light Matrix.
+    LEGO® SPIKE 3x3カラーライトマトリクス。
     """
 
     def __init__(self, port: Port):
         """ColorLightMatrix(port)
 
         Arguments:
-            port (Port): Port to which the device is connected.
+            port (Port): デバイスを接続するポート。
 
         """
 
     def on(self, color: Color | Collection[Color]) -> MaybeAwaitable:
         """on(colors)
 
-        Turns the lights on.
+        ライトを点灯します。
 
         Arguments:
             colors (Color or list):
-                If a single :class:`.Color` is given, then all 9 lights are set
-                to that color. If a list of colors is given, then each light is
-                set to that color.
+                単一の :class:`.Color` を指定すると、9個すべてのライトが
+                その色に設定されます。色のリストを指定すると、それぞれの
+                ライトに対応する色が設定されます。
         """
 
     def off(self) -> MaybeAwaitable:
         """off()
 
-        Turns all lights off.
+        すべてのライトを消灯します。
         """
 
 
 class InfraredSensor:
-    """LEGO® Powered Up Infrared Sensor."""
+    """LEGO® Powered Up 赤外線センサー。"""
 
     def __init__(self, port: Port):
         """InfraredSensor(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
         """
 
     def reflection(self) -> MaybeAwaitableInt:
         """reflection() -> int: %
 
-        Measures the reflection of a surface using an infrared light.
+        赤外線を使って、表面の反射を測定します。
 
         Returns:
-            Measured reflection, ranging from 0% (no reflection) to
-            100% (high reflection).
+            測定された反射。0% (反射なし) から 100% (高い反射) まで。
         """
 
     def distance(self) -> MaybeAwaitableInt:
         """distance() -> int: %
 
-        Measures the relative distance between the sensor and an object
-        using infrared light.
+        赤外線を使って、センサーと物体の間の相対的な距離を測定します。
 
         Returns:
-            Distance ranging from 0% (closest) to 100% (farthest).
+            0% (最も近い) から 100% (最も遠い) までの距離。
         """
 
     def count(self) -> MaybeAwaitableInt:
         """count() -> int
 
-        Counts the number of objects that have passed by the sensor.
+        センサーの前を通過した物体の数をカウントします。
 
         Returns:
-            Number of objects counted.
+            カウントされた物体の数。
         """
 
 
 class Light:
-    """LEGO® Powered Up Light."""
+    """LEGO® Powered Up ライト。"""
 
     def __init__(self, port: Port):
         """Light(port)
 
         Arguments:
-            port (Port): Port to which the device is connected.
+            port (Port): デバイスを接続するポート。
         """
 
     def on(self, brightness: Number = 100) -> None:
         """on(brightness=100)
 
-        Turns on the light at the specified brightness.
+        指定した輝度でライトを点灯します。
 
         Arguments:
             brightness (Number, %):
-                Brightness of the light.
+                ライトの輝度。
         """
 
     def off(self) -> None:
         """off()
 
-        Turns off the light."""
+        ライトを消灯します。"""
 
 
 # Hide type-only names from jedi completions in the module namespace.

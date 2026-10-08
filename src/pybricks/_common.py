@@ -1,8 +1,8 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2018-2023 The Pybricks Authors
 
-"""Generic cross-platform module for typical devices like lights, displays,
-speakers, and batteries."""
+"""ライト、ディスプレイ、スピーカー、バッテリーなどの一般的なデバイス向けの
+汎用クロスプラットフォームモジュール。"""
 
 from __future__ import annotations
 
@@ -38,7 +38,7 @@ if TYPE_CHECKING:
 
 
 class System:
-    """System control actions for a hub."""
+    """ハブのシステム制御アクション。"""
 
     def set_stop_button(self, button: Button | Iterable[Button] | None) -> None:
         """
@@ -58,7 +58,7 @@ class System:
     def shutdown(self) -> None:
         """shutdown()
 
-        Stops your program and shuts the hub down."""
+        プログラムを停止し、ハブをシャットダウンします。"""
 
     @overload
     def storage(self, offset: int, *, read: int) -> bytes: ...
@@ -71,105 +71,105 @@ class System:
         storage(offset, write=)
         storage(offset, read=) -> bytes
 
-        Reads or writes binary data to persistent storage.
+        永続ストレージに対してバイナリデータの読み書きを行います。
 
-        This lets you store data that can be used the next time you run the
-        program.
+        次回プログラムを実行したときにも使えるデータを保存できます。
 
-        The data will be saved to flash memory when you turn the hub off
-        normally. It will not be saved if the batteries are removed *while* the
-        hub is still running.
+        ハブを正常にオフにすると、データはフラッシュメモリに保存されます。
+        ハブが *動作している間に* バッテリーを取り外した場合は保存されません。
 
-        Once saved, the data will remain available even after you remove the
-        batteries.
+        一度保存されたデータは、バッテリーを取り外した後でも利用できます。
 
         Args:
-            offset (int): The offset from the start of the user storage memory, in bytes.
-            read (int): The number of bytes to read. Omit this argument when writing.
-            write (bytes): The bytes to write. Omit this argument when reading.
+            offset (int): ユーザーストレージメモリの先頭からのオフセット（バイト単位）。
+            read (int): 読み取るバイト数。書き込む場合はこの引数を省略します。
+            write (bytes): 書き込むバイト列。読み取る場合はこの引数を省略します。
 
         Returns:
-            The bytes read if reading, otherwise ``None``.
+            読み取りの場合は読み取ったバイト列、それ以外の場合は ``None`` 。
 
         Raises:
             ValueError:
-                If you try to read or write data outside of the allowed range.
+                許可された範囲外のデータを読み書きしようとした場合。
         """
 
     def reset_storage(self) -> None:
         """reset_storage()
 
-        Resets all user settings to default values and erases user programs.
+        すべてのユーザー設定をデフォルト値にリセットし、ユーザーのプログラムを消去します。
         """
 
     def info(self) -> dict:
         """info() -> dict
 
-        Gets information about the hub as a dictionary with the following keys:
+        ハブに関する情報を、以下のキーを持つ辞書として取得します。
 
-         - ``"name"``: The hub name. This is the name you see when connecting
-           via Bluetooth.
-         - ``"reset_reason"``: Why the hub (re)booted. It is ``0`` if the hub
-           was previously powered off normally. It is ``1`` if the hub rebooted
-           automatically, like after a firmware update. It is ``2`` if the hub
-           previously crashed due to a watchdog timeout, which indicates a
-           firmware issue.
-         - ``"host_connected_ble"``: ``True`` if the hub is connected to a
-           computer, tablet, or phone via Bluetooth, and ``False`` otherwise.
-         - ``"host_connected_usb"``: ``True`` if the hub is connected to a computer
-           via USB and activated in the app. ``False`` otherwise.
-         - ``"program_start_type"``: It is ``1`` if the program started
-           automatically when the hub was powered on. It is ``2`` if the program
-           was started with the hub buttons. It is ``3`` if the program was
-           started from your connected computer.
-         - `"program_id"`: Program (slot) number of the currently running program.
+         - ``"name"``: ハブ名。Bluetooth経由で接続するときに表示される
+           名前です。
+         - ``"reset_reason"``: ハブが（再）起動した理由。ハブが前回正常に
+           電源オフされていた場合は ``0`` です。ファームウェア更新後など、
+           ハブが自動的に再起動した場合は ``1`` です。ハブが前回
+           ウォッチドッグタイムアウトによってクラッシュした場合は ``2`` で、
+           これはファームウェアの問題を示します。
+         - ``"host_connected_ble"``: ハブがBluetooth経由でコンピューター、
+           タブレット、スマートフォンのいずれかに接続されている場合は
+           ``True`` 、それ以外は ``False`` 。
+         - ``"host_connected_usb"``: ハブがUSB経由でコンピューターに接続され、
+           アプリでアクティブになっている場合は ``True`` 。
+           それ以外は ``False`` 。
+         - ``"program_start_type"``: ハブの電源投入時にプログラムが自動的に
+           開始された場合は ``1`` 。ハブのボタンでプログラムが開始された
+           場合は ``2`` 。接続したコンピューターからプログラムが開始された
+           場合は ``3`` 。
+         - `"program_id"`: 現在実行中のプログラムの（スロット）番号。
 
         Returns:
-            A dictionary with system info.
+            システム情報を含む辞書。
 
         .. versionchanged:: 3.6
-            The name and reset reason where previously available as separate
-            methods. Now they are included in the info dictionary. The methods
-            are still available for backwards compatibility.
+            名前とリセット理由は、以前は個別のメソッドとして利用できました。
+            現在は ``info`` 辞書に含まれています。これらのメソッドは
+            後方互換性のために引き続き利用できます。
         """
 
 
 class DCMotor:
-    """Generic class to control simple motors without rotation sensors, such
-    as train motors."""
+    """回転センサーのないトレインモーターなどのシンプルなモーターを制御する
+    汎用クラス。"""
 
     def __init__(self, port: Port, positive_direction: Direction = Direction.CLOCKWISE):
         """__init__(port, positive_direction=Direction.CLOCKWISE)
 
         Arguments:
-            port (Port): Port to which the motor is connected.
-            positive_direction (Direction): Which direction the motor should
-                turn when you give a positive duty cycle value.
+            port (Port): モーターが接続されているポート。
+            positive_direction (Direction): 正のデューティサイクル値を与えた
+                ときにモーターが回転する方向。
         """
 
     def dc(self, duty: Number) -> None:
         """dc(duty)
 
-        Rotates the motor at a given duty cycle (also known as "power").
+        指定したデューティサイクル（「パワー」とも呼ばれます）でモーターを
+        回転させます。
 
         Arguments:
-            duty (Number, %): The duty cycle (-100.0 to 100).
+            duty (Number, %): デューティサイクル（-100.0から100）。
         """
 
     def stop(self) -> None:
         """stop()
 
-        Stops the motor and lets it spin freely.
+        モーターを停止し、自由に回転できる状態にします。
 
-        The motor gradually stops due to friction."""
+        モーターは摩擦によって徐々に停止します。"""
 
     def brake(self) -> None:
         """brake()
 
-        Passively brakes the motor.
+        モーターに受動的なブレーキをかけます。
 
-        The motor stops due to friction, plus the voltage that
-        is generated while the motor is still moving."""
+        モーターは摩擦と、まだ動いている間に発生する電圧によって
+        停止します。"""
 
     @overload
     def settings(self, max_voltage: Number) -> None: ...
@@ -182,24 +182,24 @@ class DCMotor:
         settings(max_voltage)
         settings() -> tuple[int]
 
-        Configures motor settings. If no arguments are given,
-        this returns the current values.
+        モーターの設定を構成します。引数が指定されない場合は、
+        現在の値を返します。
 
         Arguments:
             max_voltage (Number, mV):
-                Maximum voltage applied to the motor during all motor commands.
+                すべてのモーターコマンドでモーターに印加される最大電圧。
         """
 
 
 class Control:
-    """Class to interact with PID controller and settings."""
+    """PIDコントローラーとその設定を操作するクラス。"""
 
     scale: int
 
     """
-    Scaling factor between the controlled integer variable
-    and the physical output. For example, for a single
-    motor this is the number of encoder pulses per degree of rotation.
+    制御対象の整数変数と物理出力との間のスケーリング係数。
+    たとえば、単一のモーターの場合、これは回転1度あたりの
+    エンコーダーパルス数です。
     """
 
     @overload
@@ -218,22 +218,23 @@ class Control:
         limits(speed, acceleration, torque)
         limits() -> tuple[int, int, int]
 
-        Configures the maximum speed, acceleration, and torque.
+        最大速度、加速度、トルクを設定します。
 
-        If no arguments are given, this will return the current values.
+        引数が指定されない場合は、現在の値を返します。
 
-        The new ``acceleration`` and ``speed`` limit will become effective
-        when you give a new motor command. Ongoing maneuvers are not affected.
+        新しい ``acceleration`` と ``speed`` の制限は、新しいモーター
+        コマンドを与えたときに有効になります。進行中の操作には
+        影響しません。
 
         Arguments:
             speed (Number, deg/s or Number, mm/s):
-                Maximum speed. All speed commands will be capped to this value.
+                最大速度。すべての速度コマンドはこの値に制限されます。
             acceleration (Number, deg/s² or Number, mm/s²):
-                Slope of the speed curve when accelerating or decelerating.
-                Use a tuple to set acceleration and deceleration separately.
-                If one value is given, it is used for both.
+                加速または減速時の速度カーブの傾き。タプルを使って
+                加速と減速を個別に設定できます。1つの値のみ指定した
+                場合は両方に使用されます。
             torque (:ref:`torque`):
-                Maximum feedback torque during control.
+                制御中の最大フィードバックトルク。
         """
 
     @overload
@@ -253,23 +254,21 @@ class Control:
         """pid(kp, ki, kd, integral_deadzone, integral_rate)
         pid() -> tuple[int, int, int, int, int]
 
-        Gets or sets the PID values for position and speed control.
+        位置制御と速度制御のPID値を取得または設定します。
 
-        If no arguments are given, this will return the current values.
+        引数が指定されない場合は、現在の値を返します。
 
         Arguments:
-            kp (int): Proportional position control
-                constant. It is the feedback torque per degree of
-                error: µNm/deg.
-            ki (int): Integral position control constant. It is the feedback
-                torque per accumulated degree of error: µNm/(deg s).
-            kd (int): Derivative position (or proportional speed) control
-                constant. It is the feedback torque per
-                unit of speed: µNm/(deg/s).
-            integral_deadzone (Number, deg or Number, mm): Zone around the
-                target where the error integral does not accumulate errors.
-            integral_rate (Number, deg/s or Number, mm/s): Maximum rate at
-                which the error integral is allowed to grow.
+            kp (int): 比例位置制御定数。誤差1度あたりの
+                フィードバックトルク（µNm/deg）。
+            ki (int): 積分位置制御定数。累積した誤差の度数あたりの
+                フィードバックトルク（µNm/(deg s)）。
+            kd (int): 微分位置（または比例速度）制御定数。
+                速度の単位あたりのフィードバックトルク（µNm/(deg/s)）。
+            integral_deadzone (Number, deg or Number, mm): 誤差積分が
+                誤差を累積しない、目標周辺の領域。
+            integral_rate (Number, deg/s or Number, mm/s): 誤差積分が
+                増加できる最大レート。
         """
 
     @overload
@@ -284,16 +283,15 @@ class Control:
         """target_tolerances(speed, position)
         target_tolerances() -> tuple[int, int]
 
-        Gets or sets the tolerances that say when a maneuver is done.
+        操作が完了したとみなす許容誤差を取得または設定します。
 
-        If no arguments are given, this will return the current values.
+        引数が指定されない場合は、現在の値を返します。
 
         Arguments:
-            speed (Number, deg/s or Number, mm/s): Allowed deviation
-                from zero speed before motion is considered complete.
-            position (Number, deg or :ref:`distance`): Allowed
-                deviation from the target before motion is considered
-                complete.
+            speed (Number, deg/s or Number, mm/s): 動作が完了したと
+                みなされるまでの、ゼロ速度からの許容偏差。
+            position (Number, deg or :ref:`distance`): 動作が完了したと
+                みなされるまでの、目標からの許容偏差。
         """
 
     @overload
@@ -308,39 +306,40 @@ class Control:
         """stall_tolerances(speed, time)
         stall_tolerances() -> tuple[int, int]
 
-        Gets or sets stalling tolerances.
+        ストール判定の許容値を取得または設定します。
 
-        If no arguments are given, this will return the current values.
+        引数が指定されない場合は、現在の値を返します。
 
         Arguments:
-            speed (Number, deg/s or Number, mm/s): If the controller
-                cannot reach this speed for some ``time`` even with maximum
-                actuation, it is stalled.
-            time (Number, ms): How long the controller has to be below this
-                minimum ``speed`` before we say it is stalled.
+            speed (Number, deg/s or Number, mm/s): 最大の駆動出力でも
+                ``time`` の間この速度に達しない場合、ストールしたと
+                みなされます。
+            time (Number, ms): コントローラーがこの最小 ``speed`` を
+                下回り続けた場合に、ストールしたとみなすまでの時間。
         """
 
 
 class Model:
-    """Class to interact with motor state observer and settings."""
+    """モーターの状態オブザーバーとその設定を操作するクラス。"""
 
     def state(self) -> tuple[float, float, float, bool]:
         """state() -> tuple[float, float, float, bool]
 
-        Gets the estimated angle, speed, current, and stall state of the motor,
-        using a simulation model that mimics the real motor.
-        These estimates are updated faster than the real measurements,
-        which can be useful when building your own PID controllers.
+        実際のモーターを模倣したシミュレーションモデルを使って、
+        モーターの推定角度、速度、電流、ストール状態を取得します。
+        これらの推定値は実際の測定値よりも速く更新されるため、独自の
+        PIDコントローラーを構築する際に便利です。
 
-        For most applications it is better to used the *measured*
-        :meth:`angle <pybricks.pupdevices.Motor.angle>`,
-        :meth:`speed <pybricks.pupdevices.Motor.speed>`,
-        :meth:`load <pybricks.pupdevices.Motor.load>`, and
-        :meth:`stall <pybricks.pupdevices.Motor.stalled>` state instead.
+        ほとんどのアプリケーションでは、代わりに *測定された*
+        :meth:`angle <pybricks.pupdevices.Motor.angle>` 、
+        :meth:`speed <pybricks.pupdevices.Motor.speed>` 、
+        :meth:`load <pybricks.pupdevices.Motor.load>` 、および
+        :meth:`stall <pybricks.pupdevices.Motor.stalled>` の状態を
+        使用する方が適しています。
 
         Returns:
-            Tuple with the estimated angle (deg), speed (deg/s), current (mA),
-            and stall state (``True`` or ``False``).
+            推定角度（deg）、速度（deg/s）、電流（mA）、ストール状態
+            （``True`` または ``False`` ）のタプル。
         """
 
     @overload
@@ -353,29 +352,28 @@ class Model:
         """settings(values)
         settings() -> tuple
 
-        Gets or sets model settings as a tuple of integers. If no arguments are
-        given, this will return the current values. This method is mainly used
-        to debug the motor model class. Changing these settings should not be
-        needed in user programs.
+        モデルの設定を整数のタプルとして取得または設定します。引数が
+        指定されない場合は、現在の値を返します。このメソッドは主に
+        モーターモデルクラスのデバッグに使用されます。ユーザープログラムで
+        これらの設定を変更する必要はありません。
 
         .. _model settings: https://docs.pybricks.com/projects/pbio/en/latest/struct__pbio__observer__settings__t.html
 
         Arguments:
-            values (tuple): Tuple with `model settings`_.
+            values (tuple): `model settings`_ のタプル。
         """
 
 
 class Motor(DCMotor):
-    """Generic class to control motors with built-in rotation sensors."""
+    """回転センサーを内蔵したモーターを制御する汎用クラス。"""
 
     control = Control()
-    """The motors use PID control to accurately track the speed and
-    angle targets that you specify. You can change its behavior through the
-    ``control`` attribute of the motor. See :ref:`control` for an overview
-    of available methods."""
+    """モーターはPID制御を使って、指定した速度と角度の目標を正確に
+    追跡します。モーターの ``control`` 属性を通じてその動作を変更できます。
+    利用可能なメソッドの概要は :ref:`control` を参照してください。"""
 
     model = Model()
-    """Model representing the observer that estimates the motor state."""
+    """モーターの状態を推定するオブザーバーを表すモデル。"""
 
     def __init__(
         self,
@@ -388,115 +386,114 @@ class Motor(DCMotor):
         """__init__(port, positive_direction=Direction.CLOCKWISE, gears=None, reset_angle=True, profile=None)
 
         Arguments:
-            port (Port): Port to which the motor is connected.
-            positive_direction (Direction): Which direction the motor should
-                turn when you give a positive speed value or
-                angle.
+            port (Port): モーターが接続されているポート。
+            positive_direction (Direction): 正の速度値や角度を与えたときに
+                モーターが回転する方向。
             gears (list):
-                List of gears linked to the motor. The gear connected
-                to the motor comes first and the gear connected to the output
-                comes last.
+                モーターに連結されたギアのリスト。モーターに接続された
+                ギアが最初に来て、出力に接続されたギアが最後に来ます。
 
-                For example: ``[12, 36]`` represents a gear train with a
-                12-tooth gear connected to the motor and a 36-tooth gear
-                connected to the output. Use a list of lists for multiple
-                gear trains, such as ``[[12, 36], [20, 16, 40]]``.
+                たとえば ``[12, 36]`` は、モーターに接続された12歯の
+                ギアと出力に接続された36歯のギアからなるギア列を
+                表します。複数のギア列には
+                ``[[12, 36], [20, 16, 40]]`` のようなリストのリストを
+                使います。
 
-                When you specify a gear train, all motor commands and settings
-                are automatically adjusted to account for the resulting gear
-                ratio. The motor direction remains unchanged by this.
+                ギア列を指定すると、すべてのモーターコマンドと設定が、
+                得られるギア比を考慮して自動的に調整されます。
+                モーターの回転方向はこれによって変わりません。
             reset_angle (bool):
-                Choose ``True`` to reset the rotation sensor value to the
-                absolute marker angle (between -180 and 179).
-                Choose ``False`` to keep the
-                current value, so your program knows where it left off last
-                time.
-            profile (Number, deg): Precision profile. This is the approximate
-                position tolerance in degrees that is acceptable in your
-                application. A lower value gives more precise but more erratic
-                movement; a higher value gives less precise but smoother
-                movement. If no value is given, a suitable profile for this
-                motor type will be selected automatically (about 11 degrees).
+                ``True`` を選択すると、回転センサー値を絶対マーカー角度
+                （-180から179の間）にリセットします。
+                ``False`` を選択すると、現在の値を維持するため、
+                プログラムは前回停止した位置を認識できます。
+            profile (Number, deg): 精度プロファイル。アプリケーションで
+                許容できるおおよその位置許容誤差（度）です。値が小さい
+                ほど正確ですが動作が不安定になり、値が大きいほど精度は
+                下がりますが動作が滑らかになります。値を指定しない場合は、
+                このモータータイプに適したプロファイルが自動的に
+                選択されます（約11度）。
         """
 
     def angle(self) -> int:
         """angle() -> int: deg
 
-        Gets the rotation angle of the motor.
+        モーターの回転角を取得します。
 
         Returns:
-            Motor angle.
+            モーターの角度。
         """
 
     def speed(self, window: Number = 100) -> int:
         """speed(window=100) -> int: deg/s
 
-        Gets the speed of the motor.
+        モーターの速度を取得します。
 
-        The speed is measured as the change in the motor angle during the
-        given time window. A short window makes the speed value more
-        responsive to motor movement, but less steady. A long window makes the
-        speed value less responsive, but more steady.
+        速度は、指定された時間ウィンドウ内でのモーター角度の変化として
+        測定されます。ウィンドウが短いと速度値はモーターの動きに敏感に
+        なりますが、安定しにくくなります。ウィンドウが長いと速度値の
+        応答性は下がりますが、より安定します。
 
         Arguments:
-            window (Number, ms): The time window used to determine the speed.
+            window (Number, ms): 速度を求めるために使用する時間ウィンドウ。
 
         Returns:
-            Motor speed.
+            モーターの速度。
 
         """
 
     def stalled(self) -> bool:
         """stalled() -> bool
 
-        Checks if the motor is currently stalled.
+        モーターが現在ストールしているかどうかを確認します。
 
-        It is stalled when it cannot reach the target speed or position, even
-        with the maximum actuation signal.
+        最大の駆動信号を与えても目標速度または目標位置に到達できない
+        場合に、ストールしているとみなされます。
 
         Returns:
-            ``True`` if the motor is stalled, ``False`` if not.
+            モーターがストールしている場合は ``True`` 、そうでなければ
+            ``False`` 。
         """
 
     def load(self) -> int:
         """load() -> int: mNm
 
-        Estimates the load that holds back the motor when it tries to move.
+        モーターが動こうとするときに、それを妨げる負荷を推定します。
 
         Returns:
-            The load torque.
+            負荷トルク。
         """
 
     def reset_angle(self, angle: Number | None) -> None:
         """
         reset_angle(angle)
 
-        Sets the accumulated rotation angle of the motor to a desired value.
+        モーターの累積回転角を目的の値に設定します。
 
-        If this motor is also being used by a drive base, its distance and
-        angle values will also be affected. You might want to
-        use its :meth:`reset <pybricks.robotics.DriveBase.reset>`
-        method instead.
+        このモーターがドライブベースでも使用されている場合、その距離と
+        角度の値も影響を受けます。代わりに
+        :meth:`reset <pybricks.robotics.DriveBase.reset>` メソッドを
+        使うとよいでしょう。
 
         Arguments:
-            angle (Number, deg): Value to which the angle should be reset.
+            angle (Number, deg): 角度をリセットする値。
         """
 
     def hold(self) -> None:
         """hold()
 
-        Stops the motor and actively holds it at its current angle."""
+        モーターを停止し、現在の角度で能動的に保持します。"""
 
     def run(self, speed: Number) -> None:
         """run(speed)
 
-        Runs the motor at a constant speed.
+        モーターを一定速度で回転させます。
 
-        The motor accelerates to the given speed and keeps running at this
-        speed until you give a new command.
+        モーターは指定された速度まで加速し、新しいコマンドを与えるまで
+        その速度で回転し続けます。
 
         Arguments:
-            speed (Number, deg/s): Speed of the motor.
+            speed (Number, deg/s): モーターの速度。
         """
 
     def run_time(
@@ -504,18 +501,18 @@ class Motor(DCMotor):
     ) -> MaybeAwaitable:
         """run_time(speed, time, then=Stop.HOLD, wait=True)
 
-        Runs the motor at a constant speed for a given amount of time.
+        モーターを指定された時間だけ一定速度で回転させます。
 
-        The motor accelerates to the given speed, keeps running at this speed,
-        and then decelerates. The total maneuver lasts for exactly the given
-        amount of ``time``.
+        モーターは指定された速度まで加速し、その速度で回転を維持した後、
+        減速します。操作全体は、指定された ``time`` ちょうどの時間
+        続きます。
 
         Arguments:
-            speed (Number, deg/s): Speed of the motor.
-            time (Number, ms): Duration of the maneuver.
-            then (Stop): What to do after coming to a standstill.
-            wait (bool): Wait for the maneuver to complete before continuing
-                with the rest of the program.
+            speed (Number, deg/s): モーターの速度。
+            time (Number, ms): 操作の継続時間。
+            then (Stop): 静止した後に行う動作。
+            wait (bool): 操作が完了するまで待ってからプログラムの残りを
+                続行します。
         """
 
     def run_angle(
@@ -527,15 +524,14 @@ class Motor(DCMotor):
     ) -> MaybeAwaitable:
         """run_angle(speed, rotation_angle, then=Stop.HOLD, wait=True)
 
-        Runs the motor at a constant speed by a given angle.
+        モーターを一定速度で指定された角度だけ回転させます。
 
         Arguments:
-            speed (Number, deg/s): Speed of the motor.
-            rotation_angle (Number, deg): Angle by which the motor should
-                rotate.
-            then (Stop): What to do after coming to a standstill.
-            wait (bool): Wait for the maneuver to complete before continuing
-                with the rest of the program.
+            speed (Number, deg/s): モーターの速度。
+            rotation_angle (Number, deg): モーターが回転する角度。
+            then (Stop): 静止した後に行う動作。
+            wait (bool): 操作が完了するまで待ってからプログラムの残りを
+                続行します。
         """
 
     def run_target(
@@ -547,17 +543,17 @@ class Motor(DCMotor):
     ) -> MaybeAwaitable:
         """run_target(speed, target_angle, then=Stop.HOLD, wait=True)
 
-        Runs the motor at a constant speed towards a given target angle.
+        モーターを一定速度で指定された目標角度に向かって回転させます。
 
-        The direction of rotation is automatically selected based on the target
-        angle. It does not matter if ``speed`` is positive or negative.
+        回転方向は目標角度に基づいて自動的に選択されます。
+        ``speed`` が正か負かは関係ありません。
 
         Arguments:
-            speed (Number, deg/s): Speed of the motor.
-            target_angle (Number, deg): Angle that the motor should rotate to.
-            then (Stop): What to do after coming to a standstill.
-            wait (bool): Wait for the motor to reach the target
-                before continuing with the rest of the program.
+            speed (Number, deg/s): モーターの速度。
+            target_angle (Number, deg): モーターが回転する目標角度。
+            then (Stop): 静止した後に行う動作。
+            wait (bool): モーターが目標に到達するまで待ってから
+                プログラムの残りを続行します。
         """
 
     def run_until_stalled(
@@ -569,55 +565,56 @@ class Motor(DCMotor):
         """
         run_until_stalled(speed, then=Stop.COAST, duty_limit=None) -> int: deg
 
-        Runs the motor at a constant speed until it stalls.
+        モーターをストールするまで一定速度で回転させます。
 
         Arguments:
-            speed (Number, deg/s): Speed of the motor.
-            then (Stop): What to do after coming to a standstill.
-            duty_limit (Number, %): Duty cycle limit during this
-                command. This is useful to avoid applying the full motor
-                torque to a geared or lever mechanism. If it is ``None``, the
-                duty limit won't be changed during this command.
+            speed (Number, deg/s): モーターの速度。
+            then (Stop): 静止した後に行う動作。
+            duty_limit (Number, %): このコマンド実行中のデューティ
+                サイクル制限。ギア機構やレバー機構にモーターの最大
+                トルクをかけないようにするのに便利です。``None`` の
+                場合、このコマンド実行中にデューティ制限は変更されません。
 
         Returns:
-            Angle at which the motor becomes stalled.
+            モーターがストールしたときの角度。
         """
 
     def done(self) -> bool:
         """done() -> bool
 
-        Checks if an ongoing command or maneuver is done.
+        進行中のコマンドまたは操作が完了したかどうかを確認します。
 
         Returns:
-            ``True`` if the command is done, ``False`` if not.
+            コマンドが完了していれば ``True`` 、そうでなければ
+            ``False`` 。
         """
 
     def track_target(self, target_angle: Number) -> None:
         """track_target(target_angle)
 
-        Tracks a target angle. This is similar to :meth:`.run_target`, but
-        the usual smooth acceleration is skipped: it will move to the target
-        angle as fast as possible. This method is useful if you want to
-        continuously change the target angle.
+        目標角度を追跡します。これは :meth:`.run_target` と
+        似ていますが、通常の滑らかな加速はスキップされ、可能な限り速く
+        目標角度に移動します。このメソッドは、目標角度を連続的に
+        変更したい場合に便利です。
 
         Arguments:
-            target_angle (Number, deg): Target angle that the motor should
-                rotate to.
+            target_angle (Number, deg): モーターが回転する目標角度。
         """
 
     def close(self) -> None:
         """close()
 
-        Closes the motor object so you can call ``Motor`` again to initialize
-        a new object.
+        モーターオブジェクトを閉じて、再度 ``Motor`` を呼び出して
+        新しいオブジェクトを初期化できるようにします。
 
-        This allows advanced users to change properties such as gearing in the
-        middle of the program, which can be useful for removeable attachments.
+        これにより、上級ユーザーはプログラムの途中でギアなどの
+        プロパティを変更できます。取り外し可能なアタッチメントに
+        便利です。
         """
 
 
 class Speaker:
-    """Plays beeps and sounds using a speaker."""
+    """スピーカーを使ってビープ音やサウンドを再生します。"""
 
     @overload
     def volume(self, volume: Number) -> None: ...
@@ -629,65 +626,62 @@ class Speaker:
         """volume(volume)
         volume() -> int: %
 
-        Gets or sets the speaker volume.
+        スピーカーの音量を取得または設定します。
 
-        If no volume is given, this method returns the current volume.
+        音量を指定しない場合、このメソッドは現在の音量を返します。
 
         Arguments:
-            volume (Number, %): Volume of the speaker in the 0-100 range.
+            volume (Number, %): 0から100の範囲のスピーカーの音量。
         """
 
     def beep(self, frequency: Number = 500, duration: Number = 100) -> MaybeAwaitable:
         """beep(frequency=500, duration=100)
 
-        Play a beep/tone.
+        ビープ音/トーンを再生します。
 
         Arguments:
             frequency (Number, Hz):
-                Frequency of the beep in the 64-24000 Hz range.
+                64から24000 Hzの範囲のビープ音の周波数。
             duration (Number, ms):
-                Duration of the beep. If the duration is less
-                than 0, then the method returns immediately and the frequency
-                play continues to play indefinitely.
+                ビープ音の長さ。長さが0未満の場合、このメソッドは
+                直ちに戻り、その周波数の再生が無期限に続きます。
         """
 
     def play_notes(self, notes: Iterable[str], tempo: Number = 120) -> MaybeAwaitable:
         """play_notes(notes, tempo=120)
 
-        Plays a sequence of musical notes. For example:
-        ``["C4/4", "C4/4", "G4/4", "G4/4"]``.
+        一連の音符を再生します。例：
+        ``["C4/4", "C4/4", "G4/4", "G4/4"]`` 。
 
-        Each note is a string with the following format:
+        各音符は次の形式の文字列です。
 
-            - The first character is the name of the note, ``A`` to ``G``
-              or ``R`` for a rest.
-            - Note names can also include an accidental ``#`` (sharp) or
-              ``b`` (flat). ``B#``/``Cb`` and ``E#``/``Fb`` are not
-              allowed.
-            - The note name is followed by the octave number ``2``
-              to ``8``. For example ``C4`` is middle C. The octave changes
-              to the next number at the note C, for example, ``B3`` is the
-              note below middle C (``C4``).
-            - The octave is followed by ``/`` and a number that indicates
-              the size of the note. For example ``/4`` is a quarter note,
-              ``/8`` is an eighth note and so on.
-            - This can optionally followed by a ``.`` to make a dotted
-              note. Dotted notes are 1-1/2 times as long as notes without a
-              dot.
-            - The note can optionally end with a ``_`` which is a tie or a
-              slur. This causes there to be no pause between this note and
-              the next note.
+            - 最初の文字は音名で、 ``A`` から ``G`` 、または休符を表す
+              ``R`` です。
+            - 音名にはシャープの ``#`` やフラットの ``b`` の臨時記号を
+              含めることもできます。``B#`` / ``Cb`` と ``E#`` / ``Fb``
+              は使用できません。
+            - 音名の後には ``2`` から ``8`` のオクターブ番号が続きます。
+              たとえば ``C4`` は中央のCです。オクターブは音Cで次の番号に
+              変わります。たとえば ``B3`` は中央のC（ ``C4`` ）のすぐ
+              下の音です。
+            - オクターブの後には ``/`` と音符の長さを示す数字が続きます。
+              たとえば ``/4`` は4分音符、 ``/8`` は8分音符、という具合です。
+            - オプションで ``.`` を続けて付点音符にできます。付点音符は
+              点のない音符の1.5倍の長さです。
+            - オプションで音符の末尾に ``_`` を付けると、タイまたは
+              スラーになります。これにより、この音符と次の音符の間に
+              休止が入らなくなります。
 
         Arguments:
             notes (iter):
-                A sequence of notes to be played.
+                再生する音符のシーケンス。
             tempo (int):
-                Beats per minute. A quarter note is one beat.
+                1分あたりの拍数。4分音符が1拍です。
         """
 
 
 class ColorLight:
-    """Control a multi-color light."""
+    """多色ライトを制御します。"""
 
     def on(self, color: Color) -> None:
         """on(color)
@@ -734,76 +728,74 @@ class ColorLight:
 
 
 class ExternalColorLight:
-    """Control a multi-color light."""
+    """多色ライトを制御します。"""
 
     def on(self, color: Color) -> MaybeAwaitable:
         """on(color)
 
-        Turns on the light at the specified color.
+        指定した色でライトを点灯します。
 
         Arguments:
-            color (Color): Color of the light.
+            color (Color): ライトの色。
         """
 
     def off(self) -> MaybeAwaitable:
         """off()
 
-        Turns off the light.
+        ライトを消します。
         """
 
 
 class LightArray3:
-    """Control an array of three single-color lights."""
+    """3つの単色ライトの配列を制御します。"""
 
     def on(self, brightness: Number | tuple[Number, Number, Number]) -> MaybeAwaitable:
         """on(brightness)
 
-        Turns on the lights at the specified brightness.
+        指定した輝度でライトを点灯します。
 
         Arguments:
             brightness (Number or tuple, %):
-                Use a single value to set the brightness of all lights at the
-                same time. Use a tuple of three values to set the brightness
-                of each light individually.
+                単一の値ですべてのライトの輝度を同時に設定します。
+                3つの値のタプルで各ライトの輝度を個別に設定します。
         """
 
     def off(self) -> MaybeAwaitable:
         """off()
 
-        Turns off all the lights.
+        すべてのライトを消します。
         """
 
 
 class LightArray4(LightArray3):
-    """Control an array of four single-color lights."""
+    """4つの単色ライトの配列を制御します。"""
 
     def on(
         self, brightness: Number | tuple[Number, Number, Number, Number]
     ) -> MaybeAwaitable:
         """on(brightness)
 
-        Turns on the lights at the specified brightness.
+        指定した輝度でライトを点灯します。
 
         Arguments:
             brightness (Number or tuple, %):
-                Use a single value to set the brightness of all lights at the
-                same time. Use a tuple of four values to set the brightness
-                of each light individually. The order of the lights is shown
-                in the image above.
+                単一の値ですべてのライトの輝度を同時に設定します。
+                4つの値のタプルで各ライトの輝度を個別に設定します。
+                ライトの順序は上の画像に示されています。
         """
 
 
 class LightMatrix:
-    """Control a rectangular grid of single-color lights."""
+    """単色ライトの長方形グリッドを制御します。"""
 
     def __init__(self, rows: int, columns: int):
         """LightMatrix(rows, columns)
 
-        Initializes the light matrix display.
+        ライトマトリクスディスプレイを初期化します。
 
         Arguments:
-            rows (int): Number of rows in the grid
-            columns (int): Number of columns in the grid
+            rows (int): グリッドの行数。
+            columns (int): グリッドの列数。
         """
 
     def orientation(self, up: Side) -> None:
@@ -815,9 +807,10 @@ class LightMatrix:
         既存の表示内容は変化しません。
 
         Arguments:
-            up (Side): Which side of the light matrix display is "up" in your
-                design. Choose ``Side.TOP``, ``Side.LEFT``, ``Side.RIGHT``,
-                or ``Side.BOTTOM``.
+            up (Side): デザインにおいてライトマトリクスディスプレイの
+                どの面が「上」になるかを指定します。``Side.TOP`` 、
+                ``Side.LEFT`` 、 ``Side.RIGHT`` 、 ``Side.BOTTOM`` の
+                いずれかを選択します。
         """
 
     def icon(self, icon: Matrix) -> None:
@@ -834,9 +827,9 @@ class LightMatrix:
 
         画像のリストを使って作られたアニメーションを表示します。
 
-        各画像は上記と同じフォーマットである。
-        それぞれの画像は与えられた間隔だけ表示される。
-        このアニメーションは、あなたのプログラムの残りの部分が動き続けている間、永遠に繰り返される。
+        各画像は上記と同じフォーマットです。
+        それぞれの画像は与えられた間隔だけ表示されます。
+        このアニメーションは、プログラムの残りの部分が動き続けている間、永遠に繰り返されます。
 
         Arguments:
             matrices (iter): :class:`Matrix <pybricks.tools.Matrix>` のシーケンス。
@@ -862,7 +855,7 @@ class LightMatrix:
     def number(self, number: Number) -> None:
         """number(number)
 
-        -99から99の範囲の数字を表示する。
+        -99から99の範囲の数字を表示します。
 
         マイナス記号（``-``）はディスプレイの中央に点で表示されます。
         99以上の数字は ``>`` 、99未満の数字は ``<`` で表示されます。
@@ -880,7 +873,7 @@ class LightMatrix:
         ``!"#$%&'()*+,-./:;<=>?@[\\]^_`{|}``
 
         Arguments:
-            character (str): 表示する文字または記号。
+            char (str): 表示する文字または記号。
         """
 
     def text(self, text: str, on: Number = 500, off: Number = 50) -> None:
@@ -897,14 +890,14 @@ class LightMatrix:
 
 
 class Keypad:
-    """Get status of buttons on a keypad layout."""
+    """キーパッドレイアウトのボタンの状態を取得します。"""
 
     def __init__(self, active_buttons): ...
 
     def pressed(self) -> set[Button]:
         """pressed() -> set[Button]
 
-        現在どのボタンが押されているか取得する。
+        現在どのボタンが押されているか取得します。
 
         Returns:
             押されたボタンのセット。
@@ -912,75 +905,76 @@ class Keypad:
 
 
 class Battery:
-    """Get the status of a battery."""
+    """バッテリーの状態を取得します。"""
 
     def voltage(self) -> int:
         """voltage() -> int: mV
 
-        Gets the voltage of the battery.
+        バッテリーの電圧を取得します。
 
         Returns:
-            Battery voltage.
+            バッテリーの電圧。
         """
 
     def current(self) -> int:
         """current() -> int: mA
 
-        Gets the current supplied by the battery.
+        バッテリーから供給される電流を取得します。
 
         Returns:
-            Battery current.
+            バッテリーの電流。
         """
 
 
 class Charger:
-    """Get the status of a battery charger."""
+    """バッテリー充電器の状態を取得します。"""
 
     def connected(self) -> bool:
         """connected() -> bool
 
-        Checks whether a charger is connected via USB.
+        充電器がUSB経由で接続されているかどうかを確認します。
 
         Returns:
-            ``True`` if a charger is connected, ``False`` if not.
+            充電器が接続されている場合は ``True`` 、そうでなければ
+            ``False`` 。
         """
 
     def status(self) -> int:
         """status() -> int
 
-        Gets the status of the battery charger, represented by one of the
-        following values. This corresponds to the battery light indicator
-        right next to the USB port.
+        バッテリー充電器の状態を取得します。状態は以下のいずれかの値で
+        表されます。これはUSBポートのすぐ隣にあるバッテリーライト
+        インジケーターに対応しています。
 
-            0. Not charging (light is off).
-            1. Charging (light is red).
-            2. Charging is complete (light is green).
-            3. There is a problem with the charger (light is yellow).
+            0. 充電していない（ライト消灯）。
+            1. 充電中（ライトは赤）。
+            2. 充電完了（ライトは緑）。
+            3. 充電器に問題がある（ライトは黄）。
 
         Returns:
-            Status value.
+            状態値。
         """
 
     def current(self) -> int:
         """current() -> int: mA
 
-        Gets the charging current.
+        充電電流を取得します。
 
         Returns:
-            Charging current.
+            充電電流。
         """
 
 
 class SimpleAccelerometer:
-    """Get measurements from an accelerometer."""
+    """加速度計から測定値を取得します。"""
 
     def acceleration(self) -> tuple[int, int, int]:
         """acceleration() -> tuple[int, int, int]: mm/s²
 
-        Gets the acceleration of the device.
+        デバイスの加速度を取得します。
 
         Returns:
-            Acceleration along all three axes.
+            3軸すべてに沿った加速度。
         """
 
     def up(self) -> Side:
@@ -996,7 +990,7 @@ class SimpleAccelerometer:
     def tilt(self) -> tuple[int, int]:
         """tilt() -> tuple[int, int]
 
-        ピッチ角とロール角を取得する。 これは、:ref:`ユーザーが指定した方向 <robotframe>` からの相対値です。
+        ピッチ角とロール角を取得します。これは :ref:`ユーザーが指定した方向 <robotframe>` からの相対値です。
 
         回転の順序は、ピッチ-ターン-ロールです。これはロボットのY軸に沿って正回転し、次にX軸に沿って正回転することに相当します。
 
@@ -1009,35 +1003,34 @@ class IMU:
     def up(self, calibrated: bool = True) -> Side:
         """up(calibrated=True) -> Side
 
-        Checks which side of the hub currently faces upward.
+        現在ハブのどの面が上を向いているかを確認します。
 
         Arguments:
-            calibrated (bool): Choose ``True`` to use calibrated gyroscope and
-                accelerometer data to determine which way is up. Choose
-                ``False`` to use raw acceleration values.
+            calibrated (bool): ``True`` を選択すると、キャリブレーション済みの
+                ジャイロスコープと加速度計のデータを使って上方向を判定します。
+                ``False`` を選択すると、生の加速度値を使用します。
 
         Returns:
-            ``Side.TOP``, ``Side.BOTTOM``, ``Side.LEFT``, ``Side.RIGHT``,
-            ``Side.FRONT`` or ``Side.BACK``.
+            ``Side.TOP`` 、 ``Side.BOTTOM`` 、 ``Side.LEFT`` 、
+            ``Side.RIGHT`` 、 ``Side.FRONT`` 、 ``Side.BACK`` のいずれか。
         """
 
     def tilt(self, calibrated: bool = True) -> tuple[int, int]:
         """tilt(calibrated=True) -> tuple[int, int]
 
-        Gets the pitch and roll angles. This is relative to the
-        :ref:`user-specified neutral orientation <robotframe>`.
+        ピッチ角とロール角を取得します。これは
+        :ref:`ユーザーが指定した方向 <robotframe>` からの相対値です。
 
-        The order of rotation is pitch-then-roll. This is equivalent to a
-        positive rotation along the robot y-axis and then a positive rotation
-        along the x-axis.
+        回転の順序は、ピッチ-ターン-ロールです。これはロボットのY軸に
+        沿って正回転し、次にX軸に沿って正回転することに相当します。
 
         Arguments:
-            calibrated (bool): Choose ``True`` to use calibrated gyroscope and
-                accelerometer data to determine the tilt. Choose ``False``
-                to use raw acceleration values.
+            calibrated (bool): ``True`` を選択すると、キャリブレーション済みの
+                ジャイロスコープと加速度計のデータを使って傾きを判定します。
+                ``False`` を選択すると、生の加速度値を使用します。
 
         Returns:
-            Tuple of pitch and roll angles in degrees.
+            ピッチ角とロール角を度単位で表したタプル。
         """
 
     @overload
@@ -1054,13 +1047,14 @@ class IMU:
         :ref:`ロボットフレーム <robotframe>` における、指定された軸に沿ったデバイスの加速度を取得します。
 
         Arguments:
-            axis (Axis): Axis along which the acceleration should be
-                measured, or ``None`` to get a vector along all axes.
-            calibrated (bool): Choose ``True`` to use calibrated acceleration
-                values. Choose ``False`` to use raw acceleration values.
+            axis (Axis): 加速度を測定する軸。``None`` の場合はすべての軸に
+                沿ったベクトルを返します。
+            calibrated (bool): ``True`` を選択すると、キャリブレーション済みの
+                加速度値を使用します。``False`` を選択すると、生の加速度値を
+                使用します。
 
         Returns:
-            指定された軸に沿った加速度。 軸を指定しない場合は、すべての軸に沿った加速度のベクトルを返す。
+            指定された軸に沿った加速度。軸を指定しない場合は、すべての軸に沿った加速度のベクトルを返します。
         """
 
     def ready(self) -> bool:
@@ -1114,65 +1108,63 @@ class IMU:
         settings(*, angular_velocity_threshold, acceleration_threshold, heading_correction, angular_velocity_bias, angular_velocity_scale, acceleration_correction)
         settings() -> tuple
 
-        Configures the IMU settings. If no arguments are given,
-        this returns the current values. Use keyword arguments for each value
-        to ensure correct behavior because settings may be added or changed in
-        future releases.
+        IMUの設定を構成します。引数が指定されない場合は、現在の値を
+        返します。将来のリリースで設定が追加または変更される可能性が
+        あるため、正しい動作を確実にするには各値をキーワード引数で
+        指定してください。
 
-        These IMU settings are saved on the hub. They will keep their values
-        until you change them again. The values will be reset to default values
-        if you update the hub to a different firmware version or call the
-        ``hub.system.reset_storage`` method.
+        これらのIMU設定はハブに保存されます。再度変更するまで値は
+        保持されます。ハブを別のファームウェアバージョンに更新するか、
+        ``hub.system.reset_storage`` メソッドを呼び出すと、値は
+        デフォルト値にリセットされます。
 
-        The ``angular_velocity_threshold`` and ``acceleration_threshold``
-        define when the hub is considered stationary. If all
-        measurements stay below these thresholds for one second, the IMU
-        will recalibrate itself. In a noisy room with high ambient vibrations (such as a
-        competition hall), you can increase the thresholds
-        slightly to give your robot the chance to calibrate.
-        To verify that your settings are working as expected, test that
-        the ``stationary()`` method gives ``False`` if your robot is moving,
-        and ``True`` if it is sitting still.
+        ``angular_velocity_threshold`` と ``acceleration_threshold``
+        は、ハブが静止しているとみなされる条件を定義します。すべての
+        測定値が1秒間これらのしきい値を下回り続けると、IMUは自分自身を
+        再キャリブレーションします。周囲の振動が大きい騒がしい場所
+        （競技会場など）では、しきい値を少し上げることで、ロボットが
+        キャリブレーションする機会を与えられます。設定が期待どおりに
+        機能していることを確認するには、ロボットが動いているときに
+        ``stationary()`` メソッドが ``False`` を返し、静止しているときに
+        ``True`` を返すことをテストしてください。
 
-        The gyroscope measures how fast the hub rotates to estimate the total
-        angle. Due to variations in the production process, each
-        hub consistently reports a different value for a full rotation. For
-        example, your hub might consistently report `357` degrees for every
-        `360` degree turn. You can measure this value
-        with ``hub.imu.rotation(-Axis.Z, calibrated=False)`` and enter it as
-        the ``heading_correction`` setting. Then, the ``hub.imu.heading()``
-        method will take it into account going forward, correctly scaling it
-        to 360 degrees for a full rotation.
+        ジャイロスコープはハブの回転速度を測定して総角度を推定します。
+        製造過程のばらつきにより、各ハブは1回転に対して一貫して異なる値を
+        報告します。たとえば、あるハブは `360` 度の回転ごとに常に
+        `357` 度を報告するかもしれません。この値は
+        ``hub.imu.rotation(-Axis.Z, calibrated=False)`` で測定でき、
+        ``heading_correction`` 設定として入力できます。すると、
+        ``hub.imu.heading()`` メソッドはそれ以降その値を考慮し、
+        1回転を正しく360度にスケーリングします。
 
         Arguments:
-            angular_velocity_threshold (Number, deg/s): The threshold for
-                variations in the angular velocity below which the hub is
-                considered stationary enough to calibrate.
-                After a reset the value is 2 deg/s.
-            acceleration_threshold (Number, mm/s²): The threshold for
-                variations in acceleration below which the hub is considered
-                stationary enough to calibrate. After a reset the value
-                is 2500 mm/s².
-            heading_correction (Number, deg): Number of degrees
-                reported by for one full rotation of your robot.
-                After a reset the value is 360 degrees. This is applied on top
-                of any scaling that is done by the ``angular_velocity_scale``
-                setting.
-            angular_velocity_bias (tuple, deg/s): Initial bias for angular
-                velocity measurements along x, y, and z immediately after boot.
-                After a reset the value is (0, 0, 0) deg/s.
-            angular_velocity_scale (tuple, deg): Scale adjustment for x, y, and
-                z rotation to account for manufacturing differences. After a
-                reset the value is (360, 360, 360) deg/s. The correct values
-                can be obtained using `hub.imu.rotation(Axis.X, calibrated=False)`
-                and repeating it for each axis.
-            acceleration_correction (tuple, mm/s²): Scale adjustment for x, y,
-                and z gravity magnitude in both directions to account for
-                manufacturing differences. After a reset the
-                value is (9806.65, -9806.65, 9806.65, -9806.65, 9806.65, -9806.65) mm/s².
-                The correct values can be
-                obtained using `hub.imu.acceleration(Axis.X, calibrated=False)`
-                and repeating it for all axes in both directions.
+            angular_velocity_threshold (Number, deg/s): これを下回る
+                角速度の変動であれば、ハブはキャリブレーションできるほど
+                静止しているとみなされるというしきい値。
+                リセット後の値は2 deg/sです。
+            acceleration_threshold (Number, mm/s²): これを下回る
+                加速度の変動であれば、ハブはキャリブレーションできるほど
+                静止しているとみなされるというしきい値。
+                リセット後の値は2500 mm/s²です。
+            heading_correction (Number, deg): ロボットが1回転したときに
+                報告される度数。リセット後の値は360度です。これは
+                ``angular_velocity_scale`` 設定によるスケーリングに
+                加えて適用されます。
+            angular_velocity_bias (tuple, deg/s): 起動直後のx、y、z軸に
+                沿った角速度測定の初期バイアス。
+                リセット後の値は(0, 0, 0) deg/sです。
+            angular_velocity_scale (tuple, deg): 製造差異を考慮するための
+                x、y、z回転のスケール調整。リセット後の値は
+                (360, 360, 360) deg/sです。正しい値は
+                `hub.imu.rotation(Axis.X, calibrated=False)` を使い、
+                各軸について繰り返すことで得られます。
+            acceleration_correction (tuple, mm/s²): 製造差異を考慮する
+                ためのx、y、zの両方向における重力の大きさのスケール調整。
+                リセット後の値は
+                (9806.65, -9806.65, 9806.65, -9806.65, 9806.65, -9806.65) mm/s²です。
+                正しい値は
+                `hub.imu.acceleration(Axis.X, calibrated=False)` を使い、
+                すべての軸の両方向について繰り返すことで得られます。
         """
 
     def heading(self) -> float:
@@ -1192,19 +1184,20 @@ class IMU:
 
         ロボットの方位角をリセットします。
 
-        This cannot be called while a drive base is using the gyro to drive or
-        hold position.
-        Use :meth:`DriveBase.reset() <pybricks.robotics.DriveBase.reset>`
-        instead, which will stop the robot and then set the new heading value.
+        ドライブベースがジャイロを使って走行または位置保持を行っている間は、
+        このメソッドを呼び出せません。
+        代わりに :meth:`DriveBase.reset() <pybricks.robotics.DriveBase.reset>`
+        を使用してください。これはロボットを停止させてから、新しい方位角を
+        設定します。
 
-        .. versionchanged:: 3.6 Resetting the angle while driving is not allowed. Stop first.
+        .. versionchanged:: 3.6 走行中の角度リセットは許可されていません。先に停止してください。
 
         Arguments:
-            angle (Number, deg): Value to which the heading should be reset.
+            angle (Number, deg): 方位角をリセットする値。
 
         Raises:
             OSError:
-                There is a drive base that is currently using the gyro.
+                現在ジャイロを使用しているドライブベースがある場合。
         """
 
     @overload
@@ -1221,14 +1214,14 @@ class IMU:
         :ref:`ロボットフレーム <robotframe>` における、指定された軸に沿ったデバイスの角速度を取得します。
 
         Arguments:
-            axis (Axis): Axis along which the angular velocity should be
-                measured, or ``None`` to get a vector along all axes.
-            calibrated (bool): Choose ``True`` to compensate for the estimated
-                bias and configured scale of the gyroscope. Choose ``False``
-                to get raw angular velocity values.
+            axis (Axis): 角速度を測定する軸。``None`` の場合はすべての軸に
+                沿ったベクトルを返します。
+            calibrated (bool): ``True`` を選択すると、推定されたバイアスと
+                設定されたジャイロスコープのスケールを補正します。
+                ``False`` を選択すると、生の角速度値を取得します。
 
         Returns:
-            指定された軸に沿った角速度。 軸を指定しない場合は、すべての軸に沿った加速度のベクトルを返す。
+            指定された軸に沿った角速度。軸を指定しない場合は、すべての軸に沿った角速度のベクトルを返します。
         """
 
     def rotation(self, axis: Axis, calibrated: bool = True) -> float:
@@ -1241,9 +1234,10 @@ class IMU:
         一般的な3次元モーションの場合は、代わりに ``orientation()`` メソッドを使用します。
 
         Arguments:
-            axis (Axis): Axis along which the rotation should be measured.
-            calibrated (bool): Choose ``True`` to compensate for configured
-                scale of the gyroscope. Choose ``False`` to get unscaled values.
+            axis (Axis): 回転を測定する軸。
+            calibrated (bool): ``True`` を選択すると、設定された
+                ジャイロスコープのスケールを補正します。``False`` を
+                選択すると、スケールされていない値を取得します。
 
         Returns:
             回転した角度。
@@ -1258,67 +1252,63 @@ class IMU:
         ロボットの ``X`` 軸、``Y`` 軸、``Z`` 軸を表す回転行列を返します。
 
         Returns:
-            The 3x3 rotation matrix.
+            3x3の回転行列。
         """
 
 
 class CommonColorSensor:
-    """Generic color sensor that supports Pybricks color calibration."""
+    """Pybricksのカラーキャリブレーションをサポートする汎用カラーセンサー。"""
 
     def __init__(self, port: Port):
         """__init__(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーが接続されているポート。
         """
 
     def color(self) -> MaybeAwaitableColor:
         """color() -> Color
 
-        Scans the color of a surface.
+        表面の色をスキャンします。
 
-        You choose which colors are detected using the
-        ``detectable_colors()`` method. By default, it detects
-        ``Color.RED``, ``Color.YELLOW``, ``Color.GREEN``, ``Color.BLUE``,
-        ``Color.WHITE``, or ``Color.NONE``.
+        検出する色は ``detectable_colors()`` メソッドで選択します。
+        デフォルトでは ``Color.RED`` 、 ``Color.YELLOW`` 、
+        ``Color.GREEN`` 、 ``Color.BLUE`` 、 ``Color.WHITE`` 、
+        ``Color.NONE`` を検出します。
 
         Returns:
-            Detected color.
+            検出された色。
         """
 
     def hsv(self) -> MaybeAwaitableColor:
         """hsv() -> Color
 
-        Scans the color of a surface.
+        表面の色をスキャンします。
 
-        This method is similar to ``color()``, but it gives the full range
-        of hue, saturation and brightness values, instead of rounding it to the
-        nearest detectable color.
+        このメソッドは ``color()`` に似ていますが、最も近い検出可能な色に
+        丸めるのではなく、色相、彩度、輝度の全範囲の値を返します。
 
         Returns:
-            Measured color. The color is described by a hue (0--359), a
-            saturation (0--100), and a brightness value (0--100).
+            測定された色。色は色相（0--359）、彩度（0--100）、
+            輝度（0--100）で表されます。
         """
 
     def ambient(self) -> MaybeAwaitableInt:
         """ambient() -> int: %
 
-        Measures the ambient light intensity.
+        環境光の強度を測定します。
 
         Returns:
-            Ambient light intensity, ranging from 0% (dark)
-            to 100% (bright).
+            0%（暗い）から100%（明るい）の範囲の環境光強度。
         """
 
     def reflection(self) -> MaybeAwaitableInt:
         """reflection() -> int: %
 
-        Measures how much a surface reflects the light emitted by the
-        sensor.
+        表面がセンサーの発する光をどれだけ反射するかを測定します。
 
         Returns:
-            Measured reflection, ranging from 0% (no reflection) to
-            100% (high reflection).
+            測定された反射率。0%（反射なし）から100%（高反射）の範囲。
         """
 
     @overload
@@ -1332,64 +1322,64 @@ class CommonColorSensor:
         detectable_colors(colors)
         detectable_colors() -> Collection[Color]
 
-        Configures which colors the ``color()`` method should detect.
+        ``color()`` メソッドが検出する色を設定します。
 
-        Specify only colors that you wish to detect in your application.
-        This way, the full-color measurements are rounded to the nearest
-        desired color, and other colors are ignored. This improves reliability.
+        アプリケーションで検出したい色だけを指定してください。これにより、
+        フルカラー測定値は最も近い指定色に丸められ、他の色は無視されます。
+        これにより信頼性が向上します。
 
-        If you give no arguments, the currently chosen colors will be returned.
+        引数を指定しない場合は、現在選択されている色が返されます。
 
-        When coding with blocks, this is configured in the sensor setup block.
+        ブロックでコーディングする場合は、センサーセットアップブロックで
+        設定します。
 
         Arguments:
-            colors (list or tuple): List of :class:`Color <.parameters.Color>`
-                objects: the colors that you want to detect. You can pick
-                standard colors such as ``Color.MAGENTA``, or provide your
-                own colors like ``Color(h=348, s=96, v=40)`` for even
-                better results. You measure your own colors with the
-                ``hsv()`` method.
+            colors (list or tuple): 検出したい色である
+                :class:`Color <.parameters.Color>` オブジェクトのリスト。
+                ``Color.MAGENTA`` のような標準色を選ぶことも、
+                ``Color(h=348, s=96, v=40)`` のような独自の色を指定して
+                さらに良い結果を得ることもできます。独自の色は
+                ``hsv()`` メソッドで測定します。
         """
 
 
 class AmbientColorSensor(CommonColorSensor):
-    """Like CommonColorSensor, but also detects ambient colors when the sensor
-    light is turned off"""
+    """``CommonColorSensor`` に似ていますが、センサーライトを消した状態でも
+    周囲の色を検出します。"""
 
     def color(self, surface: bool = True) -> MaybeAwaitableColor:
         """color(surface=True) -> Color
 
-        Scans the color of a surface or an external light source.
+        表面または外部光源の色をスキャンします。
 
-        You choose which colors are detected using the
-        ``detectable_colors()`` method. By default, it detects
-        ``Color.RED``, ``Color.YELLOW``, ``Color.GREEN``, ``Color.BLUE``,
-        ``Color.WHITE``, or ``Color.NONE``.
+        検出する色は ``detectable_colors()`` メソッドで選択します。
+        デフォルトでは ``Color.RED`` 、 ``Color.YELLOW`` 、
+        ``Color.GREEN`` 、 ``Color.BLUE`` 、 ``Color.WHITE`` 、
+        ``Color.NONE`` を検出します。
 
         Arguments:
-            surface (bool): Choose ``true`` to scan the color of objects
-                and surfaces. Choose ``false`` to scan the color of
-                screens and other external light sources.
+            surface (bool): ``true`` を選択すると、物体や表面の色を
+                スキャンします。``false`` を選択すると、画面やその他の
+                外部光源の色をスキャンします。
 
         Returns:
-            Detected color.`
+            検出された色。
         """
 
     def hsv(self, surface: bool = True) -> MaybeAwaitableColor:
         """hsv(surface=True) -> Color
 
-        Scans the color of a surface or an external light source.
+        表面または外部光源の色をスキャンします。
 
-        This method is similar to ``color()``, but it gives the full range
-        of hue, saturation and brightness values, instead of rounding it to the
-        nearest detectable color.
+        このメソッドは ``color()`` に似ていますが、最も近い検出可能な色に
+        丸めるのではなく、色相、彩度、輝度の全範囲の値を返します。
 
         Arguments:
-            surface (bool): Choose ``true`` to scan the color of objects
-                and surfaces. Choose ``false`` to scan the color of
-                screens and other external light sources.
+            surface (bool): ``true`` を選択すると、物体や表面の色を
+                スキャンします。``false`` を選択すると、画面やその他の
+                外部光源の色をスキャンします。
 
         Returns:
-            Measured color. The color is described by a hue (0--359), a
-            saturation (0--100), and a brightness value (0--100).
+            測定された色。色は色相（0--359）、彩度（0--100）、
+            輝度（0--100）で表されます。
         """

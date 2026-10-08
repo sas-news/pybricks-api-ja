@@ -1,12 +1,12 @@
-:mod:`iodevices <pybricks.iodevices>` -- Custom devices
+:mod:`iodevices <pybricks.iodevices>` -- カスタムデバイス
 ============================================================
 
 .. module:: pybricks.iodevices
 
-This module has classes for generic and custom input/output devices.
+このモジュールには、汎用およびカスタムの入出力デバイスのクラスがあります。
 
-Wireless devices
-----------------
+ワイヤレスデバイス
+--------------------
 
 .. toctree::
    :maxdepth: 1
@@ -22,8 +22,8 @@ Wireless devices
    :width: 40 %
    :target: xboxcontroller.html
 
-LEGO protocol devices
----------------------
+LEGOプロトコルデバイス
+------------------------
 
 .. toctree::
    :maxdepth: 1
@@ -57,7 +57,7 @@ LEGO protocol devices
    :width: 50 %
    :target: pupdevice.html
 
-Generic protocols
+汎用プロトコル
 -----------------
 
 .. toctree::

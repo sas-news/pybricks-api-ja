@@ -1,4 +1,4 @@
-:mod:`messaging <pybricks.messaging>` -- Send and receive messages
+:mod:`messaging <pybricks.messaging>` -- メッセージの送受信
 ==================================================================
 
 .. automodule:: pybricks.messaging
@@ -46,22 +46,22 @@
 
     .. automethod:: pybricks.messaging.AppData.close
 
-BLERadio examples
+BLERadio の使用例
 ------------------
 
-Broadcasting data to other hubs
-*******************************
+他のHubへデータをブロードキャストする
+**************************************
 
 .. literalinclude::
     ../../../examples/pup/ble_radio/ble_broadcast.py
 
-Observing data from other hubs
-******************************
+他のHubからデータを観測する
+****************************
 
 .. literalinclude::
     ../../../examples/pup/ble_radio/ble_observe.py
 
-Messaging between EV3 Bricks
+EV3 Brick間のメッセージング
 ----------------------------
 
 .. pybricks-requirements:: hub-network
