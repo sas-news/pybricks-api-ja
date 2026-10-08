@@ -5,4 +5,4 @@ Icon
 
 .. autoclass:: pybricks.parameters.Icon
 
-    See the :ref:`make_icons` section for examples.
+    例については :ref:`make_icons` セクションを参照してください。

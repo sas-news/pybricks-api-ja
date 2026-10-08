@@ -1,6 +1,6 @@
 .. pybricks-requirements::
 
-:mod:`parameters <pybricks.parameters>` -- Parameters and constants
+:mod:`parameters <pybricks.parameters>` -- パラメータと定数
 ===================================================================
 
 .. automodule:: pybricks.parameters

@@ -1,56 +1,54 @@
-Signals and Units
-=================
+信号と単位
+==========
 
-Many commands allow you to specify arguments in terms of well-known physical
-quantities. This page gives an overview of each quantity and its unit.
+多くのコマンドでは、よく知られた物理量で引数を指定できます。
+このページでは、それぞれの量とその単位の概要を説明します。
 
-Numbers
+数値
 ~~~~~~~
 
 .. autodata:: pybricks.parameters.Number
   :noindex:
 
-Time
+時間
 ~~~~~~
 
 .. _time:
 
-time: ms
+時間: ms
 ---------
-All time and duration values are measured in milliseconds (ms).
+すべての時間と継続時間の値はミリ秒 (ms) で測定されます。
 
-For example, the duration of motion with ``run_time``, and the duration
-of :func:`wait <.tools.wait>` are
-specified in milliseconds.
+たとえば、 ``run_time`` による動作の継続時間や
+:func:`wait <.tools.wait>` の継続時間は
+ミリ秒で指定します。
 
-Angles and angular motion
+角度と角運動
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _angle:
 
-angle: deg
+角度: deg
 -----------
 
-All angles are measured in degrees (deg). One full rotation corresponds to 360
-degrees.
+すべての角度は度 (deg) で測定されます。1回転は360度に相当します。
 
-For example, the angle values of a ``Motor`` or
-the ``GyroSensor`` are expressed in degrees.
+たとえば、 ``Motor`` の角度値や ``GyroSensor`` の角度値は
+度で表されます。
 
 .. _speed:
 
-rotational speed: deg/s
+回転速度: deg/s
 -----------------------
 
-Rotational speed, or *angular velocity* describes how fast something rotates,
-expressed as the number of degrees per second (deg/s).
+回転速度（角速度）は、物体がどれだけ速く回転するかを表し、
+1秒あたりの度数 (deg/s) で表されます。
 
-For example, the rotational speed values of a ``Motor`` or the
-``GyroSensor`` are expressed in degrees
-per second.
+たとえば、 ``Motor`` や ``GyroSensor`` の回転速度値は
+度/秒で表されます。
 
-While we recommend working with degrees per second in your programs, you can
-use the following table to convert between commonly used units.
+プログラムでは度/秒で作業することをおすすめしますが、
+以下の表を使ってよく使われる単位間で変換できます。
 
 +-----------+-------+-----------+
 |           | deg/s | rpm       |
@@ -62,32 +60,30 @@ use the following table to convert between commonly used units.
 
 .. _acceleration:
 
-rotational acceleration: deg/s²
+回転加速度: deg/s²
 --------------------------------
 
-Rotational acceleration, or *angular acceleration* describes how fast the
-rotational speed changes. This is expressed as the change of the number of
-degrees per second, during one second (deg/s²).
+回転加速度（角加速度）は、回転速度がどれだけ速く変化するかを表します。
+これは1秒間の、度数/秒の変化量 (deg/s²) で表されます。
 
-For example, you can adjust the rotational acceleration setting of a ``Motor``
-to change how smoothly or
-how quickly it reaches the constant speed set point.
+たとえば、 ``Motor`` の回転加速度設定を調整して、一定速度の設定値に
+達するまでの滑らかさや速さを変えられます。
 
 
-Distance and linear motion
+距離と直線運動
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _distance:
 
-distance: mm
+距離: mm
 -------------
-Distances are expressed in millimeters (mm) whenever possible.
+距離は可能な限りミリメートル (mm) で表されます。
 
-For example, the distance value of the ``UltrasonicSensor``
-is measured in millimeters.
+たとえば、 ``UltrasonicSensor`` の距離値は
+ミリメートルで測定されます。
 
-While we recommend working with millimeters in your programs, you can use the
-following table to convert between commonly used units.
+プログラムではミリメートルで作業することをおすすめしますが、
+以下の表を使ってよく使われる単位間で変換できます。
 
 +---------+------+-----+--------+
 |         | mm   | cm  | inch   |
@@ -101,83 +97,80 @@ following table to convert between commonly used units.
 
 .. _dimension:
 
-dimension: mm
+寸法: mm
 -------------
 
-Dimensions are expressed in millimeters (mm), just like
-distances.
+寸法は距離と同様にミリメートル (mm) で表されます。
 
-For example, the diameter of a wheel is measured in millimeters.
+たとえば、タイヤの直径はミリメートルで測定されます。
 
 .. _linspeed:
 
-speed: mm/s
+速度: mm/s
 ------------
-Linear speeds are expressed as millimeters per second (mm/s).
+直線速度はミリメートル/秒 (mm/s) で表されます。
 
-For example, the speed of a robotic vehicle is expressed in mm/s.
+たとえば、ロボット車両の速度は mm/s で表されます。
 
 .. _linacceleration:
 
-linear acceleration: mm/s²
+直線加速度: mm/s²
 --------------------------------
 
-Linear acceleration describes how fast the speed changes. This is expressed as
-the change of the millimeters per second, during one second (mm/s²).
+直線加速度は、速度がどれだけ速く変化するかを表します。これは1秒間の、
+ミリメートル/秒の変化量 (mm/s²) で表されます。
 
-For example, you can adjust the acceleration setting of a
-:class:`DriveBase <.robotics.DriveBase>` to change how
-smoothly or how quickly it reaches the constant speed set point.
+たとえば、 :class:`DriveBase <.robotics.DriveBase>` の加速度設定を
+調整して、一定速度の設定値に達するまでの滑らかさや速さを
+変えられます。
 
-Approximate and relative units
+近似値と相対的な単位
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _percentage:
 
-percentage: %
+割合: %
 --------------
 
-Some signals do not have specific units. They range from a minimum (0%) to a
-maximum (100%). Specifics type of percentages are :ref:`relative distances
-<relativedistance>` or  :ref:`brightness <brightness>`.
+一部の信号には固有の単位がありません。最小値 (0%) から最大値 (100%)
+までの範囲を持ちます。割合の具体例としては、 :ref:`相対距離
+<relativedistance>` や :ref:`輝度 <brightness>` があります。
 
-Another example is the sound volume,
-which ranges from 0% (silent) to 100% (loudest).
+別の例として音量があり、0% （無音）から100% （最大）までの範囲です。
 
 .. _relativedistance:
 
-relative distance: %
+相対距離: %
 ---------------------
 
-Some distance measurements do not provide an accurate value with a specific
-unit, but they range from very close (0%) to very far (100%). These are
-referred to as relative distances.
+一部の距離測定では、固有の単位による正確な値が得られませんが、
+とても近い (0%) からとても遠い (100%) までの範囲を持ちます。
+これらは相対距離と呼ばれます。
 
-For example, the distance value of the ``InfraredSensor``
-is a relative distance.
+たとえば、 ``InfraredSensor`` の距離値は
+相対距離です。
 
 
 .. _brightness:
 
-brightness: %
+輝度: %
 --------------
 
-The perceived brightness of a light is expressed as a percentage. It is 0% when
-the light is off and 100% when the light is fully on. When you choose 50%, this
-means that the light is perceived as approximately half as bright to the human
-eye.
+ライトの知覚される明るさはパーセントで表されます。ライトが消えている
+ときは 0% 、完全に点灯しているときは 100% です。50% を選ぶと、
+人間の目にはおおよそ半分の明るさに知覚されます。
 
-Force and torque
+力とトルク
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _force:
 
-force: N
+力: N
 ------------
-Force values are expressed in newtons (N).
+力の値はニュートン (N) で表されます。
 
-While we recommend working with newtons in your programs, you can use the
-following table to convert to and from other units.
+プログラムではニュートンで作業することをおすすめしますが、
+以下の表を使って他の単位との間で変換できます。
 
 +---------+------+-------+------------+
 |         | mN   | N     | lbf        |
@@ -191,63 +184,64 @@ following table to convert to and from other units.
 
 .. _torque:
 
-torque: mNm
+トルク: mNm
 ------------
-Torque values are expressed in millinewtonmeter (mNm) unless stated otherwise.
+トルクの値は、特に記載がない限りミリニュートンメートル (mNm) で
+表されます。
 
-Electricity
+電気
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _voltage:
 
-voltage: mV
+電圧: mV
 --------------
-Voltages are expressed in millivolt (mV).
+電圧はミリボルト (mV) で表されます。
 
-For example, you can check the voltage of the battery.
+たとえば、バッテリーの電圧を確認できます。
 
 .. _current:
 
-current: mA
+電流: mA
 --------------
 
-Electrical currents are expressed in milliampere (mA).
+電流はミリアンペア (mA) で表されます。
 
-For example, you can check the current supplied by the battery.
+たとえば、バッテリーが供給している電流を確認できます。
 
 .. _energy:
 
-energy: J
+エネルギー: J
 --------------
 
-Stored energy or energy consumption can be expressed in Joules (J).
+蓄えられたエネルギーや消費エネルギーはジュール (J) で表されます。
 
 .. _power:
 
-power: mW
+電力: mW
 --------------
 
-Power is the rate at which energy is stored or consumed. It is expressed in
-milliwatt (mW).
+電力はエネルギーが蓄えられる、または消費される割合です。
+ミリワット (mW) で表されます。
 
-Ambient environment
+周囲環境
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _frequency:
 
-frequency: Hz
+周波数: Hz
 --------------
-Sound frequencies are expressed in Hertz (Hz).
+音の周波数はヘルツ (Hz) で表されます。
 
-For example, you can choose the frequency of a beep to change the pitch.
+たとえば、ビープ音の周波数を選んで音の高さを変えられます。
 
 .. _temperature:
 
-temperature: °C
+温度: °C
 ---------------
 
-Temperature is measured in degrees Celsius (°C). To convert to degrees
-Fahrenheit (°F) or Kelvin (K), you can use the following conversion formulas:
+温度は摂氏 (°C) で測定されます。華氏 (°F) やケルビン (K) への
+変換には、以下の変換式を使えます:
 
     °F = °C · 9/5 + 32.
 
@@ -255,39 +249,39 @@ Fahrenheit (°F) or Kelvin (K), you can use the following conversion formulas:
 
 .. _hue:
 
-hue: deg
+色相: deg
 --------------
-Hue of a color (0-359 degrees).
+色の色相 (0〜359度)。
 
 .. _robotframe:
 
-Reference frames
+参照フレーム
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Pybricks module and this documentation use the following conventions:
+Pybricksモジュールとこのドキュメントでは、以下の規約を使用します:
 
-- X: Positive means forward. Negative means backward.
-- Y: Positive means to the left. Negative means to the right.
-- Z: Positive means upward. Negative means downward.
+- X: 正は前方向、負は後方向を意味します。
+- Y: 正は左方向、負は右方向を意味します。
+- Z: 正は上方向、負は下方向を意味します。
 
-To make sure that all hub measurements (such as acceleration) have the correct
-value and sign, you can specify how the hub is mounted in your creation. This
-adjust the measurements so that it is easy to see how your *robot* is moving,
-rather than how the *hub* is moving.
+すべてのハブの測定値（加速度など）が正しい値と符号を持つように、
+作品の中でハブがどのように取り付けられているかを指定できます。
+これにより、ハブがどう動いているかではなく、ロボットが
+どう動いているかを簡単に確認できるように測定値が調整されます。
 
-For example, the hub may be mounted upside down in your design. If you
-configure the settings as shown in :numref:`fig_imuexamples`, the hub
-measurements will be adjusted accordingly. This way, a positive acceleration
-value in the X direction means that your *robot* accelerates forward, even
-though the *hub* accelerates backward.
+たとえば、デザインの中でハブが上下逆さまに取り付けられている
+場合があります。 :numref:`fig_imuexamples` に示すように設定を
+構成すると、ハブの測定値はそれに応じて調整されます。こうすることで、
+ハブが後ろ向きに加速していても、X方向の正の加速度値はロボットが
+前向きに加速していることを意味します。
 
 .. _fig_imuexamples:
 
 .. figure:: ../main/diagrams/imuexamples.png
    :width: 100 %
 
-   How to configure the ``top_side`` and ``front_side`` settings for three
-   different robot designs. The same technique can be applied to other hubs
-   and other creations, by noting which way the top and
-   front :class:`Side <pybricks.parameters.Side>` of the hub are pointing. The example
-   on the left is the default configuration.
+   3つの異なるロボットデザインで ``top_side`` と ``front_side``
+   設定を構成する方法。ハブの上面と前面の
+   :class:`Side <pybricks.parameters.Side>` がどちらを向いているかを
+   確認すれば、他のハブや他の作品にも同じ手法を適用できます。
+   左の例はデフォルト設定です。

@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2018-2022 The Pybricks Authors
 
-"""Constant parameters/arguments for the Pybricks API."""
+"""Pybricks API の定数パラメータと引数。"""
 
 from __future__ import annotations
 
@@ -18,24 +18,26 @@ if TYPE_CHECKING:
 if TYPE_CHECKING or os.environ.get("SPHINX_BUILD") == "True":
     Number = int | float
     """
-    Numbers can be represented as integers or floating point values:
+    数値は整数または浮動小数点値で表されます:
 
-        * Integers (:class:`int <ubuiltins.int>`) are whole numbers
-          like ``15`` or ``-123``.
-        * Floating point values (:class:`float <ubuiltins.float>`) are decimal
-          numbers like ``3.14`` or ``-123.45``.
+        * 整数 (:class:`int <ubuiltins.int>`) は ``15`` や ``-123`` のような
+          小数点以下を持たない数値です。
+        * 浮動小数点値 (:class:`float <ubuiltins.float>`) は ``3.14`` や
+          ``-123.45`` のような小数を含む数値です。
 
-    If you see :class:`Number` as the argument type, both
-    :class:`int <ubuiltins.int>` and :class:`float <ubuiltins.float>` may be used.
+    引数の型として :class:`Number` と書かれている場合は、
+    :class:`int <ubuiltins.int>` と :class:`float <ubuiltins.float>`
+    のどちらも使用できます。
 
-    For example, :func:`wait(15) <pybricks.tools.wait>` and
-    :func:`wait(15.75) <pybricks.tools.wait>` are both allowed. In most functions,
-    however, your input value will be truncated to a whole number anyway. In this
-    example, either command makes the program pause for just 15 milliseconds.
+    たとえば、:func:`wait(15) <pybricks.tools.wait>` と
+    :func:`wait(15.75) <pybricks.tools.wait>` はどちらも有効です。
+    ただし、ほとんどの関数では入力した値は整数に切り捨てられます。
+    この例では、どちらのコマンドでもプログラムは15ミリ秒だけ
+    一時停止します。
 
     .. note::
-        The BOOST Move hub doesn't support floating point numbers due to
-        limited system resources. Only integers can be used on that hub.
+        BOOST Move ハブはシステムリソースの制約により浮動小数点数を
+        サポートしていません。そのハブでは整数のみ使用できます。
     """
 
 
@@ -62,7 +64,7 @@ class _PybricksEnum(Enum, metaclass=_PybricksEnumMeta):
 
 
 class Axis:
-    """Unit axes of a coordinate system."""
+    """座標系の単位軸。"""
 
     X: _Matrix = _vector(1, 0, 0)
 
@@ -72,7 +74,7 @@ class Axis:
 
 
 class Color:
-    """Light or surface color."""
+    """ライトまたは物体表面の色。"""
 
     NONE: Color = ...
     BLACK: Color = ...
@@ -92,24 +94,24 @@ class Color:
         """Color(h, s=100, v=100)
 
         Arguments:
-            h (Number, deg): Hue.
-            s (Number, %): Saturation.
-            v (Number, %): Brightness value.
+            h (Number, deg): 色相。
+            s (Number, %): 彩度。
+            v (Number, %): 輝度。
         """
 
         self.h = int(h) % 360
         """
-        The hue.
+        色相。
         """
 
         self.s = max(0, min(int(s), 100))
         """
-        The saturation.
+        彩度。
         """
 
         self.v = max(0, min(int(v), 100))
         """
-        The brightness value.
+        輝度。
         """
 
     def __setattr__(self, key, value):
@@ -120,7 +122,7 @@ class Color:
         super().__setattr__(key, value)
 
     def __iter__(self):
-        """Allows unpacking of the Color instance into h, s, and v."""
+        """``Color`` インスタンスを ``h`` 、 ``s`` 、 ``v`` にアンパックできるようにします。"""
         return iter((self.h, self.s, self.v))
 
     def __repr__(self):
@@ -168,7 +170,7 @@ Color.MAGENTA = Color(300, 100, 100)
 
 
 class Port(_PybricksEnum):
-    """Port on the programmable brick or hub."""
+    """プログラマブルブロックまたはハブのポート。"""
 
     # Generic motor/sensor ports
     A: Port = ord("A")
@@ -186,46 +188,45 @@ class Port(_PybricksEnum):
 
 
 class Stop(_PybricksEnum):
-    """Action after the motor stops or reaches its target."""
+    """モーターが停止したとき、または目標に到達したときの動作。"""
 
     COAST: Stop = 0
-    """Let the motor move freely."""
+    """モーターを自由に回転できる状態にします。"""
 
     COAST_SMART: Stop = 4
     """
-    Let the motor move freely. For the next relative angle maneuver,
-    take the last target angle (instead of the current angle) as the new
-    starting point. This reduces cumulative errors. This will apply only if the
-    current angle is less than twice the configured position tolerance.
+    モーターを自由に回転できる状態にします。次の相対角度操作では、
+    （現在の角度ではなく）最後の目標角度を新しい開始点として使用します。
+    これにより累積誤差が減少します。現在の角度が設定された位置許容誤差の
+    2倍未満の場合にのみ適用されます。
     """
 
     BRAKE: Stop = 1
-    """Passively resist small external forces."""
+    """小さな外力に受動的に抵抗します。"""
 
     HOLD: Stop = 2
-    """Keep controlling the motor to hold it at the commanded angle."""
+    """モーターの制御を続け、指令された角度に保持します。"""
 
     NONE: Stop = 3
     """
-    Do not decelerate when approaching the target position. This can be used
-    to concatenate multiple motor or drive base maneuvers without stopping. If
-    no further commands are given, the motor will proceed to run indefinitely
-    at the given speed.
+    目標位置に近づいても減速しません。複数のモーターやドライブベースの
+    操作を停止せずに連結するために使用できます。これ以上コマンドが
+    与えられない場合、モーターは指定された速度で無限に回転し続けます。
     """
 
 
 class Direction(_PybricksEnum):
-    """Rotational direction for positive speed or angle values."""
+    """正の速度または角度の値に対する回転方向。"""
 
     CLOCKWISE: Direction = 0
-    """A positive speed value should make the motor move clockwise."""
+    """正の速度値でモーターが時計回りに回転します。"""
 
     COUNTERCLOCKWISE: Direction = 1
-    """A positive speed value should make the motor move counterclockwise."""
+    """正の速度値でモーターが反時計回りに回転します。"""
 
 
 class Button(_PybricksEnum):
-    """Buttons on a hub or remote."""
+    """ハブまたはリモコンのボタン。"""
 
     LEFT_DOWN: Button = 1
     LEFT_MINUS: Button = 1
@@ -261,7 +262,7 @@ class Button(_PybricksEnum):
 
 
 class Side(_PybricksEnum):
-    """Side of a hub or a sensor."""
+    """ハブまたはセンサーの面。"""
 
     RIGHT: Side = 6
     FRONT: Side = 0
@@ -272,10 +273,10 @@ class Side(_PybricksEnum):
 
 
 class Icon:
-    """Icons to display on a light matrix.
+    """ライトマトリクスに表示するアイコン。
 
-    Each of the following attributes are matrices. This means you can scale
-    icons to adjust the brightness or add icons to make composites.
+    以下の各属性はマトリクスです。つまり、アイコンをスケーリングして
+    輝度を調整したり、アイコンを加算して合成したりできます。
     """
 
     UP: _Matrix = ...
@@ -569,8 +570,8 @@ class Icon:
 
 
 class Image:
-    """Object representing a graphics image. This can either be an in-memory
-    copy of an image or the image displayed on a screen."""
+    """グラフィック画像を表すオブジェクト。画像のメモリ内コピー、または
+    スクリーンに表示されている画像のどちらでもあり得ます。"""
 
     # Documentation note: This class is also treated as the `screen` object
     # on EV3 so we use |this image| when it would make sense to say "the screen"
@@ -591,45 +592,46 @@ class Image:
 
         Arguments:
             source (Image):
-                The source image. The new object will contain a copy of
-                the ``source`` image object.
+                ソース画像。新しいオブジェクトには ``source`` 画像
+                オブジェクトのコピーが含まれます。
 
             sub (bool):
-                If ``sub`` is ``True``, then the image object will act as a
-                sub-image of the ``source`` image.
+                ``sub`` が ``True`` の場合、画像オブジェクトは
+                ``source`` 画像のサブ画像として動作します。
 
-                Additional keyword arguments ``x1``, ``y1``, ``x2``, ``y2`` are
-                needed when ``sub=True``. These specify the top-left and
-                bottom-right coordinates in the ``source`` image that will be
-                used as the bounds for the sub-image.
+                ``sub=True`` の場合は追加のキーワード引数 ``x1`` 、 ``y1`` 、
+                ``x2`` 、 ``y2`` が必要です。これらはサブ画像の範囲として
+                使用される ``source`` 画像内の左上と右下の座標を
+                指定します。
         """
 
     @property
     def width(self) -> int:
-        """Gets the width of |this image| in pixels."""
+        """|this image| の幅をピクセル単位で取得します。"""
         return 0
 
     @property
     def height(self) -> int:
-        """Gets the height of |this image| in pixels."""
+        """|this image| の高さをピクセル単位で取得します。"""
         return 0
 
     def clear(self) -> None:
         """clear()
 
-        Clears |this image|. All pixels on |this image| will be set to
-        :attr:`Color.WHITE <pybricks.parameters.Color.WHITE>`.
+        |this image| をクリアします。|this image| のすべてのピクセルが
+        :attr:`Color.WHITE <pybricks.parameters.Color.WHITE>` に
+        設定されます。
         """
 
     def draw_pixel(self, x: int, y: int, color: Color = Color.BLACK) -> None:
         """draw_pixel(x, y, color=Color.BLACK)
 
-        Draws a single pixel on |this image|.
+        |this image| に1ピクセルを描画します。
 
         Arguments:
-            x (int): The x coordinate of the pixel.
-            y (int): The y coordinate of the pixel.
-            color (Color): The color of the pixel.
+            x (int): ピクセルのx座標。
+            y (int): ピクセルのy座標。
+            color (Color): ピクセルの色。
         """
 
     def draw_line(
@@ -643,15 +645,15 @@ class Image:
     ) -> None:
         """draw_line(x1, y1, x2, y2, width=1, color=Color.BLACK)
 
-        Draws a line on |this image|.
+        |this image| に直線を描画します。
 
         Arguments:
-            x1 (int): The x coordinate of the starting point of the line.
-            y1 (int): The y coordinate of the starting point of the line.
-            x2 (int): The x coordinate of the ending point of the line.
-            y2 (int): The y coordinate of the ending point of the line.
-            width (int): The width of the line in pixels.
-            color (Color): The color of the line.
+            x1 (int): 直線の始点のx座標。
+            y1 (int): 直線の始点のy座標。
+            x2 (int): 直線の終点のx座標。
+            y2 (int): 直線の終点のy座標。
+            width (int): 直線の幅（ピクセル）。
+            color (Color): 直線の色。
         """
 
     def draw_box(
@@ -666,17 +668,17 @@ class Image:
     ) -> None:
         """draw_box(x1, y1, x2, y2, r=0, fill=False, color=Color.BLACK)
 
-        Draws a box on |this image|.
+        |this image| に矩形を描画します。
 
         Arguments:
-            x1 (int): The x coordinate of the left side of the box.
-            y1 (int): The y coordinate of the top of the box.
-            x2 (int): The x coordinate of the right side of the box.
-            y2 (int): The y coordinate of the bottom of the box.
-            r (int): The radius of the corners of the box.
-            fill (bool): If ``True``, the box will be filled with ``color``,
-                otherwise only the outline of the box will be drawn.
-            color (Color): The color of the box.
+            x1 (int): 矩形の左辺のx座標。
+            y1 (int): 矩形の上辺のy座標。
+            x2 (int): 矩形の右辺のx座標。
+            y2 (int): 矩形の下辺のy座標。
+            r (int): 矩形の角の半径。
+            fill (bool): ``True`` の場合、矩形が ``color`` で塗りつぶされます。
+                それ以外の場合は矩形の輪郭のみが描画されます。
+            color (Color): 矩形の色。
         """
 
     def draw_circle(
@@ -684,15 +686,15 @@ class Image:
     ) -> None:
         """draw_circle(x, y, r, fill=False, color=Color.BLACK)
 
-        Draws a circle on |this image|.
+        |this image| に円を描画します。
 
         Arguments:
-            x (int): The x coordinate of the center of the circle.
-            y (int): The y coordinate of the center of the circle.
-            r (int): The radius of the circle.
-            fill (bool): If ``True``, the circle will be filled with
-                ``color``, otherwise only the circumference will be drawn.
-            color (Color): The color of the circle.
+            x (int): 円の中心のx座標。
+            y (int): 円の中心のy座標。
+            r (int): 円の半径。
+            fill (bool): ``True`` の場合、円が ``color`` で塗りつぶされます。
+                それ以外の場合は円周のみが描画されます。
+            color (Color): 円の色。
         """
 
     def draw_image(
@@ -704,29 +706,29 @@ class Image:
     ) -> None:
         """draw_image(x, y, source, transparent=None)
 
-        Draws the ``source`` image on |this image|.
+        ``source`` 画像を |this image| に描画します。
 
         Arguments:
             x (int):
-                The x-axis value where the left side of the image will start.
+                画像の左端が開始されるx軸の値。
             y (int):
-                The y-axis value where the top of the image will start.
+                画像の上端が開始されるy軸の値。
             source (Image):
-                The source :class:`Image <pybricks.parameters.Image>`.
+                ソースの :class:`Image <pybricks.parameters.Image>`。
             transparent (Color):
-                The color of ``image`` to treat as transparent or ``None`` for
-                no transparency.
+                ``image`` 内で透明として扱う色。透明にしない場合は
+                ``None`` 。
         """
 
     def load_image(self, source: Image | ImageFile) -> None:
         """load_image(source)
 
-        Clears this image, then draws the ``source`` image centered in
-        |this image|.
+        この画像をクリアしてから、 ``source`` 画像を |this image| の
+        中央に描画します。
 
         Arguments:
             source (Image):
-                The source :class:`Image <pybricks.parameters.Image>`.
+                ソースの :class:`Image <pybricks.parameters.Image>`。
         """
 
     def draw_text(
@@ -739,163 +741,165 @@ class Image:
     ) -> None:
         """draw_text(x, y, text, text_color=Color.BLACK, background_color=None)
 
-        Draws text on |this image|.
+        |this image| にテキストを描画します。
 
-        The most recent font set using :meth:`.set_font` will be used or
-        :data:`Font.DEFAULT <pybricks.parameters.Font.DEFAULT>` if no font
-        has been set yet.
+        :meth:`.set_font` で直近に設定されたフォントが使用されます。
+        フォントがまだ設定されていない場合は
+        :data:`Font.DEFAULT <pybricks.parameters.Font.DEFAULT>` が
+        使用されます。
 
         Arguments:
             x (int):
-                The x-axis value where the left side of the text will start.
+                テキストの左端が開始されるx軸の値。
             y (int):
-                The y-axis value where the top of the text will start.
+                テキストの上端が開始されるy軸の値。
             text (str):
-                The text to draw.
+                描画するテキスト。
             text_color (Color):
-                The color used for drawing the text.
+                テキストの描画に使用する色。
             background_color (Color):
-                The color used to fill the rectangle behind the text or
-                ``None`` for transparent background.
+                テキストの背後の矩形を塗りつぶす色。透明な背景にする場合は
+                ``None`` 。
         """
 
     def print(self, *args: Any, sep: str = " ", end: str = "\n") -> None:
         """print(*args, sep=" ", end="\\n")
 
-        Prints a line of text on |this image|.
+        |this image| に1行のテキストを出力します。
 
-        This method works like the builtin ``print()`` function, but it writes
-        on |this image| instead.
+        このメソッドは組み込みの ``print()`` 関数と同様に動作しますが、
+        代わりに |this image| に書き込みます。
 
-        You can set the font using :meth:`.set_font`. If no font has been set,
-        :data:`Font.DEFAULT <pybricks.parameters.Font.DEFAULT>` will be
-        used. The text is always printed used black text with a white
-        background.
+        :meth:`.set_font` でフォントを設定できます。フォントが設定
+        されていない場合は
+        :data:`Font.DEFAULT <pybricks.parameters.Font.DEFAULT>` が
+        使用されます。テキストは常に白背景の黒文字で出力されます。
 
-        Unlike the builtin ``print()``, the text does not wrap if it is too
-        wide to fit on |this image|. It just gets cut off. But if the text
-        would go off of the bottom of |this image|, the entire image is
-        scrolled up and the text is printed in the new blank area at the
-        bottom of |this image|.
+        組み込みの ``print()`` とは異なり、テキストが |this image| に
+        収まらないほど長くても折り返されません。単に切り捨てられます。
+        ただし、テキストが |this image| の下端を超える場合は、画像全体が
+        上にスクロールされ、 |this image| の下部の新しい空白領域に
+        テキストが出力されます。
 
         Arguments:
-            args (Any): Zero or more objects to print.
-            sep (str): Separator that will be placed between each object that
-                is printed.
-            end (str): End of line that will be printed after the last object.
+            args (Any): 出力する0個以上のオブジェクト。
+            sep (str): 出力される各オブジェクトの間に挟まれる区切り文字。
+            end (str): 最後のオブジェクトの後に出力される行末文字。
         """
 
     def set_font(self, font: Font) -> None:
         """set_font(font)
 
-        Sets the font used for writing on |this image|.
+        |this image| への描画に使用するフォントを設定します。
 
-        The font is used for both :meth:`.draw_text` and :meth:`.print`.
+        このフォントは :meth:`.draw_text` と :meth:`.print` の両方で
+        使用されます。
 
         Arguments:
             font (Font):
-                The font to use.
+                使用するフォント。
         """
 
     @staticmethod
     def empty(width: int = 178, height: int = 128) -> Image:
         """empty(width=178, height=128) -> Image
 
-        Creates a new empty :class:`Image` object.
+        新しい空の :class:`Image` オブジェクトを作成します。
 
         Arguments:
             width (int):
-                The width of the image in pixels.
+                画像の幅（ピクセル）。
             height (int):
-                The height of the image in pixels.
+                画像の高さ（ピクセル）。
 
         Returns:
-            A new image with all pixels set
-            to :attr:`Color.WHITE <pybricks.parameters.Color.WHITE>`.
+            すべてのピクセルが
+            :attr:`Color.WHITE <pybricks.parameters.Color.WHITE>` に
+            設定された新しい画像。
 
         Raises:
             TypeError:
-                If ``width`` or ``height`` is not a number.
+                ``width`` または ``height`` が数値でない場合。
             ValueError:
-                If ``width`` or ``height`` is less than 1.
+                ``width`` または ``height`` が1未満の場合。
             RuntimeError:
-                If there was a problem allocating a new image.
+                新しい画像の割り当てに問題があった場合。
         """
 
 
 class Font:
-    """Object that represents a font for writing text."""
+    """テキストの描画に使用するフォントを表すオブジェクト。"""
 
     DEFAULT: Font = ...
-    """The default font."""
+    """デフォルトのフォント。"""
 
     TERMINUS_16: Font = ...
-    """The Terminus font with a height of 16 pixels."""
+    """高さ16ピクセルのTerminusフォント。"""
 
     LIBERATIONSANS_14: Font = ...
-    """The Liberation Sans regular font with a height of 14 pixels."""
+    """高さ14ピクセルのLiberation Sansレギュラーフォント。"""
 
     MONO_8X5_8: Font = ...
-    """A monospaced font with a height of 8 pixels and a width of 5 pixels."""
+    """高さ8ピクセル、幅5ピクセルの等幅フォント。"""
 
     @property
     def family(self) -> str:
-        """Gets the family name of the font."""
+        """フォントのファミリー名を取得します。"""
         return "Lucida"
 
     @property
     def style(self) -> str:
         """style -> str
 
-        Gets a string describing the font style.
+        フォントスタイルを表す文字列を取得します。
 
-        Can be "Regular" or "Bold".
+        "Regular" または "Bold" になり得ます。
         """
         return "Regular"
 
     @property
     def width(self) -> int:
-        """Gets the width of the widest character of the font."""
+        """フォントの最も幅の広い文字の幅を取得します。"""
         return 0
 
     @property
     def height(self) -> int:
-        """Gets the height of the font."""
+        """フォントの高さを取得します。"""
         return 0
 
     def text_width(self, text: str) -> int:
         """text_width(text)
 
-        Gets the width of the text when the text is drawn using this font.
+        このフォントを使ってテキストを描画したときの幅を取得します。
 
         Arguments:
             text (str):
-                The text.
+                テキスト。
 
         Returns:
             int:
-                The width in pixels.
+                幅（ピクセル）。
         """
         return 0
 
     def text_height(self, text: str) -> int:
         """text_height(text)
 
-        Gets the height of the text when the text is drawn using this font.
+        このフォントを使ってテキストを描画したときの高さを取得します。
 
         Arguments:
             text (str):
-                The text.
+                テキスト。
 
         Returns:
             int:
-                The height in pixels.
+                高さ（ピクセル）。
         """
         return 0
 
 
 class ImageFile:
-    """Paths to standard EV3 images."""
+    """標準のEV3画像へのパス。"""
 
     _BASE_PATH: str = "/usr/share/images/ev3dev/mono/"
     RIGHT: str = _BASE_PATH + "information/right.png"
