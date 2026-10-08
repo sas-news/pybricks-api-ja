@@ -7,9 +7,6 @@ City Hub
 
 .. blockimg:: pybricks_variables_set_city_hub_option0
 
-.. blockimg:: pybricks_variables_set_city_hub_option3
-    :stack:
-
 .. autoclass:: pybricks.hubs.CityHub
     :no-members:
 
@@ -27,20 +24,6 @@ City Hub
 
     .. automethod:: pybricks.hubs::CityHub.light.animate
 
-    .. rubric:: Using connectionless Bluetooth messaging
-
-    .. blockimg:: pybricks_blockBleBroadcast_CityHub
-
-    .. automethod:: pybricks.hubs::CityHub.ble.broadcast
-
-    .. blockimg:: pybricks_blockBleObserve_CityHub
-
-    .. automethod:: pybricks.hubs::CityHub.ble.observe
-
-    .. automethod:: pybricks.hubs::CityHub.ble.signal_strength
-
-    .. automethod:: pybricks.hubs::CityHub.ble.version
-
     .. rubric:: Using the battery
 
     .. blockimg:: pybricks_blockBatteryMeasure_CityHub_battery.voltage
@@ -57,14 +40,13 @@ City Hub
 
     .. automethod:: pybricks.hubs::CityHub.buttons.pressed
 
+    .. automethod:: pybricks.hubs::CityHub.system.info
+
     .. blockimg:: pybricks_blockHubStopButton_CityHub
 
     .. blockimg:: pybricks_blockHubStopButton_CityHub_none
-        :stack:
 
     .. automethod:: pybricks.hubs::CityHub.system.set_stop_button
-
-    .. automethod:: pybricks.hubs::CityHub.system.name
 
     .. automethod:: pybricks.hubs::CityHub.system.storage
 
@@ -72,11 +54,12 @@ City Hub
         when you update the Pybricks firmware or if you restore the original
         firmware.
 
+    .. automethod:: pybricks.hubs::CityHub.system.reset_storage
+
     .. blockimg:: pybricks_blockHubShutdown_CityHub
 
     .. automethod:: pybricks.hubs::CityHub.system.shutdown
 
-    .. automethod:: pybricks.hubs::CityHub.system.reset_reason
 
 Status light examples
 ---------------------
@@ -104,23 +87,6 @@ Creating light animations
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/light_animate_cityhub.py
-
-
-Bluetooth examples
-------------------
-
-Broadcasting data to other hubs
-*******************************
-
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/ble_broadcast_cityhub.py
-
-Observing data from other hubs
-******************************
-
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/ble_observe_cityhub.py
-
 
 Button and system examples
 ----------------------------------

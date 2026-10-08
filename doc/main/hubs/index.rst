@@ -14,10 +14,10 @@
    technichub
    primehub
    essentialhub
+   ev3brick
 
 .. pybricks-classlink:: PrimeHub
 
 .. figure:: ../../main/cad/output/hub-prime.png
     :width: 35%
     :target: primehub.html
-

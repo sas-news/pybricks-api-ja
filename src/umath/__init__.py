@@ -11,9 +11,6 @@
 Math functions.
 """
 
-from typing import Tuple as Tuple
-
-
 e = 2.718282
 """The mathematical constant e."""
 
@@ -264,8 +261,8 @@ def fabs(x: float) -> float:
     """
 
 
-def modf(x: float) -> Tuple[float, float]:
-    """modf(x) -> Tuple[float, float]
+def modf(x: float) -> tuple[float, float]:
+    """modf(x) -> tuple[float, float]
 
     Gets the fractional and integral parts of ``x``, both with the same sign
     as ``x``.
@@ -280,8 +277,8 @@ def modf(x: float) -> Tuple[float, float]:
     """
 
 
-def frexp(x: float) -> Tuple[float, int]:
-    """frexp(x) -> Tuple[float, float]
+def frexp(x: float) -> tuple[float, int]:
+    """frexp(x) -> tuple[float, float]
 
     Decomposes a value ``x`` into a
     tuple ``(m, p)``, such that ``x == m * (2 ** p)``.

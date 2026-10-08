@@ -56,6 +56,13 @@ Prime Hub
 
     .. rubric:: IMU
 
+    .. versionchanged:: 3.6
+
+        The methods below now return calibrated data by default. Depending on
+        the method used, this combines data from the accelerometer, gyroscope,
+        with your calibration values. Use ``calibrated=False`` where applicable
+        to get the raw data you got before.
+
     .. automethod:: pybricks.hubs::PrimeHub.imu.ready
 
     .. automethod:: pybricks.hubs::PrimeHub.imu.stationary
@@ -65,7 +72,6 @@ Prime Hub
     .. blockimg:: pybricks_blockTilt_PrimeHub_imu.tilt.pitch
 
     .. blockimg:: pybricks_blockTilt_PrimeHub_imu.tilt.roll
-        :stack:
 
     .. automethod:: pybricks.hubs::PrimeHub.imu.tilt
 
@@ -81,29 +87,23 @@ Prime Hub
 
     .. automethod:: pybricks.hubs::PrimeHub.imu.orientation
 
+    .. blockimg:: pybricks_blockImuConfigure_PrimeHub_imu.settings_heading_correction
+
+    .. blockimg:: pybricks_blockImuConfigure_PrimeHub_imu.settings_angular_velocity_threshold
+
+    .. blockimg:: pybricks_blockImuConfigure_PrimeHub_imu.settings_acceleration_threshold
+
     .. automethod:: pybricks.hubs::PrimeHub.imu.settings
 
     .. rubric:: Using the speaker
 
     .. automethod:: pybricks.hubs::PrimeHub.speaker.volume
 
+    .. blockimg:: pybricks_blockSpeakerBeep_PrimeHub
+
     .. automethod:: pybricks.hubs::PrimeHub.speaker.beep
 
     .. automethod:: pybricks.hubs::PrimeHub.speaker.play_notes
-
-    .. rubric:: Using connectionless Bluetooth messaging
-
-    .. blockimg:: pybricks_blockBleBroadcast_PrimeHub
-
-    .. automethod:: pybricks.hubs::PrimeHub.ble.broadcast
-
-    .. blockimg:: pybricks_blockBleObserve_PrimeHub
-
-    .. automethod:: pybricks.hubs::PrimeHub.ble.observe
-
-    .. automethod:: pybricks.hubs::PrimeHub.ble.signal_strength
-
-    .. automethod:: pybricks.hubs::PrimeHub.ble.version
 
     .. rubric:: Using the battery
 
@@ -125,19 +125,22 @@ Prime Hub
 
     .. rubric:: System control
 
-    .. automethod:: pybricks.hubs::PrimeHub.system.name
+    .. automethod:: pybricks.hubs::PrimeHub.system.info
 
     .. automethod:: pybricks.hubs::PrimeHub.system.storage
 
-        You can store up to 512 bytes of data on this hub.
+        You can store up to 512 bytes of data on this hub. The data is cleared
+        when you update the Pybricks firmware.
+
+    .. automethod:: pybricks.hubs::PrimeHub.system.reset_storage
 
     .. blockimg:: pybricks_blockHubShutdown_PrimeHub
 
     .. automethod:: pybricks.hubs::PrimeHub.system.shutdown
 
-    .. automethod:: pybricks.hubs::PrimeHub.system.reset_reason
+.. note::
 
-.. note:: The examples below use the ``PrimeHub`` class. The examples work fine
+        The examples below use the ``PrimeHub`` class. The examples work fine
         on both hubs because they are the identical. If you prefer, you can
         change this to ``InventorHub``.
 
@@ -266,23 +269,6 @@ Reading acceleration and angular velocity on one axis
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/imu_read_scalar_primehub.py
-
-
-Bluetooth examples
-------------------
-
-Broadcasting data to other hubs
-*******************************
-
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/ble_broadcast_primehub.py
-
-Observing data from other hubs
-******************************
-
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/ble_observe_primehub.py
-
 
 System examples
 ----------------------------------

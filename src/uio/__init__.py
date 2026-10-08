@@ -11,7 +11,7 @@ This module contains ``stream`` objects that behave like files.
 
 # TODO: open() is not implemented on Powered Up hubs
 
-from typing import overload, Union
+from typing import overload
 
 # TODO: MicroPython streams implement '__enter__', '__exit__', 'close', 'read',
 # 'readinto', 'readline', 'write', 'flush', 'seek', 'tell'
@@ -20,20 +20,17 @@ from typing import overload, Union
 
 class BytesIO:
     @overload
-    def __init__(self) -> None:
-        ...
+    def __init__(self) -> None: ...
 
     @overload
-    def __init__(self, data: Union[bytes, bytearray]) -> None:
-        ...
+    def __init__(self, data: bytes | bytearray) -> None: ...
 
     @overload
-    def __init__(self, alloc_size: int) -> None:
-        ...
+    def __init__(self, alloc_size: int) -> None: ...
 
     def __init__(self, *args) -> None:
         """
-        BytesIO(​)
+        BytesIO(\u200b)
         BytesIO(data)
         BytesIO(alloc_size)
 
@@ -57,20 +54,17 @@ class BytesIO:
 
 class StringIO:
     @overload
-    def __init__(self) -> None:
-        ...
+    def __init__(self) -> None: ...
 
     @overload
-    def __init__(self, string: str) -> None:
-        ...
+    def __init__(self, string: str) -> None: ...
 
     @overload
-    def __init__(self, alloc_size: int) -> None:
-        ...
+    def __init__(self, alloc_size: int) -> None: ...
 
     def __init__(self, *args) -> None:
         """
-        StringIO(​)
+        StringIO(\u200b)
         StringIO(string)
         StringIO(alloc_size)
 

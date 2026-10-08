@@ -6,24 +6,16 @@ speakers, and batteries."""
 
 from __future__ import annotations
 
-from typing import (
-    Union,
-    Iterable,
-    overload,
-    Optional,
-    Tuple,
-    Collection,
-    Set,
-    TYPE_CHECKING,
-)
+from typing import TYPE_CHECKING, overload
 
-from .tools import Matrix
-from .parameters import Axis, Direction, Stop, Button, Port, Color, Side
+from .parameters import Direction, Stop
 
 if TYPE_CHECKING:
-    from typing import Any, Awaitable, TypeVar
+    from collections.abc import Awaitable, Collection, Iterable
+    from typing import Any, TypeVar
 
-    from .parameters import Number
+    from .parameters import Axis, Button, Color, Number, Port, Side
+    from .tools import Matrix
 
     _T_co = TypeVar("_T_co", covariant=True)
 
@@ -36,17 +28,19 @@ if TYPE_CHECKING:
 
     class MaybeAwaitableInt(int, Awaitable[int]): ...
 
-    class MaybeAwaitableTuple(Tuple[_T_co], Awaitable[Tuple[_T_co]]): ...
+    class MaybeAwaitableTuple(tuple[_T_co], Awaitable[tuple[_T_co]]): ...
+
+    class MaybeAwaitableSet(set[_T_co], Awaitable[set[_T_co]]): ...
 
     class MaybeAwaitableColor(Color, Awaitable[Color]): ...
+
+    class MaybeAwaitableBytes(bytes, Awaitable[bytes]): ...
 
 
 class System:
     """System control actions for a hub."""
 
-    def set_stop_button(
-        self, button: Optional[Union[Button, Iterable[Button]]]
-    ) -> None:
+    def set_stop_button(self, button: Button | Iterable[Button] | None) -> None:
         """
         set_stop_button(button)
 
@@ -65,32 +59,6 @@ class System:
         """shutdown()
 
         Stops your program and shuts the hub down."""
-
-    def reset_reason(self) -> int:
-        """reset_reason() -> int
-
-        Finds out how and why the hub (re)booted. This can be useful to
-        diagnose some problems.
-
-        Returns:
-            * ``0`` if the hub was previously powered off
-              normally.
-            * ``1`` if the hub rebooted automatically, like
-              after a firmware update.
-            * ``2`` if the hub previously
-              crashed due to a watchdog timeout, which indicates a firmware
-              issue.
-        """
-
-    def name(self) -> str:
-        """name() -> str
-
-        Gets the hub name. This is the name you see when connecting
-        via Bluetooth.
-
-        Returns:
-            The hub name.
-        """
 
     @overload
     def storage(self, offset: int, *, read: int) -> bytes: ...
@@ -126,6 +94,43 @@ class System:
         Raises:
             ValueError:
                 If you try to read or write data outside of the allowed range.
+        """
+
+    def reset_storage(self) -> None:
+        """reset_storage()
+
+        Resets all user settings to default values and erases user programs.
+        """
+
+    def info(self) -> dict:
+        """info() -> dict
+
+        Gets information about the hub as a dictionary with the following keys:
+
+         - ``"name"``: The hub name. This is the name you see when connecting
+           via Bluetooth.
+         - ``"reset_reason"``: Why the hub (re)booted. It is ``0`` if the hub
+           was previously powered off normally. It is ``1`` if the hub rebooted
+           automatically, like after a firmware update. It is ``2`` if the hub
+           previously crashed due to a watchdog timeout, which indicates a
+           firmware issue.
+         - ``"host_connected_ble"``: ``True`` if the hub is connected to a
+           computer, tablet, or phone via Bluetooth, and ``False`` otherwise.
+         - ``"host_connected_usb"``: ``True`` if the hub is connected to a computer
+           via USB and activated in the app. ``False`` otherwise.
+         - ``"program_start_type"``: It is ``1`` if the program started
+           automatically when the hub was powered on. It is ``2`` if the program
+           was started with the hub buttons. It is ``3`` if the program was
+           started from your connected computer.
+         - `"program_id"`: Program (slot) number of the currently running program.
+
+        Returns:
+            A dictionary with system info.
+
+        .. versionchanged:: 3.6
+            The name and reset reason where previously available as separate
+            methods. Now they are included in the info dictionary. The methods
+            are still available for backwards compatibility.
         """
 
 
@@ -170,12 +175,12 @@ class DCMotor:
     def settings(self, max_voltage: Number) -> None: ...
 
     @overload
-    def settings(self) -> Tuple[int]: ...
+    def settings(self) -> tuple[int]: ...
 
     def settings(self, *args):
         """
         settings(max_voltage)
-        settings() -> Tuple[int]
+        settings() -> tuple[int]
 
         Configures motor settings. If no arguments are given,
         this returns the current values.
@@ -200,18 +205,18 @@ class Control:
     @overload
     def limits(
         self,
-        speed: Optional[Number] = None,
-        acceleration: Optional[Number] = None,
-        torque: Optional[Number] = None,
+        speed: Number | None = None,
+        acceleration: Number | None = None,
+        torque: Number | None = None,
     ) -> None: ...
 
     @overload
-    def limits(self) -> Tuple[int, int, int]: ...
+    def limits(self) -> tuple[int, int, int]: ...
 
     def limits(self, *args):
         """
         limits(speed, acceleration, torque)
-        limits() -> Tuple[int, int, int]
+        limits() -> tuple[int, int, int]
 
         Configures the maximum speed, acceleration, and torque.
 
@@ -234,19 +239,19 @@ class Control:
     @overload
     def pid(
         self,
-        kp: Optional[Number] = None,
-        ki: Optional[Number] = None,
-        kd: Optional[Number] = None,
-        integral_deadzone: Optional[Number] = None,
-        integral_rate: Optional[Number] = None,
+        kp: Number | None = None,
+        ki: Number | None = None,
+        kd: Number | None = None,
+        integral_deadzone: Number | None = None,
+        integral_rate: Number | None = None,
     ) -> None: ...
 
     @overload
-    def pid(self) -> Tuple[int, int, int, int, int]: ...
+    def pid(self) -> tuple[int, int, int, int, int]: ...
 
     def pid(self, *args):
         """pid(kp, ki, kd, integral_deadzone, integral_rate)
-        pid() -> Tuple[int, int, int, int, int]
+        pid() -> tuple[int, int, int, int, int]
 
         Gets or sets the PID values for position and speed control.
 
@@ -269,15 +274,15 @@ class Control:
 
     @overload
     def target_tolerances(
-        self, speed: Optional[Number] = None, position: Optional[Number] = None
+        self, speed: Number | None = None, position: Number | None = None
     ) -> None: ...
 
     @overload
-    def target_tolerances(self) -> Tuple[int, int]: ...
+    def target_tolerances(self) -> tuple[int, int]: ...
 
     def target_tolerances(self, *args):
         """target_tolerances(speed, position)
-        target_tolerances() -> Tuple[int, int]
+        target_tolerances() -> tuple[int, int]
 
         Gets or sets the tolerances that say when a maneuver is done.
 
@@ -293,15 +298,15 @@ class Control:
 
     @overload
     def stall_tolerances(
-        self, speed: Optional[Number] = None, time: Optional[Number] = None
+        self, speed: Number | None = None, time: Number | None = None
     ) -> None: ...
 
     @overload
-    def stall_tolerances(self) -> Tuple[int, int]: ...
+    def stall_tolerances(self) -> tuple[int, int]: ...
 
     def stall_tolerances(self, speed, time):
         """stall_tolerances(speed, time)
-        stall_tolerances() -> Tuple[int, int]
+        stall_tolerances() -> tuple[int, int]
 
         Gets or sets stalling tolerances.
 
@@ -319,8 +324,8 @@ class Control:
 class Model:
     """Class to interact with motor state observer and settings."""
 
-    def state(self) -> Tuple[float, float, float, bool]:
-        """state() -> Tuple[float, float, float, bool]
+    def state(self) -> tuple[float, float, float, bool]:
+        """state() -> tuple[float, float, float, bool]
 
         Gets the estimated angle, speed, current, and stall state of the motor,
         using a simulation model that mimics the real motor.
@@ -346,7 +351,7 @@ class Model:
 
     def settings(self, speed, time):
         """settings(values)
-        settings() -> Tuple
+        settings() -> tuple
 
         Gets or sets model settings as a tuple of integers. If no arguments are
         given, this will return the current values. This method is mainly used
@@ -356,7 +361,7 @@ class Model:
         .. _model settings: https://docs.pybricks.com/projects/pbio/en/latest/struct__pbio__observer__settings__t.html
 
         Arguments:
-            values (Tuple): Tuple with `model settings`_.
+            values (tuple): Tuple with `model settings`_.
         """
 
 
@@ -376,7 +381,7 @@ class Motor(DCMotor):
         self,
         port: Port,
         positive_direction: Direction = Direction.CLOCKWISE,
-        gears: Optional[Union[Collection[int], Collection[Collection[int]]]] = None,
+        gears: Collection[int] | Collection[Collection[int]] | None = None,
         reset_angle: bool = True,
         profile: Number = None,
     ):
@@ -462,11 +467,16 @@ class Motor(DCMotor):
             The load torque.
         """
 
-    def reset_angle(self, angle: Optional[Number]) -> None:
+    def reset_angle(self, angle: Number | None) -> None:
         """
         reset_angle(angle)
 
         Sets the accumulated rotation angle of the motor to a desired value.
+
+        If this motor is also being used by a drive base, its distance and
+        angle values will also be affected. You might want to
+        use its :meth:`reset <pybricks.robotics.DriveBase.reset>`
+        method instead.
 
         Arguments:
             angle (Number, deg): Value to which the angle should be reset.
@@ -554,7 +564,7 @@ class Motor(DCMotor):
         self,
         speed: Number,
         then: Stop = Stop.COAST,
-        duty_limit: Optional[Number] = None,
+        duty_limit: Number | None = None,
     ) -> MaybeAwaitableInt:
         """
         run_until_stalled(speed, then=Stop.COAST, duty_limit=None) -> int: deg
@@ -745,9 +755,7 @@ class ExternalColorLight:
 class LightArray3:
     """Control an array of three single-color lights."""
 
-    def on(
-        self, brightness: Union[Number, Tuple[Number, Number, Number]]
-    ) -> MaybeAwaitable:
+    def on(self, brightness: Number | tuple[Number, Number, Number]) -> MaybeAwaitable:
         """on(brightness)
 
         Turns on the lights at the specified brightness.
@@ -770,7 +778,7 @@ class LightArray4(LightArray3):
     """Control an array of four single-color lights."""
 
     def on(
-        self, brightness: Union[Number, Tuple[Number, Number, Number, Number]]
+        self, brightness: Number | tuple[Number, Number, Number, Number]
     ) -> MaybeAwaitable:
         """on(brightness)
 
@@ -807,8 +815,9 @@ class LightMatrix:
         既存の表示内容は変化しません。
 
         Arguments:
-            top (Side): ライトマトリクスのどの面を「上」にするか。
-                ``Side.TOP``、``Side.LEFT``、``Side.RIGHT``、``Side.BOTTOM`` から選びます。
+            up (Side): Which side of the light matrix display is "up" in your
+                design. Choose ``Side.TOP``, ``Side.LEFT``, ``Side.RIGHT``,
+                or ``Side.BOTTOM``.
         """
 
     def icon(self, icon: Matrix) -> None:
@@ -892,8 +901,8 @@ class Keypad:
 
     def __init__(self, active_buttons): ...
 
-    def pressed(self) -> Set[Button]:
-        """pressed() -> Set[Button]
+    def pressed(self) -> set[Button]:
+        """pressed() -> set[Button]
 
         現在どのボタンが押されているか取得する。
 
@@ -965,8 +974,8 @@ class Charger:
 class SimpleAccelerometer:
     """Get measurements from an accelerometer."""
 
-    def acceleration(self) -> Tuple[int, int, int]:
-        """acceleration() -> Tuple[int, int, int]: mm/s²
+    def acceleration(self) -> tuple[int, int, int]:
+        """acceleration() -> tuple[int, int, int]: mm/s²
 
         Gets the acceleration of the device.
 
@@ -984,8 +993,8 @@ class SimpleAccelerometer:
             ``Side.FRONT``、``Side.BACK`` のいずれか。
         """
 
-    def tilt(self) -> Tuple[int, int]:
-        """tilt() -> Tuple[int, int]
+    def tilt(self) -> tuple[int, int]:
+        """tilt() -> tuple[int, int]
 
         ピッチ角とロール角を取得する。 これは、:ref:`ユーザーが指定した方向 <robotframe>` からの相対値です。
 
@@ -996,32 +1005,64 @@ class SimpleAccelerometer:
         """
 
 
-class Accelerometer(SimpleAccelerometer):
-    """Get measurements from an accelerometer."""
+class IMU:
+    def up(self, calibrated: bool = True) -> Side:
+        """up(calibrated=True) -> Side
+
+        Checks which side of the hub currently faces upward.
+
+        Arguments:
+            calibrated (bool): Choose ``True`` to use calibrated gyroscope and
+                accelerometer data to determine which way is up. Choose
+                ``False`` to use raw acceleration values.
+
+        Returns:
+            ``Side.TOP``, ``Side.BOTTOM``, ``Side.LEFT``, ``Side.RIGHT``,
+            ``Side.FRONT`` or ``Side.BACK``.
+        """
+
+    def tilt(self, calibrated: bool = True) -> tuple[int, int]:
+        """tilt(calibrated=True) -> tuple[int, int]
+
+        Gets the pitch and roll angles. This is relative to the
+        :ref:`user-specified neutral orientation <robotframe>`.
+
+        The order of rotation is pitch-then-roll. This is equivalent to a
+        positive rotation along the robot y-axis and then a positive rotation
+        along the x-axis.
+
+        Arguments:
+            calibrated (bool): Choose ``True`` to use calibrated gyroscope and
+                accelerometer data to determine the tilt. Choose ``False``
+                to use raw acceleration values.
+
+        Returns:
+            Tuple of pitch and roll angles in degrees.
+        """
 
     @overload
-    def acceleration(self, axis: Axis) -> float: ...
+    def acceleration(self, axis: Axis = None, calibrated: bool = True) -> float: ...
 
     @overload
-    def acceleration(self) -> Matrix: ...
+    def acceleration(self, calibrated: bool = True) -> Matrix: ...
 
     def acceleration(self, *args):
         """
-        acceleration(axis) -> float: mm/s²
-        acceleration() -> vector: mm/s²
-
+        acceleration(axis, calibrated=True) -> float: mm/s²
+        acceleration(calibrated=True) -> vector: mm/s²
 
         :ref:`ロボットフレーム <robotframe>` における、指定された軸に沿ったデバイスの加速度を取得します。
 
         Arguments:
-            axis (Axis): 加速度を測定する軸。
+            axis (Axis): Axis along which the acceleration should be
+                measured, or ``None`` to get a vector along all axes.
+            calibrated (bool): Choose ``True`` to use calibrated acceleration
+                values. Choose ``False`` to use raw acceleration values.
 
         Returns:
             指定された軸に沿った加速度。 軸を指定しない場合は、すべての軸に沿った加速度のベクトルを返す。
         """
 
-
-class IMU(Accelerometer):
     def ready(self) -> bool:
         """ready() -> bool
 
@@ -1046,31 +1087,92 @@ class IMU(Accelerometer):
     @overload
     def settings(
         self,
-        angular_velocity_threshold: float = None,
-        acceleration_threshold: float = None,
+        *,
+        angular_velocity_threshold: float | None = None,
+        acceleration_threshold: float | None = None,
+        heading_correction: float | None = None,
+        angular_velocity_bias: tuple[float, float, float] | None = None,
+        angular_velocity_scale: tuple[float, float, float] | None = None,
+        acceleration_correction: tuple[float, float, float, float, float, float]
+        | None = None,
     ) -> None: ...
 
     @overload
-    def settings(self) -> Tuple[float, float]: ...
+    def settings(
+        self,
+    ) -> tuple[
+        float,
+        float,
+        float,
+        tuple[float, float, float],
+        tuple[float, float, float],
+        tuple[float, float, float, float, float, float],
+    ]: ...
 
     def settings(self, *args):
         """
-        settings(angular_velocity_threshold, acceleration_threshold)
-        settings() -> Tuple[float, float]
+        settings(*, angular_velocity_threshold, acceleration_threshold, heading_correction, angular_velocity_bias, angular_velocity_scale, acceleration_correction)
+        settings() -> tuple
 
-        IMUの設定を行います。 引数が与えられていない場合は、現在の値を返します。
+        Configures the IMU settings. If no arguments are given,
+        this returns the current values. Use keyword arguments for each value
+        to ensure correct behavior because settings may be added or changed in
+        future releases.
 
-        角速度しきい値（``angular_velocity_threshold``）と加速度しきい値（``acceleration_threshold``）は、
-        Hubが静止しているとみなされるタイミングを定義します。
-        すべての測定値がこれらのしきい値を1秒間下回った場合、IMUは再キャリブレーションを行います。
+        These IMU settings are saved on the hub. They will keep their values
+        until you change them again. The values will be reset to default values
+        if you update the hub to a different firmware version or call the
+        ``hub.system.reset_storage`` method.
 
-        周囲の振動が大きい騒がしい部屋（競技会場など）では、ロボットにキャリブレーションの機会を与えるため、
-        しきい値を少し大きくすることをお勧めします。設定が期待通りに機能していることを確認するには、``stationary()`` メソッドが、
-        ロボットが動いている場合は ``False`` を、少なくとも1秒間静止している場合は ``True`` を返すことをテストしてください。
+        The ``angular_velocity_threshold`` and ``acceleration_threshold``
+        define when the hub is considered stationary. If all
+        measurements stay below these thresholds for one second, the IMU
+        will recalibrate itself. In a noisy room with high ambient vibrations (such as a
+        competition hall), you can increase the thresholds
+        slightly to give your robot the chance to calibrate.
+        To verify that your settings are working as expected, test that
+        the ``stationary()`` method gives ``False`` if your robot is moving,
+        and ``True`` if it is sitting still.
+
+        The gyroscope measures how fast the hub rotates to estimate the total
+        angle. Due to variations in the production process, each
+        hub consistently reports a different value for a full rotation. For
+        example, your hub might consistently report `357` degrees for every
+        `360` degree turn. You can measure this value
+        with ``hub.imu.rotation(-Axis.Z, calibrated=False)`` and enter it as
+        the ``heading_correction`` setting. Then, the ``hub.imu.heading()``
+        method will take it into account going forward, correctly scaling it
+        to 360 degrees for a full rotation.
 
         Arguments:
-            angular_velocity_threshold (Number, deg/s): 角速度のしきい値。 デフォルト値は1.5deg/s。
-            acceleration_threshold (Number, mm/s²): 角速度のしきい値。 デフォルト値は250 mm/s²。
+            angular_velocity_threshold (Number, deg/s): The threshold for
+                variations in the angular velocity below which the hub is
+                considered stationary enough to calibrate.
+                After a reset the value is 2 deg/s.
+            acceleration_threshold (Number, mm/s²): The threshold for
+                variations in acceleration below which the hub is considered
+                stationary enough to calibrate. After a reset the value
+                is 2500 mm/s².
+            heading_correction (Number, deg): Number of degrees
+                reported by for one full rotation of your robot.
+                After a reset the value is 360 degrees. This is applied on top
+                of any scaling that is done by the ``angular_velocity_scale``
+                setting.
+            angular_velocity_bias (tuple, deg/s): Initial bias for angular
+                velocity measurements along x, y, and z immediately after boot.
+                After a reset the value is (0, 0, 0) deg/s.
+            angular_velocity_scale (tuple, deg): Scale adjustment for x, y, and
+                z rotation to account for manufacturing differences. After a
+                reset the value is (360, 360, 360) deg/s. The correct values
+                can be obtained using `hub.imu.rotation(Axis.X, calibrated=False)`
+                and repeating it for each axis.
+            acceleration_correction (tuple, mm/s²): Scale adjustment for x, y,
+                and z gravity magnitude in both directions to account for
+                manufacturing differences. After a reset the
+                value is (9806.65, -9806.65, 9806.65, -9806.65, 9806.65, -9806.65) mm/s².
+                The correct values can be
+                obtained using `hub.imu.acceleration(Axis.X, calibrated=False)`
+                and repeating it for all axes in both directions.
         """
 
     def heading(self) -> float:
@@ -1079,12 +1181,6 @@ class IMU(Accelerometer):
         ロボットの水平面での角度(方位角)を取得します。 正の値は時計回りを意味します。
 
         プログラム開始時の値は0です。この値はロボットが180度以上回転しても増え続けます。-180度まで折り返すことはありません。
-
-
-        .. note:: このメソッドはロボットが平らな場所にいる間だけ記録しています。
-                  つまり、ロボットをテーブルから持ち上げると、角度は正しくなくなってしまいます。
-                  この問題を解決するには、``reset_heading`` を呼び出すことで、ロボットを置いた後に既知の値にリセットすることができます。
-                  例えば、ロボットを競技テーブルの側面に合わせ、新しい出発点としてリセットすることができます。
 
         Returns:
             開始方位に対するロボットの方位角。
@@ -1096,42 +1192,59 @@ class IMU(Accelerometer):
 
         ロボットの方位角をリセットします。
 
+        This cannot be called while a drive base is using the gyro to drive or
+        hold position.
+        Use :meth:`DriveBase.reset() <pybricks.robotics.DriveBase.reset>`
+        instead, which will stop the robot and then set the new heading value.
+
+        .. versionchanged:: 3.6 Resetting the angle while driving is not allowed. Stop first.
+
         Arguments:
-            angle (Number, deg): リセットする値。
+            angle (Number, deg): Value to which the heading should be reset.
+
+        Raises:
+            OSError:
+                There is a drive base that is currently using the gyro.
         """
 
     @overload
-    def angular_velocity(self, axis: Axis) -> float: ...
+    def angular_velocity(self, axis: Axis = None, calibrated: bool = True) -> float: ...
 
     @overload
-    def angular_velocity(self) -> Matrix: ...
+    def angular_velocity(self, calibrated: bool = True) -> Matrix: ...
 
     def angular_velocity(self, *args):
         """
-        angular_velocity(axis) -> float: deg/s
-        angular_velocity() -> vector: deg/s
+        angular_velocity(axis, calibrated=True) -> float: deg/s
+        angular_velocity(calibrated=True) -> vector: deg/s
 
         :ref:`ロボットフレーム <robotframe>` における、指定された軸に沿ったデバイスの角速度を取得します。
 
         Arguments:
-            axis (Axis): 角速度を測定する軸。
+            axis (Axis): Axis along which the angular velocity should be
+                measured, or ``None`` to get a vector along all axes.
+            calibrated (bool): Choose ``True`` to compensate for the estimated
+                bias and configured scale of the gyroscope. Choose ``False``
+                to get raw angular velocity values.
+
         Returns:
             指定された軸に沿った角速度。 軸を指定しない場合は、すべての軸に沿った加速度のベクトルを返す。
         """
 
-    def rotation(self, axis: Axis) -> float:
+    def rotation(self, axis: Axis, calibrated: bool = True) -> float:
         """
-        rotation(axis) -> float: deg
+        rotation(axis, calibrated=True) -> float: deg
 
         :ref:`ロボットフレーム <robotframe>` における、指定された軸に沿ったデバイスの回転を取得します。
 
         この値は、ロボットが要求された軸に沿ってのみ回転する場合に便利です。
         一般的な3次元モーションの場合は、代わりに ``orientation()`` メソッドを使用します。
 
-        このクラスが初期化されると、値は ``0`` からカウントを開始します。
-
         Arguments:
-            axis (Axis): 回転を測定する軸。
+            axis (Axis): Axis along which the rotation should be measured.
+            calibrated (bool): Choose ``True`` to compensate for configured
+                scale of the gyroscope. Choose ``False`` to get unscaled values.
+
         Returns:
             回転した角度。
         """
@@ -1144,10 +1257,8 @@ class IMU(Accelerometer):
 
         ロボットの ``X`` 軸、``Y`` 軸、``Z`` 軸を表す回転行列を返します。
 
-        .. note:: この方法はまだ実装されていません。
-
         Returns:
-            ロボットの3次元姿勢を表す回転行列。
+            The 3x3 rotation matrix.
         """
 
 
@@ -1281,87 +1392,4 @@ class AmbientColorSensor(CommonColorSensor):
         Returns:
             Measured color. The color is described by a hue (0--359), a
             saturation (0--100), and a brightness value (0--100).
-        """
-
-
-class BLE:
-    """
-    Bluetooth Low Energy.
-
-    .. versionadded:: 3.3
-    """
-
-    def broadcast(self, data: Union[bool, int, float, str, bytes]) -> None:
-        """broadcast(data)
-
-        Starts broadcasting the given data on
-        the ``broadcast_channel`` you selected when initializing the hub.
-
-        Data may be of type ``int``, ``float``, ``str``, ``bytes``,
-        ``True``, or ``False``, or a list thereof.
-
-        Choose ``None`` to stop broadcasting. This helps improve performance
-        when you don't need the broadcast feature, especially when observing
-        at the same time.
-
-        The total data size is quite limited (26 bytes). ``True`` and
-        ``False`` take 1 byte each. ``float`` takes 5 bytes. ``int`` takes 2 to
-        5 bytes depending on how big the number is. ``str`` and ``bytes`` take
-        the number of bytes in the object plus one extra byte.
-
-        When multitasking, only one task can broadcast at a time. To broadcast
-        information from multiple tasks (or block stacks), you could use a
-        dedicated separate task that broadcast new values when one or more
-        variables change.
-
-        Args:
-            data: The value or values to be broadcast.
-
-        .. versionadded:: 3.3
-        """
-
-    def observe(
-        self, channel: int
-    ) -> Optional[Tuple[Union[bool, int, float, str, bytes], ...]]:
-        """observe(channel) -> bool | int | float | str | bytes | tuple | None
-
-        Retrieves the last observed data for a given channel.
-
-        Receiving data is more reliable when the hub is not connected
-        to a computer or other devices at the same time.
-
-        Args:
-            channel (int): The channel to observe (0 to 255).
-
-        Returns:
-            The received data in the same format as it was sent, or ``None``
-            if no recent data is available.
-
-        .. versionadded:: 3.3
-        """
-
-    def signal_strength(self, channel: int) -> int:
-        """signal_strength(channel) -> int: dBm
-
-        Gets the average signal strength in dBm for the given channel.
-
-        This indicates how near the broadcasting device is. Nearby devices
-        may have a signal strength around -40 dBm, while far away devices
-        might have a signal strength around -70 dBm.
-
-        Args:
-            channel (int): The channel number (0 to 255).
-
-        Returns:
-            The signal strength or ``-128`` if there is no recent observed data.
-
-        .. versionadded:: 3.3
-        """
-
-    def version(self) -> str:
-        """version() -> str
-
-        Gets the firmware version from the Bluetooth chip.
-
-        .. versionadded:: 3.3
         """

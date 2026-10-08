@@ -13,10 +13,15 @@ All functions in this module should be used with positional arguments. Keyword
 arguments are not supported.
 """
 
-from typing import Any, Optional, Sequence, overload
+from __future__ import annotations
+
+from typing import TYPE_CHECKING, Any, overload
+
+if TYPE_CHECKING:
+    from collections.abc import Sequence
 
 
-def seed(a: Optional[int] = None) -> None:
+def seed(a: int | None = None) -> None:
     """
     seed(value=None)
 
@@ -31,18 +36,15 @@ def seed(a: Optional[int] = None) -> None:
 
 
 @overload
-def randrange(stop: int) -> int:
-    ...
+def randrange(stop: int) -> int: ...
 
 
 @overload
-def randrange(start: int, stop: int) -> int:
-    ...
+def randrange(start: int, stop: int) -> int: ...
 
 
 @overload
-def randrange(start: int, stop: int, step: int) -> int:
-    ...
+def randrange(start: int, stop: int, step: int) -> int: ...
 
 
 def randrange(start, stop, step):
@@ -73,7 +75,7 @@ def randint(a: int, b: int) -> int:
     """
     randint(a, b) -> int
 
-    Gets a random integer :math:`N` satisfying :math:`a \\leq N \\leq b`.
+    Gets a random integer N satisfying a ≤ N ≤ b.
 
     Arguments:
         a (int): Lowest value. This value *is* included in the range.
@@ -88,7 +90,7 @@ def getrandbits(k: int) -> int:
     """
     getrandbits(k) -> int
 
-    Gets a random integer :math:`N` satisfying :math:`0 \\leq N < 2^{\\text{k}}`.
+    Gets a random integer N satisfying 0 ≤ N < ``2**k``.
 
     Arguments:
         k (int): How many bits to use for the result.
@@ -116,7 +118,7 @@ def random() -> float:
     """
     random() -> float
 
-    Gets a random value :math:`x` satisfying :math:`0 \\leq x < 1`.
+    Gets a random value x satisfying 0 ≤ x < 1.
 
     Returns:
         The random value.
@@ -127,7 +129,7 @@ def uniform(a: float, b: float) -> float:
     """
     uniform(a, b) -> float
 
-    Gets a random floating point value :math:`x` satisfying :math:`a \\leq x \\leq b`.
+    Gets a random floating point value x satisfying a ≤ x ≤ b.
 
     Arguments:
         a (float): Lowest value.
@@ -136,3 +138,8 @@ def uniform(a: float, b: float) -> float:
     Returns:
         The random value.
     """
+
+
+# Hide type-only names from jedi completions in the module namespace.
+if TYPE_CHECKING:
+    del Sequence

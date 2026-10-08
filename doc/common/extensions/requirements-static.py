@@ -1,8 +1,7 @@
-from os import path, makedirs
+from os import makedirs, path
 
 from docutils import nodes
 from docutils.parsers.rst import Directive
-
 from sphinx.util.osutil import copyfile
 
 # Base feature set.
@@ -17,25 +16,47 @@ FEATURES_MEDIUM = FEATURES_SMALL | {
     "pybricks-frozen",
 }
 
-# Large feature set.
-FEATURES_LARGE = FEATURES_MEDIUM | set()
-
 # Features per hub.
 HUB_FEATURES = {
-    "movehub": {"movehub"} | FEATURES_SMALL,
-    "cityhub": {"cityhub"} | FEATURES_MEDIUM,
-    "technichub": {"technichub", "gyro", "xbox-controller"} | FEATURES_MEDIUM,
-    "primehub": {"primehub", "inventorhub", "light-matrix", "gyro", "xbox-controller"}
-    | FEATURES_LARGE,
+    "movehub": {"movehub", "ble", "pupdevices"} | FEATURES_SMALL,
+    "cityhub": {"cityhub", "ble", "pupdevices"} | FEATURES_MEDIUM,
+    "technichub": {"technichub", "gyro", "xbox-controller", "ble", "pupdevices"}
+    | FEATURES_MEDIUM,
+    "primehub": {
+        "primehub",
+        "inventorhub",
+        "light-matrix",
+        "gyro",
+        "xbox-controller",
+        "ble",
+        "ble-extra",
+        "pupdevices",
+        "hub-network",
+    }
+    | FEATURES_MEDIUM,
     "inventorhub": {
         "primehub",
         "inventorhub",
         "light-matrix",
         "gyro",
         "xbox-controller",
+        "ble",
+        "ble-extra",
+        "pupdevices",
+        "hub-network",
     }
-    | FEATURES_LARGE,
-    "essentialhub": {"essentialhub", "gyro", "xbox-controller"} | FEATURES_LARGE,
+    | FEATURES_MEDIUM,
+    "essentialhub": {
+        "essentialhub",
+        "gyro",
+        "xbox-controller",
+        "ble",
+        "ble-extra",
+        "pupdevices",
+        "hub-network",
+    }
+    | FEATURES_MEDIUM,
+    "ev3brick": {"ev3devices", "nxtdevices", "image", "hub-network"} | FEATURES_MEDIUM,
 }
 
 
@@ -53,7 +74,7 @@ class PybricksRequirementsStaticDirective(Directive):
             makedirs(destdir)
 
         for hub in HUB_FEATURES:
-            uri = "compat_{0}.png".format(hub)
+            uri = f"compat_{hub}.png"
             src_uri = path.join(env.app.builder.srcdir, "diagrams", uri)
             build_uri = path.join(env.app.builder.outdir, "_images", uri)
             copyfile(src_uri, build_uri)
@@ -84,19 +105,17 @@ class PybricksRequirementsStaticDirective(Directive):
         )
 
         # Generate full table.
-        html = """
+        html = f"""
         <div class="wy-table-responsive">
             <table class="docutils align-default requirements-table">
                 <tbody>
                     <tr>
-                        {0}
+                        {compat_row}
                     </tr>
                 </tbody>
             </table>
         </div>
-        """.format(
-            compat_row
-        )
+        """
 
         # Return the node.
         node = nodes.raw("", html, format="html")

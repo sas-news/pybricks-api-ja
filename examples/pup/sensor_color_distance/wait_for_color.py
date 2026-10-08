@@ -1,5 +1,5 @@
+from pybricks.parameters import Color, Port
 from pybricks.pupdevices import ColorDistanceSensor
-from pybricks.parameters import Port, Color
 from pybricks.tools import wait
 
 # Initialize the sensor.
@@ -15,7 +15,6 @@ def wait_for_color(desired_color):
 
 # Now we use the function we just created above.
 while True:
-
     # Here you can make your train/vehicle go forward.
 
     print("Waiting for red ...")

@@ -19,29 +19,20 @@ The following functions and exceptions can be used without importing anything.
 Most functions and classes in this module do not accept keyword arguments.
 """
 
+import builtins
+from collections.abc import Callable, Hashable, Iterable, Iterator, Mapping, Sequence
 from typing import (
     Any,
-    Callable,
-    Dict,
-    Hashable,
-    Iterable,
-    Iterator,
-    List,
     Literal,
-    Mapping,
-    Sequence,
+    Self,
     SupportsComplex,
     SupportsFloat,
     SupportsInt,
-    Tuple,
-    TypeVar,
-    Union,
     overload,
 )
 
 import uio
 import usys
-
 
 # These get overridden later on, but we still want to use the originals
 # for the purpose of typing the doc strings.
@@ -54,10 +45,11 @@ _complex = complex
 _dict = dict
 _float = float
 _int = int
+_list = list
 _str = str
+_tuple = tuple
 _type = type
 
-_Self = TypeVar("_Self")
 
 # Functions and types
 
@@ -139,16 +131,14 @@ def bin(x: Any) -> _str:
 
 class bool:
     @overload
-    def __init__(self) -> None:
-        ...
+    def __init__(self) -> None: ...
 
     @overload
-    def __init__(self, x: Any) -> None:
-        ...
+    def __init__(self, x: Any) -> None: ...
 
     def __init__(self, *args) -> None:
         """
-        bool(​)
+        bool(\u200b)
         bool(x)
 
         Creates a boolean value, which is either ``True`` or ``False``.
@@ -166,30 +156,26 @@ class bool:
 
 class bytes:
     @overload
-    def __init__(self) -> None:
-        ...
+    def __init__(self) -> None: ...
 
     @overload
-    def __init__(self, source: _int) -> None:
-        ...
+    def __init__(self, source: _int) -> None: ...
 
     @overload
-    def __init__(self, source: Union[_bytes, _bytearray, Iterable[_int]]) -> None:
-        ...
+    def __init__(self, source: _bytes | _bytearray | Iterable[_int]) -> None: ...
 
     @overload
-    def __init__(self, source: _str, encoding: _str) -> None:
-        ...
+    def __init__(self, source: _str, encoding: _str) -> None: ...
 
     def __init__(self, *args):
-        r"""
-        bytes(​)
+        """
+        bytes(\u200b)
         bytes(integer)
         bytes(iterable)
         bytes(string, encoding)
 
         Creates a new ``bytes`` object, which is a sequence of integers
-        in the range :math:`0 \leq x \leq 255`. This object is *immutable*,
+        in the range 0 ≤ x ≤ 255. This object is *immutable*,
         which means that you *cannot* change its contents after you create it.
 
         If no argument is given, this creates an empty ``bytes`` object.
@@ -209,26 +195,23 @@ class bytes:
 
 class bytearray:
     @overload
-    def __init__(self) -> None:
-        ...
+    def __init__(self) -> None: ...
 
     @overload
-    def __init__(self, source: _int) -> None:
-        ...
+    def __init__(self, source: _int) -> None: ...
 
     @overload
-    def __init__(self, source: Union[_bytes, _bytearray, _str, Iterable[_int]]) -> None:
-        ...
+    def __init__(self, source: _bytes | _bytearray | _str | Iterable[_int]) -> None: ...
 
     def __init__(self, *args):
-        r"""
-        bytearray(​)
+        """
+        bytearray(\u200b)
         bytearray(integer)
         bytearray(iterable)
         bytearray(string)
 
         Creates a new ``bytearray`` object, which is a sequence of integers
-        in the range :math:`0 \leq x \leq 255`. This object is *mutable*, which
+        in the range 0 ≤ x ≤ 255. This object is *mutable*, which
         means that you *can* change its contents after you create it.
 
         If no argument is given, this creates an empty ``bytearray`` object.
@@ -281,26 +264,22 @@ def classmethod(method: _callable) -> _callable:
 
 class complex:
     @overload
-    def __init__(self) -> None:
-        ...
+    def __init__(self) -> None: ...
 
     @overload
     def __init__(
-        self, real: Union[_float, SupportsFloat, _complex, SupportsComplex]
-    ) -> None:
-        ...
+        self, real: _float | SupportsFloat | _complex | SupportsComplex
+    ) -> None: ...
 
     @overload
     def __init__(
         self,
-        real: Union[_float, SupportsFloat, _complex, SupportsComplex],
-        imag: Union[_float, SupportsFloat, _complex, SupportsComplex],
-    ) -> None:
-        ...
+        real: _float | SupportsFloat | _complex | SupportsComplex,
+        imag: _float | SupportsFloat | _complex | SupportsComplex,
+    ) -> None: ...
 
     @overload
-    def __init__(self, value: _str) -> None:
-        ...
+    def __init__(self, value: _str) -> None: ...
 
     def __init__(self, *args) -> None:
         """
@@ -325,12 +304,10 @@ class complex:
 
 class dict:
     @overload
-    def __init(self) -> None:
-        ...
+    def __init(self) -> None: ...
 
     @overload
-    def __init(self, **kwargs) -> None:
-        ...
+    def __init(self, **kwargs) -> None: ...
 
     def __init__(self, *args, **kwargs) -> None:
         """
@@ -348,19 +325,17 @@ class dict:
 
 
 @overload
-def dir() -> List[_str]:
-    ...
+def dir() -> _list[_str]: ...
 
 
 @overload
-def dir(object: Any) -> List[_str]:
-    ...
+def dir(object: Any) -> _list[_str]: ...
 
 
-def dir(*args) -> List[_str]:
+def dir(*args) -> _list[_str]:
     """
-    dir() -> List[str]
-    dir(object) -> List[str]
+    dir() -> list[str]
+    dir(object) -> list[str]
 
     Gets a list of attributes of an object.
 
@@ -376,18 +351,16 @@ def dir(*args) -> List[_str]:
 
 
 @overload
-def divmod(a: _int, b: _int) -> Tuple[_int, _int]:
-    ...
+def divmod(a: _int, b: _int) -> _tuple[_int, _int]: ...
 
 
 @overload
-def divmod(a: _float, b: _float) -> Tuple[_float, _float]:
-    ...
+def divmod(a: _float, b: _float) -> _tuple[_float, _float]: ...
 
 
 def divmod(a, b):
     """
-    divmod(a, b) -> Tuple[int, int]
+    divmod(a, b) -> tuple[int, int]
 
     Gets the quotient and remainder for dividing two integers.
 
@@ -407,12 +380,10 @@ def divmod(a, b):
 
 class enumerate:
     @overload
-    def __init__(self, iterable: Iterable) -> None:
-        ...
+    def __init__(self, iterable: Iterable) -> None: ...
 
     @overload
-    def __init__(self, iterable: Iterable, start: _int) -> None:
-        ...
+    def __init__(self, iterable: Iterable, start: _int) -> None: ...
 
     def __init__(self, *args) -> None:
         """
@@ -431,18 +402,15 @@ class enumerate:
 
 
 @overload
-def eval(expression: _str) -> Any:
-    ...
+def eval(expression: _str) -> Any: ...
 
 
 @overload
-def eval(expression: _str, globals: _dict) -> Any:
-    ...
+def eval(expression: _str, globals: _dict) -> Any: ...
 
 
 @overload
-def eval(expression: _str, globals: _dict, locals: Mapping) -> Any:
-    ...
+def eval(expression: _str, globals: _dict, locals: Mapping) -> Any: ...
 
 
 def eval(*args):
@@ -468,18 +436,15 @@ def eval(*args):
 
 
 @overload
-def exec(object: Any) -> None:
-    ...
+def exec(object: Any) -> None: ...
 
 
 @overload
-def exec(object: Any, globals: _dict) -> None:
-    ...
+def exec(object: Any, globals: _dict) -> None: ...
 
 
 @overload
-def exec(object: Any, globals: _dict, locals: Mapping) -> None:
-    ...
+def exec(object: Any, globals: _dict, locals: Mapping) -> None: ...
 
 
 def exec(*args):
@@ -503,20 +468,16 @@ def exec(*args):
 
 class float:
     @overload
-    def __init__(self) -> None:
-        ...
+    def __init__(self) -> None: ...
 
     @overload
-    def __init__(self, x: _int) -> None:
-        ...
+    def __init__(self, x: _int) -> None: ...
 
     @overload
-    def __init__(self, x: SupportsFloat) -> None:
-        ...
+    def __init__(self, x: SupportsFloat) -> None: ...
 
     @overload
-    def __init__(self, x: _str) -> None:
-        ...
+    def __init__(self, x: _str) -> None: ...
 
     def __init__(self, *args) -> None:
         """float(x=0.0)
@@ -529,13 +490,11 @@ class float:
 
 
 @overload
-def getattr(object: Any, name: _str) -> Any:
-    ...
+def getattr(object: Any, name: _str) -> Any: ...
 
 
 @overload
-def getattr(object: Any, name: _str, default: Any) -> Any:
-    ...
+def getattr(object: Any, name: _str, default: Any) -> Any: ...
 
 
 def getattr(*args):
@@ -555,7 +514,7 @@ def getattr(*args):
     """
 
 
-def globals() -> Dict[_str, Any]:
+def globals() -> builtins.dict[_str, Any]:
     """
     globals() -> dict
 
@@ -596,13 +555,11 @@ def hash(object: Any) -> _int:
 
 
 @overload
-def help() -> None:
-    ...
+def help() -> None: ...
 
 
 @overload
-def help(object: Any) -> None:
-    ...
+def help(object: Any) -> None: ...
 
 
 def help(*args) -> None:
@@ -651,13 +608,11 @@ def id(object: Any) -> _int:
 
 
 @overload
-def input() -> _str:
-    ...
+def input() -> _str: ...
 
 
 @overload
-def input(prompt: _str) -> _str:
-    ...
+def input(prompt: _str) -> _str: ...
 
 
 def input(*args) -> _str:
@@ -678,20 +633,16 @@ def input(*args) -> _str:
 
 class int:
     @overload
-    def __init__(self) -> None:
-        ...
+    def __init__(self) -> None: ...
 
     @overload
-    def __init__(self, x: _str) -> None:
-        ...
+    def __init__(self, x: _str) -> None: ...
 
     @overload
-    def __init__(self, x: _str, base: _int) -> None:
-        ...
+    def __init__(self, x: _str, base: _int) -> None: ...
 
     @overload
-    def __init__(self, x: Union[_int, SupportsInt]) -> None:
-        ...
+    def __init__(self, x: _int | SupportsInt) -> None: ...
 
     def __init__(self, *args) -> None:
         """int(x=0)
@@ -735,7 +686,7 @@ class int:
         """
 
 
-def isinstance(object: Any, classinfo: Union[_type, Tuple[_type]]) -> _bool:
+def isinstance(object: Any, classinfo: _type | _tuple[_type]) -> _bool:
     """
     isinstance(object, classinfo) -> bool
 
@@ -751,7 +702,7 @@ def isinstance(object: Any, classinfo: Union[_type, Tuple[_type]]) -> _bool:
     """
 
 
-def issubclass(cls: _type, classinfo: Union[_type, Tuple[_type]]) -> _bool:
+def issubclass(cls: _type, classinfo: _type | _tuple[_type]) -> _bool:
     """
     issubclass(cls, classinfo) -> bool
 
@@ -766,7 +717,7 @@ def issubclass(cls: _type, classinfo: Union[_type, Tuple[_type]]) -> _bool:
     """
 
 
-def iter(object: Union[Iterable, Sequence]) -> Iterator:
+def iter(object: Iterable | Sequence) -> Iterator:
     """
     iter(object) -> Iterator
 
@@ -796,16 +747,14 @@ def len(s: Sequence) -> _int:
 
 class list:
     @overload
-    def __init__(self) -> None:
-        ...
+    def __init__(self) -> None: ...
 
     @overload
-    def __init__(self, iterable: Iterable) -> None:
-        ...
+    def __init__(self, iterable: Iterable) -> None: ...
 
     def __init__(self, *args) -> None:
         """
-        list(​)
+        list(\u200b)
         list(iterable)
 
         Creates a new list. If no argument is given, this creates an empty
@@ -852,13 +801,11 @@ def map(function: Callable, iterable: Iterable, *args: Any) -> Iterator:
 
 
 @overload
-def max(iterable: Iterable) -> Any:
-    ...
+def max(iterable: Iterable) -> Any: ...
 
 
 @overload
-def max(arg1: Any, arg2: Any, *args: Any) -> Any:
-    ...
+def max(arg1: Any, arg2: Any, *args: Any) -> Any: ...
 
 
 def max(*args):
@@ -876,13 +823,11 @@ def max(*args):
 
 
 @overload
-def min(iterable: Iterable) -> Any:
-    ...
+def min(iterable: Iterable) -> Any: ...
 
 
 @overload
-def min(arg1: Any, arg2: Any, *args: Any) -> Any:
-    ...
+def min(arg1: Any, arg2: Any, *args: Any) -> Any: ...
 
 
 def min(*args):
@@ -953,11 +898,11 @@ def ord(c: _str) -> _int:
     """
 
 
-def pow(base: Union[_int, _float], exp: Union[_int, _float]) -> Union[_int, _float]:
+def pow(base: _int | _float, exp: _int | _float) -> _int | _float:
     """
     pow(base, exp) -> Number
 
-    Raises the base to the given exponent: :math:`\\text{base}^{\\mathrm{exp}}`.
+    Raises the base to the given exponent.
 
     This is the same as doing ``base ** exp``.
 
@@ -971,13 +916,13 @@ def pow(base: Union[_int, _float], exp: Union[_int, _float]) -> Union[_int, _flo
 
 
 @overload
-def print(*objects):
-    ...
+def print(*objects): ...
 
 
 @overload
-def print(*objects, sep: _str = " ", end: _str = "\n", file: uio.FileIO = usys.stdin):
-    ...
+def print(
+    *objects, sep: _str = " ", end: _str = "\n", file: uio.FileIO = usys.stdin
+): ...
 
 
 def print(*args):
@@ -999,16 +944,13 @@ def print(*args):
 
 class range:
     @overload
-    def __init__(self, stop: _int) -> None:
-        ...
+    def __init__(self, stop: _int) -> None: ...
 
     @overload
-    def __init__(self, start: _int, stop: _int) -> None:
-        ...
+    def __init__(self, start: _int, stop: _int) -> None: ...
 
     @overload
-    def __init__(self, start: _int, stop: _int, step: _int) -> None:
-        ...
+    def __init__(self, start: _int, stop: _int, step: _int) -> None: ...
 
     def __init__(self, *args) -> None:
         """
@@ -1056,13 +998,11 @@ def reversed(seq: Sequence) -> Iterator:
 
 
 @overload
-def round(number: _float) -> _int:
-    ...
+def round(number: _float) -> _int: ...
 
 
 @overload
-def round(number: _float, ndigits: _int) -> _float:
-    ...
+def round(number: _float, ndigits: _int) -> _float: ...
 
 
 def round(*args):
@@ -1090,12 +1030,10 @@ def round(*args):
 
 class set:
     @overload
-    def __init__(self) -> None:
-        ...
+    def __init__(self) -> None: ...
 
     @overload
-    def __init__(self, iterable: Iterable[Hashable]) -> None:
-        ...
+    def __init__(self, iterable: Iterable[Hashable]) -> None: ...
 
     def __init__(self, *args) -> None:
         """
@@ -1118,7 +1056,7 @@ class set:
             iterable: An iterable of hashable objects.
         """
 
-    def copy(self: _Self) -> _Self:
+    def copy(self) -> Self:
         """
         copy() -> set
 
@@ -1128,7 +1066,7 @@ class set:
             A new set.
         """
 
-    def difference(self: _Self, *others: set) -> _Self:
+    def difference(self, *others: set) -> Self:
         """
         difference(other1, other2, ...) -> set
 
@@ -1145,7 +1083,7 @@ class set:
             A new set.
         """
 
-    def intersection(self: _Self, *others: set) -> _Self:
+    def intersection(self, *others: set) -> Self:
         """
         intersection(other1, other2, ...) -> set
 
@@ -1215,7 +1153,7 @@ class set:
             ``True`` if this set is a superset of *other*, otherwise ``False``.
         """
 
-    def symmetric_difference(self: _Self, other: set) -> _Self:
+    def symmetric_difference(self, other: set) -> Self:
         """
         symmetric_difference(other) -> bool
 
@@ -1232,7 +1170,7 @@ class set:
             A new set.
         """
 
-    def union(self: _Self, *others: set) -> _Self:
+    def union(self, *others: set) -> Self:
         """
         union(other1, other2, ...) -> set
 
@@ -1249,44 +1187,31 @@ class set:
             A new set.
         """
 
-    def __contains__(self, item: Hashable) -> bool:
-        ...
+    def __contains__(self, item: Hashable) -> bool: ...
 
-    def __len__(self) -> int:
-        ...
+    def __len__(self) -> int: ...
 
-    def __bool__(self) -> bool:
-        ...
+    def __bool__(self) -> bool: ...
 
-    def __gt__(self, other: set) -> bool:
-        ...
+    def __gt__(self, other: set) -> bool: ...
 
-    def __lt__(self, other: set) -> bool:
-        ...
+    def __lt__(self, other: set) -> bool: ...
 
-    def __ge__(self, other: set) -> bool:
-        ...
+    def __ge__(self, other: set) -> bool: ...
 
-    def __le__(self, other: set) -> bool:
-        ...
+    def __le__(self, other: set) -> bool: ...
 
-    def __eq__(self, other: set) -> bool:
-        ...
+    def __eq__(self, other: set) -> bool: ...
 
-    def __ne__(self, other: set) -> bool:
-        ...
+    def __ne__(self, other: set) -> bool: ...
 
-    def __sub__(self: _Self, other: set) -> _Self:
-        ...
+    def __sub__(self, other: set) -> Self: ...
 
-    def __and__(self: _Self, other: set) -> _Self:
-        ...
+    def __and__(self, other: set) -> Self: ...
 
-    def __or__(self: _Self, other: set) -> _Self:
-        ...
+    def __or__(self, other: set) -> Self: ...
 
-    def __xor__(self: _Self, other: set) -> _Self:
-        ...
+    def __xor__(self, other: set) -> Self: ...
 
 
 def setattr(object: Any, name: _str, value: Any) -> None:
@@ -1306,20 +1231,17 @@ def setattr(object: Any, name: _str, value: Any) -> None:
 
 class slice:
     @overload
-    def __init__(self, stop: _int) -> None:
-        ...
+    def __init__(self, stop: _int) -> None: ...
 
     @overload
-    def __init__(self, start: _int, stop: _int) -> None:
-        ...
+    def __init__(self, start: _int, stop: _int) -> None: ...
 
     @overload
-    def __init__(self, start: _int, stop: _int, step: _int) -> None:
-        ...
+    def __init__(self, start: _int, stop: _int, step: _int) -> None: ...
 
     def __init__(self, *args) -> None:
         """
-        slice(​)
+        slice(\u200b)
 
         Creating instances of this class is not supported.
 
@@ -1328,7 +1250,7 @@ class slice:
         """
 
 
-def sorted(iterable: Iterable, key=None, reverse=False) -> List:
+def sorted(iterable: Iterable, key=None, reverse=False) -> builtins.list:
     """
     Sorts objects.
 
@@ -1355,18 +1277,16 @@ def staticmethod(method: _callable) -> _callable:
 
 class str:
     @overload
-    def __init__(self, object: Any = "") -> None:
-        ...
+    def __init__(self, object: Any = "") -> None: ...
 
     @overload
     def __init__(
         self, object: _bytes = b"", encoding: _str = "utf-8", errors: _str = "strict"
-    ) -> None:
-        ...
+    ) -> None: ...
 
     def __init__(self) -> None:
         """
-        str(​)
+        str(\u200b)
         str(object)
         str(object, encoding)
 
@@ -1384,13 +1304,11 @@ class str:
 
 
 @overload
-def sum(iterable: Iterable) -> _int:
-    ...
+def sum(iterable: Iterable) -> _int: ...
 
 
 @overload
-def sum(iterable: Iterable, start: _int) -> _int:
-    ...
+def sum(iterable: Iterable, start: _int) -> _int: ...
 
 
 def sum(*args):
@@ -1410,18 +1328,15 @@ def sum(*args):
 
 
 @overload
-def super() -> _type:
-    ...
+def super() -> _type: ...
 
 
 @overload
-def super(type: _type) -> _type:
-    ...
+def super(type: _type) -> _type: ...
 
 
 @overload
-def super(type: _type, object_or_type: Any) -> _type:
-    ...
+def super(type: _type, object_or_type: Any) -> _type: ...
 
 
 def super(*args):
@@ -1440,16 +1355,14 @@ def super(*args):
 
 class tuple:
     @overload
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
     @overload
-    def __init__(self, iterable: Iterable):
-        ...
+    def __init__(self, iterable: Iterable): ...
 
     def __init__(self, *args) -> None:
         """
-        tuple(​)
+        tuple(\u200b)
         tuple(iterable)
 
         Creates a new tuple. If no argument is given, this creates an empty
@@ -1475,9 +1388,9 @@ class type:
         """
 
 
-def zip(*iterables: Iterable) -> Iterable[Tuple]:
+def zip(*iterables: Iterable) -> Iterable[builtins.tuple]:
     """
-    zip(iter_a, iter_b, ...) -> Iterable[Tuple]
+    zip(iter_a, iter_b, ...) -> Iterable[tuple]
 
     Returns an iterator of tuples, where the *i*-th tuple contains the *i*-th
     element from each of the argument sequences or iterables. The iterator
@@ -1523,7 +1436,7 @@ class BaseException:
     use :class:`Exception`).
     """
 
-    args: Tuple
+    args: builtins.tuple
     """
     The tuple of arguments given to the exception constructor.
     """

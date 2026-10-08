@@ -1,7 +1,7 @@
 # ThisHub = MoveHub CityHub TechnicHub EssentialHub
 from pybricks.hubs import ThisHub
-from pybricks.parameters import Color, Button
-from pybricks.tools import wait, StopWatch
+from pybricks.parameters import Button, Color
+from pybricks.tools import StopWatch, wait
 
 # Initialize the hub.
 hub = ThisHub()
@@ -12,7 +12,6 @@ hub.system.set_stop_button(None)
 # Check the button for 5 seconds.
 watch = StopWatch()
 while watch.time() < 5000:
-
     # Set light to green if pressed, else red.
     if hub.buttons.pressed():
         hub.light.on(Color.GREEN)

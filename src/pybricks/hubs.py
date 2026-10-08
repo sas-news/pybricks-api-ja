@@ -3,12 +3,14 @@
 
 """LEGO® Programmable Hubs."""
 
-from typing import Sequence
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
 
 from . import _common
-from .ev3dev import _speaker
-from .media.ev3dev import Image as _Image
-from .parameters import Button as _Button, Axis
+from .parameters import Axis
+from .parameters import Button as _Button
+from .parameters import Image as _Image
 
 
 class EV3Brick:
@@ -26,9 +28,29 @@ class EV3Brick:
         ]
     )
     screen = _Image("_screen_")
-    speaker = _speaker.Speaker()
+    speaker = _common.Speaker()
     battery = _common.Battery()
     light = _common.ColorLight()
+    system = _common.System()
+
+
+class NXTBrick:
+    """LEGO® MINDSTORMS® NXT Brick."""
+
+    # These class attributes are here for auto-documentation only.
+    # In reality, they are instance attributes created by __init__.
+    buttons = _common.Keypad(
+        [
+            _Button.LEFT,
+            _Button.RIGHT,
+            _Button.CENTER,
+            _Button.DOWN,
+        ]
+    )
+    screen = _Image("_screen_")
+    speaker = _common.Speaker()
+    battery = _common.Battery()
+    system = _common.System()
 
 
 class MoveHub:
@@ -41,28 +63,19 @@ class MoveHub:
     imu = _common.SimpleAccelerometer()
     system = _common.System()
     buttons = _common.Keypad([_Button.CENTER])
-    ble = _common.BLE()
 
     def __init__(
-        self, broadcast_channel: int = 0, observe_channels: Sequence[int] = []
+        self,
+        top_side: Axis = Axis.Z,
+        front_side: Axis = Axis.X,
     ):
-        """MoveHub(top_side=Axis.Z, front_side=Axis.X, broadcast_channel=0, observe_channels=[])
+        """MoveHub(top_side=Axis.Z, front_side=Axis.X)
 
         Arguments:
             top_side (Axis): The axis that passes through the *top side* of
                 the hub.
             front_side (Axis): The axis that passes through the *front side* of
                 the hub.
-            broadcast_channel:
-                A value from 0 to 255 indicating which channel ``hub.ble.broadcast()``
-                will use. Default is channel 0.
-            observe_channels:
-                A list of channels to listen to when ``hub.ble.observe()`` is
-                called. Listening to more channels requires more memory.
-                Default is an empty list (no channels).
-
-        .. versionchanged:: 3.3
-            Added *broadcast_channel* and *observe_channels* arguments.
         """
 
 
@@ -75,25 +88,9 @@ class CityHub:
     light = _common.ColorLight()
     system = _common.System()
     buttons = _common.Keypad([_Button.CENTER])
-    ble = _common.BLE()
 
-    def __init__(
-        self, broadcast_channel: int = 0, observe_channels: Sequence[int] = []
-    ):
-        """CityHub(broadcast_channel=0, observe_channels=[])
-
-        Arguments:
-            broadcast_channel:
-                A value from 0 to 255 indicating which channel ``hub.ble.broadcast()``
-                will use. Default is channel 0.
-            observe_channels:
-                A list of channels to listen to when ``hub.ble.observe()`` is
-                called. Listening to more channels requires more memory.
-                Default is an empty list (no channels).
-
-        .. versionchanged:: 3.3
-            Added *broadcast_channel* and *observe_channels* arguments.
-        """
+    def __init__(self):
+        """CityHub()"""
 
 
 class TechnicHub:
@@ -106,16 +103,13 @@ class TechnicHub:
     imu = _common.IMU()
     system = _common.System()
     buttons = _common.Keypad([_Button.CENTER])
-    ble = _common.BLE()
 
     def __init__(
         self,
         top_side: Axis = Axis.Z,
         front_side: Axis = Axis.X,
-        broadcast_channel: int = 0,
-        observe_channels: Sequence[int] = [],
     ):
-        """TechnicHub(top_side=Axis.Z, front_side=Axis.X, broadcast_channel=0, observe_channels=[])
+        """TechnicHub(top_side=Axis.Z, front_side=Axis.X)
 
         Initializes the hub. Optionally, specify how the hub is
         :ref:`placed in your design <robotframe>` by saying in which
@@ -127,16 +121,6 @@ class TechnicHub:
                 the hub.
             front_side (Axis): The axis that passes through the *front side* of
                 the hub.
-            broadcast_channel:
-                A value from 0 to 255 indicating which channel ``hub.ble.broadcast()``
-                will use. Default is channel 0.
-            observe_channels:
-                A list of channels to listen to when ``hub.ble.observe()`` is
-                called. Listening to more channels requires more memory.
-                Default is an empty list (no channels).
-
-        .. versionchanged:: 3.3
-            Added *broadcast_channel* and *observe_channels* arguments.
         """
 
 
@@ -151,16 +135,13 @@ class EssentialHub:
     light = _common.ColorLight()
     imu = _common.IMU()
     system = _common.System()
-    ble = _common.BLE()
 
     def __init__(
         self,
         top_side: Axis = Axis.Z,
         front_side: Axis = Axis.X,
-        broadcast_channel: int = 0,
-        observe_channels: Sequence[int] = [],
     ):
-        """EssentialHub(top_side=Axis.Z, front_side=Axis.X, broadcast_channel=0, observe_channels=[])
+        """EssentialHub(top_side=Axis.Z, front_side=Axis.X)
 
         Initializes the hub. Optionally, specify how the hub is
         :ref:`placed in your design <robotframe>` by saying in which
@@ -172,18 +153,7 @@ class EssentialHub:
                 the hub.
             front_side (Axis): The axis that passes through the *front side* of
                 the hub.
-            broadcast_channel:
-                A value from 0 to 255 indicating which channel ``hub.ble.broadcast()``
-                will use. Default is channel 0.
-            observe_channels:
-                A list of channels to listen to when ``hub.ble.observe()`` is
-                called. Listening to more channels requires more memory.
-                Default is an empty list (no channels).
-
-        .. versionchanged:: 3.3
-            Added *broadcast_channel* and *observe_channels* arguments.
         """
-        pass
 
 
 class PrimeHub:
@@ -206,16 +176,13 @@ class PrimeHub:
     speaker = _common.Speaker()
     imu = _common.IMU()
     system = _common.System()
-    ble = _common.BLE()
 
     def __init__(
         self,
         top_side: Axis = Axis.Z,
         front_side: Axis = Axis.X,
-        broadcast_channel: int = 0,
-        observe_channels: Sequence[int] = [],
     ):
-        """PrimeHub(top_side=Axis.Z, front_side=Axis.X, broadcast_channel=0, observe_channels=[])
+        """PrimeHub(top_side=Axis.Z, front_side=Axis.X)
 
         Hubの初期化を行います。
         任意でハブの上面（ボタンがある方）と前面（USBポートがある方）の向きを指定し、
@@ -224,16 +191,6 @@ class PrimeHub:
         Arguments:
             top_side (Axis): Hubの上面を通る軸。
             front_side (Axis): Hubの前面を通る軸。
-            broadcast_channel:
-                ``hub.ble.broadcast()`` が使用するチャンネルを
-                0から255までの値で指定する。 デフォルトはチャンネル0。
-            observe_channels:
-                ``hub.ble.observe()`` が呼ばれたときにリッスンするチャンネルのリスト。
-                より多くのチャンネルをリッスンするには、より多くのメモリを必要とします。
-                デフォルトは空のリスト（チャンネルなし）。
-
-        .. versionchanged:: 3.3
-            *broadcast_channel* と *observe_channels* 引数を追加されました。
         """
 
 
@@ -241,5 +198,6 @@ class InventorHub(PrimeHub):
     """LEGO® MINDSTORMS Inventor Hub."""
 
 
-# HACK: hide from jedi
-del Axis
+# Hide type-only names from jedi completions in the module namespace.
+if TYPE_CHECKING:
+    del Axis

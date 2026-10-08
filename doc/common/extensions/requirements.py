@@ -22,12 +22,13 @@
 
 
 import os
-from docutils.parsers.rst import Directive, directives
-from docutils import nodes
-from docutils.statemachine import StringList
-from sphinx.util.osutil import copyfile
-from sphinx.util import logging
+from typing import ClassVar
 
+from docutils import nodes
+from docutils.parsers.rst import Directive, directives
+from docutils.statemachine import StringList
+from sphinx.util import logging
+from sphinx.util.osutil import copyfile
 
 CSS_FILE = "requirements.css"
 JS_FILE = "requirements.js"
@@ -35,7 +36,7 @@ JS_FILE = "requirements.js"
 
 class PybricksRequirementsDirective(Directive):
     has_content = True
-    option_spec = {"header": directives.unchanged}
+    option_spec: ClassVar = {"header": directives.unchanged}
 
     required_arguments = 0
     optional_arguments = 10

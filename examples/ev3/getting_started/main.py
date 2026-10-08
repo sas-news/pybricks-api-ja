@@ -1,6 +1,5 @@
-#!/usr/bin/env pybricks-micropython
-from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor
+from pybricks.hubs import EV3Brick
 from pybricks.parameters import Port
 
 # Create your objects here

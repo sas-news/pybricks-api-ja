@@ -5,7 +5,6 @@
 Tests for correct code completion of the CityHub class.
 """
 
-
 import json
 from pybricks_jedi import CompletionItem, complete
 
@@ -33,7 +32,6 @@ def test_hub_dot():
     completions: list[CompletionItem] = json.loads(complete(code, 3, len(line) + 1))
     assert [c["insertText"] for c in completions] == [
         "battery",
-        "ble",
         "buttons",
         "light",
         "system",
@@ -76,8 +74,8 @@ def test_hub_dot_system_dot():
     code = _create_snippet(line)
     completions: list[CompletionItem] = json.loads(complete(code, 3, len(line) + 1))
     assert [c["insertText"] for c in completions] == [
-        "name",
-        "reset_reason",
+        "info",
+        "reset_storage",
         "set_stop_button",
         "shutdown",
         "storage",
