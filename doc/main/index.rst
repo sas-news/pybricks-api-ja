@@ -21,7 +21,7 @@ Pybricks ドキュメント
              Pybricksについて詳しく学ぶなら `PybricksのWebサイト`_ を参照してください。
 
    .. note:: LEGO MINDSTORMS EV3を使っている場合は、
-            `EV3 documentation`_ を参照してください。
+            `EV3用ドキュメント`_ を参照してください。
 
 このドキュメントではSPIKE Primeに限定して日本語化しています。
 
@@ -29,7 +29,7 @@ Pybricks ドキュメント
 左側のメニューで、Pybricksのモジュールや関数を探すこともできます。
 ☰をクリックして、メニューを開く必要がある場合があります。
 
-.. _EV3 documentation: https://pybricks.com/ev3-micropython/
+.. _EV3用ドキュメント: ev3/index.html
 .. _PybricksのWebサイト: https://pybricks.com/
 .. _Pybricks learn: https://pybricks.com/learn/
 
