@@ -16,7 +16,7 @@ Pybricksは、LEGO® BOOST、City、Technic、MINDSTORMS®、SPIKE®上で実行
 .. only:: main
 
    .. note:: ここはPybricksのコーディングに関するドキュメントです。
-             Pybricksについて詳しく学ぶなら `PybricksのWebサイト`_ を参照してください。 
+             Pybricksについて詳しく学ぶなら `PybricksのWebサイト`_ を参照してください。
 
    .. note:: LEGO MINDSTORMS EV3を使っているな場合は、
              `EV3 documentation`_ を参照してください。

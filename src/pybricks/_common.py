@@ -52,13 +52,13 @@ class System:
 
         実行中のスクリプトを停止するボタンを設定します。
 
-        通常、中央のボタンは実行中のスクリプトを停止するために使用されます。 
+        通常、中央のボタンは実行中のスクリプトを停止するために使用されます。
         この仕様を変更または無効にして、ボタンを他の目的に使用することができます。
 
         Arguments:
-            button (Button): :attr:`Button.CENTER <pybricks.parameters.Button.CENTER>`などのボタン、またはボタンのタプルを指定します。
-            ``None``を選択すると、ボタンを無効にします。
-            無効にした場合は中央のボタンを3秒間長押しして、Hubの電源をオフにしてプログラムを停止することができます。
+            button (Button): :attr:`Button.CENTER <pybricks.parameters.Button.CENTER>` などのボタン、またはボタンのタプルを指定します。
+                ``None`` を選択すると、ボタンを無効にします。
+                無効にした場合は中央のボタンを3秒間長押しして、Hubの電源をオフにしてプログラムを停止することができます。
         """
 
     def shutdown(self) -> None:
@@ -706,7 +706,7 @@ class ColorLight:
 
         Arguments:
             color (Color): ライトの色
-            durations (list): ``[on_1, off_1, on_2, off_2, ...]``といった形式で時間値を指定します。
+            durations (list): ``[on_1, off_1, on_2, off_2, ...]`` といった形式で時間値を指定します。
         """
 
     def animate(self, colors: Collection[Color], interval: Number) -> None:
@@ -714,11 +714,11 @@ class ColorLight:
 
         指定された間隔で1つずつ表示される色のシーケンスでライトをアニメーション化します。
 
-        アニメーションはバックグラウンドで実行されます。 
+        アニメーションはバックグラウンドで実行されます。
         アニメーションが完了すると最初に戻り、繰り返されます。
 
         Arguments:
-            colors (list): :class:`Color <.parameters.Color>`のシーケンス
+            colors (list): :class:`Color <.parameters.Color>` のシーケンス
             interval (Number, ms): 色の更新間隔
         """
 
@@ -808,13 +808,13 @@ class LightMatrix:
 
         Arguments:
             top (Side): ライトマトリクスのどの面を「上」にするか。
-            ``Side.TOP``、``Side.LEFT``、``Side.RIGHT``、``Side.BOTTOM``から選びます。
+                ``Side.TOP``、``Side.LEFT``、``Side.RIGHT``、``Side.BOTTOM`` から選びます。
         """
 
     def icon(self, icon: Matrix) -> None:
         """icon(icon)
 
-        :ref:`brightness`の輝度でアイコンを表示します。
+        :ref:`brightness` の輝度でアイコンを表示します。
 
         Arguments:
             icon (Matrix): 強度のマトリクス（:ref:`brightness`）。2Dリストも受け付けます。
@@ -830,7 +830,7 @@ class LightMatrix:
         このアニメーションは、あなたのプログラムの残りの部分が動き続けている間、永遠に繰り返される。
 
         Arguments:
-            matrices (iter): :class:`Matrix <pybricks.tools.Matrix>`のシーケンス。
+            matrices (iter): :class:`Matrix <pybricks.tools.Matrix>` のシーケンス。
             interval (Number, ms): リスト内の各画像を表示する時間。
         """
 
@@ -856,7 +856,7 @@ class LightMatrix:
         -99から99の範囲の数字を表示する。
 
         マイナス記号（``-``）はディスプレイの中央に点で表示されます。
-        99以上の数字は``>``、99未満の数字は``<```で表示されます。
+        99以上の数字は ``>`` 、99未満の数字は ``<`` で表示されます。
 
         Arguments:
             number (int): 表示する数字。
@@ -866,7 +866,7 @@ class LightMatrix:
         """char(char)
 
         ライトマトリクスに文字または記号を表示します。
-        任意の文字（``a``から``z``、``A``から``Z``）または以下の記号を表示できます。
+        任意の文字（``a`` から ``z``、``A`` から ``Z``）または以下の記号を表示できます。
 
         ``!"#$%&'()*+,-./:;<=>?@[\\]^_`{|}``
 
@@ -877,7 +877,7 @@ class LightMatrix:
     def text(self, text: str, on: Number = 500, off: Number = 50) -> None:
         """text(text, on=500, off=50)
 
-        テキストを1文字ずつ表示します。 
+        テキストを1文字ずつ表示します。
         最後の文字が表示された後にすべてのライトが消灯します。
 
         Arguments:
@@ -981,13 +981,13 @@ class SimpleAccelerometer:
 
         Returns:
             ``Side.TOP``、``Side.BOTTOM``、``Side.LEFT``、``Side.RIGHT``、
-            ``Side.FRONT``、``Side.BACK``のいずれか。
+            ``Side.FRONT``、``Side.BACK`` のいずれか。
         """
 
     def tilt(self) -> Tuple[int, int]:
         """tilt() -> Tuple[int, int]
 
-        ピッチ角とロール角を取得する。 これは、:ref:`ユーザーが指定した方向 <robotframe>`からの相対値です。
+        ピッチ角とロール角を取得する。 これは、:ref:`ユーザーが指定した方向 <robotframe>` からの相対値です。
 
         回転の順序は、ピッチ-ターン-ロールです。これはロボットのY軸に沿って正回転し、次にX軸に沿って正回転することに相当します。
 
@@ -1011,7 +1011,7 @@ class Accelerometer(SimpleAccelerometer):
         acceleration() -> vector: mm/s²
 
 
-        :ref:`ロボットフレーム <robotframe>`における、指定された軸に沿ったデバイスの加速度を取得します。
+        :ref:`ロボットフレーム <robotframe>` における、指定された軸に沿ったデバイスの加速度を取得します。
 
         Arguments:
             axis (Axis): 加速度を測定する軸。
@@ -1027,11 +1027,11 @@ class IMU(Accelerometer):
 
         IMUが使用可能かどうかを確認します。
 
-        これは、ロボットが数秒間静止しているときに``True``になり、デバイスを再較正することができます。
-        ハブが起動したばかりであったり、10分以上較正の機会がなかったりすると```False```になります。
+        これは、ロボットが数秒間静止しているときに ``True`` になり、デバイスを再較正することができます。
+        ハブが起動したばかりであったり、10分以上較正の機会がなかったりすると ``False`` になります。
 
         Returns:
-            使用可能であれば``True``、そうでなければ``False``。
+            使用可能であれば ``True``、そうでなければ ``False``。
         """
 
     def stationary(self) -> bool:
@@ -1040,7 +1040,7 @@ class IMU(Accelerometer):
         現在のハブが静止しているかどうかを確認します。
 
         Returns:
-            少なくとも1秒間静止していれば``True``、動いていれば``False``。
+            少なくとも1秒間静止していれば ``True``、動いていれば ``False``。
         """
 
     @overload
@@ -1061,12 +1061,12 @@ class IMU(Accelerometer):
         IMUの設定を行います。 引数が与えられていない場合は、現在の値を返します。
 
         角速度しきい値（``angular_velocity_threshold``）と加速度しきい値（``acceleration_threshold``）は、
-        Hubが静止しているとみなされるタイミングを定義します。 
+        Hubが静止しているとみなされるタイミングを定義します。
         すべての測定値がこれらのしきい値を1秒間下回った場合、IMUは再キャリブレーションを行います。
 
         周囲の振動が大きい騒がしい部屋（競技会場など）では、ロボットにキャリブレーションの機会を与えるため、
-        しきい値を少し大きくすることをお勧めします。設定が期待通りに機能していることを確認するには、``stationary()``メソッドが、
-        ロボットが動いている場合は``False``を、少なくとも1秒間静止している場合は``True``を返すことをテストしてください。
+        しきい値を少し大きくすることをお勧めします。設定が期待通りに機能していることを確認するには、``stationary()`` メソッドが、
+        ロボットが動いている場合は ``False`` を、少なくとも1秒間静止している場合は ``True`` を返すことをテストしてください。
 
         Arguments:
             angular_velocity_threshold (Number, deg/s): 角速度のしきい値。 デフォルト値は1.5deg/s。
@@ -1083,7 +1083,7 @@ class IMU(Accelerometer):
 
         .. note:: このメソッドはロボットが平らな場所にいる間だけ記録しています。
                   つまり、ロボットをテーブルから持ち上げると、角度は正しくなくなってしまいます。
-                  この問題を解決するには、``reset_heading``を呼び出すことで、ロボットを置いた後に既知の値にリセットすることができます。
+                  この問題を解決するには、``reset_heading`` を呼び出すことで、ロボットを置いた後に既知の値にリセットすることができます。
                   例えば、ロボットを競技テーブルの側面に合わせ、新しい出発点としてリセットすることができます。
 
         Returns:
@@ -1111,7 +1111,7 @@ class IMU(Accelerometer):
         angular_velocity(axis) -> float: deg/s
         angular_velocity() -> vector: deg/s
 
-        :ref:`ロボットフレーム <robotframe>`における、指定された軸に沿ったデバイスの角速度を取得します。
+        :ref:`ロボットフレーム <robotframe>` における、指定された軸に沿ったデバイスの角速度を取得します。
 
         Arguments:
             axis (Axis): 角速度を測定する軸。
@@ -1123,12 +1123,12 @@ class IMU(Accelerometer):
         """
         rotation(axis) -> float: deg
 
-        :ref:`ロボットフレーム <robotframe>`における、指定された軸に沿ったデバイスの回転を取得します。
+        :ref:`ロボットフレーム <robotframe>` における、指定された軸に沿ったデバイスの回転を取得します。
 
         この値は、ロボットが要求された軸に沿ってのみ回転する場合に便利です。
-        一般的な3次元モーションの場合は、代わりに``orientation()``メソッドを使用します。
+        一般的な3次元モーションの場合は、代わりに ``orientation()`` メソッドを使用します。
 
-        このクラスが初期化されると、値は``0``からカウントを開始します。
+        このクラスが初期化されると、値は ``0`` からカウントを開始します。
 
         Arguments:
             axis (Axis): 回転を測定する軸。
@@ -1140,9 +1140,9 @@ class IMU(Accelerometer):
         """
         orientation() -> Matrix
 
-        :ref:`ロボットフレーム <robotframe>`における、ロボットの3次元姿勢を取得する。
+        :ref:`ロボットフレーム <robotframe>` における、ロボットの3次元姿勢を取得する。
 
-        ロボットの``X``軸、``Y``軸、``Z``軸を表す回転行列を返します。
+        ロボットの ``X`` 軸、``Y`` 軸、``Z`` 軸を表す回転行列を返します。
 
         .. note:: この方法はまだ実装されていません。
 
