@@ -219,17 +219,17 @@ class PrimeHub:
 
         Hubの初期化を行います。
         任意でハブの上面（ボタンがある方）と前面（USBポートがある方）の向きを指定し、
-        :ref:`ハブをデザインにどのように配置するか <robotframe>`を指定することができます。
+        :ref:`ハブをデザインにどのように配置するか <robotframe>` を指定することができます。
 
         Arguments:
             top_side (Axis): Hubの上面を通る軸。
             front_side (Axis): Hubの前面を通る軸。
             broadcast_channel:
-                ``hub.ble.broadcast()``が使用するチャンネルを
+                ``hub.ble.broadcast()`` が使用するチャンネルを
                 0から255までの値で指定する。 デフォルトはチャンネル0。
             observe_channels:
-                ``hub.ble.observe()``が呼ばれたときにリッスンするチャンネルのリスト。 
-                より多くのチャンネルをリッスンするには、より多くのメモリを必要とします。 
+                ``hub.ble.observe()`` が呼ばれたときにリッスンするチャンネルのリスト。
+                より多くのチャンネルをリッスンするには、より多くのメモリを必要とします。
                 デフォルトは空のリスト（チャンネルなし）。
 
         .. versionchanged:: 3.3
