@@ -1,13 +1,13 @@
-Elephant
-============
+エレファント
+================
 
-This example project makes the Elephant walk, raise its trunk, and play sounds
-in response to pressing the buttons of the EV3 Brick.
+このサンプルプロジェクトでは、EV3 Brickのボタンを押すと、
+エレファントが歩いたり鼻を上げたり音を鳴らしたりします。
 
-.. rubric:: Building instructions
+.. rubric:: 組み立て説明書
 
-Click `here`_ to find all building instructions for the Expansion Set Models,
-or use `this link`_ to go to the Elephant directly.
+`こちら <here_>`_ から拡張セットモデルの組み立て説明書をすべて確認できます。また、
+`このリンク <this link_>`_ からエレファントの説明書に直接アクセスできます。
 
 .. _fig_elephant:
 
@@ -15,9 +15,9 @@ or use `this link`_ to go to the Elephant directly.
    :width: 80 %
    :align: center
 
-   Elephant
+   エレファント
 
-.. rubric:: Example program
+.. rubric:: サンプルプログラム
 
 .. literalinclude::
    ../../../pybricks-projects/official_models/ev3/education_expansion/elephant/main.py

@@ -1,19 +1,19 @@
-Robot Arm H25
+ロボットアーム H25
 =====================
 
-This example program makes Robot Arm H25 move the
-black wheel hub stacks around forever. The robot arm will first initialize and
-then start moving the hubs around.
+このサンプルプログラムでは、ロボットアーム H25が黒いホイールハブの
+スタックをずっと動かし続けます。ロボットアームはまず初期化を行い、
+その後ハブを動かし始めます。
 
-.. rubric:: Building instructions
+.. rubric:: 組み立て説明書
 
-Click `here`_ to find all building instructions for the Core Set Models, or use
-`this link`_ to go to Robot Arm H25 directly.
+`こちら <here_>`_ からコアセットモデルの組み立て説明書をすべて確認できます。また、
+`このリンク <this link_>`_ からロボットアーム H25の説明書に直接アクセスできます。
 
 .. tip::
 
-   When building the robot, reverse the orientation of the EV3 Brick such
-   that the microSD card is easily accessible.
+   ロボットを組み立てるときは、microSDカードを抜き差ししやすいように、
+   EV3 Brickの向きを逆にしてください。
 
 .. _fig_robot_arm:
 
@@ -21,9 +21,9 @@ Click `here`_ to find all building instructions for the Core Set Models, or use
    :width: 80 %
    :align: center
 
-   Robot Arm H25
+   ロボットアーム H25
 
-.. rubric:: Example program
+.. rubric:: サンプルプログラム
 
 .. literalinclude:: ../../../pybricks-projects/official_models/ev3/education_core/robot_arm/main.py
 

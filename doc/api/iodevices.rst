@@ -1,17 +1,18 @@
-:mod:`iodevices <pybricks.iodevices>` -- Generic I/O Devices
-============================================================
+:mod:`iodevices <pybricks.iodevices>` -- 汎用I/Oデバイス
+================================================================
 
 .. automodule:: pybricks.iodevices
     :no-members:
 
 .. note::
 
-    This module provides classes to interact with unofficial motors, sensors,
-    and other custom electronics. You should only connect custom electronics
-    or unofficial devices if you know what you are doing. Proceed with caution.
+    このモジュールには、非公式のモーター、センサー、その他のカスタム
+    電子回路とやり取りするためのクラスがあります。カスタム電子回路や
+    非公式デバイスを接続するのは、自分が何をしているか理解している場合
+    のみにしてください。注意して作業してください。
 
-LUMP Device
-^^^^^^^^^^^^^
+LUMPデバイス
+^^^^^^^^^^^^^^^^^^
 
 .. figure:: images/sensor_rj12_green.png
    :width: 25 %

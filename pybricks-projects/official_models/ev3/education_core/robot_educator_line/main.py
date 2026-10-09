@@ -16,42 +16,42 @@ from pybricks.parameters import Port
 from pybricks.tools import wait
 from pybricks.robotics import DriveBase
 
-# Initialize the motors.
+# モーターを初期化します。
 left_motor = Motor(Port.B)
 right_motor = Motor(Port.C)
 
-# Initialize the color sensor.
+# カラーセンサーを初期化します。
 line_sensor = ColorSensor(Port.S3)
 
-# Initialize the drive base.
+# ドライブベースを初期化します。
 robot = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=104)
 
-# Calculate the light threshold. Choose values based on your measurements.
+# 光のしきい値を計算します。実際の測定値に合わせて値を選んでください。
 BLACK = 9
 WHITE = 85
 threshold = (BLACK + WHITE) / 2
 
-# Set the drive speed at 100 millimeters per second.
+# 走行速度を毎秒100ミリメートルに設定します。
 DRIVE_SPEED = 100
 
-# Set the gain of the proportional line controller. This means that for every
-# percentage point of light deviating from the threshold, we set the turn
-# rate of the drivebase to 1.2 degrees per second.
+# 比例ライントレース制御のゲインを設定します。これは、光の値が
+# しきい値から1%ずれるごとに、ドライブベースの旋回速度を
+# 毎秒1.2度に設定するという意味です。
 
-# For example, if the light value deviates from the threshold by 10, the robot
-# steers at 10*1.2 = 12 degrees per second.
+# 例えば、光の値がしきい値から10ずれた場合、ロボットは
+# 10*1.2 = 毎秒12度で旋回します。
 PROPORTIONAL_GAIN = 1.2
 
-# Start following the line endlessly.
+# ラインのトレースをずっと続けます。
 while True:
-    # Calculate the deviation from the threshold.
+    # しきい値からのずれを計算します。
     deviation = line_sensor.reflection() - threshold
 
-    # Calculate the turn rate.
+    # 旋回速度を計算します。
     turn_rate = PROPORTIONAL_GAIN * deviation
 
-    # Set the drive base speed and turn rate.
+    # ドライブベースの速度と旋回速度を設定します。
     robot.drive(DRIVE_SPEED, turn_rate)
 
-    # You can wait for a short time or do other things in this loop.
+    # このループ内では、少し待機したり他の処理をしたりできます。
     wait(10)

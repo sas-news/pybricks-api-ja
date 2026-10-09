@@ -1,17 +1,16 @@
-Obstacle Avoidance
+障害物回避
 =====================
 
-This example project shows how you can make a robotic vehicle respond to its
-environment using sensors. The robot drives at a given
-speed until it detects an obstacle with the
-:class:`UltrasonicSensor <pybricks.ev3devices.UltrasonicSensor>`. Then the
-robot backs up, turns around, and continues driving until it detects a new
-obstacle.
+このサンプルプロジェクトでは、センサーを使ってロボット車両を周囲の環境に
+反応させる方法を紹介します。ロボットは一定の速度で走行し、
+:class:`UltrasonicSensor <pybricks.ev3devices.UltrasonicSensor>`
+で障害物を検出すると、
+バックして向きを変え、新しい障害物を検出するまで走行を続けます。
 
-.. rubric:: Building instructions
+.. rubric:: 組み立て説明書
 
-Click `here`_ to find all building instructions for the Educator Bot, or use
-`this link`_ to go to the ultrasonic sensor attachment directly.
+`こちら <here_>`_ からEducator Botの組み立て説明書をすべて確認できます。また、
+`このリンク <this link_>`_ から超音波センサーアタッチメントの説明書に直接アクセスできます。
 
 .. _fig_robot_educator_ultrasonic:
 
@@ -19,9 +18,9 @@ Click `here`_ to find all building instructions for the Educator Bot, or use
    :width: 80 %
    :align: center
 
-   Robot Educator with the Ultrasonic Sensor
+   超音波センサーを取り付けたロボットエデュケーター
 
-.. rubric:: Example program
+.. rubric:: サンプルプログラム
 
 .. literalinclude::
    ../../../pybricks-projects/official_models/ev3/education_core/robot_educator_ultrasonic/main.py

@@ -4,14 +4,14 @@ from pybricks.hubs import EV3Brick
 from pybricks.tools import wait
 from pybricks.parameters import Color
 
-# Initialize the EV3
+# EV3を初期化
 ev3 = EV3Brick()
 
-# Turn on a red light
+# 赤色でライトを点灯
 ev3.light.on(Color.RED)
 
-# Wait
+# 待機
 wait(1000)
 
-# Turn the light off
+# ライトを消す
 ev3.light.off()

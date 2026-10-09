@@ -1,16 +1,16 @@
-Tank Bot
-============
+タンクボット
+================
 
-This example project shows how you can use the
-:class:`GyroSensor <pybricks.ev3devices.GyroSensor>` on Tank Bot to make
-accurate turns. Depending on which EV3 Brick button you press, the robot
-drives in triangles, squares, pentagons, or hexagons.
+このサンプルプロジェクトでは、
+:class:`GyroSensor <pybricks.ev3devices.GyroSensor>`
+をタンクボットで使って正確に旋回する方法を紹介します。
+押すEV3 Brickのボタンによって、ロボットは三角形・正方形・五角形・六角形に走行します。
 
 
-.. rubric:: Building instructions
+.. rubric:: 組み立て説明書
 
-Click `here`_ to find all building instructions for the Expansion Set Models,
-or use `this link`_ to go to the Tank Bot directly.
+`こちら <here_>`_ から拡張セットモデルの組み立て説明書をすべて確認できます。また、
+`このリンク <this link_>`_ からタンクボットの説明書に直接アクセスできます。
 
 
 .. _fig_tank_bot:
@@ -19,9 +19,9 @@ or use `this link`_ to go to the Tank Bot directly.
    :width: 80 %
    :align: center
 
-   Tank Bot
+   タンクボット
 
-.. rubric:: Example program
+.. rubric:: サンプルプログラム
 
 .. literalinclude::
    ../../../pybricks-projects/official_models/ev3/education_expansion/tank_bot/main.py
