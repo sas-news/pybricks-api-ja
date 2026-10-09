@@ -22,14 +22,12 @@ Image
 
     .. automethod:: pybricks.parameters.Image.set_font
 
-
     .. rubric:: 画像の描画
 
     別の画像のコピーを画像上に描画できます。また、サブ画像を使って
     画像の一部をコピーすることも検討してください。
 
     .. automethod:: pybricks.parameters.Image.draw_image
-
 
     .. rubric:: 図形の描画
 
@@ -43,13 +41,11 @@ Image
 
     .. automethod:: pybricks.parameters.Image.draw_circle
 
-
     .. rubric:: 画像のプロパティ
 
     .. autoattribute:: pybricks.parameters.Image.width
 
     .. autoattribute:: pybricks.parameters.Image.height
-
 
     .. rubric:: 画像全体の置き換え
 

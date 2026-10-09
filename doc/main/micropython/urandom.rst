@@ -8,8 +8,6 @@
 
     .. rubric:: 基本的な乱数
 
-    .. blockimg:: pybricks_blockRandInt
-
     .. autofunction:: randint
 
     .. autofunction:: random

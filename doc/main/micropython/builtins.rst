@@ -12,20 +12,12 @@
 
 .. pybricks-requirements::
 
-.. blockimg:: pybricks_blockPrint_print_basic
-
-.. blockimg:: pybricks_blockPrint_print_multiple
-
 .. autofunction:: ubuiltins.print
 
 基本型
 ---------------------------
 
 .. pybricks-requirements::
-
-.. blockimg:: pybricks_blockLogicTrueFalse_false
-
-.. blockimg:: pybricks_blockLogicTrueFalse_true
 
 .. autoclass:: ubuiltins.bool
 
@@ -71,45 +63,9 @@
 
 .. pybricks-requirements::
 
-.. blockimg:: pybricks_blockListLength
-
 .. autofunction:: ubuiltins.len
 
 .. pybricks-requirements::
-
-.. blockimg:: pybricks_blockListCreate_list_empty
-
-.. blockimg:: pybricks_blockListCreate_list_3
-
-.. blockimg:: pybricks_blockListUnpack
-
-.. blockimg:: pybricks_blockListGet_list_get_first
-
-.. blockimg:: pybricks_blockListGet_list_get_index
-
-.. blockimg:: pybricks_blockListGet_list_get_last
-
-.. blockimg:: pybricks_blockListGet_list_get_random
-
-.. blockimg:: pybricks_blockListSet_list_insert_first
-
-.. blockimg:: pybricks_blockListSet_list_insert_index
-
-.. blockimg:: pybricks_blockListSet_list_insert_last
-
-.. blockimg:: pybricks_blockListSet_list_remove_first
-
-.. blockimg:: pybricks_blockListSet_list_remove_index
-
-.. blockimg:: pybricks_blockListSet_list_remove_last
-
-.. blockimg:: pybricks_blockListSet_list_set_first
-
-.. blockimg:: pybricks_blockListSet_list_set_index
-
-.. blockimg:: pybricks_blockListSet_list_set_last
-
-.. blockimg:: pybricks_blockIsIn
 
 .. autoclass:: ubuiltins.list
 
@@ -122,8 +78,6 @@
 .. autoclass:: ubuiltins.slice
 
 .. pybricks-requirements::
-
-.. blockimg:: pybricks_blockTextLiteral
 
 .. autoclass:: ubuiltins.str
 
@@ -159,10 +113,6 @@
 .. autofunction:: ubuiltins.next
 
 .. pybricks-requirements::
-
-.. blockimg:: pybricks_blockRange_range
-
-.. blockimg:: pybricks_blockRange_range_opts
 
 .. autoclass:: ubuiltins.range
 
@@ -214,8 +164,6 @@
 
 .. pybricks-requirements::
 
-.. blockimg:: pybricks_blockMathOp_abs
-
 .. autofunction:: ubuiltins.abs
 
 .. pybricks-requirements::
@@ -224,13 +172,9 @@
 
 .. pybricks-requirements::
 
-.. blockimg:: pybricks_blockMathOp_max
-
 .. autofunction:: ubuiltins.max
 
 .. pybricks-requirements::
-
-.. blockimg:: pybricks_blockMathOp_min
 
 .. autofunction:: ubuiltins.min
 
@@ -239,8 +183,6 @@
 .. autofunction:: ubuiltins.pow
 
 .. pybricks-requirements::
-
-.. blockimg:: pybricks_blockMathOp_round
 
 .. autofunction:: ubuiltins.round
 
@@ -279,7 +221,6 @@
 
 .. autofunction:: ubuiltins.locals
 
-
 クラス関数
 ------------------------
 
@@ -314,7 +255,6 @@
 .. pybricks-requirements::
 
 .. autofunction:: ubuiltins.super
-
 
 メソッドデコレーター
 ------------------------

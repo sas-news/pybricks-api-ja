@@ -9,15 +9,11 @@ NXT Brick
 
     .. rubric:: Using the buttons
 
-    .. blockimg:: pybricks_blockButtonIsPressed_NXTBrick
-
     .. automethod:: pybricks.hubs::NXTBrick.buttons.pressed
 
     .. rubric:: Using the speaker
 
     .. automethod:: pybricks.hubs::NXTBrick.speaker.volume
-
-    .. blockimg:: pybricks_blockSpeakerBeep_NXTBrick
 
     .. automethod:: pybricks.hubs::NXTBrick.speaker.beep
 
@@ -59,11 +55,7 @@ NXT Brick
 
     .. rubric:: Using the battery
 
-    .. blockimg:: pybricks_blockBatteryMeasure_NXTBrick_battery.voltage
-
     .. automethod:: pybricks.hubs::NXTBrick.battery.voltage
-
-    .. blockimg:: pybricks_blockBatteryMeasure_NXTBrick_battery.current
 
     .. automethod:: pybricks.hubs::NXTBrick.battery.current
 
@@ -71,16 +63,10 @@ NXT Brick
 
     .. automethod:: pybricks.hubs::NXTBrick.system.info
 
-    .. blockimg:: pybricks_blockHubStopButton_NXTBrick
-
-    .. blockimg:: pybricks_blockHubStopButton_NXTBrick_none
-
     .. automethod:: pybricks.hubs::NXTBrick.system.set_stop_button
 
     .. automethod:: pybricks.hubs::NXTBrick.system.storage
 
     .. automethod:: pybricks.hubs::NXTBrick.system.reset_storage
-
-    .. blockimg:: pybricks_blockHubShutdown_NXTBrick
 
     .. automethod:: pybricks.hubs::NXTBrick.system.shutdown

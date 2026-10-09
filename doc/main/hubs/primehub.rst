@@ -16,8 +16,6 @@ Prime Hub
 
     .. automethod:: pybricks.hubs::PrimeHub.light.on
 
-    .. blockimg:: pybricks_blockLightOnColor_primehub_off
-
     .. automethod:: pybricks.hubs::PrimeHub.light.off
 
     .. automethod:: pybricks.hubs::PrimeHub.light.blink
@@ -70,10 +68,6 @@ Prime Hub
 
     .. automethod:: pybricks.hubs::PrimeHub.imu.up
 
-    .. blockimg:: pybricks_blockTilt_PrimeHub_imu.tilt.pitch
-
-    .. blockimg:: pybricks_blockTilt_PrimeHub_imu.tilt.roll
-
     .. automethod:: pybricks.hubs::PrimeHub.imu.tilt
 
     .. automethod:: pybricks.hubs::PrimeHub.imu.acceleration
@@ -88,19 +82,11 @@ Prime Hub
 
     .. automethod:: pybricks.hubs::PrimeHub.imu.orientation
 
-    .. blockimg:: pybricks_blockImuConfigure_PrimeHub_imu.settings_heading_correction
-
-    .. blockimg:: pybricks_blockImuConfigure_PrimeHub_imu.settings_angular_velocity_threshold
-
-    .. blockimg:: pybricks_blockImuConfigure_PrimeHub_imu.settings_acceleration_threshold
-
     .. automethod:: pybricks.hubs::PrimeHub.imu.settings
 
     .. rubric:: スピーカーを使う
 
     .. automethod:: pybricks.hubs::PrimeHub.speaker.volume
-
-    .. blockimg:: pybricks_blockSpeakerBeep_PrimeHub
 
     .. automethod:: pybricks.hubs::PrimeHub.speaker.beep
 
@@ -108,11 +94,7 @@ Prime Hub
 
     .. rubric:: バッテリーを使う
 
-    .. blockimg:: pybricks_blockBatteryMeasure_PrimeHub_battery.voltage
-
     .. automethod:: pybricks.hubs::PrimeHub.battery.voltage
-
-    .. blockimg:: pybricks_blockBatteryMeasure_PrimeHub_battery.current
 
     .. automethod:: pybricks.hubs::PrimeHub.battery.current
 
@@ -134,8 +116,6 @@ Prime Hub
         Pybricksファームウェアを更新すると消去されます。
 
     .. automethod:: pybricks.hubs::PrimeHub.system.reset_storage
-
-    .. blockimg:: pybricks_blockHubShutdown_PrimeHub
 
     .. automethod:: pybricks.hubs::PrimeHub.system.shutdown
 
@@ -245,7 +225,6 @@ IMUの例
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/imu_up_primehub.py
-
 
 傾きの値を読み取る
 ********************************

@@ -6,8 +6,6 @@ Xboxコントローラー
 .. figure:: ../../main/diagrams_source/xboxcontroller.png
    :width: 60 %
 
-.. blockimg:: pybricks_variables_set_xbox_controller
-
 .. autoclass:: pybricks.iodevices.XboxController
   :no-members:
 
@@ -16,8 +14,6 @@ Xboxコントローラー
   .. automethod:: pybricks.iodevices::XboxController.disconnect
 
   .. automethod:: pybricks.iodevices::XboxController.name
-
-  .. blockimg:: pybricks_blockButtonIsPressed_XboxController
 
   .. automethod:: pybricks.iodevices::XboxController.buttons.pressed
 
@@ -36,37 +32,15 @@ Xboxコントローラー
         パドルを押した場合、現在アクティブなプロファイルに応じて、
         他のボタンの押下として検出される場合もあります。
 
-  .. blockimg:: pybricks_blockJoystickValue_xbox_lj_x
-
-  .. blockimg:: pybricks_blockJoystickValue_xbox_lj_y
-
   .. automethod:: pybricks.iodevices::XboxController.joystick_left
-
-  .. blockimg:: pybricks_blockJoystickValue_xbox_rj_x
-
-  .. blockimg:: pybricks_blockJoystickValue_xbox_rj_y
 
   .. automethod:: pybricks.iodevices::XboxController.joystick_right
 
-  .. blockimg:: pybricks_blockJoystickValue_xbox_lt
-
-  .. blockimg:: pybricks_blockJoystickValue_xbox_rt
-
   .. automethod:: pybricks.iodevices::XboxController.triggers
-
-  .. blockimg:: pybricks_blockJoystickValue_xbox_dpad
 
   .. automethod:: pybricks.iodevices::XboxController.dpad
 
-  .. blockimg:: pybricks_blockJoystickValue_xbox_profile
-
   .. automethod:: pybricks.iodevices::XboxController.profile
-
-  .. blockimg:: pybricks_blockGamepadRumble_default
-
-  .. blockimg:: pybricks_blockGamepadRumble_default_with_list
-
-  .. blockimg:: pybricks_blockGamepadRumble_with_options
 
   .. automethod:: pybricks.iodevices::XboxController.rumble
 

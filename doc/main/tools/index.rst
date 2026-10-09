@@ -9,50 +9,27 @@
 時間計測ツール
 ---------------
 
-.. blockimg:: pybricks_blockWaitTime
-
-.. blockimg:: pybricks_blockWaitForever
-
 .. autofunction:: wait
-
-.. blockimg:: pybricks_variables_set_stopwatch
 
 .. autoclass:: pybricks.tools.StopWatch
     :no-members:
 
-    .. blockimg:: pybricks_blockStopWatchTime
-
     .. automethod:: pybricks.tools.StopWatch.time
-
-    .. blockimg:: pybricks_blockStopWatchDo_StopWatch_pause
 
     .. automethod:: pybricks.tools.StopWatch.pause
 
-    .. blockimg:: pybricks_blockStopWatchDo_StopWatch_resume
-
     .. automethod:: pybricks.tools.StopWatch.resume
-
-    .. blockimg:: pybricks_blockStopWatchDo_StopWatch_reset
 
     .. automethod:: pybricks.tools.StopWatch.reset
 
 入力ツール
 -----------
 
-.. blockimg:: pybricks_blockReadInput_read_input_first_byte
-
-.. blockimg:: pybricks_blockReadInput_read_input_first_char
-
-.. blockimg:: pybricks_blockReadInput_read_input_last_byte
-
-.. blockimg:: pybricks_blockReadInput_read_input_last_char
-
 .. autofunction:: pybricks.tools.read_input_byte
 
 .. versionchanged:: 3.3
 
     ``last`` と ``chr`` のオプションが追加されました。
-
 
 .. pybricks-requirements:: light-matrix
 
@@ -79,8 +56,6 @@
 
 .. pybricks-requirements:: stm32-float
 
-.. blockimg:: pybricks_blockVector
-
 .. autofunction:: pybricks.tools.vector
 
 .. autofunction:: pybricks.tools.cross
@@ -93,8 +68,6 @@
 Pybricksは ``async`` と ``await`` キーワードを使った協調マルチタスクを
 サポートしています。これにより、通常は完了に時間がかかる操作を、
 他の操作と並行して実行できます。
-
-.. blockimg:: pybricks_blockMultiTask
 
 .. autofunction:: pybricks.tools.multitask
 

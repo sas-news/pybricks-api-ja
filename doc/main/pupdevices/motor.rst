@@ -13,8 +13,6 @@
    正方向を示しています。内蔵モーターのデフォルトの方向は
    :mod:`hubs <pybricks.hubs>` モジュールを参照してください。
 
-.. blockimg:: pybricks_variables_set_motor
-
 .. autoclass:: pybricks.pupdevices.Motor
     :no-members:
 
@@ -68,7 +66,6 @@
 .. literalinclude::
     ../../../examples/pup/motor/motor_absolute.py
 
-
 動作の例
 -----------------------
 
@@ -104,7 +101,6 @@
 
 .. literalinclude::
     ../../../examples/pup/motor/motor_until_stalled_center.py
-
 
 並列動作の例
 --------------------------
