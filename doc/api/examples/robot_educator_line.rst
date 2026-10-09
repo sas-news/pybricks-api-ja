@@ -27,7 +27,7 @@
 ライントレース用のトラックをダウンロードして、必要なページを印刷してください。
 他のページを印刷して、自分だけのトラックを作ることもできます。
 
-:download:`Click to download the line following track. <../images/linefollowtiles.pdf>`
+:download:`こちらからライントレース用のトラックをダウンロード。 <../images/linefollowtiles.pdf>`
 
 .. _fig_map:
 
