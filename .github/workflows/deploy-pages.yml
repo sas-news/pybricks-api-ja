@@ -1,0 +1,49 @@
+name: Deploy docs to GitHub Pages
+
+# masterへのpush時にドキュメントをビルドしてgh-pagesブランチへ反映する。
+# gh-pagesルートはdoc/main/build/htmlで上書きするが、ev3/ディレクトリ
+# （EV3 MicroPythonドキュメント）は手動管理のため保持する。
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - doc/**
+      - src/**
+      - examples/**
+      - .github/workflows/deploy-pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          submodules: recursive
+      - name: Install dependencies
+        run: |
+          pipx install poetry
+          poetry install
+      - name: Build html docs
+        run: poetry run make -C doc html
+      - name: Deploy to gh-pages (keep ev3/)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin gh-pages
+          git worktree add /tmp/ghp origin/gh-pages
+          cd /tmp/ghp
+          find . -mindepth 1 -maxdepth 1 ! -name ev3 ! -name .git -exec rm -rf {} +
+          cp -a "$GITHUB_WORKSPACE/doc/main/build/html/." .
+          touch .nojekyll
+          git add -A
+          git commit -m "docs: deploy ${GITHUB_SHA::7}" || echo "no changes"
+          git push origin HEAD:gh-pages
