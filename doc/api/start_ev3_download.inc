@@ -1,5 +1,5 @@
-.. _EV3 MicroPython microSD card image: https://pybricks.com/downloads
+.. _EV3 MicroPython microSDカードイメージ: https://pybricks.com/downloads
 
-1. Download the `EV3 MicroPython microSD card image`_ and save it in a
-convenient location. This file is approximately 360 MB. You do **not** need
-to unzip the file.
+1. `EV3 MicroPython microSDカードイメージ`_ をダウンロードし、わかりやすい
+場所に保存します。このファイルは約360MBです。ファイルを解凍する必要は
+ありません。

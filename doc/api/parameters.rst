@@ -1,4 +1,4 @@
-:mod:`parameters <pybricks.parameters>` -- Parameters and Constants
+:mod:`parameters <pybricks.parameters>` -- パラメータと定数
 =====================================================================
 
 .. automodule:: pybricks.parameters
@@ -7,14 +7,14 @@
 .. autoclass:: pybricks.parameters.Port
     :no-members:
 
-        Motor ports:
+        モーターポート:
 
             .. data:: A
             .. data:: B
             .. data:: C
             .. data:: D
 
-        Sensor ports:
+        センサーポート:
 
             .. data:: S1
             .. data:: S2
@@ -24,22 +24,23 @@
 .. autoclass:: pybricks.parameters.Direction
     :no-members:
 
-    By default, the positive direction is set as clockwise. Refer to
-    :ref:`this diagram <fig_ev3motors>` to see which direction this is for EV3
-    motors.
+    デフォルトでは、正の方向は時計回りに設定されています。EV3モーターで
+    これがどちらの方向になるかは、 :ref:`この図 <fig_ev3motors>` を
+    参照してください。
 
 .. autoclass:: pybricks.parameters.Stop
     :no-members:
 
-    The following table show how each stop type adds an extra level of
-    resistance to motion. In these examples, ``m`` is a
-    :class:`Motor <pybricks.ev3devices.Motor>` and
-    and ``d`` is a :class:`DriveBase <pybricks.robotics.DriveBase>`. The
-    examples also show how running at zero speed compares to these stop types.
+    次の表は、各停止タイプが動きへの抵抗をどのように強くするかを
+    示しています。これらの例では、 ``m`` は
+    :class:`Motor <pybricks.ev3devices.Motor>` 、
+    ``d`` は :class:`DriveBase <pybricks.robotics.DriveBase>` です。
+    例には、速度0での回転がこれらの停止タイプとどう比較されるかも
+    示しています。
 
     +--------+------------+--------+-------------+---------------+-----------------------------------------+
-    | | Type | | Friction | | Back | | Speed     |  | Angle kept | | Examples                              |
-    |        |            | | EMF  | | kept at 0 |  | at target  |                                         |
+    | | 種類 | | 摩擦     | | 逆起 | | 速度を0に |  | 目標角度を | | 例                                    |
+    |        |            | | 電力 | | 維持      |  | 維持       |                                         |
     +========+============+========+=============+===============+=========================================+
     | Coast  | +          |        |             |               | | ``m.stop()``                          |
     |        |            |        |             |               | | ``m.run_target(500, 90, Stop.COAST)`` |

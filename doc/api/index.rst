@@ -1,35 +1,35 @@
-Getting started with LEGO® MINDSTORMS Education EV3 MicroPython
-===============================================================
+LEGO® MINDSTORMS Education EV3 MicroPython をはじめよう
+================================================================
 
-This guide shows you how to get started writing MicroPython programs for your
-LEGO® MINDSTORMS® EV3 robots. You'll learn to do so in three steps:
+このガイドでは、LEGO® MINDSTORMS® EV3ロボット向けのMicroPythonプログラムを
+書き始める方法を説明します。次の3つのステップで進めます。
 
-- :doc:`Installation <startinstall>`: First you'll prepare your computer
-  by collecting and installing the required tools. 
-  
-- :doc:`EV3 Brick <startbrick>`: Next, you'll learn to work with the EV3 Brick.
+- :doc:`インストール <startinstall>`: まず、必要なツールを集めて
+  インストールし、コンピューターの準備をします。
 
-- :doc:`Creating and running programs <startrun>`: Finally, you'll learn how to
-  create and run a programs.
+- :doc:`EV3 Brick <startbrick>`: 次に、EV3 Brickの操作方法を学びます。
 
-After you've run the first demo program, you'll be ready to try out the example
-programs and start inventing your own programs.
+- :doc:`プログラムの作成と実行 <startrun>`: 最後に、プログラムを作成して
+  実行する方法を学びます。
+
+最初のデモプログラムを実行すれば、あとはサンプルプログラムを試したり、
+自分だけのプログラムを作り始めたりできます。
 
 .. note::
 
-   **EV3 MicroPython version v2.0 was released on May 18, 2020.**
+   **EV3 MicroPython v2.0は2020年5月18日にリリースされました。**
 
-   If you are still using v1.0, check out :doc:`this guide <startupgrade>`
-   to upgrade.
+   まだv1.0を使っている場合は、 :doc:`このガイド <startupgrade>` を参照して
+   アップグレードしてください。
 
 .. toctree::
     :maxdepth: 1
-    :caption: Table of Contents
+    :caption: 目次
     :hidden:
 
 .. toctree::
     :maxdepth: 1
-    :caption: Getting Started
+    :caption: はじめに
     :hidden:
 
     startinstall
@@ -40,7 +40,7 @@ programs and start inventing your own programs.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Pybricks Modules
+   :caption: Pybricksモジュール
    :hidden:
 
    hubs
@@ -55,7 +55,7 @@ programs and start inventing your own programs.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Engineering Extras
+   :caption: 補足解説
    :hidden:
 
    signaltypes
@@ -63,7 +63,7 @@ programs and start inventing your own programs.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Robot Educator Programs
+   :caption: Robot Educatorプログラム
    :hidden:
 
    examples/robot_educator_basic
@@ -72,7 +72,7 @@ programs and start inventing your own programs.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Core Set Programs
+   :caption: コアセットプログラム
    :hidden:
 
    examples/color_sorter
@@ -82,7 +82,7 @@ programs and start inventing your own programs.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Expansion Set Programs
+   :caption: 拡張セットプログラム
    :hidden:
 
    examples/elephant

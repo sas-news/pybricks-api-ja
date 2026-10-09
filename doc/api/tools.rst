@@ -1,5 +1,5 @@
-:mod:`tools <pybricks.tools>` -- Timing and Data logging
-========================================================
+:mod:`tools <pybricks.tools>` -- 時間計測とデータロギング
+=======================================================================
 
 .. automodule:: pybricks.tools
     :no-members:
@@ -22,26 +22,27 @@
 
     .. automethod:: pybricks.tools.DataLog.log
 
-    By default, this class creates a ``csv`` file on the EV3 brick with the
-    name ``log`` and the current date and time. For example, if you
-    use this class on 13 February 2020 on 10:07 and 44.431260
-    seconds, the file is called ``log_2020_02_13_10_07_44_431260.csv``.
+    デフォルトでは、このクラスはEV3ブロック上に ``log`` という名前と
+    現在の日時を含む ``csv`` ファイルを作成します。たとえば、
+    2020年2月13日10時07分44.431260秒にこのクラスを使用すると、
+    ファイル名は ``log_2020_02_13_10_07_44_431260.csv`` になります。
 
-    See :ref:`managing files on the EV3 <managefiles>` to learn how to upload
-    the log file back to your computer.
+    ログファイルをコンピューターにアップロードする方法については、
+    :ref:`EV3上のファイル管理 <managefiles>` を参照してください。
 
 .. toggle-header::
-    :header: **Show/hide example: Logging and visualizing measurements**
+    :header: **例を表示/非表示: 測定値の記録と可視化**
 
 
 
-    **Example**
+    **例**
 
-    This example shows how to log the angle of a rotating wheel as time passes.
+    この例では、時間の経過とともに回転するホイールの角度を記録する
+    方法を示します。
 
     .. literalinclude:: ../../pybricks-projects/snippets/ev3/datalog/main.py
 
-    In this example, the generated file has the following contents::
+    この例では、生成されたファイルの内容は次のとおりです::
 
         time, angle
         3, 0
@@ -55,35 +56,35 @@
         838, 333
         942, 385
 
-    When you upload the file to your computer as shown above, you can open it
-    in a spreadsheet editor. You can then generate a graph of the data, as
-    shown in :numref:`fig_datalog_graph`.
+    上記のようにファイルをコンピューターにアップロードすると、
+    スプレッドシートエディターで開くことができます。そこでデータの
+    グラフを作成できます（ :numref:`fig_datalog_graph` 参照）。
 
-    In this example, we see that the motor angle changes slowly at first. Then
-    the angle begins to change faster, and the graph becomes a straight line.
-    This means that the motor has reached a constant speed. You can verify that
-    the angle increases by 500 degrees per second.
+    この例では、モーター角度が最初はゆっくり変化していることが
+    わかります。その後、角度の変化が速くなり、グラフは直線になります。
+    これは、モーターが一定速度に達したことを意味します。角度が
+    毎秒500度ずつ増加していることが確認できます。
 
     .. _fig_datalog_graph:
 
     .. figure:: ../api/images/datalog_graph.png
         :width: 100 %
 
-        Original file contents (left) and a generated graph (right).
+        元のファイル内容（左）と生成されたグラフ（右）。
 
 
 .. toggle-header::
-    :header: **Show/hide example: Using the optional arguments**
+    :header: **例を表示/非表示: オプション引数の使用**
 
-    **Example**
+    **例**
 
-    This example shows how to log data beyond just numbers. It also shows how
-    you can use the optional arguments of the ``DataLog`` class to choose the
-    file name and extension.
+    この例では、数値以外のデータを記録する方法を示します。また、
+    ``DataLog`` クラスのオプション引数を使ってファイル名と拡張子を
+    選択する方法も示します。
 
-    In this example, ``timestamp=False``, which means that the date and time
-    are not added to the file name. This can be convenient because the file
-    name will always be the same. However, this means that the contents of
-    ``my_file.txt`` will be overwritten every time you run this script.
+    この例では ``timestamp=False`` となっており、日付と時刻は
+    ファイル名に追加されません。ファイル名が常に同じになるため
+    便利ですが、このスクリプトを実行するたびに ``my_file.txt`` の
+    内容が上書きされることになります。
 
     .. literalinclude:: ../../pybricks-projects/snippets/ev3/datalog_extra/main.py

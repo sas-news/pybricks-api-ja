@@ -1,50 +1,49 @@
-Signals and Units
+信号と単位
 =================
 
-Many commands allow you to specify arguments in terms of well-known physical
-quantities. This page gives an overview of each quantity and its unit.
+多くのコマンドでは、よく知られた物理量で引数を指定できます。
+このページでは、各物理量とその単位の概要を説明します。
 
-Time
+時間
 ~~~~~~
 
 .. _time:
 
-time: ms
----------
-All time and duration values are measured in milliseconds (ms).
+時間: ms
+------------
+すべての時間と継続時間の値はミリ秒 (ms) で測定されます。
 
-For example, the duration of motion with ``run_time``, and the duration
-of :func:`wait <.tools.wait>` are
-specified in milliseconds.
+たとえば、 ``run_time`` での動作時間や
+:func:`wait <.tools.wait>` の待機時間はミリ秒で指定します。
 
-Angles and angular motion
+角度と角運動
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _angle:
 
-angle: deg
+角度: deg
 -----------
 
-All angles are measured in degrees (deg). One full rotation corresponds to 360
-degrees.
+すべての角度は度 (deg) で測定されます。1回転は360度に相当します。
 
-For example, the angle values of a ``Motor`` or
-the :meth:`GyroSensor <.ev3devices.GyroSensor.angle>` are expressed in degrees.
+たとえば、 ``Motor`` の角度値や
+:meth:`GyroSensor <.ev3devices.GyroSensor.angle>` の角度値は度で
+表されます。
 
 .. _speed:
 
-rotational speed: deg/s
+回転速度: deg/s
 -----------------------
 
-Rotational speed, or *angular velocity* describes how fast something rotates,
-expressed as the number of degrees per second (deg/s).
+回転速度（角速度）は、物体がどれくらい速く回転するかを表し、
+毎秒あたりの度数 (deg/s) で表されます。
 
-For example, the rotational speed values of a ``Motor`` or the
-:meth:`GyroSensor <.ev3devices.GyroSensor.speed>` are expressed in degrees
-per second.
+たとえば、 ``Motor`` の回転速度値や
+:meth:`GyroSensor <.ev3devices.GyroSensor.speed>` の回転速度値は
+毎秒あたりの度数で表されます。
 
-While we recommend working with degrees per second in your programs, you can
-use the following table to convert between commonly used units.
+プログラムでは毎秒あたりの度数を使うことをお勧めしますが、
+一般的に使われる単位の換算には次の表を使えます。
 
 +-----------+-------+-----------+
 |           | deg/s | rpm       |
@@ -56,33 +55,32 @@ use the following table to convert between commonly used units.
 
 .. _acceleration:
 
-rotational acceleration: deg/s/s
+回転加速度: deg/s/s
 --------------------------------
 
-Rotational acceleration, or *angular acceleration* describes how fast the
-rotational speed changes. This is expressed as the change of the number of
-degrees per second, during one second (deg/s/s). This is also commonly written
-as  :math:`deg/s^2`.
+回転加速度（角加速度）は、回転速度がどれくらい速く変化するかを
+表します。1秒あたりの毎秒度数の変化量 (deg/s/s) で表され、
+一般に :math:`deg/s^2` とも書かれます。
 
-For example, you can adjust the rotational acceleration setting of a ``Motor``
-to change how smoothly or
-how quickly it reaches the constant speed set point.
+たとえば、 ``Motor`` の回転加速度の設定を調整すると、
+設定した一定速度に達するまでの滑らかさや速さを変えられます。
 
 
-Distance and linear motion
+距離と直線運動
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _distance:
 
-distance: mm
+距離: mm
 -------------
-Distances are expressed in millimeters (mm) whenever possible.
+距離は可能な限りミリメートル (mm) で表されます。
 
-For example, the distance value of the :meth:`UltrasonicSensor
-<.ev3devices.UltrasonicSensor.distance>` is measured in millimeters.
+たとえば、 :meth:`UltrasonicSensor
+<.ev3devices.UltrasonicSensor.distance>` の距離値はミリメートルで
+測定されます。
 
-While we recommend working with millimeters in your programs, you can use the
-following table to convert between commonly used units.
+プログラムではミリメートルを使うことをお勧めしますが、
+一般的に使われる単位の換算には次の表を使えます。
 
 +---------+------+-----+--------+
 |         | mm   | cm  | inch   |
@@ -96,84 +94,81 @@ following table to convert between commonly used units.
 
 .. _dimension:
 
-dimension: mm
+寸法: mm
 -------------
 
-Dimensions are expressed in millimeters (mm), just like
-distances.
+寸法は距離と同様にミリメートル (mm) で表されます。
 
-For example, the diameter of a wheel is measured in millimeters.
+たとえば、ホイールの直径はミリメートルで測定されます。
 
 .. _linspeed:
 
-speed: mm/s
+速度: mm/s
 ------------
-Linear speeds are expressed as millimeters per second (mm/s).
+直線速度は毎秒ミリメートル (mm/s) で表されます。
 
-For example, the speed of a robotic vehicle is expressed in mm/s.
+たとえば、ロボット車両の速度は mm/s で表されます。
 
 .. _linacceleration:
 
-linear acceleration: mm/s/s
+直線加速度: mm/s/s
 --------------------------------
 
-Linear acceleration describes how fast the speed changes. This is expressed as
-the change of the millimeters per second, during one second (deg/s/s).
-This is also commonly written as  :math:`mm/s^2`.
+直線加速度は、速度がどれくらい速く変化するかを表します。
+1秒あたりの毎秒ミリメートルの変化量 (mm/s/s) で表され、
+一般に :math:`mm/s^2` とも書かれます。
 
-For example, you can adjust the acceleration setting of a
-:class:`DriveBase <.robotics.DriveBase>` to change how
-smoothly or how quickly it reaches the constant speed set point.
+たとえば、 :class:`DriveBase <.robotics.DriveBase>` の加速度設定を
+調整すると、設定した一定速度に達するまでの滑らかさや速さを
+変えられます。
 
-Approximate and relative units
+近似値と相対的な単位
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _percentage:
 
-percentage: %
+割合: %
 --------------
 
-Some signals do not have specific units. They range from a minimum (0%) to a
-maximum (100%). Specifics type of percentages are :ref:`relative distances
-<relativedistance>` or  :ref:`brightness <brightness>`.
+一部の信号には固有の単位がありません。最小値 (0%) から最大値 (100%) の
+範囲で表されます。割合の具体例としては、 :ref:`相対距離
+<relativedistance>` や :ref:`輝度 <brightness>` があります。
 
-Another example is the sound volume,
-which ranges from 0% (silent) to 100% (loudest).
+もう一つの例は音量で、0%（無音）から100%（最大）の範囲です。
 
 .. _relativedistance:
 
-relative distance: %
+相対距離: %
 ---------------------
 
-Some distance measurements do not provide an accurate value with a specific
-unit, but they range from very close (0%) to very far (100%). These are
-referred to as relative distances.
+一部の距離測定では、特定の単位を持つ正確な値は得られませんが、
+非常に近い (0%) から非常に遠い (100%) までの範囲で表されます。
+これらは相対距離と呼ばれます。
 
-For example, the distance value of the :meth:`InfraredSensor
-<.ev3devices.InfraredSensor.distance>` is a relative distance.
+たとえば、 :meth:`InfraredSensor
+<.ev3devices.InfraredSensor.distance>` の距離値は相対距離です。
 
 
 .. _brightness:
 
-brightness: %
+輝度: %
 --------------
 
-The perceived brightness of a light is expressed as a percentage. It is 0% when
-the light is off and 100% when the light is fully on. When you choose 50%, this
-means that the light is perceived as approximately half as bright to the human
-eye.
+ライトの知覚される明るさはパーセンテージで表されます。ライトが消えて
+いるときは0%、完全に点灯しているときは100%です。50%を選ぶと、人の目に
+は約半分の明るさに見えます。
 
-Force
+力
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _force:
 
-force: N
+力: N
 ------------
-Force values are expressed in newtons (N).
+力の値はニュートン (N) で表されます。
 
-While we recommend working with newtons in your programs, you can use the
-following table to convert to and from other units.
+プログラムではニュートンを使うことをお勧めしますが、
+他の単位との換算には次の表を使えます。
 
 +---------+------+-------+-----------------------------+
 |         | mN   | N     | lbf                         |
@@ -185,59 +180,59 @@ following table to convert to and from other units.
 | 1 lbf = | 4448 | 4.448 | 1                           |
 +---------+------+-------+-----------------------------+
 
-Electricity
+電気
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _voltage:
 
-voltage: mV
+電圧: mV
 --------------
-Voltages are expressed in millivolt (mV).
+電圧はミリボルト (mV) で表されます。
 
-For example, you can check the voltage of the battery.
+たとえば、バッテリーの電圧を確認できます。
 
 .. _current:
 
-current: mA
+電流: mA
 --------------
 
-Electrical currents are expressed in milliampere (mA).
+電流はミリアンペア (mA) で表されます。
 
-For example, you can check the current supplied by the battery.
+たとえば、バッテリーが供給する電流を確認できます。
 
 .. _energy:
 
-energy: J
---------------
+エネルギー: J
+--------------------
 
-Stored energy or energy consumption can be expressed in Joules (J).
+蓄えられたエネルギーや消費エネルギーはジュール (J) で表されます。
 
 .. _power:
 
-power: mW
+電力: mW
 --------------
 
-Power is the rate at which energy is stored or consumed. It is expressed in
-milliwatt (mW).
+電力はエネルギーが蓄えられたり消費されたりする割合です。
+ミリワット (mW) で表されます。
 
-Ambient environment
+周囲環境
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _frequency:
 
-frequency: Hz
+周波数: Hz
 --------------
-Sound frequencies are expressed in Hertz (Hz).
+音の周波数はヘルツ (Hz) で表されます。
 
-For example, you can choose the frequency of a beep to change the pitch.
+たとえば、ビープ音の周波数を選んで音程を変えられます。
 
 .. _temperature:
 
-temperature: °C
+温度: °C
 ---------------
 
-Temperature is measured in degrees Celcius (°C). To convert to degrees
-Fahrenheit (°F) or Kelvin (K), you can use the following conversion formulas:
+温度は摂氏 (°C) で測定されます。華氏 (°F) やケルビン (K) への換算には、
+次の換算式を使えます:
 
     :math:`°\!F = °\!C \cdot \frac{9}{5} + 32`.
 

@@ -1,53 +1,50 @@
 .. autoclass:: pybricks.hubs.EV3Brick
     :no-members:
 
-    .. rubric:: Using the buttons
+    .. rubric:: ボタンを使う
 
     .. automethod:: pybricks.hubs::EV3Brick.buttons.pressed
 
-    .. rubric:: Using the brick status light
+    .. rubric:: ブロックのステータスライトを使う
 
     .. automethod:: pybricks.hubs::EV3Brick.light.on
 
         .. toggle-header::
-            :header: **Show/hide example**
+            :header: **例を表示/非表示**
 
-            **Example: Turn the light on and change the color.**
+            **例: ライトを点灯して色を変えます。**
 
             .. literalinclude::
               ../../pybricks-projects/snippets/ev3/light_color/main.py
 
     .. automethod:: pybricks.hubs::EV3Brick.light.off
 
-    .. rubric:: Using the speaker
+    .. rubric:: スピーカーを使う
 
     .. automethod:: pybricks.hubs::EV3Brick.speaker.beep
 
     .. automethod:: pybricks.hubs::EV3Brick.speaker.play_notes
 
         .. toggle-header::
-            :header: **Show/hide musical note format**
+            :header: **音符の形式を表示/非表示**
 
-            Each note is a string with the following format:
+            各音符は以下の形式の文字列です:
 
-                - The first character is the name of the note, ``A`` to ``G``
-                  or ``R`` for a rest.
-                - Note names can also include an accidental ``#`` (sharp) or
-                  ``b`` (flat). ``B#``/``Cb`` and ``E#``/``Fb`` are not
-                  allowed.
-                - The note name is followed by the octave number ``2``
-                  to ``8``. For example ``C4`` is middle C. The octave changes
-                  to the next number at the note C, for example, ``B3`` is the
-                  note below middle C (``C4``).
-                - The octave is followed by ``/`` and a number that indicates
-                  the size of the note. For example ``/4`` is a quarter note,
-                  ``/8`` is an eighth note and so on.
-                - This can optionally followed by a ``.`` to make a dotted
-                  note. Dotted notes are 1-1/2 times as long as notes without a
-                  dot.
-                - The note can optionally end with a ``_`` which is a tie or a
-                  slur. This causes there to be no pause between this note and
-                  the next note.
+                - 最初の文字は音名で、 ``A`` から ``G`` 、または休符を表す
+                  ``R`` です。
+                - 音名には変化記号 ``#`` (シャープ)または ``b`` (フラット)
+                  を付けられます。 ``B#`` / ``Cb`` と ``E#`` / ``Fb`` は
+                  使用できません。
+                - 音名の後にはオクターブ番号 ``2`` から ``8`` が続きます。
+                  例えば ``C4`` は中央のCです。オクターブはCの音で次の番号に
+                  切り替わります。例えば ``B3`` は中央のC( ``C4`` )の
+                  1つ下の音です。
+                - オクターブの後は ``/`` と音符の長さを表す数字が続きます。
+                  例えば ``/4`` は4分音符、 ``/8`` は8分音符、という具合です。
+                - この後に任意で ``.`` を付けると付点音符になります。
+                  付点音符は点のない音符の1.5倍の長さになります。
+                - 音符の最後に任意で ``_`` を付けるとタイまたはスラーになり、
+                  その音符と次の音符の間に休止が入りません。
 
 
     .. automethod:: pybricks.hubs::EV3Brick.speaker.play_file
@@ -57,104 +54,104 @@
     .. automethod:: pybricks.hubs::EV3Brick.speaker.set_speech_options
 
         .. toggle-header::
-            :header: **Show/hide available languages and voices**
+            :header: **利用可能な言語と音声を表示/非表示**
 
-            You can choose the following languages:
+            以下の言語を選択できます:
 
-                - ``'af'``: Afrikaans
-                - ``'an'``: Aragonese
-                - ``'bg'``: Bulgarian
-                - ``'bs'``: Bosnian
-                - ``'ca'``: Catalan
-                - ``'cs'``: Czech
-                - ``'cy'``: Welsh
-                - ``'da'``: Danish
-                - ``'de'``: German
-                - ``'el'``: Greek
-                - ``'en'``: English (default)
-                - ``'en-gb'``: English (United Kingdom)
-                - ``'en-sc'``: English (Scotland)
-                - ``'en-uk-north'``: English (United Kingdom, Northern)
+                - ``'af'``: アフリカーンス語
+                - ``'an'``: アラゴン語
+                - ``'bg'``: ブルガリア語
+                - ``'bs'``: ボスニア語
+                - ``'ca'``: カタルーニャ語
+                - ``'cs'``: チェコ語
+                - ``'cy'``: ウェールズ語
+                - ``'da'``: デンマーク語
+                - ``'de'``: ドイツ語
+                - ``'el'``: ギリシャ語
+                - ``'en'``: 英語(デフォルト)
+                - ``'en-gb'``: 英語(イギリス)
+                - ``'en-sc'``: 英語(スコットランド)
+                - ``'en-uk-north'``: 英語(イギリス、北部)
                 - ``'en-uk-rp'``:
-                  English (United Kingdom, Received Pronunciation)
-                - ``'en-uk-wmids'``: English (United Kingdom, West Midlands)
-                - ``'en-us'``: English (United States)
-                - ``'en-wi'``: English (West Indies)
-                - ``'eo'``: Esperanto
-                - ``'es'``: Spanish
-                - ``'es-la'``: Spanish (Latin America)
-                - ``'et'``: Estonian
-                - ``'fa'``: Persian
-                - ``'fa-pin'``: Persian
-                - ``'fi'``: Finnish
-                - ``'fr-be'``: French (Belgium)
-                - ``'fr-fr'``: French (France)
-                - ``'ga'``: Irish
-                - ``'grc'``: Greek
-                - ``'hi'``: Hindi
-                - ``'hr'``: Croatian
-                - ``'hu'``: Hungarian
-                - ``'hy'``: Armenian
-                - ``'hy-west'``: Armenian (Western)
-                - ``'id'``: Indonesian
-                - ``'is'``: Icelandic
-                - ``'it'``: Italian
-                - ``'jbo'``: Lojban
-                - ``'ka'``: Georgian
-                - ``'kn'``: Kannada
-                - ``'ku'``: Kurdish
-                - ``'la'``: Latin
-                - ``'lfn'``: Lingua Franca Nova
-                - ``'lt'``: Lithuanian
-                - ``'lv'``: Latvian
-                - ``'mk'``: Macedonian
-                - ``'ml'``: Malayalam
-                - ``'ms'``: Malay
-                - ``'ne'``: Nepali
-                - ``'nl'``: Dutch
-                - ``'no'``: Norwegian
-                - ``'pa'``: Punjabi
-                - ``'pl'``: Polish
-                - ``'pt-br'``: Portuguese (Brazil)
-                - ``'pt-pt'``: Portuguese (Portugal)
-                - ``'ro'``: Romanian
-                - ``'ru'``: Russian
-                - ``'sk'``: Slovak
-                - ``'sq'``: Albanian
-                - ``'sr'``: Serbian
-                - ``'sv'``: Swedish
-                - ``'sw'``: Swahili
-                - ``'ta'``: Tamil
-                - ``'tr'``: Turkish
-                - ``'vi'``: Vietnamese
-                - ``'vi-hue'``: Vietnamese (Hue)
-                - ``'vi-sgn'``: Vietnamese (Saigon)
-                - ``'zh'``: Mandarin Chinese
-                - ``'zh-yue'``: Cantonese Chinese
+                  英語(イギリス、容認発音)
+                - ``'en-uk-wmids'``: 英語(イギリス、ウェスト・ミッドランズ)
+                - ``'en-us'``: 英語(アメリカ合衆国)
+                - ``'en-wi'``: 英語(西インド諸島)
+                - ``'eo'``: エスペラント語
+                - ``'es'``: スペイン語
+                - ``'es-la'``: スペイン語(ラテンアメリカ)
+                - ``'et'``: エストニア語
+                - ``'fa'``: ペルシャ語
+                - ``'fa-pin'``: ペルシャ語(ラテン文字)
+                - ``'fi'``: フィンランド語
+                - ``'fr-be'``: フランス語(ベルギー)
+                - ``'fr-fr'``: フランス語(フランス)
+                - ``'ga'``: アイルランド語
+                - ``'grc'``: ギリシャ語(古典)
+                - ``'hi'``: ヒンディー語
+                - ``'hr'``: クロアチア語
+                - ``'hu'``: ハンガリー語
+                - ``'hy'``: アルメニア語
+                - ``'hy-west'``: アルメニア語(西部)
+                - ``'id'``: インドネシア語
+                - ``'is'``: アイスランド語
+                - ``'it'``: イタリア語
+                - ``'jbo'``: ロジバン語
+                - ``'ka'``: ジョージア語
+                - ``'kn'``: カンナダ語
+                - ``'ku'``: クルド語
+                - ``'la'``: ラテン語
+                - ``'lfn'``: リングワ・フランカ・ノバ
+                - ``'lt'``: リトアニア語
+                - ``'lv'``: ラトビア語
+                - ``'mk'``: マケドニア語
+                - ``'ml'``: マラヤーラム語
+                - ``'ms'``: マレー語
+                - ``'ne'``: ネパール語
+                - ``'nl'``: オランダ語
+                - ``'no'``: ノルウェー語
+                - ``'pa'``: パンジャブ語
+                - ``'pl'``: ポーランド語
+                - ``'pt-br'``: ポルトガル語(ブラジル)
+                - ``'pt-pt'``: ポルトガル語(ポルトガル)
+                - ``'ro'``: ルーマニア語
+                - ``'ru'``: ロシア語
+                - ``'sk'``: スロバキア語
+                - ``'sq'``: アルバニア語
+                - ``'sr'``: セルビア語
+                - ``'sv'``: スウェーデン語
+                - ``'sw'``: スワヒリ語
+                - ``'ta'``: タミル語
+                - ``'tr'``: トルコ語
+                - ``'vi'``: ベトナム語
+                - ``'vi-hue'``: ベトナム語(フエ)
+                - ``'vi-sgn'``: ベトナム語(サイゴン)
+                - ``'zh'``: 中国語(標準語)
+                - ``'zh-yue'``: 中国語(広東語)
 
-                You can choose the following voices:
+                以下の音声を選択できます:
 
-                - ``'f1'``: female variant 1
-                - ``'f2'``: female variant 2
-                - ``'f3'``: female variant 3
-                - ``'f4'``: female variant 4
-                - ``'f5'``: female variant 5
-                - ``'m1'``: male variant 1
-                - ``'m2'``: male variant 2
-                - ``'m3'``: male variant 3
-                - ``'m4'``: male variant 4
-                - ``'m5'``: male variant 5
-                - ``'m6'``: male variant 6
-                - ``'m7'``: male variant 7
-                - ``'croak'``: croak
-                - ``'whisper'``: whisper
-                - ``'whisperf'``: female whisper
+                - ``'f1'``: 女性の声バリエーション1
+                - ``'f2'``: 女性の声バリエーション2
+                - ``'f3'``: 女性の声バリエーション3
+                - ``'f4'``: 女性の声バリエーション4
+                - ``'f5'``: 女性の声バリエーション5
+                - ``'m1'``: 男性の声バリエーション1
+                - ``'m2'``: 男性の声バリエーション2
+                - ``'m3'``: 男性の声バリエーション3
+                - ``'m4'``: 男性の声バリエーション4
+                - ``'m5'``: 男性の声バリエーション5
+                - ``'m6'``: 男性の声バリエーション6
+                - ``'m7'``: 男性の声バリエーション7
+                - ``'croak'``: しわがれ声
+                - ``'whisper'``: ささやき声
+                - ``'whisperf'``: 女性のささやき声
 
 
     .. automethod:: pybricks.hubs::EV3Brick.speaker.set_volume
 
 
-    .. rubric:: Using the screen
+    .. rubric:: スクリーンを使う
 
     .. |this image| replace:: the screen
 
@@ -165,9 +162,9 @@
     .. automethod:: pybricks.hubs::EV3Brick.screen.print
 
         .. toggle-header::
-            :header: **Show/hide example**
+            :header: **例を表示/非表示**
 
-            **Example: Say hello... in several ways.**
+            **例: さまざまな方法でhelloと表示します。**
 
             .. raw:: latex
 
@@ -182,14 +179,14 @@
 
     .. automethod:: pybricks.hubs::EV3Brick.screen.set_font
 
-        **Example:** See example in :meth:`print`.
+        **例:** :meth:`print` の例を参照してください。
 
     .. automethod:: pybricks.hubs::EV3Brick.screen.load_image
 
         .. toggle-header::
-            :header: **Show/hide example**
+            :header: **例を表示/非表示**
 
-            **Example: Show an image on the screen.**
+            **例: スクリーンに画像を表示します。**
 
             .. literalinclude::
               ../../pybricks-projects/snippets/ev3/screen_image/main.py
@@ -201,20 +198,20 @@
     .. automethod:: pybricks.hubs::EV3Brick.screen.draw_line
 
         .. toggle-header::
-            :header: **Show/hide example**
+            :header: **例を表示/非表示**
 
-            **Example: Draw some shapes on the screen.**
+            **例: スクリーンにいくつかの図形を描画します。**
 
             .. literalinclude::
               ../../pybricks-projects/snippets/ev3/screen_draw/main.py
 
     .. automethod:: pybricks.hubs::EV3Brick.screen.draw_box
 
-        **Example:** See example in :meth:`draw_line`.
+        **例:** :meth:`draw_line` の例を参照してください。
 
     .. automethod:: pybricks.hubs::EV3Brick.screen.draw_circle
 
-        **Example:** See example in :meth:`draw_line`.
+        **例:** :meth:`draw_line` の例を参照してください。
 
     .. autoattribute:: pybricks.hubs::EV3Brick.screen.width
 
@@ -223,7 +220,7 @@
     .. automethod:: pybricks.hubs::EV3Brick.screen.save
 
 
-    .. rubric:: Using the battery
+    .. rubric:: バッテリーを使う
 
     .. automethod:: pybricks.hubs::EV3Brick.battery.voltage
 

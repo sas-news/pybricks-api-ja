@@ -1,29 +1,29 @@
-Accessing advanced EV3 features
+EV3の高度な機能を使う
 ===============================
 
-MicroPython runs on top of `ev3dev`_, which is a specific version of Linux.
-Linux is an *operating system*. (Other popular operating
-systems are Microsoft Windows and Apple macOS.) This means that your EV3 is
-almost like a real computer, just much smaller.
+MicroPythonは、Linuxの一種である `ev3dev`_ 上で動作します。
+Linuxは *オペレーティングシステム* です。(他によく知られた
+オペレーティングシステムにはMicrosoft WindowsやApple macOSがあります。)
+つまり、EV3はずっと小さいだけで、ほとんど本物のコンピューターの
+ようなものです。
 
 .. note::
 
-   *If you just want to write MicroPython programs, you can skip the
-   remaining sections.*
+   *MicroPythonプログラムを書くだけなら、以降のセクションは
+   読み飛ばしても構いません。*
 
-   The remaining sections are aimed at curious users who want go beyond
-   MicroPython and access some of the other built-in features of Linux and
-   ev3dev.
+   以降のセクションは、MicroPythonを超えて、Linuxやev3devに組み込まれた
+   他の機能に触れてみたい好奇心旺盛なユーザー向けです。
 
-The Linux command line
+Linuxコマンドライン
 -----------------------------------------
 
-Although your EV3 Brick is quite like a real computer, you do not interact with
-it using a big screen and a mouse. Instead, you can access files and programs
-on it using the *command line*. It is also called the *terminal*.
+EV3 Brickは本物のコンピューターにかなり近いものですが、大きな画面と
+マウスで操作するわけではありません。代わりに *コマンドライン* を使って
+ファイルやプログラムにアクセスします。 *ターミナル* とも呼ばれます。
 
-Follow the steps in :numref:`fig_terminal` to access the command line. Now
-you can enter commands by typing them in and pressing enter.
+:numref:`fig_terminal` の手順に従ってコマンドラインに
+アクセスします。これでコマンドを入力してEnterを押すことで実行できます。
 
 .. _fig_terminal:
 
@@ -32,79 +32,81 @@ you can enter commands by typing them in and pressing enter.
    :alt: files
    :align: center
 
-   Opening the Linux command line and running the ``ls`` command.
+   Linuxコマンドラインを開いて ``ls`` コマンドを実行する。
 
-**Running basic commands**
+**基本的なコマンドを実行する**
 
-For example, if you type the following command and press enter::
+たとえば、次のコマンドを入力してEnterを押すと::
 
    ls
 
-then you will see the contents of the current folder. :numref:`fig_terminal`
-shows the result: it listed the project folder of the ``getting_started``
-project that we just ran.
+現在のフォルダーの内容が表示されます。 :numref:`fig_terminal` が
+その結果です。さきほど実行した ``getting_started`` プロジェクトの
+フォルダーが一覧に表示されています。
 
-If you type the following command and press enter::
+次のコマンドを入力してEnterを押すと::
 
    exit
 
-then the command line will be closed. Alternatively, click the garbage icon
-shown in :numref:`fig_terminal`.
+コマンドラインが閉じます。または、
+:numref:`fig_terminal` に示したゴミ箱アイコンをクリックします。
 
-You can copy text from the command line by selecting it and
-then pressing ``ctrl`` ``shift`` ``c``.
-You can paste text into the command line
-using ``ctrl`` ``shift`` ``v``.
+コマンドラインのテキストは、選択してから
+``ctrl`` ``shift`` ``c`` を押すとコピーできます。
+``ctrl`` ``shift`` ``v`` で
+コマンドラインにテキストを貼り付けられます。
 
-**Running commands as an administrator**
+**管理者としてコマンドを実行する**
 
-Some commands require a password to run. This is similar to administrative
-tasks on your computer or tablet, such as installing a new app. These commands
-work like any other command, but you add ``sudo`` in front of
-them.
+一部のコマンドは実行にパスワードが必要です。新しいアプリを
+インストールするなど、コンピューターやタブレットでの管理作業と
+似ています。これらのコマンドは
+通常のコマンドと同じように動作しますが、前に
+``sudo`` を付けます。
 
-As an exercise, you can run the following command to turn the EV3 Brick off::
+練習として、次のコマンドを実行してEV3 Brickの電源を切ることができます::
 
    sudo poweroff
 
-You will be prompted for a password. Type ``maker`` and then press ``Enter``.
+パスワードを求められます。 ``maker`` と入力して ``Enter`` を押します。
 
 .. warning::
 
-   Only run commands with ``sudo`` if you know what you are doing.
+   自分が何をしているかわかっている場合にのみ、 ``sudo`` を使って
+   コマンドを実行してください。
 
-**Learning more about the command line**
+**コマンドラインについてさらに学ぶ**
 
-To learn more about the command line and many of the available commands, we
-recommend reading the beginner-friendly free ebook
-called `The Linux Command Line`_.
+コマンドラインと利用できる多くのコマンドについてさらに学ぶには、
+初心者にもやさしい無料の電子書籍
+`The Linux Command Line`_ を読むことをおすすめします。
 
-To learn more about ev3dev-specific tips and tricks, visit the `ev3dev`_
-website.
+ev3dev固有のヒントやコツについては、 `ev3dev`_
+Webサイトを参照してください。
 
 .. _hostname:
 
-Changing the EV3 Brick name
+EV3 Brickの名前を変更する
 -----------------------------------------------------------
 
-When you search for your EV3 using Visual Studio Code, you see all EV3 Bricks
-listed by their name. By default, all EV3 Bricks are named *ev3dev*. Follow
-these steps to change that name:
+Visual Studio CodeでEV3を検索すると、すべてのEV3 Brickが
+名前の一覧で表示されます。デフォルトではすべてのEV3 Brickが *ev3dev*
+という名前です。以下の手順でその名前を変更できます。
 
-   1. Open Visual Studio Code and connect to your EV3 as usual.
-   2. Read the steps above about running commands as an administrator.
-   3. Think of a good name. In this example, we'll
-      call it ``autonomous-vehicle2``
-   4. Enter the following command and press enter::
+   1. Visual Studio Codeを開き、いつもどおりEV3に接続します。
+   2. 上記の管理者としてコマンドを実行する手順を読みます。
+   3. よい名前を考えます。この例では
+      ``autonomous-vehicle2`` と名付けます。
+   4. 次のコマンドを入力してEnterを押します::
 
          sudo hostnamectl set-hostname autonomous-vehicle2
 
-   5. Reboot the EV3 Brick for the change to take effect.
-   6. You may need to reboot your computer as well.
+   5. 変更を反映するためにEV3 Brickを再起動します。
+   6. コンピューターも再起動が必要な場合があります。
 
-EV3 Brick names should only contain lowercase letters ``a`` through ``z``,
-the digits ``0`` through ``9``, and the hyphen ``-``. It must start with a
-letter or digit. It cannot include spaces or other symbols.
+EV3 Brickの名前に使えるのは、小文字の ``a`` から ``z`` 、
+数字の ``0`` から ``9`` 、ハイフンの ``-`` のみです。先頭は文字または
+数字にする必要があります。スペースやその他の記号は使えません。
 
 .. _ev3dev: https://www.ev3dev.org/
 .. _The Linux Command Line: http://linuxcommand.org/tlcl.php

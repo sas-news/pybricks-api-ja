@@ -1,20 +1,21 @@
-:mod:`messaging <pybricks.messaging>` -- Messaging
-==================================================
+:mod:`messaging <pybricks.messaging>` -- メッセージング
+================================================================
 
 .. module:: pybricks.messaging
 
 .. currentmodule:: pybricks.messaging
 
-An EV3 Brick can send information to another EV3 Brick using Bluetooth. This
-page shows you how to connect multiple bricks and how to write scripts to send
-messages between them.
+EV3ブロックはBluetoothを使って別のEV3ブロックに情報を送信できます。
+このページでは、複数のブロックを接続する方法と、それらの間で
+メッセージを送受信するスクリプトの書き方を紹介します。
 
-Pairing two EV3 Bricks
-----------------------
+2台のEV3ブロックをペアリングする
+------------------------------------------------
 
-Before two EV3 bricks can exchange messages, they must be *paired*.
-You'll need to do this only the first time. First, activate bluetooth on all
-EV3 bricks as shown in :numref:`fig_bluetooth_on`.
+2台のEV3ブロックがメッセージをやり取りするには、事前に *ペアリング*
+が必要です。これは最初の1回だけ行えばよいものです。まず、
+:numref:`fig_bluetooth_on` に示すようにすべてのEV3ブロックで
+Bluetoothを有効にします。
 
 .. _fig_bluetooth_on:
 
@@ -23,13 +24,14 @@ EV3 bricks as shown in :numref:`fig_bluetooth_on`.
    :alt: bluetooth_on
    :align: center
 
-   Turn on Bluetooth and make Bluetooth visible.
+   Bluetoothをオンにし、Bluetoothを検出可能な状態にします。
 
-Now you can make one EV3 Brick search for the other and pair with it, as shown
-in :numref:`fig_bluetooth_pair`.
+次に、 :numref:`fig_bluetooth_pair` に示すように、片方のEV3ブロックから
+もう片方を検索してペアリングします。
 
-Once they are paired, do *not* click *connect* in the menu that appears.
-The connection will be made when you run your programs, as described below.
+ペアリングが完了したら、表示されるメニューで *connect* は
+クリックしないでください。
+接続は、後述するようにプログラムを実行したときに確立されます。
 
 .. _fig_bluetooth_pair:
 
@@ -38,22 +40,25 @@ The connection will be made when you run your programs, as described below.
    :alt: bluetooth_pair
    :align: center
 
-   Pairing one EV3 Brick to another EV3 Brick.
+   あるEV3ブロックを別のEV3ブロックにペアリングします。
 
-When you scan for Bluetooth devices, you'll see a list of device names. By
-default, all EV3 Bricks are named *ev3dev*. Click :ref:`here <hostname>` to
-learn how to change that name. This makes it easy to tell them apart.
+Bluetoothデバイスをスキャンすると、デバイス名の一覧が表示されます。
+既定では、すべてのEV3ブロックは *ev3dev* という名前になっています。
+名前の変更方法は :ref:`こちら <hostname>` を参照してください。
+名前を変えておくと、複数のブロックを区別しやすくなります。
 
-Repeat the steps in :numref:`fig_bluetooth_pair` if you want to pair more than
-two EV3 Bricks.
+3台以上のEV3ブロックをペアリングしたい場合は、
+:numref:`fig_bluetooth_pair` の手順を繰り返します。
 
-Server and Client
------------------
+サーバーとクライアント
+-----------------------------------
 
-A wireless network consists of EV3 Bricks acting as servers or clients. A
-example with one server and one client is shown in :numref:`fig_messaging`.
-Messages can be sent in both ways: the server can send a message to the client,
-and the client can send a message to the server.
+無線ネットワークは、サーバーまたはクライアントとして動作する
+EV3ブロックで構成されます。
+サーバー1台とクライアント1台の例を :numref:`fig_messaging` に
+示します。
+メッセージは双方向に送信できます。サーバーからクライアントへも、
+クライアントからサーバーへも送信できます。
 
 .. _fig_messaging:
 
@@ -62,55 +67,56 @@ and the client can send a message to the server.
    :alt: messaging
    :align: center
 
-   An example network with one server and one clients.
+   サーバー1台とクライアント1台からなるネットワークの例。
 
 .. toggle-header::
-    :header: **Show/hide full server example**
+    :header: **サーバーの完全な例を表示/非表示**
 
-    **Example: EV3 Bluetooth Server.**
+    **例: EV3 Bluetoothサーバー。**
 
-    This is the full version of the excerpt shown in :numref:`fig_messaging`.
+    :numref:`fig_messaging` に示した抜粋の完全版です。
 
     .. literalinclude:: ../../pybricks-projects/snippets/ev3/bluetooth_server/server.py
 
 .. toggle-header::
-    :header: **Show/hide full client example**
+    :header: **クライアントの完全な例を表示/非表示**
 
-    **Example: EV3 Bluetooth Client.**
+    **例: EV3 Bluetoothクライアント。**
 
-    This is the full version of the excerpt shown in :numref:`fig_messaging`.
+    :numref:`fig_messaging` に示した抜粋の完全版です。
 
     .. literalinclude:: ../../pybricks-projects/snippets/ev3/bluetooth_client/client.py
 
 
-The only difference between the client and the server is which one initiates
-the connection at the beginning of the program:
+クライアントとサーバーの唯一の違いは、プログラムの冒頭でどちらが
+接続を開始するかです。
 
-    - The **server** must always be started first. It uses the
-      ``BluetoothMailboxServer`` class. Then it waits for clients using
-      the ``wait_for_connection`` method.
-    - The **client** uses the ``BluetoothMailboxClient`` class. It
-      connects to the server using the ``connect`` method.
-    - After that, sending and receiving messages is done in the same way on
-      both EV3 Bricks.
+    - **サーバー** は常に先に起動する必要があります。
+      ``BluetoothMailboxServer`` クラスを使用し、
+      ``wait_for_connection`` メソッドでクライアントを待ちます。
+    - **クライアント** は ``BluetoothMailboxClient`` クラスを使用し、
+      ``connect`` メソッドでサーバーに接続します。
+    - その後のメッセージの送受信は、どちらのEV3ブロックでも同じ方法で
+      行います。
 
 .. autoclass:: BluetoothMailboxServer
 
 .. autoclass:: BluetoothMailboxClient
 
 
-Mailboxes
----------
+メールボックス
+-----------------------
 
-Mailboxes are used to send data to and from other EV3 Bricks.
+メールボックスは、他のEV3ブロックとの間でデータを送受信するために
+使います。
 
-A Mailbox has a ``name``, similar to the "subject" of an email. If two EV3
-Bricks have a Mailbox with the same name, they can send messages between them.
-Each EV3 Brick can read its own Mailbox, and send messages to the Mailbox on
-the other EV3 Brick.
+メールボックスには、メールの「件名」のような ``name`` があります。
+2台のEV3ブロックが同じ名前のメールボックスを持っていれば、それらの間で
+メッセージを送れます。各EV3ブロックは自分のメールボックスを読み取り、
+相手のEV3ブロック上のメールボックスへメッセージを送信できます。
 
-Depending on the type of messages you would like to exchange (bytes, booleans,
-numbers, or text), you can choose one of the Mailboxes below.
+やり取りしたいメッセージの種類（バイト列、真偽値、数値、テキスト）に
+応じて、以下のメールボックスから選択してください。
 
 .. autoclass:: Mailbox
 
@@ -123,12 +129,12 @@ numbers, or text), you can choose one of the Mailboxes below.
 .. autoclass:: TextMailbox
     :no-members:
 
-Making bigger networks
-----------------------
+より大きなネットワークを作る
+--------------------------------------------
 
-The classes in this module are not limited to just two EV3 Bricks. for
-example, you can add more clients to your network. An example with pseudo-code
-is shown in :numref:`fig_messaging_network`.
+このモジュールのクラスは、2台のEV3ブロックだけに限定されません。
+たとえば、ネットワークにクライアントを追加できます。疑似コードによる
+例を :numref:`fig_messaging_network` に示します。
 
 .. _fig_messaging_network:
 
@@ -137,4 +143,4 @@ is shown in :numref:`fig_messaging_network`.
    :alt: messaging
    :align: center
 
-   An example network with one server and two clients.
+   サーバー1台とクライアント2台からなるネットワークの例。
