@@ -6,7 +6,7 @@
 import os
 
 # General information about the project.
-project = 'pybricks-micropython'
+project = 'ev3-micropython'
 copyright = '2018-2020 The Pybricks Authors'
 author = ''
 

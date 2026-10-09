@@ -57,3 +57,5 @@ genrst/
 # Virtual environment
 ######################
 .venv/
+venv/
+doc/api/build/

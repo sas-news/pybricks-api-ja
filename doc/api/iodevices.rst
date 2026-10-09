@@ -13,15 +13,9 @@
 LUMP Device
 ^^^^^^^^^^^^^
 
-.. figure:: ../api/images/sensor_lump.png
-   :width: 80 %
+.. figure:: images/sensor_rj12_green.png
+   :width: 25 %
 
 .. autoclass:: pybricks.iodevices.LUMPDevice
-
-.. raw:: html
-
-   <h1>EV3 Only</h1>
-
-The classes listed below are **only available on the EV3**.
 
 .. include:: iodevices_ev3.inc

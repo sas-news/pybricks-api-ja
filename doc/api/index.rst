@@ -1,29 +1,26 @@
-Welcome to Pybricks!
-==================================================================
+Getting started with LEGO® MINDSTORMS Education EV3 MicroPython
+===============================================================
 
-This documentation has everything you need to install Pybricks and
-run your first scripts.
+This guide shows you how to get started writing MicroPython programs for your
+LEGO® MINDSTORMS® EV3 robots. You'll learn to do so in three steps:
 
+- :doc:`Installation <startinstall>`: First you'll prepare your computer
+  by collecting and installing the required tools. 
+  
+- :doc:`EV3 Brick <startbrick>`: Next, you'll learn to work with the EV3 Brick.
 
-**Step 1: Install Pybricks**
+- :doc:`Creating and running programs <startrun>`: Finally, you'll learn how to
+  create and run a programs.
 
-To get started, go to the :doc:`EV3 Quick Start <start_ev3>`.
+After you've run the first demo program, you'll be ready to try out the example
+programs and start inventing your own programs.
 
+.. note::
 
-**Step 2: Start coding!**
+   **EV3 MicroPython version v2.0 was released on May 18, 2020.**
 
-After you've followed the installation steps for your hub,
-check out the Pybricks modules in the left hand menu to see what
-you can do.
-
-**Step 3: Share what you made (or ask for help!)**
-
-Got questions or issues? Please share your
-findings on our `support page`_ so we can make Pybricks even better.
-*Thank you!*
-
-
-.. _support page: https://github.com/pybricks/support/issues/
+   If you are still using v1.0, check out :doc:`this guide <startupgrade>`
+   to upgrade.
 
 .. toctree::
     :maxdepth: 1
@@ -32,21 +29,14 @@ findings on our `support page`_ so we can make Pybricks even better.
 
 .. toctree::
     :maxdepth: 1
-    :caption: Pybricks
+    :caption: Getting Started
     :hidden:
 
-    Home Page <https://pybricks.com>
-    Downloads <https://pybricks.com/downloads/>
-    Example Projects <https://github.com/pybricks/pybricks-projects>
-    Support <https://github.com/pybricks/support/issues/>
-    About Pybricks <https://pybricks.com/about/>
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Getting started
-   :hidden:
-
-   start_ev3
+    startinstall
+    startbrick
+    startrun
+    startlinux
+    startupgrade
 
 .. toctree::
    :maxdepth: 1
@@ -70,4 +60,32 @@ findings on our `support page`_ so we can make Pybricks even better.
 
    signaltypes
    motors
-..    frames
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Robot Educator Programs
+   :hidden:
+
+   examples/robot_educator_basic
+   examples/robot_educator_ultrasonic
+   examples/robot_educator_line
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Core Set Programs
+   :hidden:
+
+   examples/color_sorter
+   examples/robot_arm
+   examples/puppy
+   examples/gyro_boy
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Expansion Set Programs
+   :hidden:
+
+   examples/elephant
+   examples/stair_climber
+   examples/tank_bot
+   examples/znap

@@ -1,5 +1,5 @@
 :mod:`parameters <pybricks.parameters>` -- Parameters and Constants
-===================================================================
+=====================================================================
 
 .. automodule:: pybricks.parameters
     :no-members:
@@ -7,29 +7,26 @@
 .. autoclass:: pybricks.parameters.Port
     :no-members:
 
-    Motor ports:
+        Motor ports:
 
-    .. data:: A
-    .. data:: B
-    .. data:: C
-    .. data:: D
+            .. data:: A
+            .. data:: B
+            .. data:: C
+            .. data:: D
 
-    Sensor ports:
+        Sensor ports:
 
-    .. data:: S1
-    .. data:: S2
-    .. data:: S3
-    .. data:: S4
+            .. data:: S1
+            .. data:: S2
+            .. data:: S3
+            .. data:: S4
 
 .. autoclass:: pybricks.parameters.Direction
     :no-members:
 
-    In general, clockwise is defined by **looking at the motor shaft, just
-    like looking at a clock**.
-
-    Some motors have two shafts. If in doubt, refer to the following diagrams:
-
-        - Clockwise direction for :ref:`EV3/NXT motors <fig_ev3motors>`
+    By default, the positive direction is set as clockwise. Refer to
+    :ref:`this diagram <fig_ev3motors>` to see which direction this is for EV3
+    motors.
 
 .. autoclass:: pybricks.parameters.Stop
     :no-members:
@@ -58,6 +55,7 @@
     |        |            |        |             |               | | ``d.straight(0)``                     |
     |        |            |        |             |               | | ``d.straight(100)``                   |
     +--------+------------+--------+-------------+---------------+-----------------------------------------+
+
 
 .. autoclass:: pybricks.parameters.Color
     :no-members:
