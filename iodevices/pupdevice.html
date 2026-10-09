@@ -257,7 +257,7 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Port</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">uerrno</span><span class="w"> </span><span class="kn">import</span> <span class="n">ENODEV</span>
 
-<span class="c1"># Dictionary of device identifiers along with their name.</span>
+<span class="c1"># デバイスIDとその名前の対応表。</span>
 <span class="n">device_names</span> <span class="o">=</span> <span class="p">{</span>
     <span class="c1"># pybricks.pupdevices.DCMotor</span>
     <span class="mi">1</span><span class="p">:</span> <span class="s2">"Wedo 2.0 Medium Motor"</span><span class="p">,</span>
@@ -289,40 +289,40 @@
     <span class="mi">64</span><span class="p">:</span> <span class="s2">"SPIKE 3x3 Color Light Matrix"</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="c1"># Make a list of known ports.</span>
+<span class="c1"># 既知のポートのリストを作る。</span>
 <span class="n">ports</span> <span class="o">=</span> <span class="p">[</span><span class="n">Port</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">Port</span><span class="o">.</span><span class="n">B</span><span class="p">]</span>
 
-<span class="c1"># On hubs that support it, add more ports.</span>
+<span class="c1"># 対応するハブでは、さらにポートを追加する。</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">ports</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">C</span><span class="p">)</span>
     <span class="n">ports</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">D</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
     <span class="k">pass</span>
 
-<span class="c1"># On hubs that support it, add more ports.</span>
+<span class="c1"># 対応するハブでは、さらにポートを追加する。</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">ports</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">E</span><span class="p">)</span>
     <span class="n">ports</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">F</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
     <span class="k">pass</span>
 
-<span class="c1"># Go through all available ports.</span>
+<span class="c1"># 使えるポートをすべて調べる。</span>
 <span class="k">for</span> <span class="n">port</span> <span class="ow">in</span> <span class="n">ports</span><span class="p">:</span>
-    <span class="c1"># Try to get the device, if it is attached.</span>
+    <span class="c1"># デバイスが付いていれば取得を試みる。</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">device</span> <span class="o">=</span> <span class="n">PUPDevice</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">ex</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">ENODEV</span><span class="p">:</span>
-            <span class="c1"># No device found on this port.</span>
+            <span class="c1"># このポートにはデバイスが見つからなかった。</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="s2">": ---"</span><span class="p">)</span>
             <span class="k">continue</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span>
 
-    <span class="c1"># Get the device id</span>
+    <span class="c1"># デバイスIDを取得する</span>
     <span class="nb">id</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">info</span><span class="p">()[</span><span class="s2">"id"</span><span class="p">]</span>
 
-    <span class="c1"># Look up the name.</span>
+    <span class="c1"># 名前を引く。</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="s2">":"</span><span class="p">,</span> <span class="n">device_names</span><span class="p">[</span><span class="nb">id</span><span class="p">])</span>
     <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
