@@ -25,7 +25,7 @@ jobs:
       run: |
         pip install poetry
         poetry run python -m pip install --upgrade pip
-        poetry run python -m pip install --upgrade setuptools
+        poetry run python -m pip install "setuptools<81"
         poetry install
     - name: Lint Python code
       run: poetry run flake8
