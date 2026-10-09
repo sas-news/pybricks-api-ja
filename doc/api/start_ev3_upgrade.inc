@@ -1,72 +1,81 @@
-Upgrading from v1.0 to v2.0
-===============================
+v1.0からv2.0へのアップグレード
+===========================================
 
-*EV3 MicroPython version 2.0 was released on May 18, 2020.*
+*EV3 MicroPython v2.0は2020年5月18日にリリースされました。*
 
-This section is for users who have previously used LEGO MINDSTORMS EV3
-MicroPython v1.0. We'll explain what's changed and how you can upgrade to
-benefit from the latest improvements.
+このセクションは、以前にLEGO MINDSTORMS EV3
+MicroPython v1.0を使っていたユーザー向けです。変更点と、最新の改善を
+利用するためのアップグレード方法を説明します。
 
-If you are a new user and you just got started using version 2.0, you may skip
-this section.
+新規ユーザーでバージョン2.0を使い始めたばかりの場合は、このセクションを
+読み飛ばしても構いません。
 
-Upgrading the microSD Card
+microSDカードのアップグレード
 -----------------------------------------
 
-To upgrade, download the latest microSD card file and install it using the
-standard :ref:`instructions <prepsdcard>`.
+アップグレードするには、最新のmicroSDカードファイルをダウンロードし、
+標準の :ref:`手順 <prepsdcard>` でインストールしてください。
 
-Note that this will erase all your existing files on the SD Card. Before you
-upgrade, make sure that you still have all your projects on your computer.
-If not, you can upload files back to your computer using
-:ref:`these instructions <managefiles>`.
+これによりSDカード上の既存のファイルはすべて消去されることに注意して
+ください。
+アップグレードする前に、すべてのプロジェクトがコンピューター上に
+残っていることを確認してください。
+残っていない場合は、
+:ref:`こちらの手順 <managefiles>` でファイルをコンピューターに
+アップロードして戻すことができます。
 
-As with any software update, *be careful about when you update*. For example,
-if you developed your code using version v1.0 and you are halfway into your
-robotics competition season, you may want to stick with v1.0 for now.
+どんなソフトウェア更新でも、 *更新するタイミングには注意してください* 。
+たとえば、
+v1.0でコードを開発していてロボット競技会のシーズン途中である場合は、
+しばらくv1.0のままにしておくとよいでしょう。
 
 
-Upgrading your existing programs
------------------------------------------
+既存プログラムのアップグレード
+-----------------------------------------------
 
-Most changes in v2.0 are *new* features, like support for additional sensors.
-Naturally, this will not affect your existing code.
-However, some changes were made to existing features to improve performance.
+v2.0の変更のほとんどは、追加センサーのサポートなどの *新機能* です。
+当然ながら、これは既存のコードには影響しません。
+ただし、パフォーマンスを改善するために既存機能にもいくつか変更が
+加えられています。
 
-All originally documented features in v1.0 will still work after you upgrade.
-This means that most programs originally made for v1.0 will work with the v2.0
-microSD card image without any changes.
+v1.0でドキュメント化されていたすべての機能は、アップグレード後も
+動作します。
+つまり、v1.0向けに作られたほとんどのプログラムは、v2.0のmicroSD
+カードイメージで変更なしに動作します。
 
-To try this, simply download and run your original code as you did before.
+試すには、以前と同じように元のコードをダウンロードして実行するだけです。
 
-However, it is recommended that you upgrade both the microSD card and your
-programs at the same time to ensure everything works as expected.
+ただし、すべてが期待どおり動作することを確実にするために、microSD
+カードとプログラムの両方を同時にアップグレードすることを
+おすすめします。
 
-The new EV3Brick() class replaces the ev3brick module
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+新しいEV3Brick()クラスがev3brickモジュールを置き換え
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Version 2.0 introduces the :class:`EV3Brick() <pybricks.hubs.EV3Brick>` class.
-You can use it instead of the old  ``ev3brick`` module. The old ``ev3brick``
-module can still be used, but it is no longer recommended or documented.
+バージョン2.0では :class:`EV3Brick() <pybricks.hubs.EV3Brick>` クラスが
+導入されました。
+古い ``ev3brick`` モジュールの代わりに使用できます。古い ``ev3brick``
+モジュールも引き続き使用できますが、推奨されず、ドキュメント化も
+されていません。
 
-The :class:`EV3Brick() <pybricks.hubs.EV3Brick>` class improves the speed and
-reliability of the EV3 screen and the EV3 speaker. It also adds functionality
-like speech and drawing shapes. The default
-font size is also bigger to make it easier to read text on the screen.
+:class:`EV3Brick() <pybricks.hubs.EV3Brick>` クラスは、EV3画面と
+EV3スピーカーの速度と信頼性を向上させます。音声や図形描画などの機能も
+追加されています。また、デフォルトの
+フォントサイズが大きくなり、画面上のテキストが読みやすくなりました。
 
-You can use
-the following table as a starting point to upgrade your scripts. See the
-:class:`EV3Brick() <pybricks.hubs.EV3Brick>` class documentation for
-complete details of all methods and arguments.
+以下の表をスクリプトをアップグレードするための手がかりとして使えます。
+すべてのメソッドと引数の完全な詳細は、
+:class:`EV3Brick() <pybricks.hubs.EV3Brick>` クラスのドキュメントを
+参照してください。
 
 .. list-table::
 
-  * - **Action**
+  * - **操作**
     - **v1.0**
     - **v2.0**
 
-  * - | Initialize
-      | your EV3
+  * - | EV3を
+      | 初期化する
     - ::
 
           from pybricks import ev3brick as brick
@@ -76,7 +85,7 @@ complete details of all methods and arguments.
 
           ev3 = EV3Brick()
 
-  * - | Light on
+  * - | ライトを点灯する
     - ::
 
           brick.light(Color.RED)
@@ -84,7 +93,7 @@ complete details of all methods and arguments.
 
           ev3.light.on(Color.RED)
 
-  * - | Light off
+  * - | ライトを消灯する
     - ::
 
           brick.light(None)
@@ -92,8 +101,8 @@ complete details of all methods and arguments.
 
           ev3.light.off()
 
-  * - | Read
-      | Buttons
+  * - | ボタンを
+      | 読み取る
     - ::
 
           if Button.LEFT in brick.buttons():
@@ -103,8 +112,8 @@ complete details of all methods and arguments.
           if Button.LEFT in ev3.buttons.pressed():
               print("Left is pressed.")
 
-  * - | Play a
-      | beep
+  * - | ビープ音を
+      | 鳴らす
     - ::
 
           brick.sound.beep()
@@ -112,8 +121,8 @@ complete details of all methods and arguments.
 
           ev3.speaker.beep()
 
-  * - | Play a
-      | sound file
+  * - | サウンドファイルを
+      | 再生する
     - ::
 
           brick.sound.file(SoundFile.HELLO)
@@ -121,23 +130,23 @@ complete details of all methods and arguments.
 
           ev3.speaker.play_file(SoundFile.HELLO)
 
-  * - | Text to
-      | speech
+  * - | テキストを
+      | 音声に変換する
     -
     - ::
 
           ev3.speaker.say("I can say anything!")
 
-  * - | Play
-      | notes
+  * - | 音符を
+      | 再生する
     -
     - ::
 
           ev3.speaker.play_notes(['C4/4', 'G4/4'])
 
-  * - | Write text
-      | at a given
-      | position
+  * - | 指定した位置に
+      | テキストを
+      | 書き込む
     - ::
 
           brick.display.text("Hello!", (50, 60))
@@ -145,9 +154,9 @@ complete details of all methods and arguments.
 
           ev3.screen.draw_text(50, 60, "Hello!")
 
-  * - | Write text
-      | and scroll
-      | automatically
+  * - | テキストを書き込んで
+      | 自動で
+      | スクロールする
     - ::
 
           brick.display.text("Hello")
@@ -157,8 +166,8 @@ complete details of all methods and arguments.
           ev3.screen.print("Hello")
           ev3.screen.print("world!")
 
-  * - | Change font
-      | size
+  * - | フォントサイズを
+      | 変更する
     -
     - ::
 
@@ -167,9 +176,8 @@ complete details of all methods and arguments.
           big_font = Font(size=24)
           ev3.screen.set_font(big_font)
 
-  * - | Display an
-      | image on
-      | the screen
+  * - | 画面に画像を
+      | 表示する
     - ::
 
           from pybricks.parameters import ImageFile
@@ -181,8 +189,8 @@ complete details of all methods and arguments.
 
           ev3.screen.load_image(ImageFile.Question_MARK)
 
-  * - | Draw shapes
-      | on the screen
+  * - | 画面に図形を
+      | 描画する
     -
     - ::
 
@@ -190,9 +198,9 @@ complete details of all methods and arguments.
           ev3.screen.draw_box(50, 30, 90, 60)
           ev3.screen.draw_circle(70, 90, 20, fill=True)
 
-  * - | Read
-      | battery
-      | voltage
+  * - | バッテリー
+      | 電圧を
+      | 読み取る
     - ::
 
           brick.battery.voltage()
@@ -201,48 +209,51 @@ complete details of all methods and arguments.
           ev3.battery.voltage()
 
 
-Other internal changes to existing features
+既存機能のその他の内部変更
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Most methods of the :class:`Motor() <pybricks.ev3devices.Motor>` class now
-  have ``Stop.HOLD`` as the default instead of ``Stop.COAST``. This improves
-  accuracy in most applications. You can still select ``Stop.COAST`` if you
-  like.
-- The internal PID controllers for the motors are more accurate than before.
-  If you give a motor command when it is already running, it smoothly adjusts
-  the speed to the newly given command. This works even if you keep
-  adjusting the speed in a fast loop.
-- Methods to configure motor settings have changed. You can change settings
-  using the :doc:`control <motors>` attribute now. The old settings setters
-  continue to exist in the implementation, but they are no longer documented.
-- So-called Python *keyword arguments* are now supported. Previously, you
-  could only enter the argument *values*. For example:
+- :class:`Motor() <pybricks.ev3devices.Motor>` クラスのほとんどの
+  メソッドで、デフォルトが ``Stop.COAST`` ではなく ``Stop.HOLD`` に
+  なりました。これにより多くの用途で精度が向上します。必要であれば
+  引き続き ``Stop.COAST`` を選択できます。
+- モーターの内部PIDコントローラーが以前より正確になりました。
+  動作中のモーターにコマンドを送ると、新しいコマンドに合わせて速度が
+  スムーズに調整されます。高速ループで速度を調整し続けても
+  正しく動作します。
+- モーター設定を構成するメソッドが変更されました。現在は
+  :doc:`control <motors>` 属性を使って設定を変更できます。
+  古い設定用セッターは実装上は残っていますが、ドキュメント化は
+  されていません。
+- いわゆるPythonの *キーワード引数* がサポートされるようになりました。
+  以前は引数の *値* しか入力できませんでした。例:
 
    ::
 
        my_motor.run_angle(500, 90, Stop.HOLD, False)
 
-  This is still possible. But you can now choose to omit optional arguments
-  and specify others with *keywords*. This can make your code easier to read.
-  For example:
+  この書き方は引き続き使えます。ただし、任意の引数を省略し、
+  他の引数を *キーワード* で指定できるようになりました。これにより
+  コードが読みやすくなります。例:
 
    ::
 
       my_motor.run_angle(500, 90, wait=False)
-- It is no longer necessary to import ``pybricks.tools.print``. The ``print``
-  function is now built-in. It works just like Python or MicroPython.
-- Most parameters in the :mod:`parameters <pybricks.parameters>` now have a
-  specific type and representation. For example, suppose you measure a color
-  and print the result. If you do ``print(Color.RED)``, you will see the
-  parameter instead of a technical number.
-- Sound and image files have moved to a dedicated :doc:`media <media>` module.
-  Importing them from the old location will continue to work in this release,
-  to make sure existing scripts will still work.
+- ``pybricks.tools.print`` をインポートする必要はなくなりました。
+  ``print`` 関数が組み込みになり、PythonやMicroPythonと同じように
+  動作します。
+- :mod:`parameters <pybricks.parameters>` のほとんどのパラメーターに、
+  固有の型と表現が付きました。たとえば、色を測定して結果を表示すると
+  します。 ``print(Color.RED)`` とすると、内部的な数値ではなく
+  パラメーター名が表示されます。
+- サウンドと画像ファイルは専用の :doc:`media <media>` モジュールに
+  移動しました。
+  このリリースでは、既存のスクリプトが引き続き動作するよう、
+  古い場所からのインポートも引き続き機能します。
 
-**Installing an older version of the Visual Studio Code extension**
+**古いバージョンのVisual Studio Code拡張機能をインストールする**
 
-The Visual Studio Code extension and this documentation are updated
-automatically. You can still use your existing scripts with the updated
-extension. If you absolutely wish to keep the old version, look for the EV3
-extension on the extension tab, click the gear icon, and
-click *install another version*.
+Visual Studio Code拡張機能とこのドキュメントは自動的に更新されます。
+更新された拡張機能でも既存のスクリプトは引き続き使えます。
+どうしても古いバージョンを使い続けたい場合は、拡張機能タブで
+EV3拡張機能を探し、歯車アイコンをクリックして
+*install another version* をクリックしてください。

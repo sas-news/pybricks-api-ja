@@ -1,31 +1,32 @@
-:mod:`media <pybricks.media>` -- Sounds and Images
-==================================================
+:mod:`media <pybricks.media>` -- サウンドと画像
+========================================================
 
 .. module:: pybricks.media
 
-This module describes media such as sound and images that you can use in your
-projects. Media are divided into submodules that indicate on which platform
-they are available.
+このモジュールは、プロジェクトで使用できるサウンドや画像などの
+メディアを扱います。メディアは、どのプラットフォームで利用できるかを
+示すサブモジュールに分かれています。
 
-:mod:`media.ev3dev <pybricks.media.ev3dev>` -- Sounds and Images
----------------------------------------------------------------------
+:mod:`media.ev3dev <pybricks.media.ev3dev>` -- サウンドと画像
+----------------------------------------------------------------------
 
 .. module:: pybricks.media.ev3dev
 
-EV3 MicroPython is built on top of ev3dev, which comes with a variety of image
-and sound files. You can access them using the classes below.
+EV3 MicroPythonはev3dev上に構築されており、ev3devにはさまざまな
+画像ファイルとサウンドファイルが付属しています。以下のクラスを使って
+それらにアクセスできます。
 
-You can also use your own sound and image files by placing them in your project
-folder.
+独自のサウンドファイルや画像ファイルをプロジェクトフォルダーに置いて、
+使うこともできます。
 
-Image Files
-^^^^^^^^^^^
+画像ファイル
+^^^^^^^^^^^^^^^^^^^^
 
 .. autoclass:: pybricks.media.ev3dev.ImageFile
     :no-members:
 
     .. toggle-header::
-        :header: **Information**
+        :header: **情報**
 
         .. data:: ACCEPT
 
@@ -106,7 +107,7 @@ Image Files
                 :width: 15 %
 
     .. toggle-header::
-        :header: **Objects**
+        :header: **オブジェクト**
 
         .. data:: TARGET
 
@@ -114,7 +115,7 @@ Image Files
                 :width: 15 %
 
     .. toggle-header::
-        :header: **Eyes**
+        :header: **目**
 
         .. data:: ANGRY
 
@@ -227,14 +228,14 @@ Image Files
             .. image:: ../../media/ev3dev-media/images/mono/eyes/winking.png
                 :width: 15 %
 
-Sound Files
-^^^^^^^^^^^
+サウンドファイル
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autoclass:: pybricks.media.ev3dev.SoundFile
     :no-members:
 
     .. toggle-header::
-        :header: **Expressions**
+        :header: **表現**
 
         .. data:: BOING
 
@@ -414,7 +415,7 @@ Sound Files
 
 
     .. toggle-header::
-        :header: **Information**
+        :header: **情報**
 
         .. data:: ACTIVATE
 
@@ -627,7 +628,7 @@ Sound Files
             :download:`Download <../../media/ev3dev-media/sounds/information/up.wav>`
 
     .. toggle-header::
-        :header: **Communication**
+        :header: **コミュニケーション**
 
         .. data:: BRAVO
 
@@ -840,7 +841,7 @@ Sound Files
 
 
     .. toggle-header::
-        :header: **Movement sounds**
+        :header: **動きのサウンド**
 
         .. data:: SPEED_DOWN
 
@@ -876,7 +877,7 @@ Sound Files
             :download:`Download <../../media/ev3dev-media/sounds/movements/speed_up.wav>`
 
     .. toggle-header::
-        :header: **Colors**
+        :header: **色**
 
         .. data:: BLACK
 
@@ -957,7 +958,7 @@ Sound Files
 
 
     .. toggle-header::
-        :header: **Mechanical**
+        :header: **機械**
 
         .. data:: AIR_RELEASE
 
@@ -1093,7 +1094,7 @@ Sound Files
 
 
     .. toggle-header::
-        :header: **Animal sounds**
+        :header: **動物のサウンド**
 
         .. data:: CAT_PURR
 
@@ -1241,7 +1242,7 @@ Sound Files
 
 
     .. toggle-header::
-        :header: **Numbers**
+        :header: **数字**
 
         .. data:: ZERO
 
@@ -1366,7 +1367,7 @@ Sound Files
 
 
     .. toggle-header::
-        :header: **System sounds**
+        :header: **システムサウンド**
 
         .. data:: CLICK
 
@@ -1425,8 +1426,8 @@ Sound Files
 
 
 
-Fonts
-^^^^^
+フォント
+^^^^^^^^^^^^^^
 
 .. autoclass:: pybricks.media.ev3dev.Font
     :no-members:
@@ -1446,32 +1447,32 @@ Fonts
 
     .. automethod:: pybricks.media.ev3dev.Font.text_height
 
-    **Exploring more fonts**
+    **さらにフォントを調べる**
 
-    Behind the scenes, Pybricks uses Fontconfig_ for fonts. The Fontconfig
-    command line tools can be used to explore available fonts in more
-    detail. To do so, go to the ev3dev device browser,
-    right click on your EV3 brick, and click *Open SSH Terminal*. Then you can
-    enter one of these commands::
+    Pybricksは内部でフォントに Fontconfig_ を使用しています。
+    Fontconfigのコマンドラインツールを使うと、利用可能なフォントを
+    より詳しく調べられます。そのためには、ev3devデバイスブラウザーで
+    EV3ブロックを右クリックし、 *Open SSH Terminal* をクリックします。
+    そして次のいずれかのコマンドを入力します::
 
-        # List available font families.
+        # 利用可能なフォントファミリーを一覧表示します。
         fc-list :scalable=false family
-        # Perform lookup similar to Font.DEFAULT
+        # Font.DEFAULT と同様の検索を実行します。
         fc-match :scalable=false:dpi=119:family=Lucida:size=12
-        # Perform lookup similar to Font(size=24,lang=zh-cn)
+        # Font(size=24,lang=zh-cn) と同様の検索を実行します。
         fc-match :scalable=false:dpi=119:size=24:lang=zh-cn
 
-    Pybricks only allows the use of bitmap fonts (``scalable=false``)
-    and the screen on the EV3 has 119 pixels per inch (``dpi=119``).
+    Pybricksではビットマップフォント（ ``scalable=false`` ）のみ
+    使用でき、EV3の画面は1インチあたり119ピクセル（ ``dpi=119`` ）です。
 
 .. _FontConfig: https://www.freedesktop.org/wiki/Software/fontconfig/
 
 
-Image Manipulation
-^^^^^^^^^^^^^^^^^^
+画像の操作
+^^^^^^^^^^^^^^^^^
 
-Instead of drawing directly on the EV3 screen, you can make and interact
-with image files using the ``Image`` class given below.
+EV3の画面に直接描画する代わりに、以下の ``Image`` クラスを使って
+画像ファイルを作成・操作できます。
 
 .. |this image| replace:: this image
 
@@ -1480,11 +1481,11 @@ with image files using the ``Image`` class given below.
 
     .. automethod:: pybricks.media.ev3dev.Image.empty
 
-    .. rubric:: Drawing text
+    .. rubric:: テキストの描画
 
-    There are two ways to draw text on images. :meth:`draw_text` lets text be
-    placed precisely on the image or :meth:`print` can be used to automatically
-    print text on a new line.
+    画像にテキストを描画する方法は2つあります。 :meth:`draw_text` は
+    テキストを画像上に正確に配置でき、 :meth:`print` は自動的に
+    新しい行にテキストを出力します。
 
     .. automethod:: pybricks.media.ev3dev.Image.draw_text
 
@@ -1493,18 +1494,17 @@ with image files using the ``Image`` class given below.
     .. automethod:: pybricks.media.ev3dev.Image.set_font
 
 
-    .. rubric:: Drawing images
+    .. rubric:: 画像の描画
 
-    A copy of another image can be drawn on an image. Also consider using
-    sub-images to copy part of an image.
+    画像の上に別の画像のコピーを描画できます。画像の一部を
+    コピーするには、サブ画像の使用も検討してください。
 
     .. automethod:: pybricks.media.ev3dev.Image.draw_image
 
 
-    .. rubric:: Drawing shapes
+    .. rubric:: 図形の描画
 
-    These are the methods to draw basic shapes, including points, lines,
-    rectangles and circles.
+    点、線、矩形、円などの基本的な図形を描画するメソッドです。
 
     .. automethod:: pybricks.media.ev3dev.Image.draw_pixel
 
@@ -1515,20 +1515,20 @@ with image files using the ``Image`` class given below.
     .. automethod:: pybricks.media.ev3dev.Image.draw_circle
 
 
-    .. rubric:: Image properties
+    .. rubric:: 画像のプロパティ
 
     .. autoattribute:: pybricks.media.ev3dev.Image.width
 
     .. autoattribute:: pybricks.media.ev3dev.Image.height
 
 
-    .. rubric:: Replacing the entire image
+    .. rubric:: 画像全体の置き換え
 
     .. automethod:: pybricks.media.ev3dev.Image.clear
 
     .. automethod:: pybricks.media.ev3dev.Image.load_image
 
 
-    .. rubric:: Saving the image
+    .. rubric:: 画像の保存
 
     .. automethod:: pybricks.media.ev3dev.Image.save

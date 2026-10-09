@@ -1,13 +1,13 @@
-Analog Sensor
-^^^^^^^^^^^^^
+アナログセンサー
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: ../api/images/sensor_rj12_brown.png
    :width: 25 %
 
 .. autoclass:: pybricks.iodevices.AnalogSensor
 
-I2C Device
-^^^^^^^^^^^^^
+I2Cデバイス
+^^^^^^^^^^^^^^^^^^
 
 .. figure:: ../api/images/sensor_rj12_bluegreen.png
    :width: 25 %
@@ -15,48 +15,48 @@ I2C Device
 .. autoclass:: pybricks.iodevices.I2CDevice
 
 .. toggle-header::
-    :header: **Show/hide example**
+    :header: **例を表示/非表示**
 
-    **Example: Read and write to an I2C device.**
+    **例: I2Cデバイスへの読み取りと書き込み**
 
     .. literalinclude:: ../../pybricks-projects/snippets/ev3/i2c_basics/main.py
 
 .. _i2caddress:
 
-I2C Addresses
----------------
-I2C addresses are 7-bit values. However, most vendors who make LEGO compatible
-sensors provide an 8-bit address in their documentation.
-To use those addresses, you must shift them by 1 bit.
-For example, if the documented address is ``0xD2``, you can do
-``address = 0xD2 >> 1``.
+I2Cアドレス
+-----------------
+I2Cアドレスは7ビットの値です。ただし、LEGO互換センサーを製造する
+ほとんどのベンダーは、ドキュメントで8ビットのアドレスを提供しています。
+これらのアドレスを使用するには、1ビットシフトする必要があります。
+たとえば、記載されているアドレスが ``0xD2`` の場合は、
+``address = 0xD2 >> 1`` とできます。
 
-Advanced I2C Commands
----------------------
-Some rudimentary I2C devices do not require a register argument or even any
-data. You can achieve this behavior as shown in the examples below.
+高度なI2Cコマンド
+--------------------------
+一部の基本的なI2Cデバイスは、レジスタ引数やデータを必要としません。
+以下の例に示すように、この動作を実現できます。
 
 .. toggle-header::
-    :header: **Show/hide example**
+    :header: **例を表示/非表示**
 
-    **Example: Advanced I2C read and write techniques.**
+    **例: 高度なI2C読み取りと書き込みのテクニック**
 
     .. literalinclude:: ../../pybricks-projects/snippets/ev3/i2c_extra/main.py
 
-**Additional technical resources**
+**その他の技術資料**
 
-The ``I2CDevice`` class methods call functions from the Linux SMBus driver.
-To find out which commands are called under the hood, check the
-`Pybricks source code`_.
-More details about using I2C without MicroPython can be found on
-the `ev3dev I2C`_ page.
+``I2CDevice`` クラスのメソッドは、Linux SMBusドライバーの関数を
+呼び出します。内部でどのコマンドが呼び出されているかは、
+`Pybricksのソースコード`_ を確認してください。
+MicroPythonを使わずにI2Cを使用する詳細については、
+`ev3dev I2C`_ のページを参照してください。
 
 .. _ev3dev I2C: http://docs.ev3dev.org/projects/lego-linux-drivers/en/ev3dev-stretch/i2c.html
-.. _Pybricks source code: https://github.com/pybricks/pybricks-micropython
+.. _Pybricksのソースコード: https://github.com/pybricks/pybricks-micropython
 
 
-UART Device
-^^^^^^^^^^^^^
+UARTデバイス
+^^^^^^^^^^^^^^^^^^
 
 .. figure:: ../api/images/sensor_rj12_gray.png
    :width: 25 %
@@ -64,15 +64,15 @@ UART Device
 .. autoclass:: pybricks.iodevices.UARTDevice
 
 .. toggle-header::
-    :header: **Show/hide example**
+    :header: **例を表示/非表示**
 
-    **Example: Read and write to a UART device.**
+    **例: UARTデバイスへの読み取りと書き込み**
 
     .. literalinclude::
         ../../pybricks-projects/snippets/ev3/uart_basics/main.py
 
-DC Motor
-^^^^^^^^^^^^
+DCモーター
+^^^^^^^^^^^^^^^^
 
 .. figure:: ../api/images/rcxmotor.png
    :width: 40 %
@@ -87,30 +87,30 @@ DC Motor
     .. automethod:: pybricks._common.DCMotor.stop
         :noindex:
 
-Ev3dev sensors
-^^^^^^^^^^^^^^^^^^^^^
+Ev3devセンサー
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: ../api/images/sensor_ev3dev.png
    :width: 70 %
 
-EV3 MicroPython is built on top of ev3dev, which means that a sensor
-may be supported even if it is not listed in this documentation. If so, you can
-use it with the ``Ev3devSensor`` class. This is easier and faster than using
-the custom device classes given above.
+EV3 MicroPythonはev3devの上に構築されているため、このドキュメントに
+記載されていないセンサーでもサポートされている場合があります。その場合、
+``Ev3devSensor`` クラスで使用できます。これは上記のカスタムデバイス
+クラスを使うより簡単で高速です。
 
-To check whether you can use the ``Ev3devSensor`` class:
+``Ev3devSensor`` クラスを使用できるかどうかを確認するには:
 
-    * Plug the sensor into your EV3 Brick.
-    * Go to the main menu of the EV3 Brick.
-    * Select `Device Browser` and then `Sensors`.
-    * If your sensor shows up, you can use it.
+    * センサーをEV3ブロックに接続します。
+    * EV3ブロックのメインメニューを開きます。
+    * `Device Browser` を選択し、次に `Sensors` を選択します。
+    * センサーが表示されれば、使用できます。
 
-Now select your sensor from the menu and choose `set mode`. This shows all
-available modes for this sensor. You can use these mode names as the ``mode``
-setting below.
+メニューからセンサーを選択し、 `set mode` を選択します。そのセンサーで
+利用可能なすべてのモードが表示されます。これらのモード名を、後述の
+``mode`` 設定で使用できます。
 
-To learn more about compatible devices and what each mode does,
-visit the `ev3dev sensors`_ page.
+対応デバイスと各モードの詳細については、 `ev3dev sensors`_ のページを
+参照してください。
 
 .. autoclass:: pybricks.iodevices.Ev3devSensor
     :no-members:
@@ -124,23 +124,24 @@ visit the `ev3dev sensors`_ page.
     .. automethod:: pybricks.iodevices.Ev3devSensor.read
 
 .. toggle-header::
-    :header: **Show/hide example: Reading values with the Ev3devSensor class**
+    :header: **例を表示/非表示: Ev3devSensorクラスで値を読み取る**
 
-    **Example**
+    **例**
 
-    In this example we use the LEGO MINDSTORMS EV3 Color Sensor with the raw
-    RGB mode. This gives uncalibrated red, green, and blue reflection values.
+    この例では、LEGO MINDSTORMS EV3カラーセンサーをraw RGBモードで
+    使用します。これにより、補正されていない赤、緑、青の反射値が
+    得られます。
 
     .. literalinclude::
         ../../pybricks-projects/snippets/ev3/ev3devsensor/main.py
 
 .. toggle-header::
-    :header: **Show/hide example: Extending the Ev3devSensor class**
+    :header: **例を表示/非表示: Ev3devSensorクラスの拡張**
 
-    **Example**
+    **例**
 
-    This example shows how to extend the ``Ev3devSensor`` class by accessing
-    additional features found in the Linux system folder for this device.
+    この例では、このデバイスのLinuxシステムフォルダにある追加機能に
+    アクセスして、 ``Ev3devSensor`` クラスを拡張する方法を示します。
 
     .. literalinclude::
         ../../pybricks-projects/snippets/ev3/ev3devsensor/class_example.py

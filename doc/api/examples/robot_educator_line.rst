@@ -1,18 +1,16 @@
-Line Following
+ライントレース
 =====================
 
-This example project shows how you can make a robotic vehicle track a
-line using
-the :class:`ColorSensor <pybricks.ev3devices.ColorSensor>` and the 
-:class:`.DriveBase` class. This works by adjusting the turn rate based on how
-much the measured reflection deviates from the threshold value. The threshold
-value is selected as the average of the line reflection and the reflection of
-the surrounding surface.
+このサンプルプロジェクトでは、
+:class:`ColorSensor <pybricks.ev3devices.ColorSensor>` と
+:class:`.DriveBase` クラスを使って、ロボット車両にラインをトレースさせる方法を紹介します。
+測定した反射光がしきい値からどれだけずれているかに応じて旋回速度を調整することで動きます。
+しきい値は、ラインの反射光と周囲の表面の反射光の平均として設定します。
 
-.. rubric:: Building instructions
+.. rubric:: 組み立て説明書
 
-Click `here`_ to find all building instructions for the Educator Bot, or use
-`this link`_ to go to the color sensor attachment directly.
+`こちら <here_>`_ からEducator Botの組み立て説明書をすべて確認できます。また、
+`このリンク <this link_>`_ からカラーセンサーアタッチメントの説明書に直接アクセスできます。
 
 .. _fig_robot_educator_line:
 
@@ -20,16 +18,16 @@ Click `here`_ to find all building instructions for the Educator Bot, or use
    :width: 80 %
    :align: center
 
-   Robot Educator with the Color Sensor
+   カラーセンサーを取り付けたロボットエデュケーター
 
-.. rubric:: Example program
+.. rubric:: サンプルプログラム
 
-This example uses the track shown in :numref:`fig_map`, but you can adapt this
-example to follow other lines as well. Download the
-line following track using the link below and print print the required pages.
-You can also create your own track by printing other pages.
+この例では :numref:`fig_map` に示すトラックを使いますが、
+他のラインをトレースするように応用することもできます。下のリンクから
+ライントレース用のトラックをダウンロードして、必要なページを印刷してください。
+他のページを印刷して、自分だけのトラックを作ることもできます。
 
-:download:`Click to download the line following track. <../images/linefollowtiles.pdf>`
+:download:`こちらからライントレース用のトラックをダウンロード。 <../images/linefollowtiles.pdf>`
 
 .. _fig_map:
 
@@ -37,8 +35,8 @@ You can also create your own track by printing other pages.
    :width: 50 %
    :align: center
 
-   Download the line following track and print pages
-   ``2,2,2,2,3,3,3,3,11``.
+   ライントレース用のトラックをダウンロードして、ページ
+   ``2,2,2,2,3,3,3,3,11`` を印刷します。
 
 .. literalinclude::
    ../../../pybricks-projects/official_models/ev3/education_core/robot_educator_line/main.py

@@ -1,10 +1,10 @@
-:mod:`ev3devices <pybricks.ev3devices>` -- EV3 Devices
-======================================================
+:mod:`ev3devices <pybricks.ev3devices>` -- EV3デバイス
+============================================================
 
 .. automodule:: pybricks.ev3devices
     :no-members:
 
-Motors
+モーター
 ^^^^^^^^^^^^
 
 .. _fig_ev3motors:
@@ -12,12 +12,12 @@ Motors
 .. figure:: ../api/images/ev3motors_label.png
    :width: 100 %
 
-   EV3-compatible motors. The arrows indicate the default positive direction.
+   EV3互換モーター。矢印はデフォルトの正の回転方向を示します。
 
 .. autoclass:: pybricks.ev3devices.Motor
     :no-members:
 
-    .. rubric:: Measuring
+    .. rubric:: 計測
 
     .. automethod:: pybricks.ev3devices.Motor.speed
 
@@ -25,7 +25,7 @@ Motors
 
     .. automethod:: pybricks.ev3devices.Motor.reset_angle
 
-    .. rubric:: Stopping
+    .. rubric:: 停止
 
     .. automethod:: pybricks.ev3devices.Motor.stop
 
@@ -33,7 +33,7 @@ Motors
 
     .. automethod:: pybricks.ev3devices.Motor.hold
 
-    .. rubric:: Action
+    .. rubric:: 動作
 
     .. automethod:: pybricks.ev3devices.Motor.run
 
@@ -47,7 +47,7 @@ Motors
 
     .. automethod:: pybricks.ev3devices.Motor.dc
 
-    .. rubric:: Advanced motion control
+    .. rubric:: 高度なモーション制御
 
     .. automethod:: pybricks.ev3devices.Motor.track_target
 
@@ -55,40 +55,40 @@ Motors
         :annotation:
 
 
-Touch Sensor
-^^^^^^^^^^^^
+タッチセンサー
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: ../api/images/sensor_ev3_touch.png
    :width: 18 %
 
 .. autoclass:: pybricks.ev3devices.TouchSensor
 
-Color Sensor
-^^^^^^^^^^^^
+カラーセンサー
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: ../api/images/sensor_ev3_color.png
    :width: 18 %
 
 .. autoclass:: pybricks.ev3devices.ColorSensor
 
-Infrared Sensor and Beacon
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+赤外線センサーとビーコン
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: ../api/images/sensor_ev3_ir.png
    :width: 60 %
 
 .. autoclass:: pybricks.ev3devices.InfraredSensor
 
-Ultrasonic Sensor
-^^^^^^^^^^^^^^^^^
+超音波センサー
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: ../api/images/sensor_ev3_ultrasonic.png
    :width: 22 %
 
 .. autoclass:: pybricks.ev3devices.UltrasonicSensor
 
-Gyroscopic Sensor
-^^^^^^^^^^^^^^^^^
+ジャイロセンサー
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: ../api/images/sensor_ev3_gyro.png
    :width: 18 %
@@ -100,8 +100,8 @@ Gyroscopic Sensor
 
     .. automethod:: pybricks.ev3devices.GyroSensor.angle
 
-         If you use the :meth:`.angle` method, you cannot use the
-         :meth:`.speed` method in the same program. Doing so would reset the
-         sensor angle to zero every time you read the speed.
+         :meth:`.angle` メソッドを使う場合、同じプログラム内で
+         :meth:`.speed` メソッドは使えません。使うと速度を読み取るたびに
+         センサーの角度が0にリセットされてしまいます。
 
     .. automethod:: pybricks.ev3devices.GyroSensor.reset_angle

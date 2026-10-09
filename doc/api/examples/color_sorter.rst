@@ -1,17 +1,18 @@
-Color Sorter
-============
+カラーソーター
+================
 
-This example project makes the Color Sorter scan colored Technic beams using
-the :class:`ColorSensor <pybricks.ev3devices.ColorSensor>`.
+このサンプルプロジェクトでは、カラーソーターが
+:class:`ColorSensor <pybricks.ev3devices.ColorSensor>`
+を使って色付きのTechnicビームをスキャンします。
 
-Scan the colored beams one by one and add them to the tray. A beep confirms
-that it has registered the color. When the tray is full or when you press the
-center button, the robot will start distributing the Technic bricks by color.
+色付きのビームを1本ずつスキャンしてトレイに入れます。
+ビープ音は色が登録されたことを示します。トレイがいっぱいになるか中央ボタンを押すと、
+ロボットが色ごとにTechnicブロックを仕分けし始めます。
 
-.. rubric:: Building instructions
+.. rubric:: 組み立て説明書
 
-Click `here`_ to find all building instructions for the Core Set Models, or use
-`this link`_ to go to the Color Sorter directly.
+`こちら <here_>`_ からコアセットモデルの組み立て説明書をすべて確認できます。また、
+`このリンク <this link_>`_ からカラーソーターの説明書に直接アクセスできます。
 
 .. _fig_color_sorter:
 
@@ -19,9 +20,9 @@ Click `here`_ to find all building instructions for the Core Set Models, or use
    :width: 80 %
    :align: center
 
-   Color Sorter
+   カラーソーター
 
-.. rubric:: Example program
+.. rubric:: サンプルプログラム
 
 .. literalinclude::
    ../../../pybricks-projects/official_models/ev3/education_core/color_sorter/main.py

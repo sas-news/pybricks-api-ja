@@ -133,10 +133,10 @@ class TextMailbox(Mailbox):
         return payload.decode().strip('\0')
 
 
-# EV3 standard firmware is hard-coded to use channel 1
+# EV3標準ファームウェアはチャンネル1に固定されています
 EV3_RFCOMM_CHANNEL = 1
 
-# EV3 VM bytecodes
+# EV3 VMのバイトコード
 SYSTEM_COMMAND_NO_REPLY = 0x81
 WRITEMAILBOX = 0x9E
 
@@ -151,7 +151,7 @@ class MailboxHandler(StreamRequestHandler):
                 if len(buf) == 0:
                     break
             except OSError as ex:
-                # The client disconnected the connection
+                # クライアントが接続を切断しました
                 if ex.args[0] == ECONNRESET:
                     break
                 raise
@@ -175,15 +175,15 @@ class MailboxHandler(StreamRequestHandler):
 
 class MailboxHandlerMixIn:
     def __init__(self):
-        # protects against concurrent access of other attributes
+        # 他の属性への同時アクセスを防ぎます
         self._lock = allocate_lock()
-        # map of mailbox name to raw data
+        # メールボックス名から生データへのマップ
         self._mailboxes = {}
-        # map of device name/address to object with send() method
+        # デバイス名/アドレスからsend()メソッドを持つオブジェクトへのマップ
         self._clients = {}
-        # map of mailbox name to mutex lock
+        # メールボックス名からmutexロックへのマップ
         self._updates = {}
-        # map of names to addresses
+        # 名前からアドレスへのマップ
         self._addresses = {}
 
     def read_from_mailbox(self, mbox):

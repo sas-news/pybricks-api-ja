@@ -1,16 +1,16 @@
-:mod:`nxtdevices <pybricks.nxtdevices>` -- NXT Devices
-======================================================
+:mod:`nxtdevices <pybricks.nxtdevices>` -- NXTデバイス
+============================================================
 
 .. automodule:: pybricks.nxtdevices
     :no-members:
 
-NXT Motor
+NXTモーター
 ^^^^^^^^^^^^^^^^
-This motor works just like a LEGO MINDSTORMS EV3 Large Motor. You can use it in
-your programs using the :mod:`Motor <.ev3devices>` class.
+このモーターは LEGO MINDSTORMS EV3 Large Motor とまったく同じように
+使えます。プログラムでは :mod:`Motor <.ev3devices>` クラスを使います。
 
-NXT Touch Sensor
-^^^^^^^^^^^^^^^^
+NXTタッチセンサー
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: ../api/images/sensor_nxt_touch.png
    :width: 18 %
@@ -20,16 +20,16 @@ NXT Touch Sensor
 
     .. automethod:: pybricks.nxtdevices.TouchSensor.pressed
 
-NXT Light Sensor
-^^^^^^^^^^^^^^^^
+NXT光センサー
+^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: ../api/images/sensor_nxt_light.png
    :width: 18 %
 
 .. autoclass:: pybricks.nxtdevices.LightSensor
 
-NXT Color Sensor
-^^^^^^^^^^^^^^^^
+NXTカラーセンサー
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: ../api/images/sensor_nxt_color.png
    :width: 18 %
@@ -45,54 +45,54 @@ NXT Color Sensor
 
     .. automethod:: pybricks.nxtdevices.ColorSensor.rgb
 
-    .. rubric:: Built-in light
+    .. rubric:: 内蔵ライト
 
-    This sensor has a built-in light. You can make it red, green, blue, or turn
-    it off.
+    このセンサーには内蔵ライトがあります。赤・緑・青に点灯させるか、
+    消灯できます。
 
     .. automethod:: pybricks.nxtdevices::ColorSensor.light.on
 
     .. automethod:: pybricks.nxtdevices::ColorSensor.light.off
 
-NXT Ultrasonic Sensor
-^^^^^^^^^^^^^^^^^^^^^
+NXT超音波センサー
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: ../api/images/sensor_nxt_ultrasonic.png
    :width: 24 %
 
 .. autoclass:: pybricks.nxtdevices.UltrasonicSensor
 
-NXT Sound Sensor
-^^^^^^^^^^^^^^^^^^^^^
+NXTサウンドセンサー
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: ../api/images/sensor_nxt_sound.png
    :width: 18 %
 
 .. autoclass:: pybricks.nxtdevices.SoundSensor
 
-NXT Temperature Sensor
-^^^^^^^^^^^^^^^^^^^^^^
+NXT温度センサー
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: ../api/images/sensor_nxt_temp.png
    :width: 32 %
 
 .. autoclass:: pybricks.nxtdevices.TemperatureSensor
 
-NXT Energy Meter
-^^^^^^^^^^^^^^^^^
+NXTエネルギーメーター
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: ../api/images/energymeter.png
    :width: 30 %
 
 .. autoclass:: pybricks.nxtdevices.EnergyMeter
 
-Vernier Adapter
-^^^^^^^^^^^^^^^^^
+Vernierアダプター
+^^^^^^^^^^^^^^^^^^^^^^^^
 .. autoclass:: pybricks.nxtdevices.VernierAdapter
 
 .. toggle-header::
-    :header: **Show/hide example**
+    :header: **例を表示/非表示**
 
-    **Example: Using the Surface Temperature Sensor.**
+    **例: Surface Temperature Sensor を使います。**
 
     .. literalinclude:: ../../pybricks-projects/snippets/ev3/vernier_surface_temperature/main.py

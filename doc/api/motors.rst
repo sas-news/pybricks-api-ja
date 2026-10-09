@@ -1,4 +1,4 @@
-More about Motors
+モーターについてさらに詳しく
 ===========================================
 
 .. Motor Tips & Tricks
@@ -98,35 +98,35 @@ More about Motors
 
 .. _control:
 
-The Control Class
+Controlクラス
 ^^^^^^^^^^^^^^^^^
 
-The ``Motor`` class uses PID control to accurately track your commanded target
-angles. Similarly, the ``DriveBase`` class uses two of such controllers:
-one to control the heading and one to control the traveled distance.
+``Motor`` クラスはPID制御を使って、指示した目標角度を正確に追従します。
+同様に、 ``DriveBase`` クラスはこのようなコントローラーを2つ使用します。
+1つは方位を制御し、もう1つは走行距離を制御します。
 
-You can change the control settings through the following attributes, which are
-instances of the ``Control`` class given below.:
+制御の設定は、次の属性で変更できます。これらは後述する ``Control``
+クラスのインスタンスです。
 
     - ``Motor.control``
     - ``DriveBase.heading_control``
     - ``DriveBase.distance_control``
 
-You can only change the settings while the controller is stopped. For example,
-you can set the settings at the beginning of your program. Alternatively, first
-call ``stop()`` to make your ``Motor`` or ``DriveBase`` stop, and then change
-the settings.
+設定はコントローラーが停止しているときにのみ変更できます。たとえば、
+プログラムの冒頭で設定を行えます。また、先に ``stop()`` を呼び出して
+``Motor`` や ``DriveBase`` を停止してから、設定を変更することも
+できます。
 
 .. autoclass:: pybricks._common.Control
     :no-members:
 
-    .. rubric:: Status
+    .. rubric:: 状態
 
     .. automethod:: pybricks._common.Control.done
 
     .. automethod:: pybricks._common.Control.stalled
 
-    .. rubric:: Settings
+    .. rubric:: 設定
 
     .. automethod:: pybricks._common.Control.limits
 

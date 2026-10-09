@@ -2,129 +2,128 @@
 # Copyright (c) 2018-2020 The Pybricks Authors
 
 """
-Classes to exchange messages between EV3 bricks.
+EV3ブロック間でメッセージをやり取りするためのクラス。
 """
 
 
 class Mailbox:
     def __init__(self, name, connection, encode=None, decode=None):
-        """Object that represents a mailbox containing data.
+        """データを保持するメールボックスを表すオブジェクトです。
 
-        You can read data that is delivered by other EV3 bricks, or send data
-        to other bricks that have the same mailbox.
+        他のEV3ブロックから配信されたデータを読み取ったり、同じメールボックスを
+        持つ他のブロックへデータを送信したりできます。
 
-        By default, the mailbox reads and send only bytes. To send other
-        data, you can provide an ``encode`` function that encodes your Python
-        object into bytes, and a ``decode`` function to convert bytes back to
-        a Python object.
+        既定では、メールボックスはバイト列だけを読み書きします。他のデータを
+        送るには、Pythonオブジェクトをバイト列に変換する ``encode`` 関数と、
+        バイト列をPythonオブジェクトに戻す ``decode`` 関数を指定します。
 
         Arguments:
             name (str):
-                The name of this mailbox.
+                このメールボックスの名前。
             connection:
-                A connection object such as :class:`BluetoothMailboxClient`.
+                :class:`BluetoothMailboxClient` などの接続オブジェクト。
             encode (callable):
-                Function that encodes a Python object to bytes.
+                Pythonオブジェクトをバイト列にエンコードする関数。
             decode (callable):
-                Function that creates a new Python object from bytes.
+                バイト列から新しいPythonオブジェクトを作成する関数。
         """
 
     def read(self):
-        """Gets the current value of the mailbox.
+        """メールボックスの現在の値を取得します。
 
         Returns:
-            The current value or ``None`` if the mailbox is empty.
+            現在の値。メールボックスが空の場合は ``None`` 。
         """
         return ''
 
     def send(self, value, brick=None):
-        """Sends a value to this mailbox on connected devices.
+        """接続されたデバイス上のこのメールボックスに値を送信します。
 
         Arguments:
             value:
-                The value that will be delivered to the mailbox.
+                メールボックスに配信される値。
             brick (str):
-                The name or Bluetooth address of the brick or ``None`` to
-                to broadcast to all connected devices.
+                ブロックの名前またはBluetoothアドレス。 ``None`` の場合は
+                接続中のすべてのデバイスにブロードキャストします。
 
         Raises:
             OSError:
-                There is a problem with the connection.
+                接続に問題があります。
         """
 
     def wait(self):
-        """Waits for the mailbox to be updated by remote device."""
+        """リモートデバイスによってメールボックスが更新されるまで待機します。"""
 
     def wait_new(self):
-        """Waits for a new value to be delivered to the mailbox that is not
-        equal to the current value in the mailbox.
+        """メールボックス内の現在の値と異なる、新しい値がメールボックスに
+        配信されるまで待機します。
 
 
         Returns:
-            The new value.
+            新しい値。
         """
         return object()
 
 
 class LogicMailbox(Mailbox):
     def __init__(self, name, connection):
-        """Object that represents a mailbox containing boolean data.
+        """真偽値データを保持するメールボックスを表すオブジェクトです。
 
-        This works just like a regular :class:`Mailbox`, but values
-        must be ``True`` or ``False``.
+        通常の :class:`Mailbox` と同じように動作しますが、
+        値は ``True`` または ``False`` のみです。
 
-        This is compatible with the "logic" mailbox type in EV3-G.
+        EV3-Gの「ロジック」メールボックスタイプと互換性があります。
 
         Arguments:
             name (str):
-                The name of this mailbox.
+                このメールボックスの名前。
             connection:
-                A connection object such as :class:`BluetoothMailboxClient`.
+                :class:`BluetoothMailboxClient` などの接続オブジェクト。
         """
 
 
 class NumericMailbox(Mailbox):
     def __init__(self, name, connection):
-        """Object that represents a mailbox containing numeric data.
+        """数値データを保持するメールボックスを表すオブジェクトです。
 
-        This works just like a regular :class:`Mailbox`, but values must be a
-        number, such as ``15`` or ``12.345``
+        通常の :class:`Mailbox` と同じように動作しますが、
+        値は ``15`` や ``12.345`` のような数値である必要があります。
 
-        This is compatible with the "numeric" mailbox type in EV3-G.
+        EV3-Gの「数値」メールボックスタイプと互換性があります。
 
         Arguments:
             name (str):
-                The name of this mailbox.
+                このメールボックスの名前。
             connection:
-                A connection object such as :class:`BluetoothMailboxClient`.
+                :class:`BluetoothMailboxClient` などの接続オブジェクト。
         """
 
 
 class TextMailbox(Mailbox):
     def __init__(self, name, connection):
-        """Object that represents a mailbox containing text data.
+        """テキストデータを保持するメールボックスを表すオブジェクトです。
 
-        This works just like a regular :class:`Mailbox`, but data must be a
-        string, such as ``'hello!'`` or ``'My name is EV3'``.
+        通常の :class:`Mailbox` と同じように動作しますが、
+        データは ``'hello!'`` や ``'My name is EV3'`` のような文字列である
+        必要があります。
 
-        This is compatible with the "text" mailbox type in EV3-G.
+        EV3-Gの「テキスト」メールボックスタイプと互換性があります。
 
         Arguments:
             name (str):
-                The name of this mailbox.
+                このメールボックスの名前。
             connection:
-                A connection object such as :class:`BluetoothMailboxClient`.
+                :class:`BluetoothMailboxClient` などの接続オブジェクト。
         """
 
 
 class BluetoothMailboxServer:
-    """Object that represents a Bluetooth connection from one or more remote
-    EV3s.
+    """1台以上のリモートEV3からのBluetooth接続を表すオブジェクトです。
 
-    The remote EV3s can either be running MicroPython or the standard EV3
-    firmware.
+    リモートのEV3は、MicroPythonでも標準のEV3ファームウェアでも
+    動作しているものが使えます。
 
-    A "server" waits for a "client" to connect to it.
+    「サーバー」は「クライアント」からの接続を待ちます。
     """
 
     def __enter__(self):
@@ -134,29 +133,29 @@ class BluetoothMailboxServer:
         self.close()
 
     def wait_for_connection(self, count=1):
-        """Waits for a :class:`BluetoothMailboxClient` on a remote device to
-        connect.
+        """リモートデバイス上の :class:`BluetoothMailboxClient` が
+        接続するのを待ちます。
 
         Arguments:
             count (int):
-                The number of remote connections to wait for.
+                待機するリモート接続の数。
 
         Raises:
             OSError:
-                There was a problem establishing the connection.
+                接続の確立に問題がありました。
         """
 
     def close(self):
-        """Closes all connections."""
+        """すべての接続を閉じます。"""
 
 
 class BluetoothMailboxClient:
-    """Object that represents a Bluetooth connection to one or more remote EV3s.
+    """1台以上のリモートEV3へのBluetooth接続を表すオブジェクトです。
 
-    The remote EV3s can either be running MicroPython or the standard EV3
-    firmware.
+    リモートのEV3は、MicroPythonでも標準のEV3ファームウェアでも
+    動作しているものが使えます。
 
-    A "client" initiates a connection to a waiting "server".
+    「クライアント」は待機中の「サーバー」への接続を開始します。
     """
 
     def __enter__(self):
@@ -166,19 +165,19 @@ class BluetoothMailboxClient:
         self.close()
 
     def connect(self, brick):
-        """Connects to an :class:`BluetoothMailboxServer` on another device.
+        """別のデバイス上の :class:`BluetoothMailboxServer` に接続します。
 
-        The remote device must be paired and waiting for a connection. See
-        :meth:`BluetoothMailboxServer.wait_for_connection`.
+        リモートデバイスはペアリング済みで、接続を待機している必要があります。
+        :meth:`BluetoothMailboxServer.wait_for_connection` を参照してください。
 
         Arguments:
             brick (str):
-                The name or Bluetooth address of the remote EV3 to connect to.
+                接続先のリモートEV3の名前またはBluetoothアドレス。
 
         Raises:
             OSError:
-                There was a problem establishing the connection.
+                接続の確立に問題がありました。
         """
 
     def server_close(self):
-        """Closes all connections."""
+        """すべての接続を閉じます。"""

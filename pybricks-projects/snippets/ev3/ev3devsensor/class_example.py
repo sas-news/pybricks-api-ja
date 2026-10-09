@@ -9,38 +9,38 @@ class MySensor(Ev3devSensor):
     def __init__(self, port):
         """Initialize the sensor."""
 
-        # Initialize the parent class.
+        # 親クラスを初期化する。
         super().__init__(port)
 
-        # Get the sysfs path.
+        # sysfsパスを取得する。
         self.path = '/sys/class/lego-sensor/sensor' + str(self.sensor_index)
 
     def get_modes(self):
         """Get a list of mode strings so we don't have to look them up."""
 
-        # The path of the modes file.
+        # modesファイルのパス。
         modes_path = self.path + '/modes'
 
-        # Open the modes file.
+        # modesファイルを開く。
         with open(modes_path, 'r') as m:
 
-            # Read the contents.
+            # 内容を読み取る。
             contents = m.read()
 
-            # Strip the newline symbol, and split at every space symbol.
+            # 改行文字を取り除き、空白文字で分割する。
             return contents.strip().split(' ')
 
 
-# Initialize the sensor
+# センサーを初期化
 sensor = MySensor(Port.S3)
 
-# Show where this sensor can be found
+# このセンサーの場所を表示
 print(sensor.path)
 
-# Print the available modes
+# 利用可能なモードを表示
 modes = sensor.get_modes()
 print(modes)
 
-# Read mode 0 of this sensor
+# このセンサーのモード0を読み取る
 val = sensor.read(modes[0])
 print(val)

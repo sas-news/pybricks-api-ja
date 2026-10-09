@@ -1,32 +1,32 @@
-Working with vectors
-====================
+ベクトルを使う
+=======================
 
-Scalars and Vectors
-~~~~~~~~~~~~~~~~~~~~~~~
+スカラーとベクトル
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _scalar:
 
-scalar
+スカラー
 --------------
 
 TODO
 
 .. _vector:
 
-vector
+ベクトル
 --------------
 
 TODO
 
-Robot reference frame
-~~~~~~~~~~~~~~~~~~~~~~~
+ロボットの参照フレーム
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _robotframe:
 
-Robot reference frame
-----------------------
+ロボットの参照フレーム
+-----------------------------------
 
-TODO (explanation, diagram, etc)::
-    * X: To the right
-    * Y: forward
-    * Z: upward
+TODO (説明、図など)::
+    * X: 右方向
+    * Y: 前方向
+    * Z: 上方向

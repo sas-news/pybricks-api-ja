@@ -1,8 +1,8 @@
-Using the EV3 Brick
+EV3 Brickを使う
 ===================
 
-Make sure the EV3 Brick is turned off. Insert the microSD card you prepared
-into the microSD card slot on the EV3 Brick, as shown in :numref:`fig_sd`.
+EV3 Brickの電源が切れていることを確認してください。準備したmicroSDカードを、
+:numref:`fig_sd` のようにEV3 BrickのmicroSDカードスロットに挿入します。
 
 .. _fig_sd:
 
@@ -11,22 +11,20 @@ into the microSD card slot on the EV3 Brick, as shown in :numref:`fig_sd`.
    :alt: sd
    :align: center
 
-   Inserting the flashed microSD card into the EV3 Brick
+   書き込み済みのmicroSDカードをEV3 Brickに挿入する
 
 
-Turning the EV3 Brick on and off
+EV3 Brickの電源オン/オフ
 -----------------------------------------------------------
 
-Turn on the EV3 Brick by pressing the dark gray center button.
+中央の濃いグレーのボタンを押して、EV3 Brickの電源を入れます。
 
-The boot process may take several minutes. While booting, the EV3 Brick status
-light turns orange and blinks intermittently, and you'll see a lot of text on
-the EV3 screen. The EV3 Brick is ready for use when the status light turns
-green.
+起動には数分かかることがあります。起動中、EV3 Brickのステータスライトが
+オレンジ色に点滅し、EV3の画面に大量のテキストが表示されます。
+ステータスライトが緑色になれば、EV3 Brickは使用できる状態です。
 
-To turn the EV3 Brick off, open the shutdown menu with the back button, and
-then select *Power Off* using the center button, as shown
-in :numref:`fig_onoff`.
+EV3 Brickの電源を切るには、戻るボタンでシャットダウンメニューを開き、
+中央ボタンで *Power Off* を選択します（ :numref:`fig_onoff` ）。
 
 .. _fig_onoff:
 
@@ -35,13 +33,13 @@ in :numref:`fig_onoff`.
    :alt: onoff
    :align: center
 
-   Turning the EV3 Brick off
+   EV3 Brickの電源を切る
 
-Viewing motor and sensor values
+モーターとセンサーの値を見る
 -----------------------------------------------------------
 
-When you're not running a program, you can view motor and sensor values using
-the device browser, as shown in :numref:`fig_devicebrowser`.
+プログラムを実行していないときは、 :numref:`fig_devicebrowser` のように
+device browserでモーターとセンサーの値を確認できます。
 
 .. _fig_devicebrowser:
 
@@ -50,15 +48,15 @@ the device browser, as shown in :numref:`fig_devicebrowser`.
    :alt: devicebrowser
    :align: center
 
-   Viewing motor and sensor values
+   モーターとセンサーの値を見る
 
-Running a program without a computer
------------------------------------------------------------
+コンピューターなしでプログラムを実行する
+--------------------------------------------------------------
 
-You can run previously downloaded programs directly from the EV3 Brick.
+以前にダウンロードしたプログラムは、EV3 Brickから直接実行できます。
 
-To do so, find the program using the *file browser* on the EV3 screen and press
-the center button key to start the program as shown in :numref:`fig_manualrun`.
+EV3画面の *file browser* でプログラムを見つけ、中央ボタンを押すと、
+:numref:`fig_manualrun` のようにプログラムが起動します。
 
 .. _fig_manualrun:
 
@@ -67,15 +65,15 @@ the center button key to start the program as shown in :numref:`fig_manualrun`.
    :alt: manualrun
    :align: center
 
-   Starting a program using the buttons on the EV3 Brick
+   EV3 Brickのボタンを使ってプログラムを起動する
 
-Going back to the original firmware
+元のファームウェアに戻す
 -----------------------------------------------------------
 
-You can go back to the LEGO® firmware and your LEGO programs at any time. To
-do so:
+いつでもLEGO®ファームウェアとLEGOプログラムに戻すことができます。
+手順は次のとおりです。
 
-1. Turn the EV3 Brick off as shown above.
-2. Wait for the screen and brick status light to turn off.
-3. Remove the microSD card.
-4. Turn the EV3 on.
+1. 上記の手順でEV3 Brickの電源を切ります。
+2. 画面とBrickのステータスライトが消えるまで待ちます。
+3. microSDカードを取り出します。
+4. EV3の電源を入れます。

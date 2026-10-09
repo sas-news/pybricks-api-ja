@@ -1,215 +1,213 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2018-2020 The Pybricks Authors
 
-"""Generic input/output devices."""
+"""汎用入出力デバイス。"""
 
 
 class LUMPDevice:
-    """Devices using the LEGO UART Messaging Protocol."""
+    """LEGO UART Messaging Protocolを使用するデバイス。"""
 
     def __init__(self, port):
         """
 
         Arguments:
-            port (Port): Port to which the device is connected.
+            port (Port): デバイスが接続されているポート。
         """
         pass
 
     def read(self, mode):
-        """Reads values from a given mode.
+        """指定したモードから値を読み取ります。
 
         Arguments:
-            mode (``int``): Device mode.
+            mode (``int``): デバイスのモード。
 
         Returns:
-            ``tuple``: Values read from the sensor.
+            ``tuple``: センサーから読み取られた値。
         """
         pass
 
     def write(self, mode, values):
-        """Writes values to the sensor. Only selected sensors and modes support
-        this.
+        """センサーに値を書き込みます。対応しているセンサーとモードは
+        限られています。
 
         Arguments:
-            mode (``int``): Device mode.
-            data (``tuple``): Values to be written.
+            mode (``int``): デバイスのモード。
+            data (``tuple``): 書き込む値。
         """
         pass
 
 
 class Ev3devSensor:
-    """Read values of an ev3dev-compatible sensor."""
+    """ev3dev互換センサーの値を読み取ります。"""
 
     sensor_index = 0
-    """Index of the ev3dev sysfs `lego-sensor`_ class."""
+    """ev3dev sysfs `lego-sensor`_ クラスのインデックス。"""
 
     port_index = 0
-    """Index of the ev3dev sysfs `lego-port`_ class."""
+    """ev3dev sysfs `lego-port`_ クラスのインデックス。"""
 
     def __init__(self, port):
         """
 
         Arguments:
-            port (Port): Port to which the device is connected.
+            port (Port): デバイスが接続されているポート。
         """
         pass
 
     def read(self, mode):
-        """Reads values at a given mode.
+        """指定したモードで値を読み取ります。
 
         Arguments:
-            mode (``str``): `Mode name`_.
+            mode (``str``): `Mode name`_。
 
         Returns:
-            ``tuple``: Values read from the sensor.
+            ``tuple``: センサーから読み取られた値。
         """
         pass
 
 
 class AnalogSensor:
-    """Generic or custom analog sensor."""
+    """汎用またはカスタムのアナログセンサー。"""
 
     def __init__(self, port):
         """
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーが接続されているポート。
         """
         pass
 
     def voltage(self):
-        """Measures analog voltage.
+        """アナログ電圧を測定します。
 
         Returns:
-            :ref:`voltage`: Analog voltage.
+            :ref:`voltage`: アナログ電圧。
         """
         pass
 
     def resistance(self):
-        """Measures resistance.
+        """抵抗を測定します。
 
-        This value is only meaningful if the analog device is a passive load
-        such as a resistor or thermistor.
+        この値は、アナログデバイスが抵抗器やサーミスタなどのパッシブ負荷
+        である場合にのみ意味を持ちます。
 
         Returns:
-            :ref:`resistance: Ω <voltage>`: Resistance of the analog device.
+            :ref:`resistance: Ω <voltage>`: アナログデバイスの抵抗値。
         """
         pass
 
     def active(self):
-        """Sets sensor to active mode. This sets pin 5 of the sensor
-        port to `high`.
+        """センサーをアクティブモードに設定します。これによりセンサーポートの
+        ピン5が `high` になります。
 
-        This is used in some analog
-        sensors to control a switch. For example, if you use the NXT Light
-        Sensor as a custom analog sensor, this method will turn the light on.
-        From then on, ``voltage()`` returns the raw reflected light value.
+        一部のアナログセンサーでは、スイッチの制御に使用されます。
+        たとえば、NXTライトセンサーをカスタムアナログセンサーとして使用する
+        場合、このメソッドはライトを点灯します。それ以降、 ``voltage()`` は
+        反射光の生の値を返します。
         """
         pass
 
     def passive(self):
-        """Sets sensor to passive mode. This sets pin 5 of the sensor
-        port to `low`.
+        """センサーをパッシブモードに設定します。これによりセンサーポートの
+        ピン5が `low` になります。
 
-        This is used in some analog
-        sensors to control a switch. For example, if you use the NXT Light
-        Sensor as a custom analog sensor, this method will turn the light off.
-        From then on, ``voltage()`` returns the raw ambient light value.
+        一部のアナログセンサーでは、スイッチの制御に使用されます。
+        たとえば、NXTライトセンサーをカスタムアナログセンサーとして使用する
+        場合、このメソッドはライトを消灯します。それ以降、 ``voltage()`` は
+        環境光の生の値を返します。
         """
         pass
 
 
 class I2CDevice:
-    """Generic or custom I2C device."""
+    """汎用またはカスタムのI2Cデバイス。"""
 
     def __init__(self, port, address):
         """
 
         Arguments:
-            port (Port): Port to which the device is connected.
-            address(int): I2C address of the client device. See
-                :ref:`I2C Addresses <i2caddress>`.
+            port (Port): デバイスが接続されているポート。
+            address(int): クライアントデバイスのI2Cアドレス。
+                :ref:`I2C Addresses <i2caddress>` を参照してください。
         """
         pass
 
     def read(self, reg, length=1):
-        """Reads bytes, starting at a given register.
+        """指定したレジスタからバイトを読み取ります。
 
         Arguments:
-            reg (``int``): Register at which to begin
-                reading: 0--255 or 0x00--0xFF.
-            length (``int``): How many bytes to read.
+            reg (``int``): 読み取りを開始するレジスタ:
+                0--255または0x00--0xFF。
+            length (``int``): 読み取るバイト数。
 
         Returns:
-            ``bytes``: Bytes returned from the device.
+            ``bytes``: デバイスから返されたバイト。
         """
         pass
 
     def write(self, reg, data=None):
-        """Writes bytes, starting at a given register.
+        """指定したレジスタからバイトを書き込みます。
 
         Arguments:
-            reg (``int``): Register at which to begin
-                writing: 0--255 or 0x00--0xFF.
-            data (``bytes``): Bytes to be written.
+            reg (``int``): 書き込みを開始するレジスタ:
+                0--255または0x00--0xFF。
+            data (``bytes``): 書き込むバイト。
         """
         pass
 
 
 class UARTDevice:
-    """Generic UART device."""
+    """汎用UARTデバイス。"""
 
     def __init__(self, port, baudrate, timeout=None):
         """
 
         Arguments:
-            port (Port): Port to which the device is connected.
-            baudrate (int): Baudrate of the UART device.
-            timeout (:ref:`time`): How long to wait
-                during :meth:`.read` before giving up. If you choose ``None``,
-                it will wait forever.
+            port (Port): デバイスが接続されているポート。
+            baudrate (int): UARTデバイスのボーレート。
+            timeout (:ref:`time`): :meth:`.read` が諦めるまでの
+                待ち時間。 ``None`` を選ぶと、永久に待ち続けます。
         """
         pass
 
     def read(self, length=1):
-        """Reads a given number of bytes from the buffer.
+        """バッファから指定したバイト数を読み取ります。
 
-        Your program will wait until the requested number of bytes are
-        received. If this takes longer than ``timeout``, the ``ETIMEDOUT``
-        exception is raised.
+        プログラムは要求したバイト数を受信するまで待機します。 ``timeout``
+        を超えると、 ``ETIMEDOUT`` 例外が発生します。
 
         Arguments:
-            length (``int``): How many bytes to read.
+            length (``int``): 読み取るバイト数。
 
         Returns:
-            ``bytes``: Bytes returned from the device.
+            ``bytes``: デバイスから返されたバイト。
         """
         pass
 
     def read_all(self):
-        """Reads all bytes from the buffer.
+        """バッファからすべてのバイトを読み取ります。
 
         Returns:
-            ``bytes``: Bytes returned from the device.
+            ``bytes``: デバイスから返されたバイト。
         """
         pass
 
     def write(self, data):
-        """Writes bytes.
+        """バイトを書き込みます。
 
         Arguments:
-            data (``bytes``): Bytes to be written.
+            data (``bytes``): 書き込むバイト。
         """
         pass
 
     def waiting(self):
-        """Gets how many bytes are still waiting to be read.
+        """読み取り待ちのバイト数を取得します。
 
         Returns:
-            ``int``: Number of bytes in the buffer.
+            ``int``: バッファ内のバイト数。
         """
         pass
 
     def clear(self):
-        """Empties the buffer."""
+        """バッファを空にします。"""
         pass

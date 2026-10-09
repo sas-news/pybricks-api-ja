@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2018-2020 The Pybricks Authors
 
-"""Constant parameters/arguments for the Pybricks API."""
+"""Pybricks API の定数パラメータと引数。"""
 
 from enum import Enum as _Enum
 
@@ -28,7 +28,7 @@ class _PybricksEnum(_Enum, metaclass=_PybricksEnumMeta):
 
 
 class Color(_PybricksEnum):
-    """Light or surface color.
+    """ライトまたは物体表面の色。
 
     .. data:: BLACK
     .. data:: BLUE
@@ -53,7 +53,7 @@ class Color(_PybricksEnum):
 
 
 class Port(_PybricksEnum):
-    """Port on the programmable brick or hub."""
+    """プログラマブルブロックまたはハブのポート。"""
 
     # Generic motor/sensor ports
     A = ord('A')
@@ -71,20 +71,20 @@ class Port(_PybricksEnum):
 
 
 class Stop(_PybricksEnum):
-    """Action after the motor stops: coast, brake, or hold.
+    """モーター停止後の動作: coast（惰行）、brake（ブレーキ）、hold（保持）。
 
     .. data:: COAST
 
-        Let the motor move freely.
+        モーターを自由に回転できる状態にします。
 
     .. data:: BRAKE
 
-        Passively resist small external forces.
+        小さな外力に受動的に抵抗します。
 
     .. data:: HOLD
 
-        Keep controlling the motor to hold it at the commanded angle. This is
-        only available on motors with encoders.
+        モーターの制御を続け、指令された角度に保持します。
+        これはエンコーダー付きモーターでのみ使用できます。
     """
 
     COAST = 0
@@ -93,22 +93,22 @@ class Stop(_PybricksEnum):
 
 
 class Direction(_PybricksEnum):
-    """Rotational direction for positive speed or angle values.
+    """正の速度または角度の値に対する回転方向。
 
     .. data:: CLOCKWISE
 
-        A positive speed value should make the motor move clockwise.
+        正の速度値でモーターが時計回りに回転します。
 
     .. data:: COUNTERCLOCKWISE
 
-        A positive speed value should make the motor move counterclockwise.
+        正の速度値でモーターが反時計回りに回転します。
 
     +--------------------------------+-------------------+-----------------+
-    | ``positive_direction =``       | Positive speed:   | Negative speed: |
+    | ``positive_direction =``       | 正の速度:         | 負の速度:       |
     +================================+===================+=================+
-    | ``Direction.CLOCKWISE``        | clockwise         | counterclockwise|
+    | ``Direction.CLOCKWISE``        | 時計回り          | 反時計回り      |
     +--------------------------------+-------------------+-----------------+
-    | ``Direction.COUNTERCLOCKWISE`` | counterclockwise  | clockwise       |
+    | ``Direction.COUNTERCLOCKWISE`` | 反時計回り        | 時計回り        |
     +--------------------------------+-------------------+-----------------+
     """
 
@@ -117,7 +117,7 @@ class Direction(_PybricksEnum):
 
 
 class Button(_PybricksEnum):
-    """Buttons on a brick or remote:
+    """ブロックまたはリモコンのボタン:
 
     .. data:: LEFT_DOWN
     .. data:: DOWN

@@ -1,35 +1,35 @@
-Installation
+インストール
 ===================
 
-This page guides you through the steps to collect and install everything you
-need to start programming.
+このページでは、プログラミングを始めるために必要なものを集めて
+インストールする手順を説明します。
 
-What do you need?
+必要なもの
 -----------------------------------------------------------
 
-To get started, you'll need:
+始めるには、以下のものが必要です。
 
-- A Windows 10 or Mac OS computer
-- Internet access and administrator access
+- Windows 10またはMac OSのコンピューター
+- インターネット接続と管理者権限
 
-    This is required during the installation only. You will not need special
-    access to write and run programs later on.
+    これらが必要なのはインストール中だけです。その後プログラムを書いて
+    実行するときに特別な権限は必要ありません。
 
-- A microSD card
+- microSDカード
 
-    You'll need a card with a minimum capacity of 4GB and a maximum capacity
-    of 32GB. This type of microSD card is also known as microSDHC. We recommend
-    cards with Application Performance Class A1.
+    容量が4GB以上32GB以下のカードが必要です。このタイプのmicroSDカードは
+    microSDHCとも呼ばれます。Application Performance Class A1のカードを
+    おすすめします。
 
-- A microSD card slot or card reader in your computer
+- コンピューターのmicroSDカードスロットまたはカードリーダー
 
-    If your computer does not have a (micro)SD card slot, you can use an
-    external USB (micro)SD card reader.
+    コンピューターに(micro)SDカードスロットがない場合は、外付けの
+    USB (micro)SDカードリーダーを使えます。
 
-- A mini-USB cable, like the one included with your EV3 set
+- EV3セットに付属しているようなmini-USBケーブル
 
-The typical configuration of this equipment is summarized
-in :numref:`fig_overview`.
+この機器の典型的な構成を
+:numref:`fig_overview` にまとめました。
 
 .. _fig_overview:
 
@@ -38,19 +38,21 @@ in :numref:`fig_overview`.
    :alt: overview
    :align: center
 
-   Setup overview
+   セットアップの概要
 
-Preparing your computer
+コンピューターの準備
 -----------------------------------------------------------
 
-You'll write your MicroPython programs using Visual Studio Code. Follow the
-steps below to download, install, and configure this application:
+MicroPythonプログラムはVisual Studio Codeを使って書きます。以下の手順で
+このアプリケーションをダウンロード、インストール、設定してください。
 
-1. Download `Visual Studio Code <https://code.visualstudio.com/Download>`_.
-2. Follow the on-screen instructions to install the application.
-3. Launch Visual Studio Code.
-4. Open the extensions tab.
-5. Install the EV3 MicroPython extension as shown in :numref:`fig_store`.
+1. `Visual Studio Code <https://code.visualstudio.com/Download>`_ を
+   ダウンロードします。
+2. 画面の指示に従ってアプリケーションをインストールします。
+3. Visual Studio Codeを起動します。
+4. 拡張機能タブを開きます。
+5. :numref:`fig_store` のようにEV3 MicroPython拡張機能を
+   インストールします。
 
 .. _fig_store:
 
@@ -58,42 +60,43 @@ steps below to download, install, and configure this application:
     :alt: store
     :align: center
 
-    Installing the extension from the Visual Studio Code marketplace
+    Visual Studio Codeのマーケットプレイスから拡張機能を
+    インストールする
 
 .. _prepsdcard:
 
-Preparing the microSD card
+microSDカードの準備
 -----------------------------------------------------------
 
-To make it possible to run MicroPython programs on your EV3 Brick, you'll now
-learn how to install the required tools on your microSD card.
+EV3 BrickでMicroPythonプログラムを実行できるようにするため、必要な
+ツールをmicroSDカードにインストールする方法を説明します。
 
-If the microSD card contains files you want to keep, make sure to create a
-backup of its contents first.
-See :ref:`managing files on the EV3 <managefiles>` to learn how to backup your
-previous MicroPython programs if necessary.
+microSDカードに残したいファイルがある場合は、先に内容のバックアップを
+作成してください。
+必要に応じて、以前のMicroPythonプログラムをバックアップする方法は
+:ref:`EV3上のファイルの管理 <managefiles>` を参照してください。
 
-*This process erases everything on your microSD card, including any previous
-MicroPython programs on it.*
+*この手順では、以前のMicroPythonプログラムを含むmicroSDカード上の
+すべての内容が消去されます。*
 
 
-To install the MicroPython tools on your microSD card:
+microSDカードにMicroPythonツールをインストールするには:
 
 .. include:: start_ev3_download.inc
 
-2. Download and install a microSD card flashing tool
-   such as `Etcher <https://www.balena.io/etcher/>`_.
-3. Insert the microSD card into your computer or card reader.
-4. Launch the flashing tool and follow the steps on your screen to install
-   the file you have just downloaded. If you use Etcher, you can follow the
-   instructions below, as shown in :numref:`fig_etcher`.
+2. `Etcher <https://www.balena.io/etcher/>`_ などのmicroSDカード
+   書き込みツールをダウンロードしてインストールします。
+3. microSDカードをコンピューターまたはカードリーダーに挿入します。
+4. 書き込みツールを起動し、画面の手順に従ってダウンロードした
+   ファイルを書き込みます。Etcherを使う場合は、 :numref:`fig_etcher`
+   のように以下の手順に従えます。
 
-    a. Select the EV3 MicroPython microSD card image file you have just
-       downloaded.
-    b. Select your microSD card. Make sure that the device and size correspond
-       to your microSD card.
-    c. Start the flashing process. This may take several minutes. Do not remove
-       the card until the flashing process is complete.
+    a. ダウンロードしたEV3 MicroPython microSDカードイメージファイルを
+       選択します。
+    b. microSDカードを選択します。デバイスとサイズが使用するmicroSD
+       カードと一致していることを確認してください。
+    c. 書き込みを開始します。数分かかることがあります。書き込みが
+       完了するまでカードを抜かないでください。
 
 .. _fig_etcher:
 
@@ -102,14 +105,15 @@ To install the MicroPython tools on your microSD card:
    :alt: etcher
    :align: center
 
-   Using Etcher to flash the EV3 MicroPython microSD card image
+   Etcherを使ってEV3 MicroPython microSDカードイメージを書き込む
 
-Updating the microSD card
+microSDカードの更新
 -----------------------------------------------------------
 
-To update the microSD card, download a new image file using the link above and
-flash it to the microSD card as described above. Be sure
-to :ref:`back up any MicroPython programs you want to save <managefiles>`.
+microSDカードを更新するには、上記のリンクから新しいイメージファイルを
+ダウンロードし、上記の手順でmicroSDカードに書き込んでください。
+残したいMicroPythonプログラムは必ず
+:ref:`バックアップしてください <managefiles>`。
 
-You do not need to erase the contents of the microSD card first. This is done
-automatically when you flash the new image file.
+先にmicroSDカードの内容を消去する必要はありません。新しいイメージ
+ファイルを書き込むときに自動で消去されます。

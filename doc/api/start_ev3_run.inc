@@ -1,21 +1,20 @@
-Creating and running programs
-=============================
+プログラムの作成と実行
+===================================
 
-Now that you've set up your computer and EV3 Brick, you're ready to start
-writing programs.
+コンピューターとEV3 Brickのセットアップが完了したので、プログラムを
+書き始められます。
 
-To make it easier to create and manage your programs, let's first have a quick
-look at how MicroPython projects and programs for your EV3 robots are
-organized.
+プログラムを作成・管理しやすくするために、まずEV3ロボット用の
+MicroPythonプロジェクトとプログラムの構成を簡単に見てみましょう。
 
-Programs are organized into *project folders*, as shown in
-:numref:`fig_projectstructure`. A project folder is a directory on your
-computer that contains the main program (**main.py**) and other optional
-scripts or files. This project folder and all of its contents will be copied
-to the EV3 Brick, where the main program will be run.
+プログラムは *プロジェクトフォルダー* にまとめられます
+( :numref:`fig_projectstructure` )。プロジェクトフォルダーとは、
+メインプログラム( **main.py** )と任意のスクリプトやファイルを含む、
+コンピューター上のディレクトリです。このプロジェクトフォルダーは
+中身ごとEV3 Brickにコピーされ、メインプログラムが実行されます。
 
-This page shows you how to create such a project and how to transfer it to the
-EV3 Brick.
+このページでは、そのようなプロジェクトを作成してEV3 Brickに転送する
+方法を説明します。
 
 .. _fig_projectstructure:
 
@@ -24,17 +23,19 @@ EV3 Brick.
    :alt: projectstructure
    :align: center
 
-   A project contains a program called **main.py** and optional resources like
-   sounds or MicroPython modules.
+   プロジェクトには **main.py** というプログラムと、
+   サウンドやMicroPythonモジュールなどの任意のリソースが含まれます。
 
 
-Creating a new project
+新しいプロジェクトを作成する
 -----------------------------------------------------------
 
-To create a new project, open the EV3 MicroPython tab and
-click *create a new project*, as shown in :numref:`fig_newproject`. Enter a
-project name in the text field that appears and press *Enter*. When prompted,
-choose a location for this program and confirm by clicking *choose folder*.
+新しいプロジェクトを作成するには、 :numref:`fig_newproject` のように
+EV3 MicroPythonタブを開き、 *create a new project* をクリックします。
+表示されたテキストフィールドにプロジェクト名を入力し、 *Enter* を
+押します。
+確認を求められたら、このプログラムの保存場所を選び、 *choose folder*
+をクリックして確定します。
 
 .. _fig_newproject:
 
@@ -43,15 +44,16 @@ choose a location for this program and confirm by clicking *choose folder*.
    :alt: newproject
    :align: center
 
-   Creating a new project. This example is called *getting_started*, but you
-   can choose any name.
+   新しいプロジェクトを作成する。この例では *getting_started* という
+   名前ですが、任意の名前を付けられます。
 
-When you create a new project, it already includes a file called *main.py*. To
-see its contents and to modify it, open it from the file browser as shown in
-:numref:`fig_projectoverview`. This is where you'll write your programs.
+新しいプロジェクトを作成すると、 *main.py* というファイルが最初から
+含まれています。内容を確認したり編集したりするには、
+:numref:`fig_projectoverview` のようにファイルブラウザーから開きます。
+ここにプログラムを書いていきます。
 
-If you are new to MicroPython programming, we recommend that you keep the
-existing code in place and add your code to it.
+MicroPythonプログラミングが初めての場合は、既存のコードを残したまま、
+そこに自分のコードを追加していくことをおすすめします。
 
 .. _fig_projectoverview:
 
@@ -60,15 +62,16 @@ existing code in place and add your code to it.
    :alt: projectoverview
    :align: center
 
-   Opening the default *main.py* program.
+   デフォルトの *main.py* プログラムを開く。
 
-Opening an existing project
+既存のプロジェクトを開く
 -----------------------------------------------------------
 
-To open a project you created previously, click *File* and click
-*Open Folder*, as shown in :numref:`fig_existingproject`. Next, navigate to
-your previously created project folder and click *OK*. You can also open your
-recently used projects using the *Open Recent* menu option.
+以前作成したプロジェクトを開くには、 :numref:`fig_existingproject`
+のように *File* をクリックし、
+*Open Folder* をクリックします。次に、以前作成した
+プロジェクトフォルダーに移動して *OK* をクリックします。
+*Open Recent* メニューから最近使ったプロジェクトを開くこともできます。
 
 .. _fig_existingproject:
 
@@ -77,19 +80,19 @@ recently used projects using the *Open Recent* menu option.
    :alt: existingproject
    :align: center
 
-   Opening a previously created project.
+   以前作成したプロジェクトを開く。
 
 
-Connecting to the EV3 Brick with Visual Studio Code
+Visual Studio CodeでEV3 Brickに接続する
 -----------------------------------------------------------
 
-To be able to transfer your code to the EV3 Brick, you'll first need to
-connect the EV3 Brick to your computer with the mini-USB cable and configure
-the connection with Visual Studio Code. To do so:
+コードをEV3 Brickに転送するには、まずmini-USBケーブルでEV3 Brickを
+コンピューターに接続し、Visual Studio Codeで接続を設定する必要が
+あります。手順は次のとおりです。
 
-- Turn the EV3 Brick on
-- Connect the EV3 Brick to your computer with the mini-USB cable
-- Configure the USB connection as shown in :numref:`fig_connecting`.
+- EV3 Brickの電源を入れます
+- mini-USBケーブルでEV3 Brickをコンピューターに接続します
+- :numref:`fig_connecting` のようにUSB接続を設定します。
 
 .. _fig_connecting:
 
@@ -98,21 +101,20 @@ the connection with Visual Studio Code. To do so:
    :alt: connecting
    :align: center
 
-   Configuring the USB connection between the computer and the EV3 Brick
+   コンピューターとEV3 Brick間のUSB接続を設定する
 
-Downloading and running a program
+プログラムをダウンロードして実行する
 -----------------------------------------------------------
 
-You can press the F5 key to run the program. Alternatively, you can start it
-manually by going to the *debug* tab and clicking the green start arrow, as
-shown in :numref:`fig_running`.
+F5キーを押してプログラムを実行できます。または、 *debug* タブを開いて
+緑色の開始矢印をクリックして手動で起動できます( :numref:`fig_running` )。
 
-When the program starts, a pop-up toolbar allows you to stop the program if
-necessary. You can also stop the program at any time using the back button on
-the EV3 Brick.
+プログラムが開始すると、ポップアップツールバーが表示され、必要に応じて
+プログラムを停止できます。EV3 Brickの戻るボタンでもいつでも
+プログラムを停止できます。
 
-If your program produces any output with the ``print`` command, this is shown
-in the output window.
+プログラムが ``print`` コマンドで何か出力を生成した場合、それは
+出力ウィンドウに表示されます。
 
 .. _fig_running:
 
@@ -121,14 +123,14 @@ in the output window.
    :alt: running
    :align: center
 
-   Running a program
+   プログラムを実行する
 
-Expanding the example program
+サンプルプログラムを拡張する
 -----------------------------------------------------------
 
-Now that you've run the basic code template, you can expand the program to
-make a motor move. First, attach a Large Motor to Port B on the EV3 Brick,
-as shown  in :numref:`fig_firstprogram`.
+基本的なコードテンプレートを実行できたので、プログラムを拡張して
+モーターを動かしてみましょう。まず、 :numref:`fig_firstprogram` の
+ように、EV3 BrickのポートBにLarge Motorを接続します。
 
 .. _fig_firstprogram:
 
@@ -137,24 +139,25 @@ as shown  in :numref:`fig_firstprogram`.
    :alt: firstprogram
    :align: center
 
-   The EV3 Brick with a Large Motor attached to port B.
+   ポートBにLarge Motorを接続したEV3 Brick。
 
-Next, edit *main.py* to make it look like this:
+次に、 *main.py* を次のように編集します:
 
 .. literalinclude::
    ../../pybricks-projects/snippets/ev3/getting_started/main.py
 
-This program makes your robot beep, rotate the motor, and beep again with a
-higher pitched tone. Run the program to make sure that it works as expected.
+このプログラムはロボットをビープさせ、モーターを回転させ、もう一度
+高音でビープさせます。プログラムを実行して、期待どおりに動作することを
+確認してください。
 
 .. _managefiles:
 
-Managing files on the EV3 Brick
+EV3 Brick上のファイルを管理する
 -----------------------------------------------------------
 
-After you've downloaded a project to the EV3 Brick, you can run, delete, or
-back up programs stored on it using the device browser as shown in
-:numref:`fig_files`.
+プロジェクトをEV3 Brickにダウンロードしたら、
+:numref:`fig_files` のようにdevice browserを使って、Brick上の
+プログラムを実行・削除・バックアップできます。
 
 .. _fig_files:
 
@@ -163,4 +166,4 @@ back up programs stored on it using the device browser as shown in
    :alt: files
    :align: center
 
-   Using the EV3 device browser to manage files on your EV3 Brick
+   EV3 device browserでEV3 Brick上のファイルを管理する

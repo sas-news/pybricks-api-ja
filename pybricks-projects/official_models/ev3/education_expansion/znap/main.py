@@ -19,91 +19,91 @@ from pybricks.tools import wait, StopWatch
 from pybricks.media.ev3dev import SoundFile
 from random import randint
 
-# Initialize the EV3 brick.
+# EV3 Brickを初期化します。
 ev3 = EV3Brick()
 
-# Configure 2 motors on Ports A and D.  Set the motor directions to
-# counterclockwise, so that positive speed values make the robot move
-# forward.  These will be the left and right motors of Znap.
+# ポートAとDの2つのモーターを設定します。正の速度値で
+# ロボットが前進するように、モーターの回転方向を
+# 反時計回りに設定します。これらがズナップの左右のモーターです。
 left_motor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
 right_motor = Motor(Port.D, Direction.COUNTERCLOCKWISE)
 
-# The wheel diameter of Znap is about 45 mm.
+# ズナップのホイール直径は約45mmです。
 WHEEL_DIAMETER = 45
 
-# The axle track is the distance between the centers of each of the
-# wheels.  This is about 150 mm for Znap.
+# axle trackとは、左右のホイールの中心間の距離です。
+# ズナップでは約150mmです。
 AXLE_TRACK = 150
 
-# The Driving Base is comprised of 2 motors.  There is a wheel on each
-# motor.  The wheel diameter and axle track values are used to make the
-# motors move at the correct speed when you give a drive command.
+# ドライビングベースは2つのモーターで構成され、各モーターに
+# ホイールが付いています。ホイール直径とaxle trackの値は、
+# 走行コマンドを送ったときにモーターが正しい速さで動くように使います。
 robot = DriveBase(left_motor, right_motor, WHEEL_DIAMETER, AXLE_TRACK)
 
-# Configure the head motor with default settings.
+# 頭のモーターをデフォルト設定で設定します。
 head_motor = Motor(Port.B)
 
-# Set up the Ultrasonic Sensor.  It is used to detect objects.
+# 超音波センサーをセットアップします。物体を検出するために使います。
 ultrasonic_sensor = UltrasonicSensor(Port.S3)
 
-# Set up the Timer.  It is used to move for a random time.
+# タイマーをセットアップします。ランダムな時間だけ動くために使います。
 timer = StopWatch()
 
-# This is the main part of the program.  It is a loop that repeats
-# endlessly.
+# プログラムのメイン部分です。無限に繰り返す
+# ループです。
 while True:
 
     checking = True
     move = 0
 
-    # This loop moves Znap around while checking for objects.  The loop
-    # repeats until an object is closer than 400 mm.
+    # このループは、物体をチェックしながらズナップを動かします。
+    # 物体が400mmより近づくまで繰り返します。
     while checking:
-        # Reset the Timer and generate a random time to move for.
+        # タイマーをリセットし、動く時間をランダムに決めます。
         timer.reset()
         random_time = 600 * randint(1, 3)
 
-        # Znap moves in three different ways.
+        # ズナップは3つの異なる動きをします。
         if move <= 1:
-            # Turn clockwise.
+            # 時計回りに旋回します。
             robot.drive(0, 250)
-            # Wait a bit the first time.
+            # 最初は少し待ちます。
             if move == 0:
                 wait(500)
             move = 2
         elif move == 2:
-            # Turn counterclockwise.
+            # 反時計回りに旋回します。
             robot.drive(0, -250)
             move = 3
         else:
-            # Drive forward.
+            # 前進します。
             robot.drive(800, 0)
             move = 1
 
-        # Keep driving until the random time has passed or an object is
-        # detected.  If an object is detected the "checking" variable
-        # will be set to "False."
+        # ランダムな時間が経過するか物体が検出されるまで
+        # 動き続けます。物体が検出されると「checking」変数が
+        # 「False」に設定されます。
         while checking and timer.time() < random_time:
             checking = ultrasonic_sensor.distance() > 400
             wait(10)
 
-        # Stop driving.
+        # 走行を止めます。
         robot.drive(0, 0)
 
-    # Check if the object is closer than 250 mm.
+    # 物体が250mmより近いか確認します。
     if ultrasonic_sensor.distance() < 250:
-        # Roar and move the head forward to bite.
+        # 吠えて、頭を前に出して噛みつきます。
         head_motor.dc(-100)
         ev3.speaker.play_file(SoundFile.T_REX_ROAR)
         wait(250)
         head_motor.stop()
         wait(1000)
     else:
-        # Move the head and hiss.
+        # 頭を動かしてシューと威嚇します。
         head_motor.dc(-100)
         wait(100)
         head_motor.stop()
         ev3.speaker.play_file(SoundFile.SNAKE_HISS)
 
-    # Reset the head motor to its initial position.
+    # 頭のモーターを初期位置に戻します。
     head_motor.run_target(1200, 0)

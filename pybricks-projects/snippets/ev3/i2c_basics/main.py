@@ -3,21 +3,21 @@ from pybricks.hubs import EV3Brick
 from pybricks.iodevices import I2CDevice
 from pybricks.parameters import Port
 
-# Initialize the EV3
+# EV3を初期化
 ev3 = EV3Brick()
 
-# Initialize I2C Sensor
+# I2Cセンサーを初期化
 device = I2CDevice(Port.S2, 0xD2 >> 1)
 
-# Read one byte from the device.
-# For this device, we can read the Who Am I
-# register (0x0F) for the expected value: 211.
+# デバイスから1バイト読み取る。
+# このデバイスでは、Who Am I
+# レジスタ (0x0F) を読み取ると期待値 211 が返る。
 if 211 not in device.read(0x0F):
     raise OSError("Device is not attached")
 
-# To write data, create a bytes object of one
-# or more bytes. For example:
+# データを書き込むには、1バイト以上の
+# bytesオブジェクトを作成する。例:
 # data = bytes((1, 2, 3))
 
-# Write one byte (value 0x08) to register 0x22
+# レジスタ 0x22 に1バイト (値 0x08) を書き込む
 device.write(0x22, bytes((0x08,)))

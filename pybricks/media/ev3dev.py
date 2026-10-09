@@ -1,14 +1,14 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2018-2020 The Pybricks Authors
 
-"""Images and Sounds for Pybricks on ev3dev."""
+"""ev3dev上のPybricks向けの画像とサウンド。"""
 
 from ..parameters import Color as _Color
 
 
 class Image:
-    """Object representing a graphics image. This can either be an in-memory
-    copy of an image or the image displayed on a screen."""
+    """グラフィックス画像を表すオブジェクト。画像のメモリ内コピー、
+    または画面に表示される画像のいずれかになります。"""
 
     # Documentation note: This class is also treated as the `screen` object
     # on EV3 so we use |this image| when it would make sense to say "the screen"
@@ -19,176 +19,177 @@ class Image:
         """
         Arguments:
             source (str or Image):
-                The source of the image.
+                画像のソース。
 
-                If ``source`` is a string, then the image will be loaded from
-                the file path given by the string. Only ``.png`` files are
-                supported. As a special case, if the string is ``_screen_``,
-                the image will be configured to draw directly on the screen.
+                ``source`` が文字列の場合、その文字列で指定された
+                ファイルパスから画像が読み込まれます。 ``.png`` ファイルのみ
+                サポートされます。特殊ケースとして、文字列が ``_screen_`` の
+                場合、画像は画面に直接描画するように設定されます。
 
-                If an :class:`Image` is given, the new object will contain a
-                copy of the ``source`` image object.
+                :class:`Image` が指定された場合、新しいオブジェクトには
+                ``source`` 画像オブジェクトのコピーが格納されます。
 
             sub (bool):
-                If ``sub`` is ``True``, then the image object will act as a
-                sub-image of the ``source`` image (this only works if the type
-                of ``source`` is :class:`Image` and not when it is a ``str``).
+                ``sub`` が ``True`` の場合、この画像オブジェクトは
+                ``source`` 画像のサブ画像として動作します（これは ``source``
+                の型が :class:`Image` の場合のみ有効で、 ``str`` の場合は
+                無効です）。
 
-                Additional keyword arguments ``x1``, ``y1``, ``x2``, ``y2`` are
-                needed when ``sub=True``. These specify the top-left and
-                bottom-right coordinates in the ``source`` image that will be
-                used as the bounds for the sub-image.
+                ``sub=True`` の場合は、追加のキーワード引数 ``x1``、``y1``、
+                ``x2``、``y2`` が必要です。これらはサブ画像の範囲として
+                使用される、 ``source`` 画像内の左上と右下の座標を指定します。
         """
         pass
 
     @property
     def width(self):
-        """Gets the width of |this image| in pixels."""
+        """|this image| の幅をピクセル単位で取得します。"""
         return 0
 
     @property
     def height(self):
-        """Gets the height of |this image| in pixels."""
+        """|this image| の高さをピクセル単位で取得します。"""
         return 0
 
     def clear(self):
-        """Clears |this image|. All pixels on |this image| will be set to
-        :attr:`Color.WHITE <pybricks.parameters.Color.WHITE>`.
+        """|this image| を消去します。|this image| のすべてのピクセルが
+        :attr:`Color.WHITE <pybricks.parameters.Color.WHITE>` に設定されます。
         """
         pass
 
     def draw_pixel(self, x, y, color=_Color.BLACK):
-        """Draws a single pixel on |this image|.
+        """|this image| に1ピクセルを描画します。
 
         Arguments:
-            x (int): The x coordinate of the pixel.
-            y (int): The y coordinate of the pixel.
-            color (Color): The color of the pixel.
+            x (int): ピクセルのX座標。
+            y (int): ピクセルのY座標。
+            color (Color): ピクセルの色。
         """
         pass
 
     def draw_line(self, x1, y1, x2, y2, width=1, color=_Color.BLACK):
-        """Draws a line on |this image|.
+        """|this image| に線を描画します。
 
         Arguments:
-            x1 (int): The x coordinate of the starting point of the line.
-            y1 (int): The y coordinate of the starting point of the line.
-            x2 (int): The x coordinate of the ending point of the line.
-            y2 (int): The y coordinate of the ending point of the line.
-            width (int): The width of the line in pixels.
-            color (Color): The color of the line.
+            x1 (int): 線の開始点のX座標。
+            y1 (int): 線の開始点のY座標。
+            x2 (int): 線の終了点のX座標。
+            y2 (int): 線の終了点のY座標。
+            width (int): 線の幅（ピクセル単位）。
+            color (Color): 線の色。
         """
         pass
 
     def draw_box(self, x1, y1, x2, y2, r=0, fill=False, color=_Color.BLACK):
-        """Draws a box on |this image|.
+        """|this image| に矩形を描画します。
 
         Arguments:
-            x1 (int): The x coordinate of the left side of the box.
-            y1 (int): The y coordinate of the top of the box.
-            x2 (int): The x coordinate of the right side of the box.
-            y2 (int): The y coordinate of the bottom of the box.
-            r (int): The radius of the corners of the box.
-            fill (bool): If ``True``, the box will be filled with ``color``,
-                otherwise only the outline of the box will be drawn.
-            color (Color): The color of the box.
+            x1 (int): 矩形の左辺のX座標。
+            y1 (int): 矩形の上辺のY座標。
+            x2 (int): 矩形の右辺のX座標。
+            y2 (int): 矩形の下辺のY座標。
+            r (int): 矩形の角の半径。
+            fill (bool): ``True`` の場合、矩形が ``color`` で塗りつぶされます。
+                それ以外の場合は矩形の輪郭のみ描画されます。
+            color (Color): 矩形の色。
         """
         pass
 
     def draw_circle(self, x, y, r, fill=False, color=_Color.BLACK):
-        """Draws a circle on |this image|.
+        """|this image| に円を描画します。
 
         Arguments:
-            x (int): The x coordinate of the center of the circle.
-            y (int): The y coordinate of the center of the circle.
-            r (int): The radius of the circle.
-            fill (bool): If ``True``, the circle will be filled with
-                ``color``, otherwise only the circumference will be drawn.
-            color (Color): The color of the circle.
+            x (int): 円の中心のX座標。
+            y (int): 円の中心のY座標。
+            r (int): 円の半径。
+            fill (bool): ``True`` の場合、円が ``color`` で塗りつぶされます。
+                それ以外の場合は円周のみ描画されます。
+            color (Color): 円の色。
         """
         pass
 
     def draw_image(self, x, y, source, transparent=None):
-        """Draws the ``source`` image on |this image|.
+        """|this image| の上に ``source`` 画像を描画します。
 
         Arguments:
             x (int):
-                The x-axis value where the left side of the image will start.
+                画像の左端が始まるX座標の値。
             y (int):
-                The y-axis value where the top of the image will start.
+                画像の上端が始まるY座標の値。
             source (Image or str):
-                The source :class:`Image`. If the argument is a string, then
-                the ``source`` image is loaded from file.
+                ソースの :class:`Image` 。引数が文字列の場合、 ``source``
+                画像はファイルから読み込まれます。
             transparent (Color):
-                The color of ``image`` to treat as transparent or ``None`` for
-                no transparency.
+                ``image`` 内で透明として扱う色。透明にしない場合は
+                ``None`` 。
         """
 
     def load_image(self, source):
-        """Clears this image, then draws the ``source`` image centered in
-        |this image|.
+        """|this image| を消去してから、 ``source`` 画像を
+        |this image| の中央に描画します。
 
         Arguments:
             source (Image or str):
-                The source :class:`Image`. If the argument is a string, then
-                the ``source`` image is loaded from file.
+                ソースの :class:`Image` 。引数が文字列の場合、 ``source``
+                画像はファイルから読み込まれます。
         """
 
     def draw_text(self, x, y, text, text_color=_Color.BLACK, background_color=None):
-        """Draws text on |this image|.
+        """|this image| にテキストを描画します。
 
-        The most recent font set using :meth:`set_font` will be used or
-        :data:`Font.DEFAULT` if no font has been set yet.
+        :meth:`set_font` で直前に設定されたフォントが使われます。
+        フォントがまだ設定されていない場合は :data:`Font.DEFAULT` が
+        使われます。
 
         Arguments:
             x (int):
-                The x-axis value where the left side of the text will start.
+                テキストの左端が始まるX座標の値。
             y (int):
-                The y-axis value where the top of the text will start.
+                テキストの上端が始まるY座標の値。
             text (str):
-                The text to draw.
+                描画するテキスト。
             text_color (Color):
-                The color used for drawing the text.
+                テキストの描画に使う色。
             background_color (Color):
-                The color used to fill the rectangle behind the text or ``None``
-                for transparent background.
+                テキストの背後の矩形を塗りつぶす色。背景を透明にする場合は
+                ``None`` 。
         """
         pass
 
     def print(self, *args, sep=' ', end='\n'):
-        """Prints a line of text on |this image|.
+        """|this image| にテキストの行を出力します。
 
-        This method works like the builtin ``print()`` function, but it writes
-        on |this image| instead.
+        このメソッドは組み込みの ``print()`` 関数と同じように動作しますが、
+        代わりに |this image| に書き込みます。
 
-        You can set the font using :meth:`set_font`. If no font has been set,
-        :data:`Font.DEFAULT` will be used. The text is always printed used
-        black text with a white background.
+        フォントは :meth:`set_font` で設定できます。フォントが設定されて
+        いない場合は :data:`Font.DEFAULT` が使われます。テキストは常に
+        白背景に黒い文字で出力されます。
 
-        Unlike the builtin ``print()``, the text does not wrap if it is too
-        wide to fit on |this image|. It just gets cut off. But if the text would
-        go off of the bottom of |this image|, the entire image is scrolled up and
-        the text is printed in the new blank area at the bottom of |this image|.
+        組み込みの ``print()`` とは異なり、テキストが |this image| に
+        収まらないほど広い場合でも折り返されず、単に切り捨てられます。
+        ただしテキストが画像の下端を超える場合は、画像全体が上に
+        スクロールし、 |this image| の下部の新しい空白領域にテキストが
+        出力されます。
 
         Arguments:
             * (object):
-                Zero or more objects to print.
+                出力する0個以上のオブジェクト。
             sep (str):
-                Separator that will be placed between each object that is
-                printed.
+                出力される各オブジェクトの間に挟まれる区切り文字。
             end (str):
-                End of line that will be printed after the last object.
+                最後のオブジェクトの後に出力される行末文字。
         """
         pass
 
     def set_font(self, font):
-        """Sets the font used for writing on |this image|.
+        """|this image| への書き込みに使うフォントを設定します。
 
-        The font is used for both :meth:`draw_text` and :meth:`print`.
+        このフォントは :meth:`draw_text` と :meth:`print` の両方に使われます。
 
         Arguments:
             font (:class:`Font`):
-                The font to use.
+                使用するフォント。
         """
         pass
 
@@ -196,278 +197,280 @@ class Image:
     def empty(width=178, height=128):
         """empty(width=<screen width>, height=<screen height>)
 
-        Creates a new empty :class:`Image` object.
+        新しい空の :class:`Image` オブジェクトを作成します。
 
         Arguments:
             width (int):
-                The width of the image in pixels.
+                画像の幅（ピクセル単位）。
             height (int):
-                The height of the image in pixels.
+                画像の高さ（ピクセル単位）。
 
         Returns:
             Image:
-                A new image with all pixels set to :attr:`Color.WHITE
-                <pybricks.parameters.Color.WHITE>`.
+                すべてのピクセルが :attr:`Color.WHITE
+                <pybricks.parameters.Color.WHITE>` に設定された新しい画像。
 
         Raises:
             TypeError:
-                ``width`` or ``height`` is not a number.
+                ``width`` または ``height`` が数値ではありません。
             ValueError:
-                ``width`` or ``height`` is less than 1.
+                ``width`` または ``height`` が1未満です。
             RuntimeError:
-                There was a problem allocating a new image.
+                新しい画像の割り当てに問題がありました。
         """
 
     def save(self, filename):
-        """Saves |this image| as a ``.png`` file.
+        """|this image| を ``.png`` ファイルとして保存します。
 
         Arguments:
             filename (str):
-                The path to the file to be saved.
+                保存するファイルのパス。
 
         Raises:
             TypeError:
-                ``filename`` is not a string.
+                ``filename`` が文字列ではありません。
             OSError:
-                There was a problem saving the file.
+                ファイルの保存に問題がありました。
         """
 
 
 class Font:
-    """Object that represents a font for writing text."""
+    """テキストの描画に使用するフォントを表すオブジェクトです。"""
 
     DEFAULT = None  # assigned later since we can't use Font() here
-    """The default font."""
+    """既定のフォント。"""
 
     def __init__(self, family=None, size=12, bold=False, monospace=False,
                  lang=None, script=None):
-        """The font object will be a font that is the "best" match based on the
-        parameters given and available fonts installed.
+        """フォントオブジェクトは、指定されたパラメータとインストール済みの
+        フォントに基づいて「最も」一致するフォントになります。
 
         Arguments:
             family (str):
-                The preferred font family or ``None`` to use the default value.
+                希望するフォントファミリー。既定値を使う場合は ``None`` 。
             size (int):
-                The preferred font size. Most fonts have sizes between 6 and 24.
-                This is the "point" size and not the same as :attr:`height`.
+                希望するフォントサイズ。ほとんどのフォントは6から24の
+                サイズです。これは「ポイント」サイズであり、 :attr:`height`
+                とは異なります。
             bold (bool):
-                When ``True``, prefer bold fonts.
+                ``True`` の場合、太字フォントを優先します。
             monospace (bool):
-                When ``True`` prefer monospaced fonts. This is useful for
-                aligning multiple rows of text.
+                ``True`` の場合、等幅フォントを優先します。
+                複数行のテキストを揃えるときに便利です。
             lang (str):
-                A language code, such as ``'en'`` or ``'zh-cn'`` or ``None`` to
-                use the default language. [#font_lang]_
+                ``'en'`` や ``'zh-cn'`` のような言語コード。
+                既定の言語を使う場合は ``None`` 。[#font_lang]_
             script (str):
-                A unicode script identifier such as ``'Runr'`` or ``None``.
+                ``'Runr'`` のようなUnicodeのスクリプト識別子、
+                または ``None`` 。
 
         .. [#font_lang]
             .. toggle-header::
-                :header: Language codes
+                :header: 言語コード
 
-                Note: Languages depend on installed fonts. Additional language
-                codes are possible and some listed language codes may not have
-                a satisfactory font.
+                注: 使用できる言語はインストール済みのフォントに依存します。
+                ここにない言語コードも使用可能な場合があり、また記載の
+                言語コードでも十分なフォントがない場合があります。
 
-                - ``'aa'``: Afar
-                - ``'af'``: Afrikaans
-                - ``'an'``: Aragonese
-                - ``'av'``: Avaric
-                - ``'ay'``: Aymara
-                - ``'az-az'``: Azerbaijani
-                - ``'be'``: Belarusian
-                - ``'bg'``: Bulgarian
-                - ``'bi'``: Bislama
-                - ``'bm'``: Bambara
-                - ``'br'``: Breton
-                - ``'bs'``: Bosnian
-                - ``'bua'``: Buriat
-                - ``'ca'``: Catalan
-                - ``'ce'``: Chechen
-                - ``'ch'``: Chamorro
-                - ``'co'``: Corsican
-                - ``'crh'``: Crimean
-                - ``'cs'``: Czech
-                - ``'csb'``: Kashubian
-                - ``'cy'``: Welsh
-                - ``'da'``: Danish
-                - ``'de'``: German
-                - ``'ee'``: Ewe
-                - ``'el'``: Greek
-                - ``'en'``: English
-                - ``'eo'``: Esperanto
-                - ``'es'``: Spanish
-                - ``'et'``: Estonian
-                - ``'eu'``: Basque
-                - ``'ff'``: Fulah
-                - ``'fi'``: Finnish
-                - ``'fil'``: Filipino
-                - ``'fj'``: Fijian
-                - ``'fo'``: Faroese
-                - ``'fr'``: French
-                - ``'fur'``: Friulian
-                - ``'fy'``: Western Frisian
-                - ``'ga'``: Irish
-                - ``'gd'``: Gaelic
-                - ``'gl'``: Galician
-                - ``'gv'``: Manx
-                - ``'ha'``: Hausa
-                - ``'haw'``: Hawaiian
-                - ``'he'``: Hebrew
-                - ``'ho'``: Hiri Motu
-                - ``'hr'``: Croatian
-                - ``'hsb'``: Upper Sorbian
-                - ``'ht'``: Haitian
-                - ``'hu'``: Hungarian
-                - ``'ia'``: Interlingua
-                - ``'id'``: Indonesian
-                - ``'ie'``: Interlingue
-                - ``'ik'``: Inupiaq
-                - ``'io'``: Ido
-                - ``'is'``: Icelandic
-                - ``'it'``: Italian
-                - ``'ja'``: Japanese
-                - ``'jv'``: Javanese
-                - ``'ki'``: Kikuyu
-                - ``'kj'``: Kuanyama
-                - ``'kl'``: Kalaallisut
-                - ``'ko'``: Korean
-                - ``'ku-tr'``: Kurdish
-                - ``'kum'``: Kumyk
-                - ``'kw'``: Cornish
-                - ``'kwm'``: Kwambi
-                - ``'la'``: Latin
-                - ``'lb'``: Luxembourgish
-                - ``'lez'``: Lezghian
-                - ``'lg'``: Ganda
-                - ``'li'``: Limburgan
-                - ``'ln'``: Lingala
-                - ``'lt'``: Lithuanian
-                - ``'lv'``: Latvian
-                - ``'mg'``: Malagasy
-                - ``'mh'``: Marshallese
-                - ``'mi'``: Maori
-                - ``'mk'``: Macedonian
-                - ``'mn-mn'``: Mongolian
-                - ``'mo'``: Moldavian
-                - ``'ms'``: Malay
-                - ``'mt'``: Maltese
-                - ``'na'``: Nauru
-                - ``'nb'``: Norwegian Bokmål
-                - ``'nds'``: Low German
-                - ``'ng'``: Ndonga
-                - ``'nl'``: Dutch
-                - ``'nn'``: Norwegian Nynorsk
-                - ``'no'``: Norwegian
-                - ``'nr'``: South Ndebele
-                - ``'nso'``: Northern Sotho
-                - ``'nv'``: Navajo
-                - ``'ny'``: Chichewa
-                - ``'oc'``: Occitan
-                - ``'om'``: Oromo
-                - ``'os'``: Ossetian
-                - ``'pap-an'``: Papiamento, Netherlands Antilles
-                - ``'pap-aw'``: Papiamento, Aruba
-                - ``'pl'``: Polish
-                - ``'pt'``: Portuguese
-                - ``'qu'``: Quechua
-                - ``'quz'``: Cusco Quechua
-                - ``'rm'``: Romansh
-                - ``'rn'``: Rundi
-                - ``'ro'``: Romanian
-                - ``'ru'``: Russian
-                - ``'rw'``: Kinyarwanda
-                - ``'sc'``: Sardinian
-                - ``'sco'``: Scots
-                - ``'se'``: Northern Sami
-                - ``'sel'``: Selkup
-                - ``'sg'``: Sango
-                - ``'sk'``: Slovak
-                - ``'sl'``: Slovenian
-                - ``'sm'``: Samoan
-                - ``'sma'``: Southern Sami
-                - ``'smj'``: Lule Sami
-                - ``'smn'``: Inari Sami
-                - ``'sms'``: Skolt Sami
-                - ``'sn'``: Shona
-                - ``'so'``: Somali
-                - ``'sq'``: Albanian
-                - ``'sr'``: Serbian
-                - ``'ss'``: Swati
-                - ``'st'``: Southern Sotho
-                - ``'su'``: Sundanese
-                - ``'sv'``: Swedish
-                - ``'sw'``: Swahili
-                - ``'tk'``: Turkmen
-                - ``'tl'``: Tagalog
-                - ``'tn'``: Tswana
-                - ``'to'``: Tonga
-                - ``'tr'``: Turkish
-                - ``'ts'``: Tsonga
-                - ``'ty'``: Tahitian
-                - ``'uk'``: Ukrainian
-                - ``'uz'``: Uzbek
-                - ``'vo'``: Volapük
-                - ``'vot'``: Votic
-                - ``'wa'``: Walloon
-                - ``'wen'``: Sorbian
-                - ``'wo'``: Wolof
-                - ``'xh'``: Xhosa
-                - ``'yap'``: Yapese
-                - ``'yi'``: Yiddish
-                - ``'za'``: Zhuang
-                - ``'zh-cn'``: Chinese, China
-                - ``'zh-sg'``: Chinese, Singapore
-                - ``'zh-tw'``: Chinese, Taiwan
-                - ``'zu'``: Zulu
+                - ``'aa'``: アファル語
+                - ``'af'``: アフリカーンス語
+                - ``'an'``: アラゴン語
+                - ``'av'``: アヴァル語
+                - ``'ay'``: アイマラ語
+                - ``'az-az'``: アゼルバイジャン語
+                - ``'be'``: ベラルーシ語
+                - ``'bg'``: ブルガリア語
+                - ``'bi'``: ビスラマ語
+                - ``'bm'``: バンバラ語
+                - ``'br'``: ブルトン語
+                - ``'bs'``: ボスニア語
+                - ``'bua'``: ブリヤート語
+                - ``'ca'``: カタルーニャ語
+                - ``'ce'``: チェチェン語
+                - ``'ch'``: チャモロ語
+                - ``'co'``: コルシカ語
+                - ``'crh'``: クリミア・タタール語
+                - ``'cs'``: チェコ語
+                - ``'csb'``: カシューブ語
+                - ``'cy'``: ウェールズ語
+                - ``'da'``: デンマーク語
+                - ``'de'``: ドイツ語
+                - ``'ee'``: エウェ語
+                - ``'el'``: ギリシャ語
+                - ``'en'``: 英語
+                - ``'eo'``: エスペラント語
+                - ``'es'``: スペイン語
+                - ``'et'``: エストニア語
+                - ``'eu'``: バスク語
+                - ``'ff'``: フラ語
+                - ``'fi'``: フィンランド語
+                - ``'fil'``: フィリピノ語
+                - ``'fj'``: フィジー語
+                - ``'fo'``: フェロー語
+                - ``'fr'``: フランス語
+                - ``'fur'``: フリウリ語
+                - ``'fy'``: 西フリジア語
+                - ``'ga'``: アイルランド語
+                - ``'gd'``: ゲール語
+                - ``'gl'``: ガリシア語
+                - ``'gv'``: マン島語
+                - ``'ha'``: ハウサ語
+                - ``'haw'``: ハワイ語
+                - ``'he'``: ヘブライ語
+                - ``'ho'``: ヒリ・モツ語
+                - ``'hr'``: クロアチア語
+                - ``'hsb'``: 上ソルブ語
+                - ``'ht'``: ハイチ語
+                - ``'hu'``: ハンガリー語
+                - ``'ia'``: インターリングア
+                - ``'id'``: インドネシア語
+                - ``'ie'``: インターリングエ
+                - ``'ik'``: イヌピアック語
+                - ``'io'``: イド語
+                - ``'is'``: アイスランド語
+                - ``'it'``: イタリア語
+                - ``'ja'``: 日本語
+                - ``'jv'``: ジャワ語
+                - ``'ki'``: キクユ語
+                - ``'kj'``: クワニャマ語
+                - ``'kl'``: カラーリット語
+                - ``'ko'``: 韓国語
+                - ``'ku-tr'``: クルド語
+                - ``'kum'``: クムク語
+                - ``'kw'``: コーンウォール語
+                - ``'kwm'``: クワンビ語
+                - ``'la'``: ラテン語
+                - ``'lb'``: ルクセンブルク語
+                - ``'lez'``: レズギ語
+                - ``'lg'``: ガンダ語
+                - ``'li'``: リンブルグ語
+                - ``'ln'``: リンガラ語
+                - ``'lt'``: リトアニア語
+                - ``'lv'``: ラトビア語
+                - ``'mg'``: マダガスカル語
+                - ``'mh'``: マーシャル語
+                - ``'mi'``: マオリ語
+                - ``'mk'``: マケドニア語
+                - ``'mn-mn'``: モンゴル語
+                - ``'mo'``: モルドバ語
+                - ``'ms'``: マレー語
+                - ``'mt'``: マルタ語
+                - ``'na'``: ナウル語
+                - ``'nb'``: ノルウェー語（ブークモール）
+                - ``'nds'``: 低地ドイツ語
+                - ``'ng'``: ンドンガ語
+                - ``'nl'``: オランダ語
+                - ``'nn'``: ノルウェー語（ニーノシュク）
+                - ``'no'``: ノルウェー語
+                - ``'nr'``: 南ンデベレ語
+                - ``'nso'``: 北ソト語
+                - ``'nv'``: ナバホ語
+                - ``'ny'``: チェワ語
+                - ``'oc'``: オック語
+                - ``'om'``: オロモ語
+                - ``'os'``: オセット語
+                - ``'pap-an'``: パピアメント語（オランダ領アンティル）
+                - ``'pap-aw'``: パピアメント語（アルバ）
+                - ``'pl'``: ポーランド語
+                - ``'pt'``: ポルトガル語
+                - ``'qu'``: ケチュア語
+                - ``'quz'``: ケチュア語（クスコ）
+                - ``'rm'``: ロマンシュ語
+                - ``'rn'``: ルンディ語
+                - ``'ro'``: ルーマニア語
+                - ``'ru'``: ロシア語
+                - ``'rw'``: キニアルワンダ語
+                - ``'sc'``: サルデーニャ語
+                - ``'sco'``: スコットランド語
+                - ``'se'``: 北部サーミ語
+                - ``'sel'``: セリクプ語
+                - ``'sg'``: サンゴ語
+                - ``'sk'``: スロバキア語
+                - ``'sl'``: スロベニア語
+                - ``'sm'``: サモア語
+                - ``'sma'``: 南部サーミ語
+                - ``'smj'``: ルレ・サーミ語
+                - ``'smn'``: イナリ・サーミ語
+                - ``'sms'``: スコルト・サーミ語
+                - ``'sn'``: ショナ語
+                - ``'so'``: ソマリ語
+                - ``'sq'``: アルバニア語
+                - ``'sr'``: セルビア語
+                - ``'ss'``: スワティ語
+                - ``'st'``: 南ソト語
+                - ``'su'``: スンダ語
+                - ``'sv'``: スウェーデン語
+                - ``'sw'``: スワヒリ語
+                - ``'tk'``: トルクメン語
+                - ``'tl'``: タガログ語
+                - ``'tn'``: ツワナ語
+                - ``'to'``: トンガ語
+                - ``'tr'``: トルコ語
+                - ``'ts'``: ツォンガ語
+                - ``'ty'``: タヒチ語
+                - ``'uk'``: ウクライナ語
+                - ``'uz'``: ウズベク語
+                - ``'vo'``: ヴォラピュク語
+                - ``'vot'``: ヴォート語
+                - ``'wa'``: ワロン語
+                - ``'wen'``: ソルブ語
+                - ``'wo'``: ウォロフ語
+                - ``'xh'``: コサ語
+                - ``'yap'``: ヤップ語
+                - ``'yi'``: イディッシュ語
+                - ``'za'``: チワン語
+                - ``'zh-cn'``: 中国語（中国）
+                - ``'zh-sg'``: 中国語（シンガポール）
+                - ``'zh-tw'``: 中国語（台湾）
+                - ``'zu'``: ズールー語
         """
 
     @property
     def family(self):
-        """Gets the family name of the font."""
+        """フォントのファミリー名を取得します。"""
         return 'Lucida'
 
     @property
     def style(self):
-        """Gets a string describing the font style.
+        """フォントスタイルを表す文字列を取得します。
 
-        Can be "Regular" or "Bold".
+        "Regular" または "Bold" になります。
         """
         return 'Regular'
 
     @property
     def width(self):
-        """Gets the width of the widest character of the font."""
+        """フォントの最も幅の広い文字の幅を取得します。"""
         return 0
 
     @property
     def height(self):
-        """Gets the height of the font."""
+        """フォントの高さを取得します。"""
         return 0
 
     def text_width(self, text):
-        """Gets the width of the text when the text is drawn using this font.
+        """このフォントでテキストを描画したときの幅を取得します。
 
         Arguments:
             text (str):
-                The text.
+                テキスト。
 
         Returns:
             int:
-                The width in pixels.
+                幅（ピクセル単位）。
         """
         return 0
 
     def text_height(self, text):
-        """Gets the height of the text when the text is drawn using this font.
+        """このフォントでテキストを描画したときの高さを取得します。
 
         Arguments:
             text (str):
-                The text.
+                テキスト。
 
         Returns:
             int:
-                The height in pixels.
+                高さ（ピクセル単位）。
         """
         return 0
 
@@ -476,7 +479,7 @@ Font.DEFAULT = Font('Lucida', 12)
 
 
 class SoundFile:
-    """Paths to standard EV3 sounds."""
+    """標準のEV3サウンドへのパス。"""
 
     _BASE_PATH = '/usr/share/sounds/ev3dev/'
     SHOUTING = _BASE_PATH + 'expressions/shouting.wav'
@@ -587,7 +590,7 @@ class SoundFile:
 
 
 class ImageFile:
-    """Paths to standard EV3 images."""
+    """標準のEV3画像へのパス。"""
 
     _BASE_PATH = '/usr/share/images/ev3dev/mono/'
     RIGHT = _BASE_PATH + 'information/right.png'

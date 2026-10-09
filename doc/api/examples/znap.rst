@@ -1,14 +1,13 @@
-Znap
-============
+ズナップ
+================
 
-This example project makes Znap drive around randomly while avoiding obstacles.
-When objects are detected, it makes different sounds based on the distance to
-the detected object.
+このサンプルプロジェクトでは、ズナップが障害物を避けながらランダムに動き回ります。
+物体を検出すると、その物体までの距離に応じて異なる音を鳴らします。
 
-.. rubric:: Building instructions
+.. rubric:: 組み立て説明書
 
-Click `here`_ to find all building instructions for the Expansion Set Models,
-or use `this link`_ to go to Znap directly.
+`こちら <here_>`_ から拡張セットモデルの組み立て説明書をすべて確認できます。また、
+`このリンク <this link_>`_ からズナップの説明書に直接アクセスできます。
 
 
 .. _fig_znap:
@@ -17,9 +16,9 @@ or use `this link`_ to go to Znap directly.
    :width: 80 %
    :align: center
 
-   Znap
+   ズナップ
 
-.. rubric:: Example program
+.. rubric:: サンプルプログラム
 
 .. literalinclude::
    ../../../pybricks-projects/official_models/ev3/education_expansion/znap/main.py
