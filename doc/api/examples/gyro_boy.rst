@@ -1,21 +1,21 @@
-Gyro Boy
-============
+ジャイロボーイ
+================
 
-This program makes Gyro Boy balance on its two wheels using the
-:class:`GyroSensor <pybricks.ev3devices.GyroSensor>`. The duty cycle of the
-motors is continuously adjusted as a function of the gyro angle, the gyro
-speed, the motor angles, and the motor speeds, in order to maintain balance.
+このプログラムは、ジャイロボーイが
+:class:`GyroSensor <pybricks.ev3devices.GyroSensor>`
+を使って2つの車輪でバランスを取れるようにします。バランスを維持するために、
+ジャイロの角度・ジャイロの速度・モーターの角度・モーターの速度の関数として、
+モーターのデューティー比を継続的に調整します。
 
-This program also uses a
-Python generator function (a function that uses yield instead of return) as
-a coroutine. Coroutines are a form of cooperative multitasking that allows the
-robot perform multiple tasks at the same time. This lets you drive it around
-while it is busy balancing.
+このプログラムは、Pythonのジェネレーター関数(returnの代わりにyieldを使う関数)を
+コルーチンとしても使っています。コルーチンは協調的マルチタスクの一種で、
+ロボットが複数のタスクを同時に実行できるようにします。これにより、
+バランスを取っている最中でもロボットを走行させることができます。
 
-.. rubric:: Building instructions
+.. rubric:: 組み立て説明書
 
-Click `here`_ to find all building instructions for the Core Set Models, or use
-`this link`_ to go to Gyro Boy directly.
+`こちら <here_>`_ からコアセットモデルの組み立て説明書をすべて確認できます。また、
+`このリンク <this link_>`_ からジャイロボーイの説明書に直接アクセスできます。
 
 .. _fig_gyro_boy:
 
@@ -23,9 +23,9 @@ Click `here`_ to find all building instructions for the Core Set Models, or use
    :width: 80 %
    :align: center
 
-   Gyro Boy
+   ジャイロボーイ
 
-.. rubric:: Example program
+.. rubric:: サンプルプログラム
 
 .. literalinclude::
    ../../../pybricks-projects/official_models/ev3/education_core/gyro_boy/main.py
