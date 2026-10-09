@@ -17,47 +17,47 @@ from pybricks.parameters import Port, Direction, Button
 from pybricks.tools import wait
 from pybricks.media.ev3dev import Font, SoundFile
 
-# Initialize the EV3 brick.
+# EV3 Brickを初期化します。
 ev3 = EV3Brick()
 
-# Configure the front motor, which drives the front wheels.  Set the
-# motor direction to counterclockwise, so that positive speed values
-# make the robot move forward.
+# 前輪を駆動するフロントモーターを設定します。正の速度値で
+# ロボットが前進するように、モーターの回転方向を
+# 反時計回りに設定します。
 front_motor = Motor(Port.B, Direction.COUNTERCLOCKWISE)
 
-# Configure the rear motor, which drives the rear wheels.  Set the motor
-# direction to counterclockwise, so that positive speed values make the
-# robot move forward.
+# 後輪を駆動するリアモーターを設定します。正の速度値で
+# ロボットが前進するように、モーターの回転方向を
+# 反時計回りに設定します。
 rear_motor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
 
-# Configure the lift motor, which lifts the rear structure.  It has an
-# 8-tooth, a 24-tooth, and a 40-tooth gear connected to it.  Set the
-# motor direction to counterclockwise, so that positive speed values
-# make the rear structure move upward.
+# 後部構造を持ち上げるリフトモーターを設定します。8歯、
+# 24歯、40歯のギアが接続されています。正の速度値で
+# 後部構造が上に動くように、モーターの回転方向を
+# 反時計回りに設定します。
 lift_motor = Motor(Port.D, Direction.COUNTERCLOCKWISE, [8, 24, 40])
 
-# Set up the Gyro Sensor.  It is used to measure the angle of the robot.
-# Keep the Gyro Sensor and EV3 steady when connecting the cable and
-# during start-up of the EV3.
+# ジャイロセンサーをセットアップします。ロボットの角度を測るために使います。
+# ケーブル接続時とEV3起動中は、ジャイロセンサーとEV3を
+# 動かさないでください。
 gyro_sensor = GyroSensor(Port.S2)
 
-# Set up the Touch Sensor.  It is used to detect when the rear
-# structure has moved to its maximum position.
+# タッチセンサーをセットアップします。後部構造が
+# 最大位置まで動いたことを検出するために使います。
 touch_sensor = TouchSensor(Port.S3)
 
-# Using a very large font
+# 非常に大きなフォントを使います
 big_font = Font(size=24)
 ev3.screen.set_font(big_font)
 
-# Initialize the rear structure.  In order to move the structure both
-# the rear motor and lift motor must run in sync.  First, the rear
-# motor moves the robot backward while the lift motor moves the rear
-# structure up until the Touch Sensor is pressed.  Second, the rear
-# motor moves the robot forward while the lift motor moves the rear
-# structure down for a set amount of degrees to move to its starting
-# position.  Finally, the lift motor resets the angle to "0."  This
-# means that when it moves to "0" later on, it returns to this starting
-# position.
+# 後部構造を初期化します。構造を動かすにはリアモーターと
+# リフトモーターの両方を同期して動かす必要があります。
+# まず、リアモーターでロボットを後退させながら、リフトモーターで
+# タッチセンサーが押されるまで後部構造を上げます。次に、
+# リアモーターでロボットを前進させながら、リフトモーターで
+# 後部構造を一定角度だけ下げて開始位置に移動します。
+# 最後に、リフトモーターの角度を「0」にリセットします。
+# つまり、後で「0」まで動かすとこの開始位置に
+# 戻ることになります。
 rear_motor.dc(-20)
 lift_motor.dc(100)
 while not touch_sensor.pressed():
@@ -71,84 +71,84 @@ lift_motor.run_angle(-30, 44)
 lift_motor.reset_angle(0)
 gyro_sensor.reset_angle(0)
 
-# Initialize the steps variable to 0.
+# steps変数を0で初期化します。
 steps = 0
 
-# This loop checks the Brick Buttons to update and display the steps
-# variable.  It repeats until the Center Button is pressed.
+# このループはBrick Buttonsをチェックしてsteps変数を
+# 更新・表示します。中央ボタンが押されるまで繰り返します。
 while True:
-    # Display the steps variable on the screen.
+    # steps変数を画面に表示します。
     ev3.screen.clear()
     ev3.screen.draw_text(70, 50, steps)
     wait(200)
 
-    # Wait until any Brick Button is pressed.
+    # いずれかのBrick Buttonが押されるまで待ちます。
     while not any(ev3.buttons.pressed()):
         wait(10)
 
-    # Check whether Up Button is pressed, and increase the steps
-    # variable by 1 if it is.
+    # Up Buttonが押されているか確認し、押されていれば
+    # steps変数を1増やします。
     if Button.UP in ev3.buttons.pressed():
         steps += 1
 
-    # Check whether Down Button is pressed, and decrease the steps
-    # variable by 1 if it is.
+    # Down Buttonが押されているか確認し、押されていれば
+    # steps変数を1減やします。
     elif Button.DOWN in ev3.buttons.pressed():
         steps -= 1
-        # Make sure the steps variable is not a negative number.
+        # steps変数が負の数にならないようにします。
         if steps < 0:
             steps = 0
 
-    # If the Center Button is pressed, break out of the loop.
+    # 中央ボタンが押されたら、ループを抜けます。
     elif Button.CENTER in ev3.buttons.pressed():
         break
 
-# This loop climbs the stairs for the amount of steps specified in the
-# steps variable.  It repeats until the steps variable is 0.
+# このループはsteps変数で指定された段数の階段を
+# 上ります。steps変数が0になるまで繰り返します。
 while steps > 0:
 
-    # Run the front and rear motors so the robot moves forward.
+    # フロントモーターとリアモーターを動かしてロボットを前進させます。
     front_motor.dc(100)
     rear_motor.dc(90)
 
-    # Keep moving until the robot is at an angle of at least 10 degrees.
+    # ロボットの角度が少なくとも10度になるまで動き続けます。
     while gyro_sensor.angle() < 10:
         wait(10)
 
-    # Run the lift motor to move the rear structure up, while
-    # simultaneously running the front and rear motors.
+    # リフトモーターを動かして後部構造を上げながら、
+    # 同時にフロントモーターとリアモーターも動かします。
     lift_motor.dc(90)
     front_motor.dc(30)
     rear_motor.dc(15)
 
-    # Keep moving the rear structure up until the Touch Sensor is
-    # pressed, or the robot is at an angle of less than -3 degrees.
+    # タッチセンサーが押されるか、ロボットの角度が
+    # -3度未満になるまで、後部構造を上げ続けます。
     while not touch_sensor.pressed():
         if gyro_sensor.angle() < -3:
             break
         wait(10)
     lift_motor.hold()
 
-    # Move the robot forward for some time using the front and rear
-    # motors.
+    # フロントモーターとリアモーターでロボットをしばらく
+    # 前進させます。
     front_motor.dc(60)
     rear_motor.dc(100)
     wait(1300)
 
-    # Play a sound and pull the rear structure up so it gets back to
-    # its starting position.  Keep moving forward slowly by
-    # simultaneously running the front and rear motors.
+    # 音を鳴らし、後部構造を開始位置まで引き上げます。
+    # 同時にフロントモーターとリアモーターで
+    # ゆっくり前進し続けます。
     ev3.speaker.play_file(SoundFile.AIR_RELEASE)
     front_motor.dc(30)
     rear_motor.dc(30)
     lift_motor.run_target(160, 0)
 
-    # Update the "steps" variable and display it on the screen.
+    # 「steps」変数を更新して画面に表示します。
     steps -= 1
     ev3.screen.clear()
     ev3.screen.draw_text(70, 50, steps)
 
-# Settle the robot at the top of a step and end the program.
+# ロボットを段の上で安定させてプログラムを終了します。
 front_motor.dc(100)
 rear_motor.dc(90)
 wait(2000)

@@ -16,43 +16,43 @@ from pybricks.ev3devices import Motor, TouchSensor, ColorSensor
 from pybricks.parameters import Port, Stop, Direction
 from pybricks.tools import wait
 
-# Initialize the EV3 Brick
+# EV3 Brickを初期化します
 ev3 = EV3Brick()
 
-# Configure the gripper motor on Port A with default settings.
+# ポートAのグリッパーモーターをデフォルト設定で設定します。
 gripper_motor = Motor(Port.A)
 
-# Configure the elbow motor. It has an 8-teeth and a 40-teeth gear
-# connected to it. We would like positive speed values to make the
-# arm go upward. This corresponds to counterclockwise rotation
-# of the motor.
+# 肘のモーターを設定します。8歯と40歯のギアが
+# 接続されています。正の速度値でアームが
+# 上に動くようにします。これはモーターの反時計回りの
+# 回転に相当します。
 elbow_motor = Motor(Port.B, Direction.COUNTERCLOCKWISE, [8, 40])
 
-# Configure the motor that rotates the base. It has a 12-teeth and a
-# 36-teeth gear connected to it. We would like positive speed values
-# to make the arm go away from the Touch Sensor. This corresponds
-# to counterclockwise rotation of the motor.
+# ベースを回転させるモーターを設定します。12歯と
+# 36歯のギアが接続されています。正の速度値でアームが
+# タッチセンサーから離れる方向に動くようにします。
+# これはモーターの反時計回りの回転に相当します。
 base_motor = Motor(Port.C, Direction.COUNTERCLOCKWISE, [12, 36])
 
-# Limit the elbow and base accelerations. This results in
-# very smooth motion. Like an industrial robot.
+# 肘とベースの加速度を制限します。これにより、
+# 産業用ロボットのような非常に滑らかな動きになります。
 elbow_motor.control.limits(speed=60, acceleration=120)
 base_motor.control.limits(speed=60, acceleration=120)
 
-# Set up the Touch Sensor. It acts as an end-switch in the base
-# of the robot arm. It defines the starting point of the base.
+# タッチセンサーをセットアップします。ロボットアームのベースにある
+# エンドスイッチとして機能し、ベースの起点を定めます。
 base_switch = TouchSensor(Port.S1)
 
-# Set up the Color Sensor. This sensor detects when the elbow
-# is in the starting position. This is when the sensor sees the
-# white beam up close.
+# カラーセンサーをセットアップします。肘が開始位置にあることを
+# 検出します。センサーが白いビームを間近で
+# 見たときです。
 elbow_sensor = ColorSensor(Port.S3)
 
-# Initialize the elbow. First make it go down for one second.
-# Then make it go upwards slowly (15 degrees per second) until
-# the Color Sensor detects the white beam. Then reset the motor
-# angle to make this the zero point. Finally, hold the motor
-# in place so it does not move.
+# 肘を初期化します。まず1秒間下げます。
+# 次に、カラーセンサーが白いビームを検出するまで
+# ゆっくり(毎秒15度)上げます。その後モーターの角度をリセットして
+# ここをゼロ点にします。最後に、モーターをその場で
+# 保持して動かないようにします。
 elbow_motor.run_time(-30, 1000)
 elbow_motor.run(15)
 while elbow_sensor.reflection() < 32:
@@ -60,81 +60,81 @@ while elbow_sensor.reflection() < 32:
 elbow_motor.reset_angle(0)
 elbow_motor.hold()
 
-# Initialize the base. First rotate it until the Touch Sensor
-# in the base is pressed. Reset the motor angle to make this
-# the zero point. Then hold the motor in place so it does not move.
+# ベースを初期化します。まずベースのタッチセンサーが
+# 押されるまで回転させます。モーターの角度をリセットして
+# ここをゼロ点にします。その後、モーターをその場で保持して動かないようにします。
 base_motor.run(-60)
 while not base_switch.pressed():
     wait(10)
 base_motor.reset_angle(0)
 base_motor.hold()
 
-# Initialize the gripper. First rotate the motor until it stalls.
-# Stalling means that it cannot move any further. This position
-# corresponds to the closed position. Then rotate the motor
-# by 90 degrees such that the gripper is open.
+# グリッパーを初期化します。まずモーターがストールするまで回転させます。
+# ストールとは、それ以上動けなくなることです。この位置が
+# 閉じた位置に相当します。次にモーターを90度回転させて
+# グリッパーを開きます。
 gripper_motor.run_until_stalled(200, then=Stop.COAST, duty_limit=50)
 gripper_motor.reset_angle(0)
 gripper_motor.run_target(200, -90)
 
 
 def robot_pick(position):
-    # This function makes the robot base rotate to the indicated
-    # position. There it lowers the elbow, closes the gripper, and
-    # raises the elbow to pick up the object.
+    # この関数はロボットのベースを指定した位置まで回転させます。
+    # そこで肘を下げてグリッパーを閉じ、
+    # 肘を上げてオブジェクトをつかみ上げます。
 
-    # Rotate to the pick-up position.
+    # つかみ取り位置まで回転します。
     base_motor.run_target(60, position)
-    # Lower the arm.
+    # アームを下げます。
     elbow_motor.run_target(60, -40)
-    # Close the gripper to grab the wheel stack.
+    # グリッパーを閉じてホイールスタックをつかみます。
     gripper_motor.run_until_stalled(200, then=Stop.HOLD, duty_limit=50)
-    # Raise the arm to lift the wheel stack.
+    # アームを上げてホイールスタックを持ち上げます。
     elbow_motor.run_target(60, 0)
 
 
 def robot_release(position):
-    # This function makes the robot base rotate to the indicated
-    # position. There it lowers the elbow, opens the gripper to
-    # release the object. Then it raises its arm again.
+    # この関数はロボットのベースを指定した位置まで回転させます。
+    # そこで肘を下げてグリッパーを開き、オブジェクトを
+    # 離します。その後、再びアームを上げます。
 
-    # Rotate to the drop-off position.
+    # 置きに行く位置まで回転します。
     base_motor.run_target(60, position)
-    # Lower the arm to put the wheel stack on the ground.
+    # アームを下げてホイールスタックを地面に置きます。
     elbow_motor.run_target(60, -40)
-    # Open the gripper to release the wheel stack.
+    # グリッパーを開いてホイールスタックを離します。
     gripper_motor.run_target(200, -90)
-    # Raise the arm.
+    # アームを上げます。
     elbow_motor.run_target(60, 0)
 
 
-# Play three beeps to indicate that the initialization is complete.
+# 初期化が完了したことを3回のビープ音で知らせます。
 for i in range(3):
     ev3.speaker.beep()
     wait(100)
 
-# Define the three destinations for picking up and moving the wheel stacks.
+# ホイールスタックをつかんで移動させる3つの行き先を定義します。
 LEFT = 160
 MIDDLE = 100
 RIGHT = 40
 
-# This is the main part of the program. It is a loop that repeats endlessly.
+# プログラムのメイン部分です。無限に繰り返すループです。
 #
-# First, the robot moves the object on the left towards the middle.
-# Second, the robot moves the object on the right towards the left.
-# Finally, the robot moves the object that is now in the middle, to the right.
+# まず、左側のオブジェクトを中央に移動します。
+# 次に、右側のオブジェクトを左側に移動します。
+# 最後に、中央にあるオブジェクトを右側に移動します。
 #
-# Now we have a wheel stack on the left and on the right as before, but they
-# have switched places. Then the loop repeats to do this over and over.
+# これで、前と同じように左右にホイールスタックがある状態になりますが、
+# 場所が入れ替わっています。この後ループが繰り返され、同じことを行い続けます。
 while True:
-    # Move a wheel stack from the left to the middle.
+    # ホイールスタックを左から中央へ移動します。
     robot_pick(LEFT)
     robot_release(MIDDLE)
 
-    # Move a wheel stack from the right to the left.
+    # ホイールスタックを右から左へ移動します。
     robot_pick(RIGHT)
     robot_release(LEFT)
 
-    # Move a wheel stack from the middle to the right.
+    # ホイールスタックを中央から右へ移動します。
     robot_pick(MIDDLE)
     robot_release(RIGHT)

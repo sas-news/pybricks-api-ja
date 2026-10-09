@@ -3,21 +3,21 @@ from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor
 from pybricks.parameters import Port
 
-# Create your objects here
+# ここにオブジェクトを作成します
 
-# Initialize the EV3 Brick.
+# EV3 Brickを初期化します。
 ev3 = EV3Brick()
 
-# Initialize a motor at port B.
+# ポートBのモーターを初期化します。
 test_motor = Motor(Port.B)
 
-# Write your program here
+# ここにプログラムを書きます
 
-# Play a sound.
+# 音を鳴らします。
 ev3.speaker.beep()
 
-# Run the motor up to 500 degrees per second. To a target angle of 90 degrees.
+# モーターを毎秒500度の速さで、目標角度90度まで回転させます。
 test_motor.run_target(500, 90)
 
-# Play another beep sound.
+# もう一度ビープ音を鳴らします。
 ev3.speaker.beep(frequency=1000, duration=500)

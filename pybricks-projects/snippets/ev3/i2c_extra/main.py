@@ -3,33 +3,33 @@ from pybricks.hubs import EV3Brick
 from pybricks.iodevices import I2CDevice
 from pybricks.parameters import Port
 
-# Initialize the EV3
+# EV3を初期化
 ev3 = EV3Brick()
 
-# Initialize I2C Sensor
+# I2Cセンサーを初期化
 device = I2CDevice(Port.S2, 0xD2 >> 1)
 
-# Recommended for reading
+# 読み取りの推奨方法
 result, = device.read(reg=0x0F, length=1)
 
-# Read 1 byte from no particular register:
+# 特定のレジスタを指定せずに1バイト読み取る:
 device.read(reg=None, length=1)
 
-# Read 0 bytes from no particular register:
+# 特定のレジスタを指定せずに0バイト読み取る:
 device.read(reg=None, length=0)
 
-# I2C write operations consist of a register byte followed
-# by a series of data bytes. Depending on your device, you
-# can choose to skip the register or data as follows:
+# I2Cの書き込み操作は、レジスタバイトと
+# それに続く一連のデータバイトで構成される。デバイスによっては、
+# 以下のようにレジスタやデータを省略できる:
 
-# Recommended for writing:
+# 書き込みの推奨方法:
 device.write(reg=0x22, data=b'\x08')
 
-# Write 1 byte to no particular register:
+# 特定のレジスタを指定せずに1バイト書き込む:
 device.write(reg=None, data=b'\x08')
 
-# Write 0 bytes to a particular register:
+# 特定のレジスタに0バイト書き込む:
 device.write(reg=0x08, data=None)
 
-# Write 0 bytes to no particular register:
+# 特定のレジスタを指定せずに0バイト書き込む:
 device.write(reg=None, data=None)

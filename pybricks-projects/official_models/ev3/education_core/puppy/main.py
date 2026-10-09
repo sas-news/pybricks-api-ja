@@ -21,16 +21,16 @@ from pybricks.tools import wait, StopWatch
 
 
 class Puppy:
-    # These constants are used for positioning the legs.
+    # これらの定数は脚の位置決めに使います。
     HALF_UP_ANGLE = 25
     STAND_UP_ANGLE = 65
     STRETCH_ANGLE = 125
 
-    # These constants are for positioning the head.
+    # これらの定数は頭の位置決めに使います。
     HEAD_UP_ANGLE = 0
     HEAD_DOWN_ANGLE = -40
 
-    # These constants are for the eyes.
+    # これらの定数は目の表示に使います。
     NEUTRAL_EYES = Image(ImageFile.NEUTRAL)
     TIRED_EYES = Image(ImageFile.TIRED_MIDDLE)
     TIRED_LEFT_EYES = Image(ImageFile.TIRED_LEFT)
@@ -39,59 +39,59 @@ class Puppy:
     HURT_EYES = Image(ImageFile.HURT)
     ANGRY_EYES = Image(ImageFile.ANGRY)
     HEART_EYES = Image(ImageFile.LOVE)
-    SQUINTY_EYES = Image(ImageFile.TEAR)  # the tear is erased later
+    SQUINTY_EYES = Image(ImageFile.TEAR)  # 涙は後で消します
 
     def __init__(self):
-        # Initialize the EV3 brick.
+        # EV3 Brickを初期化します。
         self.ev3 = EV3Brick()
 
-        # Initialize the motors connected to the back legs.
+        # 後ろ脚に接続されたモーターを初期化します。
         self.left_leg_motor = Motor(Port.D, Direction.COUNTERCLOCKWISE)
         self.right_leg_motor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
 
-        # Initialize the motor connected to the head.
-        # Worm gear moves 1 tooth per rotation. It is interfaced to a 24-tooth
-        # gear. The 24-tooth gear is connected to parallel 12-tooth gears via
-        # an axle. The 12-tooth gears interface with 36-tooth gears.
+        # 頭に接続されたモーターを初期化します。
+        # ウォームギアは1回転で1歯分進みます。24歯ギアに
+        # 接続されています。24歯ギアは軸を介して並列の12歯ギアに
+        # 接続され、12歯ギアは36歯ギアとかみ合っています。
         self.head_motor = Motor(Port.C, Direction.COUNTERCLOCKWISE,
                                 gears=[[1, 24], [12, 36]])
 
-        # Initialize the Color Sensor. It is used to detect the colors when
-        # feeding the puppy.
+        # カラーセンサーを初期化します。パピーにエサをあげるときの
+        # 色を検出するために使います。
         self.color_sensor = ColorSensor(Port.S4)
 
-        # Initialize the touch sensor. It is used to detect when someone pets
-        # the puppy.
+        # タッチセンサーを初期化します。誰かがパピーをなでたことを
+        # 検出するために使います。
         self.touch_sensor = TouchSensor(Port.S1)
 
         self.pet_count_timer = StopWatch()
         self.feed_count_timer = StopWatch()
         self.count_changed_timer = StopWatch()
 
-        # These attributes are initialized later in the reset() method.
+        # これらの属性は後でreset()メソッドで初期化されます。
         self.pet_target = None
         self.feed_target = None
         self.pet_count = None
         self.feed_count = None
 
-        # These attributes are used by properties.
+        # これらの属性はプロパティから使われます。
         self._behavior = None
         self._behavior_changed = None
         self._eyes = None
         self._eyes_changed = None
 
-        # These attributes are used in the eyes update
+        # これらの属性は目の更新で使われます
         self.eyes_timer_1 = StopWatch()
         self.eyes_timer_1_end = 0
         self.eyes_timer_2 = StopWatch()
         self.eyes_timer_2_end = 0
         self.eyes_closed = False
 
-        # These attributes are used by the playful behavior.
+        # これらの属性はplayful(やんちゃ)な行動で使われます。
         self.playful_timer = StopWatch()
         self.playful_bark_interval = None
 
-        # These attributes are used in the update methods.
+        # これらの属性はupdateメソッドで使われます。
         self.prev_petted = None
         self.prev_color = None
 
@@ -130,23 +130,23 @@ class Puppy:
         self.head_motor.run_target(20, target)
 
     def reset(self):
-        # must be called when puppy is sitting down.
+        # パピーが座っているときに呼び出す必要があります。
         self.left_leg_motor.reset_angle(0)
         self.right_leg_motor.reset_angle(0)
-        # Pick a random number of time to pet the puppy.
+        # パピーをなでる回数をランダムに決めます。
         self.pet_target = urandom.randint(3, 6)
-        # Pick a random number of time to feed the puppy.
+        # パピーにエサをあげる回数をランダムに決めます。
         self.feed_target = urandom.randint(2, 4)
-        # Pet count and feed count both start at 1
+        # なでた回数とエサの回数はどちらも1から始めます
         self.pet_count, self.feed_count = 1, 1
-        # Reset timers.
+        # タイマーをリセットします。
         self.pet_count_timer.reset()
         self.feed_count_timer.reset()
         self.count_changed_timer.reset()
-        # Set initial behavior.
+        # 最初の行動を設定します。
         self.behavior = self.idle
 
-    # The next 8 methods define the 8 behaviors of the puppy.
+    # 次の8つのメソッドでパピーの8つの行動を定義します。
 
     def idle(self):
         """The puppy is idle and waiting for someone to pet it or feed it."""
@@ -193,7 +193,7 @@ class Puppy:
             self.playful_bark_interval = 0
 
         if self.update_pet_count():
-            # If the puppy was petted, then we are done being playful
+            # パピーがなでられたら、やんちゃな行動は終わりです
             self.behavior = self.idle
 
         if self.playful_timer.time() > self.playful_bark_interval:
@@ -222,11 +222,11 @@ class Puppy:
             self.ev3.speaker.play_file(SoundFile.DOG_WHINE)
 
         if self.update_feed_count():
-            # If we got food, then we are not longer hungry.
+            # エサをもらったら、もう空腹ではありません。
             self.behavior = self.idle
 
         if self.update_pet_count():
-            # If we got a pet instead of food, then we are angry.
+            # エサの代わりになでられたら、怒ります。
             self.behavior = self.act_angry
 
     def go_to_bathroom(self):
@@ -268,8 +268,8 @@ class Puppy:
         self.right_leg_motor.stop()
         wait(100)
 
-    # The next 4 methods define actions that are used to make some parts of
-    # the behaviors above.
+    # 次の4つのメソッドは、上記の行動の一部を構成する
+    # 動作を定義します。
 
     def stand_up(self):
         """Makes the puppy stand up."""
@@ -341,19 +341,19 @@ class Puppy:
         of petting and feeding.
         """
         if self.pet_count == self.pet_target and self.feed_count == self.feed_target:
-            # If we have the exact right amount of pets and feeds, act happy.
+            # なでられた回数とエサの回数がちょうどよければ、嬉しい行動をします。
             self.behavior = self.act_happy
         elif self.pet_count > self.pet_target and self.feed_count < self.feed_target:
-            # If we have too many pets and not enough food, act angry.
+            # なでられた回数が多すぎてエサが足りなければ、怒った行動をします。
             self.behavior = self.act_angry
         elif self.pet_count < self.pet_target and self.feed_count > self.feed_target:
-            # If we have not enough pets and too much food, go to the bathroom.
+            # なでられた回数が足りずエサが多すぎれば、トイレに行きます。
             self.behavior = self.go_to_bathroom
         elif self.pet_count == 0 and self.feed_count > 0:
-            # If we have no pets and some food, act playful.
+            # なでられていなくてエサがあれば、やんちゃな行動をします。
             self.behavior = self.act_playful
         elif self.feed_count == 0:
-            # If we have no food, act hungry.
+            # エサがなければ、空腹の行動をします。
             self.behavior = self.act_hungry
 
     @property
@@ -444,7 +444,7 @@ class Puppy:
             self.feed_count = max(0, self.feed_count - 1)
             print('feed_count:', self.feed_count, 'feed_target:', self.feed_target)
         if self.count_changed_timer.time() > 30000:
-            # If nothing has happened for 30 seconds, go to sleep
+            # 30秒間何も起きなければ、眠りにつきます
             self.count_changed_timer.reset()
             self.behavior = self.go_to_sleep
 
@@ -460,7 +460,7 @@ class Puppy:
             wait(100)
 
 
-# This covers up the tear to make a new image.
+# 涙を隠して新しい画像にします。
 Puppy.SQUINTY_EYES.draw_box(120, 60, 140, 85, fill=True, color=Color.WHITE)
 
 

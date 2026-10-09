@@ -16,24 +16,24 @@ from pybricks.ev3devices import Motor
 from pybricks.parameters import Port
 from pybricks.robotics import DriveBase
 
-# Initialize the EV3 Brick.
+# EV3 Brickを初期化します。
 ev3 = EV3Brick()
 
-# Initialize the motors.
+# モーターを初期化します。
 left_motor = Motor(Port.B)
 right_motor = Motor(Port.C)
 
-# Initialize the drive base.
+# ドライブベースを初期化します。
 robot = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=104)
 
-# Go forward and backwards for one meter.
+# 1メートル前進し、1メートル後退します。
 robot.straight(1000)
 ev3.speaker.beep()
 
 robot.straight(-1000)
 ev3.speaker.beep()
 
-# Turn clockwise by 360 degrees and back again.
+# 時計回りに360度旋回し、元に戻ります。
 robot.turn(360)
 ev3.speaker.beep()
 

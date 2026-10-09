@@ -17,43 +17,43 @@ from pybricks.parameters import Port
 from pybricks.tools import wait
 from pybricks.robotics import DriveBase
 
-# Initialize the EV3 Brick.
+# EV3 Brickを初期化します。
 ev3 = EV3Brick()
 
-# Initialize the Ultrasonic Sensor. It is used to detect
-# obstacles as the robot drives around.
+# 超音波センサーを初期化します。ロボットが走行中の
+# 障害物を検出するために使います。
 obstacle_sensor = UltrasonicSensor(Port.S4)
 
-# Initialize two motors with default settings on Port B and Port C.
-# These will be the left and right motors of the drive base.
+# ポートBとポートCの2つのモーターをデフォルト設定で初期化します。
+# これらがドライブベースの左右のモーターになります。
 left_motor = Motor(Port.B)
 right_motor = Motor(Port.C)
 
-# The DriveBase is composed of two motors, with a wheel on each motor.
-# The wheel_diameter and axle_track values are used to make the motors
-# move at the correct speed when you give a motor command.
-# The axle track is the distance between the points where the wheels
-# touch the ground.
+# DriveBaseは2つのモーターで構成され、各モーターにホイールが付いています。
+# wheel_diameterとaxle_trackの値は、走行コマンドを送ったときに
+# モーターが正しい速さで動くようにするために使います。
+# axle trackとは、左右のホイールが地面に接する点の
+# 間の距離です。
 robot = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=104)
 
-# Play a sound to tell us when we are ready to start moving
+# 走行開始の準備ができたことを音で知らせます
 ev3.speaker.beep()
 
-# The following loop makes the robot drive forward until it detects an
-# obstacle. Then it backs up and turns around. It keeps on doing this
-# until you stop the program.
+# 次のループは、障害物を検出するまでロボットを前進させます。
+# その後バックして向きを変えます。プログラムを停止するまで
+# この動作を繰り返します。
 while True:
-    # Begin driving forward at 200 millimeters per second.
+    # 毎秒200ミリメートルの速さで前進を開始します。
     robot.drive(200, 0)
 
-    # Wait until an obstacle is detected. This is done by repeatedly
-    # doing nothing (waiting for 10 milliseconds) while the measured
-    # distance is still greater than 300 mm.
+    # 障害物が検出されるまで待ちます。これは、測定した距離が
+    # 300mmより大きい間、何もしない(10ミリ秒待つ)ことを
+    # 繰り返すことで行います。
     while obstacle_sensor.distance() > 300:
         wait(10)
 
-    # Drive backward for 300 millimeters.
+    # 300ミリメートル後退します。
     robot.straight(-300)
 
-    # Turn around by 120 degrees
+    # 120度旋回して向きを変えます
     robot.turn(120)

@@ -4,17 +4,17 @@ from pybricks.hubs import EV3Brick
 from pybricks.tools import wait
 from pybricks.parameters import Button
 
-# Initialize the EV3
+# EV3を初期化します。
 ev3 = EV3Brick()
 
-# Wait until any of the buttons are pressed
+# いずれかのボタンが押されるまで待ちます
 while not any(ev3.buttons.pressed()):
     wait(10)
 
-# Do something if the left button is pressed
+# 左ボタンが押されたときの処理をします
 if Button.LEFT in ev3.buttons.pressed():
     print("The left button is pressed.")
 
-# Wait until all buttons are released
+# すべてのボタンが離されるまで待ちます
 while any(ev3.buttons.pressed()):
     wait(10)

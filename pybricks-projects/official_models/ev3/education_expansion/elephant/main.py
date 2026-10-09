@@ -17,72 +17,72 @@ from pybricks.parameters import Port, Direction, Color, Button
 from pybricks.tools import wait, StopWatch
 from pybricks.media.ev3dev import SoundFile
 
-# Initialize the EV3 brick.
+# EV3 Brickを初期化します。
 ev3 = EV3Brick()
 
-# Configure the legs motor, which moves all four legs.  Set the motor
-# direction to counterclockwise, so that positive speed values make
-# the legs move forward.
+# 4本の脚すべてを動かす脚モーターを設定します。正の速度値で
+# 脚が前に動くように、モーターの回転方向を
+# 反時計回りに設定します。
 legs_motor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
 
-# Configure the trunk motor.  Set the motor direction to
-# counterclockwise, so that positive speed values make the trunk move
-# upward.
+# 鼻のモーターを設定します。正の速度値で鼻が
+# 上に動くように、モーターの回転方向を反時計回りに
+# 設定します。
 trunk_motor = Motor(Port.B, Direction.COUNTERCLOCKWISE)
 
-# Configure the neck motor with default settings.
+# 首のモーターをデフォルト設定で設定します。
 neck_motor = Motor(Port.D)
 
-# Set up the Touch Sensor.  It is used to detect when the trunk has
-# moved to its maximum position.
+# タッチセンサーをセットアップします。鼻が最大位置まで
+# 動いたことを検出するために使います。
 touch_sensor = TouchSensor(Port.S1)
 
-# Set up the Color Sensor.  It is used to detect the red beam when the
-# neck has moved to its maximum position.
+# カラーセンサーをセットアップします。首が最大位置まで動いたときに
+# 赤いビームを検出するために使います。
 color_sensor = ColorSensor(Port.S4)
 
-# Set up the Timer.  It is used to exit the input loop after 1 second.
+# タイマーをセットアップします。1秒後に入力ループを抜けるために使います。
 timer = StopWatch()
 
 
 def reset():
-    # This function resets the model to its resting position.
+    # この関数はモデルを休息位置に戻します。
 
-    # Run the neck motor until the red beam is detected.
+    # 赤いビームが検出されるまで首のモーターを動かします。
     neck_motor.run(750)
     while color_sensor.color() != Color.RED:
         wait(10)
     neck_motor.brake()
 
-    # Run the trunk motor until the Touch Sensor is pressed.
+    # タッチセンサーが押されるまで鼻のモーターを動かします。
     trunk_motor.run(600)
     while not touch_sensor.pressed():
         wait(10)
     trunk_motor.brake()
 
-    # Play a sound.
+    # 音を鳴らします。
     ev3.speaker.play_file(SoundFile.ELEPHANT_CALL)
 
-    # Run the neck and trunk motors to their resting positions.
+    # 首と鼻のモーターを休息位置まで動かします。
     neck_motor.run_angle(-600, 700, wait=False)
     trunk_motor.run_angle(-900, 750)
     wait(0.2)
 
-    # Reset the neck and trunk motors' angles to "0."  This means that
-    # when they rotate to "0" later on, they return to their resting
-    # positions.
+    # 首と鼻のモーターの角度を「0」にリセットします。つまり、
+    # 後で「0」まで回転させると、休息位置に
+    # 戻ることになります。
     neck_motor.reset_angle(0)
     trunk_motor.reset_angle(0)
 
 
 def grab():
-    # This function grabs and picks up an object.
+    # この関数はオブジェクトをつかんで持ち上げます。
 
-    # Reset the model to its resting position.
+    # モデルを休息位置に戻します。
     reset()
 
-    # Run a sequence of movements using the neck and trunk motors to
-    # grab and pick up an object.
+    # 首と鼻のモーターを使った一連の動作を実行して、
+    # オブジェクトをつかんで持ち上げます。
     trunk_motor.run_angle(1000, 300, wait=False)
     neck_motor.run_angle(1500, 350)
     neck_motor.run_angle(-750, 350)
@@ -92,58 +92,58 @@ def grab():
     neck_motor.run_angle(450, 400)
 
 
-# Reset the model to its resting position.
+# モデルを休息位置に戻します。
 reset()
 
-# This is the main part of the program.  It is a loop that repeats
-# endlessly.
+# プログラムのメイン部分です。無限に繰り返す
+# ループです。
 #
-# First, it resets the Timer and the steps variable.
-# Second, it waits for commands given by pressing the Brick Buttons.
-# Finally, it runs the legs motor if the steps variable is not "0."
+# まず、タイマーとsteps変数をリセットします。
+# 次に、Brick Buttonsを押して送られるコマンドを待ちます。
+# 最後に、steps変数が「0」でなければ脚モーターを動かします。
 #
-# Then the process starts over, so it can accept new commands.
+# 処理が最初に戻るので、新しいコマンドを受け付けられます。
 while True:
 
-    # Reset the Timer and the steps variable.
+    # タイマーとsteps変数をリセットします。
     timer.reset()
     steps = 0
 
-    # Wait until any Brick Button is pressed.
+    # いずれかのBrick Buttonが押されるまで待ちます。
     while not any(ev3.buttons.pressed()):
         wait(10)
 
-    # Respond to the Brick Button press.
+    # Brick Buttonの押下に応答します。
     while timer.time() < 1000:
-        # Check whether Up Button is pressed, and increase the steps
-        # variable by 1 if it is.
+        # Up Buttonが押されているか確認し、押されていれば
+        # steps変数を1増やします。
         if Button.UP in ev3.buttons.pressed():
             steps += 1
 
-            # Reset the Timer to enable entering multiple commands.
+            # 複数のコマンドを入力できるようタイマーをリセットします。
             timer.reset()
             ev3.speaker.beep(600)
 
-            # To avoid registering the same command again, wait until
-            # the Up Button is released before continuing.
+            # 同じコマンドを再登録しないよう、
+            # Up Buttonが離されるまで待ってから続行します。
             while Button.UP in ev3.buttons.pressed():
                 wait(10)
 
-        # Check whether Down Button is pressed, and decrease the steps
-        # variable by 1 if it is.
+        # Down Buttonが押されているか確認し、押されていれば
+        # steps変数を1減やします。
         if Button.DOWN in ev3.buttons.pressed():
             steps -= 1
 
-            # Reset the Timer to enable entering multiple commands.
+            # 複数のコマンドを入力できるようタイマーをリセットします。
             timer.reset()
             ev3.speaker.beep(1200)
 
-            # To avoid registering the same command again, wait until
-            # the Down Button is released before continuing.
+            # 同じコマンドを再登録しないよう、
+            # Down Buttonが離されるまで待ってから続行します。
             while Button.DOWN in ev3.buttons.pressed():
                 wait(10)
 
-        # Lift the trunk and roar.
+        # 鼻を上げて吠えます。
         if Button.LEFT in ev3.buttons.pressed():
             trunk_motor.run(300)
             while not touch_sensor.pressed():
@@ -151,17 +151,17 @@ while True:
             trunk_motor.run_angle(-100, 30)
             reset()
 
-        # Grab an object.
+        # オブジェクトをつかみます。
         if Button.RIGHT in ev3.buttons.pressed():
             grab()
 
-        # Play a sound.
+        # 音を鳴らします。
         if Button.CENTER in ev3.buttons.pressed():
             ev3.speaker.play_file(SoundFile.ELEPHANT_CALL)
 
-    # Check if the steps variable is not "0."
+    # steps変数が「0」でないか確認します。
     if steps != 0:
-        # Run the legs motor for the number of steps.  Each step
-        # requires the motor to turn 900 degrees.
+        # stepsの数だけ脚モーターを動かします。1ステップごとに
+        # モーターは900度回転します。
         angle = 900 * steps
         legs_motor.run_angle(1000, angle)

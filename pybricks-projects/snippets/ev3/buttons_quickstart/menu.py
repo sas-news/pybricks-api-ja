@@ -7,24 +7,24 @@ def wait_for_button(ev3):
     It returns which button was pressed.
     """
 
-    # Show a picture of the buttons on the screen.
+    # ボタンの画像を画面に表示します。
     ev3.screen.load_image('buttons.png')
 
-    # Tip: add text or icons to the image to help you
-    # remember what each button will do in your program.
+    # ヒント: 画像にテキストやアイコンを追加すると、プログラムで
+    # 各ボタンが何をするか覚えやすくなります。
 
-    # Wait for a single button to be pressed and save the result.
+    # ボタンが1つ押されるまで待ち、結果を保存します。
     pressed = []
     while len(pressed) != 1:
         pressed = ev3.buttons.pressed()
     button = pressed[0]
 
-    # Print which button was pressed
+    # 押されたボタンを画面に表示します
     ev3.screen.draw_text(2, 100, button)
 
-    # Now wait for the button to be released.
+    # ボタンが離されるまで待ちます。
     while any(ev3.buttons.pressed()):
         pass
 
-    # Return which button was pressed.
+    # 押されたボタンを返します。
     return button

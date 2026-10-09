@@ -18,49 +18,49 @@ from pybricks.tools import wait
 from pybricks.robotics import DriveBase
 from pybricks.media.ev3dev import ImageFile
 
-# Initialize the EV3 brick.
+# EV3 Brickを初期化します。
 ev3 = EV3Brick()
 
-# Configure 2 motors on Ports B and C.  Set the motor directions to
-# counterclockwise, so that positive speed values make the robot move
-# forward.  These will be the left and right motors of the Tank Bot.
+# ポートBとCの2つのモーターを設定します。正の速度値で
+# ロボットが前進するように、モーターの回転方向を
+# 反時計回りに設定します。これらがタンクボットの左右のモーターです。
 left_motor = Motor(Port.B, Direction.COUNTERCLOCKWISE)
 right_motor = Motor(Port.C, Direction.COUNTERCLOCKWISE)
 
-# The wheel diameter of the Tank Bot is about 54 mm.
+# タンクボットのホイール直径は約54mmです。
 WHEEL_DIAMETER = 54
 
-# The axle track is the distance between the centers of each of the
-# wheels.  This is about 200 mm for the Tank Bot.
+# axle trackとは、左右のホイールの中心間の距離です。
+# タンクボットでは約200mmです。
 AXLE_TRACK = 200
 
-# The Driving Base is comprised of 2 motors.  There is a wheel on each
-# motor.  The wheel diameter and axle track values are used to make the
-# motors move at the correct speed when you give a drive command.
+# ドライビングベースは2つのモーターで構成され、各モーターに
+# ホイールが付いています。ホイール直径とaxle trackの値は、
+# 走行コマンドを送ったときにモーターが正しい速さで動くように使います。
 robot = DriveBase(left_motor, right_motor, WHEEL_DIAMETER, AXLE_TRACK)
 
-# Set up the Gyro Sensor.  It is used to measure the angle of the robot.
-# Keep the Gyro Sensor and EV3 steady when connecting the cable and
-# during start-up of the EV3.
+# ジャイロセンサーをセットアップします。ロボットの角度を測るために使います。
+# ケーブル接続時とEV3起動中は、ジャイロセンサーとEV3を
+# 動かさないでください。
 gyro_sensor = GyroSensor(Port.S4)
 
-# Initialize the steering and overshoot variables.
+# steering変数とovershoot変数を初期化します。
 steering = 60
 overshoot = 5
 
 
 def right_angle():
-    # This function drives the robot forward, turn a right angle, drive
-    # forward again, and then turn 180 degrees to drive back along the
-    # same path and return to its initial position.
+    # この関数はロボットを前進させ、直角に旋回し、再び前進して、
+    # 180度旋回して同じ経路を戻り、
+    # 最初の位置に戻ります。
 
-    # Reset the Gyro Sensor angle.
+    # ジャイロセンサーの角度をリセットします。
     gyro_sensor.reset_angle(0)
 
-    # Drive forward for 750 millimeters
+    # 750ミリメートル前進します
     robot.straight(750)
 
-    # Turn clockwise until the angle is 90 degrees.
+    # 角度が90度になるまで時計回りに旋回します。
     robot.drive(0, steering)
 
     ev3.speaker.beep()
@@ -70,10 +70,10 @@ def right_angle():
     robot.drive(0, 0)
     wait(1000)
 
-    # Drive forward for 750 millimeters
+    # 750ミリメートル前進します
     robot.straight(750)
 
-    # Turn clockwise until the angle is 270 degrees.
+    # 角度が270度になるまで時計回りに旋回します。
     robot.drive(0, steering)
 
     ev3.speaker.beep()
@@ -83,10 +83,10 @@ def right_angle():
     robot.drive(0, 0)
     wait(1000)
 
-    # Drive forward for 750 millimeters
+    # 750ミリメートル前進します
     robot.straight(750)
 
-    # Turn counterclockwise until the angle is 180 degrees.
+    # 角度が180度になるまで反時計回りに旋回します。
     robot.drive(0, -steering)
 
     ev3.speaker.beep()
@@ -96,10 +96,10 @@ def right_angle():
     robot.drive(0, 0)
     wait(1000)
 
-    # Drive forward for 750 millimeters
+    # 750ミリメートル前進します
     robot.straight(750)
 
-    # Turn clockwise until the angle is 360 degrees.
+    # 角度が360度になるまで時計回りに旋回します。
     robot.drive(0, steering)
 
     ev3.speaker.beep()
@@ -111,24 +111,24 @@ def right_angle():
 
 
 def polygon(sides, length):
-    # This function drives the robot along a polygon path.  It uses the
-    # number of sides to calculate the angle to turn to, and the length
-    # to calculate the time to drive straight.
+    # この関数はロボットを多角形の経路に沿って走らせます。
+    # 辺の数から旋回する角度を、長さから直進する時間を
+    # 計算します。
 
-    # Reset the Gyro Sensor angle.
+    # ジャイロセンサーの角度をリセットします。
     gyro_sensor.reset_angle(0)
 
-    # Calculate the angle to turn to and the time to drive straight.
+    # 旋回する角度と直進する時間を計算します。
     angle = 360 / sides
 
-    # Drive along the polygon path.
+    # 多角形の経路に沿って走行します。
     for side in range(1, sides + 1):
         target_angle = side * angle - overshoot
 
-        # Drive forward.
+        # 前進します。
         robot.straight(length)
 
-        # Turn clockwise until the angle equals the target angle.
+        # 角度が目標角度になるまで時計回りに旋回します。
         robot.drive(0, steering)
 
         ev3.speaker.beep()
@@ -139,54 +139,54 @@ def polygon(sides, length):
         wait(1000)
 
 
-# This is the main part of the program.  It is a loop that repeats
-# endlessly.
+# プログラムのメイン部分です。無限に繰り返す
+# ループです。
 #
-# First, it waits until any Brick Button is pressed.
-# Second, it displays the chosen pattern on the screen.
-# Finally, it drives in the chosen pattern.
+# まず、いずれかのBrick Buttonが押されるまで待ちます。
+# 次に、選ばれたパターンを画面に表示します。
+# 最後に、選ばれたパターンで走行します。
 #
-# Then the process starts over, so another pattern can be chosen.
+# 処理が最初に戻るので、別のパターンを選べます。
 while True:
 
-    # Display a question mark to indicate that the robot should await
-    # instructions.
+    # ロボットが指示待ちであることを示すため、
+    # クエスチョンマークを表示します。
     ev3.screen.load_image(ImageFile.QUESTION_MARK)
 
-    # Wait until any Brick Button is pressed.
+    # いずれかのBrick Buttonが押されるまで待ちます。
     while not any(ev3.buttons.pressed()):
         wait(10)
 
     ev3.screen.clear()
 
-    # Respond to the Brick Button press.  Display the chosen pattern on
-    # the screen and drive in this pattern.
+    # Brick Buttonの押下に応答します。選ばれたパターンを
+    # 画面に表示し、そのパターンで走行します。
     if Button.UP in ev3.buttons.pressed():
-        # Drive in a right angle.
+        # 直角に走行します。
         ev3.screen.draw_text(30, 50, "Right Angle")
         wait(1000)
         right_angle()
 
     if Button.LEFT in ev3.buttons.pressed():
-        # Drive in a triangle shape.
+        # 三角形に走行します。
         ev3.screen.draw_text(30, 50, "Triangle")
         wait(2000)
         polygon(3, 850)
 
     if Button.CENTER in ev3.buttons.pressed():
-        # Drive in a square shape.
+        # 正方形に走行します。
         ev3.screen.draw_text(30, 50, "Square")
         wait(2000)
         polygon(4, 700)
 
     if Button.RIGHT in ev3.buttons.pressed():
-        # Drive in a pentagon shape.
+        # 五角形に走行します。
         ev3.screen.draw_text(30, 50, "Pentagon")
         wait(2000)
         polygon(5, 575)
 
     if Button.DOWN in ev3.buttons.pressed():
-        # Drive in a hexagon shape.
+        # 六角形に走行します。
         ev3.screen.draw_text(30, 50, "Hexagon")
         wait(2000)
         polygon(6, 490)
