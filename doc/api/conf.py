@@ -19,3 +19,6 @@ html_logo = '../common/images/pybricks-logo-rtd.png'
 latex_logo = '../common/images/pybricks-logo-large.png'
 
 exec(open(os.path.abspath("../common/conf.py")).read())
+
+language = 'ja'
+html_search_language = 'ja'

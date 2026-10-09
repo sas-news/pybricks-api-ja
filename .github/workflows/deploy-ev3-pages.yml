@@ -1,0 +1,39 @@
+name: Deploy EV3 docs to GitHub Pages
+on:
+  push:
+    branches: [ev3]
+    paths:
+      - doc/**
+      - pybricks/**
+      - pybricks-projects/**
+      - .github/workflows/deploy-ev3-pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ev3
+          submodules: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+      - run: pip install -r doc/requirements.txt
+      - run: python -m sphinx -M html doc/api doc/api/build -W
+      - name: Deploy ev3/ to gh-pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git worktree add /tmp/ghp origin/gh-pages
+          rm -rf /tmp/ghp/ev3
+          mkdir -p /tmp/ghp/ev3
+          cp -a "$GITHUB_WORKSPACE/doc/api/build/html/." /tmp/ghp/ev3/
+          touch /tmp/ghp/ev3/.nojekyll
+          cd /tmp/ghp
+          git add -A && git commit -m "docs(ev3): deploy ${GITHUB_SHA::7}" || echo "no changes"
+          git push origin HEAD:gh-pages
