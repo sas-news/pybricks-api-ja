@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2018-2020 The Pybricks Authors
 
-"""Use LEGO® MINDSTORMS® NXT motors and sensors with the EV3 brick."""
+"""LEGO® MINDSTORMS® NXT のモーターとセンサーを EV3 ブロックで使用します。"""
 
 
 from .iodevices import AnalogSensor as _AnalogSensor
@@ -15,16 +15,16 @@ class TouchSensor:
         """
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
         """
         pass
 
     def pressed(self):
-        """Checks if the sensor is pressed.
+        """センサーが押されているかを確認します。
 
         Returns:
-            bool: ``True`` if the sensor is pressed, ``False`` if it is
-            not pressed.
+            bool: センサーが押されていれば ``True`` 、押されていなければ
+            ``False`` 。
 
         """
         pass
@@ -37,26 +37,24 @@ class LightSensor:
         """
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
 
         """
         pass
 
     def ambient(self):
-        """Measures the ambient light intensity.
+        """周囲の光の強さを測定します。
 
         Returns:
-            :ref:`percentage`: Ambient light intensity, ranging from 0 (dark)
-            to 100 (bright).
+            :ref:`percentage`: 周囲の光の強さ。0(暗い)から100(明るい)の範囲。
         """
         pass
 
     def reflection(self):
-        """Measures the reflection of a surface using a red light.
+        """赤い光を使って表面の反射率を測定します。
 
         Returns:
-            :ref:`percentage`: Reflection, ranging from 0 (no reflection) to
-            100 (high reflection).
+            :ref:`percentage`: 反射率。0(反射なし)から100(高い反射)の範囲。
 
         """
         pass
@@ -71,48 +69,45 @@ class ColorSensor:
         """
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
 
         """
         pass
 
     def color(self):
-        """Measures the color of a surface.
+        """表面の色を測定します。
 
         :returns:
             ``Color.BLACK``, ``Color.BLUE``, ``Color.GREEN``, ``Color.YELLOW``,
-            ``Color.RED``, ``Color.WHITE`` or ``None``.
-        :rtype: :class:`Color <.parameters.Color>`, or ``None`` if no color is
-                detected.
+            ``Color.RED``, ``Color.WHITE`` または ``None`` 。
+        :rtype: :class:`Color <.parameters.Color>`。色が検出されない場合は
+                ``None`` 。
 
         """
         pass
 
     def ambient(self):
-        """Measures the ambient light intensity.
+        """周囲の光の強さを測定します。
 
         Returns:
-            :ref:`percentage`: Ambient light intensity, ranging from 0 (dark)
-            to 100 (bright).
+            :ref:`percentage`: 周囲の光の強さ。0(暗い)から100(明るい)の範囲。
         """
         pass
 
     def reflection(self):
-        """Measures the reflection of a surface.
+        """表面の反射率を測定します。
 
         Returns:
-            :ref:`percentage`: Reflection, ranging from 0 (no reflection) to
-            100 (high reflection).
+            :ref:`percentage`: 反射率。0(反射なし)から100(高い反射)の範囲。
 
         """
         pass
 
     def rgb(self):
-        """Measures the reflection of a surface using a red, green, and then a
-        blue light.
+        """赤・緑・青の順に光を当てて、表面の反射率を測定します。
 
-        :returns: Tuple of reflections for red, green, and blue light, each
-                  ranging from 0.0 (no reflection) to 100.0 (high reflection).
+        :returns: 赤・緑・青それぞれの光に対する反射率のタプル。
+                  各値は0.0(反射なし)から100.0(高い反射)の範囲。
         :rtype: (:ref:`percentage`, :ref:`percentage`, :ref:`percentage`)
         """
         pass
@@ -125,17 +120,16 @@ class UltrasonicSensor:
         """
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
 
         """
         pass
 
     def distance(self):
-        """Measures the distance between the sensor and an object using
-        ultrasonic sound waves.
+        """超音波を使って、センサーと物体との距離を測定します。
 
         Returns:
-            :ref:`distance`: Distance.
+            :ref:`distance`: 距離。
 
         """
         pass
@@ -148,21 +142,20 @@ class SoundSensor:
         """
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
 
         """
         pass
 
     def intensity(self, audible_only=True):
-        """Measures the ambient sound intensity (loudness).
+        """周囲の音の強さ(音量)を測定します。
 
         Arguments:
-            audible_only (bool): Detect only audible sounds. This tries to
-                filter out frequencies that cannot be heard by the
-                human ear.
+            audible_only (bool): 可聴音のみを検出します。人間の耳に
+                聞こえない周波数を除去しようとします。
 
         Returns:
-            :ref:`percentage`: Sound intensity.
+            :ref:`percentage`: 音の強さ。
 
         """
         pass
@@ -175,116 +168,113 @@ class TemperatureSensor:
         """
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
 
         """
         pass
 
     def temperature(self):
-        """Measures the temperature.
+        """温度を測定します。
 
         Returns:
-            :ref:`temperature`: Measured temperature.
+            :ref:`temperature`: 測定された温度。
 
         """
         pass
 
 
 class EnergyMeter:
-    """LEGO® MINDSTORMS® Education NXT Energy Meter."""
+    """LEGO® MINDSTORMS® Education NXT エネルギーメーター。"""
 
     def __init__(self, port):
         """
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
 
         """
         pass
 
     def storage(self):
-        """Gets the total available energy stored in the battery.
+        """バッテリーに蓄えられている利用可能な総エネルギーを取得します。
 
         Returns:
-            :ref:`energy`: Remaining stored energy.
+            :ref:`energy`: 残りの蓄積エネルギー。
 
         """
         pass
 
     def input(self):
-        """Measures the electrical signals at the input (bottom) side
-        of the energy meter. It measures the voltage applied to it and the
-        current passing through it. The product of these two values is power.
-        This power value is the rate at which the stored energy increases. This
-        power is supplied by an energy source such as the provided solar panel
-        or an externally driven motor.
+        """エネルギーメーターの入力側(底面)の電気信号を測定します。
+        印加される電圧と流れる電流を測定し、この2つの値の積が電力に
+        なります。この電力値は蓄積エネルギーが増加する速さです。この電力は、
+        付属のソーラーパネルや外部から駆動されるモーターなどのエネルギー源
+        から供給されます。
 
         Returns:
-            (:ref:`voltage`, :ref:`current`, :ref:`power`): Voltage, current,
-            and power measured at the input port.
+            (:ref:`voltage`, :ref:`current`, :ref:`power`): 入力ポートで
+            測定された電圧・電流・電力。
 
         """
         pass
 
     def output(self):
-        """Measures the electrical signals at the output (top) side
-        of the energy meter. It measures the voltage applied to the external
-        load and the current passing to it. The product of these two values
-        is power. This power value is the rate at which the stored energy
-        decreases. This power is consumed by the load, such as a light or a
-        motor.
+        """エネルギーメーターの出力側(上面)の電気信号を測定します。
+        外部負荷に印加される電圧と流れる電流を測定し、この2つの値の積が
+        電力になります。この電力値は蓄積エネルギーが減少する速さです。
+        この電力はライトやモーターなどの負荷によって消費されます。
 
         Returns:
-            (:ref:`voltage`, :ref:`current`, :ref:`power`): Voltage, current,
-            and power measured at the output port.
+            (:ref:`voltage`, :ref:`current`, :ref:`power`): 出力ポートで
+            測定された電圧・電流・電力。
 
         """
         pass
 
 
 class VernierAdapter(_AnalogSensor):
-    """LEGO® MINDSTORMS® Education NXT/EV3 Adapter for Vernier Sensors."""
+    """LEGO® MINDSTORMS® Education NXT/EV3 Vernierセンサー用アダプター。"""
 
     def __init__(self, port, conversion=None):
         """
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
-            conversion (callable): Function of the format :meth:`.conversion`.
-                This function is used to convert the raw analog voltage to the
-                sensor-specific output value. Each Vernier Sensor has its
-                own conversion function. The example given below demonstrates
-                the conversion for the Surface Temperature Sensor.
+            port (Port): センサーを接続するポート。
+            conversion (callable): :meth:`.conversion` 形式の関数。
+                この関数は生のアナログ電圧をセンサー固有の出力値に変換する
+                ために使われます。各 Vernier センサーには独自の変換関数が
+                あります。下記の例は Surface Temperature Sensor の変換を
+                示しています。
         """
         pass
 
     def voltage(self):
-        """Measures the raw analog sensor voltage.
+        """センサーの生のアナログ電圧を測定します。
 
         Returns:
-            :ref:`voltage`: Analog voltage.
+            :ref:`voltage`: アナログ電圧。
         """
         pass
 
     def conversion(self, voltage):
-        """Converts the raw voltage (mV) to a sensor value.
+        """生の電圧(mV)をセンサー値に変換します。
 
-        If you did not provide a ``conversion`` function earlier, no conversion
-        will be applied.
+        前もって ``conversion`` 関数を指定していない場合、変換は
+        適用されません。
 
         Arguments:
-            voltage (:ref:`voltage`): Analog sensor voltage
+            voltage (:ref:`voltage`): アナログセンサーの電圧。
 
-        :returns: Converted sensor value.
+        :returns: 変換されたセンサー値。
         :rtype: float
         """
         pass
 
     def value(self):
-        """Measures the sensor :meth:`.voltage` and then
-        applies your :meth:`.conversion` to give you the sensor value.
+        """センサーの :meth:`.voltage` を測定し、指定した
+        :meth:`.conversion` を適用してセンサー値を返します。
 
-        :returns: Converted sensor value.
+        :returns: 変換されたセンサー値。
         :rtype: float
         """
         pass

@@ -1,132 +1,131 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2018-2020 The Pybricks Authors
 
-"""Robotics module for the Pybricks API."""
+"""Pybricks APIのロボティクスモジュール。"""
 
 from ._common import Control as _Control
 
 
 class DriveBase:
-    """A robotic vehicle with two powered wheels and an optional support
-    wheel or caster.
+    """2つの動力付きホイールと、オプションの補助輪またはキャスターを持つ
+    ロボット車両です。
 
-    By specifying the dimensions of your robot, this class
-    makes it easy to drive a given distance in millimeters or turn by a given
-    number of degrees.
+    ロボットの寸法を指定することで、このクラスはミリメートル単位の
+    指定距離だけ走行したり、指定した角度だけ旋回したりする操作を
+    簡単に行えます。
 
-    **Positive** distances and drive speeds mean
-    driving **forward**. **Negative** means **backward**.
+    **正** の距離と走行速度は **前進** を意味します。
+    **負** は **後進** を意味します。
 
-    **Positive** angles and turn rates mean turning **right**.
-    **Negative** means **left**. So when viewed from the top,
-    positive means clockwise and negative means counterclockwise.
+    **正** の角度と旋回速度は **右** への旋回を意味します。
+    **負** は **左** を意味します。つまり、上から見たときに
+    正は時計回り、負は反時計回りです。
 
     """
 
     distance_control = _Control()
-    """The traveled distance and drive speed are controlled by a PID
-    controller. You can use this attribute to change its settings.
-    See :ref:`control` for an overview of available methods."""
+    """走行距離と走行速度はPIDコントローラーで制御されます。
+    この属性を使用して設定を変更できます。
+    利用可能なメソッドの概要は :ref:`control` を参照してください。"""
 
     heading_control = _Control()
-    """The robot turn angle and turn rate are controlled by a PID
-    controller. You can use this attribute to change its settings.
-    See :ref:`control` for an overview of available methods."""
+    """ロボットの旋回角度と旋回速度はPIDコントローラーで制御されます。
+    この属性を使用して設定を変更できます。
+    利用可能なメソッドの概要は :ref:`control` を参照してください。"""
 
     def __init__(self, left_motor, right_motor, wheel_diameter, axle_track):
         """DriveBase(left_motor, right_motor, wheel_diameter, axle_track)
 
         Arguments:
             left_motor (Motor):
-                The motor that drives the left wheel.
+                左のホイールを駆動するモーター。
             right_motor (Motor):
-                The motor that drives the right wheel.
-            wheel_diameter (:ref:`dimension`): Diameter of the wheels.
-            axle_track (:ref:`dimension`): Distance between the points where
-                both wheels touch the ground.
+                右のホイールを駆動するモーター。
+            wheel_diameter (:ref:`dimension`): ホイールの直径。
+            axle_track (:ref:`dimension`): 両方のホイールが地面に接する
+                点同士の距離。
         """
 
     def drive(self, drive_speed, turn_rate):
-        """Starts driving at the specified speed and turn rate. Both values are
-        measured at the center point between the wheels of the robot.
+        """指定した速度と旋回速度で走行を開始します。どちらの値もロボットの
+        ホイール間の中心点で測定されます。
 
         Arguments:
-            drive_speed (:ref:`linspeed`): Speed of the robot.
-            turn_rate (:ref:`speed`): Turn rate of the robot.
+            drive_speed (:ref:`linspeed`): ロボットの速度。
+            turn_rate (:ref:`speed`): ロボットの旋回速度。
         """
         pass
 
     def stop(self):
-        """Stops the robot by letting the motors spin freely."""
+        """モーターを空転させてロボットを停止します。"""
         pass
 
     def distance(self):
-        """Gets the estimated driven distance.
+        """走行した推定距離を取得します。
 
         Returns:
-            :ref:`distance`: Driven distance since last reset.
+            :ref:`distance`: 前回のリセットからの走行距離。
         """
         pass
 
     def angle(self):
-        """Gets the estimated rotation angle of the drive base.
+        """ドライブベースの推定回転角度を取得します。
 
         Returns:
-            :ref:`angle`: Accumulated angle since last reset.
+            :ref:`angle`: 前回のリセットからの累積角度。
         """
         pass
 
     def state(self):
-        """Gets the state of the robot.
+        """ロボットの状態を取得します。
 
-        This returns the current :meth:`.distance`, the drive speed, the
-        :meth:`.angle`, and the turn rate.
+        現在の :meth:`.distance` 、走行速度、
+        :meth:`.angle` 、旋回速度を返します。
 
-        :returns: Distance, drive speed, angle, turn rate
+        :returns: 距離、走行速度、角度、旋回速度
         :rtype: (:ref:`distance`, :ref:`linspeed`, :ref:`angle`, :ref:`speed`)
         """
         pass
 
     def reset(self):
-        """Resets the estimated driven distance and angle to 0."""
+        """推定走行距離と角度を0にリセットします。"""
         pass
 
     def settings(self, straight_speed, straight_acceleration, turn_rate,
                  turn_acceleration):
-        """Configures the speed and acceleration used
-        by :meth:`.straight` and :meth:`.turn`.
+        """:meth:`.straight` と :meth:`.turn` で使用する速度と加速度を
+        設定します。
 
-        If you give no arguments, this returns the current values as a tuple.
+        引数が指定されない場合は、現在の値をタプルで返します。
 
-        You can only change the settings while the robot is stopped. This is
-        either before you begin driving or after you call :meth:`.stop`.
+        設定はロボットが停止しているときにのみ変更できます。
+        つまり走行を開始する前か、 :meth:`.stop` を呼び出した後です。
 
         Arguments:
-            straight_speed (:ref:`linspeed`): Speed of the robot during
-                :meth:`.straight`.
-            straight_acceleration (:ref:`linacceleration`): Acceleration and
-                deceleration of the robot at the start and end
-                of :meth:`.straight`.
-            turn_rate (:ref:`speed`): Turn rate of the robot
-                during :meth:`.turn`.
-            turn_acceleration (:ref:`acceleration`): Angular acceleration and
-                deceleration of the robot at the start and end
-                of :meth:`.turn`.
+            straight_speed (:ref:`linspeed`): :meth:`.straight` の間の
+                ロボットの速度。
+            straight_acceleration (:ref:`linacceleration`):
+                :meth:`.straight` の開始時と終了時におけるロボットの
+                加速度と減速度。
+            turn_rate (:ref:`speed`): :meth:`.turn` の間のロボットの
+                旋回速度。
+            turn_acceleration (:ref:`acceleration`): :meth:`.turn` の
+                開始時と終了時におけるロボットの角加速度と角減速度。
         """
         pass
 
     def straight(self, distance):
-        """Drives straight for a given distance and then stops.
+        """指定した距離だけ直進してから停止します。
 
         Arguments:
-            distance (:ref:`distance`): Distance to travel.
+            distance (:ref:`distance`): 走行する距離。
         """
         pass
 
     def turn(self, angle):
-        """Turns in place by a given angle and then stops.
+        """その場で指定した角度だけ旋回してから停止します。
 
         Arguments:
-            angle (:ref:`angle`): Angle of the turn.
+            angle (:ref:`angle`): 旋回する角度。
         """
         pass
