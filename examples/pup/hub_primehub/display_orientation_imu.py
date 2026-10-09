@@ -2,17 +2,17 @@ from pybricks.hubs import PrimeHub
 from pybricks.parameters import Icon
 from pybricks.tools import wait
 
-# Initialize the hub.
+# ハブを初期化する。
 hub = PrimeHub()
 
 while True:
-    # Check which side of the hub is up.
+    # ハブのどの面が上を向いているか調べる。
     up_side = hub.imu.up()
 
-    # Use this side to set the display orientation.
+    # その面を使って表示の向きを決める。
     hub.display.orientation(up_side)
 
-    # Display something, like an arrow.
+    # 矢印など、何かを表示する。
     hub.display.icon(Icon.UP)
 
     wait(10)

@@ -2,15 +2,15 @@ from pybricks.parameters import Port
 from pybricks.pupdevices import TiltSensor
 from pybricks.tools import wait
 
-# Initialize the sensor.
+# センサーを初期化する。
 accel = TiltSensor(Port.A)
 
 while True:
-    # Read the tilt angles relative to the horizontal plane.
+    # 水平面に対する傾き角度を読み取る。
     pitch, roll = accel.tilt()
 
-    # Print the values
+    # 値をprintする
     print("Pitch:", pitch, "Roll:", roll)
 
-    # Wait some time so we can read what is printed.
+    # 出力を読み取れるよう少し待つ。
     wait(100)

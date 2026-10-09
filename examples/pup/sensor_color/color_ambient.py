@@ -2,24 +2,24 @@ from pybricks.parameters import Port
 from pybricks.pupdevices import ColorSensor
 from pybricks.tools import wait
 
-# Initialize the sensor.
+# センサーを初期化する。
 sensor = ColorSensor(Port.A)
 
-# Repeat forever.
+# ずっと繰り返す。
 while True:
-    # Get the ambient color values. Instead of scanning the color of a surface,
-    # this lets you scan the color of light sources like lamps or screens.
+    # 環境光の色の値を取得する。表面の色ではなく、
+    # ランプや画面などの光源の色を測れる。
     hsv = sensor.hsv(surface=False)
     color = sensor.color(surface=False)
 
-    # Get the ambient light intensity.
+    # 環境光の強さを取得する。
     ambient = sensor.ambient()
 
-    # Print the measurements.
+    # 測定値をprintする。
     print(hsv, color, ambient)
 
-    # Point the sensor at a computer screen or colored light. Watch the color.
-    # Also, cover the sensor with your hands and watch the ambient value.
+    # センサーをパソコンの画面や色付きの光に向けて、色の値を見てみよう。
+    # 手でセンサーを覆って、環境光の値の変化も見てみよう。
 
-    # Wait so we can read the printed line
+    # 出力された行を読めるよう少し待つ
     wait(100)

@@ -2,43 +2,43 @@ from pybricks.parameters import Port
 from pybricks.pupdevices import ForceSensor
 from pybricks.tools import wait
 
-# Initialize the sensor.
+# センサーを初期化する。
 button = ForceSensor(Port.A)
 
 
-# This function waits until the button is pushed. It keeps track of the maximum
-# detected force until the button is released. Then it returns the maximum.
+# ボタンが押されるまで待つ関数。離されるまでに検出した
+# 力の最大値を記録し続け、最後にその最大値を返す。
 def wait_for_force():
 
-    # Wait for a force, by doing nothing for as long the force is nearly zero.
+    # 力がほぼ0の間は何もせずに待ち、力がかかるのを待つ。
     print("Waiting for force.")
     while button.force() <= 0.1:
         wait(10)
 
-    # Now we wait for the release, by waiting for the force to be zero again.
+    # 次に、力が再び0になるまで待って「離された」を検出する。
     print("Waiting for release.")
 
-    # While we wait for that to happen, we keep reading the force and remember
-    # the maximum force. We do this by initializing the maximum at 0, and
-    # updating it each time we detect a bigger force.
+    # 離されるのを待つ間、力を読み続けて
+    # 最大値を覚えておく。最大値を0で初期化しておき、
+    # より大きな力を検出するたびに更新する、という仕組み。
     maximum = 0
     force = 10
     while force > 0.1:
-        # Read the force.
+        # 力を読み取る。
         force = button.force()
 
-        # Update the maximum if the measured force is larger.
+        # 測った力が最大値を超えたら更新する。
         maximum = max(maximum, force)
 
-        # Wait and then measure again.
+        # 少し待ってからもう一度測る。
         wait(10)
 
-    # Return the maximum force.
+    # 最大の力を返す。
     return maximum
 
 
-# Keep waiting for the sensor button to be pushed. When it is, display
-# the peak force and repeat.
+# センサーボタンが押されるまで待ち続ける。押されたら
+# 最大の力を表示して最初から繰り返す。
 while True:
     peak = wait_for_force()
     print(f"Released. Peak force: {peak} N\n")

@@ -3,10 +3,10 @@ from pybricks.hubs import ThisHub
 from pybricks.parameters import Color
 from pybricks.tools import wait
 
-# Initialize the hub.
+# ハブを初期化する。
 hub = ThisHub()
 
-# Turn the light on and off 5 times.
+# ライトの点灯と消灯を5回繰り返す。
 for i in range(5):
     hub.light.on(Color.RED)
     wait(1000)

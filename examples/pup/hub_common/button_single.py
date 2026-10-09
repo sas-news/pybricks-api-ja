@@ -3,23 +3,23 @@ from pybricks.hubs import ThisHub
 from pybricks.parameters import Button, Color
 from pybricks.tools import StopWatch, wait
 
-# Initialize the hub.
+# ハブを初期化する。
 hub = ThisHub()
 
-# Disable the stop button.
+# 停止ボタンを無効にする。
 hub.system.set_stop_button(None)
 
-# Check the button for 5 seconds.
+# 5秒間ボタンの状態を調べる。
 watch = StopWatch()
 while watch.time() < 5000:
-    # Set light to green if pressed, else red.
+    # 押されていたら緑、そうでなければ赤にライトを付ける。
     if hub.buttons.pressed():
         hub.light.on(Color.GREEN)
     else:
         hub.light.on(Color.RED)
 
-# Enable the stop button again.
+# 停止ボタンを再び有効にする。
 hub.system.set_stop_button(Button.CENTER)
 
-# Now you can press the stop button as usual.
+# これで停止ボタンをいつもどおり押せる。
 wait(5000)

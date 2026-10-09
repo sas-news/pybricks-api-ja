@@ -2,14 +2,14 @@ from pybricks.parameters import Color
 from pybricks.pupdevices import Remote
 from pybricks.tools import wait
 
-# Connect to the remote.
+# リモコンに接続する。
 remote = Remote()
 
 while True:
-    # Set the color to red.
+    # 色を赤にする。
     remote.light.on(Color.RED)
     wait(1000)
 
-    # Set the color to blue.
+    # 色を青にする。
     remote.light.on(Color.BLUE)
     wait(1000)

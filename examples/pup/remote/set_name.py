@@ -1,12 +1,12 @@
 from pybricks.pupdevices import Remote
 
-# Connect to any remote.
+# 見つかったリモコンに接続する。
 my_remote = Remote()
 
-# Print the current name of the remote.
+# リモコンの現在の名前をprintする。
 print(my_remote.name())
 
-# Choose a new name.
+# 新しい名前を決める。
 my_remote.name("truck2")
 
 print("Done!")

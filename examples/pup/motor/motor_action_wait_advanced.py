@@ -2,16 +2,16 @@ from pybricks.parameters import Port
 from pybricks.pupdevices import Motor
 from pybricks.tools import wait
 
-# Initialize motors on port A and B.
+# ポートAとBのモーターを初期化する。
 track_motor = Motor(Port.A)
 gripper_motor = Motor(Port.B)
 
-# Make both motors perform an action with wait=False
+# 両方のモーターに wait=False で動作させる
 track_motor.run_angle(500, 360, wait=False)
 gripper_motor.run_angle(200, 720, wait=False)
 
-# While one or both of the motors are not done yet,
-# do something else. In this example, just wait.
+# 片方または両方のモーターがまだ動作中の間、
+# 別のことをする。この例ではただ待つだけ。
 while not track_motor.done() or not gripper_motor.done():
     wait(10)
 

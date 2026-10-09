@@ -2,20 +2,20 @@ from pybricks.parameters import Port
 from pybricks.pupdevices import Motor
 from pybricks.tools import wait
 
-# Initialize a motor on port A.
+# ポートAのモーターを初期化する。
 example_motor = Motor(Port.A)
 
-# Start moving at 300 degrees per second.
+# 毎秒300度で動き始める。
 example_motor.run(300)
 
-# Display the angle and speed 50 times.
+# 角度と速度を50回表示する。
 for i in range(100):
-    # Read the angle (degrees) and speed (degrees per second).
+    # 角度(度)と速度(度/秒)を読み取る。
     angle = example_motor.angle()
     speed = example_motor.speed()
 
-    # Print the values.
+    # 値をprintする。
     print(angle, speed)
 
-    # Wait some time so we can read what is displayed.
+    # 表示を読み取れるよう少し待つ。
     wait(200)

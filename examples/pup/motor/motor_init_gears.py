@@ -2,14 +2,14 @@ from pybricks.parameters import Direction, Port
 from pybricks.pupdevices import Motor
 from pybricks.tools import wait
 
-# Initialize a motor on port A with the positive direction as counterclockwise.
-# Also specify one gear train with a 12-tooth and a 36-tooth gear. The 12-tooth
-# gear is attached to the motor axle. The 36-tooth gear is at the output axle.
+# ポートAのモーターを、反時計回りを正方向として初期化する。
+# さらに、12歯と36歯のギアからなるギア列を1つ指定する。12歯の
+# ギアはモーター軸に、36歯のギアは出力軸に付いている。
 geared_motor = Motor(Port.A, Direction.COUNTERCLOCKWISE, [12, 36])
 
-# Make the output axle run at 100 degrees per second. The motor speed
-# is automatically increased to compensate for the gears.
+# 出力軸を毎秒100度で回す。ギア分を補うため、
+# モーターの回転速度は自動的に上げられる。
 geared_motor.run(100)
 
-# Wait for three seconds.
+# 3秒待つ。
 wait(3000)

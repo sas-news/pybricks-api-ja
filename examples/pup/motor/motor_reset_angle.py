@@ -1,17 +1,17 @@
 from pybricks.parameters import Port
 from pybricks.pupdevices import Motor
 
-# Initialize a motor on port A.
+# ポートAのモーターを初期化する。
 example_motor = Motor(Port.A)
 
-# Reset the angle to 0.
+# 角度を0にリセットする。
 example_motor.reset_angle(0)
 
-# Reset the angle to 1234.
+# 角度を1234にリセットする。
 example_motor.reset_angle(1234)
 
-# Reset the angle to the absolute angle.
-# This is only supported on motors that have
-# an absolute encoder. For other motors, this
-# will raise an error.
+# 角度を絶対角度にリセットする。
+# これは絶対エンコーダー搭載モーターでのみ使える。
+# それ以外のモーターでは
+# エラーになる。
 example_motor.reset_angle()

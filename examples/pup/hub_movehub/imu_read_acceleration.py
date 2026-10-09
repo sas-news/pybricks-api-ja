@@ -1,16 +1,16 @@
 from pybricks.hubs import MoveHub
 from pybricks.tools import wait
 
-# Initialize the hub.
+# ハブを初期化する。
 hub = MoveHub()
 
-# Get the acceleration tuple.
+# 加速度のタプルを取得する。
 print(hub.imu.acceleration())
 
 while True:
-    # Get individual acceleration values.
+    # 加速度を個別に取得する。
     x, y, z = hub.imu.acceleration()
     print(x, y, z)
 
-    # Wait so we can see what we printed.
+    # 出力したものを見られるよう少し待つ。
     wait(100)

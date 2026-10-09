@@ -2,7 +2,7 @@ from pybricks.iodevices import PUPDevice
 from pybricks.parameters import Port
 from uerrno import ENODEV
 
-# Dictionary of device identifiers along with their name.
+# デバイスIDとその名前の対応表。
 device_names = {
     # pybricks.pupdevices.DCMotor
     1: "Wedo 2.0 Medium Motor",
@@ -34,40 +34,40 @@ device_names = {
     64: "SPIKE 3x3 Color Light Matrix",
 }
 
-# Make a list of known ports.
+# 既知のポートのリストを作る。
 ports = [Port.A, Port.B]
 
-# On hubs that support it, add more ports.
+# 対応するハブでは、さらにポートを追加する。
 try:
     ports.append(Port.C)
     ports.append(Port.D)
 except AttributeError:
     pass
 
-# On hubs that support it, add more ports.
+# 対応するハブでは、さらにポートを追加する。
 try:
     ports.append(Port.E)
     ports.append(Port.F)
 except AttributeError:
     pass
 
-# Go through all available ports.
+# 使えるポートをすべて調べる。
 for port in ports:
-    # Try to get the device, if it is attached.
+    # デバイスが付いていれば取得を試みる。
     try:
         device = PUPDevice(port)
     except OSError as ex:
         if ex.args[0] == ENODEV:
-            # No device found on this port.
+            # このポートにはデバイスが見つからなかった。
             print(port, ": ---")
             continue
         else:
             raise
 
-    # Get the device id
+    # デバイスIDを取得する
     id = device.info()["id"]
 
-    # Look up the name.
+    # 名前を引く。
     try:
         print(port, ":", device_names[id])
     except KeyError:

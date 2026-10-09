@@ -2,13 +2,13 @@
 from pybricks.hubs import ThisHub
 from pybricks.tools import wait
 
-# Initialize the hub.
+# ハブを初期化する。
 hub = ThisHub()
 
 while True:
-    # Read the tilt values.
+    # 傾きの値を読み取る。
     pitch, roll = hub.imu.tilt()
 
-    # Print the result.
+    # 結果をprintする。
     print(pitch, roll)
     wait(200)

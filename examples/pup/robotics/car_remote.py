@@ -3,24 +3,24 @@ from pybricks.pupdevices import Motor, Remote
 from pybricks.robotics import Car
 from pybricks.tools import wait
 
-# Set up motors.
+# モーターをセットアップする。
 front = Motor(Port.A, Direction.COUNTERCLOCKWISE)
 rear = Motor(Port.B, Direction.COUNTERCLOCKWISE)
 steer = Motor(Port.C, Direction.CLOCKWISE)
 
-# Connect to the remote.
+# リモコンに接続する。
 remote = Remote()
 
-# Set up the car.
+# 車をセットアップする。
 car = Car(steer, [front, rear])
 
-# The main program starts here.
+# メインプログラムはここから。
 while True:
-    # Read remote state.
+    # リモコンの状態を読み取る。
     pressed = remote.buttons.pressed()
 
-    # Steer using the left pad. Steering is the percentage
-    # of the angle determined while initializing.
+    # 左パッドでステアリング。量は初期化時に
+    # 決めた角度に対する割合(%)。
     steering = 0
     if Button.LEFT_PLUS in pressed:
         steering += 100
@@ -28,7 +28,7 @@ while True:
         steering -= 100
     car.steer(steering)
 
-    # Drive using the right pad.
+    # 右パッドで運転する。
     power = 0
     if Button.RIGHT_PLUS in pressed:
         power += 100
@@ -36,5 +36,5 @@ while True:
         power -= 100
     car.drive_power(power)
 
-    # Wait briefly.
+    # 少し待つ。
     wait(10)

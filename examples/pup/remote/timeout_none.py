@@ -1,6 +1,6 @@
 from pybricks.pupdevices import Remote
 
-# Connect to any remote. Search forever until we find one.
+# 見つかったリモコンに接続する。見つかるまでずっと探し続ける。
 my_remote = Remote(timeout=None)
 
 print("Connected!")

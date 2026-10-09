@@ -2,22 +2,22 @@ from pybricks.parameters import Port
 from pybricks.pupdevices import ColorSensor
 from pybricks.tools import wait
 
-# Initialize the sensor.
+# センサーを初期化する。
 sensor = ColorSensor(Port.A)
 
 
 def main():
-    # Run the main code.
+    # メインのコードを実行する。
     while True:
         print(sensor.color())
         wait(500)
 
 
-# Wrap the main code in try/finally so that the cleanup code always runs
-# when the program ends, even if an exception was raised.
+# メインのコードを try/finally で囲むと、例外が起きても
+# プログラム終了時にクリーンアップが必ず走る。
 try:
     main()
 finally:
-    # The cleanup code goes here.
+    # ここにクリーンアップ処理を書く。
     print("Cleaning up.")
     sensor.lights.off()

@@ -3,16 +3,16 @@ from pybricks.hubs import ThisHub
 from pybricks.parameters import Axis
 from pybricks.tools import wait
 
-# Initialize the hub. In this case, specify that the hub is mounted with the
-# top side facing forward and the front side facing to the right.
-# For example, this is how the hub is mounted in BLAST in the 51515 set.
+# ハブを初期化。ここでは、ハブが上面を前に、
+# 正面を右に向けて取り付けられていると指定する。
+# 例えば51515セットのBLASTでは、ハブはこの向きで取り付けられている。
 hub = ThisHub(top_side=Axis.X, front_side=-Axis.Y)
 
 while True:
-    # Read the tilt values. Now, the values are 0 when BLAST stands upright.
-    # Leaning forward gives positive pitch. Leaning right gives positive roll.
+    # 傾きの値を読み取る。BLASTが直立しているとき値は0になる。
+    # 前に傾けるとピッチが正、右に傾けるとロールが正になる。
     pitch, roll = hub.imu.tilt()
 
-    # Print the result.
+    # 結果をprintする。
     print(pitch, roll)
     wait(200)

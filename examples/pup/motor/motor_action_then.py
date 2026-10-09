@@ -2,23 +2,23 @@ from pybricks.parameters import Port, Stop
 from pybricks.pupdevices import Motor
 from pybricks.tools import wait
 
-# Initialize a motor on port A.
+# ポートAのモーターを初期化する。
 example_motor = Motor(Port.A)
 
-# By default, the motor holds the position. It keeps
-# correcting the angle if you move it.
+# デフォルトではモーターは位置を保持する。
+# 動かそうとすると角度が補正され続ける。
 example_motor.run_angle(500, 360)
 wait(1000)
 
-# This does exactly the same as above.
+# これは上とまったく同じことをする。
 example_motor.run_angle(500, 360, then=Stop.HOLD)
 wait(1000)
 
-# You can also brake. This applies some resistance
-# but the motor does not move back if you move it.
+# ブレーキも使える。抵抗はかかるが、
+# 動かしてもモーターは元に戻らない。
 example_motor.run_angle(500, 360, then=Stop.BRAKE)
 wait(1000)
 
-# This makes the motor coast freely after it stops.
+# これでモーターは停止後に自由に惰行する。
 example_motor.run_angle(500, 360, then=Stop.COAST)
 wait(1000)

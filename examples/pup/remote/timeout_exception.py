@@ -1,15 +1,15 @@
 from pybricks.pupdevices import Remote
 
 try:
-    # Search for a remote for 5 seconds.
+    # 5秒間リモコンを探す。
     my_remote = Remote(timeout=5000)
 
     print("Connected!")
 
-    # Here you can write code that uses the remote.
+    # ここでリモコンを使うコードを書ける。
 
 except OSError:
     print("Could not find the remote.")
 
-    # Here you can make your robot do something
-    # without the remote.
+    # ここではリモコンを使わずに
+    # ロボットを動かせる。

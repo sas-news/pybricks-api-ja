@@ -3,18 +3,18 @@ from pybricks.hubs import ThisHub
 from pybricks.parameters import Axis
 from pybricks.tools import wait
 
-# Initialize the hub.
+# ハブを初期化する。
 hub = ThisHub()
 
-# Get the acceleration or angular_velocity along a single axis.
-# If you need only one value, this is more memory efficient.
+# 1軸分の加速度または角速度を取得する。
+# 値が1つだけ必要なら、こちらのほうがメモリ効率が良い。
 while True:
-    # Read the forward acceleration.
+    # 前方向の加速度を読み取る。
     forward_acceleration = hub.imu.acceleration(Axis.X)
 
-    # Read the yaw rate.
+    # ヨーレートを読み取る。
     yaw_rate = hub.imu.angular_velocity(Axis.Z)
 
-    # Print the yaw rate.
+    # ヨーレートをprintする。
     print(yaw_rate)
     wait(100)
