@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Upgrading from v1.0 to v2.0 &mdash; ev3-micropython 2.0.0 documentation</title>
+  <title>v1.0からv2.0へのアップグレード &mdash; ev3-micropython 2.0.0 documentation</title>
   
 
   
@@ -103,15 +103,15 @@
             
               <p class="caption"><span class="caption-text">はじめに</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="startinstall.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="startbrick.html">Using the EV3 Brick</a></li>
-<li class="toctree-l1"><a class="reference internal" href="startrun.html">Creating and running programs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="startlinux.html">Accessing advanced EV3 features</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Upgrading from v1.0 to v2.0</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#upgrading-the-microsd-card">Upgrading the microSD Card</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#upgrading-your-existing-programs">Upgrading your existing programs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#the-new-ev3brick-class-replaces-the-ev3brick-module">The new EV3Brick() class replaces the ev3brick module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#other-internal-changes-to-existing-features">Other internal changes to existing features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startinstall.html">インストール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startbrick.html">EV3 Brickを使う</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startrun.html">プログラムの作成と実行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startlinux.html">EV3の高度な機能を使う</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">v1.0からv2.0へのアップグレード</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#upgrading-the-microsd-card">microSDカードのアップグレード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#upgrading-your-existing-programs">既存プログラムのアップグレード</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-new-ev3brick-class-replaces-the-ev3brick-module">新しいEV3Brick()クラスがev3brickモジュールを置き換え</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#other-internal-changes-to-existing-features">既存機能のその他の内部変更</a></li>
 </ul>
 </li>
 </ul>
@@ -119,40 +119,40 @@
 </ul>
 <p class="caption"><span class="caption-text">Pybricksモジュール</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – Programmable Hubs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 Devices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT Devices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – Generic I/O Devices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – Parameters and Constants</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – Timing and Data logging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – Robotics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> – Sounds and Images</a></li>
-<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – Messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – プログラマブルHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3デバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXTデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – 汎用I/Oデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – タイミングとデータロギング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> – サウンドと画像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージング</a></li>
 </ul>
 <p class="caption"><span class="caption-text">補足解説</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="signaltypes.html">Signals and Units</a></li>
-<li class="toctree-l1"><a class="reference internal" href="motors.html">More about Motors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signaltypes.html">信号と単位</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motors.html">モーターの詳細</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Robot Educatorプログラム</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_basic.html">Basic Movement</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_ultrasonic.html">Obstacle Avoidance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_line.html">Line Following</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_basic.html">基本的な動き</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_ultrasonic.html">障害物回避</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_line.html">ライントレース</a></li>
 </ul>
 <p class="caption"><span class="caption-text">コアセットプログラム</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="examples/color_sorter.html">Color Sorter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/robot_arm.html">Robot Arm H25</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/puppy.html">Puppy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/gyro_boy.html">Gyro Boy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/color_sorter.html">カラーソーター</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_arm.html">ロボットアーム H25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/puppy.html">パピー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/gyro_boy.html">ジャイロボーイ</a></li>
 </ul>
 <p class="caption"><span class="caption-text">拡張セットプログラム</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="examples/elephant.html">Elephant</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/stair_climber.html">Stair Climber</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/tank_bot.html">Tank Bot</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/znap.html">Znap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/elephant.html">エレファント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/stair_climber.html">ステアクライマー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/tank_bot.html">タンクボット</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/znap.html">ズナップ</a></li>
 </ul>
 
             
@@ -218,49 +218,49 @@
            <div itemprop="articleBody">
             
   <div class="section" id="upgrading-from-v1-0-to-v2-0">
-<h1>Upgrading from v1.0 to v2.0<a class="headerlink" href="#upgrading-from-v1-0-to-v2-0" title="Permalink to this headline">¶</a></h1>
-<p><em>EV3 MicroPython version 2.0 was released on May 18, 2020.</em></p>
-<p>This section is for users who have previously used LEGO MINDSTORMS EV3
-MicroPython v1.0. We’ll explain what’s changed and how you can upgrade to
-benefit from the latest improvements.</p>
-<p>If you are a new user and you just got started using version 2.0, you may skip
-this section.</p>
+<h1>v1.0からv2.0へのアップグレード<a class="headerlink" href="#upgrading-from-v1-0-to-v2-0" title="Permalink to this headline">¶</a></h1>
+<p><em>EV3 MicroPython v2.0は2020年5月18日にリリースされました。</em></p>
+<p>このセクションは、以前にLEGO MINDSTORMS EV3
+MicroPython v1.0を使っていたユーザー向けです。変更点と、最新の改善を利用するための
+アップグレード方法を説明します。</p>
+<p>新規ユーザーでバージョン2.0を使い始めたばかりの場合は、このセクションを
+読み飛ばしても構いません。</p>
 <div class="section" id="upgrading-the-microsd-card">
-<h2>Upgrading the microSD Card<a class="headerlink" href="#upgrading-the-microsd-card" title="Permalink to this headline">¶</a></h2>
-<p>To upgrade, download the latest microSD card file and install it using the
-standard <a class="reference internal" href="startinstall.html#prepsdcard"><span class="std std-ref">instructions</span></a>.</p>
-<p>Note that this will erase all your existing files on the SD Card. Before you
-upgrade, make sure that you still have all your projects on your computer.
-If not, you can upload files back to your computer using
-<a class="reference internal" href="startrun.html#managefiles"><span class="std std-ref">these instructions</span></a>.</p>
-<p>As with any software update, <em>be careful about when you update</em>. For example,
-if you developed your code using version v1.0 and you are halfway into your
-robotics competition season, you may want to stick with v1.0 for now.</p>
+<h2>microSDカードのアップグレード<a class="headerlink" href="#upgrading-the-microsd-card" title="Permalink to this headline">¶</a></h2>
+<p>アップグレードするには、最新のmicroSDカードファイルをダウンロードし、
+標準の<a class="reference internal" href="startinstall.html#prepsdcard"><span class="std std-ref">手順</span></a>でインストールしてください。</p>
+<p>これによりSDカード上の既存のファイルはすべて消去されることに注意してください。
+アップグレードする前に、すべてのプロジェクトがコンピューター上に
+残っていることを確認してください。
+残っていない場合は、
+<a class="reference internal" href="startrun.html#managefiles"><span class="std std-ref">こちらの手順</span></a>でファイルをコンピューターにアップロードして戻すことができます。</p>
+<p>どんなソフトウェア更新でも、<em>更新するタイミングには注意してください</em>。たとえば、
+v1.0でコードを開発していてロボット競技会のシーズン途中である場合は、
+しばらくv1.0のままにしておくとよいでしょう。</p>
 </div>
 <div class="section" id="upgrading-your-existing-programs">
-<h2>Upgrading your existing programs<a class="headerlink" href="#upgrading-your-existing-programs" title="Permalink to this headline">¶</a></h2>
-<p>Most changes in v2.0 are <em>new</em> features, like support for additional sensors.
-Naturally, this will not affect your existing code.
-However, some changes were made to existing features to improve performance.</p>
-<p>All originally documented features in v1.0 will still work after you upgrade.
-This means that most programs originally made for v1.0 will work with the v2.0
-microSD card image without any changes.</p>
-<p>To try this, simply download and run your original code as you did before.</p>
-<p>However, it is recommended that you upgrade both the microSD card and your
-programs at the same time to ensure everything works as expected.</p>
+<h2>既存プログラムのアップグレード<a class="headerlink" href="#upgrading-your-existing-programs" title="Permalink to this headline">¶</a></h2>
+<p>v2.0の変更のほとんどは、追加センサーのサポートなどの<em>新</em>機能です。
+当然ながら、これは既存のコードには影響しません。
+ただし、パフォーマンスを改善するために既存機能にもいくつか変更が加えられています。</p>
+<p>v1.0でドキュメント化されていたすべての機能は、アップグレード後も動作します。
+つまり、v1.0向けに作られたほとんどのプログラムは、v2.0のmicroSDカードイメージで
+変更なしに動作します。</p>
+<p>試すには、以前と同じように元のコードをダウンロードして実行するだけです。</p>
+<p>ただし、すべてが期待どおり動作することを確実にするために、microSDカードと
+プログラムの両方を同時にアップグレードすることをおすすめします。</p>
 <div class="section" id="the-new-ev3brick-class-replaces-the-ev3brick-module">
-<h3>The new EV3Brick() class replaces the ev3brick module<a class="headerlink" href="#the-new-ev3brick-class-replaces-the-ev3brick-module" title="Permalink to this headline">¶</a></h3>
-<p>Version 2.0 introduces the <a class="reference internal" href="hubs.html#pybricks.hubs.EV3Brick" title="pybricks.hubs.EV3Brick"><code class="xref py py-class docutils literal notranslate"><span class="pre">EV3Brick()</span></code></a> class.
-You can use it instead of the old  <code class="docutils literal notranslate"><span class="pre">ev3brick</span></code> module. The old <code class="docutils literal notranslate"><span class="pre">ev3brick</span></code>
-module can still be used, but it is no longer recommended or documented.</p>
-<p>The <a class="reference internal" href="hubs.html#pybricks.hubs.EV3Brick" title="pybricks.hubs.EV3Brick"><code class="xref py py-class docutils literal notranslate"><span class="pre">EV3Brick()</span></code></a> class improves the speed and
-reliability of the EV3 screen and the EV3 speaker. It also adds functionality
-like speech and drawing shapes. The default
-font size is also bigger to make it easier to read text on the screen.</p>
-<p>You can use
-the following table as a starting point to upgrade your scripts. See the
-<a class="reference internal" href="hubs.html#pybricks.hubs.EV3Brick" title="pybricks.hubs.EV3Brick"><code class="xref py py-class docutils literal notranslate"><span class="pre">EV3Brick()</span></code></a> class documentation for
-complete details of all methods and arguments.</p>
+<h3>新しいEV3Brick()クラスがev3brickモジュールを置き換え<a class="headerlink" href="#the-new-ev3brick-class-replaces-the-ev3brick-module" title="Permalink to this headline">¶</a></h3>
+<p>バージョン2.0では<a class="reference internal" href="hubs.html#pybricks.hubs.EV3Brick" title="pybricks.hubs.EV3Brick"><code class="xref py py-class docutils literal notranslate"><span class="pre">EV3Brick()</span></code></a>クラスが導入されました。
+古い<code class="docutils literal notranslate"><span class="pre">ev3brick</span></code>モジュールの代わりに使用できます。古い<code class="docutils literal notranslate"><span class="pre">ev3brick</span></code>
+モジュールも引き続き使用できますが、推奨されず、ドキュメント化もされていません。</p>
+<p><a class="reference internal" href="hubs.html#pybricks.hubs.EV3Brick" title="pybricks.hubs.EV3Brick"><code class="xref py py-class docutils literal notranslate"><span class="pre">EV3Brick()</span></code></a>クラスは、EV3画面と
+EV3スピーカーの速度と信頼性を向上させます。音声や図形描画などの機能も
+追加されています。また、デフォルトの
+フォントサイズが大きくなり、画面上のテキストが読みやすくなりました。</p>
+<p>以下の表をスクリプトをアップグレードするための手がかりとして使えます。
+すべてのメソッドと引数の完全な詳細は、
+<a class="reference internal" href="hubs.html#pybricks.hubs.EV3Brick" title="pybricks.hubs.EV3Brick"><code class="xref py py-class docutils literal notranslate"><span class="pre">EV3Brick()</span></code></a>クラスのドキュメントを参照してください。</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="33%" />
@@ -268,13 +268,13 @@ complete details of all methods and arguments.</p>
 <col width="33%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><strong>Action</strong></td>
+<tr class="row-odd"><td><strong>操作</strong></td>
 <td><strong>v1.0</strong></td>
 <td><strong>v2.0</strong></td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line">Initialize</div>
-<div class="line">your EV3</div>
+<div class="line">EV3を</div>
+<div class="line">初期化する</div>
 </div>
 </td>
 <td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pybricks</span> <span class="kn">import</span> <span class="n">ev3brick</span> <span class="k">as</span> <span class="n">brick</span>
@@ -289,7 +289,7 @@ complete details of all methods and arguments.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line">Light on</div>
+<div class="line">ライトを点灯する</div>
 </div>
 </td>
 <td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brick</span><span class="o">.</span><span class="n">light</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="p">)</span>
@@ -302,7 +302,7 @@ complete details of all methods and arguments.</p>
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line">Light off</div>
+<div class="line">ライトを消灯する</div>
 </div>
 </td>
 <td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brick</span><span class="o">.</span><span class="n">light</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
@@ -315,8 +315,8 @@ complete details of all methods and arguments.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line">Read</div>
-<div class="line">Buttons</div>
+<div class="line">ボタンを</div>
+<div class="line">読み取る</div>
 </div>
 </td>
 <td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">Button</span><span class="o">.</span><span class="n">LEFT</span> <span class="ow">in</span> <span class="n">brick</span><span class="o">.</span><span class="n">buttons</span><span class="p">():</span>
@@ -331,8 +331,8 @@ complete details of all methods and arguments.</p>
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line">Play a</div>
-<div class="line">beep</div>
+<div class="line">ビープ音を</div>
+<div class="line">鳴らす</div>
 </div>
 </td>
 <td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brick</span><span class="o">.</span><span class="n">sound</span><span class="o">.</span><span class="n">beep</span><span class="p">()</span>
@@ -345,8 +345,8 @@ complete details of all methods and arguments.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line">Play a</div>
-<div class="line">sound file</div>
+<div class="line">サウンドファイルを</div>
+<div class="line">再生する</div>
 </div>
 </td>
 <td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brick</span><span class="o">.</span><span class="n">sound</span><span class="o">.</span><span class="n">file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">HELLO</span><span class="p">)</span>
@@ -359,8 +359,8 @@ complete details of all methods and arguments.</p>
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line">Text to</div>
-<div class="line">speech</div>
+<div class="line">テキストを</div>
+<div class="line">音声に変換する</div>
 </div>
 </td>
 <td>&#160;</td>
@@ -370,8 +370,8 @@ complete details of all methods and arguments.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line">Play</div>
-<div class="line">notes</div>
+<div class="line">音符を</div>
+<div class="line">再生する</div>
 </div>
 </td>
 <td>&#160;</td>
@@ -381,9 +381,9 @@ complete details of all methods and arguments.</p>
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line">Write text</div>
-<div class="line">at a given</div>
-<div class="line">position</div>
+<div class="line">指定した位置に</div>
+<div class="line">テキストを</div>
+<div class="line">書き込む</div>
 </div>
 </td>
 <td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brick</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">))</span>
@@ -396,9 +396,9 @@ complete details of all methods and arguments.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line">Write text</div>
-<div class="line">and scroll</div>
-<div class="line">automatically</div>
+<div class="line">テキストを書き込んで</div>
+<div class="line">自動で</div>
+<div class="line">スクロールする</div>
 </div>
 </td>
 <td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brick</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
@@ -413,8 +413,8 @@ complete details of all methods and arguments.</p>
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line">Change font</div>
-<div class="line">size</div>
+<div class="line">フォントサイズを</div>
+<div class="line">変更する</div>
 </div>
 </td>
 <td>&#160;</td>
@@ -427,9 +427,8 @@ complete details of all methods and arguments.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line">Display an</div>
-<div class="line">image on</div>
-<div class="line">the screen</div>
+<div class="line">画面に画像を</div>
+<div class="line">表示する</div>
 </div>
 </td>
 <td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pybricks.parameters</span> <span class="kn">import</span> <span class="n">ImageFile</span>
@@ -446,8 +445,8 @@ complete details of all methods and arguments.</p>
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line">Draw shapes</div>
-<div class="line">on the screen</div>
+<div class="line">画面に図形を</div>
+<div class="line">描画する</div>
 </div>
 </td>
 <td>&#160;</td>
@@ -459,9 +458,9 @@ complete details of all methods and arguments.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line">Read</div>
-<div class="line">battery</div>
-<div class="line">voltage</div>
+<div class="line">バッテリー</div>
+<div class="line">電圧を</div>
+<div class="line">読み取る</div>
 </div>
 </td>
 <td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brick</span><span class="o">.</span><span class="n">battery</span><span class="o">.</span><span class="n">voltage</span><span class="p">()</span>
@@ -477,57 +476,58 @@ complete details of all methods and arguments.</p>
 </table>
 </div>
 <div class="section" id="other-internal-changes-to-existing-features">
-<h3>Other internal changes to existing features<a class="headerlink" href="#other-internal-changes-to-existing-features" title="Permalink to this headline">¶</a></h3>
+<h3>既存機能のその他の内部変更<a class="headerlink" href="#other-internal-changes-to-existing-features" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p class="first">Most methods of the <a class="reference internal" href="ev3devices.html#pybricks.ev3devices.Motor" title="pybricks.ev3devices.Motor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Motor()</span></code></a> class now
-have <code class="docutils literal notranslate"><span class="pre">Stop.HOLD</span></code> as the default instead of <code class="docutils literal notranslate"><span class="pre">Stop.COAST</span></code>. This improves
-accuracy in most applications. You can still select <code class="docutils literal notranslate"><span class="pre">Stop.COAST</span></code> if you
-like.</p>
+<li><p class="first"><a class="reference internal" href="ev3devices.html#pybricks.ev3devices.Motor" title="pybricks.ev3devices.Motor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Motor()</span></code></a>クラスのほとんどのメソッドで、
+デフォルトが<code class="docutils literal notranslate"><span class="pre">Stop.COAST</span></code>ではなく<code class="docutils literal notranslate"><span class="pre">Stop.HOLD</span></code>になりました。
+これにより多くの用途で精度が向上します。必要であれば引き続き
+<code class="docutils literal notranslate"><span class="pre">Stop.COAST</span></code>を選択できます。</p>
 </li>
-<li><p class="first">The internal PID controllers for the motors are more accurate than before.
-If you give a motor command when it is already running, it smoothly adjusts
-the speed to the newly given command. This works even if you keep
-adjusting the speed in a fast loop.</p>
+<li><p class="first">モーターの内部PIDコントローラーが以前より正確になりました。
+動作中のモーターにコマンドを送ると、新しいコマンドに合わせて速度が
+スムーズに調整されます。高速ループで速度を調整し続けても
+正しく動作します。</p>
 </li>
-<li><p class="first">Methods to configure motor settings have changed. You can change settings
-using the <a class="reference internal" href="motors.html"><span class="doc">control</span></a> attribute now. The old settings setters
-continue to exist in the implementation, but they are no longer documented.</p>
+<li><p class="first">モーター設定を構成するメソッドが変更されました。現在は
+<a class="reference internal" href="motors.html"><span class="doc">control</span></a>属性を使って設定を変更できます。
+古い設定用セッターは実装上は残っていますが、ドキュメント化はされていません。</p>
 </li>
-<li><p class="first">So-called Python <em>keyword arguments</em> are now supported. Previously, you
-could only enter the argument <em>values</em>. For example:</p>
+<li><p class="first">いわゆるPythonの<em>キーワード引数</em>がサポートされるようになりました。
+以前は引数の<em>値</em>しか入力できませんでした。例:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_motor</span><span class="o">.</span><span class="n">run_angle</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="n">Stop</span><span class="o">.</span><span class="n">HOLD</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p>This is still possible. But you can now choose to omit optional arguments
-and specify others with <em>keywords</em>. This can make your code easier to read.
-For example:</p>
+<p>この書き方は引き続き使えます。ただし、任意の引数を省略し、
+他の引数を<em>キーワード</em>で指定できるようになりました。これによりコードが
+読みやすくなります。例:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_motor</span><span class="o">.</span><span class="n">run_angle</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">It is no longer necessary to import <code class="docutils literal notranslate"><span class="pre">pybricks.tools.print</span></code>. The <code class="docutils literal notranslate"><span class="pre">print</span></code>
-function is now built-in. It works just like Python or MicroPython.</p>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">pybricks.tools.print</span></code>をインポートする必要はなくなりました。
+<code class="docutils literal notranslate"><span class="pre">print</span></code>関数が組み込みになり、PythonやMicroPythonと同じように
+動作します。</p>
 </li>
-<li><p class="first">Most parameters in the <a class="reference internal" href="parameters.html#module-pybricks.parameters" title="pybricks.parameters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code></a> now have a
-specific type and representation. For example, suppose you measure a color
-and print the result. If you do <code class="docutils literal notranslate"><span class="pre">print(Color.RED)</span></code>, you will see the
-parameter instead of a technical number.</p>
+<li><p class="first"><a class="reference internal" href="parameters.html#module-pybricks.parameters" title="pybricks.parameters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code></a>のほとんどのパラメーターに、
+固有の型と表現が付きました。たとえば、色を測定して結果を表示するとします。
+<code class="docutils literal notranslate"><span class="pre">print(Color.RED)</span></code>とすると、内部的な数値ではなく
+パラメーター名が表示されます。</p>
 </li>
-<li><p class="first">Sound and image files have moved to a dedicated <a class="reference internal" href="media.html"><span class="doc">media</span></a> module.
-Importing them from the old location will continue to work in this release,
-to make sure existing scripts will still work.</p>
+<li><p class="first">サウンドと画像ファイルは専用の<a class="reference internal" href="media.html"><span class="doc">media</span></a>モジュールに移動しました。
+このリリースでは、既存のスクリプトが引き続き動作するよう、
+古い場所からのインポートも引き続き機能します。</p>
 </li>
 </ul>
-<p><strong>Installing an older version of the Visual Studio Code extension</strong></p>
-<p>The Visual Studio Code extension and this documentation are updated
-automatically. You can still use your existing scripts with the updated
-extension. If you absolutely wish to keep the old version, look for the EV3
-extension on the extension tab, click the gear icon, and
-click <em>install another version</em>.</p>
+<p><strong>古いバージョンのVisual Studio Code拡張機能をインストールする</strong></p>
+<p>Visual Studio Code拡張機能とこのドキュメントは自動的に更新されます。
+更新された拡張機能でも既存のスクリプトは引き続き使えます。
+どうしても古いバージョンを使い続けたい場合は、拡張機能タブで
+EV3拡張機能を探し、歯車アイコンをクリックして
+<em>install another version</em>をクリックしてください。</p>
 </div>
 </div>
 </div>
