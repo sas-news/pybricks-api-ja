@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>信号と単位 &mdash; ev3-micropython 2.0.0 ドキュメント</title>
+  <title>信号と単位 &mdash; ev3-micropython 2.0.0.post2 ドキュメント</title>
   
 
   
@@ -23,8 +23,8 @@
       <script type="text/javascript">
           var DOCUMENTATION_OPTIONS = {
               URL_ROOT:'./',
-              VERSION:'2.0.0',
-              LANGUAGE:'None',
+              VERSION:'2.0.0.post2',
+              LANGUAGE:'ja',
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
@@ -34,6 +34,7 @@
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="_static/contentui.js"></script>
     
@@ -45,10 +46,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="More about Motors" href="motors.html" />
-    <link rel="prev" title="messaging – Messaging" href="messaging.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="モーターについてさらに詳しく" href="motors.html" />
+    <link rel="prev" title="messaging -- メッセージング" href="messaging.html" />
     <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css">
 
 </head>
@@ -69,7 +70,7 @@
 
           
             
-            <img src="_static/lego-education-logo-small.png" class="logo" alt="Logo"/>
+            <img src="_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -77,7 +78,7 @@
             
             
               <div class="version">
-                2.0.0
+                2.0.0.post2
               </div>
             
           
@@ -85,7 +86,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="ドキュメントを検索" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -104,63 +105,63 @@
               <p class="caption"><span class="caption-text">はじめに</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="startinstall.html">インストール</a></li>
-<li class="toctree-l1"><a class="reference internal" href="startbrick.html">EV3ブロックを使う</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startbrick.html">EV3 Brickを使う</a></li>
 <li class="toctree-l1"><a class="reference internal" href="startrun.html">プログラムの作成と実行</a></li>
-<li class="toctree-l1"><a class="reference internal" href="startlinux.html">EV3の高度な機能へのアクセス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startlinux.html">EV3の高度な機能を使う</a></li>
 <li class="toctree-l1"><a class="reference internal" href="startupgrade.html">v1.0からv2.0へのアップグレード</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Pybricksモジュール</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – プログラマブルハブ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3デバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXTデバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – 汎用I/Oデバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – 時間計測とデータロギング</a></li>
-<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> – サウンドと画像</a></li>
-<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> -- プログラマブルハブ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> -- EV3デバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> -- NXTデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> -- 汎用I/Oデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> -- パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> -- 時間計測とデータロギング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> -- ロボティクス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> -- サウンドと画像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> -- メッセージング</a></li>
 </ul>
 <p class="caption"><span class="caption-text">補足解説</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">信号と単位</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#time">時間</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#time-ms">時間: ms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">時間</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ms">時間: ms</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#angles-and-angular-motion">角度と角運動</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#angle-deg">角度: deg</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#rotational-speed-deg-s">回転速度: deg/s</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#rotational-acceleration-deg-s-s">回転加速度: deg/s/s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">角度と角運動</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#deg">角度: deg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deg-s">回転速度: deg/s</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deg-s-s">回転加速度: deg/s/s</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#distance-and-linear-motion">距離と直線運動</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#distance-mm">距離: mm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dimension-mm">寸法: mm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#speed-mm-s">速度: mm/s</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#linear-acceleration-mm-s-s">直線加速度: mm/s/s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">距離と直線運動</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mm">距離: mm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dimension">寸法: mm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mm-s">速度: mm/s</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mm-s-s">直線加速度: mm/s/s</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#approximate-and-relative-units">近似値と相対的な単位</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id6">近似値と相対的な単位</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#percentage">割合: %</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#relative-distance">相対距離: %</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#relativedistance">相対距離: %</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#brightness">輝度: %</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#force">力</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#force-n">力: N</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">力</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#n">力: N</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#electricity">電気</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#voltage-mv">電圧: mV</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#current-ma">電流: mA</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#energy-j">エネルギー: J</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#power-mw">電力: mW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">電気</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mv">電圧: mV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ma">電流: mA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#j">エネルギー: J</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mw">電力: mW</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#ambient-environment">周囲環境</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#frequency-hz">周波数: Hz</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#temperature-c">温度: °C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">周囲環境</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hz">周波数: Hz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#c">温度: °C</a></li>
 </ul>
 </li>
 </ul>
@@ -176,7 +177,7 @@
 <p class="caption"><span class="caption-text">コアセットプログラム</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="examples/color_sorter.html">カラーソーター</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/robot_arm.html">ロボットアームH25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_arm.html">ロボットアーム H25</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/puppy.html">パピー</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/gyro_boy.html">ジャイロボーイ</a></li>
 </ul>
@@ -231,14 +232,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      
       <li>信号と単位</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/signaltypes.rst.txt" rel="nofollow"> ページソースを表示</a>
+            <a href="_sources/signaltypes.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -251,35 +251,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="signals-and-units">
-<h1>信号と単位<a class="headerlink" href="#signals-and-units" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="id1">
+<h1>信号と単位<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>多くのコマンドでは、よく知られた物理量で引数を指定できます。
 このページでは、各物理量とその単位の概要を説明します。</p>
-<div class="section" id="time">
-<h2>時間<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="time-ms">
-<span id="id1"></span><h3>時間: ms<a class="headerlink" href="#time-ms" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h2>時間<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="ms">
+<span id="time"></span><h3>時間: ms<a class="headerlink" href="#ms" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>すべての時間と継続時間の値はミリ秒 (ms) で測定されます。</p>
 <p>たとえば、 <code class="docutils literal notranslate"><span class="pre">run_time</span></code> での動作時間や
-<a class="reference internal" href="tools.html#pybricks.tools.wait" title="pybricks.tools.wait"><code class="xref py py-func docutils literal notranslate"><span class="pre">wait</span></code></a> の待機時間は
-ミリ秒で指定します。</p>
+<a class="reference internal" href="tools.html#pybricks.tools.wait" title="pybricks.tools.wait"><code class="xref py py-func docutils literal notranslate"><span class="pre">wait</span></code></a> の待機時間はミリ秒で指定します。</p>
 </div>
 </div>
-<div class="section" id="angles-and-angular-motion">
-<h2>角度と角運動<a class="headerlink" href="#angles-and-angular-motion" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="angle-deg">
-<span id="angle"></span><h3>角度: deg<a class="headerlink" href="#angle-deg" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h2>角度と角運動<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="deg">
+<span id="angle"></span><h3>角度: deg<a class="headerlink" href="#deg" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>すべての角度は度 (deg) で測定されます。1回転は360度に相当します。</p>
 <p>たとえば、 <code class="docutils literal notranslate"><span class="pre">Motor</span></code> の角度値や
-<a class="reference internal" href="ev3devices.html#pybricks.ev3devices.GyroSensor.angle" title="pybricks.ev3devices.GyroSensor.angle"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GyroSensor</span></code></a> の角度値は度で表されます。</p>
+<a class="reference internal" href="ev3devices.html#pybricks.ev3devices.GyroSensor.angle" title="pybricks.ev3devices.GyroSensor.angle"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GyroSensor</span></code></a> の角度値は度で
+表されます。</p>
 </div>
-<div class="section" id="rotational-speed-deg-s">
-<span id="speed"></span><h3>回転速度: deg/s<a class="headerlink" href="#rotational-speed-deg-s" title="Permalink to this headline">¶</a></h3>
-<p>回転速度（<em>角速度</em>）は、物体がどれくらい速く回転するかを表し、
+<div class="section" id="deg-s">
+<span id="speed"></span><h3>回転速度: deg/s<a class="headerlink" href="#deg-s" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>回転速度（角速度）は、物体がどれくらい速く回転するかを表し、
 毎秒あたりの度数 (deg/s) で表されます。</p>
 <p>たとえば、 <code class="docutils literal notranslate"><span class="pre">Motor</span></code> の回転速度値や
-<a class="reference internal" href="ev3devices.html#pybricks.ev3devices.GyroSensor.speed" title="pybricks.ev3devices.GyroSensor.speed"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GyroSensor</span></code></a> の回転速度値は毎秒あたりの度数で
-表されます。</p>
+<a class="reference internal" href="ev3devices.html#pybricks.ev3devices.GyroSensor.speed" title="pybricks.ev3devices.GyroSensor.speed"><code class="xref py py-meth docutils literal notranslate"><span class="pre">GyroSensor</span></code></a> の回転速度値は
+毎秒あたりの度数で表されます。</p>
 <p>プログラムでは毎秒あたりの度数を使うことをお勧めしますが、
 一般的に使われる単位の換算には次の表を使えます。</p>
 <table border="1" class="docutils">
@@ -304,21 +304,22 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="rotational-acceleration-deg-s-s">
-<span id="acceleration"></span><h3>回転加速度: deg/s/s<a class="headerlink" href="#rotational-acceleration-deg-s-s" title="Permalink to this headline">¶</a></h3>
-<p>回転加速度（<em>角加速度</em>）は、回転速度がどれくらい速く変化するかを
+<div class="section" id="deg-s-s">
+<span id="acceleration"></span><h3>回転加速度: deg/s/s<a class="headerlink" href="#deg-s-s" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>回転加速度（角加速度）は、回転速度がどれくらい速く変化するかを
 表します。1秒あたりの毎秒度数の変化量 (deg/s/s) で表され、
 一般に <span class="math notranslate nohighlight">\(deg/s^2\)</span> とも書かれます。</p>
 <p>たとえば、 <code class="docutils literal notranslate"><span class="pre">Motor</span></code> の回転加速度の設定を調整すると、
 設定した一定速度に達するまでの滑らかさや速さを変えられます。</p>
 </div>
 </div>
-<div class="section" id="distance-and-linear-motion">
-<h2>距離と直線運動<a class="headerlink" href="#distance-and-linear-motion" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="distance-mm">
-<span id="distance"></span><h3>距離: mm<a class="headerlink" href="#distance-mm" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h2>距離と直線運動<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="mm">
+<span id="distance"></span><h3>距離: mm<a class="headerlink" href="#mm" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>距離は可能な限りミリメートル (mm) で表されます。</p>
-<p>たとえば、 <a class="reference internal" href="ev3devices.html#pybricks.ev3devices.UltrasonicSensor.distance" title="pybricks.ev3devices.UltrasonicSensor.distance"><code class="xref py py-meth docutils literal notranslate"><span class="pre">UltrasonicSensor</span></code></a> の距離値はミリメートルで測定されます。</p>
+<p>たとえば、 <a class="reference internal" href="ev3devices.html#pybricks.ev3devices.UltrasonicSensor.distance" title="pybricks.ev3devices.UltrasonicSensor.distance"><code class="xref py py-meth docutils literal notranslate"><span class="pre">UltrasonicSensor</span></code></a> の距離値はミリメートルで
+測定されます。</p>
 <p>プログラムではミリメートルを使うことをお勧めしますが、
 一般的に使われる単位の換算には次の表を使えます。</p>
 <table border="1" class="docutils">
@@ -352,52 +353,52 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="dimension-mm">
-<span id="dimension"></span><h3>寸法: mm<a class="headerlink" href="#dimension-mm" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="dimension">
+<span id="id5"></span><h3>寸法: mm<a class="headerlink" href="#dimension" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>寸法は距離と同様にミリメートル (mm) で表されます。</p>
 <p>たとえば、ホイールの直径はミリメートルで測定されます。</p>
 </div>
-<div class="section" id="speed-mm-s">
-<span id="linspeed"></span><h3>速度: mm/s<a class="headerlink" href="#speed-mm-s" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="mm-s">
+<span id="linspeed"></span><h3>速度: mm/s<a class="headerlink" href="#mm-s" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>直線速度は毎秒ミリメートル (mm/s) で表されます。</p>
 <p>たとえば、ロボット車両の速度は mm/s で表されます。</p>
 </div>
-<div class="section" id="linear-acceleration-mm-s-s">
-<span id="linacceleration"></span><h3>直線加速度: mm/s/s<a class="headerlink" href="#linear-acceleration-mm-s-s" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="mm-s-s">
+<span id="linacceleration"></span><h3>直線加速度: mm/s/s<a class="headerlink" href="#mm-s-s" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>直線加速度は、速度がどれくらい速く変化するかを表します。
 1秒あたりの毎秒ミリメートルの変化量 (mm/s/s) で表され、
 一般に <span class="math notranslate nohighlight">\(mm/s^2\)</span> とも書かれます。</p>
-<p>たとえば、 <a class="reference internal" href="robotics.html#pybricks.robotics.DriveBase" title="pybricks.robotics.DriveBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">DriveBase</span></code></a> の加速度設定を調整すると、
-設定した一定速度に達するまでの滑らかさや速さを変えられます。</p>
+<p>たとえば、 <a class="reference internal" href="robotics.html#pybricks.robotics.DriveBase" title="pybricks.robotics.DriveBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">DriveBase</span></code></a> の加速度設定を
+調整すると、設定した一定速度に達するまでの滑らかさや速さを
+変えられます。</p>
 </div>
 </div>
-<div class="section" id="approximate-and-relative-units">
-<h2>近似値と相対的な単位<a class="headerlink" href="#approximate-and-relative-units" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>近似値と相対的な単位<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="percentage">
-<span id="id2"></span><h3>割合: %<a class="headerlink" href="#percentage" title="Permalink to this headline">¶</a></h3>
+<span id="id7"></span><h3>割合: %<a class="headerlink" href="#percentage" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>一部の信号には固有の単位がありません。最小値 (0%) から最大値 (100%) の
 範囲で表されます。割合の具体例としては、 <a class="reference internal" href="#relativedistance"><span class="std std-ref">相対距離</span></a> や <a class="reference internal" href="#brightness"><span class="std std-ref">輝度</span></a> があります。</p>
-<p>もう一つの例は音量で、0%（無音）から
-100%（最大）の範囲です。</p>
+<p>もう一つの例は音量で、0%（無音）から100%（最大）の範囲です。</p>
 </div>
-<div class="section" id="relative-distance">
-<span id="relativedistance"></span><h3>相対距離: %<a class="headerlink" href="#relative-distance" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="relativedistance">
+<span id="id8"></span><h3>相対距離: %<a class="headerlink" href="#relativedistance" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>一部の距離測定では、特定の単位を持つ正確な値は得られませんが、
 非常に近い (0%) から非常に遠い (100%) までの範囲で表されます。
 これらは相対距離と呼ばれます。</p>
 <p>たとえば、 <a class="reference internal" href="ev3devices.html#pybricks.ev3devices.InfraredSensor.distance" title="pybricks.ev3devices.InfraredSensor.distance"><code class="xref py py-meth docutils literal notranslate"><span class="pre">InfraredSensor</span></code></a> の距離値は相対距離です。</p>
 </div>
 <div class="section" id="brightness">
-<span id="id3"></span><h3>輝度: %<a class="headerlink" href="#brightness" title="Permalink to this headline">¶</a></h3>
-<p>ライトの知覚される明るさはパーセンテージで表されます。ライトが消えている
-ときは0%、完全に点灯しているときは100%です。50%を選ぶと、人の目には
-約半分の明るさに見えます。</p>
+<span id="id9"></span><h3>輝度: %<a class="headerlink" href="#brightness" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ライトの知覚される明るさはパーセンテージで表されます。ライトが消えて
+いるときは0%、完全に点灯しているときは100%です。50%を選ぶと、人の目に
+は約半分の明るさに見えます。</p>
 </div>
 </div>
-<div class="section" id="force">
-<h2>力<a class="headerlink" href="#force" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="force-n">
-<span id="id4"></span><h3>力: N<a class="headerlink" href="#force-n" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h2>力<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="n">
+<span id="force"></span><h3>力: N<a class="headerlink" href="#n" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>力の値はニュートン (N) で表されます。</p>
 <p>プログラムではニュートンを使うことをお勧めしますが、
 他の単位との換算には次の表を使えます。</p>
@@ -433,37 +434,37 @@
 </table>
 </div>
 </div>
-<div class="section" id="electricity">
-<h2>電気<a class="headerlink" href="#electricity" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="voltage-mv">
-<span id="voltage"></span><h3>電圧: mV<a class="headerlink" href="#voltage-mv" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h2>電気<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="mv">
+<span id="voltage"></span><h3>電圧: mV<a class="headerlink" href="#mv" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>電圧はミリボルト (mV) で表されます。</p>
 <p>たとえば、バッテリーの電圧を確認できます。</p>
 </div>
-<div class="section" id="current-ma">
-<span id="current"></span><h3>電流: mA<a class="headerlink" href="#current-ma" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ma">
+<span id="current"></span><h3>電流: mA<a class="headerlink" href="#ma" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>電流はミリアンペア (mA) で表されます。</p>
 <p>たとえば、バッテリーが供給する電流を確認できます。</p>
 </div>
-<div class="section" id="energy-j">
-<span id="energy"></span><h3>エネルギー: J<a class="headerlink" href="#energy-j" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="j">
+<span id="energy"></span><h3>エネルギー: J<a class="headerlink" href="#j" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>蓄えられたエネルギーや消費エネルギーはジュール (J) で表されます。</p>
 </div>
-<div class="section" id="power-mw">
-<span id="power"></span><h3>電力: mW<a class="headerlink" href="#power-mw" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="mw">
+<span id="power"></span><h3>電力: mW<a class="headerlink" href="#mw" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>電力はエネルギーが蓄えられたり消費されたりする割合です。
 ミリワット (mW) で表されます。</p>
 </div>
 </div>
-<div class="section" id="ambient-environment">
-<h2>周囲環境<a class="headerlink" href="#ambient-environment" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="frequency-hz">
-<span id="frequency"></span><h3>周波数: Hz<a class="headerlink" href="#frequency-hz" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id12">
+<h2>周囲環境<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="hz">
+<span id="frequency"></span><h3>周波数: Hz<a class="headerlink" href="#hz" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>音の周波数はヘルツ (Hz) で表されます。</p>
 <p>たとえば、ビープ音の周波数を選んで音程を変えられます。</p>
 </div>
-<div class="section" id="temperature-c">
-<span id="temperature"></span><h3>温度: °C<a class="headerlink" href="#temperature-c" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="c">
+<span id="temperature"></span><h3>温度: °C<a class="headerlink" href="#c" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>温度は摂氏 (°C) で測定されます。華氏 (°F) やケルビン (K) への換算には、
 次の換算式を使えます:</p>
 <blockquote>
@@ -482,10 +483,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="motors.html" class="btn btn-neutral float-right" title="More about Motors" accesskey="n" rel="next">次へ <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="motors.html" class="btn btn-neutral float-right" title="モーターについてさらに詳しく" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="messaging.html" class="btn btn-neutral float-left" title="messaging – Messaging" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 前へ</a>
+        <a href="messaging.html" class="btn btn-neutral float-left" title="messaging -- メッセージング" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -494,12 +495,12 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 The LEGO Group. All rights reserved.
+        &copy; Copyright 2018-2020 The Pybricks Authors
 
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group.</div>
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
 
 
 </footer>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>v1.0からv2.0へのアップグレード &mdash; ev3-micropython 2.0.0 documentation</title>
+  <title>v1.0からv2.0へのアップグレード &mdash; ev3-micropython 2.0.0.post2 ドキュメント</title>
   
 
   
@@ -23,8 +23,8 @@
       <script type="text/javascript">
           var DOCUMENTATION_OPTIONS = {
               URL_ROOT:'./',
-              VERSION:'2.0.0',
-              LANGUAGE:'None',
+              VERSION:'2.0.0.post2',
+              LANGUAGE:'ja',
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
@@ -34,6 +34,7 @@
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="_static/contentui.js"></script>
     
@@ -45,10 +46,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="hubs – Programmable Hubs" href="hubs.html" />
-    <link rel="prev" title="Accessing advanced EV3 features" href="startlinux.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="hubs -- プログラマブルハブ" href="hubs.html" />
+    <link rel="prev" title="EV3の高度な機能を使う" href="startlinux.html" />
     <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css">
 
 </head>
@@ -69,7 +70,7 @@
 
           
             
-            <img src="_static/lego-education-logo-small.png" class="logo" alt="Logo"/>
+            <img src="_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -77,7 +78,7 @@
             
             
               <div class="version">
-                2.0.0
+                2.0.0.post2
               </div>
             
           
@@ -85,7 +86,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="ドキュメントを検索" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -108,10 +109,10 @@
 <li class="toctree-l1"><a class="reference internal" href="startrun.html">プログラムの作成と実行</a></li>
 <li class="toctree-l1"><a class="reference internal" href="startlinux.html">EV3の高度な機能を使う</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">v1.0からv2.0へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#upgrading-the-microsd-card">microSDカードのアップグレード</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#upgrading-your-existing-programs">既存プログラムのアップグレード</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#the-new-ev3brick-class-replaces-the-ev3brick-module">新しいEV3Brick()クラスがev3brickモジュールを置き換え</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#other-internal-changes-to-existing-features">既存機能のその他の内部変更</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#microsd">microSDカードのアップグレード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">既存プログラムのアップグレード</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ev3brick-ev3brick">新しいEV3Brick()クラスがev3brickモジュールを置き換え</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">既存機能のその他の内部変更</a></li>
 </ul>
 </li>
 </ul>
@@ -119,20 +120,20 @@
 </ul>
 <p class="caption"><span class="caption-text">Pybricksモジュール</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – プログラマブルHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3デバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXTデバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – 汎用I/Oデバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – タイミングとデータロギング</a></li>
-<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> – サウンドと画像</a></li>
-<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> -- プログラマブルハブ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> -- EV3デバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> -- NXTデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> -- 汎用I/Oデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> -- パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> -- 時間計測とデータロギング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> -- ロボティクス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> -- サウンドと画像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> -- メッセージング</a></li>
 </ul>
 <p class="caption"><span class="caption-text">補足解説</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="signaltypes.html">信号と単位</a></li>
-<li class="toctree-l1"><a class="reference internal" href="motors.html">モーターの詳細</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motors.html">モーターについてさらに詳しく</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Robot Educatorプログラム</span></p>
 <ul>
@@ -198,14 +199,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      
       <li>v1.0からv2.0へのアップグレード</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/startupgrade.rst.txt" rel="nofollow"> ページソースを表示</a>
+            <a href="_sources/startupgrade.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -218,50 +218,59 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="upgrading-from-v1-0-to-v2-0">
-<h1>v1.0からv2.0へのアップグレード<a class="headerlink" href="#upgrading-from-v1-0-to-v2-0" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="v1-0v2-0">
+<h1>v1.0からv2.0へのアップグレード<a class="headerlink" href="#v1-0v2-0" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p><em>EV3 MicroPython v2.0は2020年5月18日にリリースされました。</em></p>
 <p>このセクションは、以前にLEGO MINDSTORMS EV3
-MicroPython v1.0を使っていたユーザー向けです。変更点と、最新の改善を利用するための
-アップグレード方法を説明します。</p>
+MicroPython v1.0を使っていたユーザー向けです。変更点と、最新の改善を
+利用するためのアップグレード方法を説明します。</p>
 <p>新規ユーザーでバージョン2.0を使い始めたばかりの場合は、このセクションを
 読み飛ばしても構いません。</p>
-<div class="section" id="upgrading-the-microsd-card">
-<h2>microSDカードのアップグレード<a class="headerlink" href="#upgrading-the-microsd-card" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="microsd">
+<h2>microSDカードのアップグレード<a class="headerlink" href="#microsd" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>アップグレードするには、最新のmicroSDカードファイルをダウンロードし、
-標準の<a class="reference internal" href="startinstall.html#prepsdcard"><span class="std std-ref">手順</span></a>でインストールしてください。</p>
-<p>これによりSDカード上の既存のファイルはすべて消去されることに注意してください。
+標準の <a class="reference internal" href="startinstall.html#prepsdcard"><span class="std std-ref">手順</span></a> でインストールしてください。</p>
+<p>これによりSDカード上の既存のファイルはすべて消去されることに注意して
+ください。
 アップグレードする前に、すべてのプロジェクトがコンピューター上に
 残っていることを確認してください。
 残っていない場合は、
-<a class="reference internal" href="startrun.html#managefiles"><span class="std std-ref">こちらの手順</span></a>でファイルをコンピューターにアップロードして戻すことができます。</p>
-<p>どんなソフトウェア更新でも、<em>更新するタイミングには注意してください</em>。たとえば、
+<a class="reference internal" href="startrun.html#managefiles"><span class="std std-ref">こちらの手順</span></a> でファイルをコンピューターに
+アップロードして戻すことができます。</p>
+<p>どんなソフトウェア更新でも、 <em>更新するタイミングには注意してください</em> 。
+たとえば、
 v1.0でコードを開発していてロボット競技会のシーズン途中である場合は、
 しばらくv1.0のままにしておくとよいでしょう。</p>
 </div>
-<div class="section" id="upgrading-your-existing-programs">
-<h2>既存プログラムのアップグレード<a class="headerlink" href="#upgrading-your-existing-programs" title="Permalink to this headline">¶</a></h2>
-<p>v2.0の変更のほとんどは、追加センサーのサポートなどの<em>新</em>機能です。
+<div class="section" id="id1">
+<h2>既存プログラムのアップグレード<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>v2.0の変更のほとんどは、追加センサーのサポートなどの <em>新機能</em> です。
 当然ながら、これは既存のコードには影響しません。
-ただし、パフォーマンスを改善するために既存機能にもいくつか変更が加えられています。</p>
-<p>v1.0でドキュメント化されていたすべての機能は、アップグレード後も動作します。
-つまり、v1.0向けに作られたほとんどのプログラムは、v2.0のmicroSDカードイメージで
-変更なしに動作します。</p>
+ただし、パフォーマンスを改善するために既存機能にもいくつか変更が
+加えられています。</p>
+<p>v1.0でドキュメント化されていたすべての機能は、アップグレード後も
+動作します。
+つまり、v1.0向けに作られたほとんどのプログラムは、v2.0のmicroSD
+カードイメージで変更なしに動作します。</p>
 <p>試すには、以前と同じように元のコードをダウンロードして実行するだけです。</p>
-<p>ただし、すべてが期待どおり動作することを確実にするために、microSDカードと
-プログラムの両方を同時にアップグレードすることをおすすめします。</p>
-<div class="section" id="the-new-ev3brick-class-replaces-the-ev3brick-module">
-<h3>新しいEV3Brick()クラスがev3brickモジュールを置き換え<a class="headerlink" href="#the-new-ev3brick-class-replaces-the-ev3brick-module" title="Permalink to this headline">¶</a></h3>
-<p>バージョン2.0では<a class="reference internal" href="hubs.html#pybricks.hubs.EV3Brick" title="pybricks.hubs.EV3Brick"><code class="xref py py-class docutils literal notranslate"><span class="pre">EV3Brick()</span></code></a>クラスが導入されました。
-古い<code class="docutils literal notranslate"><span class="pre">ev3brick</span></code>モジュールの代わりに使用できます。古い<code class="docutils literal notranslate"><span class="pre">ev3brick</span></code>
-モジュールも引き続き使用できますが、推奨されず、ドキュメント化もされていません。</p>
-<p><a class="reference internal" href="hubs.html#pybricks.hubs.EV3Brick" title="pybricks.hubs.EV3Brick"><code class="xref py py-class docutils literal notranslate"><span class="pre">EV3Brick()</span></code></a>クラスは、EV3画面と
+<p>ただし、すべてが期待どおり動作することを確実にするために、microSD
+カードとプログラムの両方を同時にアップグレードすることを
+おすすめします。</p>
+<div class="section" id="ev3brick-ev3brick">
+<h3>新しいEV3Brick()クラスがev3brickモジュールを置き換え<a class="headerlink" href="#ev3brick-ev3brick" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>バージョン2.0では <a class="reference internal" href="hubs.html#pybricks.hubs.EV3Brick" title="pybricks.hubs.EV3Brick"><code class="xref py py-class docutils literal notranslate"><span class="pre">EV3Brick()</span></code></a> クラスが
+導入されました。
+古い <code class="docutils literal notranslate"><span class="pre">ev3brick</span></code> モジュールの代わりに使用できます。古い <code class="docutils literal notranslate"><span class="pre">ev3brick</span></code>
+モジュールも引き続き使用できますが、推奨されず、ドキュメント化も
+されていません。</p>
+<p><a class="reference internal" href="hubs.html#pybricks.hubs.EV3Brick" title="pybricks.hubs.EV3Brick"><code class="xref py py-class docutils literal notranslate"><span class="pre">EV3Brick()</span></code></a> クラスは、EV3画面と
 EV3スピーカーの速度と信頼性を向上させます。音声や図形描画などの機能も
 追加されています。また、デフォルトの
 フォントサイズが大きくなり、画面上のテキストが読みやすくなりました。</p>
 <p>以下の表をスクリプトをアップグレードするための手がかりとして使えます。
 すべてのメソッドと引数の完全な詳細は、
-<a class="reference internal" href="hubs.html#pybricks.hubs.EV3Brick" title="pybricks.hubs.EV3Brick"><code class="xref py py-class docutils literal notranslate"><span class="pre">EV3Brick()</span></code></a>クラスのドキュメントを参照してください。</p>
+<a class="reference internal" href="hubs.html#pybricks.hubs.EV3Brick" title="pybricks.hubs.EV3Brick"><code class="xref py py-class docutils literal notranslate"><span class="pre">EV3Brick()</span></code></a> クラスのドキュメントを
+参照してください。</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="33%" />
@@ -278,11 +287,11 @@ EV3スピーカーの速度と信頼性を向上させます。音声や図形�
 <div class="line">初期化する</div>
 </div>
 </td>
-<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pybricks</span> <span class="kn">import</span> <span class="n">ev3brick</span> <span class="k">as</span> <span class="n">brick</span>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks</span><span class="w"> </span><span class="kn">import</span> <span class="n">ev3brick</span> <span class="k">as</span> <span class="n">brick</span>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pybricks.hubs</span> <span class="kn">import</span> <span class="n">EV3Brick</span>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">EV3Brick</span>
 
 <span class="n">ev3</span> <span class="o">=</span> <span class="n">EV3Brick</span><span class="p">()</span>
 </pre></div>
@@ -321,12 +330,12 @@ EV3スピーカーの速度と信頼性を向上させます。音声や図形�
 </div>
 </td>
 <td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">Button</span><span class="o">.</span><span class="n">LEFT</span> <span class="ow">in</span> <span class="n">brick</span><span class="o">.</span><span class="n">buttons</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Left is pressed.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Left is pressed."</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
 <td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">Button</span><span class="o">.</span><span class="n">LEFT</span> <span class="ow">in</span> <span class="n">ev3</span><span class="o">.</span><span class="n">buttons</span><span class="o">.</span><span class="n">pressed</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Left is pressed.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Left is pressed."</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -365,7 +374,7 @@ EV3スピーカーの速度と信頼性を向上させます。音声や図形�
 </div>
 </td>
 <td>&#160;</td>
-<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="s2">&quot;I can say anything!&quot;</span><span class="p">)</span>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="s2">"I can say anything!"</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -376,7 +385,7 @@ EV3スピーカーの速度と信頼性を向上させます。音声や図形�
 </div>
 </td>
 <td>&#160;</td>
-<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_notes</span><span class="p">([</span><span class="s1">&#39;C4/4&#39;</span><span class="p">,</span> <span class="s1">&#39;G4/4&#39;</span><span class="p">])</span>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_notes</span><span class="p">([</span><span class="s1">'C4/4'</span><span class="p">,</span> <span class="s1">'G4/4'</span><span class="p">])</span>
 </pre></div>
 </div>
 </td>
@@ -387,11 +396,11 @@ EV3スピーカーの速度と信頼性を向上させます。音声や図形�
 <div class="line">書き込む</div>
 </div>
 </td>
-<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brick</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">))</span>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brick</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"Hello!"</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">))</span>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">draw_text</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="s2">&quot;Hello!&quot;</span><span class="p">)</span>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">draw_text</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="s2">"Hello!"</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -402,13 +411,13 @@ EV3スピーカーの速度と信頼性を向上させます。音声や図形�
 <div class="line">スクロールする</div>
 </div>
 </td>
-<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brick</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
-<span class="n">brick</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;world!&quot;</span><span class="p">)</span>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brick</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">)</span>
+<span class="n">brick</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"world!"</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
-<span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;world!&quot;</span><span class="p">)</span>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">)</span>
+<span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">"world!"</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -419,7 +428,7 @@ EV3スピーカーの速度と信頼性を向上させます。音声や図形�
 </div>
 </td>
 <td>&#160;</td>
-<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pybricks.media.ev3dev</span> <span class="kn">import</span> <span class="n">Font</span>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.media.ev3dev</span><span class="w"> </span><span class="kn">import</span> <span class="n">Font</span>
 
 <span class="n">big_font</span> <span class="o">=</span> <span class="n">Font</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
 <span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="n">big_font</span><span class="p">)</span>
@@ -432,13 +441,13 @@ EV3スピーカーの速度と信頼性を向上させます。音声や図形�
 <div class="line">表示する</div>
 </div>
 </td>
-<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pybricks.parameters</span> <span class="kn">import</span> <span class="n">ImageFile</span>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">ImageFile</span>
 
 <span class="n">brick</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="n">ImageFile</span><span class="o">.</span><span class="n">QUESTION_MARK</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pybricks.media.ev3dev</span> <span class="kn">import</span> <span class="n">ImageFile</span>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.media.ev3dev</span><span class="w"> </span><span class="kn">import</span> <span class="n">ImageFile</span>
 
 <span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">load_image</span><span class="p">(</span><span class="n">ImageFile</span><span class="o">.</span><span class="n">Question_MARK</span><span class="p">)</span>
 </pre></div>
@@ -476,13 +485,13 @@ EV3スピーカーの速度と信頼性を向上させます。音声や図形�
 </tbody>
 </table>
 </div>
-<div class="section" id="other-internal-changes-to-existing-features">
-<h3>既存機能のその他の内部変更<a class="headerlink" href="#other-internal-changes-to-existing-features" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>既存機能のその他の内部変更<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul>
-<li><p class="first"><a class="reference internal" href="ev3devices.html#pybricks.ev3devices.Motor" title="pybricks.ev3devices.Motor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Motor()</span></code></a>クラスのほとんどのメソッドで、
-デフォルトが<code class="docutils literal notranslate"><span class="pre">Stop.COAST</span></code>ではなく<code class="docutils literal notranslate"><span class="pre">Stop.HOLD</span></code>になりました。
-これにより多くの用途で精度が向上します。必要であれば引き続き
-<code class="docutils literal notranslate"><span class="pre">Stop.COAST</span></code>を選択できます。</p>
+<li><p class="first"><a class="reference internal" href="ev3devices.html#pybricks.ev3devices.Motor" title="pybricks.ev3devices.Motor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Motor()</span></code></a> クラスのほとんどの
+メソッドで、デフォルトが <code class="docutils literal notranslate"><span class="pre">Stop.COAST</span></code> ではなく <code class="docutils literal notranslate"><span class="pre">Stop.HOLD</span></code> に
+なりました。これにより多くの用途で精度が向上します。必要であれば
+引き続き <code class="docutils literal notranslate"><span class="pre">Stop.COAST</span></code> を選択できます。</p>
 </li>
 <li><p class="first">モーターの内部PIDコントローラーが以前より正確になりました。
 動作中のモーターにコマンドを送ると、新しいコマンドに合わせて速度が
@@ -490,35 +499,37 @@ EV3スピーカーの速度と信頼性を向上させます。音声や図形�
 正しく動作します。</p>
 </li>
 <li><p class="first">モーター設定を構成するメソッドが変更されました。現在は
-<a class="reference internal" href="motors.html"><span class="doc">control</span></a>属性を使って設定を変更できます。
-古い設定用セッターは実装上は残っていますが、ドキュメント化はされていません。</p>
+<a class="reference internal" href="motors.html"><span class="doc">control</span></a> 属性を使って設定を変更できます。
+古い設定用セッターは実装上は残っていますが、ドキュメント化は
+されていません。</p>
 </li>
-<li><p class="first">いわゆるPythonの<em>キーワード引数</em>がサポートされるようになりました。
-以前は引数の<em>値</em>しか入力できませんでした。例:</p>
+<li><p class="first">いわゆるPythonの <em>キーワード引数</em> がサポートされるようになりました。
+以前は引数の <em>値</em> しか入力できませんでした。例:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_motor</span><span class="o">.</span><span class="n">run_angle</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="n">Stop</span><span class="o">.</span><span class="n">HOLD</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
 <p>この書き方は引き続き使えます。ただし、任意の引数を省略し、
-他の引数を<em>キーワード</em>で指定できるようになりました。これによりコードが
-読みやすくなります。例:</p>
+他の引数を <em>キーワード</em> で指定できるようになりました。これにより
+コードが読みやすくなります。例:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_motor</span><span class="o">.</span><span class="n">run_angle</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">pybricks.tools.print</span></code>をインポートする必要はなくなりました。
-<code class="docutils literal notranslate"><span class="pre">print</span></code>関数が組み込みになり、PythonやMicroPythonと同じように
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">pybricks.tools.print</span></code> をインポートする必要はなくなりました。
+<code class="docutils literal notranslate"><span class="pre">print</span></code> 関数が組み込みになり、PythonやMicroPythonと同じように
 動作します。</p>
 </li>
-<li><p class="first"><a class="reference internal" href="parameters.html#module-pybricks.parameters" title="pybricks.parameters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code></a>のほとんどのパラメーターに、
-固有の型と表現が付きました。たとえば、色を測定して結果を表示するとします。
-<code class="docutils literal notranslate"><span class="pre">print(Color.RED)</span></code>とすると、内部的な数値ではなく
+<li><p class="first"><a class="reference internal" href="parameters.html#module-pybricks.parameters" title="pybricks.parameters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code></a> のほとんどのパラメーターに、
+固有の型と表現が付きました。たとえば、色を測定して結果を表示すると
+します。 <code class="docutils literal notranslate"><span class="pre">print(Color.RED)</span></code> とすると、内部的な数値ではなく
 パラメーター名が表示されます。</p>
 </li>
-<li><p class="first">サウンドと画像ファイルは専用の<a class="reference internal" href="media.html"><span class="doc">media</span></a>モジュールに移動しました。
+<li><p class="first">サウンドと画像ファイルは専用の <a class="reference internal" href="media.html"><span class="doc">media</span></a> モジュールに
+移動しました。
 このリリースでは、既存のスクリプトが引き続き動作するよう、
 古い場所からのインポートも引き続き機能します。</p>
 </li>
@@ -528,7 +539,7 @@ EV3スピーカーの速度と信頼性を向上させます。音声や図形�
 更新された拡張機能でも既存のスクリプトは引き続き使えます。
 どうしても古いバージョンを使い続けたい場合は、拡張機能タブで
 EV3拡張機能を探し、歯車アイコンをクリックして
-<em>install another version</em>をクリックしてください。</p>
+<em>install another version</em> をクリックしてください。</p>
 </div>
 </div>
 </div>
@@ -541,10 +552,10 @@ EV3拡張機能を探し、歯車アイコンをクリックして
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="hubs.html" class="btn btn-neutral float-right" title="hubs – Programmable Hubs" accesskey="n" rel="next">次へ <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="hubs.html" class="btn btn-neutral float-right" title="hubs -- プログラマブルハブ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="startlinux.html" class="btn btn-neutral float-left" title="Accessing advanced EV3 features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 前へ</a>
+        <a href="startlinux.html" class="btn btn-neutral float-left" title="EV3の高度な機能を使う" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -553,12 +564,12 @@ EV3拡張機能を探し、歯車アイコンをクリックして
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 The LEGO Group. All rights reserved.
+        &copy; Copyright 2018-2020 The Pybricks Authors
 
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group.</div>
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
 
 
 </footer>

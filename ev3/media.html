@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>media – サウンドと画像 &mdash; ev3-micropython 2.0.0 ドキュメント</title>
+  <title>media -- サウンドと画像 &mdash; ev3-micropython 2.0.0.post2 ドキュメント</title>
   
 
   
@@ -23,8 +23,8 @@
       <script type="text/javascript">
           var DOCUMENTATION_OPTIONS = {
               URL_ROOT:'./',
-              VERSION:'2.0.0',
-              LANGUAGE:'None',
+              VERSION:'2.0.0.post2',
+              LANGUAGE:'ja',
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
@@ -34,6 +34,7 @@
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="_static/contentui.js"></script>
     
@@ -45,10 +46,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="messaging – Messaging" href="messaging.html" />
-    <link rel="prev" title="robotics – Robotics" href="robotics.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="messaging -- メッセージング" href="messaging.html" />
+    <link rel="prev" title="robotics -- ロボティクス" href="robotics.html" />
     <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css">
 
 </head>
@@ -69,7 +70,7 @@
 
           
             
-            <img src="_static/lego-education-logo-small.png" class="logo" alt="Logo"/>
+            <img src="_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -77,7 +78,7 @@
             
             
               <div class="version">
-                2.0.0
+                2.0.0.post2
               </div>
             
           
@@ -85,7 +86,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="ドキュメントを検索" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -104,31 +105,31 @@
               <p class="caption"><span class="caption-text">はじめに</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="startinstall.html">インストール</a></li>
-<li class="toctree-l1"><a class="reference internal" href="startbrick.html">EV3ブロックを使う</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startbrick.html">EV3 Brickを使う</a></li>
 <li class="toctree-l1"><a class="reference internal" href="startrun.html">プログラムの作成と実行</a></li>
 <li class="toctree-l1"><a class="reference internal" href="startlinux.html">EV3の高度な機能を使う</a></li>
-<li class="toctree-l1"><a class="reference internal" href="startupgrade.html">v1.0からv2.0へアップグレード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startupgrade.html">v1.0からv2.0へのアップグレード</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Pybricksモジュール</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – プログラマブルハブ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3デバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXTデバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – 汎用I/Oデバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – タイミングとデータロギング</a></li>
-<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクス</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">media</span></code> – サウンドと画像</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-pybricks.media.ev3dev"><code class="docutils literal notranslate"><span class="pre">media.ev3dev</span></code> – サウンドと画像</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#image-files">画像ファイル</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sound-files">サウンドファイル</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fonts">フォント</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#image-manipulation">画像の操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> -- プログラマブルハブ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> -- EV3デバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> -- NXTデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> -- 汎用I/Oデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> -- パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> -- 時間計測とデータロギング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> -- ロボティクス</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">media</span></code> -- サウンドと画像</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-pybricks.media.ev3dev"><code class="docutils literal notranslate"><span class="pre">media.ev3dev</span></code> -- サウンドと画像</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">画像ファイル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">サウンドファイル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">フォント</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">画像の操作</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> -- メッセージング</a></li>
 </ul>
 <p class="caption"><span class="caption-text">補足解説</span></p>
 <ul>
@@ -151,7 +152,7 @@
 <p class="caption"><span class="caption-text">拡張セットプログラム</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="examples/elephant.html">エレファント</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/stair_climber.html">階段を上るロボット</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/stair_climber.html">ステアクライマー</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/tank_bot.html">タンクボット</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/znap.html">ズナップ</a></li>
 </ul>
@@ -199,13 +200,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li><code class="docutils literal notranslate"><span class="pre">media</span></code> – サウンドと画像</li>
+      <li><code class="docutils literal notranslate"><span class="pre">media</span></code> -- サウンドと画像</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/media.rst.txt" rel="nofollow"> ページソースを表示</a>
+            <a href="_sources/media.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -219,98 +220,100 @@
            <div itemprop="articleBody">
             
   <div class="section" id="module-pybricks.media">
-<span id="media-sounds-and-images"></span><h1><a class="reference internal" href="#module-pybricks.media" title="pybricks.media"><code class="xref py py-mod docutils literal notranslate"><span class="pre">media</span></code></a> – サウンドと画像<a class="headerlink" href="#module-pybricks.media" title="Permalink to this headline">¶</a></h1>
-<p>このモジュールは、プロジェクトで使用できるサウンドや画像などのメディアを扱います。
-メディアは、どのプラットフォームで利用できるかを示すサブモジュールに分かれています。</p>
+<span id="media"></span><h1><a class="reference internal" href="#module-pybricks.media" title="pybricks.media"><code class="xref py py-mod docutils literal notranslate"><span class="pre">media</span></code></a> -- サウンドと画像<a class="headerlink" href="#module-pybricks.media" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>このモジュールは、プロジェクトで使用できるサウンドや画像などの
+メディアを扱います。メディアは、どのプラットフォームで利用できるかを
+示すサブモジュールに分かれています。</p>
 <div class="section" id="module-pybricks.media.ev3dev">
-<span id="media-ev3dev-sounds-and-images"></span><h2><a class="reference internal" href="#module-pybricks.media.ev3dev" title="pybricks.media.ev3dev"><code class="xref py py-mod docutils literal notranslate"><span class="pre">media.ev3dev</span></code></a> – サウンドと画像<a class="headerlink" href="#module-pybricks.media.ev3dev" title="Permalink to this headline">¶</a></h2>
-<p>EV3 MicroPythonはev3dev上に構築されており、ev3devにはさまざまな画像ファイルと
-サウンドファイルが付属しています。以下のクラスを使ってそれらにアクセスできます。</p>
+<span id="media-ev3dev"></span><h2><a class="reference internal" href="#module-pybricks.media.ev3dev" title="pybricks.media.ev3dev"><code class="xref py py-mod docutils literal notranslate"><span class="pre">media.ev3dev</span></code></a> -- サウンドと画像<a class="headerlink" href="#module-pybricks.media.ev3dev" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>EV3 MicroPythonはev3dev上に構築されており、ev3devにはさまざまな
+画像ファイルとサウンドファイルが付属しています。以下のクラスを使って
+それらにアクセスできます。</p>
 <p>独自のサウンドファイルや画像ファイルをプロジェクトフォルダーに置いて、
 使うこともできます。</p>
-<div class="section" id="image-files">
-<h3>画像ファイル<a class="headerlink" href="#image-files" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h3>画像ファイル<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <dl class="class">
 <dt id="pybricks.media.ev3dev.ImageFile">
-<em class="property">class </em><code class="descname">ImageFile</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">ImageFile</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>標準のEV3画像へのパス。</p>
 <p class="toggle-header"><strong>情報</strong></p>
 <div class="toggle-content docutils container">
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.ACCEPT">
-<code class="descname">ACCEPT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.ACCEPT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ACCEPT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.ACCEPT" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/accept.png" src="_images/accept.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.BACKWARD">
-<code class="descname">BACKWARD</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.BACKWARD" title="Permalink to this definition">¶</a></dt>
+<code class="descname">BACKWARD</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.BACKWARD" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/backward.png" src="_images/backward.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.DECLINE">
-<code class="descname">DECLINE</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.DECLINE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">DECLINE</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.DECLINE" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/decline.png" src="_images/decline.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.FORWARD">
-<code class="descname">FORWARD</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.FORWARD" title="Permalink to this definition">¶</a></dt>
+<code class="descname">FORWARD</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.FORWARD" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/forward.png" src="_images/forward.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.LEFT">
-<code class="descname">LEFT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.LEFT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">LEFT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.LEFT" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/left.png" src="_images/left.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.NO_GO">
-<code class="descname">NO_GO</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.NO_GO" title="Permalink to this definition">¶</a></dt>
+<code class="descname">NO_GO</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.NO_GO" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/no_go.png" src="_images/no_go.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.QUESTION_MARK">
-<code class="descname">QUESTION_MARK</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.QUESTION_MARK" title="Permalink to this definition">¶</a></dt>
+<code class="descname">QUESTION_MARK</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.QUESTION_MARK" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/question_mark.png" src="_images/question_mark.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.RIGHT">
-<code class="descname">RIGHT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.RIGHT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">RIGHT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.RIGHT" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/right.png" src="_images/right.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.STOP_1">
-<code class="descname">STOP_1</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.STOP_1" title="Permalink to this definition">¶</a></dt>
+<code class="descname">STOP_1</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.STOP_1" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/stop_1.png" src="_images/stop_1.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.STOP_2">
-<code class="descname">STOP_2</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.STOP_2" title="Permalink to this definition">¶</a></dt>
+<code class="descname">STOP_2</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.STOP_2" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/stop_2.png" src="_images/stop_2.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.THUMBS_DOWN">
-<code class="descname">THUMBS_DOWN</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.THUMBS_DOWN" title="Permalink to this definition">¶</a></dt>
+<code class="descname">THUMBS_DOWN</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.THUMBS_DOWN" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/thumbs_down.png" src="_images/thumbs_down.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.THUMBS_UP">
-<code class="descname">THUMBS_UP</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.THUMBS_UP" title="Permalink to this definition">¶</a></dt>
+<code class="descname">THUMBS_UP</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.THUMBS_UP" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/thumbs_up.png" src="_images/thumbs_up.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.WARNING">
-<code class="descname">WARNING</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.WARNING" title="Permalink to this definition">¶</a></dt>
+<code class="descname">WARNING</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.WARNING" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/warning.png" src="_images/warning.png" style="width: 15%;" />
 </dd></dl>
 
@@ -319,13 +322,13 @@
 <div class="toggle-content docutils container">
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.EV3">
-<code class="descname">EV3</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.EV3" title="Permalink to this definition">¶</a></dt>
+<code class="descname">EV3</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.EV3" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/ev3.png" src="_images/ev3.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.EV3_ICON">
-<code class="descname">EV3_ICON</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.EV3_ICON" title="Permalink to this definition">¶</a></dt>
+<code class="descname">EV3_ICON</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.EV3_ICON" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/ev3_icon.png" src="_images/ev3_icon.png" style="width: 15%;" />
 </dd></dl>
 
@@ -334,7 +337,7 @@
 <div class="toggle-content docutils container">
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.TARGET">
-<code class="descname">TARGET</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.TARGET" title="Permalink to this definition">¶</a></dt>
+<code class="descname">TARGET</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.TARGET" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/target.png" src="_images/target.png" style="width: 15%;" />
 </dd></dl>
 
@@ -343,133 +346,133 @@
 <div class="toggle-content docutils container">
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.ANGRY">
-<code class="descname">ANGRY</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.ANGRY" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ANGRY</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.ANGRY" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/angry.png" src="_images/angry.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.AWAKE">
-<code class="descname">AWAKE</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.AWAKE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">AWAKE</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.AWAKE" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/awake.png" src="_images/awake.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.BOTTOM_LEFT">
-<code class="descname">BOTTOM_LEFT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.BOTTOM_LEFT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">BOTTOM_LEFT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.BOTTOM_LEFT" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/bottom_left.png" src="_images/bottom_left.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.BOTTOM_RIGHT">
-<code class="descname">BOTTOM_RIGHT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.BOTTOM_RIGHT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">BOTTOM_RIGHT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.BOTTOM_RIGHT" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/bottom_right.png" src="_images/bottom_right.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.CRAZY_1">
-<code class="descname">CRAZY_1</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.CRAZY_1" title="Permalink to this definition">¶</a></dt>
+<code class="descname">CRAZY_1</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.CRAZY_1" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/crazy_1.png" src="_images/crazy_1.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.CRAZY_2">
-<code class="descname">CRAZY_2</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.CRAZY_2" title="Permalink to this definition">¶</a></dt>
+<code class="descname">CRAZY_2</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.CRAZY_2" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/crazy_2.png" src="_images/crazy_2.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.DIZZY">
-<code class="descname">DIZZY</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.DIZZY" title="Permalink to this definition">¶</a></dt>
+<code class="descname">DIZZY</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.DIZZY" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/dizzy.png" src="_images/dizzy.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.DOWN">
-<code class="descname">DOWN</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.DOWN" title="Permalink to this definition">¶</a></dt>
+<code class="descname">DOWN</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.DOWN" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/down.png" src="_images/down.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.EVIL">
-<code class="descname">EVIL</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.EVIL" title="Permalink to this definition">¶</a></dt>
+<code class="descname">EVIL</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.EVIL" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/evil.png" src="_images/evil.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.KNOCKED_OUT">
-<code class="descname">KNOCKED_OUT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.KNOCKED_OUT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">KNOCKED_OUT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.KNOCKED_OUT" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/knocked_out.png" src="_images/knocked_out.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.MIDDLE_LEFT">
-<code class="descname">MIDDLE_LEFT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.MIDDLE_LEFT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MIDDLE_LEFT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.MIDDLE_LEFT" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/middle_left.png" src="_images/middle_left.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.MIDDLE_RIGHT">
-<code class="descname">MIDDLE_RIGHT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.MIDDLE_RIGHT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MIDDLE_RIGHT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.MIDDLE_RIGHT" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/middle_right.png" src="_images/middle_right.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.NEUTRAL">
-<code class="descname">NEUTRAL</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.NEUTRAL" title="Permalink to this definition">¶</a></dt>
+<code class="descname">NEUTRAL</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.NEUTRAL" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/neutral.png" src="_images/neutral.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.PINCHED_LEFT">
-<code class="descname">PINCHED_LEFT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.PINCHED_LEFT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">PINCHED_LEFT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.PINCHED_LEFT" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/pinched_left.png" src="_images/pinched_left.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.PINCHED_MIDDLE">
-<code class="descname">PINCHED_MIDDLE</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.PINCHED_MIDDLE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">PINCHED_MIDDLE</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.PINCHED_MIDDLE" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/pinched_middle.png" src="_images/pinched_middle.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.PINCHED_RIGHT">
-<code class="descname">PINCHED_RIGHT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.PINCHED_RIGHT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">PINCHED_RIGHT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.PINCHED_RIGHT" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/pinched_right.png" src="_images/pinched_right.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.SLEEPING">
-<code class="descname">SLEEPING</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.SLEEPING" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SLEEPING</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.SLEEPING" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/sleeping.png" src="_images/sleeping.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.TIRED_LEFT">
-<code class="descname">TIRED_LEFT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.TIRED_LEFT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">TIRED_LEFT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.TIRED_LEFT" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/tired_left.png" src="_images/tired_left.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.TIRED_MIDDLE">
-<code class="descname">TIRED_MIDDLE</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.TIRED_MIDDLE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">TIRED_MIDDLE</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.TIRED_MIDDLE" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/tired_middle.png" src="_images/tired_middle.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.TIRED_RIGHT">
-<code class="descname">TIRED_RIGHT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.TIRED_RIGHT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">TIRED_RIGHT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.TIRED_RIGHT" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/tired_right.png" src="_images/tired_right.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.UP">
-<code class="descname">UP</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.UP" title="Permalink to this definition">¶</a></dt>
+<code class="descname">UP</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.UP" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/up.png" src="_images/up.png" style="width: 15%;" />
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.ImageFile.WINKING">
-<code class="descname">WINKING</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.WINKING" title="Permalink to this definition">¶</a></dt>
+<code class="descname">WINKING</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.WINKING" title="この定義へのパーマリンク">¶</a></dt>
 <dd><img alt="_images/winking.png" src="_images/winking.png" style="width: 15%;" />
 </dd></dl>
 
@@ -477,155 +480,155 @@
 </dd></dl>
 
 </div>
-<div class="section" id="sound-files">
-<h3>サウンドファイル<a class="headerlink" href="#sound-files" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>サウンドファイル<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <dl class="class">
 <dt id="pybricks.media.ev3dev.SoundFile">
-<em class="property">class </em><code class="descname">SoundFile</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">SoundFile</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>標準のEV3サウンドへのパス。</p>
 <p class="toggle-header"><strong>表現</strong></p>
 <div class="toggle-content docutils container">
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.BOING">
-<code class="descname">BOING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BOING" title="Permalink to this definition">¶</a></dt>
+<code class="descname">BOING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BOING" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/boing.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/boing.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.BOO">
-<code class="descname">BOO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BOO" title="Permalink to this definition">¶</a></dt>
+<code class="descname">BOO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BOO" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/boo.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/boo.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.CHEERING">
-<code class="descname">CHEERING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.CHEERING" title="Permalink to this definition">¶</a></dt>
+<code class="descname">CHEERING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.CHEERING" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/cheering.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/cheering.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.CRUNCHING">
-<code class="descname">CRUNCHING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.CRUNCHING" title="Permalink to this definition">¶</a></dt>
+<code class="descname">CRUNCHING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.CRUNCHING" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/crunching.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/crunching.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.CRYING">
-<code class="descname">CRYING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.CRYING" title="Permalink to this definition">¶</a></dt>
+<code class="descname">CRYING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.CRYING" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/crying.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/crying.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.FANFARE">
-<code class="descname">FANFARE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.FANFARE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">FANFARE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.FANFARE" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/fanfare.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/fanfare.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.KUNG_FU">
-<code class="descname">KUNG_FU</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.KUNG_FU" title="Permalink to this definition">¶</a></dt>
+<code class="descname">KUNG_FU</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.KUNG_FU" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/kung_fu.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/kung_fu.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.LAUGHING_1">
-<code class="descname">LAUGHING_1</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.LAUGHING_1" title="Permalink to this definition">¶</a></dt>
+<code class="descname">LAUGHING_1</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.LAUGHING_1" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/laughing_1.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/laughing_1.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.LAUGHING_2">
-<code class="descname">LAUGHING_2</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.LAUGHING_2" title="Permalink to this definition">¶</a></dt>
+<code class="descname">LAUGHING_2</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.LAUGHING_2" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/laughing_2.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/laughing_2.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.MAGIC_WAND">
-<code class="descname">MAGIC_WAND</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.MAGIC_WAND" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MAGIC_WAND</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.MAGIC_WAND" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/magic_wand.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/magic_wand.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.OUCH">
-<code class="descname">OUCH</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.OUCH" title="Permalink to this definition">¶</a></dt>
+<code class="descname">OUCH</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.OUCH" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/ouch.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/ouch.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.SHOUTING">
-<code class="descname">SHOUTING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SHOUTING" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SHOUTING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SHOUTING" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/shouting.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/shouting.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.SMACK">
-<code class="descname">SMACK</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SMACK" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SMACK</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SMACK" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/smack.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/smack.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.SNEEZING">
-<code class="descname">SNEEZING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SNEEZING" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SNEEZING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SNEEZING" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/sneezing.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/sneezing.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.SNORING">
-<code class="descname">SNORING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SNORING" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SNORING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SNORING" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/snoring.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/snoring.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.UH_OH">
-<code class="descname">UH_OH</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.UH_OH" title="Permalink to this definition">¶</a></dt>
+<code class="descname">UH_OH</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.UH_OH" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/uh-oh.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/uh-oh.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
@@ -634,172 +637,172 @@
 <div class="toggle-content docutils container">
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.ACTIVATE">
-<code class="descname">ACTIVATE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.ACTIVATE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ACTIVATE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.ACTIVATE" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/activate.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/activate.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.ANALYZE">
-<code class="descname">ANALYZE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.ANALYZE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ANALYZE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.ANALYZE" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/analyze.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/analyze.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.BACKWARDS">
-<code class="descname">BACKWARDS</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BACKWARDS" title="Permalink to this definition">¶</a></dt>
+<code class="descname">BACKWARDS</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BACKWARDS" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/backwards.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/backwards.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.COLOR">
-<code class="descname">COLOR</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.COLOR" title="Permalink to this definition">¶</a></dt>
+<code class="descname">COLOR</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.COLOR" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/color.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/color.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.DETECTED">
-<code class="descname">DETECTED</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.DETECTED" title="Permalink to this definition">¶</a></dt>
+<code class="descname">DETECTED</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.DETECTED" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/detected.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/detected.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.DOWN">
-<code class="descname">DOWN</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.DOWN" title="Permalink to this definition">¶</a></dt>
+<code class="descname">DOWN</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.DOWN" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/down.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/down.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.ERROR">
-<code class="descname">ERROR</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.ERROR" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ERROR</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.ERROR" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/error.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/error.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.ERROR_ALARM">
-<code class="descname">ERROR_ALARM</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.ERROR_ALARM" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ERROR_ALARM</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.ERROR_ALARM" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/error_alarm.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/error_alarm.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.FLASHING">
-<code class="descname">FLASHING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.FLASHING" title="Permalink to this definition">¶</a></dt>
+<code class="descname">FLASHING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.FLASHING" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/flashing.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/flashing.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.FORWARD">
-<code class="descname">FORWARD</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.FORWARD" title="Permalink to this definition">¶</a></dt>
+<code class="descname">FORWARD</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.FORWARD" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/forward.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/forward.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.LEFT">
-<code class="descname">LEFT</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.LEFT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">LEFT</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.LEFT" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/left.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/left.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.OBJECT">
-<code class="descname">OBJECT</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.OBJECT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">OBJECT</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.OBJECT" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/object.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/object.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.RIGHT">
-<code class="descname">RIGHT</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.RIGHT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">RIGHT</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.RIGHT" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/right.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/right.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.SEARCHING">
-<code class="descname">SEARCHING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SEARCHING" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SEARCHING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SEARCHING" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/searching.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/searching.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.START">
-<code class="descname">START</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.START" title="Permalink to this definition">¶</a></dt>
+<code class="descname">START</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.START" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/start.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/start.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.STOP">
-<code class="descname">STOP</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.STOP" title="Permalink to this definition">¶</a></dt>
+<code class="descname">STOP</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.STOP" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/stop.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/stop.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.TOUCH">
-<code class="descname">TOUCH</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.TOUCH" title="Permalink to this definition">¶</a></dt>
+<code class="descname">TOUCH</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.TOUCH" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/touch.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/touch.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.TURN">
-<code class="descname">TURN</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.TURN" title="Permalink to this definition">¶</a></dt>
+<code class="descname">TURN</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.TURN" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/turn.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/turn.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.UP">
-<code class="descname">UP</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.UP" title="Permalink to this definition">¶</a></dt>
+<code class="descname">UP</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.UP" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/up.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/up.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
@@ -808,172 +811,172 @@
 <div class="toggle-content docutils container">
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.BRAVO">
-<code class="descname">BRAVO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BRAVO" title="Permalink to this definition">¶</a></dt>
+<code class="descname">BRAVO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BRAVO" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/bravo.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/bravo.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.EV3">
-<code class="descname">EV3</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.EV3" title="Permalink to this definition">¶</a></dt>
+<code class="descname">EV3</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.EV3" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/ev3.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/ev3.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.FANTASTIC">
-<code class="descname">FANTASTIC</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.FANTASTIC" title="Permalink to this definition">¶</a></dt>
+<code class="descname">FANTASTIC</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.FANTASTIC" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/fantastic.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/fantastic.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.GAME_OVER">
-<code class="descname">GAME_OVER</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.GAME_OVER" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GAME_OVER</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.GAME_OVER" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/game_over.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/game_over.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.GO">
-<code class="descname">GO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.GO" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.GO" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/go.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/go.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.GOOD_JOB">
-<code class="descname">GOOD_JOB</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.GOOD_JOB" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GOOD_JOB</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.GOOD_JOB" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/good_job.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/good_job.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.GOOD">
-<code class="descname">GOOD</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.GOOD" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GOOD</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.GOOD" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/good.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/good.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.GOODBYE">
-<code class="descname">GOODBYE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.GOODBYE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GOODBYE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.GOODBYE" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/goodbye.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/goodbye.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.HELLO">
-<code class="descname">HELLO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.HELLO" title="Permalink to this definition">¶</a></dt>
+<code class="descname">HELLO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.HELLO" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/hello.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/hello.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.HI">
-<code class="descname">HI</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.HI" title="Permalink to this definition">¶</a></dt>
+<code class="descname">HI</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.HI" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/hi.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/hi.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.LEGO">
-<code class="descname">LEGO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.LEGO" title="Permalink to this definition">¶</a></dt>
+<code class="descname">LEGO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.LEGO" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/lego.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/lego.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.MINDSTORMS">
-<code class="descname">MINDSTORMS</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.MINDSTORMS" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MINDSTORMS</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.MINDSTORMS" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/mindstorms.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/mindstorms.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.MORNING">
-<code class="descname">MORNING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.MORNING" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MORNING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.MORNING" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/morning.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/morning.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.NO">
-<code class="descname">NO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.NO" title="Permalink to this definition">¶</a></dt>
+<code class="descname">NO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.NO" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/no.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/no.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.OKAY">
-<code class="descname">OKAY</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.OKAY" title="Permalink to this definition">¶</a></dt>
+<code class="descname">OKAY</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.OKAY" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/okay.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/okay.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.OKEY_DOKEY">
-<code class="descname">OKEY_DOKEY</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.OKEY_DOKEY" title="Permalink to this definition">¶</a></dt>
+<code class="descname">OKEY_DOKEY</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.OKEY_DOKEY" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/okey-dokey.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/okey-dokey.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.SORRY">
-<code class="descname">SORRY</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SORRY" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SORRY</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SORRY" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/sorry.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/sorry.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.THANK_YOU">
-<code class="descname">THANK_YOU</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.THANK_YOU" title="Permalink to this definition">¶</a></dt>
+<code class="descname">THANK_YOU</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.THANK_YOU" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/thank_you.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/thank_you.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.YES">
-<code class="descname">YES</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.YES" title="Permalink to this definition">¶</a></dt>
+<code class="descname">YES</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.YES" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/yes.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/yes.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
@@ -982,28 +985,28 @@
 <div class="toggle-content docutils container">
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.SPEED_DOWN">
-<code class="descname">SPEED_DOWN</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SPEED_DOWN" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SPEED_DOWN</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SPEED_DOWN" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/speed_down.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/speed_down.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.SPEED_IDLE">
-<code class="descname">SPEED_IDLE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SPEED_IDLE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SPEED_IDLE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SPEED_IDLE" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/speed_idle.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/speed_idle.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.SPEED_UP">
-<code class="descname">SPEED_UP</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SPEED_UP" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SPEED_UP</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SPEED_UP" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/speed_up.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/speed_up.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
@@ -1012,64 +1015,64 @@
 <div class="toggle-content docutils container">
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.BLACK">
-<code class="descname">BLACK</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BLACK" title="Permalink to this definition">¶</a></dt>
+<code class="descname">BLACK</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BLACK" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/black.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/black.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.BLUE">
-<code class="descname">BLUE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BLUE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">BLUE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BLUE" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/blue.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/blue.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.BROWN">
-<code class="descname">BROWN</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BROWN" title="Permalink to this definition">¶</a></dt>
+<code class="descname">BROWN</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BROWN" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/brown.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/brown.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.GREEN">
-<code class="descname">GREEN</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.GREEN" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GREEN</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.GREEN" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/green.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/green.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.RED">
-<code class="descname">RED</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.RED" title="Permalink to this definition">¶</a></dt>
+<code class="descname">RED</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.RED" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/red.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/red.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.WHITE">
-<code class="descname">WHITE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.WHITE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">WHITE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.WHITE" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/white.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/white.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.YELLOW">
-<code class="descname">YELLOW</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.YELLOW" title="Permalink to this definition">¶</a></dt>
+<code class="descname">YELLOW</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.YELLOW" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/yellow.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/yellow.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
@@ -1078,109 +1081,109 @@
 <div class="toggle-content docutils container">
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.AIR_RELEASE">
-<code class="descname">AIR_RELEASE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.AIR_RELEASE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">AIR_RELEASE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.AIR_RELEASE" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/air_release.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/air_release.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.AIRBRAKE">
-<code class="descname">AIRBRAKE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.AIRBRAKE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">AIRBRAKE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.AIRBRAKE" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/airbrake.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/airbrake.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.BACKING_ALERT">
-<code class="descname">BACKING_ALERT</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BACKING_ALERT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">BACKING_ALERT</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BACKING_ALERT" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/backing_alert.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/backing_alert.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.HORN_1">
-<code class="descname">HORN_1</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.HORN_1" title="Permalink to this definition">¶</a></dt>
+<code class="descname">HORN_1</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.HORN_1" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/horn_1.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/horn_1.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.HORN_2">
-<code class="descname">HORN_2</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.HORN_2" title="Permalink to this definition">¶</a></dt>
+<code class="descname">HORN_2</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.HORN_2" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/horn_2.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/horn_2.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.LASER">
-<code class="descname">LASER</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.LASER" title="Permalink to this definition">¶</a></dt>
+<code class="descname">LASER</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.LASER" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/laser.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/laser.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.MOTOR_IDLE">
-<code class="descname">MOTOR_IDLE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.MOTOR_IDLE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MOTOR_IDLE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.MOTOR_IDLE" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/motor_idle.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/motor_idle.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.MOTOR_START">
-<code class="descname">MOTOR_START</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.MOTOR_START" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MOTOR_START</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.MOTOR_START" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/motor_start.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/motor_start.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.MOTOR_STOP">
-<code class="descname">MOTOR_STOP</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.MOTOR_STOP" title="Permalink to this definition">¶</a></dt>
+<code class="descname">MOTOR_STOP</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.MOTOR_STOP" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/motor_stop.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/motor_stop.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.RATCHET">
-<code class="descname">RATCHET</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.RATCHET" title="Permalink to this definition">¶</a></dt>
+<code class="descname">RATCHET</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.RATCHET" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/ratchet.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/ratchet.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.SONAR">
-<code class="descname">SONAR</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SONAR" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SONAR</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SONAR" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/sonar.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/sonar.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.TICK_TACK">
-<code class="descname">TICK_TACK</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.TICK_TACK" title="Permalink to this definition">¶</a></dt>
+<code class="descname">TICK_TACK</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.TICK_TACK" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/tick_tack.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/tick_tack.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
@@ -1189,118 +1192,118 @@
 <div class="toggle-content docutils container">
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.CAT_PURR">
-<code class="descname">CAT_PURR</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.CAT_PURR" title="Permalink to this definition">¶</a></dt>
+<code class="descname">CAT_PURR</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.CAT_PURR" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/cat_purr.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/cat_purr.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.DOG_BARK_1">
-<code class="descname">DOG_BARK_1</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.DOG_BARK_1" title="Permalink to this definition">¶</a></dt>
+<code class="descname">DOG_BARK_1</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.DOG_BARK_1" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/dog_bark_1.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/dog_bark_1.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.DOG_BARK_2">
-<code class="descname">DOG_BARK_2</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.DOG_BARK_2" title="Permalink to this definition">¶</a></dt>
+<code class="descname">DOG_BARK_2</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.DOG_BARK_2" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/dog_bark_2.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/dog_bark_2.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.DOG_GROWL">
-<code class="descname">DOG_GROWL</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.DOG_GROWL" title="Permalink to this definition">¶</a></dt>
+<code class="descname">DOG_GROWL</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.DOG_GROWL" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/dog_growl.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/dog_growl.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.DOG_SNIFF">
-<code class="descname">DOG_SNIFF</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.DOG_SNIFF" title="Permalink to this definition">¶</a></dt>
+<code class="descname">DOG_SNIFF</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.DOG_SNIFF" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/dog_sniff.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/dog_sniff.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.DOG_WHINE">
-<code class="descname">DOG_WHINE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.DOG_WHINE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">DOG_WHINE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.DOG_WHINE" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/dog_whine.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/dog_whine.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.ELEPHANT_CALL">
-<code class="descname">ELEPHANT_CALL</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.ELEPHANT_CALL" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ELEPHANT_CALL</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.ELEPHANT_CALL" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/elephant_call.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/elephant_call.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.INSECT_BUZZ_1">
-<code class="descname">INSECT_BUZZ_1</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.INSECT_BUZZ_1" title="Permalink to this definition">¶</a></dt>
+<code class="descname">INSECT_BUZZ_1</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.INSECT_BUZZ_1" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/insect_buzz_1.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/insect_buzz_1.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.INSECT_BUZZ_2">
-<code class="descname">INSECT_BUZZ_2</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.INSECT_BUZZ_2" title="Permalink to this definition">¶</a></dt>
+<code class="descname">INSECT_BUZZ_2</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.INSECT_BUZZ_2" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/insect_buzz_2.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/insect_buzz_2.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.INSECT_CHIRP">
-<code class="descname">INSECT_CHIRP</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.INSECT_CHIRP" title="Permalink to this definition">¶</a></dt>
+<code class="descname">INSECT_CHIRP</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.INSECT_CHIRP" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/insect_chirp.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/insect_chirp.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.SNAKE_HISS">
-<code class="descname">SNAKE_HISS</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SNAKE_HISS" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SNAKE_HISS</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SNAKE_HISS" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/snake_hiss.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/snake_hiss.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.SNAKE_RATTLE">
-<code class="descname">SNAKE_RATTLE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SNAKE_RATTLE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SNAKE_RATTLE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SNAKE_RATTLE" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/snake_rattle.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/snake_rattle.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.T_REX_ROAR">
-<code class="descname">T_REX_ROAR</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.T_REX_ROAR" title="Permalink to this definition">¶</a></dt>
+<code class="descname">T_REX_ROAR</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.T_REX_ROAR" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/t-rex_roar.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/t-rex_roar.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
@@ -1309,100 +1312,100 @@
 <div class="toggle-content docutils container">
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.ZERO">
-<code class="descname">ZERO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.ZERO" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ZERO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.ZERO" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/zero.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/zero.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.ONE">
-<code class="descname">ONE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.ONE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ONE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.ONE" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/one.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/one.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.TWO">
-<code class="descname">TWO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.TWO" title="Permalink to this definition">¶</a></dt>
+<code class="descname">TWO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.TWO" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/two.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/two.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.THREE">
-<code class="descname">THREE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.THREE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">THREE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.THREE" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/three.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/three.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.FOUR">
-<code class="descname">FOUR</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.FOUR" title="Permalink to this definition">¶</a></dt>
+<code class="descname">FOUR</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.FOUR" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/four.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/four.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.FIVE">
-<code class="descname">FIVE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.FIVE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">FIVE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.FIVE" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/five.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/five.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.SIX">
-<code class="descname">SIX</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SIX" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SIX</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SIX" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/six.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/six.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.SEVEN">
-<code class="descname">SEVEN</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SEVEN" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SEVEN</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SEVEN" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/seven.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/seven.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.EIGHT">
-<code class="descname">EIGHT</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.EIGHT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">EIGHT</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.EIGHT" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/eight.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/eight.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.NINE">
-<code class="descname">NINE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.NINE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">NINE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.NINE" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/nine.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/nine.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.TEN">
-<code class="descname">TEN</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.TEN" title="Permalink to this definition">¶</a></dt>
+<code class="descname">TEN</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.TEN" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/ten.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/ten.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
@@ -1411,46 +1414,46 @@
 <div class="toggle-content docutils container">
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.CLICK">
-<code class="descname">CLICK</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.CLICK" title="Permalink to this definition">¶</a></dt>
+<code class="descname">CLICK</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.CLICK" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/click.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/click.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.CONFIRM">
-<code class="descname">CONFIRM</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.CONFIRM" title="Permalink to this definition">¶</a></dt>
+<code class="descname">CONFIRM</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.CONFIRM" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/confirm.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/confirm.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.GENERAL_ALERT">
-<code class="descname">GENERAL_ALERT</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.GENERAL_ALERT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GENERAL_ALERT</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.GENERAL_ALERT" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/general_alert.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/general_alert.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.OVERPOWER">
-<code class="descname">OVERPOWER</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.OVERPOWER" title="Permalink to this definition">¶</a></dt>
+<code class="descname">OVERPOWER</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.OVERPOWER" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/overpower.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/overpower.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
 <dl class="data">
 <dt id="pybricks.media.ev3dev.SoundFile.READY">
-<code class="descname">READY</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.READY" title="Permalink to this definition">¶</a></dt>
+<code class="descname">READY</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.READY" title="この定義へのパーマリンク">¶</a></dt>
 <dd><audio controls="controls">
     <source src="_downloads/ready.wav" type="audio/wav">
-    お使いのブラウザは <code>audio</code> 要素に対応していません。
+    Your browser does not support the <code>audio</code> element.
 </audio><p><a class="reference download internal" href="_downloads/ready.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
 </dd></dl>
 
@@ -1458,11 +1461,11 @@
 </dd></dl>
 
 </div>
-<div class="section" id="fonts">
-<h3>フォント<a class="headerlink" href="#fonts" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>フォント<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <dl class="class">
 <dt id="pybricks.media.ev3dev.Font">
-<em class="property">class </em><code class="descname">Font</code><span class="sig-paren">(</span><em>family=None</em>, <em>size=12</em>, <em>bold=False</em>, <em>monospace=False</em>, <em>lang=None</em>, <em>script=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Font" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Font</code><span class="sig-paren">(</span><em>family=None</em>, <em>size=12</em>, <em>bold=False</em>, <em>monospace=False</em>, <em>lang=None</em>, <em>script=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Font" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>テキストの描画に使用するフォントを表すオブジェクトです。</p>
 <p>フォントオブジェクトは、指定されたパラメータとインストール済みの
 フォントに基づいて「最も」一致するフォントになります。</p>
@@ -1470,16 +1473,18 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>family</strong> (<em>str</em>) – 希望するフォントファミリー。既定値を使う場合は <code class="docutils literal notranslate"><span class="pre">None</span></code> 。</li>
-<li><strong>size</strong> (<em>int</em>) – 希望するフォントサイズ。ほとんどのフォントは6から24のサイズです。
-これは「ポイント」サイズであり、<a class="reference internal" href="#pybricks.media.ev3dev.Font.height" title="pybricks.media.ev3dev.Font.height"><code class="xref py py-attr docutils literal notranslate"><span class="pre">height</span></code></a> とは異なります。</li>
-<li><strong>bold</strong> (<em>bool</em>) – <code class="docutils literal notranslate"><span class="pre">True</span></code> の場合、太字フォントを優先します。</li>
-<li><strong>monospace</strong> (<em>bool</em>) – <code class="docutils literal notranslate"><span class="pre">True</span></code> の場合、等幅フォントを優先します。
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>family</strong> (<em>str</em>) -- 希望するフォントファミリー。既定値を使う場合は <code class="docutils literal notranslate"><span class="pre">None</span></code> 。</li>
+<li><strong>size</strong> (<em>int</em>) -- 希望するフォントサイズ。ほとんどのフォントは6から24の
+サイズです。これは「ポイント」サイズであり、 <a class="reference internal" href="#pybricks.media.ev3dev.Font.height" title="pybricks.media.ev3dev.Font.height"><code class="xref py py-attr docutils literal notranslate"><span class="pre">height</span></code></a>
+とは異なります。</li>
+<li><strong>bold</strong> (<em>bool</em>) -- <code class="docutils literal notranslate"><span class="pre">True</span></code> の場合、太字フォントを優先します。</li>
+<li><strong>monospace</strong> (<em>bool</em>) -- <code class="docutils literal notranslate"><span class="pre">True</span></code> の場合、等幅フォントを優先します。
 複数行のテキストを揃えるときに便利です。</li>
-<li><strong>lang</strong> (<em>str</em>) – <code class="docutils literal notranslate"><span class="pre">'en'</span></code> や <code class="docutils literal notranslate"><span class="pre">'zh-cn'</span></code> のような言語コード。
-既定の言語を使う場合は <code class="docutils literal notranslate"><span class="pre">None</span></code> 。<a class="footnote-reference" href="#font-lang" id="id1">[1]</a></li>
-<li><strong>script</strong> (<em>str</em>) – <code class="docutils literal notranslate"><span class="pre">'Runr'</span></code> のようなUnicodeのスクリプト識別子、または <code class="docutils literal notranslate"><span class="pre">None</span></code> 。</li>
+<li><strong>lang</strong> (<em>str</em>) -- <code class="docutils literal notranslate"><span class="pre">'en'</span></code> や <code class="docutils literal notranslate"><span class="pre">'zh-cn'</span></code> のような言語コード。
+既定の言語を使う場合は <code class="docutils literal notranslate"><span class="pre">None</span></code> 。<a class="footnote-reference" href="#font-lang" id="id4">[1]</a></li>
+<li><strong>script</strong> (<em>str</em>) -- <code class="docutils literal notranslate"><span class="pre">'Runr'</span></code> のようなUnicodeのスクリプト識別子、
+または <code class="docutils literal notranslate"><span class="pre">None</span></code> 。</li>
 </ul>
 </td>
 </tr>
@@ -1488,11 +1493,11 @@
 <table class="docutils footnote" frame="void" id="font-lang" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><p class="toggle-header first">言語コード</p>
+<tr><td class="label"><a class="fn-backref" href="#id4">[1]</a></td><td><p class="toggle-header first">言語コード</p>
 <div class="toggle-content last docutils container">
 <p>注: 使用できる言語はインストール済みのフォントに依存します。
-ここにない言語コードも使用可能な場合があり、また記載の言語コードでも
-十分なフォントがない場合があります。</p>
+ここにない言語コードも使用可能な場合があり、また記載の
+言語コードでも十分なフォントがない場合があります。</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">'aa'</span></code>: アファル語</li>
 <li><code class="docutils literal notranslate"><span class="pre">'af'</span></code>: アフリカーンス語</li>
@@ -1652,44 +1657,44 @@
 </table>
 <dl class="attribute">
 <dt id="pybricks.media.ev3dev.Font.DEFAULT">
-<code class="descname">DEFAULT</code><em class="property"> = Font('Lucida', 12)</em><a class="headerlink" href="#pybricks.media.ev3dev.Font.DEFAULT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">DEFAULT</code><em class="property"> = Font('Lucida', 12)</em><a class="headerlink" href="#pybricks.media.ev3dev.Font.DEFAULT" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>既定のフォント。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="pybricks.media.ev3dev.Font.family">
-<code class="descname">family</code><a class="headerlink" href="#pybricks.media.ev3dev.Font.family" title="Permalink to this definition">¶</a></dt>
+<code class="descname">family</code><a class="headerlink" href="#pybricks.media.ev3dev.Font.family" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>フォントのファミリー名を取得します。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="pybricks.media.ev3dev.Font.style">
-<code class="descname">style</code><a class="headerlink" href="#pybricks.media.ev3dev.Font.style" title="Permalink to this definition">¶</a></dt>
+<code class="descname">style</code><a class="headerlink" href="#pybricks.media.ev3dev.Font.style" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>フォントスタイルを表す文字列を取得します。</p>
-<p>“Regular” または “Bold” になります。</p>
+<p>&quot;Regular&quot; または &quot;Bold&quot; になります。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="pybricks.media.ev3dev.Font.width">
-<code class="descname">width</code><a class="headerlink" href="#pybricks.media.ev3dev.Font.width" title="Permalink to this definition">¶</a></dt>
+<code class="descname">width</code><a class="headerlink" href="#pybricks.media.ev3dev.Font.width" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>フォントの最も幅の広い文字の幅を取得します。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="pybricks.media.ev3dev.Font.height">
-<code class="descname">height</code><a class="headerlink" href="#pybricks.media.ev3dev.Font.height" title="Permalink to this definition">¶</a></dt>
+<code class="descname">height</code><a class="headerlink" href="#pybricks.media.ev3dev.Font.height" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>フォントの高さを取得します。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pybricks.media.ev3dev.Font.text_width">
-<code class="descname">text_width</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Font.text_width" title="Permalink to this definition">¶</a></dt>
+<code class="descname">text_width</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Font.text_width" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>このフォントでテキストを描画したときの幅を取得します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><strong>text</strong> (<em>str</em>) – テキスト。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>text</strong> (<em>str</em>) -- テキスト。</td>
 </tr>
 <tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">幅（ピクセル単位）。</td>
 </tr>
@@ -1701,13 +1706,13 @@
 
 <dl class="method">
 <dt id="pybricks.media.ev3dev.Font.text_height">
-<code class="descname">text_height</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Font.text_height" title="Permalink to this definition">¶</a></dt>
+<code class="descname">text_height</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Font.text_height" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>このフォントでテキストを描画したときの高さを取得します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><strong>text</strong> (<em>str</em>) – テキスト。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>text</strong> (<em>str</em>) -- テキスト。</td>
 </tr>
 <tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">高さ（ピクセル単位）。</td>
 </tr>
@@ -1719,9 +1724,10 @@
 
 <p><strong>さらにフォントを調べる</strong></p>
 <p>Pybricksは内部でフォントに <a class="reference external" href="https://www.freedesktop.org/wiki/Software/fontconfig/">Fontconfig</a> を使用しています。
-Fontconfigのコマンドラインツールを使うと、利用可能なフォントをより詳しく調べられます。
-そのためには、ev3devデバイスブラウザーでEV3ブロックを右クリックし、
-<em>Open SSH Terminal</em> をクリックします。そして次のいずれかのコマンドを入力します。</p>
+Fontconfigのコマンドラインツールを使うと、利用可能なフォントを
+より詳しく調べられます。そのためには、ev3devデバイスブラウザーで
+EV3ブロックを右クリックし、 <em>Open SSH Terminal</em> をクリックします。
+そして次のいずれかのコマンドを入力します:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 利用可能なフォントファミリーを一覧表示します。</span>
 <span class="n">fc</span><span class="o">-</span><span class="nb">list</span> <span class="p">:</span><span class="n">scalable</span><span class="o">=</span><span class="n">false</span> <span class="n">family</span>
 <span class="c1"># Font.DEFAULT と同様の検索を実行します。</span>
@@ -1730,39 +1736,40 @@ Fontconfigのコマンドラインツールを使うと、利用可能なフォ�
 <span class="n">fc</span><span class="o">-</span><span class="n">match</span> <span class="p">:</span><span class="n">scalable</span><span class="o">=</span><span class="n">false</span><span class="p">:</span><span class="n">dpi</span><span class="o">=</span><span class="mi">119</span><span class="p">:</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">:</span><span class="n">lang</span><span class="o">=</span><span class="n">zh</span><span class="o">-</span><span class="n">cn</span>
 </pre></div>
 </div>
-<p>Pybricksではビットマップフォント（<code class="docutils literal notranslate"><span class="pre">scalable=false</span></code>）のみ使用でき、
-EV3の画面は1インチあたり119ピクセル（<code class="docutils literal notranslate"><span class="pre">dpi=119</span></code>）です。</p>
+<p>Pybricksではビットマップフォント（ <code class="docutils literal notranslate"><span class="pre">scalable=false</span></code> ）のみ
+使用でき、EV3の画面は1インチあたり119ピクセル（ <code class="docutils literal notranslate"><span class="pre">dpi=119</span></code> ）です。</p>
 </dd></dl>
 
 </div>
-<div class="section" id="image-manipulation">
-<h3>画像の操作<a class="headerlink" href="#image-manipulation" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>画像の操作<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>EV3の画面に直接描画する代わりに、以下の <code class="docutils literal notranslate"><span class="pre">Image</span></code> クラスを使って
 画像ファイルを作成・操作できます。</p>
 <dl class="class">
 <dt id="pybricks.media.ev3dev.Image">
-<em class="property">class </em><code class="descname">Image</code><span class="sig-paren">(</span><em>source</em>, <em>sub=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Image</code><span class="sig-paren">(</span><em>source</em>, <em>sub=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>グラフィックス画像を表すオブジェクト。画像のメモリ内コピー、
 または画面に表示される画像のいずれかになります。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>source</strong> (<em>str</em><em>または</em><a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><em>Image</em></a>) – <p>画像のソース。</p>
-<p><code class="docutils literal notranslate"><span class="pre">source</span></code> が文字列の場合、その文字列で指定されたファイルパスから
-画像が読み込まれます。<code class="docutils literal notranslate"><span class="pre">.png</span></code> ファイルのみサポートされます。
-特殊ケースとして、文字列が <code class="docutils literal notranslate"><span class="pre">_screen_</span></code> の場合、
-画像は画面に直接描画するように設定されます。</p>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source</strong> (<em>str</em><em> or </em><a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><em>Image</em></a>) -- <p>画像のソース。</p>
+<p><code class="docutils literal notranslate"><span class="pre">source</span></code> が文字列の場合、その文字列で指定された
+ファイルパスから画像が読み込まれます。 <code class="docutils literal notranslate"><span class="pre">.png</span></code> ファイルのみ
+サポートされます。特殊ケースとして、文字列が <code class="docutils literal notranslate"><span class="pre">_screen_</span></code> の
+場合、画像は画面に直接描画するように設定されます。</p>
 <p><a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a> が指定された場合、新しいオブジェクトには
 <code class="docutils literal notranslate"><span class="pre">source</span></code> 画像オブジェクトのコピーが格納されます。</p>
 </li>
-<li><strong>sub</strong> (<em>bool</em>) – <p><code class="docutils literal notranslate"><span class="pre">sub</span></code> が <code class="docutils literal notranslate"><span class="pre">True</span></code> の場合、この画像オブジェクトは
-<code class="docutils literal notranslate"><span class="pre">source</span></code> 画像のサブ画像として動作します（これは <code class="docutils literal notranslate"><span class="pre">source</span></code> の型が
-<a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a> の場合のみ有効で、<code class="docutils literal notranslate"><span class="pre">str</span></code> の場合は無効です）。</p>
-<p><code class="docutils literal notranslate"><span class="pre">sub=True</span></code> の場合は、追加のキーワード引数 <code class="docutils literal notranslate"><span class="pre">x1</span></code>、<code class="docutils literal notranslate"><span class="pre">y1</span></code>、<code class="docutils literal notranslate"><span class="pre">x2</span></code>、<code class="docutils literal notranslate"><span class="pre">y2</span></code> が必要です。
-これらはサブ画像の範囲として使用される、<code class="docutils literal notranslate"><span class="pre">source</span></code> 画像内の
-左上と右下の座標を指定します。</p>
+<li><strong>sub</strong> (<em>bool</em>) -- <p><code class="docutils literal notranslate"><span class="pre">sub</span></code> が <code class="docutils literal notranslate"><span class="pre">True</span></code> の場合、この画像オブジェクトは
+<code class="docutils literal notranslate"><span class="pre">source</span></code> 画像のサブ画像として動作します（これは <code class="docutils literal notranslate"><span class="pre">source</span></code>
+の型が <a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a> の場合のみ有効で、 <code class="docutils literal notranslate"><span class="pre">str</span></code> の場合は
+無効です）。</p>
+<p><code class="docutils literal notranslate"><span class="pre">sub=True</span></code> の場合は、追加のキーワード引数 <code class="docutils literal notranslate"><span class="pre">x1</span></code>、<code class="docutils literal notranslate"><span class="pre">y1</span></code>、
+<code class="docutils literal notranslate"><span class="pre">x2</span></code>、<code class="docutils literal notranslate"><span class="pre">y2</span></code> が必要です。これらはサブ画像の範囲として
+使用される、 <code class="docutils literal notranslate"><span class="pre">source</span></code> 画像内の左上と右下の座標を指定します。</p>
 </li>
 </ul>
 </td>
@@ -1771,15 +1778,15 @@ EV3の画面は1インチあたり119ピクセル（<code class="docutils litera
 </table>
 <dl class="staticmethod">
 <dt id="pybricks.media.ev3dev.Image.empty">
-<em class="property">static </em><code class="descname">empty</code><span class="sig-paren">(</span><em>width=&lt;screen width&gt;</em>, <em>height=&lt;screen height&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.empty" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">empty</code><span class="sig-paren">(</span><em>width=&lt;screen width&gt;</em>, <em>height=&lt;screen height&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.empty" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>新しい空の <a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a> オブジェクトを作成します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><ul class="first simple">
-<li><strong>width</strong> (<em>int</em>) – 画像の幅（ピクセル単位）。</li>
-<li><strong>height</strong> (<em>int</em>) – 画像の高さ（ピクセル単位）。</li>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>width</strong> (<em>int</em>) -- 画像の幅（ピクセル単位）。</li>
+<li><strong>height</strong> (<em>int</em>) -- 画像の高さ（ピクセル単位）。</li>
 </ul>
 </td>
 </tr>
@@ -1789,10 +1796,10 @@ EV3の画面は1インチあたり119ピクセル（<code class="docutils litera
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first"><a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image">Image</a></p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">例外:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code> – <code class="docutils literal notranslate"><span class="pre">width</span></code> または <code class="docutils literal notranslate"><span class="pre">height</span></code> が数値ではありません。</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code> – <code class="docutils literal notranslate"><span class="pre">width</span></code> または <code class="docutils literal notranslate"><span class="pre">height</span></code> が1未満です。</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">RuntimeError</span></code> – 新しい画像の割り当てに問題がありました。</li>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code> -- <code class="docutils literal notranslate"><span class="pre">width</span></code> または <code class="docutils literal notranslate"><span class="pre">height</span></code> が数値ではありません。</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code> -- <code class="docutils literal notranslate"><span class="pre">width</span></code> または <code class="docutils literal notranslate"><span class="pre">height</span></code> が1未満です。</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">RuntimeError</span></code> -- 新しい画像の割り当てに問題がありました。</li>
 </ul>
 </td>
 </tr>
@@ -1801,26 +1808,27 @@ EV3の画面は1インチあたり119ピクセル（<code class="docutils litera
 </dd></dl>
 
 <p class="rubric">テキストの描画</p>
-<p>画像にテキストを描画する方法は2つあります。<a class="reference internal" href="#pybricks.media.ev3dev.Image.draw_text" title="pybricks.media.ev3dev.Image.draw_text"><code class="xref py py-meth docutils literal notranslate"><span class="pre">draw_text()</span></code></a> はテキストを
-画像上に正確に配置でき、<a class="reference internal" href="#pybricks.media.ev3dev.Image.print" title="pybricks.media.ev3dev.Image.print"><code class="xref py py-meth docutils literal notranslate"><span class="pre">print()</span></code></a> は自動的に
+<p>画像にテキストを描画する方法は2つあります。 <a class="reference internal" href="#pybricks.media.ev3dev.Image.draw_text" title="pybricks.media.ev3dev.Image.draw_text"><code class="xref py py-meth docutils literal notranslate"><span class="pre">draw_text()</span></code></a> は
+テキストを画像上に正確に配置でき、 <a class="reference internal" href="#pybricks.media.ev3dev.Image.print" title="pybricks.media.ev3dev.Image.print"><code class="xref py py-meth docutils literal notranslate"><span class="pre">print()</span></code></a> は自動的に
 新しい行にテキストを出力します。</p>
 <dl class="method">
 <dt id="pybricks.media.ev3dev.Image.draw_text">
-<code class="descname">draw_text</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>text</em>, <em>text_color=Color.BLACK</em>, <em>background_color=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.draw_text" title="Permalink to this definition">¶</a></dt>
-<dd><p>この画像にテキストを描画します。</p>
+<code class="descname">draw_text</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>text</em>, <em>text_color=Color.BLACK</em>, <em>background_color=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.draw_text" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>this image にテキストを描画します。</p>
 <p><a class="reference internal" href="#pybricks.media.ev3dev.Image.set_font" title="pybricks.media.ev3dev.Image.set_font"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_font()</span></code></a> で直前に設定されたフォントが使われます。
-フォントがまだ設定されていない場合は <a class="reference internal" href="#pybricks.media.ev3dev.Font.DEFAULT" title="pybricks.media.ev3dev.Font.DEFAULT"><code class="xref py py-data docutils literal notranslate"><span class="pre">Font.DEFAULT</span></code></a> が使われます。</p>
+フォントがまだ設定されていない場合は <a class="reference internal" href="#pybricks.media.ev3dev.Font.DEFAULT" title="pybricks.media.ev3dev.Font.DEFAULT"><code class="xref py py-data docutils literal notranslate"><span class="pre">Font.DEFAULT</span></code></a> が
+使われます。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> (<em>int</em>) – テキストの左端が始まるX座標の値。</li>
-<li><strong>y</strong> (<em>int</em>) – テキストの上端が始まるY座標の値。</li>
-<li><strong>text</strong> (<em>str</em>) – 描画するテキスト。</li>
-<li><strong>text_color</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – テキストの描画に使う色。</li>
-<li><strong>background_color</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – テキストの背後の矩形を塗りつぶす色。
-背景を透明にする場合は <code class="docutils literal notranslate"><span class="pre">None</span></code> 。</li>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>int</em>) -- テキストの左端が始まるX座標の値。</li>
+<li><strong>y</strong> (<em>int</em>) -- テキストの上端が始まるY座標の値。</li>
+<li><strong>text</strong> (<em>str</em>) -- 描画するテキスト。</li>
+<li><strong>text_color</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) -- テキストの描画に使う色。</li>
+<li><strong>background_color</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) -- テキストの背後の矩形を塗りつぶす色。背景を透明にする場合は
+<code class="docutils literal notranslate"><span class="pre">None</span></code> 。</li>
 </ul>
 </td>
 </tr>
@@ -1830,25 +1838,26 @@ EV3の画面は1インチあたり119ピクセル（<code class="docutils litera
 
 <dl class="method">
 <dt id="pybricks.media.ev3dev.Image.print">
-<code class="descname">print</code><span class="sig-paren">(</span><em>*args</em>, <em>sep=' '</em>, <em>end='\n'</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.print" title="Permalink to this definition">¶</a></dt>
-<dd><p>この画像にテキストの行を出力します。</p>
+<code class="descname">print</code><span class="sig-paren">(</span><em>*args</em>, <em>sep=' '</em>, <em>end='\n'</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.print" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>this image にテキストの行を出力します。</p>
 <p>このメソッドは組み込みの <code class="docutils literal notranslate"><span class="pre">print()</span></code> 関数と同じように動作しますが、
-代わりにこの画像に書き込みます。</p>
-<p>フォントは <a class="reference internal" href="#pybricks.media.ev3dev.Image.set_font" title="pybricks.media.ev3dev.Image.set_font"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_font()</span></code></a> で設定できます。フォントが設定されていない場合は
-<a class="reference internal" href="#pybricks.media.ev3dev.Font.DEFAULT" title="pybricks.media.ev3dev.Font.DEFAULT"><code class="xref py py-data docutils literal notranslate"><span class="pre">Font.DEFAULT</span></code></a> が使われます。テキストは常に
+代わりに this image に書き込みます。</p>
+<p>フォントは <a class="reference internal" href="#pybricks.media.ev3dev.Image.set_font" title="pybricks.media.ev3dev.Image.set_font"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_font()</span></code></a> で設定できます。フォントが設定されて
+いない場合は <a class="reference internal" href="#pybricks.media.ev3dev.Font.DEFAULT" title="pybricks.media.ev3dev.Font.DEFAULT"><code class="xref py py-data docutils literal notranslate"><span class="pre">Font.DEFAULT</span></code></a> が使われます。テキストは常に
 白背景に黒い文字で出力されます。</p>
-<p>組み込みの <code class="docutils literal notranslate"><span class="pre">print()</span></code> とは異なり、テキストがこの画像に収まらないほど
-広い場合でも折り返されず、単に切り捨てられます。ただしテキストが画像の
-下端を超える場合は、画像全体が上にスクロールし、画像の下部の新しい
-空白領域にテキストが出力されます。</p>
+<p>組み込みの <code class="docutils literal notranslate"><span class="pre">print()</span></code> とは異なり、テキストが this image に
+収まらないほど広い場合でも折り返されず、単に切り捨てられます。
+ただしテキストが画像の下端を超える場合は、画像全体が上に
+スクロールし、 this image の下部の新しい空白領域にテキストが
+出力されます。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>*</strong> (<em>object</em>) – 出力する0個以上のオブジェクト。</li>
-<li><strong>sep</strong> (<em>str</em>) – 出力される各オブジェクトの間に挟まれる区切り文字。</li>
-<li><strong>end</strong> (<em>str</em>) – 最後のオブジェクトの後に出力される行末文字。</li>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>*</strong> (<em>object</em>) -- 出力する0個以上のオブジェクト。</li>
+<li><strong>sep</strong> (<em>str</em>) -- 出力される各オブジェクトの間に挟まれる区切り文字。</li>
+<li><strong>end</strong> (<em>str</em>) -- 最後のオブジェクトの後に出力される行末文字。</li>
 </ul>
 </td>
 </tr>
@@ -1858,37 +1867,37 @@ EV3の画面は1インチあたり119ピクセル（<code class="docutils litera
 
 <dl class="method">
 <dt id="pybricks.media.ev3dev.Image.set_font">
-<code class="descname">set_font</code><span class="sig-paren">(</span><em>font</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.set_font" title="Permalink to this definition">¶</a></dt>
-<dd><p>この画像への書き込みに使うフォントを設定します。</p>
+<code class="descname">set_font</code><span class="sig-paren">(</span><em>font</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.set_font" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>this image への書き込みに使うフォントを設定します。</p>
 <p>このフォントは <a class="reference internal" href="#pybricks.media.ev3dev.Image.draw_text" title="pybricks.media.ev3dev.Image.draw_text"><code class="xref py py-meth docutils literal notranslate"><span class="pre">draw_text()</span></code></a> と <a class="reference internal" href="#pybricks.media.ev3dev.Image.print" title="pybricks.media.ev3dev.Image.print"><code class="xref py py-meth docutils literal notranslate"><span class="pre">print()</span></code></a> の両方に使われます。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><strong>font</strong> (<a class="reference internal" href="#pybricks.media.ev3dev.Font" title="pybricks.media.ev3dev.Font"><code class="xref py py-class docutils literal notranslate"><span class="pre">Font</span></code></a>) – 使用するフォント。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>font</strong> (<a class="reference internal" href="#pybricks.media.ev3dev.Font" title="pybricks.media.ev3dev.Font"><code class="xref py py-class docutils literal notranslate"><span class="pre">Font</span></code></a>) -- 使用するフォント。</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
 <p class="rubric">画像の描画</p>
-<p>別の画像のコピーを画像に描画できます。画像の一部をコピーするには
-サブ画像の使用も検討してください。</p>
+<p>画像の上に別の画像のコピーを描画できます。画像の一部を
+コピーするには、サブ画像の使用も検討してください。</p>
 <dl class="method">
 <dt id="pybricks.media.ev3dev.Image.draw_image">
-<code class="descname">draw_image</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>source</em>, <em>transparent=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.draw_image" title="Permalink to this definition">¶</a></dt>
-<dd><p>この画像の上に <code class="docutils literal notranslate"><span class="pre">source</span></code> 画像を描画します。</p>
+<code class="descname">draw_image</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>source</em>, <em>transparent=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.draw_image" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>this image の上に <code class="docutils literal notranslate"><span class="pre">source</span></code> 画像を描画します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> (<em>int</em>) – 画像の左端が始まるX座標の値。</li>
-<li><strong>y</strong> (<em>int</em>) – 画像の上端が始まるY座標の値。</li>
-<li><strong>source</strong> (<a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><em>Image</em></a><em>または</em><em>str</em>) – ソースの <a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a> 。引数が文字列の場合、
-<code class="docutils literal notranslate"><span class="pre">source</span></code> 画像はファイルから読み込まれます。</li>
-<li><strong>transparent</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – <code class="docutils literal notranslate"><span class="pre">image</span></code> 内で透明として扱う色。
-透明にしない場合は <code class="docutils literal notranslate"><span class="pre">None</span></code> 。</li>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>int</em>) -- 画像の左端が始まるX座標の値。</li>
+<li><strong>y</strong> (<em>int</em>) -- 画像の上端が始まるY座標の値。</li>
+<li><strong>source</strong> (<a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><em>Image</em></a><em> or </em><em>str</em>) -- ソースの <a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a> 。引数が文字列の場合、 <code class="docutils literal notranslate"><span class="pre">source</span></code>
+画像はファイルから読み込まれます。</li>
+<li><strong>transparent</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) -- <code class="docutils literal notranslate"><span class="pre">image</span></code> 内で透明として扱う色。透明にしない場合は
+<code class="docutils literal notranslate"><span class="pre">None</span></code> 。</li>
 </ul>
 </td>
 </tr>
@@ -1900,16 +1909,16 @@ EV3の画面は1インチあたり119ピクセル（<code class="docutils litera
 <p>点、線、矩形、円などの基本的な図形を描画するメソッドです。</p>
 <dl class="method">
 <dt id="pybricks.media.ev3dev.Image.draw_pixel">
-<code class="descname">draw_pixel</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>color=Color.BLACK</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.draw_pixel" title="Permalink to this definition">¶</a></dt>
-<dd><p>この画像に1ピクセルを描画します。</p>
+<code class="descname">draw_pixel</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>color=Color.BLACK</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.draw_pixel" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>this image に1ピクセルを描画します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> (<em>int</em>) – ピクセルのX座標。</li>
-<li><strong>y</strong> (<em>int</em>) – ピクセルのY座標。</li>
-<li><strong>color</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – ピクセルの色。</li>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>int</em>) -- ピクセルのX座標。</li>
+<li><strong>y</strong> (<em>int</em>) -- ピクセルのY座標。</li>
+<li><strong>color</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) -- ピクセルの色。</li>
 </ul>
 </td>
 </tr>
@@ -1919,19 +1928,19 @@ EV3の画面は1インチあたり119ピクセル（<code class="docutils litera
 
 <dl class="method">
 <dt id="pybricks.media.ev3dev.Image.draw_line">
-<code class="descname">draw_line</code><span class="sig-paren">(</span><em>x1</em>, <em>y1</em>, <em>x2</em>, <em>y2</em>, <em>width=1</em>, <em>color=Color.BLACK</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.draw_line" title="Permalink to this definition">¶</a></dt>
-<dd><p>この画像に線を描画します。</p>
+<code class="descname">draw_line</code><span class="sig-paren">(</span><em>x1</em>, <em>y1</em>, <em>x2</em>, <em>y2</em>, <em>width=1</em>, <em>color=Color.BLACK</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.draw_line" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>this image に線を描画します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x1</strong> (<em>int</em>) – 線の開始点のX座標。</li>
-<li><strong>y1</strong> (<em>int</em>) – 線の開始点のY座標。</li>
-<li><strong>x2</strong> (<em>int</em>) – 線の終了点のX座標。</li>
-<li><strong>y2</strong> (<em>int</em>) – 線の終了点のY座標。</li>
-<li><strong>width</strong> (<em>int</em>) – 線の幅（ピクセル単位）。</li>
-<li><strong>color</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – 線の色。</li>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x1</strong> (<em>int</em>) -- 線の開始点のX座標。</li>
+<li><strong>y1</strong> (<em>int</em>) -- 線の開始点のY座標。</li>
+<li><strong>x2</strong> (<em>int</em>) -- 線の終了点のX座標。</li>
+<li><strong>y2</strong> (<em>int</em>) -- 線の終了点のY座標。</li>
+<li><strong>width</strong> (<em>int</em>) -- 線の幅（ピクセル単位）。</li>
+<li><strong>color</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) -- 線の色。</li>
 </ul>
 </td>
 </tr>
@@ -1941,21 +1950,21 @@ EV3の画面は1インチあたり119ピクセル（<code class="docutils litera
 
 <dl class="method">
 <dt id="pybricks.media.ev3dev.Image.draw_box">
-<code class="descname">draw_box</code><span class="sig-paren">(</span><em>x1</em>, <em>y1</em>, <em>x2</em>, <em>y2</em>, <em>r=0</em>, <em>fill=False</em>, <em>color=Color.BLACK</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.draw_box" title="Permalink to this definition">¶</a></dt>
-<dd><p>この画像に矩形を描画します。</p>
+<code class="descname">draw_box</code><span class="sig-paren">(</span><em>x1</em>, <em>y1</em>, <em>x2</em>, <em>y2</em>, <em>r=0</em>, <em>fill=False</em>, <em>color=Color.BLACK</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.draw_box" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>this image に矩形を描画します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x1</strong> (<em>int</em>) – 矩形の左辺のX座標。</li>
-<li><strong>y1</strong> (<em>int</em>) – 矩形の上辺のY座標。</li>
-<li><strong>x2</strong> (<em>int</em>) – 矩形の右辺のX座標。</li>
-<li><strong>y2</strong> (<em>int</em>) – 矩形の下辺のY座標。</li>
-<li><strong>r</strong> (<em>int</em>) – 矩形の角の半径。</li>
-<li><strong>fill</strong> (<em>bool</em>) – <code class="docutils literal notranslate"><span class="pre">True</span></code> の場合、矩形が <code class="docutils literal notranslate"><span class="pre">color</span></code> で塗りつぶされます。
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x1</strong> (<em>int</em>) -- 矩形の左辺のX座標。</li>
+<li><strong>y1</strong> (<em>int</em>) -- 矩形の上辺のY座標。</li>
+<li><strong>x2</strong> (<em>int</em>) -- 矩形の右辺のX座標。</li>
+<li><strong>y2</strong> (<em>int</em>) -- 矩形の下辺のY座標。</li>
+<li><strong>r</strong> (<em>int</em>) -- 矩形の角の半径。</li>
+<li><strong>fill</strong> (<em>bool</em>) -- <code class="docutils literal notranslate"><span class="pre">True</span></code> の場合、矩形が <code class="docutils literal notranslate"><span class="pre">color</span></code> で塗りつぶされます。
 それ以外の場合は矩形の輪郭のみ描画されます。</li>
-<li><strong>color</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – 矩形の色。</li>
+<li><strong>color</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) -- 矩形の色。</li>
 </ul>
 </td>
 </tr>
@@ -1965,19 +1974,19 @@ EV3の画面は1インチあたり119ピクセル（<code class="docutils litera
 
 <dl class="method">
 <dt id="pybricks.media.ev3dev.Image.draw_circle">
-<code class="descname">draw_circle</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>r</em>, <em>fill=False</em>, <em>color=Color.BLACK</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.draw_circle" title="Permalink to this definition">¶</a></dt>
-<dd><p>この画像に円を描画します。</p>
+<code class="descname">draw_circle</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>r</em>, <em>fill=False</em>, <em>color=Color.BLACK</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.draw_circle" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>this image に円を描画します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> (<em>int</em>) – 円の中心のX座標。</li>
-<li><strong>y</strong> (<em>int</em>) – 円の中心のY座標。</li>
-<li><strong>r</strong> (<em>int</em>) – 円の半径。</li>
-<li><strong>fill</strong> (<em>bool</em>) – <code class="docutils literal notranslate"><span class="pre">True</span></code> の場合、円が <code class="docutils literal notranslate"><span class="pre">color</span></code> で塗りつぶされます。
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>int</em>) -- 円の中心のX座標。</li>
+<li><strong>y</strong> (<em>int</em>) -- 円の中心のY座標。</li>
+<li><strong>r</strong> (<em>int</em>) -- 円の半径。</li>
+<li><strong>fill</strong> (<em>bool</em>) -- <code class="docutils literal notranslate"><span class="pre">True</span></code> の場合、円が <code class="docutils literal notranslate"><span class="pre">color</span></code> で塗りつぶされます。
 それ以外の場合は円周のみ描画されます。</li>
-<li><strong>color</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – 円の色。</li>
+<li><strong>color</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) -- 円の色。</li>
 </ul>
 </td>
 </tr>
@@ -1988,34 +1997,35 @@ EV3の画面は1インチあたり119ピクセル（<code class="docutils litera
 <p class="rubric">画像のプロパティ</p>
 <dl class="attribute">
 <dt id="pybricks.media.ev3dev.Image.width">
-<code class="descname">width</code><a class="headerlink" href="#pybricks.media.ev3dev.Image.width" title="Permalink to this definition">¶</a></dt>
-<dd><p>この画像の幅をピクセル単位で取得します。</p>
+<code class="descname">width</code><a class="headerlink" href="#pybricks.media.ev3dev.Image.width" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>this image の幅をピクセル単位で取得します。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="pybricks.media.ev3dev.Image.height">
-<code class="descname">height</code><a class="headerlink" href="#pybricks.media.ev3dev.Image.height" title="Permalink to this definition">¶</a></dt>
-<dd><p>この画像の高さをピクセル単位で取得します。</p>
+<code class="descname">height</code><a class="headerlink" href="#pybricks.media.ev3dev.Image.height" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>this image の高さをピクセル単位で取得します。</p>
 </dd></dl>
 
 <p class="rubric">画像全体の置き換え</p>
 <dl class="method">
 <dt id="pybricks.media.ev3dev.Image.clear">
-<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.clear" title="Permalink to this definition">¶</a></dt>
-<dd><p>この画像を消去します。この画像のすべてのピクセルが
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.clear" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>this image を消去します。this image のすべてのピクセルが
 <a class="reference internal" href="parameters.html#pybricks.parameters.Color.WHITE" title="pybricks.parameters.Color.WHITE"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Color.WHITE</span></code></a> に設定されます。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pybricks.media.ev3dev.Image.load_image">
-<code class="descname">load_image</code><span class="sig-paren">(</span><em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.load_image" title="Permalink to this definition">¶</a></dt>
-<dd><p>この画像を消去してから、<code class="docutils literal notranslate"><span class="pre">source</span></code> 画像をこの画像の中央に描画します。</p>
+<code class="descname">load_image</code><span class="sig-paren">(</span><em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.load_image" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>this image を消去してから、 <code class="docutils literal notranslate"><span class="pre">source</span></code> 画像を
+this image の中央に描画します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><strong>source</strong> (<a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><em>Image</em></a><em>または</em><em>str</em>) – ソースの <a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a> 。引数が文字列の場合、
-<code class="docutils literal notranslate"><span class="pre">source</span></code> 画像はファイルから読み込まれます。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>source</strong> (<a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><em>Image</em></a><em> or </em><em>str</em>) -- ソースの <a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a> 。引数が文字列の場合、 <code class="docutils literal notranslate"><span class="pre">source</span></code>
+画像はファイルから読み込まれます。</td>
 </tr>
 </tbody>
 </table>
@@ -2024,18 +2034,18 @@ EV3の画面は1インチあたり119ピクセル（<code class="docutils litera
 <p class="rubric">画像の保存</p>
 <dl class="method">
 <dt id="pybricks.media.ev3dev.Image.save">
-<code class="descname">save</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.save" title="Permalink to this definition">¶</a></dt>
-<dd><p>この画像を <code class="docutils literal notranslate"><span class="pre">.png</span></code> ファイルとして保存します。</p>
+<code class="descname">save</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.save" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>this image を <code class="docutils literal notranslate"><span class="pre">.png</span></code> ファイルとして保存します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><p class="first"><strong>filename</strong> (<em>str</em>) – 保存するファイルのパス。</p>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><p class="first"><strong>filename</strong> (<em>str</em>) -- 保存するファイルのパス。</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">例外:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code> – <code class="docutils literal notranslate"><span class="pre">filename</span></code> が文字列ではありません。</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code> – ファイルの保存に問題がありました。</li>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code> -- <code class="docutils literal notranslate"><span class="pre">filename</span></code> が文字列ではありません。</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code> -- ファイルの保存に問題がありました。</li>
 </ul>
 </td>
 </tr>
@@ -2057,10 +2067,10 @@ EV3の画面は1インチあたり119ピクセル（<code class="docutils litera
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="messaging.html" class="btn btn-neutral float-right" title="messaging – Messaging" accesskey="n" rel="next">次へ <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="messaging.html" class="btn btn-neutral float-right" title="messaging -- メッセージング" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="robotics.html" class="btn btn-neutral float-left" title="robotics – Robotics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 前へ</a>
+        <a href="robotics.html" class="btn btn-neutral float-left" title="robotics -- ロボティクス" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -2069,12 +2079,12 @@ EV3の画面は1インチあたり119ピクセル（<code class="docutils litera
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 The LEGO Group. All rights reserved.
+        &copy; Copyright 2018-2020 The Pybricks Authors
 
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group.</div>
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
 
 
 </footer>

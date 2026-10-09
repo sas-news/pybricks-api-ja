@@ -1,14 +1,14 @@
-Basic Movement
+基本的な動き
 =====================
 
-This example project shows how you can make a robotic vehicle drive for
-a given distance or turn by a given angle. Check out the
-:class:`.DriveBase` class for tips and tricks for precise movements.
+このサンプルプロジェクトでは、ロボット車両を指定した距離だけ走行させたり、
+指定した角度だけ旋回させたりする方法を紹介します。正確な動作のコツについては、
+:class:`.DriveBase` クラスを参照してください。
 
-.. rubric:: Building instructions
+.. rubric:: 組み立て説明書
 
-Click `here`_ to find all building instructions for the Educator Bot, or use
-`this link`_ to go to the driving base directly.
+`こちら <here_>`_ からEducator Botの組み立て説明書をすべて確認できます。また、
+`このリンク <this link_>`_ からドライビングベースの説明書に直接アクセスできます。
 
 .. _fig_robot_educator_basic:
 
@@ -16,9 +16,9 @@ Click `here`_ to find all building instructions for the Educator Bot, or use
    :width: 80 %
    :align: center
 
-   Robot Educator
+   ロボットエデュケーター
 
-.. rubric:: Example program
+.. rubric:: サンプルプログラム
 
 .. literalinclude::
    ../../../pybricks-projects/official_models/ev3/education_core/robot_educator_basic/main.py

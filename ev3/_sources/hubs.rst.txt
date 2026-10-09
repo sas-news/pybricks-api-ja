@@ -1,9 +1,9 @@
-:mod:`hubs <pybricks.hubs>` -- Programmable Hubs
-================================================
+:mod:`hubs <pybricks.hubs>` -- プログラマブルハブ
+============================================================
 
-.. figure:: ../api/images/ev3brick.png
+.. figure:: images/ev3brick.png
    :width: 40 %
 
 .. module:: pybricks.hubs
 
-.. include:: ../api/hubs_ev3brick.inc
+.. include:: hubs_ev3brick.inc

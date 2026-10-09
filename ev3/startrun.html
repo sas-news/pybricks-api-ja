@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>プログラムの作成と実行 &mdash; ev3-micropython 2.0.0 documentation</title>
+  <title>プログラムの作成と実行 &mdash; ev3-micropython 2.0.0.post2 ドキュメント</title>
   
 
   
@@ -23,8 +23,8 @@
       <script type="text/javascript">
           var DOCUMENTATION_OPTIONS = {
               URL_ROOT:'./',
-              VERSION:'2.0.0',
-              LANGUAGE:'None',
+              VERSION:'2.0.0.post2',
+              LANGUAGE:'ja',
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
@@ -34,6 +34,7 @@
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="_static/contentui.js"></script>
     
@@ -45,10 +46,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Accessing advanced EV3 features" href="startlinux.html" />
-    <link rel="prev" title="Using the EV3 Brick" href="startbrick.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="EV3の高度な機能を使う" href="startlinux.html" />
+    <link rel="prev" title="EV3 Brickを使う" href="startbrick.html" />
     <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css">
 
 </head>
@@ -69,7 +70,7 @@
 
           
             
-            <img src="_static/lego-education-logo-small.png" class="logo" alt="Logo"/>
+            <img src="_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -77,7 +78,7 @@
             
             
               <div class="version">
-                2.0.0
+                2.0.0.post2
               </div>
             
           
@@ -85,7 +86,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="ドキュメントを検索" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -106,12 +107,12 @@
 <li class="toctree-l1"><a class="reference internal" href="startinstall.html">インストール</a></li>
 <li class="toctree-l1"><a class="reference internal" href="startbrick.html">EV3 Brickを使う</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">プログラムの作成と実行</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#creating-a-new-project">新しいプロジェクトを作成する</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#opening-an-existing-project">既存のプロジェクトを開く</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#connecting-to-the-ev3-brick-with-visual-studio-code">Visual Studio CodeでEV3 Brickに接続する</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#downloading-and-running-a-program">プログラムをダウンロードして実行する</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#expanding-the-example-program">サンプルプログラムを拡張する</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#managing-files-on-the-ev3-brick">EV3 Brick上のファイルを管理する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">新しいプロジェクトを作成する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">既存のプロジェクトを開く</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#visual-studio-codeev3-brick">Visual Studio CodeでEV3 Brickに接続する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">プログラムをダウンロードして実行する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">サンプルプログラムを拡張する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ev3-brick">EV3 Brick上のファイルを管理する</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="startlinux.html">EV3の高度な機能を使う</a></li>
@@ -119,20 +120,20 @@
 </ul>
 <p class="caption"><span class="caption-text">Pybricksモジュール</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – プログラマブルHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3デバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXTデバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – 汎用I/Oデバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – タイミングとデータロギング</a></li>
-<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> – サウンドと画像</a></li>
-<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> -- プログラマブルハブ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> -- EV3デバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> -- NXTデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> -- 汎用I/Oデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> -- パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> -- 時間計測とデータロギング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> -- ロボティクス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> -- サウンドと画像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> -- メッセージング</a></li>
 </ul>
 <p class="caption"><span class="caption-text">補足解説</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="signaltypes.html">信号と単位</a></li>
-<li class="toctree-l1"><a class="reference internal" href="motors.html">モーターの詳細</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motors.html">モーターについてさらに詳しく</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Robot Educatorプログラム</span></p>
 <ul>
@@ -198,14 +199,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      
       <li>プログラムの作成と実行</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/startrun.rst.txt" rel="nofollow"> ページソースを表示</a>
+            <a href="_sources/startrun.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -218,102 +218,103 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="creating-and-running-programs">
-<h1>プログラムの作成と実行<a class="headerlink" href="#creating-and-running-programs" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="id1">
+<h1>プログラムの作成と実行<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>コンピューターとEV3 Brickのセットアップが完了したので、プログラムを
 書き始められます。</p>
 <p>プログラムを作成・管理しやすくするために、まずEV3ロボット用の
 MicroPythonプロジェクトとプログラムの構成を簡単に見てみましょう。</p>
-<p>プログラムは<em>プロジェクトフォルダー</em>にまとめられます
-(<a class="reference internal" href="#fig-projectstructure"><span class="std std-numref">図8</span></a>)。プロジェクトフォルダーとは、
-メインプログラム(<strong>main.py</strong>)と任意のスクリプトやファイルを含む、
+<p>プログラムは <em>プロジェクトフォルダー</em> にまとめられます
+( <a class="reference internal" href="#fig-projectstructure"><span class="std std-numref">図 8</span></a> )。プロジェクトフォルダーとは、
+メインプログラム( <strong>main.py</strong> )と任意のスクリプトやファイルを含む、
 コンピューター上のディレクトリです。このプロジェクトフォルダーは
 中身ごとEV3 Brickにコピーされ、メインプログラムが実行されます。</p>
 <p>このページでは、そのようなプロジェクトを作成してEV3 Brickに転送する
 方法を説明します。</p>
-<div class="figure align-center" id="id1">
+<div class="figure align-center" id="id6">
 <span id="fig-projectstructure"></span><img alt="projectstructure" src="_images/projectstructure_label.png" style="width: 100%;" />
-<p class="caption"><span class="caption-number">図8 </span><span class="caption-text">プロジェクトには<strong>main.py</strong>というプログラムと、
+<p class="caption"><span class="caption-number">図 8 </span><span class="caption-text">プロジェクトには <strong>main.py</strong> というプログラムと、
 サウンドやMicroPythonモジュールなどの任意のリソースが含まれます。</span></p>
 </div>
-<div class="section" id="creating-a-new-project">
-<h2>新しいプロジェクトを作成する<a class="headerlink" href="#creating-a-new-project" title="Permalink to this headline">¶</a></h2>
-<p>新しいプロジェクトを作成するには、<a class="reference internal" href="#fig-newproject"><span class="std std-numref">図9</span></a>のように
-EV3 MicroPythonタブを開き、<em>create a new project</em>をクリックします。
-表示されたテキストフィールドにプロジェクト名を入力し、<em>Enter</em>を押します。
-確認を求められたら、このプログラムの保存場所を選び、<em>choose folder</em>を
-クリックして確定します。</p>
-<div class="figure align-center" id="id2">
+<div class="section" id="id2">
+<h2>新しいプロジェクトを作成する<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>新しいプロジェクトを作成するには、 <a class="reference internal" href="#fig-newproject"><span class="std std-numref">図 9</span></a> のように
+EV3 MicroPythonタブを開き、 <em>create a new project</em> をクリックします。
+表示されたテキストフィールドにプロジェクト名を入力し、 <em>Enter</em> を
+押します。
+確認を求められたら、このプログラムの保存場所を選び、 <em>choose folder</em>
+をクリックして確定します。</p>
+<div class="figure align-center" id="id7">
 <span id="fig-newproject"></span><img alt="newproject" src="_images/newproject_label.png" style="width: 100%;" />
-<p class="caption"><span class="caption-number">図9 </span><span class="caption-text">新しいプロジェクトを作成する。この例では<em>getting_started</em>という
+<p class="caption"><span class="caption-number">図 9 </span><span class="caption-text">新しいプロジェクトを作成する。この例では <em>getting_started</em> という
 名前ですが、任意の名前を付けられます。</span></p>
 </div>
-<p>新しいプロジェクトを作成すると、<em>main.py</em>というファイルが最初から
+<p>新しいプロジェクトを作成すると、 <em>main.py</em> というファイルが最初から
 含まれています。内容を確認したり編集したりするには、
-<a class="reference internal" href="#fig-projectoverview"><span class="std std-numref">図10</span></a>のようにファイルブラウザーから開きます。
+<a class="reference internal" href="#fig-projectoverview"><span class="std std-numref">図 10</span></a> のようにファイルブラウザーから開きます。
 ここにプログラムを書いていきます。</p>
 <p>MicroPythonプログラミングが初めての場合は、既存のコードを残したまま、
 そこに自分のコードを追加していくことをおすすめします。</p>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id8">
 <span id="fig-projectoverview"></span><img alt="projectoverview" src="_images/projectoverview_label.png" style="width: 100%;" />
-<p class="caption"><span class="caption-number">図10 </span><span class="caption-text">デフォルトの<em>main.py</em>プログラムを開く。</span></p>
+<p class="caption"><span class="caption-number">図 10 </span><span class="caption-text">デフォルトの <em>main.py</em> プログラムを開く。</span></p>
 </div>
 </div>
-<div class="section" id="opening-an-existing-project">
-<h2>既存のプロジェクトを開く<a class="headerlink" href="#opening-an-existing-project" title="Permalink to this headline">¶</a></h2>
-<p>以前作成したプロジェクトを開くには、<a class="reference internal" href="#fig-existingproject"><span class="std std-numref">図11</span></a>のように
-<em>File</em>をクリックし、<em>Open Folder</em>をクリックします。次に、以前作成した
-プロジェクトフォルダーに移動して<em>OK</em>をクリックします。
-<em>Open Recent</em>メニューから最近使ったプロジェクトを開くこともできます。</p>
-<div class="figure align-center" id="id4">
+<div class="section" id="id3">
+<h2>既存のプロジェクトを開く<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>以前作成したプロジェクトを開くには、 <a class="reference internal" href="#fig-existingproject"><span class="std std-numref">図 11</span></a>
+のように <em>File</em> をクリックし、
+<em>Open Folder</em> をクリックします。次に、以前作成した
+プロジェクトフォルダーに移動して <em>OK</em> をクリックします。
+<em>Open Recent</em> メニューから最近使ったプロジェクトを開くこともできます。</p>
+<div class="figure align-center" id="id9">
 <span id="fig-existingproject"></span><img alt="existingproject" src="_images/existingproject_label.png" style="width: 75%;" />
-<p class="caption"><span class="caption-number">図11 </span><span class="caption-text">以前作成したプロジェクトを開く。</span></p>
+<p class="caption"><span class="caption-number">図 11 </span><span class="caption-text">以前作成したプロジェクトを開く。</span></p>
 </div>
 </div>
-<div class="section" id="connecting-to-the-ev3-brick-with-visual-studio-code">
-<h2>Visual Studio CodeでEV3 Brickに接続する<a class="headerlink" href="#connecting-to-the-ev3-brick-with-visual-studio-code" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="visual-studio-codeev3-brick">
+<h2>Visual Studio CodeでEV3 Brickに接続する<a class="headerlink" href="#visual-studio-codeev3-brick" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>コードをEV3 Brickに転送するには、まずmini-USBケーブルでEV3 Brickを
-コンピューターに接続し、Visual Studio Codeで接続を設定する必要があります。
-手順は次のとおりです。</p>
+コンピューターに接続し、Visual Studio Codeで接続を設定する必要が
+あります。手順は次のとおりです。</p>
 <ul class="simple">
 <li>EV3 Brickの電源を入れます</li>
 <li>mini-USBケーブルでEV3 Brickをコンピューターに接続します</li>
-<li><a class="reference internal" href="#fig-connecting"><span class="std std-numref">図12</span></a>のようにUSB接続を設定します。</li>
+<li><a class="reference internal" href="#fig-connecting"><span class="std std-numref">図 12</span></a> のようにUSB接続を設定します。</li>
 </ul>
-<div class="figure align-center" id="id5">
+<div class="figure align-center" id="id10">
 <span id="fig-connecting"></span><img alt="connecting" src="_images/connecting_label.png" style="width: 100%;" />
-<p class="caption"><span class="caption-number">図12 </span><span class="caption-text">コンピューターとEV3 Brick間のUSB接続を設定する</span></p>
+<p class="caption"><span class="caption-number">図 12 </span><span class="caption-text">コンピューターとEV3 Brick間のUSB接続を設定する</span></p>
 </div>
 </div>
-<div class="section" id="downloading-and-running-a-program">
-<h2>プログラムをダウンロードして実行する<a class="headerlink" href="#downloading-and-running-a-program" title="Permalink to this headline">¶</a></h2>
-<p>F5キーを押すとプログラムを実行できます。また、<a class="reference internal" href="#fig-running"><span class="std std-numref">図13</span></a>のように
-<em>debug</em>タブを開き、緑色のスタート矢印をクリックして手動で開始することも
-できます。</p>
-<p>プログラムが開始されると、ポップアップのツールバーが表示され、
-必要に応じてプログラムを停止できます。EV3 Brickの戻るボタンでも
-いつでもプログラムを停止できます。</p>
-<p>プログラムが<code class="docutils literal notranslate"><span class="pre">print</span></code>コマンドで出力を生成した場合、
-それは出力ウィンドウに表示されます。</p>
-<div class="figure align-center" id="id6">
+<div class="section" id="id4">
+<h2>プログラムをダウンロードして実行する<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>F5キーを押してプログラムを実行できます。または、 <em>debug</em> タブを開いて
+緑色の開始矢印をクリックして手動で起動できます( <a class="reference internal" href="#fig-running"><span class="std std-numref">図 13</span></a> )。</p>
+<p>プログラムが開始すると、ポップアップツールバーが表示され、必要に応じて
+プログラムを停止できます。EV3 Brickの戻るボタンでもいつでも
+プログラムを停止できます。</p>
+<p>プログラムが <code class="docutils literal notranslate"><span class="pre">print</span></code> コマンドで何か出力を生成した場合、それは
+出力ウィンドウに表示されます。</p>
+<div class="figure align-center" id="id11">
 <span id="fig-running"></span><img alt="running" src="_images/running_label.png" style="width: 100%;" />
-<p class="caption"><span class="caption-number">図13 </span><span class="caption-text">プログラムを実行する</span></p>
+<p class="caption"><span class="caption-number">図 13 </span><span class="caption-text">プログラムを実行する</span></p>
 </div>
 </div>
-<div class="section" id="expanding-the-example-program">
-<h2>サンプルプログラムを拡張する<a class="headerlink" href="#expanding-the-example-program" title="Permalink to this headline">¶</a></h2>
-<p>基本のコードテンプレートを実行できたので、プログラムを拡張して
-モーターを動かしてみましょう。まず、<a class="reference internal" href="#fig-firstprogram"><span class="std std-numref">図14</span></a>のように
-EV3 BrickのポートBにLarge Motorを接続します。</p>
-<div class="figure align-center" id="id7">
+<div class="section" id="id5">
+<h2>サンプルプログラムを拡張する<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>基本的なコードテンプレートを実行できたので、プログラムを拡張して
+モーターを動かしてみましょう。まず、 <a class="reference internal" href="#fig-firstprogram"><span class="std std-numref">図 14</span></a> の
+ように、EV3 BrickのポートBにLarge Motorを接続します。</p>
+<div class="figure align-center" id="id12">
 <span id="fig-firstprogram"></span><img alt="firstprogram" src="_images/firstprogram_label.png" style="width: 100%;" />
-<p class="caption"><span class="caption-number">図14 </span><span class="caption-text">ポートBにLarge Motorを接続したEV3 Brick。</span></p>
+<p class="caption"><span class="caption-number">図 14 </span><span class="caption-text">ポートBにLarge Motorを接続したEV3 Brick。</span></p>
 </div>
-<p>次に、<em>main.py</em>を次のように編集します。</p>
+<p>次に、 <em>main.py</em> を次のように編集します:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env pybricks-micropython</span>
-<span class="kn">from</span> <span class="nn">pybricks.hubs</span> <span class="kn">import</span> <span class="n">EV3Brick</span>
-<span class="kn">from</span> <span class="nn">pybricks.ev3devices</span> <span class="kn">import</span> <span class="n">Motor</span>
-<span class="kn">from</span> <span class="nn">pybricks.parameters</span> <span class="kn">import</span> <span class="n">Port</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">EV3Brick</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.ev3devices</span><span class="w"> </span><span class="kn">import</span> <span class="n">Motor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Port</span>
 
 <span class="c1"># ここにオブジェクトを作成します</span>
 
@@ -335,18 +336,18 @@ EV3 BrickのポートBにLarge Motorを接続します。</p>
 <span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">beep</span><span class="p">(</span><span class="n">frequency</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>このプログラムは、ロボットにビープ音を鳴らし、モーターを回転させ、
-さらに高い音で再びビープ音を鳴らします。プログラムを実行して、
-期待どおりに動作することを確認してください。</p>
+<p>このプログラムはロボットをビープさせ、モーターを回転させ、もう一度
+高音でビープさせます。プログラムを実行して、期待どおりに動作することを
+確認してください。</p>
 </div>
-<div class="section" id="managing-files-on-the-ev3-brick">
-<span id="managefiles"></span><h2>EV3 Brick上のファイルを管理する<a class="headerlink" href="#managing-files-on-the-ev3-brick" title="Permalink to this headline">¶</a></h2>
-<p>プロジェクトをEV3 Brickにダウンロードした後は、
-<a class="reference internal" href="#fig-files"><span class="std std-numref">図15</span></a>のようにdevice browserを使って、
-保存されているプログラムを実行、削除、バックアップできます。</p>
-<div class="figure align-center" id="id8">
+<div class="section" id="ev3-brick">
+<span id="managefiles"></span><h2>EV3 Brick上のファイルを管理する<a class="headerlink" href="#ev3-brick" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>プロジェクトをEV3 Brickにダウンロードしたら、
+<a class="reference internal" href="#fig-files"><span class="std std-numref">図 15</span></a> のようにdevice browserを使って、Brick上の
+プログラムを実行・削除・バックアップできます。</p>
+<div class="figure align-center" id="id13">
 <span id="fig-files"></span><img alt="files" src="_images/files_label.png" style="width: 100%;" />
-<p class="caption"><span class="caption-number">図15 </span><span class="caption-text">EV3 device browserでEV3 Brick上のファイルを管理する</span></p>
+<p class="caption"><span class="caption-number">図 15 </span><span class="caption-text">EV3 device browserでEV3 Brick上のファイルを管理する</span></p>
 </div>
 </div>
 </div>
@@ -359,10 +360,10 @@ EV3 BrickのポートBにLarge Motorを接続します。</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="startlinux.html" class="btn btn-neutral float-right" title="Accessing advanced EV3 features" accesskey="n" rel="next">次へ <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="startlinux.html" class="btn btn-neutral float-right" title="EV3の高度な機能を使う" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="startbrick.html" class="btn btn-neutral float-left" title="Using the EV3 Brick" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 前へ</a>
+        <a href="startbrick.html" class="btn btn-neutral float-left" title="EV3 Brickを使う" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -371,12 +372,12 @@ EV3 BrickのポートBにLarge Motorを接続します。</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 The LEGO Group. All rights reserved.
+        &copy; Copyright 2018-2020 The Pybricks Authors
 
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group.</div>
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
 
 
 </footer>

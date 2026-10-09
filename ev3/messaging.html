@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>messaging – メッセージング &mdash; ev3-micropython 2.0.0 ドキュメント</title>
+  <title>messaging -- メッセージング &mdash; ev3-micropython 2.0.0.post2 ドキュメント</title>
   
 
   
@@ -23,8 +23,8 @@
       <script type="text/javascript">
           var DOCUMENTATION_OPTIONS = {
               URL_ROOT:'./',
-              VERSION:'2.0.0',
-              LANGUAGE:'None',
+              VERSION:'2.0.0.post2',
+              LANGUAGE:'ja',
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
@@ -34,6 +34,7 @@
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="_static/contentui.js"></script>
     
@@ -45,10 +46,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Signals and Units" href="signaltypes.html" />
-    <link rel="prev" title="media – Sounds and Images" href="media.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="信号と単位" href="signaltypes.html" />
+    <link rel="prev" title="media -- サウンドと画像" href="media.html" />
     <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css">
 
 </head>
@@ -69,7 +70,7 @@
 
           
             
-            <img src="_static/lego-education-logo-small.png" class="logo" alt="Logo"/>
+            <img src="_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -77,7 +78,7 @@
             
             
               <div class="version">
-                2.0.0
+                2.0.0.post2
               </div>
             
           
@@ -85,7 +86,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="ドキュメントを検索" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -104,26 +105,26 @@
               <p class="caption"><span class="caption-text">はじめに</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="startinstall.html">インストール</a></li>
-<li class="toctree-l1"><a class="reference internal" href="startbrick.html">EV3ブロックを使う</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startbrick.html">EV3 Brickを使う</a></li>
 <li class="toctree-l1"><a class="reference internal" href="startrun.html">プログラムの作成と実行</a></li>
 <li class="toctree-l1"><a class="reference internal" href="startlinux.html">EV3の高度な機能を使う</a></li>
-<li class="toctree-l1"><a class="reference internal" href="startupgrade.html">v1.0からv2.0へアップグレード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startupgrade.html">v1.0からv2.0へのアップグレード</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Pybricksモジュール</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – プログラマブルハブ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3デバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXTデバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – 汎用I/Oデバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – タイミングとデータロギング</a></li>
-<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> – サウンドと画像</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージング</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#pairing-two-ev3-bricks">2台のEV3ブロックをペアリングする</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#server-and-client">サーバーとクライアント</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mailboxes">メールボックス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#making-bigger-networks">より大きなネットワークを作る</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> -- プログラマブルハブ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> -- EV3デバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> -- NXTデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> -- 汎用I/Oデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> -- パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> -- 時間計測とデータロギング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> -- ロボティクス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> -- サウンドと画像</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> -- メッセージング</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ev3">2台のEV3ブロックをペアリングする</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">サーバーとクライアント</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">メールボックス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">より大きなネットワークを作る</a></li>
 </ul>
 </li>
 </ul>
@@ -148,7 +149,7 @@
 <p class="caption"><span class="caption-text">拡張セットプログラム</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="examples/elephant.html">エレファント</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/stair_climber.html">階段を上るロボット</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/stair_climber.html">ステアクライマー</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/tank_bot.html">タンクボット</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/znap.html">ズナップ</a></li>
 </ul>
@@ -196,13 +197,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージング</li>
+      <li><code class="docutils literal notranslate"><span class="pre">messaging</span></code> -- メッセージング</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/messaging.rst.txt" rel="nofollow"> ページソースを表示</a>
+            <a href="_sources/messaging.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -216,48 +217,52 @@
            <div itemprop="articleBody">
             
   <div class="section" id="module-pybricks.messaging">
-<span id="messaging-messaging"></span><h1><a class="reference internal" href="#module-pybricks.messaging" title="pybricks.messaging"><code class="xref py py-mod docutils literal notranslate"><span class="pre">messaging</span></code></a> – メッセージング<a class="headerlink" href="#module-pybricks.messaging" title="Permalink to this headline">¶</a></h1>
+<span id="messaging"></span><h1><a class="reference internal" href="#module-pybricks.messaging" title="pybricks.messaging"><code class="xref py py-mod docutils literal notranslate"><span class="pre">messaging</span></code></a> -- メッセージング<a class="headerlink" href="#module-pybricks.messaging" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>EV3ブロックはBluetoothを使って別のEV3ブロックに情報を送信できます。
-このページでは、複数のブロックを接続する方法と、それらの間でメッセージを
-送受信するスクリプトの書き方を紹介します。</p>
-<div class="section" id="pairing-two-ev3-bricks">
-<h2>2台のEV3ブロックをペアリングする<a class="headerlink" href="#pairing-two-ev3-bricks" title="Permalink to this headline">¶</a></h2>
-<p>2台のEV3ブロックがメッセージをやり取りするには、事前に <em>ペアリング</em> が必要です。
-これは最初の1回だけ行えばよいものです。まず、<a class="reference internal" href="#fig-bluetooth-on"><span class="std std-numref">図19</span></a>に示すように
-すべてのEV3ブロックでBluetoothを有効にします。</p>
-<div class="figure align-center" id="id1">
+このページでは、複数のブロックを接続する方法と、それらの間で
+メッセージを送受信するスクリプトの書き方を紹介します。</p>
+<div class="section" id="ev3">
+<h2>2台のEV3ブロックをペアリングする<a class="headerlink" href="#ev3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>2台のEV3ブロックがメッセージをやり取りするには、事前に <em>ペアリング</em>
+が必要です。これは最初の1回だけ行えばよいものです。まず、
+<a class="reference internal" href="#fig-bluetooth-on"><span class="std std-numref">図 19</span></a> に示すようにすべてのEV3ブロックで
+Bluetoothを有効にします。</p>
+<div class="figure align-center" id="id4">
 <span id="fig-bluetooth-on"></span><img alt="bluetooth_on" src="_images/bluetooth_on_label.png" style="width: 100%;" />
-<p class="caption"><span class="caption-number">図19 </span><span class="caption-text">Bluetoothをオンにし、Bluetoothを検出可能な状態にします。</span></p>
+<p class="caption"><span class="caption-number">図 19 </span><span class="caption-text">Bluetoothをオンにし、Bluetoothを検出可能な状態にします。</span></p>
 </div>
-<p>次に、<a class="reference internal" href="#fig-bluetooth-pair"><span class="std std-numref">図20</span></a>に示すように、片方のEV3ブロックからもう片方を
-検索してペアリングします。</p>
-<p>ペアリングが完了したら、表示されるメニューで <em>connect</em> はクリック<em>しないで</em>ください。
+<p>次に、 <a class="reference internal" href="#fig-bluetooth-pair"><span class="std std-numref">図 20</span></a> に示すように、片方のEV3ブロックから
+もう片方を検索してペアリングします。</p>
+<p>ペアリングが完了したら、表示されるメニューで <em>connect</em> は
+クリックしないでください。
 接続は、後述するようにプログラムを実行したときに確立されます。</p>
-<div class="figure align-center" id="id2">
+<div class="figure align-center" id="id5">
 <span id="fig-bluetooth-pair"></span><img alt="bluetooth_pair" src="_images/bluetooth_pair_label.png" style="width: 100%;" />
-<p class="caption"><span class="caption-number">図20 </span><span class="caption-text">あるEV3ブロックを別のEV3ブロックにペアリングします。</span></p>
+<p class="caption"><span class="caption-number">図 20 </span><span class="caption-text">あるEV3ブロックを別のEV3ブロックにペアリングします。</span></p>
 </div>
 <p>Bluetoothデバイスをスキャンすると、デバイス名の一覧が表示されます。
 既定では、すべてのEV3ブロックは <em>ev3dev</em> という名前になっています。
-名前の変更方法は<a class="reference internal" href="startlinux.html#hostname"><span class="std std-ref">こちら</span></a>を参照してください。
+名前の変更方法は <a class="reference internal" href="startlinux.html#hostname"><span class="std std-ref">こちら</span></a> を参照してください。
 名前を変えておくと、複数のブロックを区別しやすくなります。</p>
-<p>3台以上のEV3ブロックをペアリングしたい場合は、<a class="reference internal" href="#fig-bluetooth-pair"><span class="std std-numref">図20</span></a>の
-手順を繰り返します。</p>
+<p>3台以上のEV3ブロックをペアリングしたい場合は、
+<a class="reference internal" href="#fig-bluetooth-pair"><span class="std std-numref">図 20</span></a> の手順を繰り返します。</p>
 </div>
-<div class="section" id="server-and-client">
-<h2>サーバーとクライアント<a class="headerlink" href="#server-and-client" title="Permalink to this headline">¶</a></h2>
-<p>無線ネットワークは、サーバーまたはクライアントとして動作するEV3ブロックで構成されます。
-サーバー1台とクライアント1台の例を<a class="reference internal" href="#fig-messaging"><span class="std std-numref">図21</span></a>に示します。
+<div class="section" id="id1">
+<h2>サーバーとクライアント<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>無線ネットワークは、サーバーまたはクライアントとして動作する
+EV3ブロックで構成されます。
+サーバー1台とクライアント1台の例を <a class="reference internal" href="#fig-messaging"><span class="std std-numref">図 21</span></a> に
+示します。
 メッセージは双方向に送信できます。サーバーからクライアントへも、
 クライアントからサーバーへも送信できます。</p>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id6">
 <span id="fig-messaging"></span><img alt="messaging" src="_images/messaging_label.png" style="width: 90%;" />
-<p class="caption"><span class="caption-number">図21 </span><span class="caption-text">サーバー1台とクライアント1台からなるネットワークの例。</span></p>
+<p class="caption"><span class="caption-number">図 21 </span><span class="caption-text">サーバー1台とクライアント1台からなるネットワークの例。</span></p>
 </div>
 <p class="toggle-header"><strong>サーバーの完全な例を表示/非表示</strong></p>
 <div class="toggle-content docutils container">
 <p><strong>例: EV3 Bluetoothサーバー。</strong></p>
-<p><a class="reference internal" href="#fig-messaging"><span class="std std-numref">図21</span></a>に示した抜粋の完全版です。</p>
+<p><a class="reference internal" href="#fig-messaging"><span class="std std-numref">図 21</span></a> に示した抜粋の完全版です。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env pybricks-micropython</span>
 
 <span class="c1"># このプログラムを実行する前に、クライアントとサーバーのEV3ブロックが</span>
@@ -266,28 +271,28 @@
 
 <span class="c1"># サーバーはクライアントより先に起動する必要があります！</span>
 
-<span class="kn">from</span> <span class="nn">pybricks.messaging</span> <span class="kn">import</span> <span class="n">BluetoothMailboxServer</span><span class="p">,</span> <span class="n">TextMailbox</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.messaging</span><span class="w"> </span><span class="kn">import</span> <span class="n">BluetoothMailboxServer</span><span class="p">,</span> <span class="n">TextMailbox</span>
 
 <span class="n">server</span> <span class="o">=</span> <span class="n">BluetoothMailboxServer</span><span class="p">()</span>
-<span class="n">mbox</span> <span class="o">=</span> <span class="n">TextMailbox</span><span class="p">(</span><span class="s1">&#39;greeting&#39;</span><span class="p">,</span> <span class="n">server</span><span class="p">)</span>
+<span class="n">mbox</span> <span class="o">=</span> <span class="n">TextMailbox</span><span class="p">(</span><span class="s1">'greeting'</span><span class="p">,</span> <span class="n">server</span><span class="p">)</span>
 
 <span class="c1"># サーバーはクライアントより先に起動する必要があります！</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;waiting for connection...&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'waiting for connection...'</span><span class="p">)</span>
 <span class="n">server</span><span class="o">.</span><span class="n">wait_for_connection</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;connected!&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'connected!'</span><span class="p">)</span>
 
 <span class="c1"># このプログラムでは、サーバーはクライアントからの最初のメッセージを待ち、</span>
 <span class="c1"># その後に返信を送信します。</span>
 <span class="n">mbox</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mbox</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-<span class="n">mbox</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;hello to you!&#39;</span><span class="p">)</span>
+<span class="n">mbox</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">'hello to you!'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <p class="toggle-header"><strong>クライアントの完全な例を表示/非表示</strong></p>
 <div class="toggle-content docutils container">
 <p><strong>例: EV3 Bluetoothクライアント。</strong></p>
-<p><a class="reference internal" href="#fig-messaging"><span class="std std-numref">図21</span></a>に示した抜粋の完全版です。</p>
+<p><a class="reference internal" href="#fig-messaging"><span class="std std-numref">図 21</span></a> に示した抜粋の完全版です。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env pybricks-micropython</span>
 
 <span class="c1"># このプログラムを実行する前に、クライアントとサーバーのEV3ブロックが</span>
@@ -296,21 +301,21 @@
 
 <span class="c1"># サーバーはクライアントより先に起動する必要があります！</span>
 
-<span class="kn">from</span> <span class="nn">pybricks.messaging</span> <span class="kn">import</span> <span class="n">BluetoothMailboxClient</span><span class="p">,</span> <span class="n">TextMailbox</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.messaging</span><span class="w"> </span><span class="kn">import</span> <span class="n">BluetoothMailboxClient</span><span class="p">,</span> <span class="n">TextMailbox</span>
 
 <span class="c1"># これは接続先のリモートEV3またはPCの名前です。</span>
-<span class="n">SERVER</span> <span class="o">=</span> <span class="s1">&#39;ev3dev&#39;</span>
+<span class="n">SERVER</span> <span class="o">=</span> <span class="s1">'ev3dev'</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">BluetoothMailboxClient</span><span class="p">()</span>
-<span class="n">mbox</span> <span class="o">=</span> <span class="n">TextMailbox</span><span class="p">(</span><span class="s1">&#39;greeting&#39;</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
+<span class="n">mbox</span> <span class="o">=</span> <span class="n">TextMailbox</span><span class="p">(</span><span class="s1">'greeting'</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;establishing connection...&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'establishing connection...'</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">SERVER</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;connected!&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'connected!'</span><span class="p">)</span>
 
 <span class="c1"># このプログラムでは、クライアントが最初のメッセージを送信し、その後</span>
 <span class="c1"># サーバーからの返信を待ちます。</span>
-<span class="n">mbox</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;hello!&#39;</span><span class="p">)</span>
+<span class="n">mbox</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">'hello!'</span><span class="p">)</span>
 <span class="n">mbox</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mbox</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 </pre></div>
@@ -320,32 +325,34 @@
 接続を開始するかです。</p>
 <blockquote>
 <div><ul class="simple">
-<li><strong>サーバー</strong>は常に先に起動する必要があります。
+<li><strong>サーバー</strong> は常に先に起動する必要があります。
 <code class="docutils literal notranslate"><span class="pre">BluetoothMailboxServer</span></code> クラスを使用し、
 <code class="docutils literal notranslate"><span class="pre">wait_for_connection</span></code> メソッドでクライアントを待ちます。</li>
-<li><strong>クライアント</strong>は <code class="docutils literal notranslate"><span class="pre">BluetoothMailboxClient</span></code> クラスを使用し、
+<li><strong>クライアント</strong> は <code class="docutils literal notranslate"><span class="pre">BluetoothMailboxClient</span></code> クラスを使用し、
 <code class="docutils literal notranslate"><span class="pre">connect</span></code> メソッドでサーバーに接続します。</li>
-<li>その後のメッセージの送受信は、どちらのEV3ブロックでも同じ方法で行います。</li>
+<li>その後のメッセージの送受信は、どちらのEV3ブロックでも同じ方法で
+行います。</li>
 </ul>
 </div></blockquote>
 <dl class="class">
 <dt id="pybricks.messaging.BluetoothMailboxServer">
-<em class="property">class </em><code class="descname">BluetoothMailboxServer</code><a class="headerlink" href="#pybricks.messaging.BluetoothMailboxServer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">BluetoothMailboxServer</code><a class="headerlink" href="#pybricks.messaging.BluetoothMailboxServer" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>1台以上のリモートEV3からのBluetooth接続を表すオブジェクトです。</p>
-<p>リモートのEV3は、MicroPythonでも標準のEV3ファームウェアでも動作しているものが使えます。</p>
+<p>リモートのEV3は、MicroPythonでも標準のEV3ファームウェアでも
+動作しているものが使えます。</p>
 <p>「サーバー」は「クライアント」からの接続を待ちます。</p>
 <dl class="method">
 <dt id="pybricks.messaging.BluetoothMailboxServer.wait_for_connection">
-<code class="descname">wait_for_connection</code><span class="sig-paren">(</span><em>count=1</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.BluetoothMailboxServer.wait_for_connection" title="Permalink to this definition">¶</a></dt>
+<code class="descname">wait_for_connection</code><span class="sig-paren">(</span><em>count=1</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.BluetoothMailboxServer.wait_for_connection" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>リモートデバイス上の <a class="reference internal" href="#pybricks.messaging.BluetoothMailboxClient" title="pybricks.messaging.BluetoothMailboxClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">BluetoothMailboxClient</span></code></a> が
 接続するのを待ちます。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><strong>count</strong> (<em>int</em>) – 待機するリモート接続の数。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>count</strong> (<em>int</em>) -- 待機するリモート接続の数。</td>
 </tr>
-<tr class="field-even field"><th class="field-name">例外:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code> – 接続の確立に問題がありました。</td>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code> -- 接続の確立に問題がありました。</td>
 </tr>
 </tbody>
 </table>
@@ -353,7 +360,7 @@
 
 <dl class="method">
 <dt id="pybricks.messaging.BluetoothMailboxServer.close">
-<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.BluetoothMailboxServer.close" title="Permalink to this definition">¶</a></dt>
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.BluetoothMailboxServer.close" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>すべての接続を閉じます。</p>
 </dd></dl>
 
@@ -361,13 +368,14 @@
 
 <dl class="class">
 <dt id="pybricks.messaging.BluetoothMailboxClient">
-<em class="property">class </em><code class="descname">BluetoothMailboxClient</code><a class="headerlink" href="#pybricks.messaging.BluetoothMailboxClient" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">BluetoothMailboxClient</code><a class="headerlink" href="#pybricks.messaging.BluetoothMailboxClient" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>1台以上のリモートEV3へのBluetooth接続を表すオブジェクトです。</p>
-<p>リモートのEV3は、MicroPythonでも標準のEV3ファームウェアでも動作しているものが使えます。</p>
+<p>リモートのEV3は、MicroPythonでも標準のEV3ファームウェアでも
+動作しているものが使えます。</p>
 <p>「クライアント」は待機中の「サーバー」への接続を開始します。</p>
 <dl class="method">
 <dt id="pybricks.messaging.BluetoothMailboxClient.connect">
-<code class="descname">connect</code><span class="sig-paren">(</span><em>brick</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.BluetoothMailboxClient.connect" title="Permalink to this definition">¶</a></dt>
+<code class="descname">connect</code><span class="sig-paren">(</span><em>brick</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.BluetoothMailboxClient.connect" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>別のデバイス上の <a class="reference internal" href="#pybricks.messaging.BluetoothMailboxServer" title="pybricks.messaging.BluetoothMailboxServer"><code class="xref py py-class docutils literal notranslate"><span class="pre">BluetoothMailboxServer</span></code></a> に接続します。</p>
 <p>リモートデバイスはペアリング済みで、接続を待機している必要があります。
 <a class="reference internal" href="#pybricks.messaging.BluetoothMailboxServer.wait_for_connection" title="pybricks.messaging.BluetoothMailboxServer.wait_for_connection"><code class="xref py py-meth docutils literal notranslate"><span class="pre">BluetoothMailboxServer.wait_for_connection()</span></code></a> を参照してください。</p>
@@ -375,35 +383,36 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><strong>brick</strong> (<em>str</em>) – 接続先のリモートEV3の名前またはBluetoothアドレス。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>brick</strong> (<em>str</em>) -- 接続先のリモートEV3の名前またはBluetoothアドレス。</td>
 </tr>
-<tr class="field-even field"><th class="field-name">例外:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code> – 接続の確立に問題がありました。</td>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code> -- 接続の確立に問題がありました。</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
 <dl class="method">
-<dt id="pybricks.messaging.BluetoothMailboxClient.close">
-<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.BluetoothMailboxClient.close" title="Permalink to this definition">¶</a></dt>
+<dt id="pybricks.messaging.BluetoothMailboxClient.server_close">
+<code class="descname">server_close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.BluetoothMailboxClient.server_close" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>すべての接続を閉じます。</p>
 </dd></dl>
 
 </dd></dl>
 
 </div>
-<div class="section" id="mailboxes">
-<h2>メールボックス<a class="headerlink" href="#mailboxes" title="Permalink to this headline">¶</a></h2>
-<p>メールボックスは、他のEV3ブロックとの間でデータを送受信するために使います。</p>
+<div class="section" id="id2">
+<h2>メールボックス<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>メールボックスは、他のEV3ブロックとの間でデータを送受信するために
+使います。</p>
 <p>メールボックスには、メールの「件名」のような <code class="docutils literal notranslate"><span class="pre">name</span></code> があります。
 2台のEV3ブロックが同じ名前のメールボックスを持っていれば、それらの間で
 メッセージを送れます。各EV3ブロックは自分のメールボックスを読み取り、
 相手のEV3ブロック上のメールボックスへメッセージを送信できます。</p>
-<p>やり取りしたいメッセージの種類（バイト列、真偽値、数値、テキスト）に応じて、
-以下のメールボックスから選択してください。</p>
+<p>やり取りしたいメッセージの種類（バイト列、真偽値、数値、テキスト）に
+応じて、以下のメールボックスから選択してください。</p>
 <dl class="class">
 <dt id="pybricks.messaging.Mailbox">
-<em class="property">class </em><code class="descname">Mailbox</code><span class="sig-paren">(</span><em>name</em>, <em>connection</em>, <em>encode=None</em>, <em>decode=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.Mailbox" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Mailbox</code><span class="sig-paren">(</span><em>name</em>, <em>connection</em>, <em>encode=None</em>, <em>decode=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.Mailbox" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>データを保持するメールボックスを表すオブジェクトです。</p>
 <p>他のEV3ブロックから配信されたデータを読み取ったり、同じメールボックスを
 持つ他のブロックへデータを送信したりできます。</p>
@@ -414,11 +423,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>str</em>) – このメールボックスの名前。</li>
-<li><strong>connection</strong> – <a class="reference internal" href="#pybricks.messaging.BluetoothMailboxClient" title="pybricks.messaging.BluetoothMailboxClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">BluetoothMailboxClient</span></code></a> などの接続オブジェクト。</li>
-<li><strong>encode</strong> (<em>callable</em>) – Pythonオブジェクトをバイト列にエンコードする関数。</li>
-<li><strong>decode</strong> (<em>callable</em>) – バイト列から新しいPythonオブジェクトを作成する関数。</li>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) -- このメールボックスの名前。</li>
+<li><strong>connection</strong> -- <a class="reference internal" href="#pybricks.messaging.BluetoothMailboxClient" title="pybricks.messaging.BluetoothMailboxClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">BluetoothMailboxClient</span></code></a> などの接続オブジェクト。</li>
+<li><strong>encode</strong> (<em>callable</em>) -- Pythonオブジェクトをバイト列にエンコードする関数。</li>
+<li><strong>decode</strong> (<em>callable</em>) -- バイト列から新しいPythonオブジェクトを作成する関数。</li>
 </ul>
 </td>
 </tr>
@@ -426,7 +435,7 @@
 </table>
 <dl class="method">
 <dt id="pybricks.messaging.Mailbox.read">
-<code class="descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.Mailbox.read" title="Permalink to this definition">¶</a></dt>
+<code class="descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.Mailbox.read" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>メールボックスの現在の値を取得します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -440,20 +449,20 @@
 
 <dl class="method">
 <dt id="pybricks.messaging.Mailbox.send">
-<code class="descname">send</code><span class="sig-paren">(</span><em>value</em>, <em>brick=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.Mailbox.send" title="Permalink to this definition">¶</a></dt>
+<code class="descname">send</code><span class="sig-paren">(</span><em>value</em>, <em>brick=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.Mailbox.send" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>接続されたデバイス上のこのメールボックスに値を送信します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><ul class="first simple">
-<li><strong>value</strong> – メールボックスに配信される値。</li>
-<li><strong>brick</strong> (<em>str</em>) – ブロックの名前またはBluetoothアドレス。<code class="docutils literal notranslate"><span class="pre">None</span></code> の場合は
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> -- メールボックスに配信される値。</li>
+<li><strong>brick</strong> (<em>str</em>) -- ブロックの名前またはBluetoothアドレス。 <code class="docutils literal notranslate"><span class="pre">None</span></code> の場合は
 接続中のすべてのデバイスにブロードキャストします。</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">例外:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code> – 接続に問題があります。</p>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code> -- 接続に問題があります。</p>
 </td>
 </tr>
 </tbody>
@@ -462,13 +471,13 @@
 
 <dl class="method">
 <dt id="pybricks.messaging.Mailbox.wait">
-<code class="descname">wait</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.Mailbox.wait" title="Permalink to this definition">¶</a></dt>
+<code class="descname">wait</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.Mailbox.wait" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>リモートデバイスによってメールボックスが更新されるまで待機します。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pybricks.messaging.Mailbox.wait_new">
-<code class="descname">wait_new</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.Mailbox.wait_new" title="Permalink to this definition">¶</a></dt>
+<code class="descname">wait_new</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.Mailbox.wait_new" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>メールボックス内の現在の値と異なる、新しい値がメールボックスに
 配信されるまで待機します。</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -485,7 +494,7 @@
 
 <dl class="class">
 <dt id="pybricks.messaging.LogicMailbox">
-<em class="property">class </em><code class="descname">LogicMailbox</code><span class="sig-paren">(</span><em>name</em>, <em>connection</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.LogicMailbox" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">LogicMailbox</code><span class="sig-paren">(</span><em>name</em>, <em>connection</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.LogicMailbox" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>真偽値データを保持するメールボックスを表すオブジェクトです。</p>
 <p>通常の <a class="reference internal" href="#pybricks.messaging.Mailbox" title="pybricks.messaging.Mailbox"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mailbox</span></code></a> と同じように動作しますが、
 値は <code class="docutils literal notranslate"><span class="pre">True</span></code> または <code class="docutils literal notranslate"><span class="pre">False</span></code> のみです。</p>
@@ -494,9 +503,9 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>str</em>) – このメールボックスの名前。</li>
-<li><strong>connection</strong> – <a class="reference internal" href="#pybricks.messaging.BluetoothMailboxClient" title="pybricks.messaging.BluetoothMailboxClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">BluetoothMailboxClient</span></code></a> などの接続オブジェクト。</li>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) -- このメールボックスの名前。</li>
+<li><strong>connection</strong> -- <a class="reference internal" href="#pybricks.messaging.BluetoothMailboxClient" title="pybricks.messaging.BluetoothMailboxClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">BluetoothMailboxClient</span></code></a> などの接続オブジェクト。</li>
 </ul>
 </td>
 </tr>
@@ -506,7 +515,7 @@
 
 <dl class="class">
 <dt id="pybricks.messaging.NumericMailbox">
-<em class="property">class </em><code class="descname">NumericMailbox</code><span class="sig-paren">(</span><em>name</em>, <em>connection</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.NumericMailbox" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">NumericMailbox</code><span class="sig-paren">(</span><em>name</em>, <em>connection</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.NumericMailbox" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>数値データを保持するメールボックスを表すオブジェクトです。</p>
 <p>通常の <a class="reference internal" href="#pybricks.messaging.Mailbox" title="pybricks.messaging.Mailbox"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mailbox</span></code></a> と同じように動作しますが、
 値は <code class="docutils literal notranslate"><span class="pre">15</span></code> や <code class="docutils literal notranslate"><span class="pre">12.345</span></code> のような数値である必要があります。</p>
@@ -515,9 +524,9 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>str</em>) – このメールボックスの名前。</li>
-<li><strong>connection</strong> – <a class="reference internal" href="#pybricks.messaging.BluetoothMailboxClient" title="pybricks.messaging.BluetoothMailboxClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">BluetoothMailboxClient</span></code></a> などの接続オブジェクト。</li>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) -- このメールボックスの名前。</li>
+<li><strong>connection</strong> -- <a class="reference internal" href="#pybricks.messaging.BluetoothMailboxClient" title="pybricks.messaging.BluetoothMailboxClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">BluetoothMailboxClient</span></code></a> などの接続オブジェクト。</li>
 </ul>
 </td>
 </tr>
@@ -527,18 +536,19 @@
 
 <dl class="class">
 <dt id="pybricks.messaging.TextMailbox">
-<em class="property">class </em><code class="descname">TextMailbox</code><span class="sig-paren">(</span><em>name</em>, <em>connection</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.TextMailbox" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">TextMailbox</code><span class="sig-paren">(</span><em>name</em>, <em>connection</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.TextMailbox" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>テキストデータを保持するメールボックスを表すオブジェクトです。</p>
 <p>通常の <a class="reference internal" href="#pybricks.messaging.Mailbox" title="pybricks.messaging.Mailbox"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mailbox</span></code></a> と同じように動作しますが、
-データは <code class="docutils literal notranslate"><span class="pre">'hello!'</span></code> や <code class="docutils literal notranslate"><span class="pre">'My</span> <span class="pre">name</span> <span class="pre">is</span> <span class="pre">EV3'</span></code> のような文字列である必要があります。</p>
+データは <code class="docutils literal notranslate"><span class="pre">'hello!'</span></code> や <code class="docutils literal notranslate"><span class="pre">'My</span> <span class="pre">name</span> <span class="pre">is</span> <span class="pre">EV3'</span></code> のような文字列である
+必要があります。</p>
 <p>EV3-Gの「テキスト」メールボックスタイプと互換性があります。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>str</em>) – このメールボックスの名前。</li>
-<li><strong>connection</strong> – <a class="reference internal" href="#pybricks.messaging.BluetoothMailboxClient" title="pybricks.messaging.BluetoothMailboxClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">BluetoothMailboxClient</span></code></a> などの接続オブジェクト。</li>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) -- このメールボックスの名前。</li>
+<li><strong>connection</strong> -- <a class="reference internal" href="#pybricks.messaging.BluetoothMailboxClient" title="pybricks.messaging.BluetoothMailboxClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">BluetoothMailboxClient</span></code></a> などの接続オブジェクト。</li>
 </ul>
 </td>
 </tr>
@@ -547,14 +557,14 @@
 </dd></dl>
 
 </div>
-<div class="section" id="making-bigger-networks">
-<h2>より大きなネットワークを作る<a class="headerlink" href="#making-bigger-networks" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>より大きなネットワークを作る<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>このモジュールのクラスは、2台のEV3ブロックだけに限定されません。
-たとえば、ネットワークにクライアントを追加できます。疑似コードによる例を
-<a class="reference internal" href="#fig-messaging-network"><span class="std std-numref">図22</span></a>に示します。</p>
-<div class="figure align-center" id="id4">
+たとえば、ネットワークにクライアントを追加できます。疑似コードによる
+例を <a class="reference internal" href="#fig-messaging-network"><span class="std std-numref">図 22</span></a> に示します。</p>
+<div class="figure align-center" id="id7">
 <span id="fig-messaging-network"></span><img alt="messaging" src="_images/messaging_network_label.png" style="width: 90%;" />
-<p class="caption"><span class="caption-number">図22 </span><span class="caption-text">サーバー1台とクライアント2台からなるネットワークの例。</span></p>
+<p class="caption"><span class="caption-number">図 22 </span><span class="caption-text">サーバー1台とクライアント2台からなるネットワークの例。</span></p>
 </div>
 </div>
 </div>
@@ -567,10 +577,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="signaltypes.html" class="btn btn-neutral float-right" title="Signals and Units" accesskey="n" rel="next">次へ <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="signaltypes.html" class="btn btn-neutral float-right" title="信号と単位" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="media.html" class="btn btn-neutral float-left" title="media – Sounds and Images" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 前へ</a>
+        <a href="media.html" class="btn btn-neutral float-left" title="media -- サウンドと画像" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -579,12 +589,12 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 The LEGO Group. All rights reserved.
+        &copy; Copyright 2018-2020 The Pybricks Authors
 
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group.</div>
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
 
 
 </footer>

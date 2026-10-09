@@ -1,16 +1,16 @@
-Puppy
-============
+パピー
+================
 
-This example program gives the Puppy up to 8 behaviors. It exhibits different
-behaviors in response to being fed
-(the :class:`ColorSensor <pybricks.ev3devices.ColorSensor>` sees colors)
-or petted
-(the :class:`TouchSensor <pybricks.ev3devices.TouchSensor>` is pressed).
+このサンプルプログラムでは、パピーに最大8種類の行動をさせます。エサをもらったとき
+( :class:`ColorSensor <pybricks.ev3devices.ColorSensor>` が色を検出)や、
+なでられたとき
+( :class:`TouchSensor <pybricks.ev3devices.TouchSensor>` が押された)に応じて、
+異なる行動をとります。
 
-.. rubric:: Building instructions
+.. rubric:: 組み立て説明書
 
-Click `here`_ to find all building instructions for the Core Set Models, or use
-`this link`_ to go to the Puppy directly.
+`こちら <here_>`_ からコアセットモデルの組み立て説明書をすべて確認できます。また、
+`このリンク <this link_>`_ からパピーの説明書に直接アクセスできます。
 
 .. _fig_puppy:
 
@@ -18,9 +18,9 @@ Click `here`_ to find all building instructions for the Core Set Models, or use
    :width: 80 %
    :align: center
 
-   Puppy
+   パピー
 
-.. rubric:: Example program
+.. rubric:: サンプルプログラム
 
 .. literalinclude::
    ../../../pybricks-projects/official_models/ev3/education_core/puppy/main.py

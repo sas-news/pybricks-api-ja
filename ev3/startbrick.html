@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>EV3 Brickを使う &mdash; ev3-micropython 2.0.0 documentation</title>
+  <title>EV3 Brickを使う &mdash; ev3-micropython 2.0.0.post2 ドキュメント</title>
   
 
   
@@ -23,8 +23,8 @@
       <script type="text/javascript">
           var DOCUMENTATION_OPTIONS = {
               URL_ROOT:'./',
-              VERSION:'2.0.0',
-              LANGUAGE:'None',
+              VERSION:'2.0.0.post2',
+              LANGUAGE:'ja',
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
@@ -34,6 +34,7 @@
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="_static/contentui.js"></script>
     
@@ -45,10 +46,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Creating and running programs" href="startrun.html" />
-    <link rel="prev" title="Installation" href="startinstall.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="プログラムの作成と実行" href="startrun.html" />
+    <link rel="prev" title="インストール" href="startinstall.html" />
     <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css">
 
 </head>
@@ -69,7 +70,7 @@
 
           
             
-            <img src="_static/lego-education-logo-small.png" class="logo" alt="Logo"/>
+            <img src="_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -77,7 +78,7 @@
             
             
               <div class="version">
-                2.0.0
+                2.0.0.post2
               </div>
             
           
@@ -85,7 +86,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="ドキュメントを検索" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -105,10 +106,10 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="startinstall.html">インストール</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">EV3 Brickを使う</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#turning-the-ev3-brick-on-and-off">EV3 Brickの電源オン/オフ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#viewing-motor-and-sensor-values">モーターとセンサーの値を見る</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#running-a-program-without-a-computer">コンピューターなしでプログラムを実行する</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#going-back-to-the-original-firmware">元のファームウェアに戻す</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">EV3 Brickの電源オン/オフ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">モーターとセンサーの値を見る</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">コンピューターなしでプログラムを実行する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">元のファームウェアに戻す</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="startrun.html">プログラムの作成と実行</a></li>
@@ -117,20 +118,20 @@
 </ul>
 <p class="caption"><span class="caption-text">Pybricksモジュール</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – プログラマブルHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3デバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXTデバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – 汎用I/Oデバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – タイミングとデータロギング</a></li>
-<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> – サウンドと画像</a></li>
-<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> -- プログラマブルハブ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> -- EV3デバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> -- NXTデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> -- 汎用I/Oデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> -- パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> -- 時間計測とデータロギング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> -- ロボティクス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> -- サウンドと画像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> -- メッセージング</a></li>
 </ul>
 <p class="caption"><span class="caption-text">補足解説</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="signaltypes.html">信号と単位</a></li>
-<li class="toctree-l1"><a class="reference internal" href="motors.html">モーターの詳細</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motors.html">モーターについてさらに詳しく</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Robot Educatorプログラム</span></p>
 <ul>
@@ -196,14 +197,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      
       <li>EV3 Brickを使う</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/startbrick.rst.txt" rel="nofollow"> ページソースを表示</a>
+            <a href="_sources/startbrick.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -216,48 +216,48 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="using-the-ev3-brick">
-<h1>EV3 Brickを使う<a class="headerlink" href="#using-the-ev3-brick" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ev3-brick">
+<h1>EV3 Brickを使う<a class="headerlink" href="#ev3-brick" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>EV3 Brickの電源が切れていることを確認してください。準備したmicroSDカードを、
-<a class="reference internal" href="#fig-sd"><span class="std std-numref">図4</span></a>のようにEV3 BrickのmicroSDカードスロットに挿入します。</p>
-<div class="figure align-center" id="id1">
+<a class="reference internal" href="#fig-sd"><span class="std std-numref">図 4</span></a> のようにEV3 BrickのmicroSDカードスロットに挿入します。</p>
+<div class="figure align-center" id="id5">
 <span id="fig-sd"></span><img alt="sd" src="_images/sd_label.png" style="width: 75%;" />
-<p class="caption"><span class="caption-number">図4 </span><span class="caption-text">書き込み済みのmicroSDカードをEV3 Brickに挿入する</span></p>
+<p class="caption"><span class="caption-number">図 4 </span><span class="caption-text">書き込み済みのmicroSDカードをEV3 Brickに挿入する</span></p>
 </div>
-<div class="section" id="turning-the-ev3-brick-on-and-off">
-<h2>EV3 Brickの電源オン/オフ<a class="headerlink" href="#turning-the-ev3-brick-on-and-off" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2>EV3 Brickの電源オン/オフ<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>中央の濃いグレーのボタンを押して、EV3 Brickの電源を入れます。</p>
 <p>起動には数分かかることがあります。起動中、EV3 Brickのステータスライトが
 オレンジ色に点滅し、EV3の画面に大量のテキストが表示されます。
 ステータスライトが緑色になれば、EV3 Brickは使用できる状態です。</p>
 <p>EV3 Brickの電源を切るには、戻るボタンでシャットダウンメニューを開き、
-中央ボタンで<em>Power Off</em>を選択します(<a class="reference internal" href="#fig-onoff"><span class="std std-numref">図5</span></a>)。</p>
-<div class="figure align-center" id="id2">
+中央ボタンで <em>Power Off</em> を選択します（ <a class="reference internal" href="#fig-onoff"><span class="std std-numref">図 5</span></a> ）。</p>
+<div class="figure align-center" id="id6">
 <span id="fig-onoff"></span><img alt="onoff" src="_images/onoff_label.png" style="width: 65%;" />
-<p class="caption"><span class="caption-number">図5 </span><span class="caption-text">EV3 Brickの電源を切る</span></p>
+<p class="caption"><span class="caption-number">図 5 </span><span class="caption-text">EV3 Brickの電源を切る</span></p>
 </div>
 </div>
-<div class="section" id="viewing-motor-and-sensor-values">
-<h2>モーターとセンサーの値を見る<a class="headerlink" href="#viewing-motor-and-sensor-values" title="Permalink to this headline">¶</a></h2>
-<p>プログラムを実行していないときは、<a class="reference internal" href="#fig-devicebrowser"><span class="std std-numref">図6</span></a>のように
+<div class="section" id="id2">
+<h2>モーターとセンサーの値を見る<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>プログラムを実行していないときは、 <a class="reference internal" href="#fig-devicebrowser"><span class="std std-numref">図 6</span></a> のように
 device browserでモーターとセンサーの値を確認できます。</p>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id7">
 <span id="fig-devicebrowser"></span><img alt="devicebrowser" src="_images/devicebrowser_label.png" style="width: 100%;" />
-<p class="caption"><span class="caption-number">図6 </span><span class="caption-text">モーターとセンサーの値を見る</span></p>
+<p class="caption"><span class="caption-number">図 6 </span><span class="caption-text">モーターとセンサーの値を見る</span></p>
 </div>
 </div>
-<div class="section" id="running-a-program-without-a-computer">
-<h2>コンピューターなしでプログラムを実行する<a class="headerlink" href="#running-a-program-without-a-computer" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>コンピューターなしでプログラムを実行する<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>以前にダウンロードしたプログラムは、EV3 Brickから直接実行できます。</p>
-<p>EV3画面の<em>file browser</em>でプログラムを見つけ、中央ボタンを押すと、
-<a class="reference internal" href="#fig-manualrun"><span class="std std-numref">図7</span></a>のようにプログラムが起動します。</p>
-<div class="figure align-center" id="id4">
+<p>EV3画面の <em>file browser</em> でプログラムを見つけ、中央ボタンを押すと、
+<a class="reference internal" href="#fig-manualrun"><span class="std std-numref">図 7</span></a> のようにプログラムが起動します。</p>
+<div class="figure align-center" id="id8">
 <span id="fig-manualrun"></span><img alt="manualrun" src="_images/manualrun_label.png" style="width: 100%;" />
-<p class="caption"><span class="caption-number">図7 </span><span class="caption-text">EV3 Brickのボタンを使ってプログラムを起動する</span></p>
+<p class="caption"><span class="caption-number">図 7 </span><span class="caption-text">EV3 Brickのボタンを使ってプログラムを起動する</span></p>
 </div>
 </div>
-<div class="section" id="going-back-to-the-original-firmware">
-<h2>元のファームウェアに戻す<a class="headerlink" href="#going-back-to-the-original-firmware" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>元のファームウェアに戻す<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>いつでもLEGO®ファームウェアとLEGOプログラムに戻すことができます。
 手順は次のとおりです。</p>
 <ol class="arabic simple">
@@ -277,10 +277,10 @@ device browserでモーターとセンサーの値を確認できます。</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="startrun.html" class="btn btn-neutral float-right" title="Creating and running programs" accesskey="n" rel="next">次へ <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="startrun.html" class="btn btn-neutral float-right" title="プログラムの作成と実行" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="startinstall.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 前へ</a>
+        <a href="startinstall.html" class="btn btn-neutral float-left" title="インストール" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -289,12 +289,12 @@ device browserでモーターとセンサーの値を確認できます。</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 The LEGO Group. All rights reserved.
+        &copy; Copyright 2018-2020 The Pybricks Authors
 
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group.</div>
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
 
 
 </footer>

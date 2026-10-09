@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>モーターについてさらに詳しく &mdash; ev3-micropython 2.0.0 ドキュメント</title>
+  <title>モーターについてさらに詳しく &mdash; ev3-micropython 2.0.0.post2 ドキュメント</title>
   
 
   
@@ -23,8 +23,8 @@
       <script type="text/javascript">
           var DOCUMENTATION_OPTIONS = {
               URL_ROOT:'./',
-              VERSION:'2.0.0',
-              LANGUAGE:'None',
+              VERSION:'2.0.0.post2',
+              LANGUAGE:'ja',
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
@@ -34,6 +34,7 @@
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="_static/contentui.js"></script>
     
@@ -45,10 +46,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Basic Movement" href="examples/robot_educator_basic.html" />
-    <link rel="prev" title="Signals and Units" href="signaltypes.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="基本的な動き" href="examples/robot_educator_basic.html" />
+    <link rel="prev" title="信号と単位" href="signaltypes.html" />
     <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css">
 
 </head>
@@ -69,7 +70,7 @@
 
           
             
-            <img src="_static/lego-education-logo-small.png" class="logo" alt="Logo"/>
+            <img src="_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -77,7 +78,7 @@
             
             
               <div class="version">
-                2.0.0
+                2.0.0.post2
               </div>
             
           
@@ -85,7 +86,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="ドキュメントを検索" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -104,28 +105,28 @@
               <p class="caption"><span class="caption-text">はじめに</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="startinstall.html">インストール</a></li>
-<li class="toctree-l1"><a class="reference internal" href="startbrick.html">EV3ブロックを使う</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startbrick.html">EV3 Brickを使う</a></li>
 <li class="toctree-l1"><a class="reference internal" href="startrun.html">プログラムの作成と実行</a></li>
 <li class="toctree-l1"><a class="reference internal" href="startlinux.html">EV3の高度な機能を使う</a></li>
-<li class="toctree-l1"><a class="reference internal" href="startupgrade.html">v1.0からv2.0へアップグレード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startupgrade.html">v1.0からv2.0へのアップグレード</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Pybricksモジュール</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – プログラマブルハブ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3デバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXTデバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – 汎用I/Oデバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – タイミングとデータロギング</a></li>
-<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> – サウンドと画像</a></li>
-<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> -- プログラマブルハブ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> -- EV3デバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> -- NXTデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> -- 汎用I/Oデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> -- パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> -- 時間計測とデータロギング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> -- ロボティクス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> -- サウンドと画像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> -- メッセージング</a></li>
 </ul>
 <p class="caption"><span class="caption-text">補足解説</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="signaltypes.html">信号と単位</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">モーターについてさらに詳しく</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#the-control-class">Controlクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#control">Controlクラス</a></li>
 </ul>
 </li>
 </ul>
@@ -145,7 +146,7 @@
 <p class="caption"><span class="caption-text">拡張セットプログラム</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="examples/elephant.html">エレファント</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/stair_climber.html">階段を上るロボット</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/stair_climber.html">ステアクライマー</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/tank_bot.html">タンクボット</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/znap.html">ズナップ</a></li>
 </ul>
@@ -193,14 +194,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      
       <li>モーターについてさらに詳しく</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/motors.rst.txt" rel="nofollow"> ページソースを表示</a>
+            <a href="_sources/motors.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -213,15 +213,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="more-about-motors">
-<h1>モーターについてさらに詳しく<a class="headerlink" href="#more-about-motors" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="the-control-class">
-<span id="control"></span><h2>Controlクラス<a class="headerlink" href="#the-control-class" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="id1">
+<h1>モーターについてさらに詳しく<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="control">
+<span id="id2"></span><h2>Controlクラス<a class="headerlink" href="#control" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Motor</span></code> クラスはPID制御を使って、指示した目標角度を正確に追従します。
-同様に、<code class="docutils literal notranslate"><span class="pre">DriveBase</span></code> クラスはこのようなコントローラーを2つ使用します。
+同様に、 <code class="docutils literal notranslate"><span class="pre">DriveBase</span></code> クラスはこのようなコントローラーを2つ使用します。
 1つは方位を制御し、もう1つは走行距離を制御します。</p>
-<p>制御の設定は、次の属性で変更できます。これらは後述する
-<code class="docutils literal notranslate"><span class="pre">Control</span></code> クラスのインスタンスです。</p>
+<p>制御の設定は、次の属性で変更できます。これらは後述する <code class="docutils literal notranslate"><span class="pre">Control</span></code>
+クラスのインスタンスです。</p>
 <blockquote>
 <div><ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">Motor.control</span></code></li>
@@ -231,29 +231,31 @@
 </div></blockquote>
 <p>設定はコントローラーが停止しているときにのみ変更できます。たとえば、
 プログラムの冒頭で設定を行えます。また、先に <code class="docutils literal notranslate"><span class="pre">stop()</span></code> を呼び出して
-<code class="docutils literal notranslate"><span class="pre">Motor</span></code> や <code class="docutils literal notranslate"><span class="pre">DriveBase</span></code> を停止してから、
-設定を変更することもできます。</p>
+<code class="docutils literal notranslate"><span class="pre">Motor</span></code> や <code class="docutils literal notranslate"><span class="pre">DriveBase</span></code> を停止してから、設定を変更することも
+できます。</p>
 <dl class="class">
 <dt id="pybricks._common.Control">
-<em class="property">class </em><code class="descname">Control</code><a class="headerlink" href="#pybricks._common.Control" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Control</code><a class="headerlink" href="#pybricks._common.Control" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>PIDコントローラーとその設定を操作するクラス。</p>
 <dl class="data">
 <dt id="pybricks._common.Control.scale">
-<code class="descname">scale</code><a class="headerlink" href="#pybricks._common.Control.scale" title="Permalink to this definition">¶</a></dt>
+<code class="descname">scale</code><a class="headerlink" href="#pybricks._common.Control.scale" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>制御対象の整数変数と物理出力との間のスケーリング係数。
-たとえば、単一のモーターの場合、これは回転1度あたりのエンコーダーパルス数です。</p>
+たとえば、単一のモーターの場合、これは回転1度あたりの
+エンコーダーパルス数です。</p>
 </dd></dl>
 
 <p class="rubric">状態</p>
 <dl class="method">
 <dt id="pybricks._common.Control.done">
-<code class="descname">done</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks._common.Control.done" title="Permalink to this definition">¶</a></dt>
+<code class="descname">done</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks._common.Control.done" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>進行中のコマンドまたは動作が完了したかどうかを確認します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">コマンドが完了していれば <code class="docutils literal notranslate"><span class="pre">True</span></code> 、そうでなければ <code class="docutils literal notranslate"><span class="pre">False</span></code> 。</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">コマンドが完了していれば <code class="docutils literal notranslate"><span class="pre">True</span></code> 、そうでなければ
+<code class="docutils literal notranslate"><span class="pre">False</span></code> 。</td>
 </tr>
 <tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">bool</td>
 </tr>
@@ -263,7 +265,7 @@
 
 <dl class="method">
 <dt id="pybricks._common.Control.stalled">
-<code class="descname">stalled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks._common.Control.stalled" title="Permalink to this definition">¶</a></dt>
+<code class="descname">stalled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks._common.Control.stalled" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>コントローラーが現在ストールしているかどうかを確認します。</p>
 <p>最大の駆動信号を与えても目標速度または目標位置に到達できない場合に、
 コントローラーはストールしているとみなされます。</p>
@@ -271,7 +273,8 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">コントローラーがストールしていれば <code class="docutils literal notranslate"><span class="pre">True</span></code> 、そうでなければ <code class="docutils literal notranslate"><span class="pre">False</span></code> 。</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">コントローラーがストールしていれば <code class="docutils literal notranslate"><span class="pre">True</span></code> 、
+そうでなければ <code class="docutils literal notranslate"><span class="pre">False</span></code> 。</td>
 </tr>
 <tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">bool</td>
 </tr>
@@ -282,17 +285,17 @@
 <p class="rubric">設定</p>
 <dl class="method">
 <dt id="pybricks._common.Control.limits">
-<code class="descname">limits</code><span class="sig-paren">(</span><em>speed</em>, <em>acceleration</em>, <em>actuation</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks._common.Control.limits" title="Permalink to this definition">¶</a></dt>
+<code class="descname">limits</code><span class="sig-paren">(</span><em>speed</em>, <em>acceleration</em>, <em>actuation</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks._common.Control.limits" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>最大速度、加速度、駆動出力を設定します。</p>
 <p>引数が指定されない場合は、現在の値を返します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>speed</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">rotational speed: deg/s</span></a> or <a class="reference internal" href="signaltypes.html#linspeed"><span class="std std-ref">speed: mm/s</span></a>) – 最大速度。すべての速度コマンドはこの値に制限されます。</li>
-<li><strong>acceleration</strong> (<a class="reference internal" href="signaltypes.html#acceleration"><span class="std std-ref">rotational acceleration: deg/s/s</span></a> or <a class="reference internal" href="signaltypes.html#linacceleration"><span class="std std-ref">linear acceleration: mm/s/s</span></a>) – 最大加速度。</li>
-<li><strong>actuation</strong> (<a class="reference internal" href="signaltypes.html#percentage"><span class="std std-ref">percentage: %</span></a>) – 絶対最大値に対する割合で表した最大駆動出力。</li>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>speed</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">回転速度: deg/s</span></a> or <a class="reference internal" href="signaltypes.html#linspeed"><span class="std std-ref">速度: mm/s</span></a>) -- 最大速度。すべての速度コマンドはこの値に制限されます。</li>
+<li><strong>acceleration</strong> (<a class="reference internal" href="signaltypes.html#acceleration"><span class="std std-ref">回転加速度: deg/s/s</span></a> or <a class="reference internal" href="signaltypes.html#linacceleration"><span class="std std-ref">直線加速度: mm/s/s</span></a>) -- 最大加速度。</li>
+<li><strong>actuation</strong> (<a class="reference internal" href="signaltypes.html#percentage"><span class="std std-ref">割合: %</span></a>) -- 絶対最大値に対する割合で表した最大駆動出力。</li>
 </ul>
 </td>
 </tr>
@@ -302,21 +305,24 @@
 
 <dl class="method">
 <dt id="pybricks._common.Control.pid">
-<code class="descname">pid</code><span class="sig-paren">(</span><em>kp</em>, <em>ki</em>, <em>kd</em>, <em>integral_range</em>, <em>integral_rate</em>, <em>feed_forward</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks._common.Control.pid" title="Permalink to this definition">¶</a></dt>
+<code class="descname">pid</code><span class="sig-paren">(</span><em>kp</em>, <em>ki</em>, <em>kd</em>, <em>integral_range</em>, <em>integral_rate</em>, <em>feed_forward</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks._common.Control.pid" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>位置制御と速度制御のPID値を取得または設定します。</p>
 <p>引数が指定されない場合は、現在の値を返します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>kp</strong> (<em>int</em>) – 比例位置（または積分速度）制御定数。</li>
-<li><strong>ki</strong> (<em>int</em>) – 積分位置制御定数。</li>
-<li><strong>kd</strong> (<em>int</em>) – 微分位置（または比例速度）制御定数。</li>
-<li><strong>integral_range</strong> (<a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">angle: deg</span></a> or <a class="reference internal" href="signaltypes.html#distance"><span class="std std-ref">distance: mm</span></a>) – 積分制御の誤差が累積される、目標角度または目標距離の周辺領域。</li>
-<li><strong>integral_rate</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">rotational speed: deg/s</span></a> or <a class="reference internal" href="signaltypes.html#linspeed"><span class="std std-ref">speed: mm/s</span></a>) – 誤差積分が増加できる最大レート。</li>
-<li><strong>feed_forward</strong> (<a class="reference internal" href="signaltypes.html#percentage"><span class="std std-ref">percentage: %</span></a>) – 速度リファレンスの方向に、PIDフィードバック信号へ加えるフィードフォワード信号。
-この値は絶対最大デューティサイクルに対する割合で表されます。</li>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>kp</strong> (<em>int</em>) -- 比例位置（または積分速度）制御定数。</li>
+<li><strong>ki</strong> (<em>int</em>) -- 積分位置制御定数。</li>
+<li><strong>kd</strong> (<em>int</em>) -- 微分位置（または比例速度）制御定数。</li>
+<li><strong>integral_range</strong> (<a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">角度: deg</span></a> or <a class="reference internal" href="signaltypes.html#distance"><span class="std std-ref">距離: mm</span></a>) -- 積分制御の
+誤差が累積される、目標角度または目標距離の周辺領域。</li>
+<li><strong>integral_rate</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">回転速度: deg/s</span></a> or <a class="reference internal" href="signaltypes.html#linspeed"><span class="std std-ref">速度: mm/s</span></a>) -- 誤差積分が
+増加できる最大レート。</li>
+<li><strong>feed_forward</strong> (<a class="reference internal" href="signaltypes.html#percentage"><span class="std std-ref">割合: %</span></a>) -- 速度リファレンスの方向に、PIDフィードバック信号へ加える
+フィードフォワード信号。この値は絶対最大デューティサイクルに
+対する割合で表されます。</li>
 </ul>
 </td>
 </tr>
@@ -326,16 +332,18 @@
 
 <dl class="method">
 <dt id="pybricks._common.Control.target_tolerances">
-<code class="descname">target_tolerances</code><span class="sig-paren">(</span><em>speed</em>, <em>position</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks._common.Control.target_tolerances" title="Permalink to this definition">¶</a></dt>
+<code class="descname">target_tolerances</code><span class="sig-paren">(</span><em>speed</em>, <em>position</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks._common.Control.target_tolerances" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>動作が完了したとみなす許容誤差を取得または設定します。</p>
 <p>引数が指定されない場合は、現在の値を返します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>speed</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">rotational speed: deg/s</span></a> or <a class="reference internal" href="signaltypes.html#linspeed"><span class="std std-ref">speed: mm/s</span></a>) – 動作が完了したとみなされるまでの、ゼロ速度からの許容偏差。</li>
-<li><strong>position</strong> (<a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">angle: deg</span></a> or <a class="reference internal" href="signaltypes.html#distance"><span class="std std-ref">distance: mm</span></a>) – 動作が完了したとみなされるまでの、目標からの許容偏差。</li>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>speed</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">回転速度: deg/s</span></a> or <a class="reference internal" href="signaltypes.html#linspeed"><span class="std std-ref">速度: mm/s</span></a>) -- 動作が完了したと
+みなされるまでの、ゼロ速度からの許容偏差。</li>
+<li><strong>position</strong> (<a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">角度: deg</span></a> or <a class="reference internal" href="signaltypes.html#distance"><span class="std std-ref">距離: mm</span></a>) -- 動作が完了したと
+みなされるまでの、目標からの許容偏差。</li>
 </ul>
 </td>
 </tr>
@@ -345,18 +353,19 @@
 
 <dl class="method">
 <dt id="pybricks._common.Control.stall_tolerances">
-<code class="descname">stall_tolerances</code><span class="sig-paren">(</span><em>speed</em>, <em>time</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks._common.Control.stall_tolerances" title="Permalink to this definition">¶</a></dt>
+<code class="descname">stall_tolerances</code><span class="sig-paren">(</span><em>speed</em>, <em>time</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks._common.Control.stall_tolerances" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>ストール判定の許容値を取得または設定します。</p>
 <p>引数が指定されない場合は、現在の値を返します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">引数:</th><td class="field-body"><ul class="first last simple">
-<li><strong>speed</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">rotational speed: deg/s</span></a> or <a class="reference internal" href="signaltypes.html#linspeed"><span class="std std-ref">speed: mm/s</span></a>) – 最大の駆動出力でも <code class="docutils literal notranslate"><span class="pre">time</span></code> の間この速度に達しない場合、
-ストールしたとみなされます。</li>
-<li><strong>time</strong> (<a class="reference internal" href="signaltypes.html#id1"><span class="std std-ref">time: ms</span></a>) – コントローラーがこの最小 <code class="docutils literal notranslate"><span class="pre">speed</span></code> を下回り続けた場合に、
-ストールしたとみなすまでの時間。</li>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>speed</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">回転速度: deg/s</span></a> or <a class="reference internal" href="signaltypes.html#linspeed"><span class="std std-ref">速度: mm/s</span></a>) -- 最大の駆動出力でも
+<code class="docutils literal notranslate"><span class="pre">time</span></code> の間この速度に達しない場合、ストールしたと
+みなされます。</li>
+<li><strong>time</strong> (<a class="reference internal" href="signaltypes.html#time"><span class="std std-ref">時間: ms</span></a>) -- コントローラーがこの最小 <code class="docutils literal notranslate"><span class="pre">speed</span></code> を
+下回り続けた場合に、ストールしたとみなすまでの時間。</li>
 </ul>
 </td>
 </tr>
@@ -377,10 +386,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="examples/robot_educator_basic.html" class="btn btn-neutral float-right" title="Basic Movement" accesskey="n" rel="next">次へ <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="examples/robot_educator_basic.html" class="btn btn-neutral float-right" title="基本的な動き" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="signaltypes.html" class="btn btn-neutral float-left" title="Signals and Units" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 前へ</a>
+        <a href="signaltypes.html" class="btn btn-neutral float-left" title="信号と単位" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -389,12 +398,12 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 The LEGO Group. All rights reserved.
+        &copy; Copyright 2018-2020 The Pybricks Authors
 
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group.</div>
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
 
 
 </footer>

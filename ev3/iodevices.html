@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>iodevices – 汎用I/Oデバイス &mdash; ev3-micropython 2.0.0 ドキュメント</title>
+  <title>iodevices -- 汎用I/Oデバイス &mdash; ev3-micropython 2.0.0.post2 ドキュメント</title>
   
 
   
@@ -23,8 +23,8 @@
       <script type="text/javascript">
           var DOCUMENTATION_OPTIONS = {
               URL_ROOT:'./',
-              VERSION:'2.0.0',
-              LANGUAGE:'None',
+              VERSION:'2.0.0.post2',
+              LANGUAGE:'ja',
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
@@ -34,6 +34,7 @@
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="_static/contentui.js"></script>
     
@@ -45,10 +46,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="parameters – Parameters and Constants" href="parameters.html" />
-    <link rel="prev" title="nxtdevices – NXT Devices" href="nxtdevices.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="parameters -- パラメータと定数" href="parameters.html" />
+    <link rel="prev" title="nxtdevices -- NXTデバイス" href="nxtdevices.html" />
     <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css">
 
 </head>
@@ -69,7 +70,7 @@
 
           
             
-            <img src="_static/lego-education-logo-small.png" class="logo" alt="Logo"/>
+            <img src="_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -77,7 +78,7 @@
             
             
               <div class="version">
-                2.0.0
+                2.0.0.post2
               </div>
             
           
@@ -85,7 +86,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="ドキュメントを検索" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -104,34 +105,34 @@
               <p class="caption"><span class="caption-text">はじめに</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="startinstall.html">インストール</a></li>
-<li class="toctree-l1"><a class="reference internal" href="startbrick.html">EV3ブロックを使う</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startbrick.html">EV3 Brickを使う</a></li>
 <li class="toctree-l1"><a class="reference internal" href="startrun.html">プログラムの作成と実行</a></li>
-<li class="toctree-l1"><a class="reference internal" href="startlinux.html">EV3の高度な機能へのアクセス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startlinux.html">EV3の高度な機能を使う</a></li>
 <li class="toctree-l1"><a class="reference internal" href="startupgrade.html">v1.0からv2.0へのアップグレード</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Pybricksモジュール</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – プログラマブルハブ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3デバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXTデバイス</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – 汎用I/Oデバイス</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#lump-device">LUMPデバイス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#analog-sensor">アナログセンサー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#i2c-device">I2Cデバイス</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#i2c-addresses">I2Cアドレス</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#advanced-i2c-commands">高度なI2Cコマンド</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> -- プログラマブルハブ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> -- EV3デバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> -- NXTデバイス</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> -- 汎用I/Oデバイス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#lump">LUMPデバイス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">アナログセンサー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#i2c">I2Cデバイス</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#i2caddress">I2Cアドレス</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">高度なI2Cコマンド</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#uart-device">UARTデバイス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dc-motor">DCモーター</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ev3dev-sensors">Ev3devセンサー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uart">UARTデバイス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dc">DCモーター</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ev3dev">Ev3devセンサー</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – 時間計測とデータロギング</a></li>
-<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> – サウンドと画像</a></li>
-<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> -- パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> -- 時間計測とデータロギング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> -- ロボティクス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> -- サウンドと画像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> -- メッセージング</a></li>
 </ul>
 <p class="caption"><span class="caption-text">補足解説</span></p>
 <ul>
@@ -147,7 +148,7 @@
 <p class="caption"><span class="caption-text">コアセットプログラム</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="examples/color_sorter.html">カラーソーター</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/robot_arm.html">ロボットアームH25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_arm.html">ロボットアーム H25</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/puppy.html">パピー</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/gyro_boy.html">ジャイロボーイ</a></li>
 </ul>
@@ -202,13 +203,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – 汎用I/Oデバイス</li>
+      <li><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> -- 汎用I/Oデバイス</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/iodevices.rst.txt" rel="nofollow"> ページソースを表示</a>
+            <a href="_sources/iodevices.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -222,44 +223,45 @@
            <div itemprop="articleBody">
             
   <div class="section" id="module-pybricks.iodevices">
-<span id="iodevices-generic-i-o-devices"></span><h1><a class="reference internal" href="#module-pybricks.iodevices" title="pybricks.iodevices"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code></a> – 汎用I/Oデバイス<a class="headerlink" href="#module-pybricks.iodevices" title="Permalink to this headline">¶</a></h1>
+<span id="iodevices-i-o"></span><h1><a class="reference internal" href="#module-pybricks.iodevices" title="pybricks.iodevices"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code></a> -- 汎用I/Oデバイス<a class="headerlink" href="#module-pybricks.iodevices" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>汎用入出力デバイス。</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">このモジュールには、非公式のモーター、センサー、その他のカスタム電子回路と
-やり取りするためのクラスがあります。カスタム電子回路や非公式デバイスを接続するのは、
-自分が何をしているか理解している場合のみにしてください。注意して作業してください。</p>
+<p class="first admonition-title">注釈</p>
+<p class="last">このモジュールには、非公式のモーター、センサー、その他のカスタム
+電子回路とやり取りするためのクラスがあります。カスタム電子回路や
+非公式デバイスを接続するのは、自分が何をしているか理解している場合
+のみにしてください。注意して作業してください。</p>
 </div>
-<div class="section" id="lump-device">
-<h2>LUMPデバイス<a class="headerlink" href="#lump-device" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="lump">
+<h2>LUMPデバイス<a class="headerlink" href="#lump" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="figure">
 <img alt="_images/sensor_rj12_green.png" src="_images/sensor_rj12_green.png" style="width: 25%;" />
 </div>
 <dl class="class">
 <dt id="pybricks.iodevices.LUMPDevice">
-<em class="property">class </em><code class="descname">LUMPDevice</code><span class="sig-paren">(</span><em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.LUMPDevice" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">LUMPDevice</code><span class="sig-paren">(</span><em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.LUMPDevice" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>LEGO UART Messaging Protocolを使用するデバイス。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – デバイスが接続されているポート。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) -- デバイスが接続されているポート。</td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="pybricks.iodevices.LUMPDevice.read">
-<code class="descname">read</code><span class="sig-paren">(</span><em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.LUMPDevice.read" title="Permalink to this definition">¶</a></dt>
+<code class="descname">read</code><span class="sig-paren">(</span><em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.LUMPDevice.read" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>指定したモードから値を読み取ります。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mode</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>) – デバイスのモード。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>mode</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>) -- デバイスのモード。</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">センサーから読み取られた値。</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">センサーから読み取られた値。</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -267,16 +269,16 @@
 
 <dl class="method">
 <dt id="pybricks.iodevices.LUMPDevice.write">
-<code class="descname">write</code><span class="sig-paren">(</span><em>mode</em>, <em>values</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.LUMPDevice.write" title="Permalink to this definition">¶</a></dt>
+<code class="descname">write</code><span class="sig-paren">(</span><em>mode</em>, <em>values</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.LUMPDevice.write" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>センサーに値を書き込みます。対応しているセンサーとモードは
 限られています。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>mode</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>) – デバイスのモード。</li>
-<li><strong>data</strong> (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>) – 書き込む値。</li>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mode</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>) -- デバイスのモード。</li>
+<li><strong>data</strong> (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>) -- 書き込む値。</li>
 </ul>
 </td>
 </tr>
@@ -287,34 +289,34 @@
 </dd></dl>
 
 </div>
-<div class="section" id="analog-sensor">
-<h2>アナログセンサー<a class="headerlink" href="#analog-sensor" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2>アナログセンサー<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="figure">
 <img alt="_images/sensor_rj12_brown.png" src="_images/sensor_rj12_brown.png" style="width: 25%;" />
 </div>
 <dl class="class">
 <dt id="pybricks.iodevices.AnalogSensor">
-<em class="property">class </em><code class="descname">AnalogSensor</code><span class="sig-paren">(</span><em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.AnalogSensor" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">AnalogSensor</code><span class="sig-paren">(</span><em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.AnalogSensor" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>汎用またはカスタムのアナログセンサー。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – センサーが接続されているポート。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) -- センサーが接続されているポート。</td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="pybricks.iodevices.AnalogSensor.voltage">
-<code class="descname">voltage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.AnalogSensor.voltage" title="Permalink to this definition">¶</a></dt>
+<code class="descname">voltage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.AnalogSensor.voltage" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>アナログ電圧を測定します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">アナログ電圧。</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">アナログ電圧。</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="signaltypes.html#voltage"><span class="std std-ref">電圧: mV</span></a></td>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><a class="reference internal" href="signaltypes.html#voltage"><span class="std std-ref">電圧: mV</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -322,7 +324,7 @@
 
 <dl class="method">
 <dt id="pybricks.iodevices.AnalogSensor.resistance">
-<code class="descname">resistance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.AnalogSensor.resistance" title="Permalink to this definition">¶</a></dt>
+<code class="descname">resistance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.AnalogSensor.resistance" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>抵抗を測定します。</p>
 <p>この値は、アナログデバイスが抵抗器やサーミスタなどのパッシブ負荷
 である場合にのみ意味を持ちます。</p>
@@ -330,9 +332,9 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">アナログデバイスの抵抗値。</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">アナログデバイスの抵抗値。</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="signaltypes.html#voltage"><span class="std std-ref">抵抗: Ω</span></a></td>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><a class="reference internal" href="signaltypes.html#voltage"><span class="std std-ref">resistance: Ω</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -340,46 +342,46 @@
 
 <dl class="method">
 <dt id="pybricks.iodevices.AnalogSensor.active">
-<code class="descname">active</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.AnalogSensor.active" title="Permalink to this definition">¶</a></dt>
+<code class="descname">active</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.AnalogSensor.active" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>センサーをアクティブモードに設定します。これによりセンサーポートの
 ピン5が <cite>high</cite> になります。</p>
 <p>一部のアナログセンサーでは、スイッチの制御に使用されます。
-たとえば、NXTライトセンサーをカスタムアナログセンサーとして使用する場合、
-このメソッドはライトを点灯します。それ以降、 <code class="docutils literal notranslate"><span class="pre">voltage()</span></code> は
+たとえば、NXTライトセンサーをカスタムアナログセンサーとして使用する
+場合、このメソッドはライトを点灯します。それ以降、 <code class="docutils literal notranslate"><span class="pre">voltage()</span></code> は
 反射光の生の値を返します。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pybricks.iodevices.AnalogSensor.passive">
-<code class="descname">passive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.AnalogSensor.passive" title="Permalink to this definition">¶</a></dt>
+<code class="descname">passive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.AnalogSensor.passive" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>センサーをパッシブモードに設定します。これによりセンサーポートの
 ピン5が <cite>low</cite> になります。</p>
 <p>一部のアナログセンサーでは、スイッチの制御に使用されます。
-たとえば、NXTライトセンサーをカスタムアナログセンサーとして使用する場合、
-このメソッドはライトを消灯します。それ以降、 <code class="docutils literal notranslate"><span class="pre">voltage()</span></code> は
+たとえば、NXTライトセンサーをカスタムアナログセンサーとして使用する
+場合、このメソッドはライトを消灯します。それ以降、 <code class="docutils literal notranslate"><span class="pre">voltage()</span></code> は
 環境光の生の値を返します。</p>
 </dd></dl>
 
 </dd></dl>
 
 </div>
-<div class="section" id="i2c-device">
-<h2>I2Cデバイス<a class="headerlink" href="#i2c-device" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="i2c">
+<h2>I2Cデバイス<a class="headerlink" href="#i2c" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="figure">
 <img alt="_images/sensor_rj12_bluegreen.png" src="_images/sensor_rj12_bluegreen.png" style="width: 25%;" />
 </div>
 <dl class="class">
 <dt id="pybricks.iodevices.I2CDevice">
-<em class="property">class </em><code class="descname">I2CDevice</code><span class="sig-paren">(</span><em>port</em>, <em>address</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.I2CDevice" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">I2CDevice</code><span class="sig-paren">(</span><em>port</em>, <em>address</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.I2CDevice" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>汎用またはカスタムのI2Cデバイス。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – デバイスが接続されているポート。</li>
-<li><strong>address</strong> (<em>int</em>) – クライアントデバイスのI2Cアドレス。
-<a class="reference internal" href="#i2caddress"><span class="std std-ref">I2Cアドレス</span></a> を参照してください。</li>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) -- デバイスが接続されているポート。</li>
+<li><strong>address</strong> (<em>int</em>) -- クライアントデバイスのI2Cアドレス。
+<a class="reference internal" href="#i2caddress"><span class="std std-ref">I2C Addresses</span></a> を参照してください。</li>
 </ul>
 </td>
 </tr>
@@ -387,23 +389,23 @@
 </table>
 <dl class="method">
 <dt id="pybricks.iodevices.I2CDevice.read">
-<code class="descname">read</code><span class="sig-paren">(</span><em>reg</em>, <em>length=1</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.I2CDevice.read" title="Permalink to this definition">¶</a></dt>
+<code class="descname">read</code><span class="sig-paren">(</span><em>reg</em>, <em>length=1</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.I2CDevice.read" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>指定したレジスタからバイトを読み取ります。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>reg</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>) – 読み取りを開始するレジスタ: 0–255または
-0x00–0xFF。</li>
-<li><strong>length</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>) – 読み取るバイト数。</li>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>reg</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>) -- 読み取りを開始するレジスタ:
+0--255または0x00--0xFF。</li>
+<li><strong>length</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>) -- 読み取るバイト数。</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">デバイスから返されたバイト。</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">デバイスから返されたバイト。</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><code class="docutils literal notranslate"><span class="pre">bytes</span></code></p>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last"><code class="docutils literal notranslate"><span class="pre">bytes</span></code></p>
 </td>
 </tr>
 </tbody>
@@ -412,16 +414,16 @@
 
 <dl class="method">
 <dt id="pybricks.iodevices.I2CDevice.write">
-<code class="descname">write</code><span class="sig-paren">(</span><em>reg</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.I2CDevice.write" title="Permalink to this definition">¶</a></dt>
+<code class="descname">write</code><span class="sig-paren">(</span><em>reg</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.I2CDevice.write" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>指定したレジスタからバイトを書き込みます。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>reg</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>) – 書き込みを開始するレジスタ: 0–255または
-0x00–0xFF。</li>
-<li><strong>data</strong> (<code class="docutils literal notranslate"><span class="pre">bytes</span></code>) – 書き込むバイト。</li>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>reg</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>) -- 書き込みを開始するレジスタ:
+0--255または0x00--0xFF。</li>
+<li><strong>data</strong> (<code class="docutils literal notranslate"><span class="pre">bytes</span></code>) -- 書き込むバイト。</li>
 </ul>
 </td>
 </tr>
@@ -435,9 +437,9 @@
 <div class="toggle-content docutils container">
 <p><strong>例: I2Cデバイスへの読み取りと書き込み</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env pybricks-micropython</span>
-<span class="kn">from</span> <span class="nn">pybricks.hubs</span> <span class="kn">import</span> <span class="n">EV3Brick</span>
-<span class="kn">from</span> <span class="nn">pybricks.iodevices</span> <span class="kn">import</span> <span class="n">I2CDevice</span>
-<span class="kn">from</span> <span class="nn">pybricks.parameters</span> <span class="kn">import</span> <span class="n">Port</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">EV3Brick</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.iodevices</span><span class="w"> </span><span class="kn">import</span> <span class="n">I2CDevice</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Port</span>
 
 <span class="c1"># EV3を初期化</span>
 <span class="n">ev3</span> <span class="o">=</span> <span class="n">EV3Brick</span><span class="p">()</span>
@@ -449,7 +451,7 @@
 <span class="c1"># このデバイスでは、Who Am I</span>
 <span class="c1"># レジスタ (0x0F) を読み取ると期待値 211 が返る。</span>
 <span class="k">if</span> <span class="mi">211</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">device</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mh">0x0F</span><span class="p">):</span>
-    <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span><span class="s2">&quot;Device is not attached&quot;</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span><span class="s2">"Device is not attached"</span><span class="p">)</span>
 
 <span class="c1"># データを書き込むには、1バイト以上の</span>
 <span class="c1"># bytesオブジェクトを作成する。例:</span>
@@ -460,25 +462,25 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="i2c-addresses">
-<span id="i2caddress"></span><h3>I2Cアドレス<a class="headerlink" href="#i2c-addresses" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="i2caddress">
+<span id="id2"></span><h3>I2Cアドレス<a class="headerlink" href="#i2caddress" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>I2Cアドレスは7ビットの値です。ただし、LEGO互換センサーを製造する
 ほとんどのベンダーは、ドキュメントで8ビットのアドレスを提供しています。
 これらのアドレスを使用するには、1ビットシフトする必要があります。
 たとえば、記載されているアドレスが <code class="docutils literal notranslate"><span class="pre">0xD2</span></code> の場合は、
 <code class="docutils literal notranslate"><span class="pre">address</span> <span class="pre">=</span> <span class="pre">0xD2</span> <span class="pre">&gt;&gt;</span> <span class="pre">1</span></code> とできます。</p>
 </div>
-<div class="section" id="advanced-i2c-commands">
-<h3>高度なI2Cコマンド<a class="headerlink" href="#advanced-i2c-commands" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>高度なI2Cコマンド<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>一部の基本的なI2Cデバイスは、レジスタ引数やデータを必要としません。
 以下の例に示すように、この動作を実現できます。</p>
 <p class="toggle-header"><strong>例を表示/非表示</strong></p>
 <div class="toggle-content docutils container">
 <p><strong>例: 高度なI2C読み取りと書き込みのテクニック</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env pybricks-micropython</span>
-<span class="kn">from</span> <span class="nn">pybricks.hubs</span> <span class="kn">import</span> <span class="n">EV3Brick</span>
-<span class="kn">from</span> <span class="nn">pybricks.iodevices</span> <span class="kn">import</span> <span class="n">I2CDevice</span>
-<span class="kn">from</span> <span class="nn">pybricks.parameters</span> <span class="kn">import</span> <span class="n">Port</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">EV3Brick</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.iodevices</span><span class="w"> </span><span class="kn">import</span> <span class="n">I2CDevice</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Port</span>
 
 <span class="c1"># EV3を初期化</span>
 <span class="n">ev3</span> <span class="o">=</span> <span class="n">EV3Brick</span><span class="p">()</span>
@@ -500,10 +502,10 @@
 <span class="c1"># 以下のようにレジスタやデータを省略できる:</span>
 
 <span class="c1"># 書き込みの推奨方法:</span>
-<span class="n">device</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">reg</span><span class="o">=</span><span class="mh">0x22</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x08</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">device</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">reg</span><span class="o">=</span><span class="mh">0x22</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="sa">b</span><span class="s1">'</span><span class="se">\x08</span><span class="s1">'</span><span class="p">)</span>
 
 <span class="c1"># 特定のレジスタを指定せずに1バイト書き込む:</span>
-<span class="n">device</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">reg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x08</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">device</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">reg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="sa">b</span><span class="s1">'</span><span class="se">\x08</span><span class="s1">'</span><span class="p">)</span>
 
 <span class="c1"># 特定のレジスタに0バイト書き込む:</span>
 <span class="n">device</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">reg</span><span class="o">=</span><span class="mh">0x08</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
@@ -514,31 +516,31 @@
 </div>
 </div>
 <p><strong>その他の技術資料</strong></p>
-<p> <code class="docutils literal notranslate"><span class="pre">I2CDevice</span></code> クラスのメソッドは、Linux SMBusドライバーの関数を呼び出します。
-内部でどのコマンドが呼び出されているかは、
+<p><code class="docutils literal notranslate"><span class="pre">I2CDevice</span></code> クラスのメソッドは、Linux SMBusドライバーの関数を
+呼び出します。内部でどのコマンドが呼び出されているかは、
 <a class="reference external" href="https://github.com/pybricks/pybricks-micropython">Pybricksのソースコード</a> を確認してください。
 MicroPythonを使わずにI2Cを使用する詳細については、
 <a class="reference external" href="http://docs.ev3dev.org/projects/lego-linux-drivers/en/ev3dev-stretch/i2c.html">ev3dev I2C</a> のページを参照してください。</p>
 </div>
 </div>
-<div class="section" id="uart-device">
-<h2>UARTデバイス<a class="headerlink" href="#uart-device" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="uart">
+<h2>UARTデバイス<a class="headerlink" href="#uart" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="figure">
 <img alt="_images/sensor_rj12_gray.png" src="_images/sensor_rj12_gray.png" style="width: 25%;" />
 </div>
 <dl class="class">
 <dt id="pybricks.iodevices.UARTDevice">
-<em class="property">class </em><code class="descname">UARTDevice</code><span class="sig-paren">(</span><em>port</em>, <em>baudrate</em>, <em>timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.UARTDevice" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">UARTDevice</code><span class="sig-paren">(</span><em>port</em>, <em>baudrate</em>, <em>timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.UARTDevice" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>汎用UARTデバイス。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – デバイスが接続されているポート。</li>
-<li><strong>baudrate</strong> (<em>int</em>) – UARTデバイスのボーレート。</li>
-<li><strong>timeout</strong> (<a class="reference internal" href="signaltypes.html#id1"><span class="std std-ref">時間: ms</span></a>) – <a class="reference internal" href="#pybricks.iodevices.UARTDevice.read" title="pybricks.iodevices.UARTDevice.read"><code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code></a> の実行中に待機する時間。 <code class="docutils literal notranslate"><span class="pre">None</span></code> を選択すると、
-無期限に待機します。</li>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) -- デバイスが接続されているポート。</li>
+<li><strong>baudrate</strong> (<em>int</em>) -- UARTデバイスのボーレート。</li>
+<li><strong>timeout</strong> (<a class="reference internal" href="signaltypes.html#time"><span class="std std-ref">時間: ms</span></a>) -- <a class="reference internal" href="#pybricks.iodevices.UARTDevice.read" title="pybricks.iodevices.UARTDevice.read"><code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code></a> が諦めるまでの
+待ち時間。 <code class="docutils literal notranslate"><span class="pre">None</span></code> を選ぶと、永久に待ち続けます。</li>
 </ul>
 </td>
 </tr>
@@ -546,20 +548,19 @@ MicroPythonを使わずにI2Cを使用する詳細については、
 </table>
 <dl class="method">
 <dt id="pybricks.iodevices.UARTDevice.read">
-<code class="descname">read</code><span class="sig-paren">(</span><em>length=1</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.UARTDevice.read" title="Permalink to this definition">¶</a></dt>
+<code class="descname">read</code><span class="sig-paren">(</span><em>length=1</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.UARTDevice.read" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>バッファから指定したバイト数を読み取ります。</p>
-<p>要求したバイト数が受信されるまで、プログラムは待機します。
- <code class="docutils literal notranslate"><span class="pre">timeout</span></code> より長くかかる場合は、 <code class="docutils literal notranslate"><span class="pre">ETIMEDOUT</span></code>
-例外が発生します。</p>
+<p>プログラムは要求したバイト数を受信するまで待機します。 <code class="docutils literal notranslate"><span class="pre">timeout</span></code>
+を超えると、 <code class="docutils literal notranslate"><span class="pre">ETIMEDOUT</span></code> 例外が発生します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>length</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>) – 読み取るバイト数。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>length</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>) -- 読み取るバイト数。</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">デバイスから返されたバイト。</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">デバイスから返されたバイト。</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">bytes</span></code></td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">bytes</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -567,15 +568,15 @@ MicroPythonを使わずにI2Cを使用する詳細については、
 
 <dl class="method">
 <dt id="pybricks.iodevices.UARTDevice.read_all">
-<code class="descname">read_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.UARTDevice.read_all" title="Permalink to this definition">¶</a></dt>
-<dd><p>バッファ内のすべてのバイトを読み取ります。</p>
+<code class="descname">read_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.UARTDevice.read_all" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>バッファからすべてのバイトを読み取ります。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">デバイスから返されたバイト。</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">デバイスから返されたバイト。</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">bytes</span></code></td>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">bytes</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -583,13 +584,13 @@ MicroPythonを使わずにI2Cを使用する詳細については、
 
 <dl class="method">
 <dt id="pybricks.iodevices.UARTDevice.write">
-<code class="descname">write</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.UARTDevice.write" title="Permalink to this definition">¶</a></dt>
+<code class="descname">write</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.UARTDevice.write" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>バイトを書き込みます。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<code class="docutils literal notranslate"><span class="pre">bytes</span></code>) – 書き込むバイト。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>data</strong> (<code class="docutils literal notranslate"><span class="pre">bytes</span></code>) -- 書き込むバイト。</td>
 </tr>
 </tbody>
 </table>
@@ -597,15 +598,15 @@ MicroPythonを使わずにI2Cを使用する詳細については、
 
 <dl class="method">
 <dt id="pybricks.iodevices.UARTDevice.waiting">
-<code class="descname">waiting</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.UARTDevice.waiting" title="Permalink to this definition">¶</a></dt>
+<code class="descname">waiting</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.UARTDevice.waiting" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>読み取り待ちのバイト数を取得します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">バッファ内のバイト数。</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">バッファ内のバイト数。</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">int</span></code></td>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">int</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -613,7 +614,7 @@ MicroPythonを使わずにI2Cを使用する詳細については、
 
 <dl class="method">
 <dt id="pybricks.iodevices.UARTDevice.clear">
-<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.UARTDevice.clear" title="Permalink to this definition">¶</a></dt>
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.UARTDevice.clear" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>バッファを空にします。</p>
 </dd></dl>
 
@@ -623,10 +624,10 @@ MicroPythonを使わずにI2Cを使用する詳細については、
 <div class="toggle-content docutils container">
 <p><strong>例: UARTデバイスへの読み取りと書き込み</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env pybricks-micropython</span>
-<span class="kn">from</span> <span class="nn">pybricks.hubs</span> <span class="kn">import</span> <span class="n">EV3Brick</span>
-<span class="kn">from</span> <span class="nn">pybricks.iodevices</span> <span class="kn">import</span> <span class="n">UARTDevice</span>
-<span class="kn">from</span> <span class="nn">pybricks.parameters</span> <span class="kn">import</span> <span class="n">Port</span>
-<span class="kn">from</span> <span class="nn">pybricks.media.ev3dev</span> <span class="kn">import</span> <span class="n">SoundFile</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">EV3Brick</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.iodevices</span><span class="w"> </span><span class="kn">import</span> <span class="n">UARTDevice</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Port</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.media.ev3dev</span><span class="w"> </span><span class="kn">import</span> <span class="n">SoundFile</span>
 
 <span class="c1"># EV3を初期化</span>
 <span class="n">ev3</span> <span class="o">=</span> <span class="n">EV3Brick</span><span class="p">()</span>
@@ -635,14 +636,14 @@ MicroPythonを使わずにI2Cを使用する詳細については、
 <span class="n">ser</span> <span class="o">=</span> <span class="n">UARTDevice</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">S2</span><span class="p">,</span> <span class="n">baudrate</span><span class="o">=</span><span class="mi">115200</span><span class="p">)</span>
 
 <span class="c1"># データを書き込む</span>
-<span class="n">ser</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">Hello, world!</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">ser</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s1">'</span><span class="se">\r\n</span><span class="s1">Hello, world!</span><span class="se">\r\n</span><span class="s1">'</span><span class="p">)</span>
 
 <span class="c1"># データの受信を待つ間、サウンドを再生する</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">HELLO</span><span class="p">)</span>
     <span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">GOOD</span><span class="p">)</span>
     <span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">MORNING</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bytes waiting to be read:&quot;</span><span class="p">,</span> <span class="n">ser</span><span class="o">.</span><span class="n">waiting</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Bytes waiting to be read:"</span><span class="p">,</span> <span class="n">ser</span><span class="o">.</span><span class="n">waiting</span><span class="p">())</span>
 
 <span class="c1"># サウンド再生中に受信したすべてのデータを読み取る</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">ser</span><span class="o">.</span><span class="n">read_all</span><span class="p">()</span>
@@ -651,8 +652,8 @@ MicroPythonを使わずにI2Cを使用する詳細については、
 </div>
 </div>
 </div>
-<div class="section" id="dc-motor">
-<h2>DCモーター<a class="headerlink" href="#dc-motor" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dc">
+<h2>DCモーター<a class="headerlink" href="#dc" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="figure">
 <img alt="_images/rcxmotor.png" src="_images/rcxmotor.png" style="width: 40%;" />
 </div>
@@ -665,10 +666,10 @@ MicroPythonを使わずにI2Cを使用する詳細については、
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – モーターが接続されているポート。</li>
-<li><strong>positive_direction</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Direction" title="pybricks.parameters.Direction"><em>Direction</em></a>) – 正のデューティサイクル値を与えたときに
-モーターが回転する方向。</li>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) -- モーターが接続されているポート。</li>
+<li><strong>positive_direction</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Direction" title="pybricks.parameters.Direction"><em>Direction</em></a>) -- 正のデューティサイクル値を
+与えたときにモーターが回転する方向。</li>
 </ul>
 </td>
 </tr>
@@ -677,12 +678,13 @@ MicroPythonを使わずにI2Cを使用する詳細については、
 <dl class="method">
 <dt>
 <code class="descname">dc</code><span class="sig-paren">(</span><em>duty</em><span class="sig-paren">)</span></dt>
-<dd><p>指定したデューティサイクル（「パワー」とも呼ばれます）でモーターを回転させます。</p>
+<dd><p>指定したデューティサイクル（「パワー」とも呼ばれます）で
+モーターを回転させます。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>duty</strong> (<a class="reference internal" href="signaltypes.html#percentage"><span class="std std-ref">割合: %</span></a>) – デューティサイクル（-100.0から100）。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>duty</strong> (<a class="reference internal" href="signaltypes.html#percentage"><span class="std std-ref">割合: %</span></a>) -- デューティサイクル（-100.0から100）。</td>
 </tr>
 </tbody>
 </table>
@@ -698,66 +700,66 @@ MicroPythonを使わずにI2Cを使用する詳細については、
 </dd></dl>
 
 </div>
-<div class="section" id="ev3dev-sensors">
-<h2>Ev3devセンサー<a class="headerlink" href="#ev3dev-sensors" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ev3dev">
+<h2>Ev3devセンサー<a class="headerlink" href="#ev3dev" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="figure">
 <img alt="_images/sensor_ev3dev.png" src="_images/sensor_ev3dev.png" style="width: 70%;" />
 </div>
 <p>EV3 MicroPythonはev3devの上に構築されているため、このドキュメントに
 記載されていないセンサーでもサポートされている場合があります。その場合、
- <code class="docutils literal notranslate"><span class="pre">Ev3devSensor</span></code> クラスで使用できます。これは上記のカスタムデバイスクラスを
-使うより簡単で高速です。</p>
-<p> <code class="docutils literal notranslate"><span class="pre">Ev3devSensor</span></code> クラスを使用できるかどうかを確認するには:</p>
+<code class="docutils literal notranslate"><span class="pre">Ev3devSensor</span></code> クラスで使用できます。これは上記のカスタムデバイス
+クラスを使うより簡単で高速です。</p>
+<p><code class="docutils literal notranslate"><span class="pre">Ev3devSensor</span></code> クラスを使用できるかどうかを確認するには:</p>
 <blockquote>
 <div><ul class="simple">
 <li>センサーをEV3ブロックに接続します。</li>
 <li>EV3ブロックのメインメニューを開きます。</li>
-<li> <cite>Device Browser</cite> を選択し、次に <cite>Sensors</cite> を選択します。</li>
+<li><cite>Device Browser</cite> を選択し、次に <cite>Sensors</cite> を選択します。</li>
 <li>センサーが表示されれば、使用できます。</li>
 </ul>
 </div></blockquote>
 <p>メニューからセンサーを選択し、 <cite>set mode</cite> を選択します。そのセンサーで
-利用可能なすべてのモードが表示されます。これらのモード名を、後述の <code class="docutils literal notranslate"><span class="pre">mode</span></code>
-設定で使用できます。</p>
-<p>対応デバイスと各モードの詳細については、
-<a class="reference external" href="http://docs.ev3dev.org/projects/lego-linux-drivers/en/ev3dev-stretch/sensors.html">ev3dev sensors</a> のページを参照してください。</p>
+利用可能なすべてのモードが表示されます。これらのモード名を、後述の
+<code class="docutils literal notranslate"><span class="pre">mode</span></code> 設定で使用できます。</p>
+<p>対応デバイスと各モードの詳細については、 <a class="reference external" href="http://docs.ev3dev.org/projects/lego-linux-drivers/en/ev3dev-stretch/sensors.html">ev3dev sensors</a> のページを
+参照してください。</p>
 <dl class="class">
 <dt id="pybricks.iodevices.Ev3devSensor">
-<em class="property">class </em><code class="descname">Ev3devSensor</code><span class="sig-paren">(</span><em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.Ev3devSensor" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Ev3devSensor</code><span class="sig-paren">(</span><em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.Ev3devSensor" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>ev3dev互換センサーの値を読み取ります。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – デバイスが接続されているポート。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) -- デバイスが接続されているポート。</td>
 </tr>
 </tbody>
 </table>
 <dl class="attribute">
 <dt id="pybricks.iodevices.Ev3devSensor.sensor_index">
-<code class="descname">sensor_index</code><a class="headerlink" href="#pybricks.iodevices.Ev3devSensor.sensor_index" title="Permalink to this definition">¶</a></dt>
+<code class="descname">sensor_index</code><a class="headerlink" href="#pybricks.iodevices.Ev3devSensor.sensor_index" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>ev3dev sysfs <a class="reference external" href="http://docs.ev3dev.org/projects/lego-linux-drivers/en/ev3dev-stretch/sensors.html#the-lego-sensor-subsytem">lego-sensor</a> クラスのインデックス。</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="pybricks.iodevices.Ev3devSensor.port_index">
-<code class="descname">port_index</code><a class="headerlink" href="#pybricks.iodevices.Ev3devSensor.port_index" title="Permalink to this definition">¶</a></dt>
+<code class="descname">port_index</code><a class="headerlink" href="#pybricks.iodevices.Ev3devSensor.port_index" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>ev3dev sysfs <a class="reference external" href="http://docs.ev3dev.org/projects/lego-linux-drivers/en/ev3dev-stretch/ports.html#the-lego-port-subsystem">lego-port</a> クラスのインデックス。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pybricks.iodevices.Ev3devSensor.read">
-<code class="descname">read</code><span class="sig-paren">(</span><em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.Ev3devSensor.read" title="Permalink to this definition">¶</a></dt>
+<code class="descname">read</code><span class="sig-paren">(</span><em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.iodevices.Ev3devSensor.read" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>指定したモードで値を読み取ります。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mode</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) – <a class="reference external" href="http://docs.ev3dev.org/projects/lego-linux-drivers/en/ev3dev-stretch/sensor_data.html">モード名</a>。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>mode</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) -- <a class="reference external" href="http://docs.ev3dev.org/projects/lego-linux-drivers/en/ev3dev-stretch/sensor_data.html">Mode name</a>。</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">センサーから読み取られた値。</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">センサーから読み取られた値。</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -768,12 +770,13 @@ MicroPythonを使わずにI2Cを使用する詳細については、
 <p class="toggle-header"><strong>例を表示/非表示: Ev3devSensorクラスで値を読み取る</strong></p>
 <div class="toggle-content docutils container">
 <p><strong>例</strong></p>
-<p>この例では、LEGO MINDSTORMS EV3カラーセンサーをraw RGBモードで使用します。
-これにより、補正されていない赤、緑、青の反射値が得られます。</p>
+<p>この例では、LEGO MINDSTORMS EV3カラーセンサーをraw RGBモードで
+使用します。これにより、補正されていない赤、緑、青の反射値が
+得られます。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env pybricks-micropython</span>
-<span class="kn">from</span> <span class="nn">pybricks.parameters</span> <span class="kn">import</span> <span class="n">Port</span>
-<span class="kn">from</span> <span class="nn">pybricks.tools</span> <span class="kn">import</span> <span class="n">wait</span>
-<span class="kn">from</span> <span class="nn">pybricks.iodevices</span> <span class="kn">import</span> <span class="n">Ev3devSensor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Port</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.iodevices</span><span class="w"> </span><span class="kn">import</span> <span class="n">Ev3devSensor</span>
 
 <span class="c1"># Ev3devSensorを初期化する。</span>
 <span class="c1"># この例では</span>
@@ -782,10 +785,10 @@ MicroPythonを使わずにI2Cを使用する詳細については、
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="c1"># 生のRGB値を読み取る</span>
-    <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;RGB-RAW&#39;</span><span class="p">)</span>
+    <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">'RGB-RAW'</span><span class="p">)</span>
 
     <span class="c1"># 結果を表示</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;R: </span><span class="si">{0}</span><span class="se">\t</span><span class="s1"> G: </span><span class="si">{1}</span><span class="se">\t</span><span class="s1"> B: </span><span class="si">{2}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'R: </span><span class="si">{0}</span><span class="se">\t</span><span class="s1"> G: </span><span class="si">{1}</span><span class="se">\t</span><span class="s1"> B: </span><span class="si">{2}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
 
     <span class="c1"># 待機</span>
     <span class="n">wait</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
@@ -795,39 +798,39 @@ MicroPythonを使わずにI2Cを使用する詳細については、
 <p class="toggle-header"><strong>例を表示/非表示: Ev3devSensorクラスの拡張</strong></p>
 <div class="toggle-content docutils container">
 <p><strong>例</strong></p>
-<p>この例では、このデバイスのLinuxシステムフォルダにある追加機能にアクセスして、
- <code class="docutils literal notranslate"><span class="pre">Ev3devSensor</span></code> クラスを拡張する方法を示します。</p>
+<p>この例では、このデバイスのLinuxシステムフォルダにある追加機能に
+アクセスして、 <code class="docutils literal notranslate"><span class="pre">Ev3devSensor</span></code> クラスを拡張する方法を示します。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env pybricks-micropython</span>
-<span class="kn">from</span> <span class="nn">pybricks.parameters</span> <span class="kn">import</span> <span class="n">Port</span>
-<span class="kn">from</span> <span class="nn">pybricks.iodevices</span> <span class="kn">import</span> <span class="n">Ev3devSensor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Port</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.iodevices</span><span class="w"> </span><span class="kn">import</span> <span class="n">Ev3devSensor</span>
 
 
-<span class="k">class</span> <span class="nc">MySensor</span><span class="p">(</span><span class="n">Ev3devSensor</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Example of extending the Ev3devSensor class.&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MySensor</span><span class="p">(</span><span class="n">Ev3devSensor</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Example of extending the Ev3devSensor class."""</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Initialize the sensor.&quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Initialize the sensor."""</span>
 
         <span class="c1"># 親クラスを初期化する。</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
 
         <span class="c1"># sysfsパスを取得する。</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/sys/class/lego-sensor/sensor&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sensor_index</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="s1">'/sys/class/lego-sensor/sensor'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sensor_index</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">get_modes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get a list of mode strings so we don&#39;t have to look them up.&quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_modes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Get a list of mode strings so we don't have to look them up."""</span>
 
         <span class="c1"># modesファイルのパス。</span>
-        <span class="n">modes_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">+</span> <span class="s1">&#39;/modes&#39;</span>
+        <span class="n">modes_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">+</span> <span class="s1">'/modes'</span>
 
         <span class="c1"># modesファイルを開く。</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">modes_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">m</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">modes_path</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">m</span><span class="p">:</span>
 
             <span class="c1"># 内容を読み取る。</span>
             <span class="n">contents</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
             <span class="c1"># 改行文字を取り除き、空白文字で分割する。</span>
-            <span class="k">return</span> <span class="n">contents</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">contents</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span>
 
 
 <span class="c1"># センサーを初期化</span>
@@ -857,10 +860,10 @@ MicroPythonを使わずにI2Cを使用する詳細については、
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="parameters.html" class="btn btn-neutral float-right" title="parameters – Parameters and Constants" accesskey="n" rel="next">次へ <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="parameters.html" class="btn btn-neutral float-right" title="parameters -- パラメータと定数" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="nxtdevices.html" class="btn btn-neutral float-left" title="nxtdevices – NXT Devices" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 前へ</a>
+        <a href="nxtdevices.html" class="btn btn-neutral float-left" title="nxtdevices -- NXTデバイス" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -869,12 +872,12 @@ MicroPythonを使わずにI2Cを使用する詳細については、
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 The LEGO Group. All rights reserved.
+        &copy; Copyright 2018-2020 The Pybricks Authors
 
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group.</div>
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
 
 
 </footer>

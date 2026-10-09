@@ -1,14 +1,13 @@
-Stair Climber
-=============
+ステアクライマー
+=================
 
-This example project makes the Stair Climber climb a number of steps that you
-select using the EV3 Brick buttons. For more details, be sure to check out the
-comments in the program below.
+このサンプルプロジェクトでは、ステアクライマーがEV3 Brickのボタンで選んだ
+段数の階段を上ります。詳しくは、下のプログラム内のコメントも確認してください。
 
-.. rubric:: Building instructions
+.. rubric:: 組み立て説明書
 
-Click `here`_ to find all building instructions for the Expansion Set Models,
-or use `this link`_ to go to the Stair Climber directly.
+`こちら <here_>`_ から拡張セットモデルの組み立て説明書をすべて確認できます。また、
+`このリンク <this link_>`_ からステアクライマーの説明書に直接アクセスできます。
 
 
 .. _fig_stair_climber:
@@ -17,9 +16,9 @@ or use `this link`_ to go to the Stair Climber directly.
    :width: 80 %
    :align: center
 
-   Puppy
+   パピー
 
-.. rubric:: Example program
+.. rubric:: サンプルプログラム
 
 .. literalinclude::
    ../../../pybricks-projects/official_models/ev3/education_expansion/stair_climber/main.py

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>EV3の高度な機能を使う &mdash; ev3-micropython 2.0.0 documentation</title>
+  <title>EV3の高度な機能を使う &mdash; ev3-micropython 2.0.0.post2 ドキュメント</title>
   
 
   
@@ -23,8 +23,8 @@
       <script type="text/javascript">
           var DOCUMENTATION_OPTIONS = {
               URL_ROOT:'./',
-              VERSION:'2.0.0',
-              LANGUAGE:'None',
+              VERSION:'2.0.0.post2',
+              LANGUAGE:'ja',
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
@@ -34,6 +34,7 @@
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="_static/contentui.js"></script>
     
@@ -45,10 +46,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Upgrading from v1.0 to v2.0" href="startupgrade.html" />
-    <link rel="prev" title="Creating and running programs" href="startrun.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="v1.0からv2.0へのアップグレード" href="startupgrade.html" />
+    <link rel="prev" title="プログラムの作成と実行" href="startrun.html" />
     <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css">
 
 </head>
@@ -69,7 +70,7 @@
 
           
             
-            <img src="_static/lego-education-logo-small.png" class="logo" alt="Logo"/>
+            <img src="_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -77,7 +78,7 @@
             
             
               <div class="version">
-                2.0.0
+                2.0.0.post2
               </div>
             
           
@@ -85,7 +86,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="ドキュメントを検索" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -107,28 +108,28 @@
 <li class="toctree-l1"><a class="reference internal" href="startbrick.html">EV3 Brickを使う</a></li>
 <li class="toctree-l1"><a class="reference internal" href="startrun.html">プログラムの作成と実行</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">EV3の高度な機能を使う</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#the-linux-command-line">Linuxコマンドライン</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#changing-the-ev3-brick-name">EV3 Brickの名前を変更する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linux">Linuxコマンドライン</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ev3-brick">EV3 Brickの名前を変更する</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="startupgrade.html">v1.0からv2.0へのアップグレード</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Pybricksモジュール</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – プログラマブルHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3デバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXTデバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – 汎用I/Oデバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – タイミングとデータロギング</a></li>
-<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> – サウンドと画像</a></li>
-<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> -- プログラマブルハブ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> -- EV3デバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> -- NXTデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> -- 汎用I/Oデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> -- パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> -- 時間計測とデータロギング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> -- ロボティクス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> -- サウンドと画像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> -- メッセージング</a></li>
 </ul>
 <p class="caption"><span class="caption-text">補足解説</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="signaltypes.html">信号と単位</a></li>
-<li class="toctree-l1"><a class="reference internal" href="motors.html">モーターの詳細</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motors.html">モーターについてさらに詳しく</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Robot Educatorプログラム</span></p>
 <ul>
@@ -194,14 +195,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      
       <li>EV3の高度な機能を使う</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/startlinux.rst.txt" rel="nofollow"> ページソースを表示</a>
+            <a href="_sources/startlinux.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -214,74 +214,77 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="accessing-advanced-ev3-features">
-<h1>EV3の高度な機能を使う<a class="headerlink" href="#accessing-advanced-ev3-features" title="Permalink to this headline">¶</a></h1>
-<p>MicroPythonは、Linuxの一種である<a class="reference external" href="https://www.ev3dev.org/">ev3dev</a>上で動作します。
-Linuxは<em>オペレーティングシステム</em>です。(他によく知られたオペレーティング
-システムにはMicrosoft WindowsやApple macOSがあります。)つまり、EV3は
-ずっと小さいだけで、ほとんど本物のコンピューターのようなものです。</p>
+  <div class="section" id="ev3">
+<h1>EV3の高度な機能を使う<a class="headerlink" href="#ev3" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>MicroPythonは、Linuxの一種である <a class="reference external" href="https://www.ev3dev.org/">ev3dev</a> 上で動作します。
+Linuxは <em>オペレーティングシステム</em> です。(他によく知られた
+オペレーティングシステムにはMicrosoft WindowsやApple macOSがあります。)
+つまり、EV3はずっと小さいだけで、ほとんど本物のコンピューターの
+ようなものです。</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">注釈</p>
 <p><em>MicroPythonプログラムを書くだけなら、以降のセクションは
 読み飛ばしても構いません。</em></p>
 <p class="last">以降のセクションは、MicroPythonを超えて、Linuxやev3devに組み込まれた
 他の機能に触れてみたい好奇心旺盛なユーザー向けです。</p>
 </div>
-<div class="section" id="the-linux-command-line">
-<h2>Linuxコマンドライン<a class="headerlink" href="#the-linux-command-line" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="linux">
+<h2>Linuxコマンドライン<a class="headerlink" href="#linux" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>EV3 Brickは本物のコンピューターにかなり近いものですが、大きな画面と
-マウスで操作するわけではありません。代わりに<em>コマンドライン</em>を使って
-ファイルやプログラムにアクセスします。<em>ターミナル</em>とも呼ばれます。</p>
-<p><a class="reference internal" href="#fig-terminal"><span class="std std-numref">図16</span></a>の手順に従ってコマンドラインに
+マウスで操作するわけではありません。代わりに <em>コマンドライン</em> を使って
+ファイルやプログラムにアクセスします。 <em>ターミナル</em> とも呼ばれます。</p>
+<p><a class="reference internal" href="#fig-terminal"><span class="std std-numref">図 16</span></a> の手順に従ってコマンドラインに
 アクセスします。これでコマンドを入力してEnterを押すことで実行できます。</p>
-<div class="figure align-center" id="id2">
+<div class="figure align-center" id="id1">
 <span id="fig-terminal"></span><img alt="files" src="_images/terminal_label.png" style="width: 100%;" />
-<p class="caption"><span class="caption-number">図16 </span><span class="caption-text">Linuxコマンドラインを開いて<code class="docutils literal notranslate"><span class="pre">ls</span></code>コマンドを実行する。</span></p>
+<p class="caption"><span class="caption-number">図 16 </span><span class="caption-text">Linuxコマンドラインを開いて <code class="docutils literal notranslate"><span class="pre">ls</span></code> コマンドを実行する。</span></p>
 </div>
 <p><strong>基本的なコマンドを実行する</strong></p>
 <p>たとえば、次のコマンドを入力してEnterを押すと:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
-<p>現在のフォルダーの内容が表示されます。<a class="reference internal" href="#fig-terminal"><span class="std std-numref">図16</span></a>が
-その結果です。さきほど実行した<code class="docutils literal notranslate"><span class="pre">getting_started</span></code>プロジェクトの
+<p>現在のフォルダーの内容が表示されます。 <a class="reference internal" href="#fig-terminal"><span class="std std-numref">図 16</span></a> が
+その結果です。さきほど実行した <code class="docutils literal notranslate"><span class="pre">getting_started</span></code> プロジェクトの
 フォルダーが一覧に表示されています。</p>
 <p>次のコマンドを入力してEnterを押すと:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">exit</span>
 </pre></div>
 </div>
 <p>コマンドラインが閉じます。または、
-<a class="reference internal" href="#fig-terminal"><span class="std std-numref">図16</span></a>に示したゴミ箱アイコンをクリックします。</p>
+<a class="reference internal" href="#fig-terminal"><span class="std std-numref">図 16</span></a> に示したゴミ箱アイコンをクリックします。</p>
 <p>コマンドラインのテキストは、選択してから
-<code class="docutils literal notranslate"><span class="pre">ctrl</span></code> <code class="docutils literal notranslate"><span class="pre">shift</span></code> <code class="docutils literal notranslate"><span class="pre">c</span></code>を押すとコピーできます。
-<code class="docutils literal notranslate"><span class="pre">ctrl</span></code> <code class="docutils literal notranslate"><span class="pre">shift</span></code> <code class="docutils literal notranslate"><span class="pre">v</span></code>で
+<code class="docutils literal notranslate"><span class="pre">ctrl</span></code> <code class="docutils literal notranslate"><span class="pre">shift</span></code> <code class="docutils literal notranslate"><span class="pre">c</span></code> を押すとコピーできます。
+<code class="docutils literal notranslate"><span class="pre">ctrl</span></code> <code class="docutils literal notranslate"><span class="pre">shift</span></code> <code class="docutils literal notranslate"><span class="pre">v</span></code> で
 コマンドラインにテキストを貼り付けられます。</p>
 <p><strong>管理者としてコマンドを実行する</strong></p>
-<p>一部のコマンドは実行にパスワードが必要です。新しいアプリをインストールするなど、
-コンピューターやタブレットでの管理作業と似ています。これらのコマンドは
+<p>一部のコマンドは実行にパスワードが必要です。新しいアプリを
+インストールするなど、コンピューターやタブレットでの管理作業と
+似ています。これらのコマンドは
 通常のコマンドと同じように動作しますが、前に
-<code class="docutils literal notranslate"><span class="pre">sudo</span></code>を付けます。</p>
-<p>練習として、次のコマンドを実行してEV3 Brickの電源を切ることができます。</p>
+<code class="docutils literal notranslate"><span class="pre">sudo</span></code> を付けます。</p>
+<p>練習として、次のコマンドを実行してEV3 Brickの電源を切ることができます:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">poweroff</span>
 </pre></div>
 </div>
-<p>パスワードを求められます。<code class="docutils literal notranslate"><span class="pre">maker</span></code>と入力して<code class="docutils literal notranslate"><span class="pre">Enter</span></code>を押します。</p>
+<p>パスワードを求められます。 <code class="docutils literal notranslate"><span class="pre">maker</span></code> と入力して <code class="docutils literal notranslate"><span class="pre">Enter</span></code> を押します。</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">自分が何をしているかわかっている場合にのみ、<code class="docutils literal notranslate"><span class="pre">sudo</span></code>を使ってコマンドを実行してください。</p>
+<p class="first admonition-title">警告</p>
+<p class="last">自分が何をしているかわかっている場合にのみ、 <code class="docutils literal notranslate"><span class="pre">sudo</span></code> を使って
+コマンドを実行してください。</p>
 </div>
 <p><strong>コマンドラインについてさらに学ぶ</strong></p>
 <p>コマンドラインと利用できる多くのコマンドについてさらに学ぶには、
 初心者にもやさしい無料の電子書籍
-<a class="reference external" href="http://linuxcommand.org/tlcl.php">The Linux Command Line</a>を読むことをおすすめします。</p>
-<p>ev3dev固有のヒントやコツについては、<a class="reference external" href="https://www.ev3dev.org/">ev3dev</a>の
+<a class="reference external" href="http://linuxcommand.org/tlcl.php">The Linux Command Line</a> を読むことをおすすめします。</p>
+<p>ev3dev固有のヒントやコツについては、 <a class="reference external" href="https://www.ev3dev.org/">ev3dev</a>
 Webサイトを参照してください。</p>
 </div>
-<div class="section" id="changing-the-ev3-brick-name">
-<span id="hostname"></span><h2>EV3 Brickの名前を変更する<a class="headerlink" href="#changing-the-ev3-brick-name" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ev3-brick">
+<span id="hostname"></span><h2>EV3 Brickの名前を変更する<a class="headerlink" href="#ev3-brick" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Visual Studio CodeでEV3を検索すると、すべてのEV3 Brickが
-名前の一覧で表示されます。デフォルトではすべてのEV3 Brickが<em>ev3dev</em>という
-名前です。以下の手順でその名前を変更できます。</p>
+名前の一覧で表示されます。デフォルトではすべてのEV3 Brickが <em>ev3dev</em>
+という名前です。以下の手順でその名前を変更できます。</p>
 <blockquote>
 <div><ol class="arabic">
 <li><p class="first">Visual Studio Codeを開き、いつもどおりEV3に接続します。</p>
@@ -289,9 +292,9 @@ Webサイトを参照してください。</p>
 <li><p class="first">上記の管理者としてコマンドを実行する手順を読みます。</p>
 </li>
 <li><p class="first">よい名前を考えます。この例では
-<code class="docutils literal notranslate"><span class="pre">autonomous-vehicle2</span></code>と名付けます。</p>
+<code class="docutils literal notranslate"><span class="pre">autonomous-vehicle2</span></code> と名付けます。</p>
 </li>
-<li><p class="first">次のコマンドを入力してEnterを押します。</p>
+<li><p class="first">次のコマンドを入力してEnterを押します:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">hostnamectl</span> <span class="nb">set</span><span class="o">-</span><span class="n">hostname</span> <span class="n">autonomous</span><span class="o">-</span><span class="n">vehicle2</span>
 </pre></div>
 </div>
@@ -302,8 +305,8 @@ Webサイトを参照してください。</p>
 </li>
 </ol>
 </div></blockquote>
-<p>EV3 Brickの名前に使えるのは、小文字の<code class="docutils literal notranslate"><span class="pre">a</span></code>から<code class="docutils literal notranslate"><span class="pre">z</span></code>、
-数字の<code class="docutils literal notranslate"><span class="pre">0</span></code>から<code class="docutils literal notranslate"><span class="pre">9</span></code>、ハイフンの<code class="docutils literal notranslate"><span class="pre">-</span></code>のみです。先頭は文字または
+<p>EV3 Brickの名前に使えるのは、小文字の <code class="docutils literal notranslate"><span class="pre">a</span></code> から <code class="docutils literal notranslate"><span class="pre">z</span></code> 、
+数字の <code class="docutils literal notranslate"><span class="pre">0</span></code> から <code class="docutils literal notranslate"><span class="pre">9</span></code> 、ハイフンの <code class="docutils literal notranslate"><span class="pre">-</span></code> のみです。先頭は文字または
 数字にする必要があります。スペースやその他の記号は使えません。</p>
 </div>
 </div>
@@ -316,10 +319,10 @@ Webサイトを参照してください。</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="startupgrade.html" class="btn btn-neutral float-right" title="Upgrading from v1.0 to v2.0" accesskey="n" rel="next">次へ <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="startupgrade.html" class="btn btn-neutral float-right" title="v1.0からv2.0へのアップグレード" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="startrun.html" class="btn btn-neutral float-left" title="Creating and running programs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 前へ</a>
+        <a href="startrun.html" class="btn btn-neutral float-left" title="プログラムの作成と実行" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -328,12 +331,12 @@ Webサイトを参照してください。</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 The LEGO Group. All rights reserved.
+        &copy; Copyright 2018-2020 The Pybricks Authors
 
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group.</div>
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
 
 
 </footer>

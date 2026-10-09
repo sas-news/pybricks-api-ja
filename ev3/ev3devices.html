@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ev3devices – EV3デバイス &mdash; ev3-micropython 2.0.0 documentation</title>
+  <title>ev3devices -- EV3デバイス &mdash; ev3-micropython 2.0.0.post2 ドキュメント</title>
   
 
   
@@ -23,8 +23,8 @@
       <script type="text/javascript">
           var DOCUMENTATION_OPTIONS = {
               URL_ROOT:'./',
-              VERSION:'2.0.0',
-              LANGUAGE:'None',
+              VERSION:'2.0.0.post2',
+              LANGUAGE:'ja',
               COLLAPSE_INDEX:false,
               FILE_SUFFIX:'.html',
               HAS_SOURCE:  true,
@@ -34,6 +34,7 @@
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="_static/contentui.js"></script>
     
@@ -45,10 +46,10 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="nxtdevices – NXT Devices" href="nxtdevices.html" />
-    <link rel="prev" title="hubs – Programmable Hubs" href="hubs.html" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="nxtdevices -- NXTデバイス" href="nxtdevices.html" />
+    <link rel="prev" title="hubs -- プログラマブルハブ" href="hubs.html" />
     <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css">
 
 </head>
@@ -69,7 +70,7 @@
 
           
             
-            <img src="_static/lego-education-logo-small.png" class="logo" alt="Logo"/>
+            <img src="_static/pybricks-logo-rtd.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -77,7 +78,7 @@
             
             
               <div class="version">
-                2.0.0
+                2.0.0.post2
               </div>
             
           
@@ -85,7 +86,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="ドキュメントを検索" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -104,30 +105,30 @@
               <p class="caption"><span class="caption-text">はじめに</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="startinstall.html">インストール</a></li>
-<li class="toctree-l1"><a class="reference internal" href="startbrick.html">EV3ブロックを使う</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startbrick.html">EV3 Brickを使う</a></li>
 <li class="toctree-l1"><a class="reference internal" href="startrun.html">プログラムの作成と実行</a></li>
 <li class="toctree-l1"><a class="reference internal" href="startlinux.html">EV3の高度な機能を使う</a></li>
 <li class="toctree-l1"><a class="reference internal" href="startupgrade.html">v1.0からv2.0へのアップグレード</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Pybricksモジュール</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – プログラマブルハブ</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3デバイス</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#motors">モーター</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#touch-sensor">タッチセンサー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#color-sensor">カラーセンサー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#infrared-sensor-and-beacon">赤外線センサーとビーコン</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ultrasonic-sensor">超音波センサー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#gyroscopic-sensor">ジャイロセンサー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> -- プログラマブルハブ</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> -- EV3デバイス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">モーター</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">タッチセンサー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">カラーセンサー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">赤外線センサーとビーコン</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">超音波センサー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">ジャイロセンサー</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXTデバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – 汎用I/Oデバイス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – パラメーターと定数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – タイミングとデータログ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – ロボティクス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> – サウンドと画像</a></li>
-<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – メッセージング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> -- NXTデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> -- 汎用I/Oデバイス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> -- パラメータと定数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> -- 時間計測とデータロギング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> -- ロボティクス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> -- サウンドと画像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> -- メッセージング</a></li>
 </ul>
 <p class="caption"><span class="caption-text">補足解説</span></p>
 <ul>
@@ -137,7 +138,7 @@
 <p class="caption"><span class="caption-text">Robot Educatorプログラム</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_basic.html">基本的な動き</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_ultrasonic.html">障害物の回避</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_ultrasonic.html">障害物回避</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_line.html">ライントレース</a></li>
 </ul>
 <p class="caption"><span class="caption-text">コアセットプログラム</span></p>
@@ -152,7 +153,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/elephant.html">エレファント</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/stair_climber.html">ステアクライマー</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/tank_bot.html">タンクボット</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/znap.html">Znap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/znap.html">ズナップ</a></li>
 </ul>
 
             
@@ -198,13 +199,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3デバイス</li>
+      <li><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> -- EV3デバイス</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/ev3devices.rst.txt" rel="nofollow"> ページソースを表示</a>
+            <a href="_sources/ev3devices.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -218,28 +219,32 @@
            <div itemprop="articleBody">
             
   <div class="section" id="module-pybricks.ev3devices">
-<span id="ev3devices-ev3-devices"></span><h1><a class="reference internal" href="#module-pybricks.ev3devices" title="pybricks.ev3devices"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code></a> – EV3デバイス<a class="headerlink" href="#module-pybricks.ev3devices" title="Permalink to this headline">¶</a></h1>
+<span id="ev3devices-ev3"></span><h1><a class="reference internal" href="#module-pybricks.ev3devices" title="pybricks.ev3devices"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code></a> -- EV3デバイス<a class="headerlink" href="#module-pybricks.ev3devices" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>LEGO® MINDSTORMS® EV3 のモーターとセンサー。</p>
-<div class="section" id="motors">
-<h2>モーター<a class="headerlink" href="#motors" title="Permalink to this headline">¶</a></h2>
-<div class="figure" id="id1">
+<div class="section" id="id1">
+<h2>モーター<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="figure" id="id7">
 <span id="fig-ev3motors"></span><img alt="_images/ev3motors_label.png" src="_images/ev3motors_label.png" style="width: 100%;" />
-<p class="caption"><span class="caption-number">図17 </span><span class="caption-text">EV3互換モーター。矢印はデフォルトの正の回転方向を示します。</span></p>
+<p class="caption"><span class="caption-number">図 17 </span><span class="caption-text">EV3互換モーター。矢印はデフォルトの正の回転方向を示します。</span></p>
 </div>
 <dl class="class">
 <dt id="pybricks.ev3devices.Motor">
-<em class="property">class </em><code class="descname">Motor</code><span class="sig-paren">(</span><em>port</em>, <em>positive_direction=Direction.CLOCKWISE</em>, <em>gears=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor" title="Permalink to this definition">¶</a></dt>
-<dd><p>内蔵回転センサー付きモーターを制御するための汎用クラス。</p>
-<table class="docutils field-list" frame="void" rules="none">
+<em class="property">class </em><code class="descname">Motor</code><span class="sig-paren">(</span><em>port</em>, <em>positive_direction=Direction.CLOCKWISE</em>, <em>gears=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
-<li><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – モーターを接続するポート。</li>
-<li><strong>positive_direction</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Direction" title="pybricks.parameters.Direction"><em>Direction</em></a>) – 正の速度値や角度を与えたときにモーターが回転する方向。</li>
-<li><strong>gears</strong> (<em>list</em>) – <p>モーターに連結されたギアのリスト。</p>
-<p>例えば <code class="docutils literal notranslate"><span class="pre">[12,</span> <span class="pre">36]</span></code> は歯数12と歯数36のギアからなるギア列を表します。<code class="docutils literal notranslate"><span class="pre">[[12,</span> <span class="pre">36],</span> <span class="pre">[20,</span> <span class="pre">16,</span> <span class="pre">40]]</span></code> のようにリストのリストを使うと複数のギア列を指定できます。</p>
-<p>ギア列を指定すると、すべてのモーターコマンドと設定は、得られるギア比を考慮して自動的に調整されます。モーターの回転方向はこれによって変わりません。</p>
+<li><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) -- モーターを接続するポート。</li>
+<li><strong>positive_direction</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Direction" title="pybricks.parameters.Direction"><em>Direction</em></a>) -- 正の速度値や角度を与えたときに
+モーターが回転する方向。</li>
+<li><strong>gears</strong> (<em>list</em>) -- <p>モーターに連結されたギアのリスト。</p>
+<p>例えば <code class="docutils literal notranslate"><span class="pre">[12,</span> <span class="pre">36]</span></code> は歯数12と歯数36のギアからなるギア列を
+表します。 <code class="docutils literal notranslate"><span class="pre">[[12,</span> <span class="pre">36],</span> <span class="pre">[20,</span> <span class="pre">16,</span> <span class="pre">40]]</span></code> のように
+リストのリストを使うと複数のギア列を指定できます。</p>
+<p>ギア列を指定すると、すべてのモーターコマンドと設定は、
+得られるギア比を考慮して自動的に調整されます。
+モーターの回転方向はこれによって変わりません。</p>
 </li>
 </ul>
 </td>
@@ -249,7 +254,7 @@
 <p class="rubric">計測</p>
 <dl class="method">
 <dt id="pybricks.ev3devices.Motor.speed">
-<code class="descname">speed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.speed" title="Permalink to this definition">¶</a></dt>
+<code class="descname">speed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.speed" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>モーターの速度を取得します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -265,7 +270,7 @@
 
 <dl class="method">
 <dt id="pybricks.ev3devices.Motor.angle">
-<code class="descname">angle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.angle" title="Permalink to this definition">¶</a></dt>
+<code class="descname">angle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.angle" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>モーターの回転角度を取得します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -281,13 +286,13 @@
 
 <dl class="method">
 <dt id="pybricks.ev3devices.Motor.reset_angle">
-<code class="descname">reset_angle</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.reset_angle" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reset_angle</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.reset_angle" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>モーターの累積回転角度を任意の値に設定します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>angle</strong> (<a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">角度: deg</span></a>) – 角度をリセットする値。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>angle</strong> (<a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">角度: deg</span></a>) -- 角度をリセットする値。</td>
 </tr>
 </tbody>
 </table>
@@ -296,35 +301,37 @@
 <p class="rubric">停止</p>
 <dl class="method">
 <dt id="pybricks.ev3devices.Motor.stop">
-<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.stop" title="Permalink to this definition">¶</a></dt>
-<dd><p>モーターを停止し、自由に回転する状態にします。</p>
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.stop" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>モーターを停止し、自由に回転できる状態にします。</p>
 <p>モーターは摩擦によって徐々に停止します。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pybricks.ev3devices.Motor.brake">
-<code class="descname">brake</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.brake" title="Permalink to this definition">¶</a></dt>
+<code class="descname">brake</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.brake" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>モーターを受動的にブレーキします。</p>
-<p>モーターは摩擦に加えて、まだ動いている間に発生する電圧によって停止します。</p>
+<p>モーターは摩擦に加えて、まだ動いている間に発生する電圧によって
+停止します。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pybricks.ev3devices.Motor.hold">
-<code class="descname">hold</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.hold" title="Permalink to this definition">¶</a></dt>
+<code class="descname">hold</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.hold" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>モーターを停止し、現在の角度に積極的に保持します。</p>
 </dd></dl>
 
 <p class="rubric">動作</p>
 <dl class="method">
 <dt id="pybricks.ev3devices.Motor.run">
-<code class="descname">run</code><span class="sig-paren">(</span><em>speed</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.run" title="Permalink to this definition">¶</a></dt>
+<code class="descname">run</code><span class="sig-paren">(</span><em>speed</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.run" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>モーターを一定の速度で回転させます。</p>
-<p>モーターは指定した速度まで加速し、新しいコマンドを受け取るまでその速度で回転し続けます。</p>
+<p>モーターは指定した速度まで加速し、新しいコマンドを受け取るまで
+その速度で回転し続けます。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>speed</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">回転速度: deg/s</span></a>) – モーターの速度。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>speed</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">回転速度: deg/s</span></a>) -- モーターの速度。</td>
 </tr>
 </tbody>
 </table>
@@ -332,18 +339,20 @@
 
 <dl class="method">
 <dt id="pybricks.ev3devices.Motor.run_time">
-<code class="descname">run_time</code><span class="sig-paren">(</span><em>speed</em>, <em>time</em>, <em>then=Stop.HOLD</em>, <em>wait=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.run_time" title="Permalink to this definition">¶</a></dt>
+<code class="descname">run_time</code><span class="sig-paren">(</span><em>speed</em>, <em>time</em>, <em>then=Stop.HOLD</em>, <em>wait=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.run_time" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>モーターを一定の速度で、指定した時間だけ回転させます。</p>
-<p>モーターは指定した速度まで加速し、その速度で回転し続けてから減速します。一連の動作はちょうど指定した <code class="docutils literal notranslate"><span class="pre">time</span></code> の長さになります。</p>
+<p>モーターは指定した速度まで加速し、その速度で回転し続けてから
+減速します。一連の動作はちょうど指定した <code class="docutils literal notranslate"><span class="pre">time</span></code> の長さになります。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
-<li><strong>speed</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">回転速度: deg/s</span></a>) – モーターの速度。</li>
-<li><strong>time</strong> (<a class="reference internal" href="signaltypes.html#id1"><span class="std std-ref">時間: ms</span></a>) – 動作の長さ。</li>
-<li><strong>then</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Stop" title="pybricks.parameters.Stop"><em>Stop</em></a>) – 停止した後に行う動作。</li>
-<li><strong>wait</strong> (<em>bool</em>) – プログラムの続きを実行する前に、動作が完了するまで待機します。</li>
+<li><strong>speed</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">回転速度: deg/s</span></a>) -- モーターの速度。</li>
+<li><strong>time</strong> (<a class="reference internal" href="signaltypes.html#time"><span class="std std-ref">時間: ms</span></a>) -- 動作の長さ。</li>
+<li><strong>then</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Stop" title="pybricks.parameters.Stop"><em>Stop</em></a>) -- 停止した後に行う動作。</li>
+<li><strong>wait</strong> (<em>bool</em>) -- プログラムの続きを実行する前に、動作が完了するまで
+待機します。</li>
 </ul>
 </td>
 </tr>
@@ -353,17 +362,18 @@
 
 <dl class="method">
 <dt id="pybricks.ev3devices.Motor.run_angle">
-<code class="descname">run_angle</code><span class="sig-paren">(</span><em>speed</em>, <em>rotation_angle</em>, <em>then=Stop.HOLD</em>, <em>wait=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.run_angle" title="Permalink to this definition">¶</a></dt>
+<code class="descname">run_angle</code><span class="sig-paren">(</span><em>speed</em>, <em>rotation_angle</em>, <em>then=Stop.HOLD</em>, <em>wait=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.run_angle" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>モーターを一定の速度で、指定した角度だけ回転させます。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
-<li><strong>speed</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">回転速度: deg/s</span></a>) – モーターの速度。</li>
-<li><strong>rotation_angle</strong> (<a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">角度: deg</span></a>) – モーターが回転する角度。</li>
-<li><strong>then</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Stop" title="pybricks.parameters.Stop"><em>Stop</em></a>) – 停止した後に行う動作。</li>
-<li><strong>wait</strong> (<em>bool</em>) – プログラムの続きを実行する前に、動作が完了するまで待機します。</li>
+<li><strong>speed</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">回転速度: deg/s</span></a>) -- モーターの速度。</li>
+<li><strong>rotation_angle</strong> (<a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">角度: deg</span></a>) -- モーターが回転する角度。</li>
+<li><strong>then</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Stop" title="pybricks.parameters.Stop"><em>Stop</em></a>) -- 停止した後に行う動作。</li>
+<li><strong>wait</strong> (<em>bool</em>) -- プログラムの続きを実行する前に、動作が完了するまで
+待機します。</li>
 </ul>
 </td>
 </tr>
@@ -373,18 +383,20 @@
 
 <dl class="method">
 <dt id="pybricks.ev3devices.Motor.run_target">
-<code class="descname">run_target</code><span class="sig-paren">(</span><em>speed</em>, <em>target_angle</em>, <em>then=Stop.HOLD</em>, <em>wait=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.run_target" title="Permalink to this definition">¶</a></dt>
+<code class="descname">run_target</code><span class="sig-paren">(</span><em>speed</em>, <em>target_angle</em>, <em>then=Stop.HOLD</em>, <em>wait=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.run_target" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>モーターを一定の速度で、指定した目標角度に向かって回転させます。</p>
-<p>回転方向は目標角度に基づいて自動的に選択されます。<code class="docutils literal notranslate"><span class="pre">speed</span></code> の正負は関係ありません。</p>
+<p>回転方向は目標角度に基づいて自動的に選択されます。 <code class="docutils literal notranslate"><span class="pre">speed</span></code> の
+正負は関係ありません。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
-<li><strong>speed</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">回転速度: deg/s</span></a>) – モーターの速度。</li>
-<li><strong>target_angle</strong> (<a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">角度: deg</span></a>) – モーターが回転して到達する角度。</li>
-<li><strong>then</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Stop" title="pybricks.parameters.Stop"><em>Stop</em></a>) – 停止した後に行う動作。</li>
-<li><strong>wait</strong> (<em>bool</em>) – プログラムの続きを実行する前に、モーターが目標に到達するまで待機します。</li>
+<li><strong>speed</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">回転速度: deg/s</span></a>) -- モーターの速度。</li>
+<li><strong>target_angle</strong> (<a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">角度: deg</span></a>) -- モーターが回転して到達する角度。</li>
+<li><strong>then</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Stop" title="pybricks.parameters.Stop"><em>Stop</em></a>) -- 停止した後に行う動作。</li>
+<li><strong>wait</strong> (<em>bool</em>) -- プログラムの続きを実行する前に、モーターが目標に
+到達するまで待機します。</li>
 </ul>
 </td>
 </tr>
@@ -394,16 +406,18 @@
 
 <dl class="method">
 <dt id="pybricks.ev3devices.Motor.run_until_stalled">
-<code class="descname">run_until_stalled</code><span class="sig-paren">(</span><em>speed</em>, <em>then=Stop.COAST</em>, <em>duty_limit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.run_until_stalled" title="Permalink to this definition">¶</a></dt>
+<code class="descname">run_until_stalled</code><span class="sig-paren">(</span><em>speed</em>, <em>then=Stop.COAST</em>, <em>duty_limit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.run_until_stalled" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>モーターがストールするまで一定の速度で回転させます。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>speed</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">回転速度: deg/s</span></a>) – モーターの速度。</li>
-<li><strong>then</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Stop" title="pybricks.parameters.Stop"><em>Stop</em></a>) – 停止した後に行う動作。</li>
-<li><strong>duty_limit</strong> (<a class="reference internal" href="signaltypes.html#percentage"><span class="std std-ref">割合: %</span></a>) – このコマンド実行中のトルク制限。ギアやレバーの機構にモーターの最大トルクをかけないようにするのに便利です。</li>
+<li><strong>speed</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">回転速度: deg/s</span></a>) -- モーターの速度。</li>
+<li><strong>then</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Stop" title="pybricks.parameters.Stop"><em>Stop</em></a>) -- 停止した後に行う動作。</li>
+<li><strong>duty_limit</strong> (<a class="reference internal" href="signaltypes.html#percentage"><span class="std std-ref">割合: %</span></a>) -- このコマンド実行中のトルク制限。
+ギアやレバーの機構にモーターの最大トルクをかけないように
+するのに便利です。</li>
 </ul>
 </td>
 </tr>
@@ -419,14 +433,15 @@
 
 <dl class="method">
 <dt id="pybricks.ev3devices.Motor.dc">
-<code class="descname">dc</code><span class="sig-paren">(</span><em>duty</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.dc" title="Permalink to this definition">¶</a></dt>
-<dd><p>指定したデューティ比(「パワー」とも呼ばれます)でモーターを回転させます。</p>
+<code class="descname">dc</code><span class="sig-paren">(</span><em>duty</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.dc" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>指定したデューティサイクル（「パワー」とも呼ばれます）で
+モーターを回転させます。</p>
 <p>このメソッドを使うと、モーターを単純なDCモーターのように使えます。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>duty</strong> (<a class="reference internal" href="signaltypes.html#percentage"><span class="std std-ref">割合: %</span></a>) – デューティ比(-100.0から100)。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>duty</strong> (<a class="reference internal" href="signaltypes.html#percentage"><span class="std std-ref">割合: %</span></a>) -- デューティサイクル（-100.0から100）。</td>
 </tr>
 </tbody>
 </table>
@@ -435,13 +450,16 @@
 <p class="rubric">高度なモーション制御</p>
 <dl class="method">
 <dt id="pybricks.ev3devices.Motor.track_target">
-<code class="descname">track_target</code><span class="sig-paren">(</span><em>target_angle</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.track_target" title="Permalink to this definition">¶</a></dt>
-<dd><p>目標角度を追跡します。<a class="reference internal" href="#pybricks.ev3devices.Motor.run_target" title="pybricks.ev3devices.Motor.run_target"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run_target()</span></code></a> と似ていますが、通常の滑らかな加速を行わず、できるだけ速く目標角度に移動します。目標角度を連続的に変化させたい場合に便利なメソッドです。</p>
+<code class="descname">track_target</code><span class="sig-paren">(</span><em>target_angle</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.track_target" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>目標角度を追跡します。 <a class="reference internal" href="#pybricks.ev3devices.Motor.run_target" title="pybricks.ev3devices.Motor.run_target"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run_target()</span></code></a> と似ていますが、
+通常の滑らかな加速を行わず、できるだけ速く目標角度に移動します。
+目標角度を連続的に変化させたい場合に便利なメソッドです。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>target_angle</strong> (<a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">角度: deg</span></a>) – モーターが回転して到達する目標角度。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>target_angle</strong> (<a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">角度: deg</span></a>) -- モーターが回転して到達する
+目標角度。</td>
 </tr>
 </tbody>
 </table>
@@ -449,39 +467,39 @@
 
 <dl class="attribute">
 <dt id="pybricks.ev3devices.Motor.control">
-<code class="descname">control</code><a class="headerlink" href="#pybricks.ev3devices.Motor.control" title="Permalink to this definition">¶</a></dt>
-<dd><p>モーターは指定した速度と角度の目標を正確に追跡するために PID 制御を使用します。モーターの <code class="docutils literal notranslate"><span class="pre">control</span></code> 属性でこの動作を変更できます。利用可能なメソッドの概要は <a class="reference internal" href="motors.html#control"><span class="std std-ref">Controlクラス</span></a> を参照してください。</p>
-</dd></dl>
+<code class="descname">control</code><a class="headerlink" href="#pybricks.ev3devices.Motor.control" title="この定義へのパーマリンク">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
 </div>
-<div class="section" id="touch-sensor">
-<h2>タッチセンサー<a class="headerlink" href="#touch-sensor" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>タッチセンサー<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="figure">
 <img alt="_images/sensor_ev3_touch.png" src="_images/sensor_ev3_touch.png" style="width: 18%;" />
 </div>
 <dl class="class">
 <dt id="pybricks.ev3devices.TouchSensor">
-<em class="property">class </em><code class="descname">TouchSensor</code><span class="sig-paren">(</span><em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.TouchSensor" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">TouchSensor</code><span class="sig-paren">(</span><em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.TouchSensor" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>LEGO® MINDSTORMS® EV3 Touch Sensor.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – センサーを接続するポート。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) -- センサーを接続するポート。</td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="pybricks.ev3devices.TouchSensor.pressed">
-<code class="descname">pressed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.TouchSensor.pressed" title="Permalink to this definition">¶</a></dt>
+<code class="descname">pressed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.TouchSensor.pressed" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>センサーが押されているかを確認します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">センサーが押されていれば <code class="docutils literal notranslate"><span class="pre">True</span></code>、押されていなければ <code class="docutils literal notranslate"><span class="pre">False</span></code>。</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">センサーが押されていれば <code class="docutils literal notranslate"><span class="pre">True</span></code> 、押されていなければ
+<code class="docutils literal notranslate"><span class="pre">False</span></code> 。</td>
 </tr>
 <tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">bool</td>
 </tr>
@@ -492,35 +510,36 @@
 </dd></dl>
 
 </div>
-<div class="section" id="color-sensor">
-<h2>カラーセンサー<a class="headerlink" href="#color-sensor" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>カラーセンサー<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="figure">
 <img alt="_images/sensor_ev3_color.png" src="_images/sensor_ev3_color.png" style="width: 18%;" />
 </div>
 <dl class="class">
 <dt id="pybricks.ev3devices.ColorSensor">
-<em class="property">class </em><code class="descname">ColorSensor</code><span class="sig-paren">(</span><em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.ColorSensor" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">ColorSensor</code><span class="sig-paren">(</span><em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.ColorSensor" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>LEGO® MINDSTORMS® EV3 Color Sensor.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – センサーを接続するポート。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) -- センサーを接続するポート。</td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="pybricks.ev3devices.ColorSensor.color">
-<code class="descname">color</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.ColorSensor.color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">color</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.ColorSensor.color" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>表面の色を測定します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">Color.BLACK</span></code>, <code class="docutils literal notranslate"><span class="pre">Color.BLUE</span></code>, <code class="docutils literal notranslate"><span class="pre">Color.GREEN</span></code>, <code class="docutils literal notranslate"><span class="pre">Color.YELLOW</span></code>,
-<code class="docutils literal notranslate"><span class="pre">Color.RED</span></code>, <code class="docutils literal notranslate"><span class="pre">Color.WHITE</span></code>, <code class="docutils literal notranslate"><span class="pre">Color.BROWN</span></code> または <code class="docutils literal notranslate"><span class="pre">None</span></code>。</td>
+<code class="docutils literal notranslate"><span class="pre">Color.RED</span></code>, <code class="docutils literal notranslate"><span class="pre">Color.WHITE</span></code>, <code class="docutils literal notranslate"><span class="pre">Color.BROWN</span></code> または <code class="docutils literal notranslate"><span class="pre">None</span></code> 。</td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>。色が検出されない場合は <code class="docutils literal notranslate"><span class="pre">None</span></code>。</td>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>。色が検出されない場合は
+<code class="docutils literal notranslate"><span class="pre">None</span></code> 。</td>
 </tr>
 </tbody>
 </table>
@@ -528,7 +547,7 @@
 
 <dl class="method">
 <dt id="pybricks.ev3devices.ColorSensor.ambient">
-<code class="descname">ambient</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.ColorSensor.ambient" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ambient</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.ColorSensor.ambient" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>周囲の光の強さを測定します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -544,7 +563,7 @@
 
 <dl class="method">
 <dt id="pybricks.ev3devices.ColorSensor.reflection">
-<code class="descname">reflection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.ColorSensor.reflection" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reflection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.ColorSensor.reflection" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>赤い光を使って表面の反射率を測定します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -560,13 +579,14 @@
 
 <dl class="method">
 <dt id="pybricks.ev3devices.ColorSensor.rgb">
-<code class="descname">rgb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.ColorSensor.rgb" title="Permalink to this definition">¶</a></dt>
+<code class="descname">rgb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.ColorSensor.rgb" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>赤・緑・青の順に光を当てて、表面の反射率を測定します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">赤・緑・青それぞれの光に対する反射率のタプル。各値は0.0(反射なし)から100.0(高い反射)の範囲。</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">赤・緑・青それぞれの光に対する反射率のタプル。
+各値は0.0(反射なし)から100.0(高い反射)の範囲。</td>
 </tr>
 <tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">(<a class="reference internal" href="signaltypes.html#percentage"><span class="std std-ref">割合: %</span></a>, <a class="reference internal" href="signaltypes.html#percentage"><span class="std std-ref">割合: %</span></a>, <a class="reference internal" href="signaltypes.html#percentage"><span class="std std-ref">割合: %</span></a>)</td>
 </tr>
@@ -577,32 +597,33 @@
 </dd></dl>
 
 </div>
-<div class="section" id="infrared-sensor-and-beacon">
-<h2>赤外線センサーとビーコン<a class="headerlink" href="#infrared-sensor-and-beacon" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>赤外線センサーとビーコン<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="figure">
 <img alt="_images/sensor_ev3_ir.png" src="_images/sensor_ev3_ir.png" style="width: 60%;" />
 </div>
 <dl class="class">
 <dt id="pybricks.ev3devices.InfraredSensor">
-<em class="property">class </em><code class="descname">InfraredSensor</code><span class="sig-paren">(</span><em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.InfraredSensor" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">InfraredSensor</code><span class="sig-paren">(</span><em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.InfraredSensor" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>LEGO® MINDSTORMS® EV3 赤外線センサーとビーコン。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – センサーを接続するポート。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) -- センサーを接続するポート。</td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="pybricks.ev3devices.InfraredSensor.distance">
-<code class="descname">distance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.InfraredSensor.distance" title="Permalink to this definition">¶</a></dt>
+<code class="descname">distance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.InfraredSensor.distance" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>赤外線を使って、センサーと物体との相対的な距離を測定します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">相対距離。0(最も近い)から100(最も遠い)の範囲。</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">相対距離。0(最も近い)から100(最も遠い)
+の範囲。</td>
 </tr>
 <tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><a class="reference internal" href="signaltypes.html#relativedistance"><span class="std std-ref">相対距離: %</span></a></td>
 </tr>
@@ -612,17 +633,19 @@
 
 <dl class="method">
 <dt id="pybricks.ev3devices.InfraredSensor.beacon">
-<code class="descname">beacon</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.InfraredSensor.beacon" title="Permalink to this definition">¶</a></dt>
+<code class="descname">beacon</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.InfraredSensor.beacon" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>リモコンと赤外線センサーとの相対的な距離と角度を測定します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>channel</strong> (<em>int</em>) – リモコンのチャンネル番号。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>channel</strong> (<em>int</em>) -- リモコンのチャンネル番号。</td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">リモコンと赤外線センサーとの相対距離(0から100)とおおよその角度(-75から75度)のタプル。</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">リモコンと赤外線センサーとの相対距離(0から100)と
+おおよその角度(-75から75度)のタプル。</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body">(<a class="reference internal" href="signaltypes.html#relativedistance"><span class="std std-ref">相対距離: %</span></a>, <a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">角度: deg</span></a>)。リモコンが検出されない場合は (<code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code>)。</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body">(<a class="reference internal" href="signaltypes.html#relativedistance"><span class="std std-ref">相対距離: %</span></a>, <a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">角度: deg</span></a>)。リモコンが検出
+されない場合は (<code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code>) 。</td>
 </tr>
 </tbody>
 </table>
@@ -630,18 +653,19 @@
 
 <dl class="method">
 <dt id="pybricks.ev3devices.InfraredSensor.buttons">
-<code class="descname">buttons</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.InfraredSensor.buttons" title="Permalink to this definition">¶</a></dt>
+<code class="descname">buttons</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.InfraredSensor.buttons" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>赤外線リモコンのどのボタンが押されているかを確認します。</p>
-<p>このメソッドは一度に最大2つのボタンを検出できます。それ以上のボタンを押すと、有効なデータが得られない場合があります。</p>
+<p>このメソッドは一度に最大2つのボタンを検出できます。それ以上の
+ボタンを押すと、有効なデータが得られない場合があります。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>channel</strong> (<em>int</em>) – リモコンのチャンネル番号。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>channel</strong> (<em>int</em>) -- リモコンのチャンネル番号。</td>
 </tr>
 <tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">選択したチャンネルのリモコンで押されているボタンのリスト。</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><a class="reference internal" href="parameters.html#pybricks.parameters.Button" title="pybricks.parameters.Button"><code class="xref py py-class docutils literal notranslate"><span class="pre">Button</span></code></a> のリスト</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body">List of <a class="reference internal" href="parameters.html#pybricks.parameters.Button" title="pybricks.parameters.Button"><code class="xref py py-class docutils literal notranslate"><span class="pre">Button</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -649,9 +673,10 @@
 
 <dl class="method">
 <dt id="pybricks.ev3devices.InfraredSensor.keypad">
-<code class="descname">keypad</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.InfraredSensor.keypad" title="Permalink to this definition">¶</a></dt>
+<code class="descname">keypad</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.InfraredSensor.keypad" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>赤外線リモコンのどのボタンが押されているかを確認します。</p>
-<p>このメソッドは4つの上下ボタンをすべて個別に検出できますが、ビーコンボタンは検出できません。</p>
+<p>このメソッドは4つの上下ボタンをすべて個別に検出できますが、
+ビーコンボタンは検出できません。</p>
 <p>このメソッドはチャンネル1のリモコンでのみ動作します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -659,7 +684,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">選択したチャンネルのリモコンで押されているボタンのリスト。</td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><a class="reference internal" href="parameters.html#pybricks.parameters.Button" title="pybricks.parameters.Button"><code class="xref py py-class docutils literal notranslate"><span class="pre">Button</span></code></a> のリスト</td>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">List of <a class="reference internal" href="parameters.html#pybricks.parameters.Button" title="pybricks.parameters.Button"><code class="xref py py-class docutils literal notranslate"><span class="pre">Button</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -668,32 +693,36 @@
 </dd></dl>
 
 </div>
-<div class="section" id="ultrasonic-sensor">
-<h2>超音波センサー<a class="headerlink" href="#ultrasonic-sensor" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>超音波センサー<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="figure">
 <img alt="_images/sensor_ev3_ultrasonic.png" src="_images/sensor_ev3_ultrasonic.png" style="width: 22%;" />
 </div>
 <dl class="class">
 <dt id="pybricks.ev3devices.UltrasonicSensor">
-<em class="property">class </em><code class="descname">UltrasonicSensor</code><span class="sig-paren">(</span><em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.UltrasonicSensor" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">UltrasonicSensor</code><span class="sig-paren">(</span><em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.UltrasonicSensor" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>LEGO® MINDSTORMS® EV3 Ultrasonic Sensor.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – センサーを接続するポート。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) -- センサーを接続するポート。</td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="pybricks.ev3devices.UltrasonicSensor.distance">
-<code class="descname">distance</code><span class="sig-paren">(</span><em>silent=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.UltrasonicSensor.distance" title="Permalink to this definition">¶</a></dt>
+<code class="descname">distance</code><span class="sig-paren">(</span><em>silent=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.UltrasonicSensor.distance" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>超音波を使って、センサーと物体との距離を測定します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>silent</strong> (<em>bool</em>) – <code class="docutils literal notranslate"><span class="pre">True</span></code> を選ぶと、距離の測定後にセンサーをオフにします。他の超音波センサーとの干渉を減らせます。ただし頻繁に行いすぎるとセンサーがフリーズすることがあります。その場合は一度抜いて差し直してください。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>silent</strong> (<em>bool</em>) -- <code class="docutils literal notranslate"><span class="pre">True</span></code> を選ぶと、距離の測定後にセンサーを
+オフにします。他の超音波センサーとの干渉を
+減らせます。ただし頻繁に行いすぎるとセンサーが
+フリーズすることがあります。その場合は一度
+抜いて差し直してください。</td>
 </tr>
 <tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body">距離。</td>
 </tr>
@@ -705,14 +734,16 @@
 
 <dl class="method">
 <dt id="pybricks.ev3devices.UltrasonicSensor.presence">
-<code class="descname">presence</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.UltrasonicSensor.presence" title="Permalink to this definition">¶</a></dt>
+<code class="descname">presence</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.UltrasonicSensor.presence" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>超音波を検出することで、他の超音波センサーの存在を確認します。</p>
-<p>他の超音波センサーがサイレントモードで動作している場合、そのセンサーが測定を行っている間だけ存在を検出できます。</p>
+<p>他の超音波センサーがサイレントモードで動作している場合、その
+センサーが測定を行っている間だけ存在を検出できます。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">超音波が検出された場合は <code class="docutils literal notranslate"><span class="pre">True</span></code>、そうでない場合は <code class="docutils literal notranslate"><span class="pre">False</span></code>。</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">超音波が検出された場合は <code class="docutils literal notranslate"><span class="pre">True</span></code> 、そうでない場合は
+<code class="docutils literal notranslate"><span class="pre">False</span></code> 。</td>
 </tr>
 <tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">bool</td>
 </tr>
@@ -723,22 +754,22 @@
 </dd></dl>
 
 </div>
-<div class="section" id="gyroscopic-sensor">
-<h2>ジャイロセンサー<a class="headerlink" href="#gyroscopic-sensor" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>ジャイロセンサー<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="figure">
 <img alt="_images/sensor_ev3_gyro.png" src="_images/sensor_ev3_gyro.png" style="width: 18%;" />
 </div>
 <dl class="class">
 <dt id="pybricks.ev3devices.GyroSensor">
-<em class="property">class </em><code class="descname">GyroSensor</code><span class="sig-paren">(</span><em>port</em>, <em>positive_direction=Direction.CLOCKWISE</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.GyroSensor" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">GyroSensor</code><span class="sig-paren">(</span><em>port</em>, <em>positive_direction=Direction.CLOCKWISE</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.GyroSensor" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>LEGO® MINDSTORMS® EV3 Gyro Sensor.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
-<li><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – センサーを接続するポート。</li>
-<li><strong>positive_direction</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Direction" title="pybricks.parameters.Direction"><em>Direction</em></a>) – センサー上部の赤い点を見たときの正の回転方向。</li>
+<li><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) -- センサーを接続するポート。</li>
+<li><strong>positive_direction</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Direction" title="pybricks.parameters.Direction"><em>Direction</em></a>) -- センサー上部の赤い点を見たときの正の回転方向。</li>
 </ul>
 </td>
 </tr>
@@ -746,7 +777,7 @@
 </table>
 <dl class="method">
 <dt id="pybricks.ev3devices.GyroSensor.speed">
-<code class="descname">speed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.GyroSensor.speed" title="Permalink to this definition">¶</a></dt>
+<code class="descname">speed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.GyroSensor.speed" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>センサーの速度(角速度)を取得します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -762,7 +793,7 @@
 
 <dl class="method">
 <dt id="pybricks.ev3devices.GyroSensor.angle">
-<code class="descname">angle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.GyroSensor.angle" title="Permalink to this definition">¶</a></dt>
+<code class="descname">angle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.GyroSensor.angle" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>センサーの累積角度を取得します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -774,18 +805,20 @@
 </tr>
 </tbody>
 </table>
-<p><a class="reference internal" href="#pybricks.ev3devices.GyroSensor.angle" title="pybricks.ev3devices.GyroSensor.angle"><code class="xref py py-meth docutils literal notranslate"><span class="pre">angle()</span></code></a> メソッドを使う場合、同じプログラム内で <a class="reference internal" href="#pybricks.ev3devices.GyroSensor.speed" title="pybricks.ev3devices.GyroSensor.speed"><code class="xref py py-meth docutils literal notranslate"><span class="pre">speed()</span></code></a> メソッドは使えません。使うと速度を読み取るたびにセンサーの角度が0にリセットされてしまいます。</p>
+<p><a class="reference internal" href="#pybricks.ev3devices.GyroSensor.angle" title="pybricks.ev3devices.GyroSensor.angle"><code class="xref py py-meth docutils literal notranslate"><span class="pre">angle()</span></code></a> メソッドを使う場合、同じプログラム内で
+<a class="reference internal" href="#pybricks.ev3devices.GyroSensor.speed" title="pybricks.ev3devices.GyroSensor.speed"><code class="xref py py-meth docutils literal notranslate"><span class="pre">speed()</span></code></a> メソッドは使えません。使うと速度を読み取るたびに
+センサーの角度が0にリセットされてしまいます。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pybricks.ev3devices.GyroSensor.reset_angle">
-<code class="descname">reset_angle</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.GyroSensor.reset_angle" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reset_angle</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.GyroSensor.reset_angle" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>センサーの回転角度を任意の値に設定します。</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>angle</strong> (<a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">角度: deg</span></a>) – 角度をリセットする値。</td>
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><strong>angle</strong> (<a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">角度: deg</span></a>) -- 角度をリセットする値。</td>
 </tr>
 </tbody>
 </table>
@@ -804,10 +837,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="nxtdevices.html" class="btn btn-neutral float-right" title="nxtdevices – NXT Devices" accesskey="n" rel="next">次へ <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="nxtdevices.html" class="btn btn-neutral float-right" title="nxtdevices -- NXTデバイス" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="hubs.html" class="btn btn-neutral float-left" title="hubs – Programmable Hubs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 前へ</a>
+        <a href="hubs.html" class="btn btn-neutral float-left" title="hubs -- プログラマブルハブ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -816,12 +849,12 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 The LEGO Group. All rights reserved.
+        &copy; Copyright 2018-2020 The Pybricks Authors
 
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group.</div>
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group of companies                which does not sponsor, authorize or endorse this site.</div>
 
 
 </footer>
