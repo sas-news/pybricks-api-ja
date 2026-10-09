@@ -96,10 +96,10 @@ todo_include_todos = True
 # Figure numbering
 numfig = True
 numfig_format = {
-    'figure': 'Figure %s',
-    'table': 'Table %s',
-    'code-block': 'Listing %s',
-    'section': 'Section %s'
+    'figure': '図 %s',
+    'table': '表 %s',
+    'code-block': 'コード %s',
+    'section': '節 %s'
 }
 
 # Find cross-reference errors
