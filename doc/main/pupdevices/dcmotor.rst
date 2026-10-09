@@ -13,20 +13,12 @@
    回転センサーなしの Powered Up モーター。矢印はデフォルトの
    正方向を示しています。
 
-.. blockimg:: pybricks_variables_set_dc_motor
-
 .. autoclass:: pybricks.pupdevices.DCMotor
     :no-members:
 
-    .. blockimg:: pybricks_blockMotorDuty_DCMotor
-
     .. automethod:: pybricks.pupdevices.DCMotor.dc
 
-    .. blockimg:: pybricks_blockMotorStop_DCMotor_coast
-
     .. automethod:: pybricks.pupdevices.DCMotor.stop
-
-    .. blockimg:: pybricks_blockMotorStop_DCMotor_brake
 
     .. automethod:: pybricks.pupdevices.DCMotor.brake
 

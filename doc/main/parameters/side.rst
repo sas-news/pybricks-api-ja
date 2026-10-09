@@ -28,7 +28,6 @@ Side
     .. autoattribute:: pybricks.parameters.Side.RIGHT
         :annotation:
 
-
     スクリーンやライトマトリクスには4つの面しかありません。それらでは
     ``TOP`` は ``FRONT`` と同じように、 ``BOTTOM`` は ``BACK`` と
     同じように扱われます。以下の図は、関連するデバイスの面を

@@ -6,20 +6,12 @@ Essential Hub
 .. figure:: ../../main/cad/output/hub-essential.png
     :width: 30%
 
-.. blockimg:: pybricks_variables_set_essential_hub_option0
-
-.. blockimg:: pybricks_variables_set_essential_hub_option1
-
 .. autoclass:: pybricks.hubs.EssentialHub
     :no-members:
 
     .. rubric:: Using the hub status light
 
-    .. blockimg:: pybricks_blockLightOnColor_essentialhub_on
-
     .. automethod:: pybricks.hubs::EssentialHub.light.on
-
-    .. blockimg:: pybricks_blockLightOnColor_essentialhub_off
 
     .. automethod:: pybricks.hubs::EssentialHub.light.off
 
@@ -29,13 +21,7 @@ Essential Hub
 
     .. rubric:: Using the button
 
-    .. blockimg:: pybricks_blockButtonIsPressed_EssentialHub
-
     .. automethod:: pybricks.hubs::EssentialHub.buttons.pressed
-
-    .. blockimg:: pybricks_blockHubStopButton_EssentialHub
-
-    .. blockimg:: pybricks_blockHubStopButton_EssentialHub_none
 
     .. automethod:: pybricks.hubs::EssentialHub.system.set_stop_button
 
@@ -48,61 +34,31 @@ Essential Hub
         with your calibration values. Use ``calibrated=False`` where applicable
         to get the raw data you got before.
 
-    .. blockimg:: pybricks_blockImuStatus_EssentialHub_ready
-
     .. automethod:: pybricks.hubs::EssentialHub.imu.ready
-
-    .. blockimg:: pybricks_blockImuStatus_EssentialHub_stationary
 
     .. automethod:: pybricks.hubs::EssentialHub.imu.stationary
 
-    .. blockimg:: pybricks_blockImuUp_EssentialHub
-
     .. automethod:: pybricks.hubs::EssentialHub.imu.up
-
-    .. blockimg:: pybricks_blockTilt_EssentialHub_imu.tilt.pitch
-
-    .. blockimg:: pybricks_blockTilt_EssentialHub_imu.tilt.roll
 
     .. automethod:: pybricks.hubs::EssentialHub.imu.tilt
 
-    .. blockimg:: pybricks_blockImuAcceleration_EssentialHub
-
     .. automethod:: pybricks.hubs::EssentialHub.imu.acceleration
-
-    .. blockimg:: pybricks_blockImuRotation_EssentialHub_imu.angular_velocity
 
     .. automethod:: pybricks.hubs::EssentialHub.imu.angular_velocity
 
-    .. blockimg:: pybricks_blockImuGetHeading_EssentialHub
-
     .. automethod:: pybricks.hubs::EssentialHub.imu.heading
 
-    .. blockimg:: pybricks_blockImuResetHeading_EssentialHub
-
     .. automethod:: pybricks.hubs::EssentialHub.imu.reset_heading
-
-    .. blockimg:: pybricks_blockImuRotation_EssentialHub_imu.rotation
 
     .. automethod:: pybricks.hubs::EssentialHub.imu.rotation
 
     .. automethod:: pybricks.hubs::EssentialHub.imu.orientation
 
-    .. blockimg:: pybricks_blockImuConfigure_EssentialHub_imu.settings_heading_correction
-
-    .. blockimg:: pybricks_blockImuConfigure_EssentialHub_imu.settings_angular_velocity_threshold
-
-    .. blockimg:: pybricks_blockImuConfigure_EssentialHub_imu.settings_acceleration_threshold
-
     .. automethod:: pybricks.hubs::EssentialHub.imu.settings
 
     .. rubric:: Using the battery
 
-    .. blockimg:: pybricks_blockBatteryMeasure_EssentialHub_battery.voltage
-
     .. automethod:: pybricks.hubs::EssentialHub.battery.voltage
-
-    .. blockimg:: pybricks_blockBatteryMeasure_EssentialHub_battery.current
 
     .. automethod:: pybricks.hubs::EssentialHub.battery.current
 
@@ -124,8 +80,6 @@ Essential Hub
         when you update the Pybricks firmware.
 
     .. automethod:: pybricks.hubs::EssentialHub.system.reset_storage
-
-    .. blockimg:: pybricks_blockHubShutdown_EssentialHub
 
     .. automethod:: pybricks.hubs::EssentialHub.system.shutdown
 
@@ -164,7 +118,6 @@ Testing which way is up
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/imu_up_essentialhub.py
-
 
 Reading the tilt value
 ********************************

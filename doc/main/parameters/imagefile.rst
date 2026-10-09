@@ -113,7 +113,6 @@ ImageFile
         .. image:: ../../../media/ev3dev-media/images/mono/eyes/bottom_left.png
             :width: 15 %
 
-
     .. data:: BOTTOM_RIGHT
 
         .. image:: ../../../media/ev3dev-media/images/mono/eyes/bottom_right.png

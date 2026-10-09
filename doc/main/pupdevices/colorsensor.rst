@@ -6,28 +6,16 @@ Color Sensor
 .. figure:: ../../main/diagrams/sensor_color_lights.png
    :width: 70 %
 
-.. blockimg:: pybricks_variables_set_color_sensor_colorsensor_default
-
-.. blockimg:: pybricks_variables_set_color_sensor_colorsensor_detectable_colors
-
 .. autoclass:: pybricks.pupdevices.ColorSensor
     :no-members:
 
-    .. blockimg:: pybricks_blockColor_ColorSensor_color
-
     .. automethod:: pybricks.pupdevices.ColorSensor.color
 
-    .. blockimg:: pybricks_blockLightReflection_ColorSensor
-
     .. automethod:: pybricks.pupdevices.ColorSensor.reflection
-
-    .. blockimg:: pybricks_blockLightAmbient_ColorSensor
 
     .. automethod:: pybricks.pupdevices.ColorSensor.ambient
 
     .. rubric:: 高度な色検出
-
-    .. blockimg:: pybricks_blockColor_ColorSensor_hsv
 
     .. automethod:: pybricks.pupdevices.ColorSensor.hsv
 
@@ -39,16 +27,9 @@ Color Sensor
     調整できます。センサーで測定を行うと、測定に必要に応じてライトが
     自動的にオン・オフされます。
 
-    .. blockimg:: pybricks_blockLightOn_colorsensor_on
-
-    .. blockimg:: pybricks_blockLightOn_colorsensor_on_list
-
     .. automethod:: pybricks.pupdevices::ColorSensor.lights.on
 
-    .. blockimg:: pybricks_blockLightOn_colorsensor_off
-
     .. automethod:: pybricks.pupdevices::ColorSensor.lights.off
-
 
 使用例
 -------------------
@@ -59,20 +40,17 @@ Color Sensor
 .. literalinclude::
     ../../../examples/pup/sensor_color/color_print.py
 
-
 色を待つ
 *******************
 
 .. literalinclude::
     ../../../examples/pup/sensor_color/wait_for_color.py
 
-
 反射光での色相・彩度・明度を読み取る
 ************************************************
 
 .. literalinclude::
     ../../../examples/pup/sensor_color/hsv.py
-
 
 検出する色を変更する
 ******************************

@@ -8,20 +8,12 @@ Move Hub
 .. figure:: ../../main/diagrams/movehub.png
     :width: 100%
 
-.. blockimg:: pybricks_variables_set_move_hub_option0
-
-.. blockimg:: pybricks_variables_set_move_hub_option1
-
 .. autoclass:: pybricks.hubs.MoveHub
     :no-members:
 
     .. rubric:: Using the hub status light
 
-    .. blockimg:: pybricks_blockLightOnColor_movehub_on
-
     .. automethod:: pybricks.hubs::MoveHub.light.on
-
-    .. blockimg:: pybricks_blockLightOnColor_movehub_off
 
     .. automethod:: pybricks.hubs::MoveHub.light.off
 
@@ -31,17 +23,9 @@ Move Hub
 
     .. rubric:: Using the IMU
 
-    .. blockimg:: pybricks_blockImuUp_MoveHub
-
     .. automethod:: pybricks.hubs::MoveHub.imu.up
 
-    .. blockimg:: pybricks_blockTilt_MoveHub_imu.tilt.pitch
-
-    .. blockimg:: pybricks_blockTilt_MoveHub_imu.tilt.roll
-
     .. automethod:: pybricks.hubs::MoveHub.imu.tilt
-
-    .. blockimg:: pybricks_blockImuAcceleration_MoveHub
 
     .. automethod:: pybricks.hubs::MoveHub.imu.acceleration
 
@@ -51,25 +35,15 @@ Move Hub
 
     .. rubric:: Using the battery
 
-    .. blockimg:: pybricks_blockBatteryMeasure_MoveHub_battery.voltage
-
     .. automethod:: pybricks.hubs::MoveHub.battery.voltage
-
-    .. blockimg:: pybricks_blockBatteryMeasure_MoveHub_battery.current
 
     .. automethod:: pybricks.hubs::MoveHub.battery.current
 
     .. rubric:: Button and system control
 
-    .. blockimg:: pybricks_blockButtonIsPressed_MoveHub
-
     .. automethod:: pybricks.hubs::MoveHub.buttons.pressed
 
     .. automethod:: pybricks.hubs::MoveHub.system.info
-
-    .. blockimg:: pybricks_blockHubStopButton_MoveHub
-
-    .. blockimg:: pybricks_blockHubStopButton_MoveHub_none
 
     .. automethod:: pybricks.hubs::MoveHub.system.set_stop_button
 
@@ -80,8 +54,6 @@ Move Hub
         firmware.
 
     .. automethod:: pybricks.hubs::MoveHub.system.reset_storage
-
-    .. blockimg:: pybricks_blockHubShutdown_MoveHub
 
     .. automethod:: pybricks.hubs::MoveHub.system.shutdown
 

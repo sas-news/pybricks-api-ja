@@ -6,20 +6,12 @@ Technic Hub
 .. figure:: ../../main/cad/output/hub-technic.png
     :width: 40%
 
-.. blockimg:: pybricks_variables_set_technic_hub_option0
-
-.. blockimg:: pybricks_variables_set_technic_hub_option1
-
 .. autoclass:: pybricks.hubs.TechnicHub
     :no-members:
 
     .. rubric:: Using the hub status light
 
-    .. blockimg:: pybricks_blockLightOnColor_technichub_on
-
     .. automethod:: pybricks.hubs::TechnicHub.light.on
-
-    .. blockimg:: pybricks_blockLightOnColor_technichub_off
 
     .. automethod:: pybricks.hubs::TechnicHub.light.off
 
@@ -36,75 +28,39 @@ Technic Hub
         with your calibration values. Use ``calibrated=False`` where applicable
         to get the raw data you got before.
 
-    .. blockimg:: pybricks_blockImuStatus_TechnicHub_ready
-
     .. automethod:: pybricks.hubs::TechnicHub.imu.ready
-
-    .. blockimg:: pybricks_blockImuStatus_TechnicHub_stationary
 
     .. automethod:: pybricks.hubs::TechnicHub.imu.stationary
 
-    .. blockimg:: pybricks_blockImuUp_TechnicHub
-
     .. automethod:: pybricks.hubs::TechnicHub.imu.up
-
-    .. blockimg:: pybricks_blockTilt_TechnicHub_imu.tilt.pitch
-
-    .. blockimg:: pybricks_blockTilt_TechnicHub_imu.tilt.roll
 
     .. automethod:: pybricks.hubs::TechnicHub.imu.tilt
 
-    .. blockimg:: pybricks_blockImuAcceleration_TechnicHub
-
     .. automethod:: pybricks.hubs::TechnicHub.imu.acceleration
-
-    .. blockimg:: pybricks_blockImuRotation_TechnicHub_imu.angular_velocity
 
     .. automethod:: pybricks.hubs::TechnicHub.imu.angular_velocity
 
-    .. blockimg:: pybricks_blockImuGetHeading_TechnicHub
-
     .. automethod:: pybricks.hubs::TechnicHub.imu.heading
 
-    .. blockimg:: pybricks_blockImuResetHeading_TechnicHub
-
     .. automethod:: pybricks.hubs::TechnicHub.imu.reset_heading
-
-    .. blockimg:: pybricks_blockImuRotation_TechnicHub_imu.rotation
 
     .. automethod:: pybricks.hubs::TechnicHub.imu.rotation
 
     .. automethod:: pybricks.hubs::TechnicHub.imu.orientation
 
-    .. blockimg:: pybricks_blockImuConfigure_TechnicHub_imu.settings_heading_correction
-
-    .. blockimg:: pybricks_blockImuConfigure_TechnicHub_imu.settings_angular_velocity_threshold
-
-    .. blockimg:: pybricks_blockImuConfigure_TechnicHub_imu.settings_acceleration_threshold
-
     .. automethod:: pybricks.hubs::TechnicHub.imu.settings
 
     .. rubric:: Using the battery
 
-    .. blockimg:: pybricks_blockBatteryMeasure_TechnicHub_battery.voltage
-
     .. automethod:: pybricks.hubs::TechnicHub.battery.voltage
-
-    .. blockimg:: pybricks_blockBatteryMeasure_TechnicHub_battery.current
 
     .. automethod:: pybricks.hubs::TechnicHub.battery.current
 
     .. rubric:: Button and system control
 
-    .. blockimg:: pybricks_blockButtonIsPressed_TechnicHub
-
     .. automethod:: pybricks.hubs::TechnicHub.buttons.pressed
 
     .. automethod:: pybricks.hubs::TechnicHub.system.info
-
-    .. blockimg:: pybricks_blockHubStopButton_TechnicHub
-
-    .. blockimg:: pybricks_blockHubStopButton_TechnicHub_none
 
     .. automethod:: pybricks.hubs::TechnicHub.system.set_stop_button
 
@@ -115,8 +71,6 @@ Technic Hub
         firmware.
 
     .. automethod:: pybricks.hubs::TechnicHub.system.reset_storage
-
-    .. blockimg:: pybricks_blockHubShutdown_TechnicHub
 
     .. automethod:: pybricks.hubs::TechnicHub.system.shutdown
 
@@ -155,7 +109,6 @@ Testing which way is up
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/imu_up_technichub.py
-
 
 Reading the tilt value
 ********************************

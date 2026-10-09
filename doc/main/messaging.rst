@@ -79,7 +79,6 @@ the connection at the beginning of the program:
 
 .. autoclass:: BluetoothMailboxClient
 
-
 Mailboxes
 ---------
 

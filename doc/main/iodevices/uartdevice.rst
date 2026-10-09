@@ -42,7 +42,6 @@ Powered UpとEV3は、汎用UARTデバイスのハブへの接続をサポート
      - ハブ RX（センサー TX）（3.3 V）
      - SDA（マスター）（3.3 V）
 
-
 .. autoclass:: pybricks.iodevices.UARTDevice
 
 **例: UARTデバイスへの読み取りと書き込み**

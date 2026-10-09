@@ -6,8 +6,6 @@
 
 .. pybricks-requirements::
 
-.. blockimg:: pybricks_variables_set_drive_base
-
 .. autoclass:: pybricks.robotics.DriveBase
     :no-members:
 
@@ -19,35 +17,15 @@
     これらは内部の回転センサーを使って測定されます。走行中にホイールが
     滑ることがあるため、走行距離と角度は推定値にすぎません。
 
-    .. blockimg:: pybricks_blockDriveBaseMove_drivebase_move_straight
-
     .. automethod:: pybricks.robotics.DriveBase.straight
 
-    .. blockimg:: pybricks_blockDriveBaseMove_drivebase_move_turn_by
-
-    .. blockimg:: pybricks_blockDriveBaseMove_drivebase_move_turn_to
-
     .. automethod:: pybricks.robotics.DriveBase.turn
-
-    .. blockimg:: pybricks_blockDriveBaseMove_drivebase_move_arc_deg
-
-    .. blockimg:: pybricks_blockDriveBaseMove_drivebase_move_arc_mm
 
     .. automethod:: pybricks.robotics.DriveBase.arc
 
     .. pybricks-requirements:: stm32-float
 
-    .. blockimg:: pybricks_blockDriveBaseMove_drivebase_move_coordinates
-
     .. automethod:: pybricks.robotics.DriveBase.move_by
-
-    .. blockimg:: pybricks_blockDriveBaseConfigure_drivebase_straight_speed
-
-    .. blockimg:: pybricks_blockDriveBaseConfigure_drivebase_straight_acceleration
-
-    .. blockimg:: pybricks_blockDriveBaseConfigure_drivebase_turn_rate
-
-    .. blockimg:: pybricks_blockDriveBaseConfigure_drivebase_turn_acceleration
 
     .. automethod:: pybricks.robotics.DriveBase.settings
 
@@ -61,35 +39,19 @@
     走り続けます。たとえば、センサーが反応するまで走行し、その後
     停止したり向きを変えたりできます。
 
-    .. blockimg:: pybricks_blockDriveBaseStart
-
     .. automethod:: pybricks.robotics.DriveBase.drive
-
-    .. blockimg:: pybricks_blockDriveBaseStop_coast
 
     .. automethod:: pybricks.robotics.DriveBase.stop
 
-    .. blockimg:: pybricks_blockDriveBaseStop_brake
-
     .. automethod:: pybricks.robotics.DriveBase.brake
-
-    .. blockimg:: pybricks_blockDriveBaseStop_hold
 
     .. automethod:: pybricks.robotics.DriveBase.hold
 
     .. rubric:: 計測
 
-    .. blockimg:: pybricks_blockDriveBaseMeasure_drivebase_get_distance
-
     .. automethod:: pybricks.robotics.DriveBase.distance
 
-    .. blockimg:: pybricks_blockDriveBaseMeasure_drivebase_get_angle
-
     .. automethod:: pybricks.robotics.DriveBase.angle
-
-    .. blockimg:: pybricks_blockDriveBaseMeasure_drivebase_get_speed
-
-    .. blockimg:: pybricks_blockDriveBaseMeasure_drivebase_get_turn_rate
 
     .. automethod:: pybricks.robotics.DriveBase.state
 
@@ -98,8 +60,6 @@
         ドライブベースを停止するようになりました。ゼロ以外の値を
         使用できるようになりました。
 
-    .. blockimg:: pybricks_blockDriveBaseResetWithValues
-
     .. automethod:: pybricks.robotics.DriveBase.reset
 
     .. automethod:: pybricks.robotics.DriveBase.stalled
@@ -107,8 +67,6 @@
     .. pybricks-requirements:: gyro
 
     .. rubric:: ジャイロでの走行
-
-    .. blockimg:: pybricks_blockDriveBaseUseGyro
 
     .. automethod:: pybricks.robotics.DriveBase.use_gyro
 
@@ -194,22 +152,14 @@
 
 .. pybricks-requirements::
 
-.. blockimg:: pybricks_variables_set_car
-
 .. versionadded:: 3.4
 
 .. autoclass:: pybricks.robotics.Car
     :no-members:
 
-    .. blockimg:: pybricks_blockCarSteer
-
     .. automethod:: pybricks.robotics.Car.steer
 
-    .. blockimg:: pybricks_blockCarDrive_car_drive_at_power
-
     .. automethod:: pybricks.robotics.Car.drive_power
-
-    .. blockimg:: pybricks_blockCarDrive_car_drive_at_speed
 
     .. automethod:: pybricks.robotics.Car.drive_speed
 

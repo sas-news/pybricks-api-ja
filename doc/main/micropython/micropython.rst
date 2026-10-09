@@ -22,7 +22,6 @@
 
 .. autofunction:: micropython.stack_use
 
-
 使用例
 ---------------------
 
@@ -45,7 +44,6 @@
     stack: 372 out of 40184
     GC: total: 258048, used: 352, free: 257696
     No. of 1-blocks: 4, 2-blocks: 2, max blk sz: 8, max free sz: 16103
-
 
 さらに詳しいメモリ統計の取得
 ******************************

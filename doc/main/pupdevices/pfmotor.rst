@@ -18,20 +18,12 @@ Power Functions
    Power Functions モーター（右）。この例では、レシーバーは
    チャンネル1を使い、赤いポートにモーターを接続しています。
 
-.. blockimg:: pybricks_variables_set_pf_motor
-
 .. autoclass:: pybricks.pupdevices.PFMotor
     :no-members:
 
-    .. blockimg:: pybricks_blockMotorDuty_PFMotor
-
     .. automethod:: pybricks.pupdevices.PFMotor.dc
 
-    .. blockimg:: pybricks_blockMotorStop_PFMotor_coast
-
     .. automethod:: pybricks.pupdevices.PFMotor.stop
-
-    .. blockimg:: pybricks_blockMotorStop_PFMotor_brake
 
     .. automethod:: pybricks.pupdevices.PFMotor.brake
 
