@@ -1,153 +1,151 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2018-2020 The Pybricks Authors
 
-"""Generic cross-platform module for typical devices like lights, displays,
-speakers, and batteries."""
+"""ライト、ディスプレイ、スピーカー、バッテリーなどの一般的なデバイスのための
+汎用クロスプラットフォームモジュール。"""
 
 from .parameters import Direction, Stop
 
 
 class DCMotor:
-    """Generic class to control simple motors without rotation sensors, such
-    as train motors."""
+    """回転センサーのないシンプルなモーター（トレインモーターなど）を
+    制御するための汎用クラス。"""
 
     def __init__(self, port,
                  positive_direction=Direction.CLOCKWISE):
         """
 
         Arguments:
-            port (Port): Port to which the motor is connected.
-            positive_direction (Direction): Which direction the motor should
-                turn when you give a positive duty cycle value.
+            port (Port): モーターが接続されているポート。
+            positive_direction (Direction): 正のデューティサイクル値を
+                与えたときにモーターが回転する方向。
         """
         pass
 
     def dc(self, duty):
-        """Rotates the motor at a given duty cycle (also known as "power").
+        """指定したデューティサイクル（「パワー」とも呼ばれます）で
+        モーターを回転させます。
 
         Arguments:
-            duty (:ref:`percentage`): The duty cycle (-100.0 to 100).
+            duty (:ref:`percentage`): デューティサイクル（-100.0から100）。
         """
         pass
 
     def stop(self):
-        """Stops the motor and lets it spin freely.
+        """モーターを停止し、自由に回転できる状態にします。
 
-        The motor gradually stops due to friction."""
+        モーターは摩擦によって徐々に停止します。"""
         pass
 
     def brake(self):
-        """Passively brakes the motor.
+        """モーターを受動的にブレーキします。
 
-        The motor stops due to friction, plus the voltage that
-        is generated while the motor is still moving."""
+        モーターは摩擦に加えて、まだ動いている間に発生する電圧によって
+        停止します。"""
         pass
 
 
 class Control:
-    """Class to interact with PID controller and settings.
+    """PIDコントローラーとその設定を操作するクラス。
 
         .. data:: scale
 
-            Scaling factor between the controlled integer variable
-            and the physical output. For example, for a single
-            motor this is the number of encoder pulses per degree of rotation.
+            制御対象の整数変数と物理出力との間のスケーリング係数。
+            たとえば、単一のモーターの場合、これは回転1度あたりの
+            エンコーダーパルス数です。
     """
 
     def limits(self, speed, acceleration, actuation):
-        """Configures the maximum speed, acceleration, and actuation.
+        """最大速度、加速度、駆動出力を設定します。
 
-        If no arguments are given, this will return the current values.
+        引数が指定されない場合は、現在の値を返します。
 
         Arguments:
             speed (:ref:`speed` or :ref:`linspeed`):
-                Maximum speed. All speed commands will be capped to this value.
+                最大速度。すべての速度コマンドはこの値に制限されます。
             acceleration (:ref:`acceleration` or :ref:`linacceleration`):
-                Maximum acceleration.
+                最大加速度。
             actuation (:ref:`percentage`):
-                Maximum actuation as percentage of absolute maximum.
+                絶対最大値に対する割合で表した最大駆動出力。
         """
         pass
 
     def pid(self, kp, ki, kd, integral_range, integral_rate, feed_forward):
-        """Gets or sets the PID values for position and speed control.
+        """位置制御と速度制御のPID値を取得または設定します。
 
-        If no arguments are given, this will return the current values.
+        引数が指定されない場合は、現在の値を返します。
 
         Arguments:
-            kp (int): Proportional position (or integral speed) control
-                constant.
-            ki (int): Integral position control constant.
-            kd (int): Derivative position (or proportional speed) control
-                constant.
-            integral_range (:ref:`angle` or :ref:`distance`): Region around
-                the target angle or distance, in which integral control errors
-                are accumulated.
-            integral_rate (:ref:`speed` or :ref:`linspeed`): Maximum rate at
-                which the error integral is allowed to grow.
+            kp (int): 比例位置（または積分速度）制御定数。
+            ki (int): 積分位置制御定数。
+            kd (int): 微分位置（または比例速度）制御定数。
+            integral_range (:ref:`angle` or :ref:`distance`): 積分制御の
+                誤差が累積される、目標角度または目標距離の周辺領域。
+            integral_rate (:ref:`speed` or :ref:`linspeed`): 誤差積分が
+                増加できる最大レート。
             feed_forward (:ref:`percentage`):
-                This adds a feed forward signal to the PID feedback signal, in
-                the direction of the speed reference. This value is expressed
-                as a percentage of the absolute maximum duty cycle.
+                速度リファレンスの方向に、PIDフィードバック信号へ加える
+                フィードフォワード信号。この値は絶対最大デューティサイクルに
+                対する割合で表されます。
         """
         pass
 
     def target_tolerances(self, speed, position):
-        """Gets or sets the tolerances that say when a maneuver is done.
+        """動作が完了したとみなす許容誤差を取得または設定します。
 
-        If no arguments are given, this will return the current values.
+        引数が指定されない場合は、現在の値を返します。
 
         Arguments:
-            speed (:ref:`speed` or :ref:`linspeed`): Allowed deviation
-                from zero speed before motion is considered complete.
-            position (:ref:`angle` or :ref:`distance`): Allowed
-                deviation from the target before motion is considered
-                complete.
+            speed (:ref:`speed` or :ref:`linspeed`): 動作が完了したと
+                みなされるまでの、ゼロ速度からの許容偏差。
+            position (:ref:`angle` or :ref:`distance`): 動作が完了したと
+                みなされるまでの、目標からの許容偏差。
         """
         pass
 
     def stall_tolerances(self, speed, time):
-        """Gets or sets stalling tolerances.
+        """ストール判定の許容値を取得または設定します。
 
-        If no arguments are given, this will return the current values.
+        引数が指定されない場合は、現在の値を返します。
 
         Arguments:
-            speed (:ref:`speed` or :ref:`linspeed`): If the controller
-                cannot reach this speed for some ``time`` even with maximum
-                actuation, it is stalled.
-            time (:ref:`time`): How long the controller has to be below this
-                minimum ``speed`` before we say it is stalled.
+            speed (:ref:`speed` or :ref:`linspeed`): 最大の駆動出力でも
+                ``time`` の間この速度に達しない場合、ストールしたと
+                みなされます。
+            time (:ref:`time`): コントローラーがこの最小 ``speed`` を
+                下回り続けた場合に、ストールしたとみなすまでの時間。
         """
         pass
 
     def stalled(self):
-        """Checks if the controller is currently stalled.
+        """コントローラーが現在ストールしているかどうかを確認します。
 
-        A controller is stalled when it cannot reach the target speed or
-        position, even with the maximum actuation signal.
+        最大の駆動信号を与えても目標速度または目標位置に到達できない場合に、
+        コントローラーはストールしているとみなされます。
 
         Returns:
-            bool: ``True`` if the controller is stalled, ``False`` if not.
+            bool: コントローラーがストールしていれば ``True`` 、
+            そうでなければ ``False`` 。
         """
         pass
 
     def done(self):
-        """Checks if an ongoing command or maneuver is done.
+        """進行中のコマンドまたは動作が完了したかどうかを確認します。
 
         Returns:
-            bool: ``True`` if the command is done, ``False`` if not.
+            bool: コマンドが完了していれば ``True`` 、そうでなければ
+            ``False`` 。
         """
         pass
 
 
 class Motor(DCMotor):
-    """Generic class to control motors with built-in rotation sensors."""
+    """内蔵回転センサー付きモーターを制御するための汎用クラス。"""
 
     control = Control()
-    """The motors use PID control to accurately track the speed and
-    angle targets that you specify. You can change its behavior through the
-    ``control`` attribute of the motor. See :ref:`control` for an overview
-    of available methods."""
+    """モーターは指定した速度と角度の目標を正確に追跡するために PID 制御を
+    使用します。モーターの ``control`` 属性でこの動作を変更できます。
+    利用可能なメソッドの概要は :ref:`control` を参照してください。"""
 
     def __init__(self, port,
                  positive_direction=Direction.CLOCKWISE,
@@ -155,274 +153,263 @@ class Motor(DCMotor):
         """
 
         Arguments:
-            port (Port): Port to which the motor is connected.
-            positive_direction (Direction): Which direction the motor should
-                turn when you give a positive speed value or
-                angle.
+            port (Port): モーターを接続するポート。
+            positive_direction (Direction): 正の速度値や角度を与えたときに
+                モーターが回転する方向。
             gears (list):
-                List of gears linked to the motor.
+                モーターに連結されたギアのリスト。
 
-                For example: ``[12, 36]`` represents a gear train with a
-                12-tooth and a 36-tooth gear. Use a list of lists for multiple
-                gear trains, such as ``[[12, 36], [20, 16, 40]]``.
+                例えば ``[12, 36]`` は歯数12と歯数36のギアからなるギア列を
+                表します。 ``[[12, 36], [20, 16, 40]]`` のように
+                リストのリストを使うと複数のギア列を指定できます。
 
-                When you specify a gear train, all motor commands and settings
-                are automatically adjusted to account for the resulting gear
-                ratio.  The motor direction remains unchanged by this.
+                ギア列を指定すると、すべてのモーターコマンドと設定は、
+                得られるギア比を考慮して自動的に調整されます。
+                モーターの回転方向はこれによって変わりません。
         """
         pass
 
     def angle(self):
-        """Gets the rotation angle of the motor.
+        """モーターの回転角度を取得します。
 
         Returns:
-            :ref:`angle`: Motor angle.
+            :ref:`angle`: モーターの角度。
 
         """
         pass
 
     def speed(self):
-        """Gets the speed of the motor.
+        """モーターの速度を取得します。
 
         Returns:
-            :ref:`speed`: Motor speed.
+            :ref:`speed`: モーターの速度。
 
         """
         pass
 
     def reset_angle(self, angle):
-        """Sets the accumulated rotation angle of the motor to a desired value.
+        """モーターの累積回転角度を任意の値に設定します。
 
         Arguments:
-            angle (:ref:`angle`): Value to which the angle should be reset.
+            angle (:ref:`angle`): 角度をリセットする値。
         """
         pass
 
     def hold(self):
-        """Stops the motor and actively holds it at its current angle."""
+        """モーターを停止し、現在の角度に積極的に保持します。"""
         pass
 
     def run(self, speed):
-        """Runs the motor at a constant speed.
+        """モーターを一定の速度で回転させます。
 
-        The motor accelerates to the given speed and keeps running at this
-        speed until you give a new command.
+        モーターは指定した速度まで加速し、新しいコマンドを受け取るまで
+        その速度で回転し続けます。
 
         Arguments:
-            speed (:ref:`speed`): Speed of the motor.
+            speed (:ref:`speed`): モーターの速度。
         """
         pass
 
     def run_time(self, speed, time, then=Stop.HOLD, wait=True):
-        """Runs the motor at a constant speed for a given amount of time.
+        """モーターを一定の速度で、指定した時間だけ回転させます。
 
-        The motor accelerates to the given speed, keeps running at this speed,
-        and then decelerates. The total maneuver lasts for exactly the given
-        amount of ``time``.
+        モーターは指定した速度まで加速し、その速度で回転し続けてから
+        減速します。一連の動作はちょうど指定した ``time`` の長さになります。
 
         Arguments:
-            speed (:ref:`speed`): Speed of the motor.
-            time (:ref:`time`): Duration of the maneuver.
-            then (Stop): What to do after coming to a standstill.
-            wait (bool): Wait for the maneuver to complete before continuing
-                         with the rest of the program.
+            speed (:ref:`speed`): モーターの速度。
+            time (:ref:`time`): 動作の長さ。
+            then (Stop): 停止した後に行う動作。
+            wait (bool): プログラムの続きを実行する前に、動作が完了するまで
+                         待機します。
         """
         pass
 
     def run_angle(self, speed, rotation_angle, then=Stop.HOLD, wait=True):
-        """Runs the motor at a constant speed by a given angle.
+        """モーターを一定の速度で、指定した角度だけ回転させます。
 
         Arguments:
-            speed (:ref:`speed`): Speed of the motor.
-            rotation_angle (:ref:`angle`): Angle by which the motor should
-                                           rotate.
-            then (Stop): What to do after coming to a standstill.
-            wait (bool): Wait for the maneuver to complete before continuing
-                         with the rest of the program.
+            speed (:ref:`speed`): モーターの速度。
+            rotation_angle (:ref:`angle`): モーターが回転する角度。
+            then (Stop): 停止した後に行う動作。
+            wait (bool): プログラムの続きを実行する前に、動作が完了するまで
+                         待機します。
         """
         pass
 
     def run_target(self, speed, target_angle, then=Stop.HOLD, wait=True):
-        """Runs the motor at a constant speed towards a
-        given target angle.
+        """モーターを一定の速度で、指定した目標角度に向かって回転させます。
 
-        The direction of rotation is automatically selected based on the target
-        angle. It does matter if ``speed`` is positive or negative.
+        回転方向は目標角度に基づいて自動的に選択されます。 ``speed`` の
+        正負は関係ありません。
 
         Arguments:
-            speed (:ref:`speed`): Speed of the motor.
-            target_angle (:ref:`angle`): Angle that the motor should
-                                         rotate to.
-            then (Stop): What to do after coming to a standstill.
-            wait (bool): Wait for the motor to reach the target
-                         before continuing with the rest of the
-                         program.
+            speed (:ref:`speed`): モーターの速度。
+            target_angle (:ref:`angle`): モーターが回転して到達する角度。
+            then (Stop): 停止した後に行う動作。
+            wait (bool): プログラムの続きを実行する前に、モーターが目標に
+                         到達するまで待機します。
         """
         pass
 
     def run_until_stalled(self, speed, then=Stop.COAST, duty_limit=None):
-        """Runs the motor at a constant speed until it stalls.
+        """モーターがストールするまで一定の速度で回転させます。
 
         Arguments:
-            speed (:ref:`speed`): Speed of the motor.
-            then (Stop): What to do after coming to a standstill.
-            duty_limit (:ref:`percentage`): Torque limit during this
-                command. This is useful to avoid applying the full motor
-                torque to a geared or lever mechanism.
+            speed (:ref:`speed`): モーターの速度。
+            then (Stop): 停止した後に行う動作。
+            duty_limit (:ref:`percentage`): このコマンド実行中のトルク制限。
+                ギアやレバーの機構にモーターの最大トルクをかけないように
+                するのに便利です。
 
         Returns:
-            :ref:`angle`: Angle at which the motor becomes stalled.
+            :ref:`angle`: モーターがストールした角度。
         """
         pass
 
     def track_target(self, target_angle):
-        """Tracks a target angle. This is similar to :meth:`.run_target`, but
-        the usual smooth acceleration is skipped: it will move to the target
-        angle as fast as possible. This method is useful if you want to
-        continuously change the target angle.
+        """目標角度を追跡します。 :meth:`.run_target` と似ていますが、
+        通常の滑らかな加速を行わず、できるだけ速く目標角度に移動します。
+        目標角度を連続的に変化させたい場合に便利なメソッドです。
 
         Arguments:
-            target_angle (:ref:`angle`): Target angle that the motor should
-                                         rotate to.
+            target_angle (:ref:`angle`): モーターが回転して到達する
+                                         目標角度。
 
         """
         pass
 
     def dc(self, duty):
-        """Rotates the motor at a given duty cycle (also known as "power").
+        """指定したデューティサイクル（「パワー」とも呼ばれます）で
+        モーターを回転させます。
 
-        This method lets you use a motor just like a simple DC motor.
+        このメソッドを使うと、モーターを単純なDCモーターのように使えます。
 
         Arguments:
-            duty (:ref:`percentage`): The duty cycle (-100.0 to 100).
+            duty (:ref:`percentage`): デューティサイクル（-100.0から100）。
         """
 
 
 class Speaker:
-    """Plays beeps and sounds using a speaker."""
+    """スピーカーでビープ音とサウンドを再生します。"""
 
     def beep(self, frequency=500, duration=100):
-        """Play a beep/tone.
+        """ビープ音を再生します。
 
         Arguments:
             frequency (:ref:`frequency`):
-                Frequency of the beep. Frequencies below 100
-                are treated as 100.
+                ビープ音の周波数。100未満の周波数は100として扱われます。
             duration (:ref:`time`):
-                Duration of the beep. If the duration is less
-                than 0, then the method returns immediately and the frequency
-                play continues to play indefinitely.
+                ビープ音の長さ。0未満の場合、このメソッドはすぐに戻り、
+                音は無限に再生され続けます。
         """
         pass
 
     def play_notes(self, notes, tempo=120):
-        """Plays a sequence of musical notes.
+        """一連の音符を再生します。
 
-        For example, you can play: ``['C4/4', 'C4/4', 'G4/4', 'G4/4']``.
+        例えば、次のように演奏できます: ``['C4/4', 'C4/4', 'G4/4', 'G4/4']``.
 
         Arguments:
             notes (iter):
-                A sequence of notes to be played (see format below).
+                再生する音符のシーケンス(下記の形式を参照)。
             tempo (int):
-                Beats per minute where a quarter note is one beat.
+                4分音符を1拍としたときの1分あたりの拍数。
         """
         pass
 
     def play_file(self, file_name):
-        """Plays a sound file.
+        """サウンドファイルを再生します。
 
         Arguments:
             file_name (str):
-                Path to the sound file, including the file extension.
+                拡張子を含むサウンドファイルへのパス。
         """
 
         pass
 
     def say(self, text):
-        """Says a given text string.
+        """指定したテキストを読み上げます。
 
-        You can configure the language and voice of the text using
-        :meth:`set_speech_options`.
+        :meth:`set_speech_options` でテキストの言語と音声を設定できます。
 
         Arguments:
-            text (str): What to say.
+            text (str): 読み上げるテキスト。
         """
 
         pass
 
     def set_speech_options(self, language=None, voice=None, speed=None, pitch=None):
-        """Configures speech settings used by the :meth:`say` method.
+        """:meth:`say` メソッドで使うスピーチ設定を行います。
 
-        Any option that is set to ``None`` will not be changed. If an option
-        is set to an invalid value :meth:`say` will use the default value
-        instead.
+        ``None`` に設定されたオプションは変更されません。無効な値が
+        設定された場合、 :meth:`say` はデフォルト値を代わりに使用します。
 
         Arguments:
             language (str):
-                Language of the text. For example, you can choose ``'en'``
-                (English) or ``'de'`` (German). A list of all available
-                languages is given below.
+                テキストの言語。例えば ``'en'`` (英語)や ``'de'`` (ドイツ語)
+                を選べます。利用可能な言語の一覧は下記の通りです。
             voice (str):
-                The voice to use. For example, you can choose ``'f1'`` (female
-                voice variant 1) or ``'m3'`` (male voice variant 3). A list of
-                all available voices is given below.
+                使用する音声。例えば ``'f1'`` (女性の声バリエーション1)や
+                ``'m3'`` (男性の声バリエーション3)を選べます。
+                利用可能な音声の一覧は下記の通りです。
             speed (int):
-                Number of words per minute.
+                1分あたりの単語数。
             pitch (int):
-                Pitch (0 to 99). Higher numbers make the voice higher pitched
-                and lower numbers make the voice lower pitched.
+                ピッチ(0から99)。数値が大きいほど高い声に、小さいほど
+                低い声になります。
         """
         pass
 
     def set_volume(self, volume, which='_all_'):
-        """Sets the speaker volume.
+        """スピーカーの音量を設定します。
 
         Arguments:
             volume (:ref:`percentage`):
-                Volume of the speaker.
+                スピーカーの音量。
             which (str):
-                Which volume to set. ``'Beep'`` sets the volume for
-                :meth:`beep` and :meth:`play_notes`. ``'PCM'`` sets the volume
-                for :meth:`play_file` and :meth:`say`. ``'_all_'`` sets both
-                at the same time.
+                設定する音量の対象。 ``'Beep'`` は :meth:`beep` と
+                :meth:`play_notes` の音量を設定します。 ``'PCM'`` は
+                :meth:`play_file` と :meth:`say` の音量を設定します。
+                ``'_all_'`` は両方を同時に設定します。
         """
         pass
 
 
 class ColorLight:
-    """Control a multi-color light."""
+    """マルチカラーライトを制御します。"""
 
     def on(self, color):
-        """Turns on the light at the specified color.
+        """指定した色でライトを点灯します。
 
         Arguments:
-            color (Color): Color of the light. The light turns off if you
-                           choose ``None`` or a color that is not available.
+            color (Color): ライトの色。 ``None`` または利用できない色を
+                           選ぶとライトは消灯します。
         """
         pass
 
     def off(self):
-        """Turns off the light."""
+        """ライトを消します。"""
         pass
 
     def rgb(self, red, green, blue):
-        """Sets the brightness of the red, green, and blue light.
+        """赤・緑・青のライトの明るさを設定します。
 
         Arguments:
-            red (:ref:`brightness`): Brightness of the red light.
-            green (:ref:`brightness`): Brightness of the green light.
-            blue (:ref:`brightness`): Brightness of the blue light.
+            red (:ref:`brightness`): 赤のライトの明るさ。
+            green (:ref:`brightness`): 緑のライトの明るさ。
+            blue (:ref:`brightness`): 青のライトの明るさ。
         """
         pass
 
 
 class KeyPad:
-    """Get status of buttons on a keypad layout."""
+    """キーパッド配置のボタンの状態を取得します。"""
 
     def pressed(self):
-        """Checks which buttons are currently pressed.
+        """現在押されているボタンを確認します。
 
-        :returns: List of pressed buttons.
+        :returns: 押されているボタンのリスト。
         :rtype: List of :class:`Button <.parameters.Button>`
 
         """
@@ -430,21 +417,21 @@ class KeyPad:
 
 
 class Battery:
-    """Get the status of a battery."""
+    """バッテリーの状態を取得します。"""
 
     def voltage(self):
-        """Gets the voltage of the battery.
+        """バッテリーの電圧を取得します。
 
         Returns:
-            :ref:`voltage`: Battery voltage.
+            :ref:`voltage`: バッテリーの電圧。
         """
         pass
 
     def current(self):
-        """Gets the current supplied by the battery.
+        """バッテリーから供給される電流を取得します。
 
         Returns:
-            :ref:`current`: Battery current.
+            :ref:`current`: バッテリーの電流。
 
         """
         pass

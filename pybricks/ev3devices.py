@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2018-2022 The Pybricks Authors
 
-"""LEGO® MINDSTORMS® EV3 motors and sensors."""
+"""LEGO® MINDSTORMS® EV3 のモーターとセンサー。"""
 
 from .parameters import Direction as _Direction
 from ._common import DCMotor as _DCMotor, Motor as _Motor
@@ -22,16 +22,16 @@ class TouchSensor:
         """TouchSensor(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
         """
         pass
 
     def pressed(self):
-        """Checks if the sensor is pressed.
+        """センサーが押されているかを確認します。
 
         Returns:
-            bool: ``True`` if the sensor is pressed, ``False`` if it is
-            not pressed.
+            bool: センサーが押されていれば ``True`` 、押されていなければ
+            ``False`` 。
 
         """
         pass
@@ -44,114 +44,109 @@ class ColorSensor:
         """ColorSensor(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
 
         """
         pass
 
     def color(self):
-        """Measures the color of a surface.
+        """表面の色を測定します。
 
         :returns:
             ``Color.BLACK``, ``Color.BLUE``, ``Color.GREEN``, ``Color.YELLOW``,
-            ``Color.RED``, ``Color.WHITE``, ``Color.BROWN`` or ``None``.
-        :rtype: :class:`Color <.parameters.Color>`, or ``None`` if no color is
-                detected.
+            ``Color.RED``, ``Color.WHITE``, ``Color.BROWN`` または ``None`` 。
+        :rtype: :class:`Color <.parameters.Color>`。色が検出されない場合は
+                ``None`` 。
 
         """
         pass
 
     def ambient(self):
-        """Measures the ambient light intensity.
+        """周囲の光の強さを測定します。
 
         Returns:
-            :ref:`percentage`: Ambient light intensity, ranging from 0 (dark)
-            to 100 (bright).
+            :ref:`percentage`: 周囲の光の強さ。0(暗い)から100(明るい)の範囲。
         """
         pass
 
     def reflection(self):
-        """Measures the reflection of a surface using a red light.
+        """赤い光を使って表面の反射率を測定します。
 
         Returns:
-            :ref:`percentage`: Reflection, ranging from 0 (no reflection) to
-            100 (high reflection).
+            :ref:`percentage`: 反射率。0(反射なし)から100(高い反射)の範囲。
 
         """
         pass
 
     def rgb(self):
-        """Measures the reflection of a surface using a red, green, and then a
-        blue light.
+        """赤・緑・青の順に光を当てて、表面の反射率を測定します。
 
-        :returns: Tuple of reflections for red, green, and blue light, each
-                  ranging from 0.0 (no reflection) to 100.0 (high reflection).
+        :returns: 赤・緑・青それぞれの光に対する反射率のタプル。
+                  各値は0.0(反射なし)から100.0(高い反射)の範囲。
         :rtype: (:ref:`percentage`, :ref:`percentage`, :ref:`percentage`)
         """
         pass
 
 
 class InfraredSensor:
-    """LEGO® MINDSTORMS® EV3 Infrared Sensor and Beacon."""
+    """LEGO® MINDSTORMS® EV3 赤外線センサーとビーコン。"""
 
     def __init__(self, port):
         """InfraredSensor(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
 
         """
         pass
 
     def distance(self):
-        """Measures the relative distance between the sensor and an object using
-        infrared light.
+        """赤外線を使って、センサーと物体との相対的な距離を測定します。
 
         Returns:
-            :ref:`relativedistance`: Relative distance ranging from 0 (closest)
-            to 100 (farthest).
+            :ref:`relativedistance`: 相対距離。0(最も近い)から100(最も遠い)
+            の範囲。
 
         """
         pass
 
     def beacon(self, channel):
-        """Measures the relative distance and angle between the remote and the
-        infrared sensor.
+        """リモコンと赤外線センサーとの相対的な距離と角度を測定します。
 
         Arguments:
-            channel (int): Channel number of the remote.
+            channel (int): リモコンのチャンネル番号。
 
-        :returns: Tuple of relative distance (0 to 100) and approximate angle
-                  (-75 to 75 degrees) between remote and infrared sensor.
-        :rtype: (:ref:`relativedistance`, :ref:`angle`) or
-                (``None``, ``None``) if no remote is detected.
+        :returns: リモコンと赤外線センサーとの相対距離(0から100)と
+                  おおよその角度(-75から75度)のタプル。
+        :rtype: (:ref:`relativedistance`, :ref:`angle`)。リモコンが検出
+                されない場合は (``None``, ``None``) 。
         """
         pass
 
     def buttons(self, channel):
-        """Checks which buttons on the infrared remote are pressed.
+        """赤外線リモコンのどのボタンが押されているかを確認します。
 
-        This method can detect up to two buttons at once. If you press
-        more buttons, you may not get useful data.
+        このメソッドは一度に最大2つのボタンを検出できます。それ以上の
+        ボタンを押すと、有効なデータが得られない場合があります。
 
         Arguments:
-            channel (int): Channel number of the remote.
+            channel (int): リモコンのチャンネル番号。
 
-        :returns: List of pressed buttons on the remote on selected channel.
+        :returns: 選択したチャンネルのリモコンで押されているボタンのリスト。
         :rtype: List of :class:`Button <.parameters.Button>`
 
         """
         pass
 
     def keypad(self):
-        """Checks which buttons on the infrared remote are pressed.
+        """赤外線リモコンのどのボタンが押されているかを確認します。
 
-        This method can independently detect all 4 up/down buttons, but
-        it cannot detect the beacon button.
+        このメソッドは4つの上下ボタンをすべて個別に検出できますが、
+        ビーコンボタンは検出できません。
 
-        This method only works with the remote in channel 1.
+        このメソッドはチャンネル1のリモコンでのみ動作します。
 
-        :returns: List of pressed buttons on the remote on selected channel.
+        :returns: 選択したチャンネルのリモコンで押されているボタンのリスト。
         :rtype: List of :class:`Button <.parameters.Button>`
 
         """
@@ -165,49 +160,48 @@ class GyroSensor:
         """
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
             positive_direction (Direction):
-                Positive rotation direction when looking at the red dot on top
-                of the sensor.
+                センサー上部の赤い点を見たときの正の回転方向。
 
         """
         pass
 
     def speed(self):
-        """Gets the speed (angular velocity) of the sensor.
+        """センサーの速度(角速度)を取得します。
 
         Returns:
-            :ref:`speed`: Sensor angular velocity.
+            :ref:`speed`: センサーの角速度。
 
         """
         pass
 
     def angle(self):
-        """Gets the accumulated angle of the sensor.
+        """センサーの累積角度を取得します。
 
         Returns:
-            :ref:`angle`: Rotation angle.
+            :ref:`angle`: 回転角度。
 
         """
         pass
 
     def reset_angle(self, angle):
-        """Sets the rotation angle of the sensor to a desired value.
+        """センサーの回転角度を任意の値に設定します。
 
         Arguments:
-            angle (:ref:`angle`): Value to which the angle should be reset.
+            angle (:ref:`angle`): 角度をリセットする値。
         """
         pass
 
     def _calibrate(self):
-        """Calibrates the sensor.
+        """センサーをキャリブレーションします。
 
-        This process sets the speed and angle to zero and ensures that the
-        angle value does not drift.
+        この処理は速度と角度を0に設定し、角度値がドリフトしないように
+        します。
 
-        Make sure that the sensor does not move while calibrating.
+        キャリブレーション中はセンサーを動かさないでください。
 
-        This process can take up to 15 seconds.
+        この処理には最大15秒かかります。
         """
         pass
 
@@ -219,38 +213,35 @@ class UltrasonicSensor:
         """UltrasonicSensor(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
 
         """
         pass
 
     def distance(self, silent=False):
-        """Measures the distance between the sensor and an object using
-        ultrasonic sound waves.
+        """超音波を使って、センサーと物体との距離を測定します。
 
         Arguments:
-            silent (bool): Choose ``True`` to turn the sensor off after
-                           measuring the distance. This reduces interference
-                           with other ultrasonic sensors. If you do
-                           this too frequently, the sensor can freeze.
-                           If this happens, unplug it and plug it back in.
+            silent (bool): ``True`` を選ぶと、距離の測定後にセンサーを
+                           オフにします。他の超音波センサーとの干渉を
+                           減らせます。ただし頻繁に行いすぎるとセンサーが
+                           フリーズすることがあります。その場合は一度
+                           抜いて差し直してください。
 
         Returns:
-            :ref:`distance`: Distance.
+            :ref:`distance`: 距離。
 
         """
         pass
 
     def presence(self):
-        """Checks for the presence of other ultrasonic sensors by detecting
-        ultrasonic sounds.
+        """超音波を検出することで、他の超音波センサーの存在を確認します。
 
-        If the other ultrasonic sensor is operating in silent mode, you can
-        only detect the presence of that sensor while it is taking a
-        measurement.
+        他の超音波センサーがサイレントモードで動作している場合、その
+        センサーが測定を行っている間だけ存在を検出できます。
 
         Returns:
-            bool: ``True`` if ultrasonic sounds are detected,
-            ``False`` if not.
+            bool: 超音波が検出された場合は ``True`` 、そうでない場合は
+            ``False`` 。
         """
         pass

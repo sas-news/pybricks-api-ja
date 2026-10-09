@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2018-2020 The Pybricks Authors
 
-"""LEGO® Programmable Hubs."""
+"""LEGO® プログラマブルハブ。"""
 from ._common import (Speaker as _Speaker, Battery as _Battery,
                       ColorLight as _ColorLight, KeyPad as _KeyPad)
 from .media.ev3dev import Image as _Image
