@@ -1,13 +1,13 @@
 from pybricks.tools import hub_menu
 
-# This example assumes that you have three other programs in Pybricks Code,
-# called "fly_mission", "drive_mission", and "zigzag". This example creates a
-# menu that lets you pick which one to run.
+# このサンプルは、Pybricks Code に他の3つのプログラム
+# "fly_mission" "drive_mission" "zigzag" が入っている前提。
+# 実行するものを選べるメニューを作るサンプル。
 
-# Choose a letter.
+# 文字を選ぶ。
 selected = hub_menu("F", "D", "Z")
 
-# Based on the selection, run a program.
+# 選ばれたものに応じてプログラムを実行する。
 if selected == "F":
     import fly_mission
 elif selected == "D":

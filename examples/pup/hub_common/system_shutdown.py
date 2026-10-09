@@ -2,12 +2,12 @@
 from pybricks.hubs import ThisHub
 from pybricks.tools import wait
 
-# Initialize the hub.
+# ハブを初期化する。
 hub = ThisHub()
 
-# Say goodbye and give some time to send it.
+# 別れのメッセージを出して、送信されるまで少し待つ。
 print("Goodbye!")
 wait(100)
 
-# Shut the hub down.
+# ハブをシャットダウンする。
 hub.system.shutdown()

@@ -2,19 +2,19 @@ from pybricks.parameters import Port
 from pybricks.pupdevices import ColorSensor
 from pybricks.tools import wait
 
-# Initialize the sensor.
+# センサーを初期化する。
 sensor = ColorSensor(Port.A)
 
 while True:
-    # Read the color and reflection
+    # 色と反射率を読み取る
     color = sensor.color()
     reflection = sensor.reflection()
 
-    # Print the measured color and reflection.
+    # 測った色と反射率をprintする。
     print(color, reflection)
 
-    # Move the sensor around and see how
-    # well you can detect colors.
+    # センサーをあちこち動かして、
+    # どのくらい色を検出できるか見てみよう。
 
-    # Wait so we can read the value.
+    # 値を読み取れるよう少し待つ。
     wait(100)

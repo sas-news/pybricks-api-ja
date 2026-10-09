@@ -2,10 +2,10 @@ from pybricks.parameters import Port
 from pybricks.pupdevices import DCMotor
 from pybricks.tools import wait
 
-# Initialize a motor without rotation sensors on port A.
+# ポートAの回転センサー無しモーターを初期化する。
 example_motor = DCMotor(Port.A)
 
-# Start and stop 10 times.
+# 起動と停止を10回繰り返す。
 for count in range(10):
     print("Counter:", count)
 

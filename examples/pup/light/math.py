@@ -3,22 +3,22 @@ from pybricks.pupdevices import Light
 from pybricks.tools import StopWatch, wait
 from umath import cos, pi
 
-# Initialize the light and a StopWatch.
+# ライトとStopWatchを初期化する。
 light = Light(Port.A)
 watch = StopWatch()
 
-# Cosine pattern properties.
+# コサイン波のパラメータ。
 PERIOD = 2000
 MAX = 100
 
-# Make the brightness fade in and out.
+# 明るさをだんだん変化させる。
 while True:
-    # Get phase of the cosine.
+    # コサイン波の位相を取得する。
     phase = watch.time() / PERIOD * 2 * pi
 
-    # Evaluate the brightness.
+    # 明るさを計算する。
     brightness = (0.5 - 0.5 * cos(phase)) * MAX
 
-    # Set light brightness and wait a bit.
+    # ライトの明るさを設定して少し待つ。
     light.on(brightness)
     wait(10)

@@ -3,33 +3,33 @@
 
 import pathlib
 
-# Make build directory.
+# ビルド用ディレクトリを作る。
 dir_path = pathlib.Path(__file__).parent
 build_path = dir_path / "build"
 build_path.mkdir(exist_ok=True)
 
-# Get list of scripts to be parsed.
+# 変換対象のスクリプト一覧を取得する。
 file_paths = [f for f in dir_path.glob("*.py") if f.stem != "make_examples"]
 
-# Go through all template scripts
+# テンプレートスクリプトをすべて処理する
 for file_path in file_paths:
     with open(file_path) as template:
-        # First line contains hub info
+        # 1行目にハブの情報が書かれている
         hubs = template.readline().strip().split()[3:]
 
         print("Converting", template.name, "to", hubs)
 
         for hub in hubs:
-            # Path to hub-specific output script.
+            # ハブ別の出力スクリプトのパス。
             gen_path = build_path / (file_path.stem + "_" + hub.lower() + ".py")
 
-            # Reset source script and skip over header.
+            # 読み取り位置を戻してヘッダ行を飛ばす。
             template.seek(0)
             template.readline()
 
-            # Open destination script:
+            # 出力先スクリプトを開く:
             with open(gen_path, "w") as dest_file:
-                # Read script line by line.
+                # スクリプトを1行ずつ読む。
                 for line in template:
-                    # Replace hub name if present.
+                    # ハブ名があれば置き換える。
                     dest_file.writelines(line.replace("ThisHub", hub))

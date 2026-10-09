@@ -1,10 +1,10 @@
 from pybricks.hubs import PrimeHub
 from pybricks.tools import wait
 
-# Initialize the hub.
+# ハブを初期化する。
 hub = PrimeHub()
 
-# Count from 0 to 99.
+# 0から99までカウントする。
 for i in range(100):
     hub.display.number(i)
     wait(200)

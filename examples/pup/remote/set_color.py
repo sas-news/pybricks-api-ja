@@ -4,7 +4,7 @@ from pybricks.pupdevices import Remote
 
 def button_to_color(buttons):
 
-    # Return a color depending on the button.
+    # ボタンに応じた色を返す。
     if Button.LEFT_PLUS in buttons:
         return Color.RED
     if Button.LEFT_MINUS in buttons:
@@ -20,25 +20,25 @@ def button_to_color(buttons):
     if Button.CENTER in buttons:
         return Color.VIOLET
 
-    # Return no color by default.
+    # デフォルトでは色無しを返す。
     return Color.NONE
 
 
-# Connect to the remote.
+# リモコンに接続する。
 remote = Remote()
 
 while True:
-    # Wait until a button is pressed.
+    # ボタンが押されるまで待つ。
     pressed = ()
     while not pressed:
         pressed = remote.buttons.pressed()
 
-    # Convert button code to color.
+    # ボタンのコードを色に変換する。
     color = button_to_color(pressed)
 
-    # Set the remote light color.
+    # リモコンのライトの色を設定する。
     remote.light.on(color)
 
-    # Wait until all buttons are released.
+    # すべてのボタンが離されるまで待つ。
     while pressed:
         pressed = remote.buttons.pressed()

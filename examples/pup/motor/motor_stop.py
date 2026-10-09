@@ -2,28 +2,28 @@ from pybricks.parameters import Port
 from pybricks.pupdevices import Motor
 from pybricks.tools import wait
 
-# Initialize a motor on port A.
+# ポートAのモーターを初期化する。
 example_motor = Motor(Port.A)
 
-# Run at 500 deg/s and then stop by coasting.
+# 毎秒500度で回してから惰行で止める。
 example_motor.run(500)
 wait(1500)
 example_motor.stop()
 wait(1500)
 
-# Run at 500 deg/s and then stop by braking.
+# 毎秒500度で回してからブレーキで止める。
 example_motor.run(500)
 wait(1500)
 example_motor.brake()
 wait(1500)
 
-# Run at 500 deg/s and then stop by holding.
+# 毎秒500度で回してから保持して止める。
 example_motor.run(500)
 wait(1500)
 example_motor.hold()
 wait(1500)
 
-# Run at 500 deg/s and then stop by running at 0 speed.
+# 毎秒500度で回してから速度0で止める。
 example_motor.run(500)
 wait(1500)
 example_motor.run(0)

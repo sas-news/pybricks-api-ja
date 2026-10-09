@@ -2,20 +2,20 @@ from pybricks.parameters import Port
 from pybricks.pupdevices import ForceSensor
 from pybricks.tools import wait
 
-# Initialize the sensor.
+# センサーを初期化する。
 button = ForceSensor(Port.A)
 
 while True:
-    # Read all the information we can get from this sensor.
+    # このセンサーから取れる情報をすべて読み取る。
     force = button.force()
     dist = button.distance()
     press = button.pressed()
     touch = button.touched()
 
-    # Print the values
+    # 値をprintする
     print("Force", force, "Dist:", dist, "Pressed:", press, "Touched:", touch)
 
-    # Push the sensor button see what happens to the values.
+    # センサーボタンを押して値がどう変わるか見てみよう。
 
-    # Wait some time so we can read what is printed.
+    # 出力を読み取れるよう少し待つ。
     wait(200)

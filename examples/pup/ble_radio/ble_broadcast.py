@@ -3,22 +3,22 @@ from pybricks.parameters import Port
 from pybricks.pupdevices import Motor
 from pybricks.tools import wait
 
-# Initialize the hub.
+# ハブを初期化する。
 radio = BLERadio(broadcast_channel=1)
 
-# Initialize the motors.
+# モーターを初期化する。
 left_motor = Motor(Port.A)
 right_motor = Motor(Port.B)
 
 while True:
-    # Read the motor angles to be sent to the other hub.
+    # 相手側のハブに送るモーターの角度を読み取る。
     left_angle = left_motor.angle()
     right_angle = right_motor.angle()
 
-    # Set the broadcast data and start broadcasting if not already doing so.
+    # ブロードキャストするデータを設定し、まだ送信中でなければ開始する。
     data = (left_angle, right_angle)
     radio.broadcast(data)
 
-    # Broadcasts are only sent every 100 milliseconds, so there is no reason
-    # to call the broadcast() method more often than that.
+    # ブロードキャストは100ミリ秒ごとにしか送信されないので、
+    # それより頻繁に broadcast() を呼んでも意味はない。
     wait(100)

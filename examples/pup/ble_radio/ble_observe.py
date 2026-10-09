@@ -3,30 +3,30 @@ from pybricks.parameters import Port
 from pybricks.pupdevices import Motor
 from pybricks.tools import wait
 
-# Initialize the hub.
+# ハブを初期化する。
 radio = BLERadio(observe_channels=[1])
 
-# Initialize the motors.
+# モーターを初期化する。
 left_motor = Motor(Port.A)
 right_motor = Motor(Port.B)
 
 while True:
-    # Receive broadcast from the other hub.
+    # 相手側のハブからのブロードキャストを受信する。
 
     data = radio.observe(1)
 
     if data is not None:
-        # Data was received and is less that one second old.
-        # It contains the same values in the same order
-        # that were passed to radio.broadcast() on the
-        # other hub.
+        # データを受信していて、それが1秒以内のものなら、
+        # その中身は相手側のハブで
+        # radio.broadcast() に渡した値と
+        # 同じ順序で入っている。
         left_angle, right_angle = data
 
-        # Make the motors on this hub mirror the position of the
-        # motors on the other hub.
+        # このハブのモーターを、相手側ハブの
+        # モーターと同じ位置に追従させる。
         left_motor.track_target(left_angle)
         right_motor.track_target(right_angle)
 
-    # Broadcasts are only sent every 100 milliseconds, so there is
-    # no reason to call the observe() method more often than that.
+    # ブロードキャストは100ミリ秒ごとにしか送信されないので、
+    # それより頻繁に observe() を呼んでも意味はない。
     wait(100)

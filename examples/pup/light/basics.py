@@ -2,15 +2,15 @@ from pybricks.parameters import Port
 from pybricks.pupdevices import Light
 from pybricks.tools import wait
 
-# Initialize the light.
+# ライトを初期化する。
 light = Light(Port.A)
 
-# Blink the light forever.
+# ライトをずっと点滅させる。
 while True:
-    # Turn the light on at 100% brightness.
+    # ライトを100%の明るさで点灯する。
     light.on(100)
     wait(500)
 
-    # Turn the light off.
+    # ライトを消す。
     light.off()
     wait(500)

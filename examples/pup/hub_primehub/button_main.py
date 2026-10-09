@@ -2,23 +2,23 @@ from pybricks.hubs import PrimeHub
 from pybricks.parameters import Button, Icon
 from pybricks.tools import wait
 
-# Initialize the hub.
+# ハブを初期化する。
 hub = PrimeHub()
 
-# Wait for any button to be pressed, and save the result.
+# どれかのボタンが押されるまで待ち、結果を保存する。
 pressed = []
 while not any(pressed):
     pressed = hub.buttons.pressed()
     wait(10)
 
-# Display a circle.
+# 丸を表示する。
 hub.display.icon(Icon.CIRCLE)
 
-# Wait for all buttons to be released.
+# すべてのボタンが離されるまで待つ。
 while any(hub.buttons.pressed()):
     wait(10)
 
-# Display an arrow to indicate which button was pressed.
+# 押されたボタンに対応する矢印を表示する。
 if Button.LEFT in pressed:
     hub.display.icon(Icon.ARROW_LEFT_DOWN)
 elif Button.RIGHT in pressed:

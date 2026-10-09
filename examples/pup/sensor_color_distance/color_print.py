@@ -2,18 +2,18 @@ from pybricks.parameters import Port
 from pybricks.pupdevices import ColorDistanceSensor
 from pybricks.tools import wait
 
-# Initialize the sensor.
+# センサーを初期化する。
 sensor = ColorDistanceSensor(Port.A)
 
 while True:
-    # Read the color.
+    # 色を読み取る。
     color = sensor.color()
 
-    # Print the measured color.
+    # 測った色をprintする。
     print(color)
 
-    # Move the sensor around and see how
-    # well you can detect colors.
+    # センサーをあちこち動かして、
+    # どのくらい色を検出できるか見てみよう。
 
-    # Wait so we can read the value.
+    # 値を読み取れるよう少し待つ。
     wait(100)

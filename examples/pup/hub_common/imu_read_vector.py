@@ -2,14 +2,14 @@
 from pybricks.hubs import ThisHub
 from pybricks.tools import wait
 
-# Initialize the hub.
+# ハブを初期化する。
 hub = ThisHub()
 
-# Get the acceleration vector in g's.
+# 加速度ベクトルをg単位で取得する。
 print(hub.imu.acceleration() / 9810)
 
-# Get the angular velocity vector.
+# 角速度ベクトルを取得する。
 print(hub.imu.angular_velocity())
 
-# Wait so we can see what we printed
+# 出力したものを見られるよう少し待つ
 wait(5000)

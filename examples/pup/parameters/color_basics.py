@@ -1,23 +1,23 @@
 from pybricks.parameters import Color
 
-# You can print colors. Colors may be obtained from the Color class, or
-# from sensors that return color measurements.
+# 色はprintできる。色はColorクラスからも、
+# 色を測定するセンサーからも得られる。
 print(Color.RED)
 
-# You can read hue, saturation, and value properties.
+# 色相・彩度・明度の各プロパティを読み取れる。
 print(Color.RED.h, Color.RED.s, Color.RED.v)
 
-# You can make your own colors. Saturation and value are 100 by default.
+# 自分で色を作れる。彩度と明度のデフォルトは100。
 my_green = Color(h=125)
 my_dark_green = Color(h=125, s=80, v=30)
 
-# When you print custom colors, you see exactly how they were defined.
+# カスタム色をprintすると、どう定義されたかがそのまま見える。
 print(my_dark_green)
 
-# You can also add colors to the builtin colors.
+# 組み込みの色に新しい色を追加することもできる。
 Color.MY_DARK_BLUE = Color(h=235, s=80, v=30)
 
-# When you add them like this, printing them only shows its name. But you can
-# still read h, s, v by reading its attributes.
+# このように追加した色は、printすると名前しか出ない。でも
+# 属性を読めば h, s, v の値を取得できる。
 print(Color.MY_DARK_BLUE)
 print(Color.MY_DARK_BLUE.h, Color.MY_DARK_BLUE.s, Color.MY_DARK_BLUE.v)

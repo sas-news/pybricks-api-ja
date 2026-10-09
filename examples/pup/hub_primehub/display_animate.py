@@ -2,18 +2,18 @@ from pybricks.hubs import PrimeHub
 from pybricks.parameters import Icon
 from pybricks.tools import wait
 
-# Initialize the hub.
+# ハブを初期化する。
 hub = PrimeHub()
 
-# Turn the hub light off (optional).
+# ハブのライトを消す(任意)。
 hub.light.off()
 
-# Create a list of intensities from 0 to 100 and back.
+# 0から100まで行って戻る明るさのリストを作る。
 brightness = list(range(0, 100, 4)) + list(range(100, 0, -4))
 
-# Create an animation of the heart icon with changing brightness.
+# 明るさが変わるハートアイコンのアニメーションを作る。
 hub.display.animate([Icon.HEART * i / 100 for i in brightness], 30)
 
-# The animation repeats in the background. Here we just wait.
+# アニメーションはバックグラウンドで繰り返される。ここでは待つだけ。
 while True:
     wait(100)

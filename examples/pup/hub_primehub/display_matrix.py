@@ -1,10 +1,10 @@
 from pybricks.hubs import PrimeHub
 from pybricks.tools import Matrix, wait
 
-# Initialize the hub.
+# ハブを初期化する。
 hub = PrimeHub()
 
-# Make a square that is bright on the outside and faint in the middle.
+# 外側が明るく中央が暗い四角を作る。
 SQUARE = Matrix(
     [
         [100, 100, 100, 100, 100],
@@ -15,15 +15,15 @@ SQUARE = Matrix(
     ]
 )
 
-# Display the square.
+# 四角を表示する。
 hub.display.icon(SQUARE)
 wait(3000)
 
-# Make an image using a Python list comprehension. In this image, the
-# brightness of each pixel is the sum of the row and column index. So the
-# light is faint in the top left and bright in the bottom right.
+# Pythonのリスト内包表記で画像を作る。この画像では、
+# 各ピクセルの明るさは行と列のインデックスの合計。つまり
+# 左上が暗く、右下が明るい。
 GRADIENT = Matrix([[(r + c) for c in range(5)] for r in range(5)]) * 12.5
 
-# Display the generated gradient.
+# 生成したグラデーションを表示する。
 hub.display.icon(GRADIENT)
 wait(3000)

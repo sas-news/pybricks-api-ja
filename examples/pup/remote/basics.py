@@ -2,19 +2,19 @@ from pybricks.parameters import Button
 from pybricks.pupdevices import Remote
 from pybricks.tools import wait
 
-# Connect to the remote.
+# リモコンに接続する。
 my_remote = Remote()
 
 while True:
-    # Check which buttons are pressed.
+    # どのボタンが押されているか調べる。
     pressed = my_remote.buttons.pressed()
 
-    # Show the result.
+    # 結果を表示する。
     print("pressed:", pressed)
 
-    # Check a specific button.
+    # 特定のボタンを調べる。
     if Button.CENTER in pressed:
         print("You pressed the center button!")
 
-    # Wait so we can see the result.
+    # 結果を見られるよう少し待つ。
     wait(100)

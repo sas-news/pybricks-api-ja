@@ -1,31 +1,31 @@
 from pybricks.parameters import Color
 
-# Two colors are equal if their h, s, and v attributes are equal.
+# 2つの色は、h, s, v 属性がすべて等しいとき同じ色とみなされる。
 if Color.BLUE == Color(240, 100, 100):
     print("Yes, these colors are the same.")
 
-# You can scale colors to change their brightness value.
+# 色をスケールして明るさを変えられる。
 red_dark = Color.RED * 0.5
 
-# You can shift colors to change their hue.
+# 色をシフトして色相を変えられる。
 red_shifted = Color.RED >> 30
 
-# Colors are immutable, so you can't change h, s, or v of an existing object.
+# 色は変更不可なので、既存オブジェクトの h, s, v は書き換えられない。
 try:
     Color.GREEN.h = 125
 except AttributeError:
     print("Sorry, can't change the hue of an existing color object!")
 
-# But you can override builtin colors by defining a whole new color.
+# でも、丸ごと新しい色を定義すれば組み込みの色を上書きできる。
 Color.GREEN = Color(h=125)
 
-# You can access and store colors as class attributes, or as a dictionary.
+# 色はクラス属性としても辞書としても読み書きできる。
 print(Color.BLUE)
 print(Color["BLUE"])
 print(Color["BLUE"] is Color.BLUE)
 print(Color)
 print([c for c in Color])
 
-# This allows you to update existing colors in a loop.
+# これでループ内で既存の色を更新できる。
 for name in ("BLUE", "RED", "GREEN"):
     Color[name] = Color(1, 2, 3)

@@ -2,20 +2,20 @@ from pybricks.parameters import Port
 from pybricks.pupdevices import ColorSensor
 from pybricks.tools import wait
 
-# Initialize the sensor.
+# センサーを初期化する。
 sensor = ColorSensor(Port.A)
 
 while True:
-    # The standard color() method always "rounds" the
-    # measurement to the nearest "whole" color.
-    # That's useful for most applications.
+    # 標準の color() メソッドは常に測定値を
+    # いちばん近い「きっちりした」色に丸める。
+    # 多くの用途ではこれで十分。
 
-    # But you can get the original hue, saturation,
-    # and value without "rounding", as follows:
+    # でも、丸めずに元の色相・彩度・
+    # 明度をそのまま取ることもできる:
     color = sensor.hsv()
 
-    # Print the results.
+    # 結果をprintする。
     print(color)
 
-    # Wait so we can read the value.
+    # 値を読み取れるよう少し待つ。
     wait(500)

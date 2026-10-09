@@ -2,19 +2,19 @@ from pybricks.parameters import Port
 from pybricks.pupdevices import Motor
 from pybricks.tools import wait
 
-# Initialize a motor on port A.
+# ポートAのモーターを初期化する。
 example_motor = Motor(Port.A)
 
 while True:
-    # Get the default angle value.
+    # デフォルトの角度の値を取得する。
     angle = example_motor.angle()
 
-    # Get the angle between 0 and 360.
+    # 0〜360の範囲で角度を取得する。
     absolute_angle = example_motor.angle() % 360
 
-    # Get the angle between -180 and 179.
+    # -180〜179の範囲で角度を取得する。
     wrapped_angle = (example_motor.angle() + 180) % 360 - 180
 
-    # Print the results.
+    # 結果をprintする。
     print(angle, absolute_angle, wrapped_angle)
     wait(100)
