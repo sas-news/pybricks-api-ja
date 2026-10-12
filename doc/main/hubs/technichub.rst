@@ -9,7 +9,7 @@ Technic Hub
 .. autoclass:: pybricks.hubs.TechnicHub
     :no-members:
 
-    .. rubric:: Using the hub status light
+    .. rubric:: ステータスライトを使う
 
     .. automethod:: pybricks.hubs::TechnicHub.light.on
 
@@ -19,14 +19,15 @@ Technic Hub
 
     .. automethod:: pybricks.hubs::TechnicHub.light.animate
 
-    .. rubric:: Using the IMU
+    .. rubric:: IMUを使う
 
     .. versionchanged:: 3.6
 
-        The methods below now return calibrated data by default. Depending on
-        the method used, this combines data from the accelerometer, gyroscope,
-        with your calibration values. Use ``calibrated=False`` where applicable
-        to get the raw data you got before.
+        以下のメソッドは、デフォルトでキャリブレーション済みのデータを
+        返すようになりました。使用するメソッドに応じて、加速度センサーと
+        ジャイロスコープのデータが、設定したキャリブレーション値と
+        組み合わされます。以前の生データを取得するには、該当する場所で
+        ``calibrated=False`` を使用します。
 
     .. automethod:: pybricks.hubs::TechnicHub.imu.ready
 
@@ -50,13 +51,13 @@ Technic Hub
 
     .. automethod:: pybricks.hubs::TechnicHub.imu.settings
 
-    .. rubric:: Using the battery
+    .. rubric:: バッテリーを使う
 
     .. automethod:: pybricks.hubs::TechnicHub.battery.voltage
 
     .. automethod:: pybricks.hubs::TechnicHub.battery.current
 
-    .. rubric:: Button and system control
+    .. rubric:: ボタンとシステム制御
 
     .. automethod:: pybricks.hubs::TechnicHub.buttons.pressed
 
@@ -66,84 +67,84 @@ Technic Hub
 
     .. automethod:: pybricks.hubs::TechnicHub.system.storage
 
-        You can store up to 128 bytes of data on this hub. The data is cleared
-        when you update the Pybricks firmware or if you restore the original
-        firmware.
+        このハブには最大128バイトのデータを保存できます。データは、
+        Pybricksファームウェアを更新した場合や、元のファームウェアに
+        戻した場合に消去されます。
 
     .. automethod:: pybricks.hubs::TechnicHub.system.reset_storage
 
     .. automethod:: pybricks.hubs::TechnicHub.system.shutdown
 
-Status light examples
+ステータスライトの例
 ---------------------
 
-Turning the light on and off
+ライトのオンとオフ
 ****************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/light_off_technichub.py
 
-Changing brightness and using custom colors
+輝度の変更とカスタムカラーの使用
 *******************************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/light_hsv_technichub.py
 
-Making the light blink
+ライトを点滅させる
 **********************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/light_blink_technichub.py
 
-Creating light animations
-*************************
+ライトアニメーションの作成
+****************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/light_animate_technichub.py
 
-IMU examples
+IMUの例
 ---------------
 
-Testing which way is up
+どちらが上かを確かめる
 ********************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/imu_up_technichub.py
 
-Reading the tilt value
+傾きの値を読み取る
 ********************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/imu_tilt_technichub.py
 
-Using a custom hub orientation
+カスタムのハブの向きを使う
 **************************************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/imu_tilt_blast_technichub.py
 
-Reading acceleration and angular velocity vectors
+加速度と角速度のベクトルを読み取る
 **************************************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/imu_read_vector_technichub.py
 
-Reading acceleration and angular velocity on one axis
+1軸の加速度と角速度を読み取る
 *****************************************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/imu_read_scalar_technichub.py
 
-Button and system examples
+ボタンとシステムの例
 ----------------------------------
 
-Using the stop button during your program
+プログラム実行中に停止ボタンを使う
 *****************************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/button_single_technichub.py
 
-Turning the hub off
+ハブの電源を切る
 *****************************************
 
 .. literalinclude::

@@ -9,7 +9,7 @@ Essential Hub
 .. autoclass:: pybricks.hubs.EssentialHub
     :no-members:
 
-    .. rubric:: Using the hub status light
+    .. rubric:: ステータスライトを使う
 
     .. automethod:: pybricks.hubs::EssentialHub.light.on
 
@@ -19,20 +19,21 @@ Essential Hub
 
     .. automethod:: pybricks.hubs::EssentialHub.light.animate
 
-    .. rubric:: Using the button
+    .. rubric:: ボタンを使う
 
     .. automethod:: pybricks.hubs::EssentialHub.buttons.pressed
 
     .. automethod:: pybricks.hubs::EssentialHub.system.set_stop_button
 
-    .. rubric:: Using the IMU
+    .. rubric:: IMUを使う
 
     .. versionchanged:: 3.6
 
-        The methods below now return calibrated data by default. Depending on
-        the method used, this combines data from the accelerometer, gyroscope,
-        with your calibration values. Use ``calibrated=False`` where applicable
-        to get the raw data you got before.
+        以下のメソッドは、デフォルトでキャリブレーション済みのデータを
+        返すようになりました。使用するメソッドに応じて、加速度センサーと
+        ジャイロスコープのデータが、設定したキャリブレーション値と
+        組み合わされます。以前の生データを取得するには、該当する場所で
+        ``calibrated=False`` を使用します。
 
     .. automethod:: pybricks.hubs::EssentialHub.imu.ready
 
@@ -56,13 +57,13 @@ Essential Hub
 
     .. automethod:: pybricks.hubs::EssentialHub.imu.settings
 
-    .. rubric:: Using the battery
+    .. rubric:: バッテリーを使う
 
     .. automethod:: pybricks.hubs::EssentialHub.battery.voltage
 
     .. automethod:: pybricks.hubs::EssentialHub.battery.current
 
-    .. rubric:: Getting the charger status
+    .. rubric:: 充電器の状態を取得する
 
     .. automethod:: pybricks.hubs::EssentialHub.charger.connected
 
@@ -70,89 +71,89 @@ Essential Hub
 
     .. automethod:: pybricks.hubs::EssentialHub.charger.status
 
-    .. rubric:: System control
+    .. rubric:: システム制御
 
     .. automethod:: pybricks.hubs::EssentialHub.system.info
 
     .. automethod:: pybricks.hubs::EssentialHub.system.storage
 
-        You can store up to 512 bytes of data on this hub. The data is cleared
-        when you update the Pybricks firmware.
+        このハブには最大512バイトのデータを保存できます。データは
+        Pybricksファームウェアを更新すると消去されます。
 
     .. automethod:: pybricks.hubs::EssentialHub.system.reset_storage
 
     .. automethod:: pybricks.hubs::EssentialHub.system.shutdown
 
-Status light examples
+ステータスライトの例
 ---------------------
 
-Turning the light on and off
+ライトのオンとオフ
 ****************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/light_off_essentialhub.py
 
-Changing brightness and using custom colors
+輝度の変更とカスタムカラーの使用
 *******************************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/light_hsv_essentialhub.py
 
-Making the light blink
+ライトを点滅させる
 **********************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/light_blink_essentialhub.py
 
-Creating light animations
-*************************
+ライトアニメーションの作成
+****************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/light_animate_essentialhub.py
 
-IMU examples
+IMUの例
 ---------------
 
-Testing which way is up
+どちらが上かを確かめる
 ********************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/imu_up_essentialhub.py
 
-Reading the tilt value
+傾きの値を読み取る
 ********************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/imu_tilt_essentialhub.py
 
-Using a custom hub orientation
+カスタムのハブの向きを使う
 **************************************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/imu_tilt_blast_essentialhub.py
 
-Reading acceleration and angular velocity vectors
+加速度と角速度のベクトルを読み取る
 **************************************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/imu_read_vector_essentialhub.py
 
-Reading acceleration and angular velocity on one axis
+1軸の加速度と角速度を読み取る
 *****************************************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/imu_read_scalar_essentialhub.py
 
-System examples
+システムの例
 ----------------------------------
 
-Using the stop button during your program
+プログラム実行中に停止ボタンを使う
 *****************************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/button_single_essentialhub.py
 
-Turning the hub off
+ハブの電源を切る
 *****************************************
 
 .. literalinclude::

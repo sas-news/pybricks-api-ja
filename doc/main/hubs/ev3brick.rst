@@ -7,11 +7,11 @@ EV3 Brick
 .. autoclass:: pybricks.hubs.EV3Brick
     :no-members:
 
-    .. rubric:: Using the buttons
+    .. rubric:: ボタンを使う
 
     .. automethod:: pybricks.hubs::EV3Brick.buttons.pressed
 
-    .. rubric:: Using the brick status light
+    .. rubric:: ブリックのステータスライトを使う
 
     .. automethod:: pybricks.hubs::EV3Brick.light.on
 
@@ -21,7 +21,7 @@ EV3 Brick
 
     .. automethod:: pybricks.hubs::EV3Brick.light.animate
 
-    .. rubric:: Using the speaker
+    .. rubric:: スピーカーを使う
 
     .. automethod:: pybricks.hubs::EV3Brick.speaker.volume
 
@@ -29,9 +29,9 @@ EV3 Brick
 
     .. automethod:: pybricks.hubs::EV3Brick.speaker.play_notes
 
-    .. rubric:: Using the screen
+    .. rubric:: スクリーンを使う
 
-    .. |this image| replace:: the screen
+    .. |this image| replace:: スクリーン
 
     .. automethod:: pybricks.hubs::EV3Brick.screen.clear
 
@@ -63,13 +63,13 @@ EV3 Brick
     .. autoattribute:: pybricks.hubs::EV3Brick.screen.height
         :annotation: = 128
 
-    .. rubric:: Using the battery
+    .. rubric:: バッテリーを使う
 
     .. automethod:: pybricks.hubs::EV3Brick.battery.voltage
 
     .. automethod:: pybricks.hubs::EV3Brick.battery.current
 
-    .. rubric:: System control
+    .. rubric:: システム制御
 
     .. automethod:: pybricks.hubs::EV3Brick.system.info
 
@@ -81,19 +81,19 @@ EV3 Brick
 
     .. automethod:: pybricks.hubs::EV3Brick.system.shutdown
 
-Status light examples
+ステータスライトの例
 ---------------------
 
-Turn the light on and change the color
+ライトを点灯して色を変える
 **************************************
 
 .. literalinclude::
     ../../../examples/ev3/light_color/main.py
 
-Screen examples
+スクリーンの例
 ---------------------
 
-Drawing shapes on the screen
+スクリーンに図形を描く
 ****************************
 
 .. literalinclude::
