@@ -8,7 +8,7 @@ City Hub
 .. autoclass:: pybricks.hubs.CityHub
     :no-members:
 
-    .. rubric:: Using the hub status light
+    .. rubric:: ステータスライトを使う
 
     .. automethod:: pybricks.hubs::CityHub.light.on
 
@@ -18,13 +18,13 @@ City Hub
 
     .. automethod:: pybricks.hubs::CityHub.light.animate
 
-    .. rubric:: Using the battery
+    .. rubric:: バッテリーを使う
 
     .. automethod:: pybricks.hubs::CityHub.battery.voltage
 
     .. automethod:: pybricks.hubs::CityHub.battery.current
 
-    .. rubric:: Button and system control
+    .. rubric:: ボタンとシステム制御
 
     .. automethod:: pybricks.hubs::CityHub.buttons.pressed
 
@@ -34,51 +34,51 @@ City Hub
 
     .. automethod:: pybricks.hubs::CityHub.system.storage
 
-        You can store up to 128 bytes of data on this hub. The data is cleared
-        when you update the Pybricks firmware or if you restore the original
-        firmware.
+        このハブには最大128バイトのデータを保存できます。データは、
+        Pybricksファームウェアを更新した場合や、元のファームウェアに
+        戻した場合に消去されます。
 
     .. automethod:: pybricks.hubs::CityHub.system.reset_storage
 
     .. automethod:: pybricks.hubs::CityHub.system.shutdown
 
-Status light examples
+ステータスライトの例
 ---------------------
 
-Turning the light on and off
+ライトのオンとオフ
 ****************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/light_off_cityhub.py
 
-Changing brightness and using custom colors
+輝度の変更とカスタムカラーの使用
 *******************************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/light_hsv_cityhub.py
 
-Making the light blink
+ライトを点滅させる
 **********************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/light_blink_cityhub.py
 
-Creating light animations
-*************************
+ライトアニメーションの作成
+****************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/light_animate_cityhub.py
 
-Button and system examples
+ボタンとシステムの例
 ----------------------------------
 
-Using the stop button during your program
+プログラム実行中に停止ボタンを使う
 *****************************************
 
 .. literalinclude::
     ../../../examples/pup/hub_common/build/button_single_cityhub.py
 
-Turning the hub off
+ハブの電源を切る
 *****************************************
 
 .. literalinclude::

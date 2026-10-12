@@ -7,11 +7,11 @@ NXT Brick
 .. autoclass:: pybricks.hubs.NXTBrick
     :no-members:
 
-    .. rubric:: Using the buttons
+    .. rubric:: ボタンを使う
 
     .. automethod:: pybricks.hubs::NXTBrick.buttons.pressed
 
-    .. rubric:: Using the speaker
+    .. rubric:: スピーカーを使う
 
     .. automethod:: pybricks.hubs::NXTBrick.speaker.volume
 
@@ -19,9 +19,9 @@ NXT Brick
 
     .. automethod:: pybricks.hubs::NXTBrick.speaker.play_notes
 
-    .. rubric:: Using the screen
+    .. rubric:: スクリーンを使う
 
-    .. |this image| replace:: the screen
+    .. |this image| replace:: スクリーン
 
     .. automethod:: pybricks.hubs::NXTBrick.screen.clear
 
@@ -53,13 +53,13 @@ NXT Brick
     .. autoattribute:: pybricks.hubs::NXTBrick.screen.height
         :annotation: = 64
 
-    .. rubric:: Using the battery
+    .. rubric:: バッテリーを使う
 
     .. automethod:: pybricks.hubs::NXTBrick.battery.voltage
 
     .. automethod:: pybricks.hubs::NXTBrick.battery.current
 
-    .. rubric:: System control
+    .. rubric:: システム制御
 
     .. automethod:: pybricks.hubs::NXTBrick.system.info
 
