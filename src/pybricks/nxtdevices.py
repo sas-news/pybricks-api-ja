@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2018-2022 The Pybricks Authors
 
-"""Use LEGO® MINDSTORMS® NXT motors and sensors with the EV3 brick."""
+"""LEGO® MINDSTORMS® NXT のモーターとセンサーを EV3 ブリックで使用します。"""
 
 from __future__ import annotations
 
@@ -33,17 +33,17 @@ class TouchSensor:
         """TouchSensor(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
         """
 
     def pressed(self) -> bool:
         """pressed() -> bool
 
-        Checks if the sensor is pressed.
+        センサーが押されているかを確認します。
 
         Returns:
-            ``True`` if the sensor is pressed, ``False`` if it is
-            not pressed.
+            センサーが押されていれば ``True`` 、押されていなければ
+            ``False`` 。
         """
 
 
@@ -54,26 +54,25 @@ class LightSensor:
         """LightSensor(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
         """
 
     def ambient(self) -> int:
         """ambient() -> int: %
 
-        Measures the ambient light intensity.
+        周囲の光の強さを測定します。
 
         Returns:
-            Ambient light intensity, ranging from 0% (dark) to 100% (bright).
+            0% (暗い) から 100% (明るい) までの周囲の光の強さ。
         """
 
     def reflection(self) -> int:
         """reflection() -> int: %
 
-        Measures the reflection of a surface using a red light.
+        赤い光を使って、表面の反射率を測定します。
 
         Returns:
-            Reflection, ranging from 0% (no reflection) to 100% (high
-            reflection).
+            0% (反射なし) から 100% (高い反射) までの反射率。
         """
 
 
@@ -83,61 +82,56 @@ class ColorSensor(CommonColorSensor):
     light = ColorLight()
 
     def rgb(self) -> tuple[int, int, int]:
-        """Measures the reflection of a surface using a red, green, and then a
-        blue light.
+        """赤、緑、青の順に光を当てて、表面の反射率を測定します。
 
         Returns:
-            Tuple of reflections for red, green, and blue light, each
-            ranging from 0.0% (no reflection) to 100.0% (high reflection).
+            赤、緑、青それぞれの光に対する反射率のタプル。各値は
+            0.0% (反射なし) から 100.0% (高い反射) まで。
         """
 
     def color(self) -> Color:
         """color() -> Color
 
-        Scans the color of a surface.
+        表面の色をスキャンします。
 
-        You choose which colors are detected using the
-        ``detectable_colors()`` method. By default, it detects
-        ``Color.RED``, ``Color.YELLOW``, ``Color.GREEN``, ``Color.BLUE``,
-        ``Color.WHITE``, or ``Color.NONE``.
+        検出する色は ``detectable_colors()`` メソッドで選択します。
+        デフォルトでは ``Color.RED`` 、 ``Color.YELLOW`` 、
+        ``Color.GREEN`` 、 ``Color.BLUE`` 、 ``Color.WHITE`` 、
+        ``Color.NONE`` を検出します。
 
         Returns:
-            Detected color.
+            検出された色。
         """
 
     def hsv(self) -> Color:
         """hsv() -> Color
 
-        Scans the color of a surface.
+        表面の色をスキャンします。
 
-        This method is similar to ``color()``, but it gives the full range
-        of hue, saturation and brightness values, instead of rounding it to the
-        nearest detectable color.
+        このメソッドは ``color()`` に似ていますが、最も近い検出可能な色に
+        丸めるのではなく、色相、彩度、輝度の全範囲の値を返します。
 
         Returns:
-            Measured color. The color is described by a hue (0--359), a
-            saturation (0--100), and a brightness value (0--100).
+            測定された色。色は色相 (0--359) 、彩度 (0--100) 、
+            輝度 (0--100) で表されます。
         """
 
     def ambient(self) -> int:
         """ambient() -> int: %
 
-        Measures the ambient light intensity.
+        周囲の光の強さを測定します。
 
         Returns:
-            Ambient light intensity, ranging from 0% (dark)
-            to 100% (bright).
+            0% (暗い) から 100% (明るい) までの周囲の光の強さ。
         """
 
     def reflection(self) -> int:
         """reflection() -> int: %
 
-        Measures how much a surface reflects the light emitted by the
-        sensor.
+        表面がセンサーの発する光をどれだけ反射するかを測定します。
 
         Returns:
-            Measured reflection, ranging from 0% (no reflection) to
-            100% (high reflection).
+            0% (反射なし) から 100% (高い反射) までの反射率。
         """
 
 
@@ -148,17 +142,16 @@ class UltrasonicSensor:
         """UltrasonicSensor(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
         """
 
     def distance(self) -> MaybeAwaitableInt:
         """distance() -> int: mm
 
-        Measures the distance between the sensor and an object using
-        ultrasonic sound waves.
+        超音波を使って、センサーと物体の間の距離を測定します。
 
         Returns:
-            Measured distance.
+            測定された距離。
         """
 
 
@@ -169,21 +162,20 @@ class SoundSensor:
         """SoundSensor(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
         """
 
     def intensity(self, audible_only: bool = True) -> int:
         """intensity(audible_only=True) -> int: %
 
-        Measures the ambient sound intensity (loudness).
+        周囲の音の強さ (音量) を測定します。
 
         Arguments:
-            audible_only (bool): Detect only audible sounds. This tries to
-                filter out frequencies that cannot be heard by the
-                human ear.
+            audible_only (bool): 可聴音のみを検出します。人間の耳に
+                聞こえない周波数を除去しようとします。
 
         Returns:
-            Sound intensity.
+            音の強さ。
         """
 
 
@@ -194,116 +186,111 @@ class TemperatureSensor:
         """TemperatureSensor(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
         """
 
     def temperature(self) -> MaybeAwaitableFloat:
         """temperature() -> float: °C
 
-        Measures the temperature.
+        温度を測定します。
 
         Returns:
-            Measured temperature.
+            測定された温度。
         """
 
 
 class EnergyMeter:
-    """LEGO® MINDSTORMS® Education NXT Energy Meter."""
+    """LEGO® MINDSTORMS® Education NXT エネルギーメーター。"""
 
     def __init__(self, port: Port):
         """EnergyMeter(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
         """
 
     def storage(self) -> MaybeAwaitableInt:
         """storage() -> int: J
 
-        Gets the total available energy stored in the battery.
+        バッテリーに蓄えられている利用可能な総エネルギーを取得します。
 
         Returns:
-            Remaining stored energy.
+            残りの蓄積エネルギー。
         """
 
     def input(self) -> MaybeAwaitableTuple[int, int, int]:
         """input() -> tuple[int, int, int]
 
-        Measures the electrical signals at the input (bottom) side
-        of the energy meter. It measures the voltage applied to it and the
-        current passing through it. The product of these two values is power.
-        This power value is the rate at which the stored energy increases. This
-        power is supplied by an energy source such as the provided solar panel
-        or an externally driven motor.
+        エネルギーメーターの入力側 (底面) の電気信号を測定します。
+        印加される電圧と流れる電流を測定し、この2つの値の積が電力に
+        なります。この電力値は蓄積エネルギーが増加する速さです。
+        この電力は、付属のソーラーパネルや外部から駆動されるモーター
+        などのエネルギー源から供給されます。
 
         Returns:
-            Voltage (mV), current (mA), and power (mW) measured at the input
-            port.
+            入力ポートで測定された電圧 (mV) 、電流 (mA) 、電力 (mW) 。
         """
 
     def output(self) -> MaybeAwaitableTuple[int, int, int]:
         """output() -> tuple[int, int, int]
 
-        Measures the electrical signals at the output (top) side
-        of the energy meter. It measures the voltage applied to the external
-        load and the current passing to it. The product of these two values
-        is power. This power value is the rate at which the stored energy
-        decreases. This power is consumed by the load, such as a light or a
-        motor.
+        エネルギーメーターの出力側 (上面) の電気信号を測定します。
+        外部負荷に印加される電圧と流れる電流を測定し、この2つの値の積が
+        電力になります。この電力値は蓄積エネルギーが減少する速さです。
+        この電力はライトやモーターなどの負荷によって消費されます。
 
         Returns:
-            Voltage (mV), current (mA), and power (mW) measured at the output
-            port.
+            出力ポートで測定された電圧 (mV) 、電流 (mA) 、電力 (mW) 。
         """
 
 
 class VernierAdapter(AnalogSensor):
-    """LEGO® MINDSTORMS® Education NXT/EV3 Adapter for Vernier Sensors."""
+    """LEGO® MINDSTORMS® Education NXT/EV3 Vernierセンサー用アダプター。"""
 
     def __init__(self, port: Port, conversion: Callable[[int], float] | None = None):
         """VernierAdapter(port, conversion=None)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
-            conversion (callable): Function of the format :meth:`.conversion`.
-                This function is used to convert the raw analog voltage to the
-                sensor-specific output value. Each Vernier Sensor has its
-                own conversion function. The example given below demonstrates
-                the conversion for the Surface Temperature Sensor.
+            port (Port): センサーを接続するポート。
+            conversion (callable): :meth:`.conversion` 形式の関数。
+                この関数は生のアナログ電圧をセンサー固有の出力値に
+                変換するために使われます。各 Vernier センサーには独自の
+                変換関数があります。下記の例は Surface Temperature
+                Sensor の変換を示しています。
         """
 
     def voltage(self) -> int:
         """voltage() -> int: mV
 
-        Measures the raw analog sensor voltage.
+        センサーの生のアナログ電圧を測定します。
 
         Returns:
-            Analog voltage.
+            アナログ電圧。
         """
 
     def conversion(self, voltage: int) -> float:
         """conversion(voltage) -> float
 
-        Converts the raw voltage (mV) to a sensor value.
+        生の電圧 (mV) をセンサー値に変換します。
 
-        If you did not provide a :meth:`.conversion` function earlier, no
-        conversion will be applied.
+        前もって :meth:`.conversion` 関数を指定していない場合、変換は
+        適用されません。
 
         Arguments:
-            voltage (Number, mV): Analog sensor voltage
+            voltage (Number, mV): アナログセンサーの電圧。
 
         Returns:
-            Converted sensor value.
+            変換されたセンサー値。
         """
 
     def value(self) -> float:
         """value() -> float
 
-        Measures the sensor :meth:`.voltage` and then
-        applies your :meth:`.conversion` to give you the sensor value.
+        センサーの :meth:`.voltage` を測定し、指定した
+        :meth:`.conversion` を適用してセンサー値を返します。
 
         Returns:
-            Converted sensor value.
+            変換されたセンサー値。
         """
 
 
