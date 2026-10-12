@@ -3,9 +3,9 @@
 Infrared Sensor and Beacon
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Each method of this class puts the sensor in a different *mode*. Switching
-modes takes about one second on this sensor. To make sure that your program
-runs quickly, use only one of these methods in your program.
+このクラスの各メソッドは、センサーをそれぞれ異なる *モード* に設定します。
+このセンサーではモードの切り替えに約1秒かかります。プログラムを速く実行
+できるように、これらのメソッドのうち1つだけを使用してください。
 
 .. figure:: ../../main/cad/output/ev3device-infrared.png
    :width: 60 %

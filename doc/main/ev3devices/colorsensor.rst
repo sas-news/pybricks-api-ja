@@ -17,7 +17,7 @@ Color Sensor
 
     .. automethod:: pybricks.ev3devices.ColorSensor.rgb
 
-    .. rubric:: Advanced color sensing
+    .. rubric:: 高度な色検出
 
     .. automethod:: pybricks.ev3devices.ColorSensor.hsv
 

@@ -5,11 +5,11 @@ Vernier Adapter
 
 .. autoclass:: pybricks.nxtdevices.VernierAdapter
 
-Examples
+使用例
 -------------------
 
-Using the Surface Temperature Sensor
-************************************
+Surface Temperature Sensor を使用する
+*************************************
 
 .. literalinclude::
     ../../../examples/ev3/vernier_surface_temperature/main.py
