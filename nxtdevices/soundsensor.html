@@ -55,9 +55,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../hubs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pupdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="motor.html">Motors with rotation sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 のモーターとセンサー</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT のモーターとセンサー</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="motor.html">回転センサー付きモーター</a></li>
 <li class="toctree-l2"><a class="reference internal" href="touchsensor.html">NXT Touch Sensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lightsensor.html">NXT Light Sensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="colorsensor.html">NXT Color Sensor</a></li>
@@ -110,7 +110,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT のモーターとセンサー</a></li>
       <li class="breadcrumb-item active">NXT Sound Sensor</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -173,21 +173,20 @@
 <dd><p>LEGO® MINDSTORMS® NXT Sound Sensor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>port</strong> (<a class="reference internal" href="../parameters/port.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – Port to which the sensor is connected.</p>
+<dd class="field-odd"><p><strong>port</strong> (<a class="reference internal" href="../parameters/port.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – センサーを接続するポート。</p>
 </dd>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.nxtdevices.SoundSensor.intensity">
 <span class="sig-name descname"><span class="pre">intensity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audible_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">%</span></span></span><a class="headerlink" href="#pybricks.nxtdevices.SoundSensor.intensity" title="Link to this definition"></a></dt>
-<dd><p>Measures the ambient sound intensity (loudness).</p>
+<dd><p>周囲の音の強さ (音量) を測定します。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>audible_only</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><em>bool</em></a>) – Detect only audible sounds. This tries to
-filter out frequencies that cannot be heard by the
-human ear.</p>
+<dd class="field-odd"><p><strong>audible_only</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><em>bool</em></a>) – 可聴音のみを検出します。人間の耳に
+聞こえない周波数を除去しようとします。</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Sound intensity.</p>
+<dd class="field-even"><p>音の強さ。</p>
 </dd>
 </dl>
 </dd></dl>

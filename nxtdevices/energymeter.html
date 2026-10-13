@@ -55,9 +55,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../hubs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pupdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="motor.html">Motors with rotation sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 のモーターとセンサー</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT のモーターとセンサー</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="motor.html">回転センサー付きモーター</a></li>
 <li class="toctree-l2"><a class="reference internal" href="touchsensor.html">NXT Touch Sensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lightsensor.html">NXT Light Sensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="colorsensor.html">NXT Color Sensor</a></li>
@@ -112,7 +112,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT のモーターとセンサー</a></li>
       <li class="breadcrumb-item active">NXT Energy Meter</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -172,19 +172,19 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="pybricks.nxtdevices.EnergyMeter">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">EnergyMeter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.nxtdevices.EnergyMeter" title="Link to this definition"></a></dt>
-<dd><p>LEGO® MINDSTORMS® Education NXT Energy Meter.</p>
+<dd><p>LEGO® MINDSTORMS® Education NXT エネルギーメーター。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>port</strong> (<a class="reference internal" href="../parameters/port.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – Port to which the sensor is connected.</p>
+<dd class="field-odd"><p><strong>port</strong> (<a class="reference internal" href="../parameters/port.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – センサーを接続するポート。</p>
 </dd>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.nxtdevices.EnergyMeter.storage">
 <span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">storage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">J</span></span></span><a class="headerlink" href="#pybricks.nxtdevices.EnergyMeter.storage" title="Link to this definition"></a></dt>
-<dd><p>Gets the total available energy stored in the battery.</p>
+<dd><p>バッテリーに蓄えられている利用可能な総エネルギーを取得します。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Remaining stored energy.</p>
+<dd class="field-odd"><p>残りの蓄積エネルギー。</p>
 </dd>
 </dl>
 </dd></dl>
@@ -192,16 +192,14 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.nxtdevices.EnergyMeter.input">
 <span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">input</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.tuple" title="ubuiltins.tuple"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pybricks.nxtdevices.EnergyMeter.input" title="Link to this definition"></a></dt>
-<dd><p>Measures the electrical signals at the input (bottom) side
-of the energy meter. It measures the voltage applied to it and the
-current passing through it. The product of these two values is power.
-This power value is the rate at which the stored energy increases. This
-power is supplied by an energy source such as the provided solar panel
-or an externally driven motor.</p>
+<dd><p>エネルギーメーターの入力側 (底面) の電気信号を測定します。
+印加される電圧と流れる電流を測定し、この2つの値の積が電力に
+なります。この電力値は蓄積エネルギーが増加する速さです。
+この電力は、付属のソーラーパネルや外部から駆動されるモーター
+などのエネルギー源から供給されます。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Voltage (mV), current (mA), and power (mW) measured at the input
-port.</p>
+<dd class="field-odd"><p>入力ポートで測定された電圧 (mV) 、電流 (mA) 、電力 (mW) 。</p>
 </dd>
 </dl>
 </dd></dl>
@@ -209,16 +207,13 @@ port.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.nxtdevices.EnergyMeter.output">
 <span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.tuple" title="ubuiltins.tuple"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pybricks.nxtdevices.EnergyMeter.output" title="Link to this definition"></a></dt>
-<dd><p>Measures the electrical signals at the output (top) side
-of the energy meter. It measures the voltage applied to the external
-load and the current passing to it. The product of these two values
-is power. This power value is the rate at which the stored energy
-decreases. This power is consumed by the load, such as a light or a
-motor.</p>
+<dd><p>エネルギーメーターの出力側 (上面) の電気信号を測定します。
+外部負荷に印加される電圧と流れる電流を測定し、この2つの値の積が
+電力になります。この電力値は蓄積エネルギーが減少する速さです。
+この電力はライトやモーターなどの負荷によって消費されます。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Voltage (mV), current (mA), and power (mW) measured at the output
-port.</p>
+<dd class="field-odd"><p>出力ポートで測定された電圧 (mV) 、電流 (mA) 、電力 (mW) 。</p>
 </dd>
 </dl>
 </dd></dl>

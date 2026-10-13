@@ -25,7 +25,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ev3devices – EV3 motors and sensors" href="../ev3devices/index.html" />
+    <link rel="next" title="ev3devices – EV3 のモーターとセンサー" href="../ev3devices/index.html" />
     <link rel="prev" title="Mario Hub" href="mariohub.html" />
     <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css">
 
@@ -85,8 +85,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 のモーターとセンサー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT のモーターとセンサー</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../iodevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – 汎用ツール</a></li>
@@ -181,24 +181,24 @@
 <dt class="sig sig-object py" id="pybricks.pupdevices.DuploTrain">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">DuploTrain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.pupdevices.DuploTrain" title="Link to this definition"></a></dt>
 <dd><p>LEGO® Duplo Train hub (sets 10874, 10875, 10427, 10428 similar).</p>
-<p>The Duplo Hub cannot be updated, so you cannot install Pybricks on it.
-However, you can connect a supported hub running Pybricks to the Duplo Hub
-and control the train that way.</p>
-<p>You can you control the motor, sound, and headlights, and read the speed
-and color sensors.</p>
+<p>Duploハブはファームウェアを更新できないため、このハブにPybricksを
+インストールすることはできません。ただし、Pybricksが動作する対応
+ハブをDuploハブに接続して、トレインを制御できます。</p>
+<p>モーター、サウンド、ヘッドライトを制御し、速度センサーとカラー
+センサーを読み取ることができます。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.str" title="ubuiltins.str"><em>str</em></a>) – Bluetooth name of the hub. If no name is given,
-the hub connects to the first Duplo Train hub it finds.</p></li>
-<li><p><strong>timeout</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>ms</em>) – How long to search for the hub.
-Choose <code class="docutils literal notranslate"><span class="pre">None</span></code> to wait indefinitely.</p></li>
-<li><p><strong>connect</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><em>bool</em></a>) – Choose <code class="docutils literal notranslate"><span class="pre">False</span></code> to skip connecting.
-<code class="docutils literal notranslate"><span class="pre">connect()</span></code> can be called later to connect.</p></li>
+<li><p><strong>name</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.str" title="ubuiltins.str"><em>str</em></a>) – ハブのBluetooth名。名前を指定しない場合、
+最初に見つかったDuplo Trainハブに接続します。</p></li>
+<li><p><strong>timeout</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>ms</em>) – ハブを検索する時間。
+<code class="docutils literal notranslate"><span class="pre">None</span></code> を選択すると、無制限に待ち続けます。</p></li>
+<li><p><strong>connect</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><em>bool</em></a>) – <code class="docutils literal notranslate"><span class="pre">False</span></code> を選択すると接続をスキップします。
+後で <code class="docutils literal notranslate"><span class="pre">connect()</span></code> を呼び出して接続できます。</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – If the connection attempt fails or times out.</p>
+<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – 接続に失敗したかタイムアウトした場合。</p>
 </dd>
 </dl>
 <dl class="py method">
@@ -244,14 +244,14 @@ Choose <code class="docutils literal notranslate"><span class="pre">None</span><
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.pupdevices.DuploTrain.drive">
 <span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">drive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.pupdevices.DuploTrain.drive" title="Link to this definition"></a></dt>
-<dd><p>Drives the train motor at the given speed.</p>
+<dd><p>指定した速度でトレインのモーターを駆動します。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>speed</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – Speed as a percentage (-100 to 100). Negative values
-drive in reverse.</p>
+<dd class="field-odd"><p><strong>speed</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – 速度。パーセント (-100から100) で指定します。
+負の値で後進します。</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – If the hub is not connected.</p>
+<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – ハブが接続されていない場合。</p>
 </dd>
 </dl>
 </dd></dl>
@@ -259,14 +259,14 @@ drive in reverse.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.pupdevices.DuploTrain.headlights">
 <span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">headlights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.pupdevices.DuploTrain.headlights" title="Link to this definition"></a></dt>
-<dd><p>Sets the color of the train headlights. Not all colors are supported,
-so the hub will choose the closest color it can produce.</p>
+<dd><p>トレインのヘッドライトの色を設定します。すべての色に対応している
+わけではないため、ハブは生成できる最も近い色を選びます。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>color</strong> (<a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – Color of the headlights.</p>
+<dd class="field-odd"><p><strong>color</strong> (<a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – ヘッドライトの色。</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – If the hub is not connected.</p>
+<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – ハブが接続されていない場合。</p>
 </dd>
 </dl>
 </dd></dl>
@@ -274,18 +274,17 @@ so the hub will choose the closest color it can produce.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.pupdevices.DuploTrain.sound">
 <span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">sound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.pupdevices.DuploTrain.sound" title="Link to this definition"></a></dt>
-<dd><p>Plays one of the built-in train sounds.</p>
-<p>For the newer (dark blue) train, we have not yet figured out the right
-sound codes. Please open a discussion or pull request if you know how
-to do it. Thanks!</p>
+<dd><p>内蔵のトレインサウンドを1つ再生します。</p>
+<p>新しい (濃紺の) トレインでは、正しいサウンドコードがまだ解明
+されていません。やり方をご存じの方は、discussionやプルリクエストを
+開いていただけると幸いです。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>sound</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.str" title="ubuiltins.str"><em>str</em></a>) – Name of the sound to play. Choose from
-<code class="docutils literal notranslate"><span class="pre">&quot;brake&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;depart&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;water&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;horn&quot;</span></code>,
-or <code class="docutils literal notranslate"><span class="pre">&quot;steam&quot;</span></code>.</p>
+<dd class="field-odd"><p><strong>sound</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.str" title="ubuiltins.str"><em>str</em></a>) – 再生するサウンド名。 <code class="docutils literal notranslate"><span class="pre">&quot;brake&quot;</span></code> 、 <code class="docutils literal notranslate"><span class="pre">&quot;depart&quot;</span></code> 、
+<code class="docutils literal notranslate"><span class="pre">&quot;water&quot;</span></code> 、 <code class="docutils literal notranslate"><span class="pre">&quot;horn&quot;</span></code> 、 <code class="docutils literal notranslate"><span class="pre">&quot;steam&quot;</span></code> から選択します。</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – If the hub is not connected.</p>
+<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – ハブが接続されていない場合。</p>
 </dd>
 </dl>
 </dd></dl>
@@ -293,13 +292,13 @@ or <code class="docutils literal notranslate"><span class="pre">&quot;steam&quot
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.pupdevices.DuploTrain.speed">
 <span class="sig-name descname"><span class="pre">speed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">%</span></span></span><a class="headerlink" href="#pybricks.pupdevices.DuploTrain.speed" title="Link to this definition"></a></dt>
-<dd><p>Reads the train speed from the latest received notification.</p>
+<dd><p>最新に受信した通知から、トレインの速度を読み取ります。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Speed as a percentage (-100 to 100).</p>
+<dd class="field-odd"><p>パーセント (-100から100) で表した速度。</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – If the hub is not connected.</p>
+<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – ハブが接続されていない場合。</p>
 </dd>
 </dl>
 </dd></dl>
@@ -307,14 +306,13 @@ or <code class="docutils literal notranslate"><span class="pre">&quot;steam&quot
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.pupdevices.DuploTrain.color">
 <span class="sig-name descname"><span class="pre">color</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><span class="pre">Color</span></a></span></span><a class="headerlink" href="#pybricks.pupdevices.DuploTrain.color" title="Link to this definition"></a></dt>
-<dd><p>Reads the color detected by the color sensor from the latest received
-notification.</p>
+<dd><p>最新に受信した通知から、カラーセンサーが検出した色を読み取ります。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Detected color.</p>
+<dd class="field-odd"><p>検出された色。</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – If the hub is not connected.</p>
+<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – ハブが接続されていない場合。</p>
 </dd>
 </dl>
 </dd></dl>

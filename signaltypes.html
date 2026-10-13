@@ -55,8 +55,8 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="hubs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pupdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 のモーターとセンサー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT のモーターとセンサー</a></li>
 <li class="toctree-l1"><a class="reference internal" href="iodevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a></li>
 <li class="toctree-l1"><a class="reference internal" href="parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – 汎用ツール</a></li>
@@ -402,14 +402,14 @@
 これにより、ハブがどう動いているかではなく、ロボットが
 どう動いているかを簡単に確認できるように測定値が調整されます。</p>
 <p>たとえば、デザインの中でハブが上下逆さまに取り付けられている
-場合があります。 <a class="reference internal" href="#fig-imuexamples"><span class="std std-numref">Figure 6</span></a> に示すように設定を
+場合があります。 <a class="reference internal" href="#fig-imuexamples"><span class="std std-numref">図 6</span></a> に示すように設定を
 構成すると、ハブの測定値はそれに応じて調整されます。こうすることで、
 ハブが後ろ向きに加速していても、X方向の正の加速度値はロボットが
 前向きに加速していることを意味します。</p>
 <figure class="align-default" id="id16">
 <span id="fig-imuexamples"></span><img alt="_images/imuexamples.png" src="_images/imuexamples.png" style="width: 100%;" />
 <figcaption>
-<p><span class="caption-number">Figure 6 </span><span class="caption-text">3つの異なるロボットデザインで <code class="docutils literal notranslate"><span class="pre">top_side</span></code> と <code class="docutils literal notranslate"><span class="pre">front_side</span></code>
+<p><span class="caption-number">図 6 </span><span class="caption-text">3つの異なるロボットデザインで <code class="docutils literal notranslate"><span class="pre">top_side</span></code> と <code class="docutils literal notranslate"><span class="pre">front_side</span></code>
 設定を構成する方法。ハブの上面と前面の
 <a class="reference internal" href="parameters/side.html#pybricks.parameters.Side" title="pybricks.parameters.Side"><code class="xref py py-class docutils literal notranslate"><span class="pre">Side</span></code></a> がどちらを向いているかを
 確認すれば、他のハブや他の作品にも同じ手法を適用できます。

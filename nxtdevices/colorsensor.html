@@ -55,9 +55,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../hubs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pupdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="motor.html">Motors with rotation sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 のモーターとセンサー</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT のモーターとセンサー</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="motor.html">回転センサー付きモーター</a></li>
 <li class="toctree-l2"><a class="reference internal" href="touchsensor.html">NXT Touch Sensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lightsensor.html">NXT Light Sensor</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">NXT Color Sensor</a><ul>
@@ -117,7 +117,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT のモーターとセンサー</a></li>
       <li class="breadcrumb-item active">NXT Color Sensor</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -186,14 +186,14 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.nxtdevices.ColorSensor.color">
 <span class="sig-name descname"><span class="pre">color</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><span class="pre">Color</span></a></span></span><a class="headerlink" href="#pybricks.nxtdevices.ColorSensor.color" title="Link to this definition"></a></dt>
-<dd><p>Scans the color of a surface.</p>
-<p>You choose which colors are detected using the
-<code class="docutils literal notranslate"><span class="pre">detectable_colors()</span></code> method. By default, it detects
-<code class="docutils literal notranslate"><span class="pre">Color.RED</span></code>, <code class="docutils literal notranslate"><span class="pre">Color.YELLOW</span></code>, <code class="docutils literal notranslate"><span class="pre">Color.GREEN</span></code>, <code class="docutils literal notranslate"><span class="pre">Color.BLUE</span></code>,
-<code class="docutils literal notranslate"><span class="pre">Color.WHITE</span></code>, or <code class="docutils literal notranslate"><span class="pre">Color.NONE</span></code>.</p>
+<dd><p>表面の色をスキャンします。</p>
+<p>検出する色は <code class="docutils literal notranslate"><span class="pre">detectable_colors()</span></code> メソッドで選択します。
+デフォルトでは <code class="docutils literal notranslate"><span class="pre">Color.RED</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Color.YELLOW</span></code> 、
+<code class="docutils literal notranslate"><span class="pre">Color.GREEN</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Color.BLUE</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Color.WHITE</span></code> 、
+<code class="docutils literal notranslate"><span class="pre">Color.NONE</span></code> を検出します。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Detected color.</p>
+<dd class="field-odd"><p>検出された色。</p>
 </dd>
 </dl>
 </dd></dl>
@@ -201,11 +201,10 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.nxtdevices.ColorSensor.ambient">
 <span class="sig-name descname"><span class="pre">ambient</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">%</span></span></span><a class="headerlink" href="#pybricks.nxtdevices.ColorSensor.ambient" title="Link to this definition"></a></dt>
-<dd><p>Measures the ambient light intensity.</p>
+<dd><p>周囲の光の強さを測定します。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Ambient light intensity, ranging from 0% (dark)
-to 100% (bright).</p>
+<dd class="field-odd"><p>0% (暗い) から 100% (明るい) までの周囲の光の強さ。</p>
 </dd>
 </dl>
 </dd></dl>
@@ -213,12 +212,10 @@ to 100% (bright).</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.nxtdevices.ColorSensor.reflection">
 <span class="sig-name descname"><span class="pre">reflection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">%</span></span></span><a class="headerlink" href="#pybricks.nxtdevices.ColorSensor.reflection" title="Link to this definition"></a></dt>
-<dd><p>Measures how much a surface reflects the light emitted by the
-sensor.</p>
+<dd><p>表面がセンサーの発する光をどれだけ反射するかを測定します。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Measured reflection, ranging from 0% (no reflection) to
-100% (high reflection).</p>
+<dd class="field-odd"><p>0% (反射なし) から 100% (高い反射) までの反射率。</p>
 </dd>
 </dl>
 </dd></dl>
@@ -226,28 +223,26 @@ sensor.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.nxtdevices.ColorSensor.rgb">
 <span class="sig-name descname"><span class="pre">rgb</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.tuple" title="ubuiltins.tuple"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pybricks.nxtdevices.ColorSensor.rgb" title="Link to this definition"></a></dt>
-<dd><p>Measures the reflection of a surface using a red, green, and then a
-blue light.</p>
+<dd><p>赤、緑、青の順に光を当てて、表面の反射率を測定します。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Tuple of reflections for red, green, and blue light, each
-ranging from 0.0% (no reflection) to 100.0% (high reflection).</p>
+<dd class="field-odd"><p>赤、緑、青それぞれの光に対する反射率のタプル。各値は
+0.0% (反射なし) から 100.0% (高い反射) まで。</p>
 </dd>
 </dl>
 </dd></dl>
 
-<p class="rubric">Advanced color sensing</p>
+<p class="rubric">高度な色検出</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.nxtdevices.ColorSensor.hsv">
 <span class="sig-name descname"><span class="pre">hsv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><span class="pre">Color</span></a></span></span><a class="headerlink" href="#pybricks.nxtdevices.ColorSensor.hsv" title="Link to this definition"></a></dt>
-<dd><p>Scans the color of a surface.</p>
-<p>This method is similar to <code class="docutils literal notranslate"><span class="pre">color()</span></code>, but it gives the full range
-of hue, saturation and brightness values, instead of rounding it to the
-nearest detectable color.</p>
+<dd><p>表面の色をスキャンします。</p>
+<p>このメソッドは <code class="docutils literal notranslate"><span class="pre">color()</span></code> に似ていますが、最も近い検出可能な色に
+丸めるのではなく、色相、彩度、輝度の全範囲の値を返します。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Measured color. The color is described by a hue (0–359), a
-saturation (0–100), and a brightness value (0–100).</p>
+<dd class="field-odd"><p>測定された色。色は色相 (0–359) 、彩度 (0–100) 、
+輝度 (0–100) で表されます。</p>
 </dd>
 </dl>
 </dd></dl>
@@ -276,9 +271,9 @@ saturation (0–100), and a brightness value (0–100).</p>
 </dl>
 </dd></dl>
 
-<p class="rubric">Built-in light</p>
-<p>This sensor has a built-in light. You can make it red, green, blue, or turn
-it off.</p>
+<p class="rubric">内蔵ライト</p>
+<p>このセンサーには内蔵ライトがあります。赤・緑・青に光らせたり、オフに
+したりできます。</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.nxtdevices.ColorSensor.light.on">
 <span class="sig-prename descclassname"><span class="pre">light.</span></span><span class="sig-name descname"><span class="pre">on</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.nxtdevices.ColorSensor.light.on" title="Link to this definition"></a></dt>

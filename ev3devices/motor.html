@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Motors with rotation sensors &mdash; pybricks v4.1.0b2 documentation</title>
+  <title>回転センサー付きモーター &mdash; pybricks v4.1.0b2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d8a2add5" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/requirements.css" />
@@ -26,7 +26,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Touch Sensor" href="touchsensor.html" />
-    <link rel="prev" title="ev3devices – EV3 motors and sensors" href="index.html" />
+    <link rel="prev" title="ev3devices – EV3 のモーターとセンサー" href="index.html" />
     <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css">
 
 </head>
@@ -55,8 +55,8 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../hubs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pupdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Motors with rotation sensors</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 のモーターとセンサー</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">回転センサー付きモーター</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#pybricks.ev3devices.Motor.angle"><code class="docutils literal notranslate"><span class="pre">Motor.angle()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pybricks.ev3devices.Motor.reset_angle"><code class="docutils literal notranslate"><span class="pre">Motor.reset_angle()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pybricks.ev3devices.Motor.speed"><code class="docutils literal notranslate"><span class="pre">Motor.speed()</span></code></a></li>
@@ -91,7 +91,7 @@
 <li class="toctree-l2"><a class="reference internal" href="gyrosensor.html">Gyroscopic Sensor</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT のモーターとセンサー</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../iodevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – 汎用ツール</a></li>
@@ -128,8 +128,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
-      <li class="breadcrumb-item active">Motors with rotation sensors</li>
+          <li class="breadcrumb-item"><a href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 のモーターとセンサー</a></li>
+      <li class="breadcrumb-item active">回転センサー付きモーター</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -180,13 +180,13 @@
             </table>
         </div>
         </div>
-<section id="motors-with-rotation-sensors">
-<h1>Motors with rotation sensors<a class="headerlink" href="#motors-with-rotation-sensors" title="Link to this heading"></a></h1>
-<figure class="align-default" id="id1">
+<section id="id1">
+<h1>回転センサー付きモーター<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<figure class="align-default" id="id2">
 <span id="fig-ev3motors"></span><img alt="ev3motors" src="../_images/ev3motors.png" style="width: 100%;" />
 <figcaption>
-<p><span class="caption-number">Figure 4 </span><span class="caption-text">EV3 and NXT motors with rotation sensors. The arrows indicate the default
-positive direction.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+<p><span class="caption-number">図 4 </span><span class="caption-text">回転センサー付きの EV3・NXT モーター。矢印はデフォルトの正方向を
+示しています。</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <dl class="py class">
@@ -223,7 +223,7 @@ positive direction.</span><a class="headerlink" href="#id1" title="Link to this 
 </ul>
 </dd>
 </dl>
-<p class="rubric">Measuring</p>
+<p class="rubric">計測</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.ev3devices.Motor.angle">
 <span class="sig-name descname"><span class="pre">angle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">deg</span></span></span><a class="headerlink" href="#pybricks.ev3devices.Motor.angle" title="Link to this definition"></a></dt>
@@ -293,7 +293,7 @@ positive direction.</span><a class="headerlink" href="#id1" title="Link to this 
 </dl>
 </dd></dl>
 
-<p class="rubric">Stopping</p>
+<p class="rubric">停止</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.ev3devices.Motor.stop">
 <span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.stop" title="Link to this definition"></a></dt>
@@ -315,7 +315,7 @@ positive direction.</span><a class="headerlink" href="#id1" title="Link to this 
 <dd><p>モーターを停止し、現在の角度で能動的に保持します。</p>
 </dd></dl>
 
-<p class="rubric">Running forever</p>
+<p class="rubric">連続回転</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.ev3devices.Motor.run">
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.run" title="Link to this definition"></a></dt>
@@ -341,7 +341,7 @@ positive direction.</span><a class="headerlink" href="#id1" title="Link to this 
 </dl>
 </dd></dl>
 
-<p class="rubric">Running by a fixed amount</p>
+<p class="rubric">指定量だけ回転</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.ev3devices.Motor.run_time">
 <span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">run_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">then</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Stop.HOLD</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.run_time" title="Link to this definition"></a></dt>
@@ -445,7 +445,7 @@ positive direction.</span><a class="headerlink" href="#id1" title="Link to this 
 </dl>
 </dd></dl>
 
-<p class="rubric">Motor settings</p>
+<p class="rubric">モーターの設定</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.ev3devices.Motor.settings">
 <span class="sig-name descname"><span class="pre">settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_voltage</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.settings" title="Link to this definition"></a></dt>
@@ -470,7 +470,7 @@ positive direction.</span><a class="headerlink" href="#id1" title="Link to this 
 便利です。</p>
 </dd></dl>
 
-<p class="rubric">Control settings</p>
+<p class="rubric">制御の設定</p>
 <div class="toggle-header docutils container">
 </div>
 <div class="toggle-content docutils container">
@@ -771,14 +771,12 @@ positive direction.</span><a class="headerlink" href="#id1" title="Link to this 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pybricks.ev3devices.Motor.control.scale">
 <span class="sig-prename descclassname"><span class="pre">control.</span></span><span class="sig-name descname"><span class="pre">scale</span></span><a class="headerlink" href="#pybricks.ev3devices.Motor.control.scale" title="Link to this definition"></a></dt>
-<dd><p>Number of degrees that the motor turns to complete one degree at the
-output of the gear train. This is the gear ratio determined from the
-<code class="docutils literal notranslate"><span class="pre">gears</span></code> argument when initializing the motor.</p>
+<dd><p>ギアトレインの出力が1度回転するのに必要なモーターの回転量（度）。
+モーター初期化時の <code class="docutils literal notranslate"><span class="pre">gears</span></code> 引数で決まるギア比です。</p>
 </dd></dl>
 
 <div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 3.2: </span>The <a class="reference internal" href="#pybricks.ev3devices.Motor.done" title="pybricks.ev3devices.Motor.done"><code class="xref py py-meth docutils literal notranslate"><span class="pre">done()</span></code></a>, <a class="reference internal" href="#pybricks.ev3devices.Motor.stalled" title="pybricks.ev3devices.Motor.stalled"><code class="xref py py-meth docutils literal notranslate"><span class="pre">stalled()</span></code></a> and <a class="reference internal" href="#pybricks.ev3devices.Motor.load" title="pybricks.ev3devices.Motor.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load()</span></code></a> methods have been
-moved.</p>
+<p><span class="versionmodified changed">Changed in version 3.2: </span><a class="reference internal" href="#pybricks.ev3devices.Motor.done" title="pybricks.ev3devices.Motor.done"><code class="xref py py-meth docutils literal notranslate"><span class="pre">done()</span></code></a>、<a class="reference internal" href="#pybricks.ev3devices.Motor.stalled" title="pybricks.ev3devices.Motor.stalled"><code class="xref py py-meth docutils literal notranslate"><span class="pre">stalled()</span></code></a>、<a class="reference internal" href="#pybricks.ev3devices.Motor.load" title="pybricks.ev3devices.Motor.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load()</span></code></a> の各メソッドは移動されました。</p>
 </div>
 <div class="toggle-header docutils container">
 </div>

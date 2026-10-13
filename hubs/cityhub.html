@@ -71,16 +71,16 @@
 <li class="toctree-l4"><a class="reference internal" href="#pybricks.hubs.CityHub.system.shutdown"><code class="docutils literal notranslate"><span class="pre">CityHub.system.shutdown()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#status-light-examples">Status light examples</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#turning-the-light-on-and-off">Turning the light on and off</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#changing-brightness-and-using-custom-colors">Changing brightness and using custom colors</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#making-the-light-blink">Making the light blink</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#creating-light-animations">Creating light animations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">ステータスライトの例</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">ライトのオンとオフ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">輝度の変更とカスタムカラーの使用</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">ライトを点滅させる</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">ライトアニメーションの作成</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#button-and-system-examples">Button and system examples</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#using-the-stop-button-during-your-program">Using the stop button during your program</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#turning-the-hub-off">Turning the hub off</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">ボタンとシステムの例</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">プログラム実行中に停止ボタンを使う</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">ハブの電源を切る</a></li>
 </ul>
 </li>
 </ul>
@@ -92,8 +92,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../pupdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 のモーターとセンサー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT のモーターとセンサー</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../iodevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – 汎用ツール</a></li>
@@ -191,7 +191,7 @@
 <dt class="sig sig-object py" id="pybricks.hubs.CityHub">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">CityHub</span></span><a class="headerlink" href="#pybricks.hubs.CityHub" title="Link to this definition"></a></dt>
 <dd><p>LEGO® Cityハブ。</p>
-<p class="rubric">Using the hub status light</p>
+<p class="rubric">ステータスライトを使う</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.hubs.CityHub.light.on">
 <span class="sig-prename descclassname"><span class="pre">light.</span></span><span class="sig-name descname"><span class="pre">on</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.hubs.CityHub.light.on" title="Link to this definition"></a></dt>
@@ -242,7 +242,7 @@
 </dl>
 </dd></dl>
 
-<p class="rubric">Using the battery</p>
+<p class="rubric">バッテリーを使う</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.hubs.CityHub.battery.voltage">
 <span class="sig-prename descclassname"><span class="pre">battery.</span></span><span class="sig-name descname"><span class="pre">voltage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">mV</span></span></span><a class="headerlink" href="#pybricks.hubs.CityHub.battery.voltage" title="Link to this definition"></a></dt>
@@ -265,7 +265,7 @@
 </dl>
 </dd></dl>
 
-<p class="rubric">Button and system control</p>
+<p class="rubric">ボタンとシステム制御</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.hubs.CityHub.buttons.pressed">
 <span class="sig-prename descclassname"><span class="pre">buttons.</span></span><span class="sig-name descname"><span class="pre">pressed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.set" title="ubuiltins.set"><span class="pre">set</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../parameters/button.html#pybricks.parameters.Button" title="pybricks.parameters.Button"><span class="pre">Button</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pybricks.hubs.CityHub.buttons.pressed" title="Link to this definition"></a></dt>
@@ -355,9 +355,9 @@
 <dd class="field-odd"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.ValueError" title="ubuiltins.ValueError"><strong>ValueError</strong></a> – 許可された範囲外のデータを読み書きしようとした場合。</p>
 </dd>
 </dl>
-<p>You can store up to 128 bytes of data on this hub. The data is cleared
-when you update the Pybricks firmware or if you restore the original
-firmware.</p>
+<p>このハブには最大128バイトのデータを保存できます。データは、
+Pybricksファームウェアを更新した場合や、元のファームウェアに
+戻した場合に消去されます。</p>
 </dd></dl>
 
 <dl class="py method">
@@ -374,10 +374,10 @@ firmware.</p>
 
 </dd></dl>
 
-<section id="status-light-examples">
-<h2>Status light examples<a class="headerlink" href="#status-light-examples" title="Link to this heading"></a></h2>
-<section id="turning-the-light-on-and-off">
-<h3>Turning the light on and off<a class="headerlink" href="#turning-the-light-on-and-off" title="Link to this heading"></a></h3>
+<section id="id1">
+<h2>ステータスライトの例<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<section id="id2">
+<h3>ライトのオンとオフ<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">CityHub</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Color</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
@@ -395,8 +395,8 @@ firmware.</p>
 </pre></div>
 </div>
 </section>
-<section id="changing-brightness-and-using-custom-colors">
-<h3>Changing brightness and using custom colors<a class="headerlink" href="#changing-brightness-and-using-custom-colors" title="Link to this heading"></a></h3>
+<section id="id3">
+<h3>輝度の変更とカスタムカラーの使用<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">CityHub</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Color</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
@@ -421,8 +421,8 @@ firmware.</p>
 </pre></div>
 </div>
 </section>
-<section id="making-the-light-blink">
-<h3>Making the light blink<a class="headerlink" href="#making-the-light-blink" title="Link to this heading"></a></h3>
+<section id="id4">
+<h3>ライトを点滅させる<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">CityHub</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Color</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
@@ -442,8 +442,8 @@ firmware.</p>
 </pre></div>
 </div>
 </section>
-<section id="creating-light-animations">
-<h3>Creating light animations<a class="headerlink" href="#creating-light-animations" title="Link to this heading"></a></h3>
+<section id="id5">
+<h3>ライトアニメーションの作成<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">CityHub</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Color</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
@@ -470,10 +470,10 @@ firmware.</p>
 </div>
 </section>
 </section>
-<section id="button-and-system-examples">
-<h2>Button and system examples<a class="headerlink" href="#button-and-system-examples" title="Link to this heading"></a></h2>
-<section id="using-the-stop-button-during-your-program">
-<h3>Using the stop button during your program<a class="headerlink" href="#using-the-stop-button-during-your-program" title="Link to this heading"></a></h3>
+<section id="id6">
+<h2>ボタンとシステムの例<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<section id="id7">
+<h3>プログラム実行中に停止ボタンを使う<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">CityHub</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Button</span><span class="p">,</span> <span class="n">Color</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">StopWatch</span><span class="p">,</span> <span class="n">wait</span>
@@ -501,8 +501,8 @@ firmware.</p>
 </pre></div>
 </div>
 </section>
-<section id="turning-the-hub-off">
-<h3>Turning the hub off<a class="headerlink" href="#turning-the-hub-off" title="Link to this heading"></a></h3>
+<section id="id8">
+<h3>ハブの電源を切る<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.hubs</span><span class="w"> </span><span class="kn">import</span> <span class="n">CityHub</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pybricks.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wait</span>
 

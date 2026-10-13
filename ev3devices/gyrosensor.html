@@ -25,7 +25,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="nxtdevices – NXT motors and sensors" href="../nxtdevices/index.html" />
+    <link rel="next" title="nxtdevices – NXT のモーターとセンサー" href="../nxtdevices/index.html" />
     <link rel="prev" title="Ultrasonic Sensor" href="ultrasonicsensor.html" />
     <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css">
 
@@ -55,8 +55,8 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../hubs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pupdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="motor.html">Motors with rotation sensors</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 のモーターとセンサー</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="motor.html">回転センサー付きモーター</a></li>
 <li class="toctree-l2"><a class="reference internal" href="touchsensor.html">Touch Sensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="colorsensor.html">Color Sensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="infraredsensor.html">Infrared Sensor and Beacon</a></li>
@@ -72,7 +72,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT のモーターとセンサー</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../iodevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – 汎用ツール</a></li>
@@ -109,7 +109,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 のモーターとセンサー</a></li>
       <li class="breadcrumb-item active">Gyroscopic Sensor</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -173,19 +173,18 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>port</strong> (<a class="reference internal" href="../parameters/port.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – Port to which the sensor is connected.</p></li>
-<li><p><strong>direction</strong> (<a class="reference internal" href="../parameters/direction.html#pybricks.parameters.Direction" title="pybricks.parameters.Direction"><em>Direction</em></a>) – Positive rotation direction when looking at the red dot on top
-of the sensor.</p></li>
+<li><p><strong>port</strong> (<a class="reference internal" href="../parameters/port.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – センサーを接続するポート。</p></li>
+<li><p><strong>direction</strong> (<a class="reference internal" href="../parameters/direction.html#pybricks.parameters.Direction" title="pybricks.parameters.Direction"><em>Direction</em></a>) – センサー上部の赤い点を見たときの正の回転方向。</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.ev3devices.GyroSensor.speed">
 <span class="sig-name descname"><span class="pre">speed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">deg/s</span></span></span><a class="headerlink" href="#pybricks.ev3devices.GyroSensor.speed" title="Link to this definition"></a></dt>
-<dd><p>Gets the speed (angular velocity) of the sensor.</p>
+<dd><p>センサーの速度 (角速度) を取得します。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Angular velocity.</p>
+<dd class="field-odd"><p>角速度。</p>
 </dd>
 </dl>
 </dd></dl>
@@ -193,10 +192,10 @@ of the sensor.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.ev3devices.GyroSensor.angle">
 <span class="sig-name descname"><span class="pre">angle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">deg</span></span></span><a class="headerlink" href="#pybricks.ev3devices.GyroSensor.angle" title="Link to this definition"></a></dt>
-<dd><p>Gets the accumulated angle of the sensor.</p>
+<dd><p>センサーの累積角度を取得します。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Rotation angle.</p>
+<dd class="field-odd"><p>回転角度。</p>
 </dd>
 </dl>
 </dd></dl>
@@ -204,10 +203,10 @@ of the sensor.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.ev3devices.GyroSensor.reset_angle">
 <span class="sig-name descname"><span class="pre">reset_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.GyroSensor.reset_angle" title="Link to this definition"></a></dt>
-<dd><p>Sets the rotation angle of the sensor to a desired value.</p>
+<dd><p>センサーの回転角度を任意の値に設定します。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>angle</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>deg</em>) – Value to which the angle should be reset.</p>
+<dd class="field-odd"><p><strong>angle</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>deg</em>) – 角度をリセットする値。</p>
 </dd>
 </dl>
 </dd></dl>

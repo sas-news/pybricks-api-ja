@@ -82,8 +82,8 @@
 <li class="toctree-l2"><a class="reference internal" href="duplotrain.html">Duplo Train</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 のモーターとセンサー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT のモーターとセンサー</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../iodevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – 汎用ツール</a></li>
@@ -178,21 +178,21 @@
 <dt class="sig sig-object py" id="pybricks.pupdevices.MarioHub">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">MarioHub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.pupdevices.MarioHub" title="Link to this definition"></a></dt>
 <dd><p>LEGO® Super Mario hub (sets 71360, 71387, 71441 and similar).</p>
-<p>Connect a supported hub running Pybricks to a LEGO Mario, Luigi, or Peach
-figure and reads its color sensor.</p>
+<p>Pybricksが動作する対応ハブを、LEGOのマリオ、ルイージ、ピーチの
+フィギュアに接続し、そのカラーセンサーを読み取ります。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.str" title="ubuiltins.str"><em>str</em></a>) – Bluetooth name of the hub. If no name is given,
-the hub connects to the first Mario hub it finds.</p></li>
-<li><p><strong>timeout</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>ms</em>) – How long to search for the hub.
-Choose <code class="docutils literal notranslate"><span class="pre">None</span></code> to wait indefinitely.</p></li>
-<li><p><strong>connect</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><em>bool</em></a>) – Choose <code class="docutils literal notranslate"><span class="pre">False</span></code> to skip connecting.
-<code class="docutils literal notranslate"><span class="pre">connect()</span></code> can be called later to connect.</p></li>
+<li><p><strong>name</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.str" title="ubuiltins.str"><em>str</em></a>) – ハブのBluetooth名。名前を指定しない場合、
+最初に見つかったマリオハブに接続します。</p></li>
+<li><p><strong>timeout</strong> (<a class="reference internal" href="../signaltypes.html#numbers"><em>Number</em></a><em>, </em><em>ms</em>) – ハブを検索する時間。
+<code class="docutils literal notranslate"><span class="pre">None</span></code> を選択すると、無制限に待ち続けます。</p></li>
+<li><p><strong>connect</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.bool" title="ubuiltins.bool"><em>bool</em></a>) – <code class="docutils literal notranslate"><span class="pre">False</span></code> を選択すると接続をスキップします。
+後で <code class="docutils literal notranslate"><span class="pre">connect()</span></code> を呼び出して接続できます。</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – If the connection attempt fails or times out.</p>
+<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – 接続に失敗したかタイムアウトした場合。</p>
 </dd>
 </dl>
 <dl class="py method">
@@ -221,14 +221,13 @@ Choose <code class="docutils literal notranslate"><span class="pre">None</span><
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.pupdevices.MarioHub.color">
 <span class="sig-name descname"><span class="pre">color</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><span class="pre">Color</span></a></span></span><a class="headerlink" href="#pybricks.pupdevices.MarioHub.color" title="Link to this definition"></a></dt>
-<dd><p>Reads the color detected by the color sensor from the latest received
-notification.</p>
+<dd><p>最新に受信した通知から、カラーセンサーが検出した色を読み取ります。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Detected color.</p>
+<dd class="field-odd"><p>検出された色。</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – If the hub is not connected.</p>
+<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – ハブが接続されていない場合。</p>
 </dd>
 </dl>
 </dd></dl>
@@ -236,15 +235,15 @@ notification.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.pupdevices.MarioHub.hsv">
 <span class="sig-name descname"><span class="pre">hsv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><span class="pre">Color</span></a></span></span><a class="headerlink" href="#pybricks.pupdevices.MarioHub.hsv" title="Link to this definition"></a></dt>
-<dd><p>Reads the hue, saturation, and brightness of the color detected by the
-color sensor from the latest received notification, as a
-<a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a> object.</p>
+<dd><p>最新に受信した通知から、カラーセンサーが検出した色の色相、彩度、
+輝度を <a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a> オブジェクトとして
+読み取ります。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Measured color.</p>
+<dd class="field-odd"><p>測定された色。</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – If the hub is not connected.</p>
+<dd class="field-even"><p><a class="reference internal" href="../micropython/exceptions.html#ubuiltins.OSError" title="ubuiltins.OSError"><strong>OSError</strong></a> – ハブが接続されていない場合。</p>
 </dd>
 </dl>
 </dd></dl>
@@ -252,13 +251,14 @@ color sensor from the latest received notification, as a
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.pupdevices.MarioHub.detectable_colors">
 <span class="sig-name descname"><span class="pre">detectable_colors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colors</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.pupdevices.MarioHub.detectable_colors" title="Link to this definition"></a></dt>
-<dd><p>Configures the list of colors that <a class="reference internal" href="#pybricks.pupdevices.MarioHub.color" title="pybricks.pupdevices.MarioHub.color"><code class="xref py py-meth docutils literal notranslate"><span class="pre">color()</span></code></a> may return.</p>
-<p>Only the colors in this list will be returned. This helps reduce
-false positives when you only care about a specific subset of colors.</p>
+<dd><p><a class="reference internal" href="#pybricks.pupdevices.MarioHub.color" title="pybricks.pupdevices.MarioHub.color"><code class="xref py py-meth docutils literal notranslate"><span class="pre">color()</span></code></a> が返しうる色のリストを設定します。</p>
+<p>このリストに含まれる色だけが返されます。特定の色のサブセットだけを
+扱いたい場合に、誤検出を減らすのに役立ちます。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>colors</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.list" title="ubuiltins.list"><em>list</em></a>) – List of <a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a> objects
-to detect, or <code class="docutils literal notranslate"><span class="pre">None</span></code> to restore the default list.</p>
+<dd class="field-odd"><p><strong>colors</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.list" title="ubuiltins.list"><em>list</em></a>) – 検出する <a class="reference internal" href="../parameters/color.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>
+オブジェクトのリスト。<code class="docutils literal notranslate"><span class="pre">None</span></code> を選択すると、デフォルトの
+リストに戻します。</p>
 </dd>
 </dl>
 </dd></dl>

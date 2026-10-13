@@ -131,8 +131,8 @@
 <li class="toctree-l2"><a class="reference internal" href="duplotrain.html">Duplo Train</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 のモーターとセンサー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT のモーターとセンサー</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../iodevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – 汎用ツール</a></li>
@@ -226,7 +226,7 @@
 <figure class="align-default" id="id18">
 <span id="fig-pupmotors"></span><img alt="pupmotors" src="../_images/pupmotors.png" style="width: 100%;" />
 <figcaption>
-<p><span class="caption-number">Figure 2 </span><span class="caption-text">回転センサー付きの Powered Up モーター。矢印はデフォルトの
+<p><span class="caption-number">図 2 </span><span class="caption-text">回転センサー付きの Powered Up モーター。矢印はデフォルトの
 正方向を示しています。内蔵モーターのデフォルトの方向は
 <a class="reference internal" href="../hubs/index.html#module-pybricks.hubs" title="pybricks.hubs"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code></a> モジュールを参照してください。</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
 </figcaption>
@@ -264,7 +264,7 @@
 </ul>
 </dd>
 </dl>
-<p class="rubric">Measuring</p>
+<p class="rubric">計測</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.pupdevices.Motor.angle">
 <span class="sig-name descname"><span class="pre">angle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">deg</span></span></span><a class="headerlink" href="#pybricks.pupdevices.Motor.angle" title="Link to this definition"></a></dt>
@@ -336,7 +336,7 @@
 </dl>
 </dd></dl>
 
-<p class="rubric">Stopping</p>
+<p class="rubric">停止</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.pupdevices.Motor.stop">
 <span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.pupdevices.Motor.stop" title="Link to this definition"></a></dt>
@@ -358,7 +358,7 @@
 <dd><p>モーターを停止し、現在の角度で能動的に保持します。</p>
 </dd></dl>
 
-<p class="rubric">Running forever</p>
+<p class="rubric">連続回転</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.pupdevices.Motor.run">
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.pupdevices.Motor.run" title="Link to this definition"></a></dt>
@@ -384,7 +384,7 @@
 </dl>
 </dd></dl>
 
-<p class="rubric">Running by a fixed amount</p>
+<p class="rubric">指定量だけ回転</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.pupdevices.Motor.run_time">
 <span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">run_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">then</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Stop.HOLD</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.pupdevices.Motor.run_time" title="Link to this definition"></a></dt>
@@ -488,7 +488,7 @@
 </dl>
 </dd></dl>
 
-<p class="rubric">Motor settings</p>
+<p class="rubric">モーターの設定</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.pupdevices.Motor.settings">
 <span class="sig-name descname"><span class="pre">settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_voltage</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.pupdevices.Motor.settings" title="Link to this definition"></a></dt>
@@ -513,7 +513,7 @@
 便利です。</p>
 </dd></dl>
 
-<p class="rubric">Control settings</p>
+<p class="rubric">制御の設定</p>
 <div class="toggle-header docutils container">
 </div>
 <div class="toggle-content docutils container">
@@ -814,14 +814,12 @@
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pybricks.pupdevices.Motor.control.scale">
 <span class="sig-prename descclassname"><span class="pre">control.</span></span><span class="sig-name descname"><span class="pre">scale</span></span><a class="headerlink" href="#pybricks.pupdevices.Motor.control.scale" title="Link to this definition"></a></dt>
-<dd><p>Number of degrees that the motor turns to complete one degree at the
-output of the gear train. This is the gear ratio determined from the
-<code class="docutils literal notranslate"><span class="pre">gears</span></code> argument when initializing the motor.</p>
+<dd><p>ギアトレインの出力が1度回転するのに必要なモーターの回転量（度）。
+モーター初期化時の <code class="docutils literal notranslate"><span class="pre">gears</span></code> 引数で決まるギア比です。</p>
 </dd></dl>
 
 <div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 3.2: </span>The <a class="reference internal" href="#pybricks.pupdevices.Motor.done" title="pybricks.pupdevices.Motor.done"><code class="xref py py-meth docutils literal notranslate"><span class="pre">done()</span></code></a>, <a class="reference internal" href="#pybricks.pupdevices.Motor.stalled" title="pybricks.pupdevices.Motor.stalled"><code class="xref py py-meth docutils literal notranslate"><span class="pre">stalled()</span></code></a> and <a class="reference internal" href="#pybricks.pupdevices.Motor.load" title="pybricks.pupdevices.Motor.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load()</span></code></a> methods have been
-moved.</p>
+<p><span class="versionmodified changed">Changed in version 3.2: </span><a class="reference internal" href="#pybricks.pupdevices.Motor.done" title="pybricks.pupdevices.Motor.done"><code class="xref py py-meth docutils literal notranslate"><span class="pre">done()</span></code></a>、<a class="reference internal" href="#pybricks.pupdevices.Motor.stalled" title="pybricks.pupdevices.Motor.stalled"><code class="xref py py-meth docutils literal notranslate"><span class="pre">stalled()</span></code></a>、<a class="reference internal" href="#pybricks.pupdevices.Motor.load" title="pybricks.pupdevices.Motor.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load()</span></code></a> の各メソッドは移動されました。</p>
 </div>
 <div class="toggle-header docutils container">
 </div>

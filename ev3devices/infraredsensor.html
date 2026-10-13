@@ -55,8 +55,8 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../hubs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hubs</span></code> – Hubの機能</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pupdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pupdevices</span></code> – モーター、センサー、ライト</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="motor.html">Motors with rotation sensors</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 のモーターとセンサー</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="motor.html">回転センサー付きモーター</a></li>
 <li class="toctree-l2"><a class="reference internal" href="touchsensor.html">Touch Sensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="colorsensor.html">Color Sensor</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Infrared Sensor and Beacon</a><ul>
@@ -73,7 +73,7 @@
 <li class="toctree-l2"><a class="reference internal" href="gyrosensor.html">Gyroscopic Sensor</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT motors and sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT のモーターとセンサー</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../iodevices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iodevices</span></code> – カスタムデバイス</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code> – パラメータと定数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> – 汎用ツール</a></li>
@@ -110,7 +110,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 motors and sensors</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 のモーターとセンサー</a></li>
       <li class="breadcrumb-item active">Infrared Sensor and Beacon</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -164,30 +164,28 @@
         </div>
 <section id="infrared-sensor-and-beacon">
 <h1>Infrared Sensor and Beacon<a class="headerlink" href="#infrared-sensor-and-beacon" title="Link to this heading"></a></h1>
-<p>Each method of this class puts the sensor in a different <em>mode</em>. Switching
-modes takes about one second on this sensor. To make sure that your program
-runs quickly, use only one of these methods in your program.</p>
+<p>このクラスの各メソッドは、センサーをそれぞれ異なる <em>モード</em> に設定します。
+このセンサーではモードの切り替えに約1秒かかります。プログラムを速く実行
+できるように、これらのメソッドのうち1つだけを使用してください。</p>
 <figure class="align-default">
 <img alt="../_images/ev3device-infrared.png" src="../_images/ev3device-infrared.png" style="width: 60%;" />
 </figure>
 <dl class="py class">
 <dt class="sig sig-object py" id="pybricks.ev3devices.InfraredSensor">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">InfraredSensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.InfraredSensor" title="Link to this definition"></a></dt>
-<dd><p>LEGO® MINDSTORMS® EV3 Infrared Sensor and Beacon.</p>
+<dd><p>LEGO® MINDSTORMS® EV3 赤外線センサーとビーコン。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>port</strong> (<a class="reference internal" href="../parameters/port.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – Port to which the sensor is connected.</p>
+<dd class="field-odd"><p><strong>port</strong> (<a class="reference internal" href="../parameters/port.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – センサーを接続するポート。</p>
 </dd>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.ev3devices.InfraredSensor.distance">
 <span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">distance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int:</span> <span class="pre">%</span></span></span><a class="headerlink" href="#pybricks.ev3devices.InfraredSensor.distance" title="Link to this definition"></a></dt>
-<dd><p>Measures the relative distance between the sensor and an object using
-infrared light.</p>
+<dd><p>赤外線を使って、センサーと物体の間の相対的な距離を測定します。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Relative distance ranging from 0% (closest)
-to 100% (farthest).</p>
+<dd class="field-odd"><p>0% (最も近い) から 100% (最も遠い) までの相対距離。</p>
 </dd>
 </dl>
 </dd></dl>
@@ -197,16 +195,15 @@ to 100% (farthest).</p>
 <span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">beacon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.tuple" title="ubuiltins.tuple"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pybricks.ev3devices.InfraredSensor.beacon" title="Link to this definition"></a></dt>
 <dt class="sig sig-object py">
 <span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">beacon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.tuple" title="ubuiltins.tuple"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span></dt>
-<dd><p>Measures the relative distance and angle between the remote and the
-infrared sensor.</p>
+<dd><p>リモコンと赤外線センサーの間の相対的な距離と角度を測定します。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>channel</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – Channel number of the remote.</p>
+<dd class="field-odd"><p><strong>channel</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – リモコンのチャンネル番号。</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Tuple of relative distance (0% to 100%) and approximate angle
-(-75 to 75 degrees) between remote and infrared sensor or
-a tuple of (<code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code>) if no remote is detected.</p>
+<dd class="field-even"><p>リモコンと赤外線センサーの間の相対距離 (0% から 100%) と
+おおよその角度 (-75 から 75 度) のタプル。リモコンが
+検出されない場合は (<code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code>) 。</p>
 </dd>
 </dl>
 </dd></dl>
@@ -214,15 +211,15 @@ a tuple of (<code class="docutils literal notranslate"><span class="pre">None</s
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.ev3devices.InfraredSensor.buttons">
 <span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">buttons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.set" title="ubuiltins.set"><span class="pre">set</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../parameters/button.html#pybricks.parameters.Button" title="pybricks.parameters.Button"><span class="pre">Button</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pybricks.ev3devices.InfraredSensor.buttons" title="Link to this definition"></a></dt>
-<dd><p>Checks which buttons on the infrared remote are pressed.</p>
-<p>This method can detect up to two buttons at once. If you press
-more buttons, you’ll still get just two buttons.</p>
+<dd><p>赤外線リモコンのどのボタンが押されているかを確認します。</p>
+<p>このメソッドは一度に最大2つのボタンを検出できます。それ以上の
+ボタンを押しても、検出されるのは2つだけです。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>channel</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – Channel number of the remote.</p>
+<dd class="field-odd"><p><strong>channel</strong> (<a class="reference internal" href="../micropython/builtins.html#ubuiltins.int" title="ubuiltins.int"><em>int</em></a>) – リモコンのチャンネル番号。</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Set of pressed buttons on the remote on the selected channel.</p>
+<dd class="field-even"><p>選択したチャンネルのリモコンで押されているボタンのセット。</p>
 </dd>
 </dl>
 </dd></dl>
@@ -230,13 +227,13 @@ more buttons, you’ll still get just two buttons.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pybricks.ev3devices.InfraredSensor.keypad">
 <span class="property"><a class="reference internal" href="../tools/index.html#pybricks.tools.await" title="pybricks.tools.await"><span class="pre">await</span></a><span class="w"> </span></span><span class="sig-name descname"><span class="pre">keypad</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../micropython/builtins.html#ubuiltins.set" title="ubuiltins.set"><span class="pre">set</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../parameters/button.html#pybricks.parameters.Button" title="pybricks.parameters.Button"><span class="pre">Button</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pybricks.ev3devices.InfraredSensor.keypad" title="Link to this definition"></a></dt>
-<dd><p>Checks which buttons on the infrared remote are pressed.</p>
-<p>This method can independently detect all 4 up/down buttons, but
-it cannot detect the beacon button.</p>
-<p>This method only works with the remote in channel 1.</p>
+<dd><p>赤外線リモコンのどのボタンが押されているかを確認します。</p>
+<p>このメソッドは4つの上下ボタンをすべて個別に検出できますが、
+ビーコンボタンは検出できません。</p>
+<p>このメソッドはチャンネル1のリモコンでのみ動作します。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Set of pressed buttons.</p>
+<dd class="field-odd"><p>押されているボタンのセット。</p>
 </dd>
 </dl>
 </dd></dl>
