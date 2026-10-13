@@ -1,7 +1,7 @@
 .. pybricks-requirements:: nxtdevices
 
-:mod:`nxtdevices <pybricks.nxtdevices>` -- NXT motors and sensors
-=================================================================
+:mod:`nxtdevices <pybricks.nxtdevices>` -- NXT のモーターとセンサー
+===================================================================
 
 .. automodule:: pybricks.nxtdevices
     :no-members:

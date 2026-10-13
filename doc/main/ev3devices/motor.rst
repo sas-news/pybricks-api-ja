@@ -1,6 +1,6 @@
 .. pybricks-requirements:: ev3devices
 
-Motors with rotation sensors
+回転センサー付きモーター
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. _fig_ev3motors:
@@ -9,8 +9,8 @@ Motors with rotation sensors
    :width: 100 %
    :alt: ev3motors
 
-   EV3 and NXT motors with rotation sensors. The arrows indicate the default
-   positive direction.
+   回転センサー付きの EV3・NXT モーター。矢印はデフォルトの正方向を
+   示しています。
 
 .. autoclass:: pybricks.ev3devices.Motor
     :no-members:

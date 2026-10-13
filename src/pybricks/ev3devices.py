@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2018-2022 The Pybricks Authors
 
-"""LEGO® MINDSTORMS® EV3 motors and sensors."""
+"""LEGO® MINDSTORMS® EV3 のモーターとセンサー。"""
 
 from __future__ import annotations
 
@@ -31,17 +31,17 @@ class TouchSensor:
         """TouchSensor(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
         """
 
     def pressed(self) -> bool:
         """pressed() -> bool
 
-        Checks if the sensor is pressed.
+        センサーが押されているかを確認します。
 
         Returns:
-            ``True`` if the sensor is pressed, ``False`` if it is
-            not pressed.
+            センサーが押されていれば ``True`` 、押されていなければ
+            ``False`` 。
         """
 
 
@@ -52,41 +52,38 @@ class ColorSensor(_common.CommonColorSensor):
         """ColorSensor(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
         """
 
     def rgb(self) -> MaybeAwaitableTuple[int, int, int]:
         """rgb() -> tuple[int, int, int]
 
-        Measures the reflection of a surface using a red, green, and then a
-        blue light.
+        赤、緑、青の順に光を当てて、表面の反射率を測定します。
 
         Returns:
-            Tuple of reflections for red, green, and blue light, each
-            ranging from 0.0% (no reflection) to 100.0% (high reflection).
+            赤、緑、青それぞれの光に対する反射率のタプル。各値は
+            0.0% (反射なし) から 100.0% (高い反射) まで。
         """
 
 
 class InfraredSensor:
-    """LEGO® MINDSTORMS® EV3 Infrared Sensor and Beacon."""
+    """LEGO® MINDSTORMS® EV3 赤外線センサーとビーコン。"""
 
     def __init__(self, port: Port):
         """InfraredSensor(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
 
         """
 
     def distance(self) -> MaybeAwaitableInt:
         """distance() -> int: %
 
-        Measures the relative distance between the sensor and an object using
-        infrared light.
+        赤外線を使って、センサーと物体の間の相対的な距離を測定します。
 
         Returns:
-            Relative distance ranging from 0% (closest)
-            to 100% (farthest).
+            0% (最も近い) から 100% (最も遠い) までの相対距離。
 
         """
 
@@ -95,46 +92,45 @@ class InfraredSensor:
         beacon(channel) -> tuple[int, int]
         beacon(channel) -> tuple[None, None]
 
-        Measures the relative distance and angle between the remote and the
-        infrared sensor.
+        リモコンと赤外線センサーの間の相対的な距離と角度を測定します。
 
         Arguments:
-            channel (int): Channel number of the remote.
+            channel (int): リモコンのチャンネル番号。
 
         Returns:
-            Tuple of relative distance (0% to 100%) and approximate angle
-            (-75 to 75 degrees) between remote and infrared sensor or
-            a tuple of (``None``, ``None``) if no remote is detected.
+            リモコンと赤外線センサーの間の相対距離 (0% から 100%) と
+            おおよその角度 (-75 から 75 度) のタプル。リモコンが
+            検出されない場合は (``None``, ``None``) 。
         """
 
     def buttons(self, channel: int) -> MaybeAwaitableSet[Button]:
         """buttons(channel) -> set[Button]
 
-        Checks which buttons on the infrared remote are pressed.
+        赤外線リモコンのどのボタンが押されているかを確認します。
 
-        This method can detect up to two buttons at once. If you press
-        more buttons, you'll still get just two buttons.
+        このメソッドは一度に最大2つのボタンを検出できます。それ以上の
+        ボタンを押しても、検出されるのは2つだけです。
 
         Arguments:
-            channel (int): Channel number of the remote.
+            channel (int): リモコンのチャンネル番号。
 
         Returns:
-            Set of pressed buttons on the remote on the selected channel.
+            選択したチャンネルのリモコンで押されているボタンのセット。
 
         """
 
     def keypad(self) -> MaybeAwaitableSet[Button]:
         """keypad() -> set[Button]
 
-        Checks which buttons on the infrared remote are pressed.
+        赤外線リモコンのどのボタンが押されているかを確認します。
 
-        This method can independently detect all 4 up/down buttons, but
-        it cannot detect the beacon button.
+        このメソッドは4つの上下ボタンをすべて個別に検出できますが、
+        ビーコンボタンは検出できません。
 
-        This method only works with the remote in channel 1.
+        このメソッドはチャンネル1のリモコンでのみ動作します。
 
         Returns:
-            Set of pressed buttons.
+            押されているボタンのセット。
         """
 
 
@@ -145,40 +141,39 @@ class GyroSensor:
         """GyroSensor(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
             direction (Direction):
-                Positive rotation direction when looking at the red dot on top
-                of the sensor.
+                センサー上部の赤い点を見たときの正の回転方向。
 
         """
 
     def speed(self) -> int:
         """speed() -> int: deg/s
 
-        Gets the speed (angular velocity) of the sensor.
+        センサーの速度 (角速度) を取得します。
 
         Returns:
-            Angular velocity.
+            角速度。
 
         """
 
     def angle(self) -> int:
         """angle() -> int: deg
 
-        Gets the accumulated angle of the sensor.
+        センサーの累積角度を取得します。
 
         Returns:
-            Rotation angle.
+            回転角度。
 
         """
 
     def reset_angle(self, angle: int) -> None:
         """reset_angle(angle)
 
-        Sets the rotation angle of the sensor to a desired value.
+        センサーの回転角度を任意の値に設定します。
 
         Arguments:
-            angle (Number, deg): Value to which the angle should be reset.
+            angle (Number, deg): 角度をリセットする値。
         """
 
 
@@ -189,41 +184,37 @@ class UltrasonicSensor:
         """UltrasonicSensor(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): センサーを接続するポート。
 
         """
 
     def distance(self, silent: bool = False) -> MaybeAwaitableInt:
         """distance(silent=False) -> int: mm
 
-        Measures the distance between the sensor and an object using
-        ultrasonic sound waves.
+        超音波を使って、センサーと物体の間の距離を測定します。
 
         Arguments:
-            silent (bool): Choose ``True`` to turn the sensor off after
-                           measuring the distance. This reduces interference
-                           with other ultrasonic sensors. If you do
-                           this too frequently, the sensor can freeze.
-                           If this happens, unplug it and plug it back in.
+            silent (bool): ``True`` を選択すると、距離の測定後に
+                           センサーをオフにします。他の超音波センサーとの
+                           干渉を減らせます。ただし頻繁に行いすぎると
+                           センサーがフリーズすることがあります。
+                           その場合は一度抜いて差し直してください。
 
         Returns:
-            Measured distance.
+            測定された距離。
 
         """
 
     def presence(self) -> MaybeAwaitableBool:
         """presence() -> bool
 
-        Checks for the presence of other ultrasonic sensors by detecting
-        ultrasonic sounds.
+        超音波を検出することで、他の超音波センサーの存在を確認します。
 
-        If the other ultrasonic sensor is operating in silent mode, you can
-        only detect the presence of that sensor while it is taking a
-        measurement.
+        他の超音波センサーがサイレントモードで動作している場合、その
+        センサーが測定を行っている間だけ存在を検出できます。
 
         Returns:
-            ``True`` if ultrasonic sounds are detected,
-            ``False`` if not.
+            超音波が検出されれば ``True`` 、されなければ ``False`` 。
         """
 
 

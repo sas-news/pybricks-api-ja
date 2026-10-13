@@ -139,10 +139,10 @@ class Remote(LWP3Device):
 class TechnicMoveHub(LWP3Device):
     """LEGO® Technic Move Hub (set 42176, 42214, 42239).
 
-    This newer hub is found in the latest Technic Control+ sets. It requires
-    a special password to update the firmware, so Pybricks cannot be installed
-    on it. However, you can connect a supported hub running Pybricks to it
-    and control its motors that way.
+    この新しいハブは、最新のTechnic Control+セットに搭載されています。
+    ファームウェアの更新には特別なパスワードが必要なため、このハブには
+    Pybricksをインストールできません。ただし、Pybricksが動作する対応
+    ハブをこのハブに接続すれば、そのモーターを制御できます。
     """
 
     def __init__(
@@ -154,38 +154,38 @@ class TechnicMoveHub(LWP3Device):
         """TechnicMoveHub(name=None, timeout=10000, connect=True)
 
         Arguments:
-            name (str): Bluetooth name of the hub. If no name is given,
-                the hub connects to the first Technic Move Hub it finds.
-            timeout (Number, ms): How long to search for the hub.
-                Choose ``None`` to wait indefinitely.
-            connect (bool): Choose ``False`` to skip connecting.
-                ``connect()`` can be called later to connect.
+            name (str): ハブのBluetooth名。名前を指定しない場合、
+                最初に見つかったTechnic Move Hubに接続します。
+            timeout (Number, ms): ハブを検索する時間。
+                ``None`` を選択すると、無制限に待ち続けます。
+            connect (bool): ``False`` を選択すると接続をスキップします。
+                後で ``connect()`` を呼び出して接続できます。
 
         Raises:
-            OSError: If the connection attempt fails or times out.
+            OSError: 接続に失敗したかタイムアウトした場合。
         """
 
     def drive(self, speed: int, steering: int) -> MaybeAwaitable:
         """drive(speed, steering)
 
-        Drives the hub's motor outputs at the given speed and steering.
+        指定した速度とステアリングでハブのモーター出力を駆動します。
 
         Arguments:
-            speed (int): Drive speed as a percentage (-100 to 100).
-            steering (int): Steering as a percentage (-100 to 100). Positive
-                values steer right. Values exceeding ±97 are clamped to ±97
-                to avoid pushing against the mechanical constraint.
+            speed (int): 駆動速度。パーセント (-100から100) で指定します。
+            steering (int): ステアリング。パーセント (-100から100) で
+                指定します。正の値で右に曲がります。±97を超える値は、
+                機構上の制約に押し付けないよう ±97 に丸められます。
 
         Raises:
-            OSError: If the hub is not connected.
+            OSError: ハブが接続されていない場合。
         """
 
 
 class MarioHub(LWP3Device):
     """LEGO® Super Mario hub (sets 71360, 71387, 71441 and similar).
 
-    Connect a supported hub running Pybricks to a LEGO Mario, Luigi, or Peach
-    figure and reads its color sensor.
+    Pybricksが動作する対応ハブを、LEGOのマリオ、ルイージ、ピーチの
+    フィギュアに接続し、そのカラーセンサーを読み取ります。
     """
 
     def __init__(
@@ -197,67 +197,67 @@ class MarioHub(LWP3Device):
         """MarioHub(name=None, timeout=10000, connect=True)
 
         Arguments:
-            name (str): Bluetooth name of the hub. If no name is given,
-                the hub connects to the first Mario hub it finds.
-            timeout (Number, ms): How long to search for the hub.
-                Choose ``None`` to wait indefinitely.
-            connect (bool): Choose ``False`` to skip connecting.
-                ``connect()`` can be called later to connect.
+            name (str): ハブのBluetooth名。名前を指定しない場合、
+                最初に見つかったマリオハブに接続します。
+            timeout (Number, ms): ハブを検索する時間。
+                ``None`` を選択すると、無制限に待ち続けます。
+            connect (bool): ``False`` を選択すると接続をスキップします。
+                後で ``connect()`` を呼び出して接続できます。
 
         Raises:
-            OSError: If the connection attempt fails or times out.
+            OSError: 接続に失敗したかタイムアウトした場合。
         """
 
     def color(self) -> Color:
         """color() -> Color
 
-        Reads the color detected by the color sensor from the latest received
-        notification.
+        最新に受信した通知から、カラーセンサーが検出した色を読み取ります。
 
         Returns:
-            Detected color.
+            検出された色。
 
         Raises:
-            OSError: If the hub is not connected.
+            OSError: ハブが接続されていない場合。
         """
 
     def hsv(self) -> Color:
         """hsv() -> Color
 
-        Reads the hue, saturation, and brightness of the color detected by the
-        color sensor from the latest received notification, as a
-        :class:`Color <.parameters.Color>` object.
+        最新に受信した通知から、カラーセンサーが検出した色の色相、彩度、
+        輝度を :class:`Color <.parameters.Color>` オブジェクトとして
+        読み取ります。
 
         Returns:
-            Measured color.
+            測定された色。
 
         Raises:
-            OSError: If the hub is not connected.
+            OSError: ハブが接続されていない場合。
         """
 
     def detectable_colors(self, colors: Collection[Color] | None = None) -> None:
         """detectable_colors(colors)
 
-        Configures the list of colors that :meth:`color` may return.
+        :meth:`color` が返しうる色のリストを設定します。
 
-        Only the colors in this list will be returned. This helps reduce
-        false positives when you only care about a specific subset of colors.
+        このリストに含まれる色だけが返されます。特定の色のサブセットだけを
+        扱いたい場合に、誤検出を減らすのに役立ちます。
 
         Arguments:
-            colors (list): List of :class:`Color <.parameters.Color>` objects
-                to detect, or ``None`` to restore the default list.
+            colors (list): 検出する :class:`Color <.parameters.Color>`
+                オブジェクトのリスト。``None`` を選択すると、デフォルトの
+                リストに戻します。
         """
 
 
 class DuploTrain(LWP3Device):
     """LEGO® Duplo Train hub (sets 10874, 10875, 10427, 10428 similar).
 
-    The Duplo Hub cannot be updated, so you cannot install Pybricks on it.
-    However, you can connect a supported hub running Pybricks to the Duplo Hub
-    and control the train that way.
+    Duploハブはファームウェアを更新できないため、このハブにPybricksを
+    インストールすることはできません。ただし、Pybricksが動作する対応
+    ハブをDuploハブに接続して、トレインを制御できます。
 
-    You can you control the motor, sound, and headlights, and read the speed
-    and color sensors.
+    モーター、サウンド、ヘッドライトを制御し、速度センサーとカラー
+    センサーを読み取ることができます。
     """
 
     def __init__(
@@ -269,84 +269,82 @@ class DuploTrain(LWP3Device):
         """DuploTrain(name=None, timeout=10000, connect=True)
 
         Arguments:
-            name (str): Bluetooth name of the hub. If no name is given,
-                the hub connects to the first Duplo Train hub it finds.
-            timeout (Number, ms): How long to search for the hub.
-                Choose ``None`` to wait indefinitely.
-            connect (bool): Choose ``False`` to skip connecting.
-                ``connect()`` can be called later to connect.
+            name (str): ハブのBluetooth名。名前を指定しない場合、
+                最初に見つかったDuplo Trainハブに接続します。
+            timeout (Number, ms): ハブを検索する時間。
+                ``None`` を選択すると、無制限に待ち続けます。
+            connect (bool): ``False`` を選択すると接続をスキップします。
+                後で ``connect()`` を呼び出して接続できます。
 
         Raises:
-            OSError: If the connection attempt fails or times out.
+            OSError: 接続に失敗したかタイムアウトした場合。
         """
 
     def drive(self, speed: int) -> MaybeAwaitable:
         """drive(speed)
 
-        Drives the train motor at the given speed.
+        指定した速度でトレインのモーターを駆動します。
 
         Arguments:
-            speed (int): Speed as a percentage (-100 to 100). Negative values
-                drive in reverse.
+            speed (int): 速度。パーセント (-100から100) で指定します。
+                負の値で後進します。
 
         Raises:
-            OSError: If the hub is not connected.
+            OSError: ハブが接続されていない場合。
         """
 
     def headlights(self, color: Color) -> MaybeAwaitable:
         """headlights(color)
 
-        Sets the color of the train headlights. Not all colors are supported,
-        so the hub will choose the closest color it can produce.
+        トレインのヘッドライトの色を設定します。すべての色に対応している
+        わけではないため、ハブは生成できる最も近い色を選びます。
 
         Arguments:
-            color (Color): Color of the headlights.
+            color (Color): ヘッドライトの色。
 
         Raises:
-            OSError: If the hub is not connected.
+            OSError: ハブが接続されていない場合。
         """
 
     def sound(self, sound: str) -> MaybeAwaitable:
         """sound(sound)
 
-        Plays one of the built-in train sounds.
+        内蔵のトレインサウンドを1つ再生します。
 
-        For the newer (dark blue) train, we have not yet figured out the right
-        sound codes. Please open a discussion or pull request if you know how
-        to do it. Thanks!
+        新しい (濃紺の) トレインでは、正しいサウンドコードがまだ解明
+        されていません。やり方をご存じの方は、discussionやプルリクエストを
+        開いていただけると幸いです。
 
         Arguments:
-            sound (str): Name of the sound to play. Choose from
-                ``"brake"``, ``"depart"``, ``"water"``, ``"horn"``,
-                or ``"steam"``.
+            sound (str): 再生するサウンド名。 ``"brake"`` 、 ``"depart"`` 、
+                ``"water"`` 、 ``"horn"`` 、 ``"steam"`` から選択します。
 
         Raises:
-            OSError: If the hub is not connected.
+            OSError: ハブが接続されていない場合。
         """
 
     def speed(self) -> int:
         """speed() -> int: %
 
-        Reads the train speed from the latest received notification.
+        最新に受信した通知から、トレインの速度を読み取ります。
 
         Returns:
-            Speed as a percentage (-100 to 100).
+            パーセント (-100から100) で表した速度。
 
         Raises:
-            OSError: If the hub is not connected.
+            OSError: ハブが接続されていない場合。
         """
 
     def color(self) -> Color:
         """color() -> Color
 
-        Reads the color detected by the color sensor from the latest received
-        notification.
+        最新に受信した通知から、カラーセンサーが検出した色を読み取ります。
 
         Returns:
-            Detected color.
+            検出された色。
 
         Raises:
-            OSError: If the hub is not connected.
+            OSError: ハブが接続されていない場合。
         """
 
 

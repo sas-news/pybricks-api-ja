@@ -1,4 +1,4 @@
-.. rubric:: Measuring
+.. rubric:: 計測
 
 .. automethod:: angle
 
@@ -10,7 +10,7 @@
 
 .. automethod:: stalled
 
-.. rubric:: Stopping
+.. rubric:: 停止
 
 .. automethod:: stop
 
@@ -18,13 +18,13 @@
 
 .. automethod:: hold
 
-.. rubric:: Running forever
+.. rubric:: 連続回転
 
 .. automethod:: run
 
 .. automethod:: dc
 
-.. rubric:: Running by a fixed amount
+.. rubric:: 指定量だけ回転
 
 .. automethod:: run_time
 
@@ -38,13 +38,13 @@
 
 .. automethod:: done
 
-.. rubric:: Motor settings
+.. rubric:: モーターの設定
 
 .. automethod:: settings
 
 .. automethod:: close
 
-.. rubric:: Control settings
+.. rubric:: 制御の設定
 
 .. pybricks-requirements:: pybricks-common-control
 
@@ -66,14 +66,12 @@
 
 .. attribute:: control.scale
 
-    Number of degrees that the motor turns to complete one degree at the
-    output of the gear train. This is the gear ratio determined from the
-    ``gears`` argument when initializing the motor.
+    ギアトレインの出力が1度回転するのに必要なモーターの回転量（度）。
+    モーター初期化時の ``gears`` 引数で決まるギア比です。
 
 .. versionchanged:: 3.2
 
-    The :meth:`done`, :meth:`stalled` and :meth:`load` methods have been
-    moved.
+    :meth:`done`、:meth:`stalled`、:meth:`load` の各メソッドは移動されました。
 
 .. pybricks-requirements:: pybricks-common-control
 
